@@ -1,0 +1,150 @@
+# Viés-base: curadoria manual inicial (-2 extrema-esq … +2 extrema-dir).
+# Nível de PUBLICAÇÃO (como Ground.news). Artigo individual pode variar — IA ajusta depois.
+# factuality: very_high/high/mixed/low/very_low | ownership: conglomerado/corporacao/independente/individuo/governo/outro
+sources:
+  - id: g1
+    name: G1
+    rss: https://g1.globo.com/rss/g1/
+    bias: 0.0
+    factuality: high
+    ownership: conglomerado
+    owner_detail: Grupo Globo
+  - id: folha
+    name: Folha de S.Paulo
+    rss: https://feeds.folha.uol.com.br/emcimadahora/rss091.xml
+    bias: -0.3
+    factuality: high
+    ownership: individuo
+    owner_detail: Família Frias (Grupo Folha)
+  - id: uol
+    name: UOL Notícias
+    rss: https://rss.uol.com.br/feed/noticias.xml
+    bias: -0.2
+    factuality: high
+    ownership: corporacao
+    owner_detail: Grupo Folha / PagSeguro
+  - id: cnnbr
+    name: CNN Brasil
+    rss: https://www.cnnbrasil.com.br/feed/
+    bias: 0.1
+    factuality: high
+    ownership: corporacao
+    owner_detail: Licença CNN / Novus Media
+  - id: bbcbr
+    name: BBC Brasil
+    rss: https://feeds.bbci.co.uk/portuguese/rss.xml
+    bias: -0.2
+    factuality: very_high
+    ownership: governo
+    owner_detail: BBC (Reino Unido, financiamento público)
+  - id: poder360
+    name: Poder360
+    rss: https://www.poder360.com.br/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Poder360 Jornalismo
+  - id: metropoles
+    name: Metrópoles
+    rss: https://www.metropoles.com/feed/
+    bias: 0.0
+    factuality: mixed
+    ownership: individuo
+    owner_detail: Luiz Estevão
+  - id: terra
+    name: Terra
+    rss: https://www.terra.com.br/rss/
+    bias: 0.0
+    factuality: mixed
+    ownership: corporacao
+    owner_detail: Telefônica / Vivo
+  - id: nexo
+    name: Nexo Jornal
+    rss: https://www.nexojornal.com.br/rss.xml
+    bias: -0.4
+    factuality: very_high
+    ownership: independente
+    owner_detail: Nexo Jornal
+  - id: piaui
+    name: Revista piauí
+    rss: https://piaui.folha.uol.com.br/feed/
+    bias: -0.5
+    factuality: very_high
+    ownership: individuo
+    owner_detail: Editora piauí / João Moreira Salles (distribuição Folha)
+  - id: infomoney
+    name: InfoMoney
+    rss: https://www.infomoney.com.br/feed/
+    bias: 0.2
+    factuality: high
+    ownership: conglomerado
+    owner_detail: XP Inc.
+  - id: b247
+    name: Brasil 247
+    rss: https://www.brasil247.com/feed
+    bias: -1.4
+    factuality: mixed
+    ownership: independente
+    owner_detail: Editora 247
+  - id: dcm
+    name: Diário do Centro do Mundo
+    rss: https://www.diariodocentrodomundo.com.br/feed/
+    bias: -1.5
+    factuality: low
+    ownership: independente
+    owner_detail: DCM
+  - id: carta
+    name: CartaCapital
+    rss: https://www.cartacapital.com.br/feed/
+    bias: -1.2
+    factuality: mixed
+    ownership: independente
+    owner_detail: Editora Confiança
+  - id: jovempan
+    name: Jovem Pan
+    rss: https://jovempan.com.br/feed
+    bias: 1.4
+    factuality: mixed
+    ownership: corporacao
+    owner_detail: Grupo Jovem Pan
+  - id: oeste
+    name: Revista Oeste
+    rss: https://revistaoeste.com/feed/
+    bias: 1.6
+    factuality: mixed
+    ownership: independente
+    owner_detail: Revista Oeste
+
+  # ── Fontes sem RSS público (coleta via Arc XP / Google News sitemap) ──
+  - id: estadao
+    name: Estadão
+    rss: https://www.estadao.com.br/arc/outboundfeeds/rss/?outputType=xml
+    fetcher: rss
+    bias: -0.1
+    factuality: high
+    ownership: individuo
+    owner_detail: Família Mesquita
+  - id: oglobo
+    name: O Globo
+    rss: https://oglobo.globo.com/sitemap/oglobo/news.xml
+    fetcher: sitemap
+    bias: 0.1
+    factuality: high
+    ownership: conglomerado
+    owner_detail: Grupo Globo
+  - id: valor
+    name: Valor Econômico
+    rss: https://valor.globo.com/sitemap/valor/news.xml
+    fetcher: sitemap
+    bias: 0.3
+    factuality: high
+    ownership: conglomerado
+    owner_detail: Grupo Globo
+  - id: gazeta
+    name: Gazeta do Povo
+    rss: https://www.gazetadopovo.com.br/sitemap.xml
+    fetcher: sitemap
+    bias: 1.2
+    factuality: mixed
+    ownership: independente
+    owner_detail: Gazeta do Povo

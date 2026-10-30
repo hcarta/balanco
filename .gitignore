@@ -1,0 +1,7 @@
+# Binários e estado local — não versionar
+state/cache.db
+state/cache.db-*
+__pycache__/
+*.pyc
+.DS_Store
+.env
