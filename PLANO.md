@@ -78,6 +78,12 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 
 ## Fase 5 — Fontes: segunda leva + governança de viés
 
+*Status 30/10: 5.1–5.2 implementados; 5.3 é processo contínuo (próxima: jan/2027).*
+
+- [x] **5.1 Novas fontes** — 7 integradas e agrupando (SBT, R7, Band, DW, Veja, IstoÉ, Crusoé; 27 no total). Fora: Agência Brasil (feed parado em 2023), Congresso em Foco (inacessível), El País Brasil (encerrado 2021). Mesmo protocolo da 1ª leva (endpoint sancionado + viés inicial documentado).
+- [x] **5.2 Documento de curadoria de viés** — `CURADORIA_VIES.md` (escala BR, 28 posições justificadas em 1 linha, processo de decisão, vedações) + `tests/test_sources.py` (valida `sources.yaml` × curadoria a cada run de teste).
+- [ ] **5.3 Revisão trimestral** — reavaliar 3–5 fontes/ciclo (ledger `revisar=true`, fontes novas, reclamações). Próxima: **jan/2027**.
+
 - [ ] **5.1 Novas fontes (candidatas)** — Agência Brasil (pública, RSS aberto), Congresso em Foco, DW Brasil, El País Brasil, Aos Fatos, SBT, Record, Band, Veja, IstoÉ, Crusoé. Mesmo protocolo da 1ª leva: testar endpoint, registrar em `ESTRATEGIA_AGREGACAO.md`, viés inicial conservador (centro até evidência).
 - [ ] **5.2 Documento de curadoria de viés** — critérios escritos para cada posição (-2…+2), exemplos-âncora por fonte, quem decide e changelog (`state/vies_changelog.md`). Viés fixo exige legitimidade processual.
 - [ ] **5.3 Revisão trimestral** — reavaliar 3–5 fontes por ciclo com base no ledger de checagens + amostragem de manchetes.

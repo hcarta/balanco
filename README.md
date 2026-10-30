@@ -76,11 +76,13 @@ O app coleta automaticamente **G1 Fato ou Fake** (RSS, 100), **Agência Lupa** (
 - Casamento conservador: sobreposição ponderada por raridade (IDF), exigindo termo específico da alegação. Evita confundir “mesmo assunto” com “mesma alegação”.
 - Para desligar: `python app.py --no-checks`.
 
-## Fontes (20, testadas em 30/10/2026)
-Mainstream/centro: G1, Folha, UOL, CNN Brasil, BBC Brasil, Poder360, Metrópoles, Terra, Nexo, InfoMoney, **Estadão**, **O Globo**, **Valor Econômico**.
+## Fontes (27, testadas em 30/10/2026)
+Mainstream/centro: G1, Folha, UOL, CNN Brasil, BBC Brasil, Poder360, Metrópoles, Terra, Nexo, InfoMoney, **Estadão**, **O Globo**, **Valor Econômico**, **SBT News**, **Band**, **DW Brasil**, **IstoÉ**.
 Centro-esquerda: **Revista piauí**.
 Esquerda: Brasil 247, Diário do Centro do Mundo, CartaCapital.
-Direita: Jovem Pan, Revista Oeste, **Gazeta do Povo**.
+Direita: Jovem Pan, Revista Oeste, **Gazeta do Povo**, **R7**, **Veja**, **Crusoé**.
+
+Fora por ora: **Agência Brasil** (feed parado desde 2023), **Congresso em Foco** (inacessível daqui), **El País Brasil** (encerrado em 2021).
 
 ### Fontes sem RSS público
 Estadão, O Globo, Valor e Gazeta bloqueiam RSS, mas expõem caminhos machine-readable sancionados que o projeto já usa:

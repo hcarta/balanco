@@ -97,11 +97,11 @@ No Brasil, agregar **manchetes + links** é prática consolidada; reproduzir tre
 
 ## 10. Estado atual
 
-- 20 fontes integradas (16 RSS + 4 via Arc XP/sitemap).
-- ~340 artigos → ~19 histórias por rodada.
+- 27 fontes integradas (20 RSS + 7 via Arc XP/Google News sitemap).
+- ~950 artigos → ~72 histórias por rodada.
 - **Viés fixo por fonte**, sem análise por matéria e sem custo de tokens (LLM só com `--llm`).
 - **Checagens** do G1 Fato ou Fake, da Lupa (500 mais recentes) e do Aos Fatos cruzadas com as manchetes; histórico por fonte como evidência.
-- Exemplo real: pauta "Itamaraty/Flávio" com 9 coberturas — DCM e Carta (esq), Folha/Estadão/Globo/InfoMoney (centro), Gazeta/Jovem Pan/Oeste (dir).
+- 2ª leva (30/10): SBT e Band via Google News sitemap, R7 via Arc XP (mesmo padrão do Estadão), DW via `/pt-br/news-sitemap.xml`, Veja/IstoÉ/Crusoé via RSS. Fora: Agência Brasil (feed parado em 2023), Congresso em Foco (inacessível), El País Brasil (encerrado 2021). Governança em `CURADORIA_VIES.md` + `tests/test_sources.py`.
 
 ## 11. Checagem de fatos (G1 + Lupa)
 

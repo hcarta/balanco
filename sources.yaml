@@ -72,6 +72,62 @@ sources:
     factuality: very_high
     ownership: individuo
     owner_detail: Editora piauí / João Moreira Salles (distribuição Folha)
+
+  # ── 2ª leva (Fase 5): testadas em 30/10/2026 ──
+  # Agência Brasil: feed RSS desatualizado (último item 2023) e sitemap sem
+  # namespace de notícias → fora por ora; revisitar se publicarem feed vivo.
+  - id: sbt
+    name: SBT News
+    rss: https://sbtnews.sbt.com.br/sitemap-news.xml
+    fetcher: sitemap
+    bias: 0.0
+    factuality: high
+    ownership: individuo
+    owner_detail: Grupo Silvio Santos (família Abravanel)
+  - id: r7
+    name: R7
+    rss: https://www.r7.com/arc/outboundfeeds/rss/?outputType=xml
+    bias: 0.5
+    factuality: mixed
+    ownership: individuo
+    owner_detail: Grupo Record (Edir Macedo)
+  - id: band
+    name: Band
+    rss: https://www.band.com.br/sitemap-news.xml
+    fetcher: sitemap
+    bias: 0.0
+    factuality: high
+    ownership: individuo
+    owner_detail: Grupo Bandeirantes (família Saad)
+  - id: dw
+    name: DW Brasil
+    rss: https://www.dw.com/pt-br/news-sitemap.xml
+    fetcher: sitemap
+    bias: 0.0
+    factuality: very_high
+    ownership: governo
+    owner_detail: Deutsche Welle (Alemanha, financiamento público)
+  - id: veja
+    name: Veja
+    rss: https://veja.abril.com.br/ultimas-noticias/rss
+    bias: 0.5
+    factuality: high
+    ownership: corporacao
+    owner_detail: Editora Abril
+  - id: istoe
+    name: IstoÉ
+    rss: https://istoe.com.br/feed/
+    bias: 0.0
+    factuality: mixed
+    ownership: corporacao
+    owner_detail: Editora Três
+  - id: crusoe
+    name: Crusoé
+    rss: https://crusoe.com.br/feed/
+    bias: 1.0
+    factuality: mixed
+    ownership: independente
+    owner_detail: Grupo O Antagonista
   - id: infomoney
     name: InfoMoney
     rss: https://www.infomoney.com.br/feed/

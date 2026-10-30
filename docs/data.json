@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T23:20:03.983239+00:00",
- "n_articles": 731,
- "n_stories": 48,
+ "generated_at": "2026-10-30T23:31:05.139117+00:00",
+ "n_articles": 954,
+ "n_stories": 72,
  "n_factchecks": 700,
  "n_matches": 0,
- "n_new": 19,
+ "n_new": 9,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 182,
+    "last_ms": 123,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 174,
+    "last_ms": 148,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 15,
-    "last_n_total": 52,
+    "last_n_total": 57,
     "last_status": "ok",
-    "last_ms": 89,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 0,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 46,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 178,
+    "last_ms": 171,
     "err_streak": 0,
     "empty": false
    }
@@ -92,11 +92,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 31,
     "last_n_total": 23,
     "last_status": "ok",
-    "last_ms": 98,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +111,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 18,
     "last_status": "ok",
-    "last_ms": 83,
+    "last_ms": 62,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +130,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 17,
-    "last_n_total": 49,
+    "last_n_total": 53,
     "last_status": "ok",
-    "last_ms": 328,
+    "last_ms": 243,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +149,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 7,
     "last_n_total": 33,
     "last_status": "ok",
-    "last_ms": 93,
+    "last_ms": 208,
     "err_streak": 0,
     "empty": false
    }
@@ -168,11 +168,11 @@
    "owner_detail": "Nexo Jornal",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 20,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 147,
+    "last_ms": 84,
     "err_streak": 0,
     "empty": false
    }
@@ -187,11 +187,147 @@
    "owner_detail": "Editora piauí / João Moreira Salles (distribuição Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
     "last_n_total": 1,
     "last_status": "ok",
-    "last_ms": 213,
+    "last_ms": 253,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "sbt",
+   "name": "SBT News",
+   "rss": "https://sbtnews.sbt.com.br/sitemap-news.xml",
+   "fetcher": "sitemap",
+   "bias": 0.0,
+   "factuality": "high",
+   "ownership": "individuo",
+   "owner_detail": "Grupo Silvio Santos (família Abravanel)",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 134,
+    "last_n_total": 60,
+    "last_status": "ok",
+    "last_ms": 161,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "r7",
+   "name": "R7",
+   "rss": "https://www.r7.com/arc/outboundfeeds/rss/?outputType=xml",
+   "bias": 0.5,
+   "factuality": "mixed",
+   "ownership": "individuo",
+   "owner_detail": "Grupo Record (Edir Macedo)",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 100,
+    "last_n_total": 19,
+    "last_status": "ok",
+    "last_ms": 502,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "band",
+   "name": "Band",
+   "rss": "https://www.band.com.br/sitemap-news.xml",
+   "fetcher": "sitemap",
+   "bias": 0.0,
+   "factuality": "high",
+   "ownership": "individuo",
+   "owner_detail": "Grupo Bandeirantes (família Saad)",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 442,
+    "last_n_total": 60,
+    "last_status": "ok",
+    "last_ms": 616,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "dw",
+   "name": "DW Brasil",
+   "rss": "https://www.dw.com/pt-br/news-sitemap.xml",
+   "fetcher": "sitemap",
+   "bias": 0.0,
+   "factuality": "very_high",
+   "ownership": "governo",
+   "owner_detail": "Deutsche Welle (Alemanha, financiamento público)",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 25,
+    "last_n_total": 25,
+    "last_status": "ok",
+    "last_ms": 1285,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "veja",
+   "name": "Veja",
+   "rss": "https://veja.abril.com.br/ultimas-noticias/rss",
+   "bias": 0.5,
+   "factuality": "high",
+   "ownership": "corporacao",
+   "owner_detail": "Editora Abril",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 20,
+    "last_status": "ok",
+    "last_ms": 73,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "istoe",
+   "name": "IstoÉ",
+   "rss": "https://istoe.com.br/feed/",
+   "bias": 0.0,
+   "factuality": "mixed",
+   "ownership": "corporacao",
+   "owner_detail": "Editora Três",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 10,
+    "last_status": "ok",
+    "last_ms": 448,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
+   "id": "crusoe",
+   "name": "Crusoé",
+   "rss": "https://crusoe.com.br/feed/",
+   "bias": 1.0,
+   "factuality": "mixed",
+   "ownership": "independente",
+   "owner_detail": "Grupo O Antagonista",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 15,
+    "last_n_total": 9,
+    "last_status": "ok",
+    "last_ms": 672,
     "err_streak": 0,
     "empty": false
    }
@@ -206,11 +342,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 19,
+    "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 149,
+    "last_ms": 80,
     "err_streak": 0,
     "empty": false
    }
@@ -225,11 +361,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 37,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 38,
     "last_status": "ok",
-    "last_ms": 167,
+    "last_ms": 85,
     "err_streak": 0,
     "empty": false
    }
@@ -244,11 +380,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 18,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 20,
     "last_status": "ok",
-    "last_ms": 1025,
+    "last_ms": 391,
     "err_streak": 0,
     "empty": false
    }
@@ -263,11 +399,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
     "last_n_total": 33,
     "last_status": "ok",
-    "last_ms": 104,
+    "last_ms": 94,
     "err_streak": 0,
     "empty": false
    }
@@ -282,11 +418,11 @@
    "owner_detail": "Grupo Jovem Pan",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
     "last_n_total": 13,
     "last_status": "ok",
-    "last_ms": 97,
+    "last_ms": 96,
     "err_streak": 0,
     "empty": false
    }
@@ -301,11 +437,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 16,
+    "last_n_total": 18,
     "last_status": "ok",
-    "last_ms": 93,
+    "last_ms": 85,
     "err_streak": 0,
     "empty": false
    }
@@ -321,11 +457,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 93,
-    "last_n_total": 37,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 92,
+    "last_n_total": 41,
     "last_status": "ok",
-    "last_ms": 166,
+    "last_ms": 137,
     "err_streak": 0,
     "empty": false
    }
@@ -341,11 +477,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
-    "last_n_fresh": 656,
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 175,
+    "last_ms": 126,
     "err_streak": 0,
     "empty": false
    }
@@ -361,11 +497,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 177,
+    "last_ms": 214,
     "err_streak": 0,
     "empty": false
    }
@@ -381,11 +517,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:18:16.214844+00:00",
+    "last_run": "2026-10-30T23:29:15.842924+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 386,
+    "last_ms": 384,
     "err_streak": 0,
     "empty": false
    }
@@ -1037,24 +1173,38 @@
   {
    "id": "s000",
    "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
-   "summary": "Planalto busca acordo para evitar que texto retorne à Câmara e atrase criação do Ministério da Segurança Pública",
+   "summary": "Disputa sobre redução da maioridade penal segue sem acordo; Lula condiciona novo ministério à aprovação da proposta",
    "section": "politica",
    "section_label": "Política",
-   "avg_bias": 0.03,
+   "avg_bias": -0.04,
    "counts": {
-    "L": 2,
-    "C": 8,
-    "R": 2,
-    "total": 12
+    "L": 3,
+    "C": 10,
+    "R": 3,
+    "total": 16
    },
    "pct": {
-    "L": 17,
-    "C": 67,
-    "R": 17
+    "L": 19,
+    "C": 62,
+    "R": 19
    },
    "blindspot": null,
-   "updated": "2026-10-31T01:52:59+00:00",
+   "updated": "2026-10-31T02:20:36+00:00",
    "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Maioridade penal aos 14 anos vira obstáculo para aprovação da PEC da Segurança",
+     "link": "https://www.diariodocentrodomundo.com.br/maioridade-penal-aos-14-anos-vira-obstaculo-para-aprovacao-da-pec-da-seguranca/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
     {
      "source": "Brasil 247",
      "source_id": "b247",
@@ -1154,6 +1304,34 @@
      "ownership": "individuo"
     },
     {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Alcolumbre vota PEC da Segurança, bandeira de Lula, na terça",
+     "link": "https://sbtnews.sbt.com.br/noticia/politica/alcolumbre-pauta-pec-da-seguranca-no-plenario-para-terca-3",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://sbtnews.sbt.com.br/imagens/Lula_PT_e_Davi_Alcolumbre_Uniao_Brasil_AP_Divulgacao_Ricardo_Stuckert_PR_b646d214ae.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "PEC da Segurança Pública entra na pauta do Senado para terça-feira (3)",
+     "link": "https://www.band.com.br/politica/pec-da-seguranca-publica-entra-na-pauta-do-senado-para-terca-feira-3",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
      "source": "CNN Brasil",
      "source_id": "cnnbr",
      "title": "Alcolumbre pauta PEC da Segurança para sessão de terça-feira (3) no Senado",
@@ -1196,6 +1374,20 @@
      "ownership": "conglomerado"
     },
     {
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "Alcolumbre pauta PEC da Segurança para a próxima terça-feira",
+     "link": "https://veja.abril.com.br/politica/alcolumbre-pauta-pec-da-seguranca-para-a-proxima-terca-feira/",
+     "bias": 0.5,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/05/55283325148_58c95bfc07_c.jpg",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
      "source": "Jovem Pan",
      "source_id": "jovempan",
      "title": "Alcolumbre pauta para próxima terça-feira votação da PEC da Segurança Pública",
@@ -1219,7 +1411,7 @@
      "via": "fonte",
      "section": "politica",
      "section_label": "Política",
-     "image": "",
+     "image": "https://medias.revistaoeste.com/wp-content/uploads/2025/12/Alcolumbre-dosimetria.jpeg",
      "factuality": "mixed",
      "ownership": "independente"
     }
@@ -1227,17 +1419,17 @@
    "checks": []
   },
   {
-   "id": "s002",
+   "id": "s001",
    "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
    "summary": "Os ativos domésticos encerraram a semana após a reeleição de Lula ( PT ) para um quarto mandato com as maiores desvalorizações do ano. A Bolsa, que chegou a atingir o patamar histórico de 200 mil pontos neste mês, recuou 17,5% na semana e 9,21% em outubro. Leia mais (10/30/2026 - 17h45)",
    "section": "mercados",
    "section_label": "Mercado",
-   "avg_bias": 0.06,
+   "avg_bias": 0.05,
    "counts": {
     "L": 0,
-    "C": 11,
+    "C": 15,
     "R": 0,
-    "total": 11
+    "total": 15
    },
    "pct": {
     "L": 0,
@@ -1315,6 +1507,62 @@
      "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Ibovespa tem pior semana desde a pandemia",
+     "link": "https://sbtnews.sbt.com.br/noticia/eleicoes/ibovespa-tem-pior-semana-desde-a-pandemia",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "eleicoes",
+     "section_label": "Eleições",
+     "image": "https://sbtnews.sbt.com.br/imagens/Ibovespa_0a9c685553.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Bolsa tem pior semana pós-eleição em 37 anos",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/investidor-rejeita-urnas-e-bolsa-tem-pior-semana-pos-eleicao-em-37-anos",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/Fotografia_da_bolsa_de_valores_de_Sao_Paulo_e9a5a62948.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Bolsa recua mais de 18% na semana e tem 5ª maior queda desde o Plano Real",
+     "link": "https://www.band.com.br/economia/macroeconomia/bolsa-recua-mais-de-18-na-semana-e-tem-5a-maior-queda-desde-o-plano-real",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Dólar vai a R$ 5,44 e tem maior alta semanal desde crise do subprime em 2008",
+     "link": "https://www.band.com.br/economia/macroeconomia/dolar-vai-a-r-544-e-tem-maior-alta-semanal-desde-crise-do-subprime-em-2008",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
      "ownership": "individuo"
     },
     {
@@ -1405,22 +1653,22 @@
    "checks": []
   },
   {
-   "id": "s001",
+   "id": "s003",
    "title": "Itamaraty convoca encarregada de negócios da Argentina para pedir esclarecimentos sobre passagem de Flávio pelo país",
    "summary": "Chanceler argentino contesta informação do Itamaraty sobre pedido de explicações pela possível participação de autoridades do país na saída do senador brasileiro",
    "section": "politica",
    "section_label": "Política",
-   "avg_bias": 0.15,
+   "avg_bias": 0.14,
    "counts": {
     "L": 3,
-    "C": 4,
+    "C": 5,
     "R": 4,
-    "total": 11
+    "total": 12
    },
    "pct": {
-    "L": 27,
-    "C": 36,
-    "R": 36
+    "L": 25,
+    "C": 42,
+    "R": 33
    },
    "blindspot": null,
    "updated": "2026-10-31T02:04:20+00:00",
@@ -1494,6 +1742,20 @@
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/4042/live/3a1f9240-d4b6-11f1-a58c-6d26609b0a57.png",
      "factuality": "very_high",
      "ownership": "governo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Itamaraty convoca encarregada da Argentina para esclarecer passagem de Flávio no país",
+     "link": "https://www.band.com.br/colunistas/bastidores-de-brasilia/itamaraty-convoca-encarregada-da-argentina-para-esclarecer-passagem-de-flavio-no-pais",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunistas",
+     "section_label": "Opinião",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
     },
     {
      "source": "O Globo",
@@ -1583,25 +1845,25 @@
    "checks": []
   },
   {
-   "id": "s003",
+   "id": "s002",
    "title": "Bandeira tarifária em novembro segue verde, sem adicional na conta de luz",
    "summary": "A decisão mantém as contas de energia sem cobrança adicional pelo segundo mês consecutivo, diante das condições favoráveis de geração hidrelétrica",
    "section": "economia",
    "section_label": "Economia",
-   "avg_bias": 0.01,
+   "avg_bias": 0.03,
    "counts": {
     "L": 1,
-    "C": 7,
+    "C": 10,
     "R": 1,
-    "total": 9
+    "total": 12
    },
    "pct": {
-    "L": 11,
-    "C": 78,
-    "R": 11
+    "L": 8,
+    "C": 83,
+    "R": 8
    },
    "blindspot": "both",
-   "updated": "2026-10-31T02:01:05+00:00",
+   "updated": "2026-10-31T02:21:42+00:00",
    "articles": [
     {
      "source": "Brasil 247",
@@ -1674,6 +1936,34 @@
      "ownership": "corporacao"
     },
     {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Aneel mantém bandeira verde na conta de luz em novembro",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/aneel-mantem-bandeira-verde-na-conta-de-luz-em-novembro",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/linhas_de_transmissao_energia_f182b8e638.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "IstoÉ",
+     "source_id": "istoe",
+     "title": "Conta de luz seguirá sem cobrança extra em novembro, confirma Aneel",
+     "link": "https://istoe.com.br/conta-luz-sem-cobranca-extra-novembro-2026-aneel",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
      "source": "CNN Brasil",
      "source_id": "cnnbr",
      "title": "Aneel anuncia bandeira verde para a conta de luz de novembro",
@@ -1698,6 +1988,20 @@
      "section": "economia",
      "section_label": "Economia",
      "image": "https://s2-oglobo.glbimg.com/zArfOAumK4mfZKLWeV-XRD4JLMI=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/e/B/oXSs93S1KOGVPwRhg2EA/99483248-eco-rio-de-janeiro-rj-07-06-2022-privatizacao-de-empresas-de-energia-torres-de-transm.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Aneel: mês de novembro terá bandeira tarifária verde",
+     "link": "https://www.infomoney.com.br/brasil/aneel-mes-de-novembro-tera-bandeira-tarifaria-verde/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
      "factuality": "high",
      "ownership": "conglomerado"
     },
@@ -1734,6 +2038,156 @@
   },
   {
    "id": "s004",
+   "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
+   "summary": "A Binance foi alvo de um roubo recorde de US$ 6,3 bilhões (R$ 33 bilhões) na noite de quinta-feira (30), levantando dúvidas sobre como os sistemas da maior corretora de criptomoedas do mundo foram violados. Leia mais (10/30/2026 - 15h59)",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": 0.12,
+   "counts": {
+    "L": 0,
+    "C": 8,
+    "R": 1,
+    "total": 9
+   },
+   "pct": {
+    "L": 0,
+    "C": 89,
+    "R": 11
+   },
+   "blindspot": "both",
+   "updated": "2026-10-30T23:57:02+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "O que já se sabe sobre o ataque que roubou US$ 6,3 bilhões da Binance",
+     "link": "https://c-level.folha.uol.com.br/financas/2026/10/o-que-ja-se-sabe-sobre-o-ataque-que-roubou-us-63-bilhoes-da-binance.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
+     "link": "https://www.bbc.com/portuguese/articles/c820v2x0zvqko?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/31a8/live/31633420-d43b-11f1-93e1-3b657b665bcf.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Trump diz que os EUA investigam se a Coreia do Norte está por trás do ataque à Binance",
+     "link": "https://www.estadao.com.br/einvestidor/cripto/trump-diz-que-os-eua-investigam-se-a-coreia-do-norte-esta-por-tras-do-ataque-a-binance-npr/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "einvestidor",
+     "section_label": "Einvestidor",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Hackers fazem maior roubo de criptomoedas da história",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/hackers-fazem-maior-roubo-de-criptomoedas-da-historia",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/FOTOS_NEWS_16x9_Marcela_1_e02fe42aac.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "Como aconteceu o maior roubo de criptomoedas da história",
+     "link": "https://www.dw.com/pt-br/us-63-bilh%C3%B5es-como-aconteceu-o-maior-roubo-de-criptomoedas-da-hist%C3%B3ria/a-79810808",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/73140233_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Trump diz que EUA investigam se ataque hacker à Binance foi obra da Coreia do Norte",
+     "link": "https://oglobo.globo.com/economia/financas/noticia/2026/10/30/trump-diz-que-eua-investigam-se-ataque-hacker-a-binance-foi-obra-da-coreia-do-norte.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://s2-oglobo.glbimg.com/g_hSsfIV-ksXe_QIrUZ5Vzcw8uU=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/U/B/AqLKLkQKmaQGq9Z4O5Ig/473202402.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
+     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/ataque-hacker-a-binance-veja-quanto-movimentaram-as-cinco-maiores-invasoes-de-cripto-do-mundo.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://s2-oglobo.glbimg.com/PdXuFOC5LHFWcMFxZ3tvzaXo2m0=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/A/e/0KyrvtTfKYAxvzAO39bA/programming-g369f66bd2-1920.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "FT: O que se sabe sobre o ataque hacker de US$ 6,3 bilhões à Binance",
+     "link": "https://valor.globo.com/financas/criptomoedas/noticia/2026/10/30/ft-o-que-se-sabe-sobre-o-ataque-hacker-de-us-63-bilhes-binance.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "https://s2-valor.glbimg.com/p3RFzkYc0FJQLf8CTl5i031YUpo=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/W/y/bUCWbWS0msaDYnRQbODQ/bnb-binance.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Coreia do Norte realiza maior roubo de criptomoedas da história",
+     "link": "https://www.gazetadopovo.com.br/mundo/coreia-norte-realiza-maior-roubo-criptomoedas-historia/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s005",
    "title": "Acionistas da Raízen aprovam plano de segregação da unidade de açúcar e etanol do negócio de distribuição",
    "summary": "A decisão abre caminho para a implementação de uma ampla reestruturação financeira, já homologada pela Justiça e apoiada por 81,6% dos credores",
    "section": "",
@@ -1869,7 +2323,289 @@
    "checks": []
   },
   {
-   "id": "s006",
+   "id": "s010",
+   "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
+   "summary": "Os presidentes Donald Trump e Javier Milei enfrentam pressão para explicar a participação dos Estados Unidos e da Argentina na saída do ex-candidato presidencial Flávio Bolsonaro (PL) do Brasil.",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.12,
+   "counts": {
+    "L": 0,
+    "C": 5,
+    "R": 0,
+    "total": 5
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": "both",
+   "updated": "2026-10-30T22:56:42.492723+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro para os EUA",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/trump-e-milei-enfrentam-pressao-por-fuga-de-flavio-bolsonaro-para-os-eua.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/deutschewelle/2026/10/30/como-a-fuga-de-flavio-bolsonaro-pode-impactar-o-bolsonarismo.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
+     "link": "https://www.bbc.com/portuguese/articles/cw98zmy9gnj8o?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/1613/live/9d360b80-d3a7-11f1-a5cd-49637fcbd4e4.png",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
+     "link": "https://www.dw.com/pt-br/como-a-fuga-de-fl%C3%A1vio-bolsonaro-pode-impactar-o-bolsonarismo/a-79809715",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79545602_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "O que pode acontecer com Flávio Bolsonaro após fuga aos EUA",
+     "link": "https://www.dw.com/pt-br/inqu%C3%A9ritos-no-stf-e-faltas-no-senado-o-que-pode-acontecer-com-fl%C3%A1vio-ap%C3%B3s-fuga-para-os-eua/a-79796893",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79782764_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s009",
+   "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
+   "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": -0.24,
+   "counts": {
+    "L": 2,
+    "C": 2,
+    "R": 1,
+    "total": 5
+   },
+   "pct": {
+    "L": 40,
+    "C": 40,
+    "R": 20
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:56:24+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio",
+     "link": "https://www.diariodocentrodomundo.com.br/michelle-bolsonaro-defende-tarcisio-e-rebate-ataques-de-aliados-de-flavio/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+     "link": "https://www.cartacapital.com.br/politica/michelle-se-manifesta-pela-1a-vez-apos-derrota-de-flavio-e-diz-que-nao-e-momento-de-procurar-culpados/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Michelle defende Tarcísio e diz que Bolsonaro é grato a ele",
+     "link": "https://sbtnews.sbt.com.br/noticia/politica/michelle-defende-tarcisio-e-diz-que-bolsonaro-e-grato-a-ele",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://sbtnews.sbt.com.br/imagens/michelle_6a209bc041.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
+     "link": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/30/michelle-chama-jair-bolsonaro-de-lder-e-diz-que-ex-presidente-pede-unio-no-busca-por-culpados.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://s2-valor.glbimg.com/skbiMAJUBbyrsQcFtjGNo9Qw7fA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/Y/u/4B1yFoSiirMvfL6wOwjQ/55616330404-c6d7329dc7-k.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
+     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "eleicoes",
+     "section_label": "Eleições",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s008",
+   "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
+   "summary": "Dias Toffoli rejeitou o pedido de Filipe Martins para ir ao semiaberto e apontou falta de coerência na petição apresentada pela defesa.",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.38,
+   "counts": {
+    "L": 2,
+    "C": 2,
+    "R": 1,
+    "total": 5
+   },
+   "pct": {
+    "L": 40,
+    "C": 40,
+    "R": 20
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:50:13+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Toffoli barra pedido de Filipe Martins para deixar regime fechado",
+     "link": "https://www.diariodocentrodomundo.com.br/toffoli-barra-pedido-de-filipe-martins-para-deixar-regime-fechado/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Toffoli rejeita pedido de semiaberto para Filipe Martins, condenado por golpe",
+     "link": "https://www.brasil247.com/brasilia/toffoli-rejeita-pedido-de-semiaberto-para-filipe-martins-condenado-por-golpe/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasilia",
+     "section_label": "Brasilia",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/toffoli-nega-pedido-de-regime-semiaberto-para-filipe-martins-condenado-pela-trama-golpista.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Toffoli rejeita pedido de Filipe Martins para semiaberto",
+     "link": "https://sbtnews.sbt.com.br/noticia/politica/toffoli-rejeita-pedido-de-filipe-martins-para-semiaberto",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://sbtnews.sbt.com.br/imagens/bolsonaro_martins_5c32ee5e54.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Toffoli rejeita pedido de Filipe Martins para deixar regime fechado",
+     "link": "https://www.gazetadopovo.com.br/republica/toffoli-rejeita-pedido-de-filipe-martins-para-deixar-regime-fechado/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "republica",
+     "section_label": "Republica",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s007",
    "title": "Moraes decide que 'minuta do golpe' deve ser armazenada como prova da trama golpista",
    "summary": "O ministro do Supremo Tribunal Federal (STF) Alexandre de Moraes decidiu que a chamada ‘minuta do golpe’ deve ser armazenada pela Polícia Federal como prova da trama golpista. Na mesma decisão, ele também determinou o destino de outros objetos apreendidos durante as investigações, como dois passapor",
    "section": "",
@@ -1963,73 +2699,153 @@
    "checks": []
   },
   {
-   "id": "s009",
-   "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
-   "summary": "Dias Toffoli rejeitou o pedido de Filipe Martins para ir ao semiaberto e apontou falta de coerência na petição apresentada pela defesa.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.48,
+   "id": "s017",
+   "title": "Leão XIV se torna o 1º papa a votar em uma eleição geral nos EUA",
+   "summary": "Vaticano confirmou que pontífice, o primeiro da história da Igreja Católica a participar do pleito, enviou cédula eleitoral por correspondência para Chicago",
+   "section": "internacional",
+   "section_label": "Mundo",
+   "avg_bias": 0.3,
    "counts": {
-    "L": 2,
-    "C": 1,
+    "L": 0,
+    "C": 3,
     "R": 1,
     "total": 4
    },
    "pct": {
-    "L": 50,
-    "C": 25,
+    "L": 0,
+    "C": 75,
     "R": 25
    },
-   "blindspot": null,
-   "updated": "2026-10-31T00:50:13+00:00",
+   "blindspot": "left",
+   "updated": "2026-10-30T19:28:12.311000+00:00",
    "articles": [
     {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Toffoli barra pedido de Filipe Martins para deixar regime fechado",
-     "link": "https://www.diariodocentrodomundo.com.br/toffoli-barra-pedido-de-filipe-martins-para-deixar-regime-fechado/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Toffoli rejeita pedido de semiaberto para Filipe Martins, condenado por golpe",
-     "link": "https://www.brasil247.com/brasilia/toffoli-rejeita-pedido-de-semiaberto-para-filipe-martins-condenado-por-golpe/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasilia",
-     "section_label": "Brasilia",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/toffoli-nega-pedido-de-regime-semiaberto-para-filipe-martins-condenado-pela-trama-golpista.htm",
-     "bias": -0.2,
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Papa Leão XIV vota por correio em eleições dos EUA",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/midtertms-papa-leao-xiv-vota-por-correio-em-eleicao-dos-eua",
+     "bias": 0.0,
      "bucket": "C",
      "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/Papa_Leao_XIV_Reuters_Yara_Nardi_229c838c7a.JPG",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Leão XIV se torna o 1º papa a votar em uma eleição geral nos EUA",
+     "link": "https://www.band.com.br/internacional/leao-xiv-se-torna-o-1o-papa-a-votar-em-uma-eleicao-geral-nos-eua",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
      "image": "",
      "factuality": "high",
-     "ownership": "corporacao"
+     "ownership": "individuo"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "Papa Leão 14 vota por correio em eleição dos EUA",
+     "link": "https://www.dw.com/pt-br/papa-le%C3%A3o-14-vota-por-correio-em-elei%C3%A7%C3%A3o-dos-eua/a-79812579",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79720765_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
     },
     {
      "source": "Gazeta do Povo",
      "source_id": "gazeta",
-     "title": "Toffoli rejeita pedido de Filipe Martins para deixar regime fechado",
-     "link": "https://www.gazetadopovo.com.br/republica/toffoli-rejeita-pedido-de-filipe-martins-para-deixar-regime-fechado/",
+     "title": "Papa Leão XIV vota nos EUA e faz história inédita na Igreja Católica",
+     "link": "https://www.gazetadopovo.com.br/mundo/papa-leao-xiv-vota-nos-eua-e-faz-historia-inedita-na-igreja-catolica/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s016",
+   "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
+   "summary": "Perícia indica alterações em centenas de arquivos após apreensão pela PF; advogados questionam confiabilidade das provas",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": 0.4,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 0,
+    "C": 75,
+    "R": 25
+   },
+   "blindspot": "left",
+   "updated": "2026-10-30T21:04:42+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Defesa de Vorcaro aponta adulteração em celular apreendido",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/defesa-de-vorcaro-aponta-adulteracao-em-celular-apreendido",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/daniel_vorcaro_ee817db6e4.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
+     "link": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/30/associacao-de-peritos-diz-que-analise-contratada-pela-defesa-de-vorcaro-nao-comprova-adulteracao-no-celular-do-banqueiro.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://s2-oglobo.glbimg.com/8s8nzcGtI5KO-sOuu7oNFU29FLo=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/Z/S/Wp89rmTtmYgByt4nhkAQ/iped10299953236259008216.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Peritos da PF dizem que questionamento de defesa de Vorcaro não prova adulteração do celular",
+     "link": "https://valor.globo.com/financas/noticia/2026/10/30/peritos-da-pf-dizem-que-questionamento-de-defesa-de-vorcaro-no-prova-adulterao-do-celular.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "https://s2-valor.glbimg.com/9QjqcH97bym30c2ef-FoKfJ2xz8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/t/k/wRSyB6SFCIlV8N0BGjAg/456271290.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Peritos da PF rebatem laudo da defesa de Vorcaro",
+     "link": "https://www.gazetadopovo.com.br/republica/peritos-da-pf-rebatem-laudo-da-defesa-de-vorcaro/",
      "bias": 1.2,
      "bucket": "R",
      "via": "fonte",
@@ -2043,7 +2859,247 @@
    "checks": []
   },
   {
-   "id": "s008",
+   "id": "s015",
+   "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
+   "summary": "acidente que matou o apucaranense Pedro Idalgo Filho, de 57 anos, e outras cinco pessoas na BR-277, em Morretes, no Litoral do Paraná, teve um desfecho no Tribunal do Júri dez anos após a tragédia. ...",
+   "section": "sao-paulo",
+   "section_label": "São Paulo",
+   "avg_bias": 0.33,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 0,
+    "C": 75,
+    "R": 25
+   },
+   "blindspot": "left",
+   "updated": "2026-10-30T23:07:10+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Motorista é condenado a 52 anos de prisão por acidente que matou apucaranense e outros cinco",
+     "link": "https://tnonline.uol.com.br/noticias/apucarana/motorista-e-condenado-a-52-anos-de-prisao-por-acidente-que-matou-apucaranense-e-outros-cinco-1169924",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "apucarana",
+     "section_label": "Apucarana",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
+     "link": "https://www.estadao.com.br/sao-paulo/quem-e-fernando-sastre-condutor-de-porsche-condenado-a-17-anos-de-prisao-npr/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sao-paulo",
+     "section_label": "São Paulo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Caso Porsche: motorista é condenado a 17 anos de prisão",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/caso-porsche-motorista-e-condenado-a-17-anos-de-prisao",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/motorista_porsche_683cab36b6_b7841fcd9d.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Empresário do caso Porsche é condenado a 17 anos de prisão",
+     "link": "https://revistaoeste.com/brasil/empresario-do-caso-porsche-e-condenado-a-17-anos-de-prisao/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s014",
+   "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
+   "summary": "A Meta fechou um acordo com uma adolescente que acusou a empresa de projetar o Instagram e o Facebook para causar dependência, o que teria provocado problemas de saúde mental e transtornos alimentares, disseram nesta sexta-feira (30) os advogados da jovem. Leia mais (10/30/2026 - 17h06)",
+   "section": "tec",
+   "section_label": "Tecnologia",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 4,
+    "R": 0,
+    "total": 4
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": "both",
+   "updated": "2026-10-30T23:32:20+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
+     "link": "https://www1.folha.uol.com.br/tec/2026/10/meta-faz-acordo-em-acao-sobre-vicio-em-redes-sociais-snapchat-segue-no-processo.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "tec",
+     "section_label": "Tecnologia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Meta faz acordo com adolescente nos EUA por vício digital",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/meta-faz-acordo-com-adolescente-nos-eua-por-vicio-digital",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/Meta_9f59777a9b.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Meta faz acordo com adolescente que acusava redes sociais de causar vício",
+     "link": "https://www.cnnbrasil.com.br/economia/money/tecnologia/meta-faz-acordo-com-adolescente-que-acusava-redes-sociais-de-causar-vicio/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
+     "link": "https://www.infomoney.com.br/business/global/meta-fecha-acordo-em-processo-sobre-vicio-em-redes-sociais-e-evita-julgamento-nos-eua/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "business",
+     "section_label": "Business",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s013",
+   "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
+   "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
+   "section": "colunas",
+   "section_label": "Opinião",
+   "avg_bias": -0.8,
+   "counts": {
+    "L": 2,
+    "C": 2,
+    "R": 0,
+    "total": 4
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": "right",
+   "updated": "2026-10-31T00:54:35+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Democratas cobram que Trump reconheça vitória de Lula: “Negacionismo eleitoral”",
+     "link": "https://www.diariodocentrodomundo.com.br/democratas-eua-trump-reconheca-vitoria-lula-brasil/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
+     "link": "https://www.brasil247.com/mundo/democratas-criticam-negacionismo-eleitoral-de-trump-e-exigem-reconhecimento-da-vitoria-de-lula/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
+     "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/deputados-democratas-exigem-em-nota-que-trump-reconheca-a-vitoria-de-lula-no-brasil.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "section_label": "Opinião",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Democratas cobram que Trump reconheça vitória de Lula",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/democratas-cobram-que-trump-reconheca-vitoria-de-lula",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/trump_lula_2ec5b51cb9.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s012",
    "title": "Atores mostram bastidores da cena do primeiro beijo de Mau Mau e Felipe em 'Quem Ama Cuida'",
    "summary": "Os atores João Victor Gonçalves e Pietro Antonelli divulgaram em suas redes sociais nesta sexta-feira (30) um vídeo com os bastidores do beijo entre Mau Mau e Felipe, personagens que interpretam em \" Quem Ama Cuida \". A previsão é que a cena seja exibida no capítulo desta sexta-feira (30). Leia mais",
    "section": "televisao",
@@ -2123,209 +3179,11 @@
    "checks": []
   },
   {
-   "id": "s019",
-   "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
-   "summary": "Em nota, organização argumenta que eventuais modificações encontradas nos registros digitais do aparelho não implicam diretamente na 'integridade' do conteúdo probatório",
-   "section": "politica",
-   "section_label": "Política",
-   "avg_bias": 0.53,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 67,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T21:04:42+00:00",
-   "articles": [
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
-     "link": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/30/associacao-de-peritos-diz-que-analise-contratada-pela-defesa-de-vorcaro-nao-comprova-adulteracao-no-celular-do-banqueiro.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://s2-oglobo.glbimg.com/8s8nzcGtI5KO-sOuu7oNFU29FLo=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/Z/S/Wp89rmTtmYgByt4nhkAQ/iped10299953236259008216.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Peritos da PF dizem que questionamento de defesa de Vorcaro não prova adulteração do celular",
-     "link": "https://valor.globo.com/financas/noticia/2026/10/30/peritos-da-pf-dizem-que-questionamento-de-defesa-de-vorcaro-no-prova-adulterao-do-celular.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "section_label": "Economia",
-     "image": "https://s2-valor.glbimg.com/9QjqcH97bym30c2ef-FoKfJ2xz8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/t/k/wRSyB6SFCIlV8N0BGjAg/456271290.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Peritos da PF rebatem laudo da defesa de Vorcaro",
-     "link": "https://www.gazetadopovo.com.br/republica/peritos-da-pf-rebatem-laudo-da-defesa-de-vorcaro/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "republica",
-     "section_label": "Republica",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s018",
-   "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
-   "summary": "A Binance foi alvo de um roubo recorde de US$ 6,3 bilhões (R$ 33 bilhões) na noite de quinta-feira (30), levantando dúvidas sobre como os sistemas da maior corretora de criptomoedas do mundo foram violados. Leia mais (10/30/2026 - 15h59)",
-   "section": "economia",
-   "section_label": "Economia",
-   "avg_bias": 0.03,
-   "counts": {
-    "L": 0,
-    "C": 3,
-    "R": 0,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T21:59:00+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "O que já se sabe sobre o ataque que roubou US$ 6,3 bilhões da Binance",
-     "link": "https://c-level.folha.uol.com.br/financas/2026/10/o-que-ja-se-sabe-sobre-o-ataque-que-roubou-us-63-bilhoes-da-binance.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
-     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/ataque-hacker-a-binance-veja-quanto-movimentaram-as-cinco-maiores-invasoes-de-cripto-do-mundo.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://s2-oglobo.glbimg.com/PdXuFOC5LHFWcMFxZ3tvzaXo2m0=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/A/e/0KyrvtTfKYAxvzAO39bA/programming-g369f66bd2-1920.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "FT: O que se sabe sobre o ataque hacker de US$ 6,3 bilhões à Binance",
-     "link": "https://valor.globo.com/financas/criptomoedas/noticia/2026/10/30/ft-o-que-se-sabe-sobre-o-ataque-hacker-de-us-63-bilhes-binance.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "section_label": "Economia",
-     "image": "https://s2-valor.glbimg.com/p3RFzkYc0FJQLf8CTl5i031YUpo=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/W/y/bUCWbWS0msaDYnRQbODQ/bnb-binance.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s017",
-   "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
-   "summary": "acidente que matou o apucaranense Pedro Idalgo Filho, de 57 anos, e outras cinco pessoas na BR-277, em Morretes, no Litoral do Paraná, teve um desfecho no Tribunal do Júri dez anos após a tragédia. ...",
-   "section": "sao-paulo",
-   "section_label": "São Paulo",
-   "avg_bias": 0.43,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 67,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:07:10+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Motorista é condenado a 52 anos de prisão por acidente que matou apucaranense e outros cinco",
-     "link": "https://tnonline.uol.com.br/noticias/apucarana/motorista-e-condenado-a-52-anos-de-prisao-por-acidente-que-matou-apucaranense-e-outros-cinco-1169924",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "apucarana",
-     "section_label": "Apucarana",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
-     "link": "https://www.estadao.com.br/sao-paulo/quem-e-fernando-sastre-condutor-de-porsche-condenado-a-17-anos-de-prisao-npr/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "sao-paulo",
-     "section_label": "São Paulo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "Empresário do caso Porsche é condenado a 17 anos de prisão",
-     "link": "https://revistaoeste.com/brasil/empresario-do-caso-porsche-e-condenado-a-17-anos-de-prisao/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s016",
-   "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
-   "summary": "A Meta fechou um acordo com uma adolescente que acusou a empresa de projetar o Instagram e o Facebook para causar dependência, o que teria provocado problemas de saúde mental e transtornos alimentares, disseram nesta sexta-feira (30) os advogados da jovem. Leia mais (10/30/2026 - 17h06)",
-   "section": "tec",
-   "section_label": "Tecnologia",
+   "id": "s028",
+   "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
+   "summary": "Em primeira declaração pública após a tentativa frustrada de execução, Christa Pike afirmou que ficou \"profundamente magoada com a incompetência\"",
+   "section": "pt-br",
+   "section_label": "Pt-br",
    "avg_bias": 0.0,
    "counts": {
     "L": 0,
@@ -2339,47 +3197,113 @@
     "R": 0
    },
    "blindspot": null,
-   "updated": "2026-10-30T23:32:20+00:00",
+   "updated": "2026-10-30T20:34:04+00:00",
    "articles": [
     {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
-     "link": "https://www1.folha.uol.com.br/tec/2026/10/meta-faz-acordo-em-acao-sobre-vicio-em-redes-sociais-snapchat-segue-no-processo.shtml",
-     "bias": -0.3,
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Sobrevivente de injeção letal diz estar com \"dor na alma\"",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/sobrevivente-de-injecao-letal-diz-estar-com-dor-na-alma",
+     "bias": 0.0,
      "bucket": "C",
      "via": "fonte",
-     "section": "tec",
-     "section_label": "Tecnologia",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/Copia_de_base_foto_quadro_SBTN_2026_10_02_T181639_810_452d558c05.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Christa Pike, que sobreviveu à injeção letal nos EUA: 'Profundamente abalada'",
+     "link": "https://www.band.com.br/internacional/christa-pike-que-sobreviveu-a-injecao-letal-nos-eua-profundamente-abalada",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
     },
     {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Meta faz acordo com adolescente que acusava redes sociais de causar vício",
-     "link": "https://www.cnnbrasil.com.br/economia/money/tecnologia/meta-faz-acordo-com-adolescente-que-acusava-redes-sociais-de-causar-vicio/",
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
+     "link": "https://www.dw.com/pt-br/mulher-que-sobreviveu-%C3%A0-inje%C3%A7%C3%A3o-letal-nos-eua-chama-respons%C3%A1veis-de-incompetentes/a-79812600",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79512677_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s027",
+   "title": "Com Sônia Guajajara, comitiva vai a MS após denúncias de retaliação eleitoral contra indígenas",
+   "summary": "Apib registra mais de 30 casos de violência após as eleições; relatos envolvem casa incendiada, destruição de itens sagrados e ofensas gravadas por funcionários públicos",
+   "section": "blogs",
+   "section_label": "Opinião",
+   "avg_bias": 0.03,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:15:43+00:00",
+   "articles": [
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Governo cria força-tarefa para apurar ataques a indígenas no MS",
+     "link": "https://www.poder360.com.br/poder-brasil/governo-cria-forca-tarefa-para-apurar-ataques-a-indigenas-no-ms/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-brasil",
+     "section_label": "Poder-brasil",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Governo envia comitiva para apurar denúncias de ataques contra indígenas no MS",
+     "link": "https://www.band.com.br/colunistas/bastidores-de-brasilia/governo-envia-comitiva-para-apurar-denuncias-de-ataques-contra-indigenas-no-ms",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunistas",
+     "section_label": "Opinião",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Com Sônia Guajajara, comitiva vai a MS após denúncias de retaliação eleitoral contra indígenas",
+     "link": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/10/com-sonia-guajajara-comitiva-vai-a-ms-apos-denuncias-de-retaliacao-eleitoral-contra-indigenas.ghtml",
      "bias": 0.1,
      "bucket": "C",
      "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
-     "link": "https://www.infomoney.com.br/business/global/meta-fecha-acordo-em-processo-sobre-vicio-em-redes-sociais-e-evita-julgamento-nos-eua/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "business",
-     "section_label": "Business",
-     "image": "",
+     "section": "blogs",
+     "section_label": "Opinião",
+     "image": "https://s2-oglobo.glbimg.com/bLNLgDVmtdNS89D1qADIR5uKPng=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/p/5/sYNgaZRAKtSdTGJCsgHA/106382874-brazils-minister-of-indigenous-peoples-and-longtime-activist-sonia-guajajara-gestures.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
     }
@@ -2387,7 +3311,7 @@
    "checks": []
   },
   {
-   "id": "s015",
+   "id": "s026",
    "title": "Justiça bloqueia R$10,8 bilhões de alvos da Operação Carbono Oculto a pedido da PGE-SP",
    "summary": "Decisão atende a pedido da PGE-SP e alcança 32 alvos suspeitos de usar fundos e empresas para ocultar patrimônio e dificultar cobranças tributárias",
    "section": "brasil",
@@ -2453,139 +3377,73 @@
    "checks": []
   },
   {
-   "id": "s014",
-   "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-   "summary": "A senadora eleita vinha sendo cobrada por aliados por, supostamente, ter ignorado a derrota do enteado nas urnas",
-   "section": "politica",
-   "section_label": "Política",
-   "avg_bias": 0.1,
-   "counts": {
-    "L": 1,
-    "C": 1,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 33,
-    "C": 33,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:56:24+00:00",
-   "articles": [
-    {
-     "source": "CartaCapital",
-     "source_id": "carta",
-     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
-     "link": "https://www.cartacapital.com.br/politica/michelle-se-manifesta-pela-1a-vez-apos-derrota-de-flavio-e-diz-que-nao-e-momento-de-procurar-culpados/",
-     "bias": -1.2,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-     "link": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/30/michelle-chama-jair-bolsonaro-de-lder-e-diz-que-ex-presidente-pede-unio-no-busca-por-culpados.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://s2-valor.glbimg.com/skbiMAJUBbyrsQcFtjGNo9Qw7fA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/Y/u/4B1yFoSiirMvfL6wOwjQ/55616330404-c6d7329dc7-k.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
-     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "eleicoes",
-     "section_label": "Eleições",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s013",
-   "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
-   "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": 0.3,
+   "id": "s025",
+   "title": "Desemprego cai a 5,2% e atinge menor nível para setembro desde 2012",
+   "summary": "Leia mais (10/30/2026 - 17h55)",
+   "section": "economia",
+   "section_label": "Economia",
+   "avg_bias": -0.1,
    "counts": {
     "L": 0,
-    "C": 2,
-    "R": 1,
+    "C": 3,
+    "R": 0,
     "total": 3
    },
    "pct": {
     "L": 0,
-    "C": 67,
-    "R": 33
+    "C": 100,
+    "R": 0
    },
    "blindspot": null,
-   "updated": "2026-10-30T23:57:02+00:00",
+   "updated": "2026-10-30T23:55:00+00:00",
    "articles": [
     {
-     "source": "BBC Brasil",
-     "source_id": "bbcbr",
-     "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
-     "link": "https://www.bbc.com/portuguese/articles/c820v2x0zvqko?at_medium=RSS&at_campaign=rss",
-     "bias": -0.2,
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "No buraco desde 2012",
+     "link": "https://www1.folha.uol.com.br/blogs/claudio-hebdo/2026/10/no-buraco-desde-2012.shtml",
+     "bias": -0.3,
      "bucket": "C",
      "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/31a8/live/31633420-d43b-11f1-93e1-3b657b665bcf.jpg",
-     "factuality": "very_high",
-     "ownership": "governo"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Trump diz que os EUA investigam se a Coreia do Norte está por trás do ataque à Binance",
-     "link": "https://www.estadao.com.br/einvestidor/cripto/trump-diz-que-os-eua-investigam-se-a-coreia-do-norte-esta-por-tras-do-ataque-a-binance-npr/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "einvestidor",
-     "section_label": "Einvestidor",
+     "section": "blogs",
+     "section_label": "Opinião",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
     },
     {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Coreia do Norte realiza maior roubo de criptomoedas da história",
-     "link": "https://www.gazetadopovo.com.br/mundo/coreia-norte-realiza-maior-roubo-criptomoedas-historia/",
-     "bias": 1.2,
-     "bucket": "R",
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Desemprego cai para 5,2%, menor taxa no 3º tri desde 2012",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/desemprego-cai-para-5-2-menor-taxa-do-3-tri-desde-2012",
+     "bias": 0.0,
+     "bucket": "C",
      "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/Apos_atingir_minima_historica_desemprego_subiu_para_6_8_no_trimestre_encerrado_em_fevereiro_Divulgacao_Arquivo_Agencia_Brasil_cbece6882c.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Desemprego cai a 5,2% e atinge menor nível para setembro desde 2012",
+     "link": "https://www.band.com.br/economia/desemprego-cai-a-52-e-atinge-menor-nivel-para-setembro-desde-2012",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
      "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
+     "factuality": "high",
+     "ownership": "individuo"
     }
    ],
    "checks": []
   },
   {
-   "id": "s012",
+   "id": "s024",
    "title": "PM para carro sem placa e encontra R$ 100 mil de influenciador Toguro, que recupera valores ao comprovar origem do dinheiro",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "brasil",
@@ -2651,64 +3509,64 @@
    "checks": []
   },
   {
-   "id": "s011",
-   "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
-   "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
-   "section": "colunas",
-   "section_label": "Opinião",
-   "avg_bias": -1.07,
+   "id": "s023",
+   "title": "Com duas esposas no palco, prefeito do Maranhão vira assunto nas redes",
+   "summary": "Político abraçou companheiras e cenas foram registradas em vídeo pela plateia",
+   "section": "jornalismo",
+   "section_label": "Mídia",
+   "avg_bias": -0.07,
    "counts": {
-    "L": 2,
-    "C": 1,
+    "L": 0,
+    "C": 3,
     "R": 0,
     "total": 3
    },
    "pct": {
-    "L": 67,
-    "C": 33,
+    "L": 0,
+    "C": 100,
     "R": 0
    },
    "blindspot": null,
-   "updated": "2026-10-31T00:54:35+00:00",
+   "updated": "2026-10-31T01:30:01+00:00",
    "articles": [
     {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Democratas cobram que Trump reconheça vitória de Lula: “Negacionismo eleitoral”",
-     "link": "https://www.diariodocentrodomundo.com.br/democratas-eua-trump-reconheca-vitoria-lula-brasil/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
-     "link": "https://www.brasil247.com/mundo/democratas-criticam-negacionismo-eleitoral-de-trump-e-exigem-reconhecimento-da-vitoria-de-lula/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
-     "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/deputados-democratas-exigem-em-nota-que-trump-reconheca-a-vitoria-de-lula-no-brasil.shtml",
-     "bias": -0.3,
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Com duas esposas no palco, prefeito do Maranhão vira assunto nas redes",
+     "link": "https://www.redetv.uol.com.br/jornalismo/da-para-acreditar/com-duas-esposas-no-palco-prefeito-do-maranhao-vira-assunto-nas-redes",
+     "bias": -0.2,
      "bucket": "C",
      "via": "fonte",
-     "section": "colunas",
-     "section_label": "Opinião",
+     "section": "jornalismo",
+     "section_label": "Mídia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "VÍDEO: Prefeito do Maranhão causa alvoroço ao aparecer com duas esposas no mesmo palco",
+     "link": "https://www.terra.com.br/diversao/gente/video-prefeito-do-maranhao-causa-alvoroco-ao-aparecer-com-duas-esposas-no-mesmo-palco,e15e096cbadfaf8d9116a60f18be0aafnezu6b8p.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "diversao",
+     "section_label": "Diversao",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Prefeito do Maranhão surge com duas esposas em show do Natanzinho Lima",
+     "link": "https://www.band.com.br/entretenimento/celebridades/prefeito-do-maranhao-surge-com-duas-esposas-em-show-do-natanzinho-lima",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "entretenimento",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -2717,7 +3575,73 @@
    "checks": []
   },
   {
-   "id": "s010",
+   "id": "s022",
+   "title": "Lula procura ministro da Defesa para quarto mandato e Múcio indica uma mulher",
+   "summary": "Presidente inicia novo mandato em 5 de janeiro de 2027 com propostas para economia, saúde, educação e segurança pública, mas terá de negociar com um Congresso de oposição fortalecido para avançar em sua agenda.",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": 0.23,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 1,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 67,
+    "R": 33
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:42:44+00:00",
+   "articles": [
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "As propostas do presidente Lula para o seu quarto mandato em 8 áreas",
+     "link": "https://www.bbc.com/portuguese/articles/cm2ke83x1785o?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/5e33/live/2ec73440-d211-11f1-b3b6-c1e79e957e40.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Lula procura ministro da Defesa para quarto mandato e Múcio indica uma mulher",
+     "link": "https://www.estadao.com.br/politica/lula-procura-ministro-da-defesa-para-quarto-mandato-e-mucio-indica-uma-mulher/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Crusoé",
+     "source_id": "crusoe",
+     "title": "A economia no quarto mandato de Lula",
+     "link": "https://crusoe.com.br/noticias/a-economia-no-quarto-mandato-de-lula/",
+     "bias": 1.0,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s021",
    "title": "Surto de Ebola na RD Congo deixa mais de cinco mil mortos, diz governo",
    "summary": "30 Out (Reuters) - O número de mortos pelo surto de Ebola ?na República Democrática do ?Congo ultrapassou 5.000, segundo dados divulgados pelo governo nesta sexta-feira, enquanto as autoridades ainda ?não ?encontraram ?uma maneira de controlar a ?epidemia de Ebola ?mais mortal já registrada no país.",
    "section": "internacional",
@@ -2783,9 +3707,363 @@
    "checks": []
   },
   {
-   "id": "s050",
+   "id": "s020",
+   "title": "As comodidades da mansão de Renato Aragão, que foi penhorada pela Justiça",
+   "summary": "Decisão da 12ª Vara da Fazenda Pública atende a pedido do Município do Rio para cobrança de débitos de IPTU",
+   "section": "cultura",
+   "section_label": "Cultura",
+   "avg_bias": 0.17,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 1,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 67,
+    "R": 33
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:50:01+00:00",
+   "articles": [
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "TJ-RJ determina penhora de mansão do humorista Renato Aragão",
+     "link": "https://www.poder360.com.br/poder-gente/tj-rj-determina-penhora-de-mansao-do-humorista-renato-aragao/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-gente",
+     "section_label": "Poder",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Justiça manda penhorar mansão de Renato Aragão por dívida",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/justica-manda-penhorar-mansao-de-renato-aragao-por-divida",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/Mansao_de_Renato_Aragao_09c22695a9.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "As comodidades da mansão de Renato Aragão, que foi penhorada pela Justiça",
+     "link": "https://veja.abril.com.br/cultura/as-comodidades-da-mansao-de-renato-aragao-que-foi-penhorada-pela-justica/",
+     "bias": 0.5,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "cultura",
+     "section_label": "Cultura",
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/10/Untitled-design-25.jpg",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s019",
+   "title": "Jockey faz acordo com Prefeitura de SP, ganha desconto de R$ 643 milhões em dívida e promete parque de 85 mil m² para 2028",
+   "summary": "A Prefeitura de São Paulo e o Jockey Club assinaram nesta quinta-feira, 29, um acordo para pagamento da dívida quase bilionária do hipódromo com o Município em troca de transformar uma parcela de seu terreno em um parque público. O clube também pagou R$ 228 milhões à vista para encerrar o débito.",
+   "section": "sp",
+   "section_label": "São Paulo",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:16:32+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Prefeitura de SP e Jockey fecham acordo para pagamento de dívida e espaço terá parque público",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/prefeitura-de-sp-e-jockey-fecham-acordo-para-pagamento-de-divida-e-espaco-tera-parque-publico.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Prefeitura de SP e Jockey fecham acordo para pagamento de dívida e espaço terá parque público",
+     "link": "https://www.estadao.com.br/sao-paulo/prefeitura-de-sp-e-jockey-fecham-acordo-para-pagamento-de-divida-e-espaco-tera-parque-publico/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sao-paulo",
+     "section_label": "São Paulo",
+     "image": "https://www.estadao.com.br/resizer/v2/PPSZWSZXUNCGLNW2HSTM223YBA.jpg?auth=027b7c94629c8353eb660e98460b410edc3700552b8ab61e02f1c4caac3ff10b&smart=true&width=5184&height=3456",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Jockey faz acordo com Prefeitura de SP, ganha desconto de R$ 643 milhões em dívida e promete parque de 85 mil m² para 2028",
+     "link": "https://g1.globo.com/sp/sao-paulo/noticia/2026/10/30/jockey-faz-acordo-com-prefeitura-de-sp-ganha-desconto-de-r-643-milhoes-em-divida-e-promete-parque-de-85-mil-m-para-2028.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sp",
+     "section_label": "São Paulo",
+     "image": "https://s2-g1.glbimg.com/Nuk4S2VOetLsMvC38gsBPQJVQXI=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/B/f/5O3HIfTbakiEvaHtfxyQ/alfribeiro01260121.114002-1-.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s018",
+   "title": "Mauro Vieira e Marco Rubio se encontram no G20 e acertam reunião em novembro",
+   "summary": "Mauro Vieira e Marco Rubio se cumprimentaram na abertura da reunião de chanceleres do G20, em Atlanta, sem previsão de encontro bilateral.",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": -0.97,
+   "counts": {
+    "L": 2,
+    "C": 1,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 67,
+    "C": 33,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:22:42+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "O primeiro encontro de Mauro Vieira e Marco Rubio após a eleição brasileira",
+     "link": "https://www.diariodocentrodomundo.com.br/mauro-vieira-marco-rubio-cumprimento-g20-atlanta/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Mauro Vieira e Marco Rubio se cumprimentam rapidamente no G20 em meio à tensão entre Brasil e EUA",
+     "link": "https://www.brasil247.com/brasil/mauro-vieira-e-marco-rubio-se-cumprimentam-rapidamente-no-g20-em-meio-a-tensao-entre-brasil-e-eua/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Mauro Vieira e Marco Rubio se encontram no G20 e acertam reunião em novembro",
+     "link": "https://g1.globo.com/politica/noticia/2026/10/30/mauro-vieira-e-marco-rubio-se-encontram-no-g20-e-acertam-reuniao-em-novembro.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://s2-g1.glbimg.com/6S0vHljxqkaE49B00WRVtg79JDY=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/n/k/5yo09ZSpe9BKa6ir7KBA/whatsapp-image-2026-10-30-at-20.02.53.jpeg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s076",
+   "title": "TSE: violência contra mulher pode gerar inelegibilidade",
+   "summary": "Ministros decidiram que lesão corporal contra mulher está entre os crimes que impedem candidatura pela Lei da Ficha Limpa",
+   "section": "brasil",
+   "section_label": "Brasil",
+   "avg_bias": 0.6,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T18:06:12+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "TSE: violência contra mulher pode gerar inelegibilidade",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/tse-violencia-contra-mulher-pode-gerar-inelegibilidade",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/image_1140_7c0b5668ef4bf4d8e218b1bf85fb70f4_6178a2e3ba.jpeg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "TSE decide que condenação por violência contra mulher pode barrar candidatura",
+     "link": "https://www.gazetadopovo.com.br/republica/tse-condenacao-violencia-contra-mulher-pode-barrar-candidatura/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "republica",
+     "section_label": "Republica",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s074",
+   "title": "Feriado de Finados terá chuvas fortes, raios e risco de temporais na região",
+   "summary": "Enquanto o Acre e Roraima registram temperaturas acima dos 35°C, Manaus e Belém têm previsão de chuva e tempo nublado no feriado",
+   "section": "nacional",
+   "section_label": "Nacional",
+   "avg_bias": -0.6,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T20:25:22+00:00",
+   "articles": [
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Calor e temporais marcam feriado de Finados na região Norte",
+     "link": "https://www.cartacapital.com.br/cartalab/calor-e-temporais-marcam-feriado-de-finados-na-regiao-norte/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "cartalab",
+     "section_label": "Dados",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Feriado de Finados terá chuvas fortes, raios e risco de temporais na região",
+     "link": "https://www.band.com.br/nacional/sp/feriado-de-finados-tera-chuvas-fortes-raios-e-risco-de-temporais-no-estado",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "nacional",
+     "section_label": "Nacional",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s073",
+   "title": "Robô 'guarda-costas' levanta carro e enfrenta homem armado em simulação de resgate",
+   "summary": "empresa chinesa Unitree apresentou o H2-X, um novo robô humanoide desenvolvido para atuar como uma espécie de \"guarda-costas\" e auxiliar em situações de emergência. Em um vídeo promocional, a máquin...",
+   "section": "cotidiano",
+   "section_label": "Cotidiano",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T21:11:08.613692+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Robô 'guarda-costas' levanta carro e enfrenta homem armado em simulação de resgate",
+     "link": "https://tnonline.uol.com.br/noticias/cotidiano/robo-guarda-costas-levanta-carro-e-enfrenta-homem-armado-em-simulacao-de-resgate-1169908",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "cotidiano",
+     "section_label": "Cotidiano",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "Robô guarda-costas da China levanta dúvidas sobre segurança",
+     "link": "https://www.dw.com/pt-br/rob%C3%B4-guarda-costas-da-china-levanta-d%C3%BAvidas-sobre-seguran%C3%A7a/a-79779555",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79763206_605.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s072",
    "title": "Lula vai lidar com sua herança maldita",
-   "summary": "No atual cenário, não existe solução indolor. Um duro ajuste fiscal será necessário para estabilizar a dívida pública.",
+   "summary": "Em 2027, não haverá antecessor para culpar. A herança agora é dele",
    "section": "vozes",
    "section_label": "Opinião",
    "avg_bias": 1.3,
@@ -2835,12 +4113,12 @@
    "checks": []
   },
   {
-   "id": "s049",
-   "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
-   "summary": "omo a fuga de Flávio Bolsonaro pode impactar o bolsonarismo - Saída de Flávio do Brasil enfraquece postura do filho de Jair Bolsonaro e abre espaço para outras lideranças do bolsonarismo, até me...",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.2,
+   "id": "s071",
+   "title": "Barbeiro mirim de 14 anos e amigo são executados a tiros em Pernambuco",
+   "summary": "José Pablo da Silva Macedo, de 14 anos, foi assassinado ao lado de um amigo de 16 anos, em Cachoeirinha; polícia ainda investiga a motivação do crime",
+   "section": "nacional",
+   "section_label": "Nacional",
+   "avg_bias": 0.0,
    "counts": {
     "L": 0,
     "C": 2,
@@ -2853,13 +4131,65 @@
     "R": 0
    },
    "blindspot": null,
-   "updated": "2026-10-30T21:45:07.825204+00:00",
+   "updated": "2026-10-30T21:43:57+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Influenciador “Barbeiro Mirim” é morto a tiros em PE",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/influencer-barbeiro-mirim-de-14-anos-e-morto-a-tiros-em-pe",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/influencer_barbeiro_mirim_de_14_anos_e_morto_a_tiros_ao_lado_de_amigo_9254363c35.webp",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Barbeiro mirim de 14 anos e amigo são executados a tiros em Pernambuco",
+     "link": "https://www.band.com.br/nacional/pe/barbeiro-mirim-de-14-anos-e-amigo-sao-executados-a-tiros-em-pernambuco",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "nacional",
+     "section_label": "Nacional",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s070",
+   "title": "Petróleo sobe 2% com tensão no Irã e atinge máxima semestral",
+   "summary": "Os preços do petróleo fecharam em alta nesta sexta-feira (30), impulsionados por novas preocupações envolvendo o Estreito de Ormuz e o anúncio de que a Ucrânia retomou os ataques contra refinarias russas.",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T21:45:07.824927+00:00",
    "articles": [
     {
      "source": "UOL Notícias",
      "source_id": "uol",
-     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/deutschewelle/2026/10/30/como-a-fuga-de-flavio-bolsonaro-pode-impactar-o-bolsonarismo.htm",
+     "title": "Petróleo sobe por tensão em Ormuz e Ucrânia",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/petroleo-sobe-por-tensao-em-ormuz-e-ucrania.htm",
      "bias": -0.2,
      "bucket": "C",
      "via": "fonte",
@@ -2870,16 +4200,68 @@
      "ownership": "corporacao"
     },
     {
-     "source": "BBC Brasil",
-     "source_id": "bbcbr",
-     "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
-     "link": "https://www.bbc.com/portuguese/articles/cw98zmy9gnj8o?at_medium=RSS&at_campaign=rss",
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Petróleo sobe 2% com tensão no Irã e atinge máxima semestral",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/petroleo-sobe-2-com-tensao-no-ira-e-atinge-maxima-semestral",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/Copia_de_base_foto_quadro_SBTN_6_490097f037.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s069",
+   "title": "Miami, a base de políticos conservadores da América Latina",
+   "summary": "iami, a base de políticos conservadores da América Latina - Fuga de Flávio Bolsonaro para Flórida usa rota iniciada há quase um século por líderes políticos e ex-ditadores de direita. Com 70% de...",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T21:45:07.825239+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Miami, a base de políticos conservadores da América Latina",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/deutschewelle/2026/10/30/miami-a-base-de-politicos-conservadores-da-america-latina.htm",
      "bias": -0.2,
      "bucket": "C",
      "via": "fonte",
      "section": "",
      "section_label": "Geral",
-     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/1613/live/9d360b80-d3a7-11f1-a5cd-49637fcbd4e4.png",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "DW Brasil",
+     "source_id": "dw",
+     "title": "Miami, a base de políticos conservadores da América Latina",
+     "link": "https://www.dw.com/pt-br/miami-a-base-de-pol%C3%ADticos-conservadores-da-am%C3%A9rica-latina/a-79812552",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pt-br",
+     "section_label": "Pt-br",
+     "image": "https://static.dw.com/image/79045439_605.jpg",
      "factuality": "very_high",
      "ownership": "governo"
     }
@@ -2887,7 +4269,111 @@
    "checks": []
   },
   {
-   "id": "s048",
+   "id": "s068",
+   "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
+   "summary": "Jason Miller acompanhou a apuração do segundo turno ao lado de Eduardo Bolsonaro em Miami e deixou o local após a virada eleitoral.",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": -0.75,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T21:50:59+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Assessor de Trump que ajudou na fuga de Flávio acompanhou votação com Eduardo",
+     "link": "https://www.diariodocentrodomundo.com.br/assessor-de-trump-que-ajudou-na-fuga-de-flavio-acompanhou-votacao-com-eduardo/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/quem-e-o-assessor-de-trump-que-ajudou-flavio-a-fugir",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/Copia_de_base_foto_quadro_SBTN_4_777e7795be.png",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s067",
+   "title": "Itens do Banco Master vão a leilão com peças de grife para escritório; veja lista",
+   "summary": "Leilão online reúne 445 lotes de móveis, equipamentos e itens de decoração; lances iniciais vão de R$ 21 a R$ 98 mil",
+   "section": "economia",
+   "section_label": "Economia",
+   "avg_bias": 0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T22:04:15+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Banco Master leiloa itens de luxo; veja como participar",
+     "link": "https://sbtnews.sbt.com.br/noticia/brasil/banco-master-leiloa-itens-de-luxo-veja-como-participar",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://sbtnews.sbt.com.br/imagens/Whats_App_Image_2026_10_30_at_18_36_32_2e058bd6e7.jpeg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Itens do Banco Master vão a leilão com peças de grife para escritório; veja lista",
+     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/itens-do-banco-master-vao-a-leilao-com-pecas-de-grife-para-escritorio-veja-lista.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://s2-oglobo.glbimg.com/C0goFP5OmvKjFIfdjUY6k3c3YZ4=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/2/p/dkoBP0T4mtE6jAWcENlQ/whatsapp-image-2026-10-04-at-20.55.41.jpeg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s066",
    "title": "Sob forte esquema de segurança, estudantes e trabalhadores protestam na Itália contra alto custo de vida",
    "summary": "Centenas de milhares de estudantes e trabalhadores saíram às ruas da Itália nesta sexta-feira (30) para reivindicar mais verbas para as escolas e medidas contra o aumento vertiginoso do custo de vida.",
    "section": "mundo",
@@ -2939,7 +4425,59 @@
    "checks": []
   },
   {
-   "id": "s047",
+   "id": "s065",
+   "title": "Gilberto Gil parabeniza Juliette e Kaique Cerveny por casamento: 'Especial'",
+   "summary": "Após uma primeira festa intimista, a ex-BBB e o atleta fizeram uma segunda noite de celebrações, acompanhados de vários famosos em Recife, Pernambuco",
+   "section": "entretenimento",
+   "section_label": "Cultura",
+   "avg_bias": 0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T22:47:26+00:00",
+   "articles": [
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Gilberto Gil parabeniza Juliette e Kaique Cerveny por casamento: 'Especial'",
+     "link": "https://www.band.com.br/entretenimento/celebridades/gilberto-gil-parabeniza-juliette-e-kaique-cerveny-por-casamento-especial",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "entretenimento",
+     "section_label": "Cultura",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Gilberto Gil parabeniza Juliette e Cerveny por casamento: “Tão especial”",
+     "link": "https://www.cnnbrasil.com.br/pop/celebridades/gilberto-gil-parabeniza-juliette-e-cerveny-por-casamento-tao-especial/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pop",
+     "section_label": "Pop",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s064",
    "title": "Juros futuros têm forte alta com piora na percepção de risco após reeleição de Lula",
    "summary": "Taxa para janeiro de 2028 estava em 14,5%, em alta de 13 pontos-base ante o ajuste de 14,366% da véspera",
    "section": "financas",
@@ -2991,7 +4529,59 @@
    "checks": []
   },
   {
-   "id": "s045",
+   "id": "s062",
+   "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
+   "summary": "Proprietário de jato executivo afirma que pagamento partiu de conta nos Estados Unidos",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": 0.15,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:06:19+00:00",
+   "articles": [
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Dono de avião usado por Flávio ir para os EUA diz ter recebido R$ 800 mil",
+     "link": "https://www.band.com.br/politica/dono-de-aviao-usado-por-flavio-ir-para-os-eua-diz-ter-recebido-r-800-mil",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
+     "link": "https://valor.globo.com/politica/noticia/2026/10/30/dono-de-avio-usado-na-fuga-de-flvio-bolsonaro-afirma-que-voo-foi-pago-a-partir-dos-eua-diz-agncia.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://s2-valor.glbimg.com/5SsUCjlZFK9XYE7PcJ6jBFiZ99k=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/p/c/4krMgIRyKlv0VeH4ksNQ/2026-10-28t132929z-1639054719-rc2dcoaylnfk-rtrmadp-3-brazil-usa.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s061",
    "title": "Petróleo Brent sobe quase 20% no mês em meio a novas tensões no Oriente Médio",
    "summary": "Brent para janeiro fechou em alta de 2,37%, a US$ 113,43 o barril, e WTI para dezembro avançou 2,08%, a US$ 104,12 o barril; já na semana, Brent avançou 1,55% na semana e WTI ganhou 0,82%",
    "section": "financas",
@@ -3043,7 +4633,7 @@
    "checks": []
   },
   {
-   "id": "s044",
+   "id": "s060",
    "title": "Ministério da Educação estuda recriar Ciência Sem Fronteiras priorizando áreas como IA, Matemática e engenharias",
    "summary": "Novo programa também poderá contemplar estudantes do ensino médio; governo ainda não definiu orçamento nem número de bolsas",
    "section": "brasil",
@@ -3095,7 +4685,111 @@
    "checks": []
   },
   {
-   "id": "s043",
+   "id": "s059",
+   "title": "Canadá e União Europeia anunciam aliança estratégica para reduzir dependência dos EUA",
+   "summary": "A UE ( União Europeia ) e o Canadá anunciaram nesta sexta-feira (30) uma aliança para estreitar suas relações diante das medidas do presidente dos Estados Unidos , Donald Trump , para romper vínculos com antigos parceiros do país. Leia mais (10/30/2026 - 16h09)",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": 0.1,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:40:30+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Canadá e União Europeia firmam aliança em minerais e IA",
+     "link": "https://www1.folha.uol.com.br/mercado/2026/10/canada-e-uniao-europeia-firmam-alianca-em-minerais-e-ia.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mercado",
+     "section_label": "Mercado",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "Canadá e União Europeia anunciam aliança estratégica para reduzir dependência dos EUA",
+     "link": "https://veja.abril.com.br/mundo/canada-e-uniao-europeia-anunciam-alianca-estrategica-para-reduzir-dependencia-dos-eua/",
+     "bias": 0.5,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/10/AFP__20261030__D4YA43V__v1__HighRes__EuCanadaSummit.jpg",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s058",
+   "title": "Rota troca tiros e e mata suspeito de envolvimento em ataque contra tenente em SP",
+   "summary": "Um homem suspeito de ajudar na fuga do responsável pelo atentado contra o tenente da Rota Ronickson Pimentel foi morto por policiais militares nesta sexta-feira, 30, na zona leste de São Paulo. Segundo a Polícia Militar, houve troca de tiros durante a operação. Identificado como Jeovane Junior da Si",
+   "section": "nacional",
+   "section_label": "Nacional",
+   "avg_bias": 0.8,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:57:29+00:00",
+   "articles": [
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Rota troca tiros e e mata suspeito de envolvimento em ataque contra tenente em SP",
+     "link": "https://www.band.com.br/nacional/sp/rota-troca-tiros-e-e-mata-suspeito-de-envolvimento-em-ataque-contra-tenente-em-sp",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "nacional",
+     "section_label": "Nacional",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Rota elimina suspeito de envolvimento em atentado contra tenente em SP",
+     "link": "https://revistaoeste.com/brasil/rota-elimina-suspeito-de-envolvimento-em-atentado-contra-tenente-em-sp/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Atentado_Rota_Ronickson-Pimentel.jpeg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s057",
    "title": "Confira a partir das 21h desta sexta (30) o resultado do concurso 3079 da Mega-Sena",
    "summary": "A Caixa Econômica Federal sorteia, a partir das 21h desta sexta-feira (30), o concurso 3079 da Mega-Sena . É o quinto dia da Mega Semana , com cinco sorteios consecutivos ao longo desta semana. A estimativa é que o prêmio principal chegue a R$ 6 milhões. Leia mais (10/30/2026 - 17h58)",
    "section": "cotidiano",
@@ -3147,7 +4841,59 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s056",
+   "title": "Trump volta a dizer que guerra com Irã acabará \"em breve\"",
+   "summary": "Presidente dos EUA não detalhou como pretende encerrar o conflito e voltou a exigir garantias de que o Irã não desenvolverá armas nucleares",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": 0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:59:03+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Trump volta a dizer que guerra com Irã acabará \"em breve\"",
+     "link": "https://sbtnews.sbt.com.br/noticia/mundo/trump-volta-a-dizer-que-guerra-com-ira-acabara-em-breve",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://sbtnews.sbt.com.br/imagens/trump_na_casa_branca_40596d3bc3.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Trump diz que guerra com Irã vai ser resolvida em breve",
+     "link": "https://www.cnnbrasil.com.br/internacional/trump-diz-que-guerra-com-ira-vai-ser-resolvida-em-breve/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s055",
    "title": "Quem chega, quem fica e quem sai: quais são os nomes cotados para o governo Lula 4",
    "summary": "Presidente terá que acomodar aliados e o Centrão para tentar governar com o Congresso, além de ajudar a esquerda a formar novos quadros para 2030.",
    "section": "",
@@ -3199,59 +4945,7 @@
    "checks": []
   },
   {
-   "id": "s041",
-   "title": "Prefeitura de SP e Jockey fecham acordo para pagamento de dívida e espaço terá parque público",
-   "summary": "A Prefeitura de São Paulo e o Jockey Club assinaram nesta quinta-feira, 29, um acordo para pagamento da dívida quase bilionária do hipódromo com o Município em troca de transformar uma parcela de seu terreno em um parque público. O clube também pagou R$ 228 milhões à vista para encerrar o débito.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.15,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T00:02:59+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Prefeitura de SP e Jockey fecham acordo para pagamento de dívida e espaço terá parque público",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/prefeitura-de-sp-e-jockey-fecham-acordo-para-pagamento-de-divida-e-espaco-tera-parque-publico.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Prefeitura de SP e Jockey fecham acordo para pagamento de dívida e espaço terá parque público",
-     "link": "https://www.estadao.com.br/sao-paulo/prefeitura-de-sp-e-jockey-fecham-acordo-para-pagamento-de-divida-e-espaco-tera-parque-publico/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "sao-paulo",
-     "section_label": "São Paulo",
-     "image": "https://www.estadao.com.br/resizer/v2/PPSZWSZXUNCGLNW2HSTM223YBA.jpg?auth=027b7c94629c8353eb660e98460b410edc3700552b8ab61e02f1c4caac3ff10b&smart=true&width=5184&height=3456",
-     "factuality": "high",
-     "ownership": "individuo"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s040",
+   "id": "s054",
    "title": "Wall St fecha com forte queda, com onda de vendas no setor de tecnologia",
    "summary": "A Bolsa de Nova York fechou esta sexta-feira (30) em forte queda, pressionada pelo tombo das ações de empresas de tecnologia após os resultados de Intel e Amazon, em um momento em que os investidores voltam a questionar a rentabilidade da inteligência",
    "section": "mercados",
@@ -3303,7 +4997,7 @@
    "checks": []
   },
   {
-   "id": "s039",
+   "id": "s053",
    "title": "FT: Anthropic pode não ter ‘grau de investimento’ após IPO, diz Blackstone a investidores",
    "summary": "A Blackstone informou a investidores que a Anthropic pode não receber uma classificação de grau de investimento logo após o seu IPO (Oferta Pública Inicial) . A mudança em relação à orientação anterior pode dificultar o financiamento dos altos gastos da empresa de IA ( inteligência artificial ). Lei",
    "section": "financas",
@@ -3355,7 +5049,7 @@
    "checks": []
   },
   {
-   "id": "s038",
+   "id": "s052",
    "title": "Ministro do Trabalho pede que MP acione Nikolas por \"boicote\" a petistas",
    "summary": "Ministro critica publicação do deputado do PL que convoca comerciantes de esquerda a expor bandeiras do PT em seus estabelecimentos",
    "section": "colunas",
@@ -3407,7 +5101,7 @@
    "checks": []
   },
   {
-   "id": "s037",
+   "id": "s051",
    "title": "Sobrevivente de uma execução no Tennessee afirma que está isolada e sofre dores constantes",
    "summary": "30 Out (Reuters) - Christa Pike, condenada à morte no Tennessee, em sua primeira declaração após ter sobrevivido a uma execução malsucedida há um mês, disse que vivia em constante sofrimento físico e mental ?e que estava praticamente isolada das outras pessoas na ala ?hospitalar da prisão.",
    "section": "",
@@ -3459,7 +5153,7 @@
    "checks": []
   },
   {
-   "id": "s036",
+   "id": "s050",
    "title": "Após caso Master, CNJ vai firmar acordos com B3 e cartórios para ampliar controle sobre precatórios",
    "summary": "O CNJ (Conselho Nacional de Justiça) vai firmar na próxima terça-feira (3) um acordo de cooperação técnica com registradoras de ativos financeiros, como a B3 (Bolsa de Valores de São Paulo), para que elas ajudem no desenvolvimento do sistema de monitoramento de precatórios no país . Leia mais (10/30",
    "section": "economia",
@@ -3511,7 +5205,59 @@
    "checks": []
   },
   {
-   "id": "s035",
+   "id": "s049",
+   "title": "Letícia Colin diz que beijar Eduardo Sterblitch em ‘Os Outros’ foi ‘péssimo’; saiba motivo",
+   "summary": "Cena durante gravação de 'Os Outros' causou incômodo na atriz",
+   "section": "emais",
+   "section_label": "Emais",
+   "avg_bias": 0.2,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:34:12+00:00",
+   "articles": [
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Letícia Colin diz que beijar Eduardo Sterblitch em ‘Os Outros’ foi ‘péssimo’; saiba motivo",
+     "link": "https://www.estadao.com.br/emais/tv/leticia-colin-diz-que-beijar-eduardo-sterblitch-em-os-outros-foi-pessimo-saiba-motivo-nprec/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "emais",
+     "section_label": "Emais",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "A saia justa de Letícia Colin em gravação com Eduardo Sterblitch",
+     "link": "https://veja.abril.com.br/cultura/a-saia-justa-de-leticia-colin-em-gravacao-com-eduardo-sterblitch/",
+     "bias": 0.5,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "cultura",
+     "section_label": "Cultura",
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/10/172255869666ac28e83ab2d_1722558696_3x2_xl.jpg",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s048",
    "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
    "summary": "Audiência reunirá clubes de futebol, representantes do governo e entidades dos setores econômico e de jogos",
    "section": "blogs",
@@ -3563,7 +5309,59 @@
    "checks": []
   },
   {
-   "id": "s034",
+   "id": "s047",
+   "title": "Lula deve convidar Trump e Milei para posse em janeiro, apesar de tensões",
+   "summary": "Lula deve estender convites a Donald Trump e Javier Milei para a posse de seu novo mandato, marcada para 5 de janeiro de 2027.",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.75,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:01:45+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Lula vai convidar Trump e Milei para a posse?",
+     "link": "https://www.diariodocentrodomundo.com.br/lula-vai-convidar-trump-e-milei-para-a-posse/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "IstoÉ",
+     "source_id": "istoe",
+     "title": "Lula deve convidar Trump e Milei para posse em janeiro, apesar de tensões",
+     "link": "https://istoe.com.br/lula-convidar-trump-milei-posse-janeiro-2027",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s046",
    "title": "Jantar de sexta-feira: aprenda a fazer lasanha de salmão com molho branco",
    "summary": "Para finalizar a semana com muito sabor, a lasanha de salmão com molho branco é uma ótima opção para o jantar de sexta-feira. Cremosa e gratinada, ela combina a delicadeza do peixe com legumes, queijo derretido e um molho branco suave. Fácil de preparar, a […]",
    "section": "receitas",
@@ -3615,7 +5413,7 @@
    "checks": []
   },
   {
-   "id": "s033",
+   "id": "s045",
    "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
    "summary": "O crescimento é particularmente acentuado nos estados com disputas acirradas pelo Senado, onde 35 cadeiras estão em jogo",
    "section": "poder-internacional",
@@ -3667,7 +5465,7 @@
    "checks": []
   },
   {
-   "id": "s032",
+   "id": "s044",
    "title": "Após PSD, federação União-PP vai abrir conversas com Lula",
    "summary": "Partidos liberam filiados para participar de eventual quarto mandato do presidente Lula",
    "section": "politica",
@@ -3719,7 +5517,7 @@
    "checks": []
   },
   {
-   "id": "s031",
+   "id": "s043",
    "title": "Alegando questões financeiras, Igreja Universal deixa de comprar madrugadas da Band",
    "summary": "Igreja Universal deixará a faixa das 2h às 8h da Band em 20 de novembro. Emissora estima perder receita mensal de R$ 4 milhões.",
    "section": "colunistas",
@@ -3771,7 +5569,7 @@
    "checks": []
   },
   {
-   "id": "s030",
+   "id": "s042",
    "title": "Deputada aposta em maioria democrata após midterms para investigar ajuda de Trump a Flávio Bolsonaro",
    "summary": "Pramila Jayapal afirma que democratas vão apurar atuação do governo Trump e da Meta no Brasil caso conquistem a Câmara",
    "section": "mundo",
@@ -3823,163 +5621,7 @@
    "checks": []
   },
   {
-   "id": "s029",
-   "title": "Com duas esposas no palco, prefeito do Maranhão vira assunto nas redes",
-   "summary": "Político abraçou companheiras e cenas foram registradas em vídeo pela plateia",
-   "section": "jornalismo",
-   "section_label": "Mídia",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T01:30:01+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Com duas esposas no palco, prefeito do Maranhão vira assunto nas redes",
-     "link": "https://www.redetv.uol.com.br/jornalismo/da-para-acreditar/com-duas-esposas-no-palco-prefeito-do-maranhao-vira-assunto-nas-redes",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "jornalismo",
-     "section_label": "Mídia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "VÍDEO: Prefeito do Maranhão causa alvoroço ao aparecer com duas esposas no mesmo palco",
-     "link": "https://www.terra.com.br/diversao/gente/video-prefeito-do-maranhao-causa-alvoroco-ao-aparecer-com-duas-esposas-no-mesmo-palco,e15e096cbadfaf8d9116a60f18be0aafnezu6b8p.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "diversao",
-     "section_label": "Diversao",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s028",
-   "title": "PM alvo de atentado de suspeito morto pela Rota nesta sexta é irmão de Eloá",
-   "summary": "O tenente da PM Ronickson Pimentel está internado em estado grave desde junho após atentado. Suspeito de ajudar atirador foi morto nesta 5ª",
-   "section": "sao-paulo",
-   "section_label": "São Paulo",
-   "avg_bias": 0.8,
-   "counts": {
-    "L": 0,
-    "C": 1,
-    "R": 1,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 50,
-    "R": 50
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T01:32:09+00:00",
-   "articles": [
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "PM alvo de atentado de suspeito morto pela Rota nesta sexta é irmão de Eloá",
-     "link": "https://www.metropoles.com/sao-paulo/pm-alvo-de-atentado-de-suspeito-morto-pela-rota-nesta-sexta-e-irmao-de-eloa",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "sao-paulo",
-     "section_label": "São Paulo",
-     "image": "https://images.metroimg.com/2026/06/ronickson-tenente-da-rota-baleado.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "Rota elimina suspeito de envolvimento em atentado contra tenente em SP",
-     "link": "https://revistaoeste.com/brasil/rota-elimina-suspeito-de-envolvimento-em-atentado-contra-tenente-em-sp/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s027",
-   "title": "Mauro Vieira e Marco Rubio se cumprimentam rapidamente no G20 em meio à tensão entre Brasil e EUA",
-   "summary": "Mauro Vieira e Marco Rubio se cumprimentaram na abertura da reunião de chanceleres do G20, em Atlanta, sem previsão de encontro bilateral.",
-   "section": "brasil",
-   "section_label": "Brasil",
-   "avg_bias": -1.45,
-   "counts": {
-    "L": 2,
-    "C": 0,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 100,
-    "C": 0,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T01:32:17+00:00",
-   "articles": [
-    {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "O primeiro encontro de Mauro Vieira e Marco Rubio após a eleição brasileira",
-     "link": "https://www.diariodocentrodomundo.com.br/mauro-vieira-marco-rubio-cumprimento-g20-atlanta/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Mauro Vieira e Marco Rubio se cumprimentam rapidamente no G20 em meio à tensão entre Brasil e EUA",
-     "link": "https://www.brasil247.com/brasil/mauro-vieira-e-marco-rubio-se-cumprimentam-rapidamente-no-g20-em-meio-a-tensao-entre-brasil-e-eua/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s026",
+   "id": "s041",
    "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
    "summary": "BUDAPESTE, 30 Out (Reuters) - Acorrentado, mergulhado de cabeça para baixo em um tanque cheio de ?água e beirando a morte, ?Harry Houdini volta aos palcos em Budapeste nesta sexta-feira, em uma nova produção circense que homenageia o lendário ?mestre da ?fuga um ?século após sua morte.",
    "section": "",
@@ -4031,7 +5673,7 @@
    "checks": []
   },
   {
-   "id": "s025",
+   "id": "s040",
    "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre",
    "summary": "O presidente deve aproveitar a atual composição do Senado para tentar emplacar a escolha ainda neste ano",
    "section": "politica",
@@ -4083,7 +5725,7 @@
    "checks": []
   },
   {
-   "id": "s024",
+   "id": "s039",
    "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados",
    "summary": "O Ebitda de R$ 558 milhões ficou abaixo das estimativas de todas as instituições financeiras; BB Investimentos rebaixou a recomendação da ação",
    "section": "empresas",
@@ -4135,7 +5777,7 @@
    "checks": []
   },
   {
-   "id": "s023",
+   "id": "s038",
    "title": "Apresentadora demitida do SBT diz que não se arrepende de críticas às eleições",
    "summary": "A apresentadora Thayse Teixeira afirmou que não se arrepende das declarações que fez sobre o resultado das eleições presidenciais durante o programa Fofocalizando , do SBT . Em vídeo publicado nas redes sociais nesta quinta-feira, 29, ela comentou a demissão da emissora e defendeu o direito de expre",
    "section": "imprensa",
@@ -4179,7 +5821,7 @@
      "via": "fonte",
      "section": "imprensa",
      "section_label": "Mídia",
-     "image": "",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/thayse-teixeira.jpeg",
      "factuality": "mixed",
      "ownership": "independente"
     }
@@ -4187,7 +5829,59 @@
    "checks": []
   },
   {
-   "id": "s022",
+   "id": "s037",
+   "title": "Filha de Marielle Franco denuncia ataques racistas em grupo ligado à PUC-Rio",
+   "summary": "Filha da vereadora cobra apuração de ataques racistas à mãe",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.7,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:50:00+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Família denuncia agressão a Marielle em grupo de WhatsApp da PUC-Rio",
+     "link": "https://www.brasil247.com/sudeste/familia-denuncia-agressao-a-marielle-em-grupo-de-whatsapp-da-puc-rio/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "sudeste",
+     "section_label": "Sudeste",
+     "image": "https://www.brasil247.com/wp-content/uploads/2023/10/20231015081044_0a6fecd5-c7eb-4acf-bf80-d9d9065603a2.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "IstoÉ",
+     "source_id": "istoe",
+     "title": "Filha de Marielle Franco denuncia ataques racistas em grupo ligado à PUC-Rio",
+     "link": "https://istoe.com.br/filha-marielle-franco-denuncia-racismo-grupo-puc-rio",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s036",
    "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
    "summary": "Oposição acusa Donald Tusk de interferir no Tribunal Constitucional; presidente Karol Nawrocki interrompe viagem à África diante da crise",
    "section": "mundo",
@@ -4239,7 +5933,59 @@
    "checks": []
   },
   {
-   "id": "s021",
+   "id": "s035",
+   "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
+   "summary": "Decisão se dá após viralizarem publicações nas redes sobre exposição, fiscalização e até demissão de funcionários por posições políticas",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:05:00+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
+     "link": "https://sbtnews.sbt.com.br/noticia/politica/justica-de-sp-manda-meta-derrubar-posts-de-assedio-eleitoral",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://sbtnews.sbt.com.br/imagens/Ato_na_Paulista_Meta_c3b1da3f78.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "IstoÉ",
+     "source_id": "istoe",
+     "title": "Justiça manda Meta remover posts que incentivam demissão por voto político",
+     "link": "https://istoe.com.br/justica-meta-remover-posts-demissao-voto-politico",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s034",
    "title": "Após fuga de Flávio, Jorginho Mello se distancia de aliado e diz respeitar resultado das urnas",
    "summary": "governador reeleito de Santa Catarina, Jorginho Mello (PL), se distanciou do discurso adotado por Flávio Bolsonaro (PL), após a derrota do senador na disputa presidencial. Aliado da família Bolsonar...",
    "section": "",
@@ -4291,7 +6037,7 @@
    "checks": []
   },
   {
-   "id": "s020",
+   "id": "s033",
    "title": "EUA aprovam venda de 500 mísseis Patriot à Ucrânia por US$ 2,1 bilhões",
    "summary": "Os Estados Unidos aprovaram nesta sexta-feira (30) a venda de 500 mísseis interceptadores Patriot PAC-3 à Ucrânia , por um valor estimado em US$ 2,1 bilhões (R$ 11,42 bilhões). É uma das medidas mais significativas de fornecimento de armas defensivas a Kiev desde o início do governo Donald Trump . L",
    "section": "mundo",
@@ -4338,6 +6084,162 @@
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s031",
+   "title": "Justiça apura transporte de urnas em caminhonete com adesivo do PT",
+   "summary": "A Justiça Eleitoral informou que o transporte de urnas eletrônicas em uma caminhonete com adesivo do Partido dos Trabalhadores (PT), no Riacho Fundo II, no Distrito Federal, não comprometeu os resultados das eleições de 2026. Um vídeo que circula nas redes sociais mostra uma mulher entregando equipa",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": 1.4,
+   "counts": {
+    "L": 0,
+    "C": 0,
+    "R": 2,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 0,
+    "R": 100
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:21:52+00:00",
+   "articles": [
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "TRE-DF apura transporte de urnas em caminhonete com adesivo do PT",
+     "link": "https://www.gazetadopovo.com.br/republica/tre-df-apura-transporte-de-urnas-em-caminhonete-com-adesivo-do-pt/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "republica",
+     "section_label": "Republica",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Justiça apura transporte de urnas em caminhonete com adesivo do PT",
+     "link": "https://revistaoeste.com/politica/justica-apura-transporte-de-urnas-em-caminhonete-com-adesivo-do-pt/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Justica-eleitoral_PT_DF.jpeg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s030",
+   "title": "Ex-BBBs Renata Saldanha e Maike anunciam gravidez: 'Um novo caminho para nós'",
+   "summary": "Renata Saldanha e Maike Allan vão aumentar a família. Os ex-participantes do BBB 25 anunciaram nesta sexta-feira (30) que estão à espera do primeiro filho. Leia mais (10/30/2026 - 20h22)",
+   "section": "voceviu",
+   "section_label": "Voceviu",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:22:00+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Ex-BBBs Renata Saldanha e Maike anunciam gravidez: 'Um novo caminho para nós'",
+     "link": "https://f5.folha.uol.com.br/voceviu/2026/10/ex-bbbs-renata-saldanha-e-maike-anunciam-gravidez-um-novo-caminho-para-nos.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "voceviu",
+     "section_label": "Voceviu",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Ex-BBBs Renata Saldanha e Maike anunciam gravidez do 1º filho",
+     "link": "https://www.cnnbrasil.com.br/pop/celebridades/ex-bbbs-renata-saldanha-e-maike-anunciam-gravidez-do-1o-filho/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pop",
+     "section_label": "Pop",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s029",
+   "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas",
+   "summary": "Hackers provavelmente responsáveis pelo roubo ⁠recorde de US$ 6,3 bilhões da corretora de criptomoedas Binance lideram lista The post Hackers norte-coreanos ligados estão entre os melhores do mundo, dizem especialistas appeared first on InfoMoney .",
+   "section": "financas",
+   "section_label": "Economia",
+   "avg_bias": 0.25,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:22:01+00:00",
+   "articles": [
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Hackers norte-coreanos ligados estão entre os melhores do mundo, dizem especialistas",
+     "link": "https://www.infomoney.com.br/mundo/hackers-norte-coreanos-ligados-estao-entre-os-melhores-do-mundo-dizem-especialistas/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas",
+     "link": "https://valor.globo.com/financas/criptomoedas/noticia/2026/10/30/hackers-norte-coreanos-ligados-a-roubos-de-criptomoedas-esto-entre-os-melhores-do-mundo-dizem-especialistas.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "https://s2-valor.glbimg.com/fHi0XF4iSXnj7oV5CcFTrkp1ukQ=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2024/H/Q/VigaboRry7iuDtR8mVbg/1b8d925f-1c7f-4f59-a377-e0696826702c.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
     }
    ],
    "checks": []
