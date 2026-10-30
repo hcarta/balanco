@@ -76,6 +76,16 @@ def test_section_label():
     assert section_label(None) == "Geral"
 
 
+def test_excluded_section():
+    from app import excluded_section
+    assert excluded_section("esportes")
+    assert excluded_section("futebol")
+    assert excluded_section("Esportes")
+    assert not excluded_section("politica")
+    assert not excluded_section("")
+    assert not excluded_section(None)
+
+
 def test_build_keeps_image_and_section_label():
     arts = [
         {"title": "A aprova plano de recuperação", "link": "https://x/1",

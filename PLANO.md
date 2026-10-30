@@ -8,13 +8,13 @@ Unidade de esforço: **1 sessão ≈ 1–2 h de trabalho focado**.
 
 | # | Fase | Por que agora | Esforço |
 |---|------|---------------|---------|
-| 1 | Robustez operacional | Base pronta (cache, 304, retry, health); faltam agendamento e testes | 1 sessão restante |
-| 2 | Qualidade do agrupamento | Maior fonte de erro visível hoje | 3 sessões |
-| 3 | Enriquecimento sem paywall | Dek/imagem/editoria com risco baixo | 2 sessões |
+| 1 | Robustez operacional | Base pronta (cache, 304, retry, health); faltam e-mail/webhook | ~1 sessão |
+| 2 | Qualidade do agrupamento | **Concluída 30/10** | — |
+| 3 | Enriquecimento sem paywall | **Concluída 30/10** | — |
 | 4 | Checagem: corpus + revisão | Factualidade é o diferencial vs. RSS | 3 sessões |
 | 5 | Fontes: 2ª leva + governança de viés | Cobertura e credibilidade | 2 sessões |
 | 6 | Produto: arquivo, feed próprio, metodologia | Virar "site de verdade" | 3 sessões |
-| 7 | Publicação + jurídico | Antes de qualquer lançamento | 2 sessões + terceiros |
+| 7 | Publicação + jurídico | Site no ar; faltam domínio, analytics, jurídico, modelo | 2 sessões + terceiros |
 
 **Total estimado: ~18 sessões.** Fases 1–2 são pré-requisito das demais; 3–6 podem rodar em paralelo parcial.
 

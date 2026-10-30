@@ -50,11 +50,14 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
     from store import PER_SOURCE_CAP
 
     articles = []
-    n_ok, n_err, n_new = 0, 0, 0
+    n_ok, n_err, n_new, n_dropped = 0, 0, 0, 0
     for s in sources:
         try:
             fresh, hs = collect_one(s, limit=per_feed if store is None else 2000,
                                     store=store)
+            kept = [a for a in fresh if not excluded_section(a.get("section"))]
+            n_dropped += len(fresh) - len(kept)
+            fresh = kept
             n_got_new = 0
             if store is not None:
                 n_got_new = store.upsert_articles(s["id"], fresh)
@@ -91,7 +94,7 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
         if a["link"] and a["link"] not in seen:
             seen.add(a["link"])
             uniq.append(a)
-    return uniq, {"n_ok": n_ok, "n_err": n_err, "n_new": n_new}
+    return uniq, {"n_ok": n_ok, "n_err": n_err, "n_new": n_new, "n_dropped": n_dropped}
 
 
 _EMB_MODEL = None
@@ -256,6 +259,14 @@ def bucket(score):
     if score >= 0.5:
         return "R"
     return "C"
+
+
+# Editorias fora da edição (o foco é poder, economia e sociedade)
+EXCLUDED_SECTIONS = {"esportes", "futebol"}
+
+
+def excluded_section(raw: str | None) -> bool:
+    return _norm_sec(raw) in EXCLUDED_SECTIONS
 
 
 def _norm_sec(s: str) -> str:
@@ -577,7 +588,7 @@ def main():
     print(f"[1/4] coletando {len(sources)} feeds...")
     articles, fsum = fetch_all(sources, per_feed=args.per_feed, store=store,
                                window_h=args.window, run_ts=run_ts)
-    print(f"  total: {len(articles)} artigos únicos ({fsum['n_new']} novos no banco)")
+    print(f"  total: {len(articles)} artigos únicos ({fsum['n_new']} novos no banco, {fsum['n_dropped']} de esporte fora)")
 
     if args.body:
         from enrich import enrich_articles
