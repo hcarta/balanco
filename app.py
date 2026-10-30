@@ -377,7 +377,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             left_out = l / tot <= 0.15
             right_out = r / tot <= 0.15
             if left_out and right_out:
-                blind = "both"  # só o centro cobre: os dois lados estão cegos
+                blind = None  # só o centro cobre: sem viés em jogo, não é blindspot
             elif left_out:
                 blind = "left"
             elif right_out:

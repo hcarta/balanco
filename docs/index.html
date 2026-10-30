@@ -70,8 +70,10 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 /* ── layout ── */
 .main{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:48px;padding:40px 0 70px;align-items:start}
 .main.solo{grid-template-columns:1fr}
-.rail{position:sticky;top:76px;display:flex;flex-direction:column;gap:30px}
-@media(max-width:940px){.main{grid-template-columns:1fr;gap:34px}.rail{position:static;order:2}}
+.rail{position:sticky;top:76px;display:flex;flex-direction:column;gap:30px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:2px;scrollbar-width:thin}
+.rail::-webkit-scrollbar{width:6px}
+.rail::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:99px}
+@media(max-width:940px){.main{grid-template-columns:1fr;gap:34px}.rail{position:static;order:2;max-height:none;overflow-y:visible}}
 
 /* mobile nav: pílulas roláveis, busca sempre visível */
 @media(max-width:760px){
@@ -320,8 +322,8 @@ const cls = b => b==='L'?'bL':b==='C'?'bC':'bR';
 const factLabel = f => ({very_high:'Muito alta',high:'Alta',mixed:'Mista',low:'Baixa',very_low:'Muito baixa'})[f]||'';
 const vClass = v => 'v-' + (v||'checagem');
 const VL = {falso:'Falso',verdadeiro:'Verdadeiro',enganoso:'Enganoso',checagem:'Checagem'};
-const blindShort = b => b==='both'?'dos dois lados':b==='left'?'esquerda':'direita';
-const blindLong = b => b==='both'?'dos dois lados':b==='left'?'da esquerda':'da direita';
+const blindShort = b => b==='left'?'esquerda':'direita';
+const blindLong = b => b==='left'?'da esquerda':'da direita';
 const storyImg = s => { const a=(s.articles||[]).find(x=>x.image); return a?a.image:''; };
 function checksBadges(s, max=2){
   const cs = (s.checks||[]).slice(0,max);
@@ -531,8 +533,7 @@ function renderRail(){
   const blinds = d.stories.filter(s=>s.blindspot).slice(0,4);
   $('#blindCard').innerHTML = `<div class="rt">⚡ Blindspots de hoje</div>` + (
     blinds.length ? blinds.map(s=>{
-      const desc = s.blindspot==='both' ? 'só o centro cobre · os dois lados estão cegos'
-        : s.blindspot==='left' ? 'pouca cobertura da esquerda' : 'pouca cobertura da direita';
+      const desc = s.blindspot==='left' ? 'pouca cobertura da esquerda' : 'pouca cobertura da direita';
       return `<div class="rail-item" data-jump="${s.id}">
         <h4>${esc(s.title)}</h4>
         <div class="rail-mini">
