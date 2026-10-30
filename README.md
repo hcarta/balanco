@@ -110,7 +110,7 @@ Notas:
 O roteiro completo, com fases, esforço estimado e critérios de aceite, está em [`PLANO.md`](PLANO.md). Resumo:
 - [x] Adicionar Estadão/O Globo/Valor/Gazeta via Arc XP + Google News sitemaps
 - [x] **Fase 1 (parcial)** — Cache SQLite + HTTP condicional + retry + `health.json` + selo de fonte instável. Falta: agendamento e testes mínimos
-- [ ] **Fase 2** — Embeddings para clustering + conjunto de avaliação
+- [x] **Fase 2** — Eval set (P 0.96/R 0.63), anti-ruído, título representante, janela por editoria, embeddings opt-in (`--embed`)
 - [ ] **Fase 3** — Dek via meta description + imagens + editoria normalizada
 - [ ] **Fase 4** — Paginar Lupa, Aos Fatos, fila de revisão em CSV
 - [ ] **Fase 5** — 2ª leva de fontes + documento de curadoria de viés
