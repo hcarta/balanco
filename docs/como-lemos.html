@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como lemos — Balanço</title>
+<style>
+:root{--paper:#faf8f4;--ink:#16130f;--muted:#6f675e;--hair:#e6e0d6;--accent:#b3261e;--L:#2e7d32;--C:#8a8178;--R:#9a7200}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Palatino Linotype',Palatino,serif;line-height:1.65}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px 70px}
+header{text-align:center;padding:36px 0 8px}
+.wordmark{font-size:34px;font-weight:600;letter-spacing:-.02em}
+.wordmark i{color:var(--accent);font-style:normal}
+.tag{background:var(--paper);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;padding:10px;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:13px;color:var(--muted)}
+.tag a{color:inherit}
+h1{font-size:32px;line-height:1.2;letter-spacing:-.01em;margin:28px 0 6px}
+.sub{font-style:italic;color:var(--muted);margin:0 0 26px}
+h2{font-size:20px;margin:32px 0 8px}
+p,li{font-size:16.5px}
+li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--hair)}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px}
+footer{border-top:1px solid var(--hair);margin-top:44px;padding-top:18px;font-size:13px;color:var(--muted);font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="tag"><a href="./">← Voltar ao Balanço de hoje</a></div>
+<div class="wrap">
+<header><div class="wordmark"><i>•</i> Balanço</div></header>
+<h1>Como lemos</h1>
+<p class="sub">Metodologia aberta do protótipo brasileiro inspirado no Ground.news.</p>
+
+<h2>O que o Balanço faz</h2>
+<p>Coletamos manchetes de 27 veículos brasileiros, agrupamos as que contam <b>a mesma história</b> e mostramos <b>quem cobre o quê</b>: quantos veículos de esquerda, centro e direita estão contando aquele fato — lado a lado, sem algoritmo de engajamento no meio.</p>
+
+<h2>Viés fixo por publicação</h2>
+<p>Cada veículo tem <b>um posicionamento</b> (de −2 a +2), definido por curadoria manual. Todas as matérias daquele veículo herdam esse valor. É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Não há análise por IA em cada matéria e nenhum token é gasto por artigo.</p>
+<table>
+<tr><th>Posição</th><th>Significado</th></tr>
+<tr><td><i class="sw" style="background:var(--L)"></i>Esquerda (≤ −0,5)</td><td>Enquadramento sistematicamente favorável à esquerda/progressismo</td></tr>
+<tr><td><i class="sw" style="background:var(--C)"></i>Centro</td><td>Factual, múltiplos lados, sem loaded words sistemáticas</td></tr>
+<tr><td><i class="sw" style="background:var(--R)"></i>Direita (≥ +0,5)</td><td>Enquadramento sistematicamente favorável à direita/conservadorismo</td></tr>
+</table>
+<p>Os critérios completos, a posição de cada um dos 27 veículos e o histórico de mudanças estão em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
+
+<h2>O que é um blindspot</h2>
+<p>Uma história com 4+ coberturas em que um dos lados está quase ausente (≤ 15%) enquanto o outro cobre. Não marcamos histórias cobertas <b>só pelo centro</b>: sem viés em jogo, não há ponto cego político.</p>
+
+<h2>Checagens: evidência, não sentença</h2>
+<p>Cruzamos manchetes com <b>G1 Fato ou Fake</b>, <b>Agência Lupa</b> e <b>Aos Fatos</b> (~700 verificações). Quando a alegação coincide, exibimos o selo <b>⚑ Checagem</b> com os termos em comum — é uma checagem <i>relacionada</i>, nunca um veredito sobre a matéria. O histórico por veículo serve à revisão humana e <b>nunca</b> altera a factualidade automaticamente.</p>
+
+<h2>De onde vêm os textos e fotos</h2>
+<p>Manchete, link, data e editoria vêm de feeds e sitemaps públicos. Resumos vêm do próprio feed ou da <i>meta description</i> pública da página; corpos completos alimentam só a análise interna e nunca são exibidos. Imagens vêm dos sitemaps e feeds, com link para o original em cada matéria.</p>
+
+<h2>Limitações honestas</h2>
+<ul>
+<li>No Brasil não há AllSides/MBFC: a tabela de viés é curadoria manual, discutível por construção — por isso ela é pública e versionada.</li>
+<li>O agrupamento é TF-IDF simples (+ regras e embeddings opcionais); paráfrases distantes podem escapar.</li>
+<li>Factualidade e propriedade são tabeladas manualmente e revisadas periodicamente.</li>
+<li>Paywalls bloqueiam corpo de Valor, Globo, Folha e Estadão: deles usamos título, meta description e dados estruturados.</li>
+</ul>
+
+<footer>Balanço · protótipo aberto · <a href="https://github.com/hcarta/balanco">código e dados</a> · edição gerada automaticamente a cada 30 min</footer>
+</div>
+</body>
+</html>

@@ -49,6 +49,6 @@ jobs:
         run: |
           git config user.name "balanco-bot"
           git config user.email "balanco-bot@local"
-          git add docs/data.json state/health.json state/factcheck_ledger.json
+          git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json
           git diff --cached --quiet || git commit -m "atualização automática $(date -u +%FT%TZ)"
           git push

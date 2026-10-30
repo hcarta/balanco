@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T23:40:00.630999+00:00",
- "n_articles": 958,
- "n_stories": 74,
+ "generated_at": "2026-10-30T23:44:18.951810+00:00",
+ "n_articles": 966,
+ "n_stories": 76,
  "n_factchecks": 700,
  "n_matches": 0,
- "n_new": 14,
+ "n_new": 11,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 122,
+    "last_ms": 135,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 123,
+    "last_ms": 147,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 15,
-    "last_n_total": 59,
+    "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 86,
+    "last_ms": 95,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 46,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 119,
+    "last_ms": 123,
     "err_streak": 0,
     "empty": false
    }
@@ -92,11 +92,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 31,
     "last_n_total": 23,
     "last_status": "ok",
-    "last_ms": 75,
+    "last_ms": 77,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +111,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 0,
-    "last_n_total": 18,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 10,
+    "last_n_total": 19,
     "last_status": "ok",
-    "last_ms": 83,
+    "last_ms": 77,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +130,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 17,
-    "last_n_total": 53,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 18,
+    "last_n_total": 54,
     "last_status": "ok",
-    "last_ms": 265,
+    "last_ms": 302,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +149,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 7,
-    "last_n_total": 33,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 3,
+    "last_n_total": 36,
     "last_status": "ok",
-    "last_ms": 450,
+    "last_ms": 239,
     "err_streak": 0,
     "empty": false
    }
@@ -168,11 +168,11 @@
    "owner_detail": "Nexo Jornal",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 80,
+    "last_ms": 97,
     "err_streak": 0,
     "empty": false
    }
@@ -187,11 +187,11 @@
    "owner_detail": "Editora piauí / João Moreira Salles (distribuição Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 1,
     "last_status": "ok",
-    "last_ms": 195,
+    "last_ms": 221,
     "err_streak": 0,
     "empty": false
    }
@@ -207,11 +207,11 @@
    "owner_detail": "Grupo Silvio Santos (família Abravanel)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 134,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 131,
+    "last_ms": 117,
     "err_streak": 0,
     "empty": false
    }
@@ -226,11 +226,11 @@
    "owner_detail": "Grupo Record (Edir Macedo)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 100,
     "last_n_total": 19,
     "last_status": "ok",
-    "last_ms": 192,
+    "last_ms": 212,
     "err_streak": 0,
     "empty": false
    }
@@ -246,11 +246,11 @@
    "owner_detail": "Grupo Bandeirantes (família Saad)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 442,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 97,
+    "last_ms": 55,
     "err_streak": 0,
     "empty": false
    }
@@ -266,11 +266,11 @@
    "owner_detail": "Deutsche Welle (Alemanha, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 25,
     "last_n_total": 25,
     "last_status": "ok",
-    "last_ms": 281,
+    "last_ms": 629,
     "err_streak": 0,
     "empty": false
    }
@@ -285,11 +285,11 @@
    "owner_detail": "Editora Abril",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 20,
     "last_status": "ok",
-    "last_ms": 83,
+    "last_ms": 80,
     "err_streak": 0,
     "empty": false
    }
@@ -304,11 +304,11 @@
    "owner_detail": "Editora Três",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 10,
     "last_status": "ok",
-    "last_ms": 433,
+    "last_ms": 231,
     "err_streak": 0,
     "empty": false
    }
@@ -323,11 +323,11 @@
    "owner_detail": "Grupo O Antagonista",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 15,
     "last_n_total": 9,
     "last_status": "ok",
-    "last_ms": 507,
+    "last_ms": 374,
     "err_streak": 0,
     "empty": false
    }
@@ -342,11 +342,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 79,
+    "last_ms": 74,
     "err_streak": 0,
     "empty": false
    }
@@ -361,11 +361,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 10,
-    "last_n_total": 39,
+    "last_n_total": 40,
     "last_status": "ok",
-    "last_ms": 115,
+    "last_ms": 90,
     "err_streak": 0,
     "empty": false
    }
@@ -380,11 +380,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
-    "last_n_fresh": 0,
-    "last_n_total": 20,
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
+    "last_n_fresh": 10,
+    "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 539,
+    "last_ms": 656,
     "err_streak": 0,
     "empty": false
    }
@@ -399,11 +399,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 33,
     "last_status": "ok",
-    "last_ms": 74,
+    "last_ms": 70,
     "err_streak": 0,
     "empty": false
    }
@@ -418,11 +418,11 @@
    "owner_detail": "Grupo Jovem Pan",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 13,
     "last_status": "ok",
-    "last_ms": 83,
+    "last_ms": 78,
     "err_streak": 0,
     "empty": false
    }
@@ -437,11 +437,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 10,
     "last_n_total": 19,
     "last_status": "ok",
-    "last_ms": 81,
+    "last_ms": 68,
     "err_streak": 0,
     "empty": false
    }
@@ -457,11 +457,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 92,
     "last_n_total": 41,
     "last_status": "ok",
-    "last_ms": 140,
+    "last_ms": 102,
     "err_streak": 0,
     "empty": false
    }
@@ -477,11 +477,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 656,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 191,
+    "last_ms": 141,
     "err_streak": 0,
     "empty": false
    }
@@ -497,11 +497,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 176,
+    "last_ms": 140,
     "err_streak": 0,
     "empty": false
    }
@@ -517,11 +517,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T23:38:18.096851+00:00",
+    "last_run": "2026-10-30T23:42:01.937519+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 466,
+    "last_ms": 375,
     "err_streak": 0,
     "empty": false
    }
@@ -2056,20 +2056,20 @@
    "summary": "A Binance foi alvo de um roubo recorde de US$ 6,3 bilhões (R$ 33 bilhões) na noite de quinta-feira (30), levantando dúvidas sobre como os sistemas da maior corretora de criptomoedas do mundo foram violados. Leia mais (10/30/2026 - 15h59)",
    "section": "",
    "section_label": "Geral",
-   "avg_bias": 0.12,
+   "avg_bias": 0.1,
    "counts": {
     "L": 0,
-    "C": 8,
+    "C": 9,
     "R": 1,
-    "total": 9
+    "total": 10
    },
    "pct": {
     "L": 0,
-    "C": 89,
-    "R": 11
+    "C": 90,
+    "R": 10
    },
    "blindspot": null,
-   "updated": "2026-10-30T23:57:02+00:00",
+   "updated": "2026-10-31T02:39:57+00:00",
    "articles": [
     {
      "source": "Folha de S.Paulo",
@@ -2111,6 +2111,34 @@
      "section_label": "Einvestidor",
      "image": "",
      "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Trump diz que EUA investigam se Coreia do Norte atacou Binance",
+     "link": "https://www.poder360.com.br/poder-economia/trump-diz-que-eua-investigam-se-coreia-do-norte-atacou-binance/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-economia",
+     "section_label": "Poder-economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Binance emite comunicado para investidores brasileiros após ataque hacker",
+     "link": "https://www.metropoles.com/colunas/dinheiro-e-negocios/binance-emite-comunicado-para-investidores-brasileiros-apos-ataque-hacker",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "section_label": "Opinião",
+     "image": "https://images.metroimg.com/2026/10/GettyImages-1496426886.jpg",
+     "factuality": "mixed",
      "ownership": "individuo"
     },
     {
@@ -2156,20 +2184,6 @@
      "ownership": "conglomerado"
     },
     {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
-     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/ataque-hacker-a-binance-veja-quanto-movimentaram-as-cinco-maiores-invasoes-de-cripto-do-mundo.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://s2-oglobo.glbimg.com/PdXuFOC5LHFWcMFxZ3tvzaXo2m0=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/A/e/0KyrvtTfKYAxvzAO39bA/programming-g369f66bd2-1920.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
      "source": "Valor Econômico",
      "source_id": "valor",
      "title": "FT: O que se sabe sobre o ataque hacker de US$ 6,3 bilhões à Binance",
@@ -2202,20 +2216,20 @@
   },
   {
    "id": "s006",
-   "title": "Acionistas da Raízen aprovam plano de segregação da unidade de açúcar e etanol do negócio de distribuição",
+   "title": "Acionistas da Raízen aprovam plano que prevê divisão da companhia em duas empresas",
    "summary": "A decisão abre caminho para a implementação de uma ampla reestruturação financeira, já homologada pela Justiça e apoiada por 81,6% dos credores",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.14,
+   "section": "economia",
+   "section_label": "Economia",
+   "avg_bias": -0.13,
    "counts": {
     "L": 1,
-    "C": 7,
+    "C": 6,
     "R": 0,
-    "total": 8
+    "total": 7
    },
    "pct": {
-    "L": 12,
-    "C": 88,
+    "L": 14,
+    "C": 86,
     "R": 0
    },
    "blindspot": null,
@@ -2248,20 +2262,6 @@
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Acionistas da Raízen aprovam plano de segregação da unidade de açúcar e etanol do negócio de distribuição",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/reuters/2026/10/30/acionistas-da-raizen-aprovam-plano-de-segregacao-da-unidade-de-acucar-e-etanol-do-negocio-de-distribuicao.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
     },
     {
      "source": "Terra",
@@ -3113,7 +3113,7 @@
    "checks": []
   },
   {
-   "id": "s029",
+   "id": "s030",
    "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
    "summary": "Em primeira declaração pública após a tentativa frustrada de execução, Christa Pike afirmou que ficou \"profundamente magoada com a incompetência\"",
    "section": "pt-br",
@@ -3179,7 +3179,7 @@
    "checks": []
   },
   {
-   "id": "s028",
+   "id": "s029",
    "title": "Com Sônia Guajajara, comitiva vai a MS após denúncias de retaliação eleitoral contra indígenas",
    "summary": "Apib registra mais de 30 casos de violência após as eleições; relatos envolvem casa incendiada, destruição de itens sagrados e ofensas gravadas por funcionários públicos",
    "section": "blogs",
@@ -3245,7 +3245,7 @@
    "checks": []
   },
   {
-   "id": "s027",
+   "id": "s028",
    "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
    "summary": "A Meta fechou um acordo com uma adolescente que acusou a empresa de projetar o Instagram e o Facebook para causar dependência, o que teria provocado problemas de saúde mental e transtornos alimentares, disseram nesta sexta-feira (30) os advogados da jovem. Leia mais (10/30/2026 - 17h06)",
    "section": "tec",
@@ -3311,7 +3311,7 @@
    "checks": []
   },
   {
-   "id": "s026",
+   "id": "s027",
    "title": "Justiça bloqueia R$10,8 bilhões de alvos da Operação Carbono Oculto a pedido da PGE-SP",
    "summary": "Decisão atende a pedido da PGE-SP e alcança 32 alvos suspeitos de usar fundos e empresas para ocultar patrimônio e dificultar cobranças tributárias",
    "section": "brasil",
@@ -3377,7 +3377,7 @@
    "checks": []
   },
   {
-   "id": "s025",
+   "id": "s026",
    "title": "Desemprego cai a 5,2% e atinge menor nível para setembro desde 2012",
    "summary": "Leia mais (10/30/2026 - 17h55)",
    "section": "economia",
@@ -3443,7 +3443,7 @@
    "checks": []
   },
   {
-   "id": "s024",
+   "id": "s025",
    "title": "PM para carro sem placa e encontra R$ 100 mil de influenciador Toguro, que recupera valores ao comprovar origem do dinheiro",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "brasil",
@@ -3509,7 +3509,7 @@
    "checks": []
   },
   {
-   "id": "s023",
+   "id": "s024",
    "title": "Com duas esposas no palco, prefeito do Maranhão vira assunto nas redes",
    "summary": "Político abraçou companheiras e cenas foram registradas em vídeo pela plateia",
    "section": "jornalismo",
@@ -3575,7 +3575,7 @@
    "checks": []
   },
   {
-   "id": "s022",
+   "id": "s023",
    "title": "Lula procura ministro da Defesa para quarto mandato e Múcio indica uma mulher",
    "summary": "Presidente inicia novo mandato em 5 de janeiro de 2027 com propostas para economia, saúde, educação e segurança pública, mas terá de negociar com um Congresso de oposição fortalecido para avançar em sua agenda.",
    "section": "politica",
@@ -3641,73 +3641,7 @@
    "checks": []
   },
   {
-   "id": "s021",
-   "title": "Surto de Ebola na RD Congo deixa mais de cinco mil mortos, diz governo",
-   "summary": "30 Out (Reuters) - O número de mortos pelo surto de Ebola ?na República Democrática do ?Congo ultrapassou 5.000, segundo dados divulgados pelo governo nesta sexta-feira, enquanto as autoridades ainda ?não ?encontraram ?uma maneira de controlar a ?epidemia de Ebola ?mais mortal já registrada no país.",
-   "section": "internacional",
-   "section_label": "Mundo",
-   "avg_bias": -0.03,
-   "counts": {
-    "L": 0,
-    "C": 3,
-    "R": 0,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T01:47:27+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Surto de Ebola no Congo mata mais de 5.000 pessoas",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/reuters/2026/10/30/surto-de-ebola-no-congo-mata-mais-de-5000-pessoas.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Surto de Ebola no Congo mata mais de 5.000 pessoas",
-     "link": "https://www.terra.com.br/noticias/mundo/surto-de-ebola-no-congo-mata-mais-de-5000-pessoas,df55654fdf047fe68b5cccd4253df678se119b8p.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Surto de Ebola na RD Congo deixa mais de cinco mil mortos, diz governo",
-     "link": "https://www.cnnbrasil.com.br/internacional/surto-de-ebola-na-rd-congo-deixa-mais-de-cinco-mil-mortos-diz-governo/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s020",
+   "id": "s022",
    "title": "As comodidades da mansão de Renato Aragão, que foi penhorada pela Justiça",
    "summary": "Decisão da 12ª Vara da Fazenda Pública atende a pedido do Município do Rio para cobrança de débitos de IPTU",
    "section": "cultura",
@@ -3773,7 +3707,7 @@
    "checks": []
   },
   {
-   "id": "s019",
+   "id": "s021",
    "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
    "summary": "O Ministério Público do Trabalho contabilizou mais de 3 mil denúncias após a reeleição do presidente Lula (PT)",
    "section": "politica",
@@ -3839,7 +3773,7 @@
    "checks": []
   },
   {
-   "id": "s018",
+   "id": "s020",
    "title": "Jockey faz acordo com Prefeitura de SP, ganha desconto de R$ 643 milhões em dívida e promete parque de 85 mil m² para 2028",
    "summary": "A Prefeitura de São Paulo e o Jockey Club assinaram nesta quinta-feira, 29, um acordo para pagamento da dívida quase bilionária do hipódromo com o Município em troca de transformar uma parcela de seu terreno em um parque público. O clube também pagou R$ 228 milhões à vista para encerrar o débito.",
    "section": "sp",
@@ -3905,7 +3839,7 @@
    "checks": []
   },
   {
-   "id": "s017",
+   "id": "s019",
    "title": "Mauro Vieira e Marco Rubio se encontram no G20 e acertam reunião em novembro",
    "summary": "Mauro Vieira e Marco Rubio se cumprimentaram na abertura da reunião de chanceleres do G20, em Atlanta, sem previsão de encontro bilateral.",
    "section": "politica",
@@ -3971,7 +3905,139 @@
    "checks": []
   },
   {
-   "id": "s078",
+   "id": "s018",
+   "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
+   "summary": "Grupo Oncoclínicas Divulgação A Oncoclínicas atingiu o apoio de credores que representam 61,6% das dívidas incluídas em seu plano de recuperação extrajudicial, superando o mínimo exigido por lei para dar andamento ao processo. 🗒️ Tem alguma sugestão de reportagem? Envie para o g1 Segundo fato releva",
+   "section": "empresas",
+   "section_label": "Negócios",
+   "avg_bias": 0.1,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:25:35+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Oncoclínicas obtém apoio de credores para renegociar dívida de R$ 5,7 bilhões",
+     "link": "https://g1.globo.com/economia/noticia/2026/10/30/oncoclinicas-obtem-apoio-de-credores-para-renegociar-divida-de-r-57-bilhoes.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://s2-g1.glbimg.com/s7ekn3_7-adtWbbxhuv6t6HGy5o=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/Y/F/KwqhWNSEALGG8dtKQulA/grupo-oncoclinicas-1-.webp",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Oncoclínicas diz que obteve adesão necessária de credores para recuperação extrajudicial",
+     "link": "https://www.terra.com.br/economia/oncoclinicas-diz-que-obteve-adesao-necessaria-de-credores-para-recuperacao-extrajudicial,0b872aba02ab59078b3a5655b8c5a780uw3xoxta.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
+     "link": "https://valor.globo.com/empresas/noticia/2026/10/30/oncoclnicas-obtm-apoio-de-616-pontos-percentuais-dos-credores-e-avana-com-recuperao-extrajudicial.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "empresas",
+     "section_label": "Negócios",
+     "image": "https://s2-valor.glbimg.com/UPoxqPzLSjrTQ2nxCl-Ozm2TBqQ=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/y/X/4u3pFYSu2WE8tMUeNE1A/foto15emp-101-onco-b3.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s017",
+   "title": "Após caso Master, CNJ vai firmar acordos com B3 e cartórios para ampliar controle sobre precatórios",
+   "summary": "B3, Cerc, CIP e Colégio Notarial do Brasil participarão da elaboração técnica e dos testes do sistema",
+   "section": "economia",
+   "section_label": "Economia",
+   "avg_bias": -0.53,
+   "counts": {
+    "L": 1,
+    "C": 2,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 33,
+    "C": 67,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:41:51+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "CNJ vai firmar acordo para rastrear precatórios com registradoras após caso Master no país",
+     "link": "https://www.brasil247.com/brasil/cnj-vai-firmar-acordo-para-rastrear-precatorios-com-registradoras-apos-caso-master-no-pais/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://www.brasil247.com/wp-content/uploads/2026/01/2026012318014_d9dc396752b1c32310ab3a0c0939fa502baeeeb89bdea8f937554b0741c7f957.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "CNJ vai firmar acordo com registradoras de ativos para rastrear precatórios após caso Master",
+     "link": "https://c-level.folha.uol.com.br/financas/2026/10/cnj-vai-firmar-acordo-com-registradoras-de-ativos-para-rastrear-precatorios-apos-caso-master.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Após caso Master, CNJ vai firmar acordos com B3 e cartórios para ampliar controle sobre precatórios",
+     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/apos-caso-master-cnj-vai-firmar-acordos-com-b3-e-cartorios-para-ampliar-controle-sobre-precatorios.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://s2-oglobo.glbimg.com/Hxi6cfj7BmcnINGpjPG0zi0sQ7Q=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/Q/9/6AhwycTCG1LsRMevtutQ/112117819-brasilia-df-03-11-2023-predio-do-conselho-nacional-de-justica-fechada-do-cnj.-foto-rafa-n.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s081",
    "title": "TSE: violência contra mulher pode gerar inelegibilidade",
    "summary": "Ministros decidiram que lesão corporal contra mulher está entre os crimes que impedem candidatura pela Lei da Ficha Limpa",
    "section": "brasil",
@@ -4023,7 +4089,7 @@
    "checks": []
   },
   {
-   "id": "s076",
+   "id": "s079",
    "title": "Feriado de Finados terá chuvas fortes, raios e risco de temporais na região",
    "summary": "Enquanto o Acre e Roraima registram temperaturas acima dos 35°C, Manaus e Belém têm previsão de chuva e tempo nublado no feriado",
    "section": "nacional",
@@ -4075,7 +4141,7 @@
    "checks": []
   },
   {
-   "id": "s075",
+   "id": "s078",
    "title": "Robô 'guarda-costas' levanta carro e enfrenta homem armado em simulação de resgate",
    "summary": "empresa chinesa Unitree apresentou o H2-X, um novo robô humanoide desenvolvido para atuar como uma espécie de \"guarda-costas\" e auxiliar em situações de emergência. Em um vídeo promocional, a máquin...",
    "section": "cotidiano",
@@ -4127,9 +4193,9 @@
    "checks": []
   },
   {
-   "id": "s074",
+   "id": "s077",
    "title": "Lula vai lidar com sua herança maldita",
-   "summary": "Em 2027, não haverá antecessor para culpar. A herança agora é dele",
+   "summary": "No atual cenário, não existe solução indolor. Um duro ajuste fiscal será necessário para estabilizar a dívida pública.",
    "section": "vozes",
    "section_label": "Opinião",
    "avg_bias": 1.3,
@@ -4179,7 +4245,7 @@
    "checks": []
   },
   {
-   "id": "s073",
+   "id": "s076",
    "title": "Barbeiro mirim de 14 anos e amigo são executados a tiros em Pernambuco",
    "summary": "José Pablo da Silva Macedo, de 14 anos, foi assassinado ao lado de um amigo de 16 anos, em Cachoeirinha; polícia ainda investiga a motivação do crime",
    "section": "nacional",
@@ -4231,7 +4297,7 @@
    "checks": []
   },
   {
-   "id": "s072",
+   "id": "s075",
    "title": "Petróleo sobe 2% com tensão no Irã e atinge máxima semestral",
    "summary": "Os preços do petróleo fecharam em alta nesta sexta-feira (30), impulsionados por novas preocupações envolvendo o Estreito de Ormuz e o anúncio de que a Ucrânia retomou os ataques contra refinarias russas.",
    "section": "mundo",
@@ -4283,7 +4349,7 @@
    "checks": []
   },
   {
-   "id": "s071",
+   "id": "s074",
    "title": "Miami, a base de políticos conservadores da América Latina",
    "summary": "iami, a base de políticos conservadores da América Latina - Fuga de Flávio Bolsonaro para Flórida usa rota iniciada há quase um século por líderes políticos e ex-ditadores de direita. Com 70% de...",
    "section": "",
@@ -4335,7 +4401,7 @@
    "checks": []
   },
   {
-   "id": "s070",
+   "id": "s073",
    "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
    "summary": "Jason Miller acompanhou a apuração do segundo turno ao lado de Eduardo Bolsonaro em Miami e deixou o local após a virada eleitoral.",
    "section": "mundo",
@@ -4387,7 +4453,7 @@
    "checks": []
   },
   {
-   "id": "s069",
+   "id": "s072",
    "title": "Itens do Banco Master vão a leilão com peças de grife para escritório; veja lista",
    "summary": "Leilão online reúne 445 lotes de móveis, equipamentos e itens de decoração; lances iniciais vão de R$ 21 a R$ 98 mil",
    "section": "economia",
@@ -4439,7 +4505,7 @@
    "checks": []
   },
   {
-   "id": "s068",
+   "id": "s071",
    "title": "Sob forte esquema de segurança, estudantes e trabalhadores protestam na Itália contra alto custo de vida",
    "summary": "Centenas de milhares de estudantes e trabalhadores saíram às ruas da Itália nesta sexta-feira (30) para reivindicar mais verbas para as escolas e medidas contra o aumento vertiginoso do custo de vida.",
    "section": "mundo",
@@ -4491,7 +4557,7 @@
    "checks": []
   },
   {
-   "id": "s067",
+   "id": "s070",
    "title": "Gilberto Gil parabeniza Juliette e Kaique Cerveny por casamento: 'Especial'",
    "summary": "Cantor e esposa, Flora Gil, foram padrinhos do casal, que celebrou união no Recife",
    "section": "entretenimento",
@@ -4543,7 +4609,7 @@
    "checks": []
   },
   {
-   "id": "s066",
+   "id": "s069",
    "title": "Juros futuros têm forte alta com piora na percepção de risco após reeleição de Lula",
    "summary": "Taxa para janeiro de 2028 estava em 14,5%, em alta de 13 pontos-base ante o ajuste de 14,366% da véspera",
    "section": "financas",
@@ -4595,7 +4661,7 @@
    "checks": []
   },
   {
-   "id": "s064",
+   "id": "s067",
    "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
    "summary": "Proprietário de jato executivo afirma que pagamento partiu de conta nos Estados Unidos",
    "section": "politica",
@@ -4647,7 +4713,7 @@
    "checks": []
   },
   {
-   "id": "s063",
+   "id": "s066",
    "title": "Petróleo Brent sobe quase 20% no mês em meio a novas tensões no Oriente Médio",
    "summary": "Brent para janeiro fechou em alta de 2,37%, a US$ 113,43 o barril, e WTI para dezembro avançou 2,08%, a US$ 104,12 o barril; já na semana, Brent avançou 1,55% na semana e WTI ganhou 0,82%",
    "section": "financas",
@@ -4699,7 +4765,7 @@
    "checks": []
   },
   {
-   "id": "s062",
+   "id": "s065",
    "title": "Ministério da Educação estuda recriar Ciência Sem Fronteiras priorizando áreas como IA, Matemática e engenharias",
    "summary": "Novo programa também poderá contemplar estudantes do ensino médio; governo ainda não definiu orçamento nem número de bolsas",
    "section": "brasil",
@@ -4751,7 +4817,7 @@
    "checks": []
   },
   {
-   "id": "s061",
+   "id": "s064",
    "title": "Canadá e União Europeia anunciam aliança estratégica para reduzir dependência dos EUA",
    "summary": "A UE ( União Europeia ) e o Canadá anunciaram nesta sexta-feira (30) uma aliança para estreitar suas relações diante das medidas do presidente dos Estados Unidos , Donald Trump , para romper vínculos com antigos parceiros do país. Leia mais (10/30/2026 - 16h09)",
    "section": "mundo",
@@ -4803,7 +4869,59 @@
    "checks": []
   },
   {
-   "id": "s060",
+   "id": "s063",
+   "title": "Nos EUA, filha de brasileira gera indignação com poema sobre Charlie Kirk",
+   "summary": "Um vídeo da estudante Isabela Casahuga-Lemgruber repercutiu nas redes sociais após ela declamar, em uma universidade dos EUA, um poema em que, segundo seus críticos, \"celebra\" o assassinato do ativista conservador Charlie Kirk, morto em setembro de 2025 durante um evento universitário no estado de U",
+   "section": "internacional",
+   "section_label": "Mundo",
+   "avg_bias": 0.7,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:42:02.575880+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Nos EUA, filha de brasileira gera indignação com poema sobre Charlie Kirk",
+     "link": "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/10/30/estudante-poema-eua-morte.ghtm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Brasileira debocha do assassinato de Charlie Kirk em universidade nos EUA",
+     "link": "https://revistaoeste.com/mundo/brasileira-debocha-do-assassinato-de-charlie-kirk-em-universidade-nos-eua/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s061",
    "title": "Rota troca tiros e e mata suspeito de envolvimento em ataque contra tenente em SP",
    "summary": "As equipes policiais chegaram ao local após receberem denúncias de que um homem com mandado de prisão estaria escondido",
    "section": "nacional",
@@ -4855,7 +4973,7 @@
    "checks": []
   },
   {
-   "id": "s059",
+   "id": "s060",
    "title": "Confira a partir das 21h desta sexta (30) o resultado do concurso 3079 da Mega-Sena",
    "summary": "A Caixa Econômica Federal sorteia, a partir das 21h desta sexta-feira (30), o concurso 3079 da Mega-Sena . É o quinto dia da Mega Semana , com cinco sorteios consecutivos ao longo desta semana. A estimativa é que o prêmio principal chegue a R$ 6 milhões. Leia mais (10/30/2026 - 17h58)",
    "section": "cotidiano",
@@ -4907,7 +5025,7 @@
    "checks": []
   },
   {
-   "id": "s058",
+   "id": "s059",
    "title": "Trump volta a dizer que guerra com Irã acabará \"em breve\"",
    "summary": "Presidente dos EUA não detalhou como pretende encerrar o conflito e voltou a exigir garantias de que o Irã não desenvolverá armas nucleares",
    "section": "mundo",
@@ -4959,7 +5077,7 @@
    "checks": []
   },
   {
-   "id": "s057",
+   "id": "s058",
    "title": "Quem chega, quem fica e quem sai: quais são os nomes cotados para o governo Lula 4",
    "summary": "Presidente terá que acomodar aliados e o Centrão para tentar governar com o Congresso, além de ajudar a esquerda a formar novos quadros para 2030.",
    "section": "",
@@ -5011,7 +5129,7 @@
    "checks": []
   },
   {
-   "id": "s056",
+   "id": "s057",
    "title": "Wall St fecha com forte queda, com onda de vendas no setor de tecnologia",
    "summary": "A Bolsa de Nova York fechou esta sexta-feira (30) em forte queda, pressionada pelo tombo das ações de empresas de tecnologia após os resultados de Intel e Amazon, em um momento em que os investidores voltam a questionar a rentabilidade da inteligência",
    "section": "mercados",
@@ -5063,7 +5181,7 @@
    "checks": []
   },
   {
-   "id": "s055",
+   "id": "s056",
    "title": "FT: Anthropic pode não ter ‘grau de investimento’ após IPO, diz Blackstone a investidores",
    "summary": "A Blackstone informou a investidores que a Anthropic pode não receber uma classificação de grau de investimento logo após o seu IPO (Oferta Pública Inicial) . A mudança em relação à orientação anterior pode dificultar o financiamento dos altos gastos da empresa de IA ( inteligência artificial ). Lei",
    "section": "financas",
@@ -5115,7 +5233,7 @@
    "checks": []
   },
   {
-   "id": "s054",
+   "id": "s055",
    "title": "Ministro do Trabalho pede que MP acione Nikolas por \"boicote\" a petistas",
    "summary": "Ministro critica publicação do deputado do PL que convoca comerciantes de esquerda a expor bandeiras do PT em seus estabelecimentos",
    "section": "colunas",
@@ -5167,7 +5285,7 @@
    "checks": []
   },
   {
-   "id": "s053",
+   "id": "s054",
    "title": "Sobrevivente de uma execução no Tennessee afirma que está isolada e sofre dores constantes",
    "summary": "30 Out (Reuters) - Christa Pike, condenada à morte no Tennessee, em sua primeira declaração após ter sobrevivido a uma execução malsucedida há um mês, disse que vivia em constante sofrimento físico e mental ?e que estava praticamente isolada das outras pessoas na ala ?hospitalar da prisão.",
    "section": "",
@@ -5219,61 +5337,9 @@
    "checks": []
   },
   {
-   "id": "s052",
-   "title": "Após caso Master, CNJ vai firmar acordos com B3 e cartórios para ampliar controle sobre precatórios",
-   "summary": "O CNJ (Conselho Nacional de Justiça) vai firmar na próxima terça-feira (3) um acordo de cooperação técnica com registradoras de ativos financeiros, como a B3 (Bolsa de Valores de São Paulo), para que elas ajudem no desenvolvimento do sistema de monitoramento de precatórios no país . Leia mais (10/30",
-   "section": "economia",
-   "section_label": "Economia",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T00:34:00+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "CNJ vai firmar acordo com registradoras de ativos para rastrear precatórios após caso Master",
-     "link": "https://c-level.folha.uol.com.br/financas/2026/10/cnj-vai-firmar-acordo-com-registradoras-de-ativos-para-rastrear-precatorios-apos-caso-master.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Após caso Master, CNJ vai firmar acordos com B3 e cartórios para ampliar controle sobre precatórios",
-     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/apos-caso-master-cnj-vai-firmar-acordos-com-b3-e-cartorios-para-ampliar-controle-sobre-precatorios.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://s2-oglobo.glbimg.com/Hxi6cfj7BmcnINGpjPG0zi0sQ7Q=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/Q/9/6AhwycTCG1LsRMevtutQ/112117819-brasilia-df-03-11-2023-predio-do-conselho-nacional-de-justica-fechada-do-cnj.-foto-rafa-n.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s051",
+   "id": "s053",
    "title": "Letícia Colin diz que beijar Eduardo Sterblitch em ‘Os Outros’ foi ‘péssimo’; saiba motivo",
-   "summary": "Cena durante gravação de 'Os Outros' causou incômodo na atriz",
+   "summary": "Atores foram os convidados desta semana do ‘Angélica Ao Vivo’, do GNT",
    "section": "emais",
    "section_label": "Emais",
    "avg_bias": 0.2,
@@ -5323,7 +5389,7 @@
    "checks": []
   },
   {
-   "id": "s050",
+   "id": "s052",
    "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
    "summary": "Audiência reunirá clubes de futebol, representantes do governo e entidades dos setores econômico e de jogos",
    "section": "blogs",
@@ -5375,7 +5441,7 @@
    "checks": []
   },
   {
-   "id": "s049",
+   "id": "s051",
    "title": "Lula deve convidar Trump e Milei para posse em janeiro, apesar de tensões",
    "summary": "Lula deve estender convites a Donald Trump e Javier Milei para a posse de seu novo mandato, marcada para 5 de janeiro de 2027.",
    "section": "",
@@ -5427,7 +5493,7 @@
    "checks": []
   },
   {
-   "id": "s048",
+   "id": "s050",
    "title": "Jantar de sexta-feira: aprenda a fazer lasanha de salmão com molho branco",
    "summary": "Para finalizar a semana com muito sabor, a lasanha de salmão com molho branco é uma ótima opção para o jantar de sexta-feira. Cremosa e gratinada, ela combina a delicadeza do peixe com legumes, queijo derretido e um molho branco suave. Fácil de preparar, a […]",
    "section": "receitas",
@@ -5479,7 +5545,7 @@
    "checks": []
   },
   {
-   "id": "s047",
+   "id": "s049",
    "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
    "summary": "O crescimento é particularmente acentuado nos estados com disputas acirradas pelo Senado, onde 35 cadeiras estão em jogo",
    "section": "poder-internacional",
@@ -5531,7 +5597,7 @@
    "checks": []
   },
   {
-   "id": "s046",
+   "id": "s048",
    "title": "Após PSD, federação União-PP vai abrir conversas com Lula",
    "summary": "Partidos liberam filiados para participar de eventual quarto mandato do presidente Lula",
    "section": "politica",
@@ -5583,7 +5649,7 @@
    "checks": []
   },
   {
-   "id": "s045",
+   "id": "s047",
    "title": "Alegando questões financeiras, Igreja Universal deixa de comprar madrugadas da Band",
    "summary": "Igreja Universal deixará a faixa das 2h às 8h da Band em 20 de novembro. Emissora estima perder receita mensal de R$ 4 milhões.",
    "section": "colunistas",
@@ -5635,7 +5701,7 @@
    "checks": []
   },
   {
-   "id": "s044",
+   "id": "s046",
    "title": "Deputada aposta em maioria democrata após midterms para investigar ajuda de Trump a Flávio Bolsonaro",
    "summary": "Pramila Jayapal afirma que democratas vão apurar atuação do governo Trump e da Meta no Brasil caso conquistem a Câmara",
    "section": "mundo",
@@ -5687,7 +5753,7 @@
    "checks": []
   },
   {
-   "id": "s043",
+   "id": "s045",
    "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
    "summary": "BUDAPESTE, 30 Out (Reuters) - Acorrentado, mergulhado de cabeça para baixo em um tanque cheio de ?água e beirando a morte, ?Harry Houdini volta aos palcos em Budapeste nesta sexta-feira, em uma nova produção circense que homenageia o lendário ?mestre da ?fuga um ?século após sua morte.",
    "section": "",
@@ -5739,7 +5805,7 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s044",
    "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre",
    "summary": "O presidente deve aproveitar a atual composição do Senado para tentar emplacar a escolha ainda neste ano",
    "section": "politica",
@@ -5791,7 +5857,7 @@
    "checks": []
   },
   {
-   "id": "s041",
+   "id": "s043",
    "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados",
    "summary": "O Ebitda de R$ 558 milhões ficou abaixo das estimativas de todas as instituições financeiras; BB Investimentos rebaixou a recomendação da ação",
    "section": "empresas",
@@ -5843,7 +5909,7 @@
    "checks": []
   },
   {
-   "id": "s040",
+   "id": "s042",
    "title": "Apresentadora demitida do SBT diz que não se arrepende de críticas às eleições",
    "summary": "A apresentadora Thayse Teixeira afirmou que não se arrepende das declarações que fez sobre o resultado das eleições presidenciais durante o programa Fofocalizando , do SBT . Em vídeo publicado nas redes sociais nesta quinta-feira, 29, ela comentou a demissão da emissora e defendeu o direito de expre",
    "section": "imprensa",
@@ -5895,7 +5961,59 @@
    "checks": []
   },
   {
-   "id": "s039",
+   "id": "s041",
+   "title": "Surto de Ebola na RD Congo deixa mais de cinco mil mortos, diz governo",
+   "summary": "O número de ‌mortos pelo surto de Ebola na República Democrática do Congo ​ultrapassou 5.000, ...",
+   "section": "internacional",
+   "section_label": "Mundo",
+   "avg_bias": 0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:47:27+00:00",
+   "articles": [
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Surto de Ebola no Congo mata mais de 5.000 pessoas",
+     "link": "https://www.terra.com.br/noticias/mundo/surto-de-ebola-no-congo-mata-mais-de-5000-pessoas,df55654fdf047fe68b5cccd4253df678se119b8p.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Surto de Ebola na RD Congo deixa mais de cinco mil mortos, diz governo",
+     "link": "https://www.cnnbrasil.com.br/internacional/surto-de-ebola-na-rd-congo-deixa-mais-de-cinco-mil-mortos-diz-governo/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s040",
    "title": "Filha de Marielle Franco denuncia ataques racistas em grupo ligado à PUC-Rio",
    "summary": "Filha da vereadora cobra apuração de ataques racistas à mãe",
    "section": "",
@@ -5947,7 +6065,7 @@
    "checks": []
   },
   {
-   "id": "s038",
+   "id": "s039",
    "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
    "summary": "Oposição acusa Donald Tusk de interferir no Tribunal Constitucional; presidente Karol Nawrocki interrompe viagem à África diante da crise",
    "section": "mundo",
@@ -5999,7 +6117,7 @@
    "checks": []
   },
   {
-   "id": "s037",
+   "id": "s038",
    "title": "Após fuga de Flávio, Jorginho Mello se distancia de aliado e diz respeitar resultado das urnas",
    "summary": "governador reeleito de Santa Catarina, Jorginho Mello (PL), se distanciou do discurso adotado por Flávio Bolsonaro (PL), após a derrota do senador na disputa presidencial. Aliado da família Bolsonar...",
    "section": "",
@@ -6051,7 +6169,7 @@
    "checks": []
   },
   {
-   "id": "s036",
+   "id": "s037",
    "title": "EUA aprovam venda de 500 mísseis Patriot à Ucrânia por US$ 2,1 bilhões",
    "summary": "Os Estados Unidos aprovaram nesta sexta-feira (30) a venda de 500 mísseis interceptadores Patriot PAC-3 à Ucrânia , por um valor estimado em US$ 2,1 bilhões (R$ 11,42 bilhões). É uma das medidas mais significativas de fornecimento de armas defensivas a Kiev desde o início do governo Donald Trump . L",
    "section": "mundo",
@@ -6103,9 +6221,61 @@
    "checks": []
   },
   {
+   "id": "s036",
+   "title": "Mulher é eletrocutada ao pisar em fio caído no chão em Pinheiros, na zona oeste de SP",
+   "summary": "Vítima sofreu uma parada cardiorrespiratória e foi socorrida em estado grave para o Hospital das Clínicas. Enel lamenta e diz fazer reparos no local",
+   "section": "sao-paulo",
+   "section_label": "São Paulo",
+   "avg_bias": -0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:16:25+00:00",
+   "articles": [
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Mulher é eletrocutada ao pisar em fio caído no chão em Pinheiros, na zona oeste de SP",
+     "link": "https://www.estadao.com.br/sao-paulo/mulher-e-eletrocutada-ao-pisar-em-fio-caido-no-chao-em-pinheiros-na-zona-oeste-de-sp-npr/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sao-paulo",
+     "section_label": "São Paulo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Mulher é eletrocutada ao pisar em fio caído no chão em Pinheiros, na zona oeste de SP",
+     "link": "https://www.terra.com.br/noticias/brasil/cidades/mulher-e-eletrocutada-ao-pisar-em-fio-caido-no-chao-em-pinheiros-na-zona-oeste-de-sp,92ff2fa3ea47e107ad97eecd8dc5728fu3gth56z.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
    "id": "s034",
    "title": "Justiça apura transporte de urnas em caminhonete com adesivo do PT",
-   "summary": "A Justiça Eleitoral informou que o transporte de urnas eletrônicas em uma caminhonete com adesivo do Partido dos Trabalhadores (PT), no Riacho Fundo II, no Distrito Federal, não comprometeu os resultados das eleições de 2026. Um vídeo que circula nas redes sociais mostra uma mulher entregando equipa",
+   "summary": "Segundo o Tribunal Superior Eleitoral (TSE), o episódio ocorrido no Distrito Federal não comprometeu os resultados da votação.",
    "section": "politica",
    "section_label": "Política",
    "avg_bias": 1.4,
@@ -6260,58 +6430,6 @@
   },
   {
    "id": "s031",
-   "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
-   "summary": "Grupo Oncoclínicas Divulgação A Oncoclínicas atingiu o apoio de credores que representam 61,6% das dívidas incluídas em seu plano de recuperação extrajudicial, superando o mínimo exigido por lei para dar andamento ao processo. 🗒️ Tem alguma sugestão de reportagem? Envie para o g1 Segundo fato releva",
-   "section": "empresas",
-   "section_label": "Negócios",
-   "avg_bias": 0.15,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T02:24:35+00:00",
-   "articles": [
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Oncoclínicas obtém apoio de credores para renegociar dívida de R$ 5,7 bilhões",
-     "link": "https://g1.globo.com/economia/noticia/2026/10/30/oncoclinicas-obtem-apoio-de-credores-para-renegociar-divida-de-r-57-bilhoes.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://s2-g1.glbimg.com/s7ekn3_7-adtWbbxhuv6t6HGy5o=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/Y/F/KwqhWNSEALGG8dtKQulA/grupo-oncoclinicas-1-.webp",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
-     "link": "https://valor.globo.com/empresas/noticia/2026/10/30/oncoclnicas-obtm-apoio-de-616-pontos-percentuais-dos-credores-e-avana-com-recuperao-extrajudicial.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "empresas",
-     "section_label": "Negócios",
-     "image": "https://s2-valor.glbimg.com/UPoxqPzLSjrTQ2nxCl-Ozm2TBqQ=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/y/X/4u3pFYSu2WE8tMUeNE1A/foto15emp-101-onco-b3.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s030",
    "title": "OpenAI anuncia mais restrições no acesso de adolescentes a informações sobre armas no ChatGPT",
    "summary": "A OpenAI anunciou nesta sexta-feira (30) que está tornando mais restritivos os limites às informações relacionadas a armas que o ChatGPT fornece a adolescentes, mesmo quando uma pergunta parece inofensiva. Leia mais (10/30/2026 - 20h30)",
    "section": "ia",

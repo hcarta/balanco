@@ -645,6 +645,8 @@ def main():
                "stories": stories}
     with open(os.path.join(SITE, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
+    archive_snapshot(SITE, payload)
+    write_feed(SITE, stories)
     with open(os.path.join(BASE, "state", "health.json"), "w", encoding="utf-8") as f:
         json.dump({"run_ts": run_ts, "sources": health}, f, ensure_ascii=False, indent=1)
     print(f"[4/4] {len(stories)} stories → docs/data.json")
@@ -661,6 +663,73 @@ def main():
     print("Top stories:")
     for s in stories[:8]:
         print(f"  [{s['counts']['total']:2}x L{s['pct']['L']:2}% C{s['pct']['C']:2}% R{s['pct']['R']:2}%] {s['title'][:80]}")
+
+
+SITE_URL = "https://hcarta.github.io/balanco"
+ARCHIVE_KEEP = 90  # edições diárias mantidas
+
+
+def archive_snapshot(site_dir: str, payload: dict) -> str | None:
+    """Guarda uma edição por dia em arquivo/AAAA-MM-DD.json (Fase 6.1)."""
+    import glob
+    adir = os.path.join(site_dir, "arquivo")
+    os.makedirs(adir, exist_ok=True)
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    dest = os.path.join(adir, f"{day}.json")
+    if not os.path.exists(dest):
+        with open(dest, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False)
+    files = sorted(glob.glob(os.path.join(adir, "????-??-??.json")))
+    for old in files[:-ARCHIVE_KEEP]:
+        try:
+            os.remove(old)
+        except OSError:
+            pass
+    # índice do arquivo
+    items = []
+    for fp in sorted(glob.glob(os.path.join(adir, "????-??-??.json")), reverse=True):
+        try:
+            with open(fp, encoding="utf-8") as f:
+                d = json.load(f)
+            items.append((os.path.basename(fp)[:10], d.get("n_stories", 0),
+                          d.get("generated_at", "")))
+        except Exception:
+            continue
+    lis = "\n".join(
+        f'<li><a href="{d}.json">{d}</a> — {n} histórias</li>' for d, n, _ in items)
+    html = f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edições anteriores — Balanço</title>
+<style>body{{font-family:Georgia,serif;max-width:640px;margin:40px auto;padding:0 20px;color:#16130f;background:#faf8f4}}a{{color:#1d4ed8}}li{{margin:8px 0}}</style>
+</head><body><h1>Edições anteriores</h1><p><a href="../">← Voltar ao Balanço de hoje</a></p><ul>{lis}</ul></body></html>"""
+    with open(os.path.join(adir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+    return dest
+
+
+def write_feed(site_dir: str, stories: list) -> str:
+    """Feed RSS do próprio Balanço (Fase 6.2): cada item linka a comparação."""
+    from xml.sax.saxutils import escape
+    out = ["""<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>""",
+           f"<title>Balanço — todos os lados da notícia</title>",
+           f"<link>{SITE_URL}/</link>",
+           "<description>Histórias agrupadas por cobertura de esquerda, centro e direita.</description>",
+           "<language>pt-BR</language>"]
+    for s in stories[:30]:
+        desc = (f"{s.get('summary', '')} "
+                f"Cobertura: esquerda {s['pct']['L']}%, centro {s['pct']['C']}%, "
+                f"direita {s['pct']['R']}% ({s['counts']['total']} veículos).")
+        out.append(
+            f"<item><title>{escape(s['title'])}</title>"
+            f"<link>{SITE_URL}/?story={s['id']}</link>"
+            f"<guid>{SITE_URL}/?story={s['id']}</guid>"
+            f"<pubDate>{s.get('updated', '')}</pubDate>"
+            f"<description>{escape(desc[:600])}</description></item>")
+    out.append("</channel></rss>")
+    dest = os.path.join(site_dir, "feed.xml")
+    with open(dest, "w", encoding="utf-8") as f:
+        f.write("\n".join(out))
+    return dest
 
 
 def store_alerts(health: dict) -> list[str]:

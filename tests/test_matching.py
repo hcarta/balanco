@@ -131,3 +131,42 @@ def test_attach_checks_includes_terms():
     assert set(out[0]["checks"][0]["terms"]) <= {"governo", "lula", "bloqueou", "gás", "povo", "bolsa", "família", "eleições"}
     assert len(out[0]["checks"][0]["terms"]) >= 2
     assert matches and matches[0]["terms"]
+
+
+def test_archive_snapshot_and_prune(tmp_path):
+    import json as _json
+    from app import archive_snapshot
+    site = tmp_path / "site"
+    site.mkdir()
+    for day in ["2026-10-28", "2026-10-29", "2026-10-30"]:
+        (site / "arquivo").mkdir(exist_ok=True)
+        (site / "arquivo" / f"{day}.json").write_text(
+            _json.dumps({"n_stories": 1, "generated_at": day}))
+    import app as _app
+    old_keep = _app.ARCHIVE_KEEP
+    _app.ARCHIVE_KEEP = 2
+    try:
+        archive_snapshot(str(site), {"n_stories": 5})
+    finally:
+        _app.ARCHIVE_KEEP = old_keep
+    import glob as _glob
+    assert sorted(_glob.glob(str(site / "arquivo" / "????-??-??.json"))) == sorted(
+        _glob.glob(str(site / "arquivo" / "2026-10-?9.json")) +
+        _glob.glob(str(site / "arquivo" / "2026-10-30.json")))
+    assert (site / "arquivo" / "index.html").exists()
+
+
+def test_write_feed_is_valid_rss(tmp_path):
+    import xml.etree.ElementTree as ET
+    from app import write_feed
+    stories = [{
+        "id": "s001", "title": "Teste & manchete <ok>",
+        "summary": "Resumo.", "updated": "2026-10-30T00:00:00+00:00",
+        "counts": {"total": 3}, "pct": {"L": 33, "C": 34, "R": 33},
+    }]
+    dest = write_feed(str(tmp_path), stories)
+    root = ET.parse(dest).getroot()
+    assert root.tag == "rss"
+    items = root.find("channel").findall("item")
+    assert len(items) == 1
+    assert items[0].find("link").text.endswith("?story=s001")
