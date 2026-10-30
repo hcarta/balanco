@@ -92,15 +92,15 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 
 ## Fase 6 — Produto
 
-*Status 30/10: 6.1–6.3 implementados; 6.4–6.5 pendentes.*
+*Status 30/10: 6.1–6.3 e 6.5 implementados; 6.4 pendente (provedor).*
 
 - [x] **6.1 Arquivo por data** — `archive_snapshot`: 1 edição/dia em `docs/arquivo/AAAA-MM-DD.json` (poda 90 dias) + `index.html` gerado. Link "Edições anteriores" no rodapé.
 - [x] **6.2 Feed próprio** — `docs/feed.xml` (30 histórias, link p/ `?story=ID`, descrição com barra L/C/R). Validado via ElementTree.
 - [x] **6.3 Página "Como lemos"** — `docs/como-lemos.html` editorial: o que faz, viés fixo, blindspot, checagens, fontes, limitações. Links no rodapé (corrigido: `sources.yaml` apontava p/ caminho inexistente no Pages).
 - [ ] **6.4 Newsletter Blindspot** — template + envio. Exige provedor de e-mail (decisão pendente).
-- [ ] **6.5 Busca e filtros 2.0** — filtro por veículo, destaque de termo (ordenação "mais divididas" e filtro por editoria já existem).
+- [x] **6.5 Busca e filtros 2.0** — filtro por veículo + destaque de termo (`<mark>`) + filtro por editoria + ordenação "mais divididas".
 
-**Aceite:** arquivo navegável ✓ (poda 90 dias); feed próprio válido ✓; página de metodologia publicada ✓; 1ª newsletter — pendente.
+**Aceite:** arquivo navegável ✓ (poda 90 dias); feed próprio válido ✓; página de metodologia publicada ✓; filtros 2.0 ✓; 1ª newsletter — pendente (decisão de provedor).
 
 ## Fase 7 — Publicação
 

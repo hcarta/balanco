@@ -117,12 +117,4 @@ Notas:
 - Factualidade/propriedade são tabeladas manualmente em `sources.yaml` (Ground pesquisa 2000+ outlets).
 
 ## Próximos passos
-O roteiro completo, com fases, esforço estimado e critérios de aceite, está em [`PLANO.md`](PLANO.md). Resumo:
-- [x] Adicionar Estadão/O Globo/Valor/Gazeta via Arc XP + Google News sitemaps
-- [x] **Fase 1 (parcial)** — Cache SQLite + HTTP condicional + retry + `health.json` + selo de fonte instável. Falta: agendamento e testes mínimos
-- [x] **Fase 2** — Eval set (P 0.96/R 0.63), anti-ruído, título representante, janela por editoria, embeddings opt-in (`--embed`)
-- [ ] **Fase 3** — Dek via meta description + imagens + editoria normalizada
-- [ ] **Fase 4** — Paginar Lupa, Aos Fatos, fila de revisão em CSV
-- [ ] **Fase 5** — 2ª leva de fontes + documento de curadoria de viés
-- [ ] **Fase 6** — Arquivo por data, feed próprio, página de metodologia, newsletter
-- [ ] **Fase 7** — Hospedagem + jurídico + modelo
+O roteiro completo, com fases, esforço estimado e critérios de aceite, está em [`PLANO.md`](PLANO.md). Resumo do que falta: newsletter (pende provedor de envio), domínio + analytics + SEO, jurídico, modelo de negócio. Opcionais: alerta por e-mail, matching semântico, corpos em cache no clustering, revisão trimestral de viés (jan/2027).

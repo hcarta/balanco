@@ -111,7 +111,7 @@ sources:
     name: Veja
     rss: https://veja.abril.com.br/ultimas-noticias/rss
     bias: 0.5
-    factuality: high
+    factuality: mixed
     ownership: corporacao
     owner_detail: Editora Abril
   - id: istoe
@@ -167,7 +167,7 @@ sources:
     name: Revista Oeste
     rss: https://revistaoeste.com/feed/
     bias: 1.6
-    factuality: mixed
+    factuality: low
     ownership: independente
     owner_detail: Revista Oeste
 

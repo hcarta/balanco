@@ -38,14 +38,14 @@
 | Diário do Centro do Mundo | -1.5 | Partidário pró-esquerda; tom militante |
 | CartaCapital | -1.2 | Esquerda assumida; crítica sistemática à direita e ao mercado |
 | Jovem Pan | +1.4 | Partidária pró-Bolsonaro/direita; linguagem militante frequente |
-| Revista Oeste | +1.6 | Direita assumida; linha editorial abertamente conservadora |
+| Revista Oeste | +1.6 | Direita assumida; linha editorial abertamente conservadora. Factualidade rebaixada p/ baixa em 30/10 (padrão de imprecisão) |
 | Gazeta do Povo | +1.2 | Direita curitibana; conservadora em costumes e mercado |
 | Agência Brasil | — (pendente) | Feed RSS parado desde 2023; sitemap sem namespace de notícias. Revisitar se publicarem feed vivo |
 | SBT News | 0.0 | Popular, factual; sem linha partidária detectável |
 | R7 | +0.5 | Grupo Record (Edir Macedo); conservadora em costumes, pró-governos de direita |
 | Band | 0.0 | Comercial neutra; jornalismo factual sem linha marcada |
 | DW Brasil | 0.0 | Serviço público alemão; factual, padrão internacional |
-| Veja | +0.5 | Liberal-conservadora; historicamente anti-PT |
+| Veja | +0.5 | Liberal-conservadora; historicamente anti-PT. Factualidade rebaixada p/ mista em 30/10 (caso Lula–Vorcaro questionado) |
 | IstoÉ | 0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
 

@@ -96,7 +96,10 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .section-head h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em}
 .section-head .count{font-size:12px;color:var(--muted);letter-spacing:.04em}
 .edwrap{display:flex;align-items:center;gap:10px}
-#ed{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-soft);padding:7px 10px;border:1px solid var(--hair-strong);border-radius:99px;background:var(--surface);cursor:pointer;max-width:170px}
+#ed,#src{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-soft);padding:7px 10px;border:1px solid var(--hair-strong);border-radius:99px;background:var(--surface);cursor:pointer;max-width:170px}
+mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
+.badge.cons{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+.kicker-sec{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
 /* imagens (Fase 3.2): destaque + miniaturas, some se quebrar */
 .feat-img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;margin:0 0 18px;display:block}
 .sgrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}
@@ -269,18 +272,19 @@ footer a.fl:hover{color:var(--accent)}
     <div id="featured"></div>
     <div class="section-head">
       <h2 id="feedTitle">Todas as histórias</h2>
-      <span class="edwrap"><select id="ed" aria-label="Filtrar por editoria"></select><span class="count" id="feedCount"></span></span>
+      <span class="edwrap"><select id="ed" aria-label="Filtrar por editoria"></select><select id="src" aria-label="Filtrar por veículo"></select><span class="count" id="feedCount"></span></span>
     </div>
     <div id="feed"><div class="empty">Carregando o balanço do dia…</div></div>
   </section>
 
   <aside class="rail" id="rail">
     <div class="rail-card" id="blindCard"></div>
+    <div class="rail-card" id="consCard"></div>
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="srcCard"></div>
     <div class="rail-card method">
       <div class="rt">◎ Como ler este balanço</div>
-      <p><b>Recorte</b>: sem esporte — o foco é poder, economia e sociedade. Cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. Não há análise matéria a matéria — o mesmo jornal aparece sempre no mesmo lugar do espectro.</p>
+      <p><b>Recorte</b>: sem esporte — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e o trilho "Em consenso" destacam o que os veículos de centro com alta factualidade cobrem.</p>
       <p>É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Aqui sem AllSides/MBFC, a tabela é curadoria manual.</p>
       <p><b>Checagens</b>: o selo ⚑ liga a história a uma verificação do <b>G1 Fato ou Fake</b> ou da <b>Agência Lupa</b> quando a alegação coincide. É uma checagem <i>relacionada</i>, não um veredito sobre a matéria.</p>
       <p>Corpos completos (quando públicos) alimentam só a análise; na tela aparecem a description pública ou trechos curtos, sempre com link para o original.</p>
@@ -314,7 +318,7 @@ footer a.fl:hover{color:var(--accent)}
 <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
 
 <script>
-const S = { data:null, filter:'all', q:'', ed:'', featuredId:null };
+const S = { data:null, filter:'all', q:'', ed:'', src:'', featuredId:null };
 
 const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -328,6 +332,15 @@ const VL = {falso:'Falso',verdadeiro:'Verdadeiro',enganoso:'Enganoso',checagem:'
 const blindShort = b => b==='left'?'esquerda':'direita';
 const blindLong = b => b==='left'?'da esquerda':'da direita';
 const storyImg = s => { const a=(s.articles||[]).find(x=>x.image); return a?a.image:''; };
+const centerTrusted = s => (s.articles||[]).filter(a=>a.bucket==='C' &&
+  (a.factuality==='high'||a.factuality==='very_high')).length;
+const hi = (t) => {
+  const e = esc(t||''); const q = S.q.trim();
+  if(q.length < 2) return e;
+  const rx = esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  try { return e.replace(new RegExp('('+rx+')','gi'), '<mark>$1</mark>'); }
+  catch(_){ return e; }
+};
 function checksBadges(s, max=2){
   const cs = (s.checks||[]).slice(0,max);
   if(!cs.length){
@@ -405,9 +418,11 @@ function renderFeatured(){
     : `<div class="kicker">Em foco · ${top.counts.total} coberturas</div>`;
   const lead = top.articles[0];
   const img = storyImg(top);
+  const featCons = centerTrusted(top) >= 3
+    ? `<span class="badge cons" title="${centerTrusted(top)} veículos de centro com alta factualidade cobrem esta história">✓ Consenso</span>` : '';
   el.innerHTML = `<div class="featured">
       ${kick}
-      ${checksBadges(top)}
+      ${checksBadges(top)}${featCons}
       <h1><a href="${esc(lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
       ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
@@ -471,6 +486,13 @@ function renderFeed(){
       `<option value="${esc(l)}"${l===S.ed?' selected':''}>${esc(l)} (${ecc[l]})</option>`).join('');
   if(S.ed) list = list.filter(s => s.section_label===S.ed ||
     (s.articles||[]).some(a=>a.section_label===S.ed));
+  // opções de veículo (preserva seleção)
+  const srcCount = {};
+  d.stories.forEach(s=>{(s.articles||[]).forEach(a=>{ srcCount[a.source]=(srcCount[a.source]||0)+1; });});
+  $('#src').innerHTML = `<option value="">Todos os veículos</option>` +
+    Object.keys(srcCount).sort((a,b)=>a.localeCompare(b,'pt-BR')).map(n=>
+      `<option value="${esc(n)}"${n===S.src?' selected':''}>${esc(n)}</option>`).join('');
+  if(S.src) list = list.filter(s => (s.articles||[]).some(a=>a.source===S.src));
 
   let title = 'Todas as histórias';
   if(S.filter==='blind'){ list=list.filter(s=>s.blindspot); title='Blindspots'; }
@@ -495,12 +517,14 @@ function renderFeed(){
       : '';
     const srcs = new Set(s.articles.map(a=>a.source)).size;
     const img = storyImg(s);
+    const cons = centerTrusted(s) >= 3
+      ? `<span class="badge cons" title="${centerTrusted(s)} veículos de centro com alta factualidade cobrem esta história">✓ Consenso</span>` : '';
     return `<article class="story" data-id="${s.id}">
-      <div class="top">${blind}${checksBadges(s)}<span class="badge plain">${s.counts.total} coberturas · ${srcs} veículos</span></div>
+      <div class="top">${blind}${checksBadges(s)}${cons}<span class="badge plain">${s.counts.total} coberturas · ${srcs} veículos</span></div>
       <div class="sgrid"><div>
       ${s.section_label&&s.section_label!=='Geral'?`<div class="kicker-sec">${esc(s.section_label)}</div>`:''}
-      <h3><a class="toggle-story" href="#" role="button">${esc(s.title)}</a></h3>
-      ${s.summary?`<p class="sum">${esc(s.summary)}</p>`:''}
+      <h3><a class="toggle-story" href="#" role="button">${hi(s.title)}</a></h3>
+      ${s.summary?`<p class="sum">${hi(s.summary)}</p>`:''}
       </div>${img?`<img class="thumb" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}</div>
       ${biasBar(s)}
       <div class="foot">
@@ -550,6 +574,22 @@ function renderRail(){
     : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Nenhuma história com cobertura desequilibrada suficiente para virar blindspot nesta edição.</p>`
   );
 
+  // em consenso: o que o centro confiável está cobrindo (hierarquia)
+  const cons = d.stories
+    .map(s=>({s, n:centerTrusted(s)}))
+    .filter(x=>x.n>=2)
+    .sort((a,b)=>b.n-a.n || b.s.counts.total-a.s.counts.total)
+    .slice(0,4);
+  $('#consCard').innerHTML = `<div class="rt">◎ Em consenso</div>
+    <p class="rnote">O essencial, segundo o centro de alta factualidade</p>` + (
+    cons.length ? cons.map(({s,n})=>`
+      <div class="rail-item" data-jump="${s.id}">
+        <h4>${esc(s.title)}</h4>
+        <div class="rl">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
+      </div>`).join('')
+    : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Sem consenso claro nesta edição.</p>`
+  );
+
   // checagens recentes (G1 Fato ou Fake + Lupa)
   const checks = (d.factchecks||[]).slice(0,4);
   $('#checkCard').innerHTML = `<div class="rt">⚑ Checagens recentes</div>
@@ -584,7 +624,7 @@ function renderRail(){
   // jump links in rail
   document.querySelectorAll('[data-jump]').forEach(el=>{
     el.addEventListener('click', ()=>{
-      S.filter='all'; S.q=''; S.ed=''; $('#q').value='';
+      S.filter='all'; S.q=''; S.ed=''; S.src=''; $('#q').value='';
       document.querySelectorAll('.pill[data-f]').forEach(p=>p.classList.toggle('on', p.dataset.f==='all'));
       renderFeed();
       expandStory(el.dataset.jump);
@@ -603,6 +643,7 @@ document.querySelectorAll('.pill[data-f]').forEach(p=>{
 });
 $('#q').addEventListener('input', e=>{ S.q = e.target.value; renderFeed(); });
 $('#ed').addEventListener('change', e=>{ S.ed = e.target.value; renderFeed(); });
+$('#src').addEventListener('change', e=>{ S.src = e.target.value; renderFeed(); });
 document.querySelectorAll('[data-goto]').forEach(a=>{
   a.addEventListener('click', e=>{
     e.preventDefault();
