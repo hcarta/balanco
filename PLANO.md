@@ -91,7 +91,7 @@ Hoje: 200 checagens recentes, casamento léxico, ledger acumulativo. Bom começo
 
 Parcialmente adiantada pela Via B (Actions + Pages cobrem hospedagem e deploy).
 
-- [x] **7.1 Hospedagem estática + Actions** — workflow `.github/workflows/collect.yml` pronto; falta criar o repo remoto, push e ativar Pages (passos no README). Custo ~zero.
+- [x] **7.1 Hospedagem estática + Actions** — workflow ativo; repo em `github.com/hcarta/balanco`, Pages servindo `/docs` em `hcarta.github.io/balanco` (verificado 30/10).
 - [ ] **7.2 Domínio + analytics mínimo + SEO** (sitemap próprio, Open Graph).
 - [ ] **7.3 Revisão jurídica** — termos de uso, política de correção/errata, avaliação do PL 2338/2023 e de republicação de resumos (se Fase 3 publicar deks de terceiros, considerar licenciamento).
 - [ ] **7.4 Modelo** — definir antes de escalar: gratuito aberto (como hoje) vs. assinatura estilo Ground.news. Recomendação: manter aberto até ter tração; monetização depois.
