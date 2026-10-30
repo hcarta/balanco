@@ -30,6 +30,13 @@ open docs/index.html
 # ou: python -m http.server -d docs 8000
 ```
 
+### Opcional: embeddings semânticos
+```bash
+pip install sentence-transformers  # baixa modelo multilíngue (~470 MB, 1ª vez)
+python app.py --embed
+```
+Complementa o TF-IDF com similaridade semântica (regra híbrida: TF-IDF **ou** cosseno ≥ 0,70 + 1 token em comum). Medido no conjunto de avaliação: P 0.903 / R 0.700 vs TF-IDF puro P 0.962 / R 0.625. Padrão desligado (precisão primeiro; sem custo extra no agendador).
+
 ### Testes (rode antes de mudar o núcleo)
 ```bash
 python -m pytest tests/ -q   # 26 testes: coletores, vereditos, cache, matching

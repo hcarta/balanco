@@ -45,6 +45,20 @@ def test_bucket_thresholds():
     assert bucket(1.6) == "R"
 
 
+def test_rep_score_prefers_neutral_informative():
+    from app import rep_score
+    meta = {"bbc": {"factuality": "very_high"}, "blog": {"factuality": "low"}}
+    neutral = {"title": "Itamaraty convoca diplomata argentina para esclarecer fuga de senador",
+               "source_id": "bbc"}
+    clickbait = {"title": "VOCÊ NÃO VAI ACREDITAR no que o Itamaraty fez ontem à noite?!",
+                 "source_id": "bbc"}
+    weak_src = {"title": "Itamaraty convoca diplomata argentina para esclarecer fuga de senador "
+                         "e evitar uma crise diplomática sem precedentes na história",
+                "source_id": "blog"}
+    assert rep_score(neutral, meta) > rep_score(clickbait, meta)
+    assert rep_score(neutral, meta) > rep_score(weak_src, meta)
+
+
 def test_store_alerts_flags_errors_and_empty():
     h = {
         "ok": {"err_streak": 0, "empty": False, "last_status": "ok", "last_run": "x"},
@@ -68,3 +82,32 @@ def test_cluster_groups_near_duplicates():
     assert len(groups) == 2
     pair = [g for g in groups if len(g) == 2][0]
     assert set(pair) == {0, 1}
+
+
+def test_pair_window_by_section():
+    from app import pair_window
+    assert pair_window("politica", "politica") == 24.0
+    assert pair_window("politica", None) == 24.0
+    assert pair_window("vozes", "politica") == 168.0
+    assert pair_window("opinião", "opinião") == 168.0  # com acento
+    assert pair_window(None, None) == 48.0
+    assert pair_window("tecnologia", "ciencia") == 48.0
+
+
+def test_cluster_respects_section_window():
+    now = time.time()
+    day = 86400
+    arts = [
+        {"title": "Senado aprova marco fiscal em votação apertada", "ts": now,
+         "section": "politica"},
+        {"title": "Senado aprova marco fiscal em votação apertada no plenário",
+         "ts": now - 30 * 3600, "section": "politica"},
+        {"title": "Crítica teatral: a nova montagem de Hamlet no municipal", "ts": now,
+         "section": "vozes"},
+        {"title": "Crítica teatral: nova montagem de Hamlet em cartaz no municipal",
+         "ts": now - 5 * day, "section": "vozes"},
+    ]
+    groups = cluster(arts, window_h=48)
+    sizes = sorted(len(g) for g in groups)
+    # breaking (30h) separa; opinião (5d) junta
+    assert sizes == [1, 1, 2]

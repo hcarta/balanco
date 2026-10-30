@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T22:22:21.575019+00:00",
- "n_articles": 661,
- "n_stories": 40,
+ "generated_at": "2026-10-30T22:34:12.780448+00:00",
+ "n_articles": 679,
+ "n_stories": 45,
  "n_factchecks": 200,
  "n_matches": 0,
- "n_new": 62,
+ "n_new": 0,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 134,
+    "last_ms": 162,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 100,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 162,
+    "last_ms": 105,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 15,
-    "last_n_total": 27,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 31,
     "last_status": "ok",
-    "last_ms": 106,
+    "last_ms": 112,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 60,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 206,
+    "last_ms": 194,
     "err_streak": 0,
     "empty": false
    }
@@ -92,11 +92,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 31,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 198,
+    "last_ms": 32,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +111,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 16,
     "last_status": "ok",
-    "last_ms": 85,
+    "last_ms": 56,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +130,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 20,
-    "last_n_total": 42,
+    "last_n_total": 45,
     "last_status": "ok",
-    "last_ms": 432,
+    "last_ms": 523,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +149,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 10,
     "last_n_total": 30,
     "last_status": "ok",
-    "last_ms": 277,
+    "last_ms": 157,
     "err_streak": 0,
     "empty": false
    }
@@ -168,11 +168,11 @@
    "owner_detail": "Nexo Jornal",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 20,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 123,
+    "last_ms": 69,
     "err_streak": 0,
     "empty": false
    }
@@ -187,11 +187,11 @@
    "owner_detail": "Editora piauí / João Moreira Salles (distribuição Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 0,
     "last_n_total": 1,
     "last_status": "ok",
-    "last_ms": 191,
+    "last_ms": 175,
     "err_streak": 0,
     "empty": false
    }
@@ -206,11 +206,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 17,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 19,
     "last_status": "ok",
-    "last_ms": 99,
+    "last_ms": 74,
     "err_streak": 0,
     "empty": false
    }
@@ -225,11 +225,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 22,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 26,
     "last_status": "ok",
-    "last_ms": 97,
+    "last_ms": 127,
     "err_streak": 0,
     "empty": false
    }
@@ -244,11 +244,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 10,
-    "last_n_total": 15,
+    "last_n_total": 17,
     "last_status": "ok",
-    "last_ms": 649,
+    "last_ms": 668,
     "err_streak": 0,
     "empty": false
    }
@@ -263,11 +263,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 0,
     "last_n_total": 28,
     "last_status": "ok",
-    "last_ms": 85,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -282,11 +282,11 @@
    "owner_detail": "Grupo Jovem Pan",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 11,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 12,
     "last_status": "ok",
-    "last_ms": 81,
+    "last_ms": 93,
     "err_streak": 0,
     "empty": false
    }
@@ -301,11 +301,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 13,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 14,
     "last_status": "ok",
-    "last_ms": 113,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -321,11 +321,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 100,
-    "last_n_total": 36,
+    "last_n_total": 37,
     "last_status": "ok",
-    "last_ms": 283,
+    "last_ms": 126,
     "err_streak": 0,
     "empty": false
    }
@@ -341,11 +341,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 186,
+    "last_ms": 461,
     "err_streak": 0,
     "empty": false
    }
@@ -361,11 +361,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
-    "last_n_fresh": 720,
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 146,
+    "last_ms": 107,
     "err_streak": 0,
     "empty": false
    }
@@ -381,11 +381,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T22:22:15.935065+00:00",
+    "last_run": "2026-10-30T22:34:07.813079+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 486,
+    "last_ms": 405,
     "err_streak": 0,
     "empty": false
    }
@@ -1036,178 +1036,23 @@
  "stories": [
   {
    "id": "s000",
-   "title": "Do rali à queda histórica: como o Ibovespa caiu 9,88% no mês, maior baixa desde 2022",
-   "summary": "Os ativos domésticos encerraram a semana após a reeleição de Lula ( PT ) para um quarto mandato com as maiores desvalorizações do ano. A Bolsa, que chegou a atingir o patamar histórico de 200 mil pontos neste mês, recuou 17,5% na semana e 9,21% em outubro. Leia mais (10/30/2026 - 17h45)",
-   "section": "mercados",
-   "avg_bias": 0.1,
-   "counts": {
-    "L": 0,
-    "C": 11,
-    "R": 0,
-    "total": 11
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": "both",
-   "updated": "2026-10-31T00:56:20+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Bolsa cai 17,5% na semana da vitória de Lula e tem pior resultado desde 2020",
-     "link": "https://www1.folha.uol.com.br/mercado/2026/10/bolsa-cai-175-na-semana-da-vitoria-de-lula-e-tem-pior-resultado-desde-2020.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mercado",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Bolsa tem 5ª maior queda desde Plano Real após reeleição de Lula",
-     "link": "https://www.poder360.com.br/poder-economia/bolsa-tem-5a-maior-queda-desde-plano-real-apos-reeleicao-de-lula/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-economia",
-     "factuality": "high",
-     "ownership": "independente"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Dólar sobe 1,05%, a R$ 5,444; Ibovespa cai 0,75%",
-     "link": "https://www.poder360.com.br/poder-economia/dolar-sobe-105-a-r-5444-ibovespa-cai-075/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-economia",
-     "factuality": "high",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Dólar sobe 9% pós-eleição, maior alta semanal desde 2008, e bolsa cai 18%",
-     "link": "https://www.metropoles.com/brasil/dolar-sobe-9-pos-eleicao-maior-alta-semanal-desde-2008-e-bolsa-cai-18",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Ibovespa tem 5ª maior queda semanal desde o Plano Real",
-     "link": "https://www.cnnbrasil.com.br/economia/money/mercado/ibovespa-tem-5a-maior-queda-semanal-desde-o-plano-real/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Ibovespa tem quinta maior queda semanal desde o Plano Real",
-     "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/10/ibovespa-tem-quinta-maior-queda-semanal-desde-o-plano-real.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "blogs",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Do rali à queda histórica: como o Ibovespa caiu 9,88% no mês, maior baixa desde 2022",
-     "link": "https://www.infomoney.com.br/mercados/do-rali-a-queda-historica-como-ibovespa-caiu-988-outubro-2026-maior-baixa-desde-2022/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mercados",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
-     "link": "https://www.infomoney.com.br/mercados/ibovespa-cai-pela-5a-vez-com-temor-fiscal-e-externo-queda-historica-semanal/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mercados",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Ibovespa emenda 5ª baixa e tem pior semana desde 2020; outubro é o pior mês do ano",
-     "link": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-30102026/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mercados",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Ibovespa cai 18% no pós-reeleição de Lula, maior perda semanal desde março de 2020",
-     "link": "https://valor.globo.com/financas/noticia/2026/10/30/ibovespa-cai-18percent-no-pos-reeleicao-de-lula-maior-perda-semanal-desde-marco-de-2020.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Dólar à vista tem maior alta semanal desde a crise global de 2008",
-     "link": "https://valor.globo.com/financas/noticia/2026/10/30/dolar-a-vista-tem-maior-alta-semanal-desde-a-crise-global-de-2008.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s001",
    "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
    "summary": "Planalto busca acordo para evitar que texto retorne à Câmara e atrase criação do Ministério da Segurança Pública",
    "section": "politica",
-   "avg_bias": -0.25,
+   "avg_bias": -0.1,
    "counts": {
     "L": 2,
     "C": 8,
-    "R": 0,
-    "total": 10
+    "R": 1,
+    "total": 11
    },
    "pct": {
-    "L": 20,
-    "C": 80,
-    "R": 0
+    "L": 18,
+    "C": 73,
+    "R": 9
    },
    "blindspot": "right",
-   "updated": "2026-10-31T01:05:07+00:00",
+   "updated": "2026-10-31T01:22:52+00:00",
    "articles": [
     {
      "source": "Brasil 247",
@@ -1328,15 +1173,170 @@
      "section": "politica",
      "factuality": "high",
      "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Alcolumbre pauta para próxima terça-feira votação da PEC da Segurança Pública",
+     "link": "https://jovempan.com.br/politica/alcolumbre-pauta-para-proxima-terca-feira-votacao-da-pec-da-seguranca-publica/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s001",
+   "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
+   "summary": "Os ativos domésticos encerraram a semana após a reeleição de Lula ( PT ) para um quarto mandato com as maiores desvalorizações do ano. A Bolsa, que chegou a atingir o patamar histórico de 200 mil pontos neste mês, recuou 17,5% na semana e 9,21% em outubro. Leia mais (10/30/2026 - 17h45)",
+   "section": "mercados",
+   "avg_bias": 0.09,
+   "counts": {
+    "L": 0,
+    "C": 10,
+    "R": 0,
+    "total": 10
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": "both",
+   "updated": "2026-10-31T00:56:20+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Bolsa cai 17,5% na semana da vitória de Lula e tem pior resultado desde 2020",
+     "link": "https://www1.folha.uol.com.br/mercado/2026/10/bolsa-cai-175-na-semana-da-vitoria-de-lula-e-tem-pior-resultado-desde-2020.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mercado",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Bolsa tem 5ª maior queda desde Plano Real após reeleição de Lula",
+     "link": "https://www.poder360.com.br/poder-economia/bolsa-tem-5a-maior-queda-desde-plano-real-apos-reeleicao-de-lula/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-economia",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Dólar sobe 1,05%, a R$ 5,444; Ibovespa cai 0,75%",
+     "link": "https://www.poder360.com.br/poder-economia/dolar-sobe-105-a-r-5444-ibovespa-cai-075/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-economia",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Dólar sobe 9% pós-eleição, maior alta semanal desde 2008, e bolsa cai 18%",
+     "link": "https://www.metropoles.com/brasil/dolar-sobe-9-pos-eleicao-maior-alta-semanal-desde-2008-e-bolsa-cai-18",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Ibovespa tem 5ª maior queda semanal desde o Plano Real",
+     "link": "https://www.cnnbrasil.com.br/economia/money/mercado/ibovespa-tem-5a-maior-queda-semanal-desde-o-plano-real/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Ibovespa tem quinta maior queda semanal desde o Plano Real",
+     "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/10/ibovespa-tem-quinta-maior-queda-semanal-desde-o-plano-real.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "blogs",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
+     "link": "https://www.infomoney.com.br/mercados/ibovespa-cai-pela-5a-vez-com-temor-fiscal-e-externo-queda-historica-semanal/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mercados",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Ibovespa emenda 5ª baixa e tem pior semana desde 2020; outubro é o pior mês do ano",
+     "link": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-30102026/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mercados",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Ibovespa cai 18% no pós-reeleição de Lula, maior perda semanal desde março de 2020",
+     "link": "https://valor.globo.com/financas/noticia/2026/10/30/ibovespa-cai-18percent-no-pos-reeleicao-de-lula-maior-perda-semanal-desde-marco-de-2020.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Dólar à vista tem maior alta semanal desde a crise global de 2008",
+     "link": "https://valor.globo.com/financas/noticia/2026/10/30/dolar-a-vista-tem-maior-alta-semanal-desde-a-crise-global-de-2008.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "factuality": "high",
+     "ownership": "conglomerado"
     }
    ],
    "checks": []
   },
   {
    "id": "s003",
-   "title": "ANEEL mantém bandeira verde em novembro e livra consumidores de taxa extra na conta de luz",
+   "title": "Bandeira tarifária em novembro segue verde, sem adicional na conta de luz",
    "summary": "A decisão mantém as contas de energia sem cobrança adicional pelo segundo mês consecutivo, diante das condições favoráveis de geração hidrelétrica",
-   "section": "geral",
+   "section": "economia",
    "avg_bias": -0.16,
    "counts": {
     "L": 1,
@@ -1571,25 +1571,37 @@
    "checks": []
   },
   {
-   "id": "s007",
-   "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei",
-   "summary": "'Falso. Não houve nenhum pedido de explicações', declarou Pablo Quirno",
+   "id": "s004",
+   "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
+   "summary": "Chanceler argentino contesta informação do Itamaraty sobre pedido de explicações pela possível participação de autoridades do país na saída do senador brasileiro",
    "section": "politica",
-   "avg_bias": 0.07,
+   "avg_bias": -0.14,
    "counts": {
-    "L": 2,
+    "L": 3,
     "C": 2,
     "R": 2,
-    "total": 6
+    "total": 7
    },
    "pct": {
-    "L": 33,
-    "C": 33,
-    "R": 33
+    "L": 43,
+    "C": 29,
+    "R": 29
    },
    "blindspot": null,
-   "updated": "2026-10-30T23:58:50+00:00",
+   "updated": "2026-10-31T01:24:19+00:00",
    "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Governo Milei nega convocação de diplomata após fuga de Flávio Bolsonaro pela Argentina",
+     "link": "https://www.brasil247.com/america-latina/governo-milei-nega-convocacao-de-diplomata-apos-fuga-de-flavio-bolsonaro-pela-argentina/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "america-latina",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
     {
      "source": "CartaCapital",
      "source_id": "carta",
@@ -1666,7 +1678,7 @@
    "checks": []
   },
   {
-   "id": "s006",
+   "id": "s005",
    "title": "Na votação da Bola de Ouro, Mbappé ficou a apenas 28 pontos de Harry Kane, eleito o melhor jogador",
    "summary": "O atacante inglês Harry Kane recebeu a Bola de Ouro nesta semana por uma diferença de apenas 28 pontos sobre o francês Kylian Mbappé, segundo a classificação detalhada publicada pela revista France Football nesta sexta-feira (30).",
    "section": "esportes",
@@ -1761,16 +1773,16 @@
    "checks": []
   },
   {
-   "id": "s005",
+   "id": "s008",
    "title": "Final da Sul-Americana entre Atlético-MG e Boca Juniors tem horário definido; veja",
    "summary": "A Conmebol definiu o horário da final entre Atlético-MG e Boca Juniors pela Sul-Americana. A ...",
    "section": "esportes",
    "avg_bias": 0.02,
    "counts": {
     "L": 0,
-    "C": 6,
+    "C": 5,
     "R": 0,
-    "total": 6
+    "total": 5
    },
    "pct": {
     "L": 0,
@@ -1797,18 +1809,6 @@
      "source_id": "terra",
      "title": "Final da Sul-Americana entre Atlético-MG e Boca Juniors tem horário definido; veja",
      "link": "https://www.terra.com.br/esportes/atletico-mg/final-da-sul-americana-entre-atletico-mg-e-boca-juniors-tem-horario-definido-veja,50aa7354bd239e63c8bdbb5473c8d23esc8x9sou.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Domínguez é direto e faz pedido para os jogadores do Atlético-MG",
-     "link": "https://www.terra.com.br/esportes/atletico-mg/dominguez-e-direto-e-faz-pedido-para-os-jogadores-do-atletico-mg,32f47dd6fd568731ca058ad8f0cee685s2wm467v.html",
      "bias": 0.0,
      "bucket": "C",
      "via": "fonte",
@@ -1856,102 +1856,7 @@
    "checks": []
   },
   {
-   "id": "s004",
-   "title": "Veja onde assistir Corinthians x Mirassol ao vivo pelo Brasileirão nesta sexta-feira",
-   "summary": "orinthians e Mirassol entram em campo nesta sexta-feira, a partir das 20h (horário de Brasília), na Neo Química Arena. O jogo é válido pela 33ª rodada do Campeonato Brasileiro de 2026 e coloca frente...",
-   "section": "esportes",
-   "avg_bias": -0.03,
-   "counts": {
-    "L": 0,
-    "C": 6,
-    "R": 0,
-    "total": 6
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": "both",
-   "updated": "2026-10-31T01:16:38+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Veja onde assistir Corinthians x Mirassol ao vivo pelo Brasileirão nesta sexta-feira",
-     "link": "https://tnonline.uol.com.br/noticias/esportes/veja-onde-assistir-corinthians-x-mirassol-ao-vivo-pelo-brasileirao-nesta-sexta-feira-1169915",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Corinthians x Mirassol no Brasileirão: onde assistir ao vivo, horário e escalação",
-     "link": "https://www.estadao.com.br/esportes/futebol/corinthians-x-mirassol-no-brasileirao-onde-assistir-ao-vivo-horario-e-escalacao/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Criciúma x Ponte Preta pela Série B: onde assistir ao vivo, horário e escalação",
-     "link": "https://www.estadao.com.br/esportes/futebol/criciuma-x-ponte-preta-serie-b-onde-assistir-ao-vivo-horario-escalacao-npres/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Corinthians e Mirassol estão escaldos para jogo do Campeonato Brasileiro",
-     "link": "https://www.metropoles.com/esportes/corinthians-e-mirassol-estao-escaldos-para-jogo-do-campeonato-brasileiro",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Criciúma x Ponte Preta: onde assistir ao vivo e horário pela Série B",
-     "link": "https://www.terra.com.br/esportes/futebol/criciuma-x-ponte-preta-onde-assistir-ao-vivo-e-horario-pela-serie-b,d9423fa88d794a30d34269cff903bce7yrl4wkgy.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Corinthians x Mirassol: Onde assistir?",
-     "link": "https://www.infomoney.com.br/esportes/corinthians-mirassol-onde-assistir/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "esportes",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s008",
+   "id": "s007",
    "title": "Moraes decide que 'minuta do golpe' deve ser armazenada como prova da trama golpista",
    "summary": "O ministro do Supremo Tribunal Federal (STF) Alexandre de Moraes decidiu que a chamada ‘minuta do golpe’ deve ser armazenada pela Polícia Federal como prova da trama golpista. Na mesma decisão, ele também determinou o destino de outros objetos apreendidos durante as investigações, como dois passapor",
    "section": "ultimas-noticias",
@@ -2034,7 +1939,90 @@
    "checks": []
   },
   {
-   "id": "s012",
+   "id": "s006",
+   "title": "Veja onde assistir Corinthians x Mirassol ao vivo pelo Brasileirão nesta sexta-feira",
+   "summary": "orinthians e Mirassol entram em campo nesta sexta-feira, a partir das 20h (horário de Brasília), na Neo Química Arena. O jogo é válido pela 33ª rodada do Campeonato Brasileiro de 2026 e coloca frente...",
+   "section": "esportes",
+   "avg_bias": -0.0,
+   "counts": {
+    "L": 0,
+    "C": 5,
+    "R": 0,
+    "total": 5
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": "both",
+   "updated": "2026-10-31T01:16:38+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Veja onde assistir Corinthians x Mirassol ao vivo pelo Brasileirão nesta sexta-feira",
+     "link": "https://tnonline.uol.com.br/noticias/esportes/veja-onde-assistir-corinthians-x-mirassol-ao-vivo-pelo-brasileirao-nesta-sexta-feira-1169915",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Corinthians x Mirassol no Brasileirão: onde assistir ao vivo, horário e escalação",
+     "link": "https://www.estadao.com.br/esportes/futebol/corinthians-x-mirassol-no-brasileirao-onde-assistir-ao-vivo-horario-e-escalacao/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Corinthians e Mirassol estão escaldos para jogo do Campeonato Brasileiro",
+     "link": "https://www.metropoles.com/esportes/corinthians-e-mirassol-estao-escaldos-para-jogo-do-campeonato-brasileiro",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Corinthians x Mirassol: escalações e onde assistir ao jogo do Brasileirão",
+     "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/corinthians-x-mirassol-escalacoes-e-onde-assistir-ao-jogo-do-brasileirao-2/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Corinthians x Mirassol: Onde assistir?",
+     "link": "https://www.infomoney.com.br/esportes/corinthians-mirassol-onde-assistir/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s011",
    "title": "Palmeiras e Atlético-MG lideram lista de convocados para a seleção brasileira sub-20; Robinho Jr também é chamado",
    "summary": "Jogador de 18 anos, emprestado ao Genoa, está na lista do técnico Paulo Victor para amistosos contra o Peru em Belém, do Pará",
    "section": "esportes",
@@ -2105,8 +2093,8 @@
    "checks": []
   },
   {
-   "id": "s011",
-   "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+   "id": "s010",
+   "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
    "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
    "section": "politica",
    "avg_bias": -0.3,
@@ -2176,7 +2164,7 @@
    "checks": []
   },
   {
-   "id": "s010",
+   "id": "s009",
    "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
    "summary": "Dias Toffoli rejeitou o pedido de Filipe Martins para ir ao semiaberto e apontou falta de coerência na petição apresentada pela defesa.",
    "section": "ultimas-noticias",
@@ -2247,78 +2235,7 @@
    "checks": []
   },
   {
-   "id": "s009",
-   "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
-   "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
-   "section": "",
-   "avg_bias": -0.8,
-   "counts": {
-    "L": 2,
-    "C": 2,
-    "R": 0,
-    "total": 4
-   },
-   "pct": {
-    "L": 50,
-    "C": 50,
-    "R": 0
-   },
-   "blindspot": "right",
-   "updated": "2026-10-31T00:54:35+00:00",
-   "articles": [
-    {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Democratas cobram que Trump reconheça vitória de Lula: “Negacionismo eleitoral”",
-     "link": "https://www.diariodocentrodomundo.com.br/democratas-eua-trump-reconheca-vitoria-lula-brasil/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
-     "link": "https://www.brasil247.com/mundo/democratas-criticam-negacionismo-eleitoral-de-trump-e-exigem-reconhecimento-da-vitoria-de-lula/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
-     "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/deputados-democratas-exigem-em-nota-que-trump-reconheca-a-vitoria-de-lula-no-brasil.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "colunas",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Parlamentares democratas cobram que Trump reconheça resultado da eleição no Brasil",
-     "link": "https://g1.globo.com/mundo/noticia/2026/10/30/parlamentares-democratas-cobram-que-trump-reconheca-resultado-da-eleicao-no-brasil.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "noticia",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s020",
+   "id": "s021",
    "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
    "summary": "",
    "section": "politica",
@@ -2377,7 +2294,7 @@
    "checks": []
   },
   {
-   "id": "s019",
+   "id": "s020",
    "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
    "summary": "A Binance foi alvo de um roubo recorde de US$ 6,3 bilhões (R$ 33 bilhões) na noite de quinta-feira (30), levantando dúvidas sobre como os sistemas da maior corretora de criptomoedas do mundo foram violados. Leia mais (10/30/2026 - 15h59)",
    "section": "economia",
@@ -2436,7 +2353,7 @@
    "checks": []
   },
   {
-   "id": "s018",
+   "id": "s019",
    "title": "Itamaraty convoca encarregada de negócios da Argentina para pedir esclarecimentos sobre passagem de Flávio pelo país",
    "summary": "O Ministério das Relações Exteriores convocou, na tarde de quinta-feira, 29, a encarregada de negócios da embaixada argentina em Brasília, ministra-conselheira Emilia Cortés, para pedir esclarecimentos sobre a possível participação do governo de Javier Milei na viagem do senador Flávio Bolsonaro (PL",
    "section": "politica",
@@ -2495,7 +2412,7 @@
    "checks": []
   },
   {
-   "id": "s017",
+   "id": "s018",
    "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
    "summary": "acidente que matou o apucaranense Pedro Idalgo Filho, de 57 anos, e outras cinco pessoas na BR-277, em Morretes, no Litoral do Paraná, teve um desfecho no Tribunal do Júri dez anos após a tragédia. ...",
    "section": "sao-paulo",
@@ -2554,7 +2471,7 @@
    "checks": []
   },
   {
-   "id": "s016",
+   "id": "s017",
    "title": "Justiça bloqueia R$10,8 bilhões de alvos da Operação Carbono Oculto a pedido da PGE-SP",
    "summary": "Decisão atende a pedido da PGE-SP e alcança 32 alvos suspeitos de usar fundos e empresas para ocultar patrimônio e dificultar cobranças tributárias",
    "section": "noticia",
@@ -2613,7 +2530,7 @@
    "checks": []
   },
   {
-   "id": "s015",
+   "id": "s016",
    "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
    "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
    "section": "portuguese",
@@ -2672,7 +2589,7 @@
    "checks": []
   },
   {
-   "id": "s014",
+   "id": "s015",
    "title": "PM para carro sem placa e encontra R$ 100 mil de influenciador Toguro, que recupera valores ao comprovar origem do dinheiro",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "noticia",
@@ -2731,10 +2648,128 @@
    "checks": []
   },
   {
+   "id": "s014",
+   "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
+   "summary": "Audiência reunirá clubes de futebol, representantes do governo e entidades dos setores econômico e de jogos",
+   "section": "blogs",
+   "avg_bias": -0.4,
+   "counts": {
+    "L": 1,
+    "C": 2,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 33,
+    "C": 67,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:46:04+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "STF: Fux convoca 26 entidades para audiência sobre proibição das bets",
+     "link": "https://www.brasil247.com/brasil/stf-fux-convoca-26-entidades-para-audiencia-sobre-proibicao-das-bets/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
+     "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/10/fux-convoca-26-entidades-para-audiencia-sobre-bets-supermercados-e-setor-de-jogos-disputam-impacto-no-consumo.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "blogs",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Entidades de defesa do consumidor pressionam Fux para participar de julgamento sobre bets",
+     "link": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/10/entidades-de-defesa-do-consumidor-pressionam-fux-para-participar-de-julgamento-sobre-bets.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "blogs",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
    "id": "s013",
-   "title": "Atores de 'Quem Ama Cuida' revelam bastidores do aguardado primeiro beijo de Mau Mau e Felipe",
+   "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
+   "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
+   "section": "colunas",
+   "avg_bias": -1.07,
+   "counts": {
+    "L": 2,
+    "C": 1,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 67,
+    "C": 33,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:54:35+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Democratas cobram que Trump reconheça vitória de Lula: “Negacionismo eleitoral”",
+     "link": "https://www.diariodocentrodomundo.com.br/democratas-eua-trump-reconheca-vitoria-lula-brasil/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
+     "link": "https://www.brasil247.com/mundo/democratas-criticam-negacionismo-eleitoral-de-trump-e-exigem-reconhecimento-da-vitoria-de-lula/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Deputados democratas exigem em nota que Trump reconheça a vitória de Lula no Brasil",
+     "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/deputados-democratas-exigem-em-nota-que-trump-reconheca-a-vitoria-de-lula-no-brasil.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s012",
+   "title": "Atores mostram bastidores da cena do primeiro beijo de Mau Mau e Felipe em 'Quem Ama Cuida'",
    "summary": "Os atores João Victor Gonçalves e Pietro Antonelli divulgaram em suas redes sociais nesta sexta-feira (30) um vídeo com os bastidores do beijo entre Mau Mau e Felipe, personagens que interpretam em \" Quem Ama Cuida \". A previsão é que a cena seja exibida no capítulo desta sexta-feira (30). Leia mais",
-   "section": "diversao",
+   "section": "televisao",
    "avg_bias": -0.1,
    "counts": {
     "L": 0,
@@ -2790,7 +2825,7 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s045",
    "title": "Lula vai lidar com sua herança maldita",
    "summary": "Em 2027, não haverá antecessor para culpar. A herança agora é dele",
    "section": "vozes",
@@ -2837,10 +2872,10 @@
    "checks": []
   },
   {
-   "id": "s041",
-   "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
+   "id": "s044",
+   "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
    "summary": "omo a fuga de Flávio Bolsonaro pode impactar o bolsonarismo - Saída de Flávio do Brasil enfraquece postura do filho de Jair Bolsonaro e abre espaço para outras lideranças do bolsonarismo, até me...",
-   "section": "portuguese",
+   "section": "ultimas-noticias",
    "avg_bias": -0.2,
    "counts": {
     "L": 0,
@@ -2884,7 +2919,54 @@
    "checks": []
   },
   {
-   "id": "s040",
+   "id": "s043",
+   "title": "Itaú revê cenário e agora prevê crescimento 0,5% do PIB em 2027, menos da metade da projeção anterior de 1,2%",
+   "summary": "",
+   "section": "economia",
+   "avg_bias": 0.2,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T22:25:19.440000+00:00",
+   "articles": [
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Itaú revê cenário e agora prevê crescimento 0,5% do PIB em 2027, menos da metade da projeção anterior de 1,2%",
+     "link": "https://oglobo.globo.com/economia/noticia/2026/10/30/itau-reve-cenario-e-agora-preve-crescimento-05percent-do-pib-em-2027-menos-da-metade-da-projecao-anterior-de-12percent.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Itaú corta projeção de PIB de 2027 para 0,5% e eleva IPCA para 6,1%",
+     "link": "https://valor.globo.com/brasil/noticia/2026/10/30/ita-corta-projeo-de-pib-de-2027-para-05-pontos-percentuais-e-eleva-ipca-para-61.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "noticia",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s042",
    "title": "Juros futuros têm forte alta com piora na percepção de risco após reeleição de Lula",
    "summary": "Taxa para janeiro de 2028 estava em 14,5%, em alta de 13 pontos-base ante o ajuste de 14,366% da véspera",
    "section": "financas",
@@ -2931,57 +3013,10 @@
    "checks": []
   },
   {
-   "id": "s039",
-   "title": "Prazo para regularizar pendências no Simples Nacional termina nesta sexta",
-   "summary": "Segunda temporada da série com Michael C. Hall chega em episódios semanais; 'O Poderoso Chefão' também volta ao Paramount+",
-   "section": "economia",
-   "avg_bias": 0.2,
-   "counts": {
-    "L": 1,
-    "C": 0,
-    "R": 1,
-    "total": 2
-   },
-   "pct": {
-    "L": 50,
-    "C": 0,
-    "R": 50
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:16:24+00:00",
-   "articles": [
-    {
-     "source": "CartaCapital",
-     "source_id": "carta",
-     "title": "‘Dexter: Ressurreição’ retorna em segunda temporada nesta sexta 30",
-     "link": "https://www.cartacapital.com.br/cartalab/dexter-ressurreicao-retorna-em-segunda-temporada-nesta-sexta-30/",
-     "bias": -1.2,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "cartalab",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "Prazo para regularizar pendências no Simples Nacional termina nesta sexta",
-     "link": "https://revistaoeste.com/economia/prazo-para-regularizar-pendencias-no-simples-nacional-termina-nesta-sexta/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "economia",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s038",
-   "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
+   "id": "s041",
+   "title": "Meta faz acordo em ação sobre vício em redes sociais; Snapchat segue no processo",
    "summary": "A Meta fechou um acordo com uma adolescente que acusou a empresa de projetar o Instagram e o Facebook para causar dependência, o que teria provocado problemas de saúde mental e transtornos alimentares, disseram nesta sexta-feira (30) os advogados da jovem. Leia mais (10/30/2026 - 17h06)",
-   "section": "business",
+   "section": "tec",
    "avg_bias": -0.05,
    "counts": {
     "L": 0,
@@ -3025,7 +3060,7 @@
    "checks": []
   },
   {
-   "id": "s037",
+   "id": "s040",
    "title": "Petróleo Brent sobe quase 20% no mês em meio a novas tensões no Oriente Médio",
    "summary": "Brent para janeiro fechou em alta de 2,37%, a US$ 113,43 o barril, e WTI para dezembro avançou 2,08%, a US$ 104,12 o barril; já na semana, Brent avançou 1,55% na semana e WTI ganhou 0,82%",
    "section": "financas",
@@ -3072,7 +3107,7 @@
    "checks": []
   },
   {
-   "id": "s036",
+   "id": "s039",
    "title": "Ministério da Educação estuda recriar Ciência Sem Fronteiras priorizando áreas como IA, Matemática e engenharias",
    "summary": "Novo programa também poderá contemplar estudantes do ensino médio; governo ainda não definiu orçamento nem número de bolsas",
    "section": "educacao",
@@ -3119,7 +3154,7 @@
    "checks": []
   },
   {
-   "id": "s035",
+   "id": "s038",
    "title": "Quem chega, quem fica e quem sai: quais são os nomes cotados para o governo Lula 4",
    "summary": "Presidente terá que acomodar aliados e o Centrão para tentar governar com o Congresso, além de ajudar a esquerda a formar novos quadros para 2030.",
    "section": "portuguese",
@@ -3166,7 +3201,7 @@
    "checks": []
   },
   {
-   "id": "s034",
+   "id": "s037",
    "title": "Surto de Ebola no Congo mata mais de 5.000 pessoas",
    "summary": "30 Out (Reuters) - O número de mortos pelo surto de Ebola ?na República Democrática do ?Congo ultrapassou 5.000, segundo dados divulgados pelo governo nesta sexta-feira, enquanto as autoridades ainda ?não ?encontraram ?uma maneira de controlar a ?epidemia de Ebola ?mais mortal já registrada no país.",
    "section": "ultimas-noticias",
@@ -3213,7 +3248,54 @@
    "checks": []
   },
   {
-   "id": "s033",
+   "id": "s036",
+   "title": "Wall St fecha com forte queda, com onda de vendas no setor de tecnologia",
+   "summary": "Plano agressivo de ⁠gastos com ‌IA ⁠da Amazon e o alerta da Intel sobre o consumo de ​caixa intensificaram preocupações dos investidores The post Wall St fecha com forte queda, com onda de vendas no setor de tecnologia appeared first on InfoMoney .",
+   "section": "mercados",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:15:56+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Wall Street fecha com forte queda após setor tecnológico despencar",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/wall-street-fecha-com-forte-queda-apos-setor-tecnologico-despencar.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "ultimas-noticias",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Wall St fecha com forte queda, com onda de vendas no setor de tecnologia",
+     "link": "https://www.infomoney.com.br/mercados/nasdaq-cai-forte-com-amazon-e-intel-agravando-preocupacoes-sobre-gastos-em-ia/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mercados",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s035",
    "title": "FT: Anthropic pode não ter ‘grau de investimento’ após IPO, diz Blackstone a investidores",
    "summary": "A Blackstone informou a investidores que a Anthropic pode não receber uma classificação de grau de investimento logo após o seu IPO (Oferta Pública Inicial) . A mudança em relação à orientação anterior pode dificultar o financiamento dos altos gastos da empresa de IA ( inteligência artificial ). Lei",
    "section": "financas",
@@ -3260,7 +3342,7 @@
    "checks": []
   },
   {
-   "id": "s032",
+   "id": "s034",
    "title": "Ministro do Trabalho pede que MP acione Nikolas por \"boicote\" a petistas",
    "summary": "Ministro critica publicação do deputado do PL que convoca comerciantes de esquerda a expor bandeiras do PT em seus estabelecimentos",
    "section": "colunas",
@@ -3307,7 +3389,7 @@
    "checks": []
   },
   {
-   "id": "s031",
+   "id": "s033",
    "title": "Stefani e Dabrowski ganham 14ª seguida e avançam à semi em Tóquio após super tie-break",
    "summary": "Luisa Stefani e a canadense Gabriela Dabrowski continuam impecáveis no circuito mundial. Nesta ...",
    "section": "esportes",
@@ -3354,7 +3436,7 @@
    "checks": []
   },
   {
-   "id": "s030",
+   "id": "s032",
    "title": "Sobrevivente de uma execução no Tennessee afirma que está isolada e sofre dores constantes",
    "summary": "30 Out (Reuters) - Christa Pike, condenada à morte no Tennessee, em sua primeira declaração após ter sobrevivido a uma execução malsucedida há um mês, disse que vivia em constante sofrimento físico e mental ?e que estava praticamente isolada das outras pessoas na ala ?hospitalar da prisão.",
    "section": "ultimas-noticias",
@@ -3401,10 +3483,57 @@
    "checks": []
   },
   {
-   "id": "s028",
-   "title": "Craque Neto pede desculpas após críticas por fala sobre BTS: “Cantam bem”",
+   "id": "s030",
+   "title": "Criciúma x Ponte Preta pela Série B: onde assistir ao vivo, horário e escalação",
+   "summary": "A reta final do Campeonato Brasileiro Série B 2026 ganha contornos de alta tensão nesta sexta- ...",
+   "section": "esportes",
+   "avg_bias": -0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:30:00+00:00",
+   "articles": [
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Criciúma x Ponte Preta pela Série B: onde assistir ao vivo, horário e escalação",
+     "link": "https://www.estadao.com.br/esportes/futebol/criciuma-x-ponte-preta-serie-b-onde-assistir-ao-vivo-horario-escalacao-npres/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Criciúma x Ponte Preta: onde assistir ao vivo e horário pela Série B",
+     "link": "https://www.terra.com.br/esportes/futebol/criciuma-x-ponte-preta-onde-assistir-ao-vivo-e-horario-pela-serie-b,d9423fa88d794a30d34269cff903bce7yrl4wkgy.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "esportes",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s029",
+   "title": "Após reação de fãs, Craque Neto pede desculpas a admiradores do BTS",
    "summary": "Após receber críticas de fãs do grupo, o apresentador pediu desculpas e elogiou os artistas, que se apresentam em São Paulo nesta sexta",
-   "section": "celebridades",
+   "section": "esportes",
    "avg_bias": 0.05,
    "counts": {
     "L": 0,
@@ -3448,55 +3577,8 @@
    "checks": []
   },
   {
-   "id": "s027",
-   "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
-   "summary": "Audiência reunirá clubes de futebol, representantes do governo e entidades dos setores econômico e de jogos",
-   "section": "blogs",
-   "avg_bias": -0.65,
-   "counts": {
-    "L": 1,
-    "C": 1,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 50,
-    "C": 50,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T00:46:04+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "STF: Fux convoca 26 entidades para audiência sobre proibição das bets",
-     "link": "https://www.brasil247.com/brasil/stf-fux-convoca-26-entidades-para-audiencia-sobre-proibicao-das-bets/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
-     "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/10/fux-convoca-26-entidades-para-audiencia-sobre-bets-supermercados-e-setor-de-jogos-disputam-impacto-no-consumo.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "blogs",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s024",
-   "title": "Em quem Cleber Machado votou no Bola de Ouro? Saiba escolha do representante do Brasil no prêmio",
+   "id": "s028",
+   "title": "Cleber Machado votou em Messi para Bola de Ouro; veja top 10 do jornalista",
    "summary": "Único representante brasileiro na votação da premiação da revista France Football colocou o argentino em primeiro lugar e Harry Kane, vencedor, apenas na quarta posição",
    "section": "esportes",
    "avg_bias": 0.0,
@@ -3542,10 +3624,10 @@
    "checks": []
   },
   {
-   "id": "s023",
-   "title": "Votação antecipada nos EUA atinge participação recorde de 48 milhões",
+   "id": "s027",
+   "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
    "summary": "O crescimento é particularmente acentuado nos estados com disputas acirradas pelo Senado, onde 35 cadeiras estão em jogo",
-   "section": "",
+   "section": "poder-internacional",
    "avg_bias": -0.6,
    "counts": {
     "L": 1,
@@ -3589,10 +3671,10 @@
    "checks": []
   },
   {
-   "id": "s022",
-   "title": "Federação União-PP deve abrir negociações com governo Lula após movimento do PSD",
+   "id": "s026",
+   "title": "Após PSD, federação União-PP vai abrir conversas com Lula",
    "summary": "Partidos liberam filiados para participar de eventual quarto mandato do presidente Lula",
-   "section": "",
+   "section": "politica",
    "avg_bias": -0.65,
    "counts": {
     "L": 1,
@@ -3636,7 +3718,7 @@
    "checks": []
   },
   {
-   "id": "s021",
+   "id": "s025",
    "title": "Alegando questões financeiras, Igreja Universal deixa de comprar madrugadas da Band",
    "summary": "Igreja Universal deixará a faixa das 2h às 8h da Band em 20 de novembro. Emissora estima perder receita mensal de R$ 4 milhões.",
    "section": "colunistas",
@@ -3678,6 +3760,147 @@
      "section": "colunistas",
      "factuality": "high",
      "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s024",
+   "title": "Deputada aposta em maioria democrata após midterms para investigar ajuda de Trump a Flávio Bolsonaro",
+   "summary": "Pramila Jayapal afirma que democratas vão apurar atuação do governo Trump e da Meta no Brasil caso conquistem a Câmara",
+   "section": "2026",
+   "avg_bias": -0.85,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:28:56+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Deputada dos EUA diz que democratas vão investigar fuga de Flávio Bolsonaro se vencerem midterms",
+     "link": "https://www.brasil247.com/mundo/se-democratas-vencerem-midterms-deputada-dos-eua-preve-investigacao-sobre-fuga-de-flavio-bolsonaro/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Deputada aposta em maioria democrata após midterms para investigar ajuda de Trump a Flávio Bolsonaro",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/deputada-aposta-em-maioria-democrata-apos-midterms-para-investigar-ajuda-de-trump-a-flavio-bolsonaro.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "2026",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s023",
+   "title": "PM alvo de atentado de suspeito morto pela Rota nesta sexta é irmão de Eloá",
+   "summary": "O tenente da PM Ronickson Pimentel está internado em estado grave desde junho após atentado. Suspeito de ajudar atirador foi morto nesta 5ª",
+   "section": "sao-paulo",
+   "avg_bias": 0.8,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:32:09+00:00",
+   "articles": [
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "PM alvo de atentado de suspeito morto pela Rota nesta sexta é irmão de Eloá",
+     "link": "https://www.metropoles.com/sao-paulo/pm-alvo-de-atentado-de-suspeito-morto-pela-rota-nesta-sexta-e-irmao-de-eloa",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sao-paulo",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Rota elimina suspeito de envolvimento em atentado contra tenente em SP",
+     "link": "https://revistaoeste.com/brasil/rota-elimina-suspeito-de-envolvimento-em-atentado-contra-tenente-em-sp/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s022",
+   "title": "Mauro Vieira e Marco Rubio se cumprimentam rapidamente no G20 em meio à tensão entre Brasil e EUA",
+   "summary": "Mauro Vieira e Marco Rubio se cumprimentaram na abertura da reunião de chanceleres do G20, em Atlanta, sem previsão de encontro bilateral.",
+   "section": "",
+   "avg_bias": -1.45,
+   "counts": {
+    "L": 2,
+    "C": 0,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 100,
+    "C": 0,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T01:32:17+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "O primeiro encontro de Mauro Vieira e Marco Rubio após a eleição brasileira",
+     "link": "https://www.diariodocentrodomundo.com.br/mauro-vieira-marco-rubio-cumprimento-g20-atlanta/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Mauro Vieira e Marco Rubio se cumprimentam rapidamente no G20 em meio à tensão entre Brasil e EUA",
+     "link": "https://www.brasil247.com/brasil/mauro-vieira-e-marco-rubio-se-cumprimentam-rapidamente-no-g20-em-meio-a-tensao-entre-brasil-e-eua/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
     }
    ],
    "checks": []

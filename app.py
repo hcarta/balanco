@@ -94,6 +94,23 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
     return uniq, {"n_ok": n_ok, "n_err": n_err, "n_new": n_new}
 
 
+_EMB_MODEL = None
+_EMB_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
+
+
+def embed_matrix(docs, model_name: str = _EMB_NAME):
+    """Embeddings semânticos (MiniLM multilíngue) normalizados. Falha se lib/modelo ausente."""
+    global _EMB_MODEL
+    from sentence_transformers import SentenceTransformer
+    if _EMB_MODEL is None or getattr(_EMB_MODEL, "_bname", None) != model_name:
+        _EMB_MODEL = SentenceTransformer(model_name)
+        _EMB_MODEL._bname = model_name
+    X = _EMB_MODEL.encode([d["title"] for d in docs], convert_to_numpy=True,
+                          show_progress_bar=False)
+    norms = np.linalg.norm(X, axis=1, keepdims=True) + 1e-9
+    return X / norms
+
+
 def tfidf_matrix(docs):
     # Só título: resumos têm boilerplate e causam falsos positivos
     toks = [tok(d["title"]) for d in docs]
@@ -101,7 +118,8 @@ def tfidf_matrix(docs):
     for t in toks:
         for w in set(t):
             df[w] += 1
-    vocab = {w: i for i, w in enumerate(df) if df[w] >= 2 or len(df) < 500}
+    kept = [w for w in df if df[w] >= 2 or len(df) < 500]
+    vocab = {w: i for i, w in enumerate(kept)}
     # garante palavras do título mesmo que raras
     for t in toks:
         for w in set(t):
@@ -119,12 +137,70 @@ def tfidf_matrix(docs):
     return X / norms
 
 
-def cluster(articles, thresh=0.38, window_h=48):
+def pair_decision(t1: str, t2: str, thresh: float = 0.38,
+                  background: list[str] = ()) -> tuple[bool, float, int]:
+    """Decisão par-a-par espelhando cluster(): cosseno TF-IDF + 2+ tokens em comum.
+
+    O TF-IDF é calculado sobre background + os dois títulos (como na produção,
+    onde o IDF vem do corpus da rodada). Retorna (agrupa, cosseno, shared).
+    """
+    docs = [{"title": t} for t in list(background) + [t1, t2]]
+    X = tfidf_matrix(docs)
+    cos = float(X[-2] @ X[-1])
+    shared = len(set(tok(t1)) & set(tok(t2)))
+    return (cos >= thresh and shared >= 2), round(cos, 3), shared
+
+
+def eval_pairs(pairs: list[tuple], thresh: float = 0.38):
+    """Precisão/revocação do agrupamento sobre pares (titulo_a, titulo_b, rotulo[, src_a, src_b]).
+
+    Uma única matriz TF-IDF sobre todos os títulos — igual à produção — e a
+    mesma regra de pares do cluster(), incluindo a exigência extra para pares
+    da mesma fonte (Fase 2.3; sem o bônus de seção, indisponível no fixture).
+    Retorna (precisao, revocacao, (tp, fp, fn, tn)).
+    """
+    titles = [t for p in pairs for t in (p[0], p[1])]
+    X = tfidf_matrix([{"title": t} for t in titles])
+    tp = fp = fn = tn = 0
+    for k, p in enumerate(pairs):
+        a, b, label = p[0], p[1], p[2]
+        a_src = p[3] if len(p) > 3 else None
+        b_src = p[4] if len(p) > 4 else None
+        cos = float(X[2 * k] @ X[2 * k + 1])
+        shared = len(set(tok(a)) & set(tok(b)))
+        pred = cos >= thresh and shared >= 2
+        if pred and a_src is not None and a_src == b_src:
+            ta, tb = tok(a), tok(b)
+            if len(ta) >= 2 and len(tb) >= 2 and ta[:2] == tb[:2]:
+                pred = False  # série da casa
+            elif cos < thresh + 0.10 or shared < 3:
+                pred = False
+        if pred and label == 1:
+            tp += 1
+        elif pred:
+            fp += 1
+        elif label == 1:
+            fn += 1
+        else:
+            tn += 1
+    prec = tp / max(1, tp + fp)
+    rec = tp / max(1, tp + fn)
+    return prec, rec, (tp, fp, fn, tn)
+
+
+def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
     n = len(articles)
     if n == 0:
         return []
     X = tfidf_matrix(articles)
     S = X @ X.T
+    Se = None
+    if use_embed:
+        try:
+            Xe = embed_matrix(articles)
+            Se = Xe @ Xe.T
+        except Exception as e:
+            print(f"  [aviso] embeddings indisponíveis ({e}); usando TF-IDF")
     # tokens por doc p/ exigir sobreposição real (evita agrupar "Lula X" com "Lula Y")
     toksets = [set(tok(a["title"])) for a in articles]
     parent = list(range(n))
@@ -142,10 +218,30 @@ def cluster(articles, thresh=0.38, window_h=48):
 
     for i in range(n):
         for j in range(i + 1, n):
-            if S[i, j] >= thresh and len(toksets[i] & toksets[j]) >= 2:
-                dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
-                if dt <= window_h:
-                    union(i, j)
+            shared = toksets[i] & toksets[j]
+            if len(shared) < 1:
+                continue
+            pred = S[i, j] >= thresh and len(shared) >= 2
+            if Se is not None and not pred and Se[i, j] >= 0.70 and len(shared) >= 1:
+                pred = True  # híbrido: paráfrase semântica (Fase 2.2)
+            if not pred:
+                continue
+            si, sj = articles[i].get("source_id"), articles[j].get("source_id")
+            if si is not None and si == sj:
+                # mesma fonte: exige mais evidência (Fase 2.3)
+                ti, tj = tok(articles[i]["title"]), tok(articles[j]["title"])
+                if len(ti) >= 2 and len(tj) >= 2 and ti[:2] == tj[:2]:
+                    continue  # série da casa ("Pinguins X", "VÍDEOS: Jornal ...")
+                same_sec = bool(articles[i].get("section")) and \
+                    articles[i].get("section") == articles[j].get("section")
+                floor = thresh + (0.12 if same_sec else 0.10)
+                if S[i, j] < floor or len(shared) < 3:
+                    continue
+            dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
+            w = pair_window(articles[i].get("section"), articles[j].get("section"),
+                              window_h)
+            if dt <= w:
+                union(i, j)
     groups: dict[int, list] = {}
     for i in range(n):
         groups.setdefault(find(i), []).append(i)
@@ -162,8 +258,55 @@ def bucket(score):
     return "C"
 
 
-def build(sources, articles, llm_scores, thresh=0.38):
-    groups = cluster(articles, thresh=thresh)
+def _norm_sec(s: str) -> str:
+    import unicodedata
+    return unicodedata.normalize("NFKD", (s or "").lower()).encode("ascii", "ignore").decode()
+
+
+# opinião/análise duram dias; hard news dura horas (Fase 2.5)
+LONGFORM_SECTIONS = {"vozes", "coluna", "colunas", "colunistas", "opiniao",
+                     "blog", "blogs", "artigo", "artigos", "editorial"}
+SHORT_SECTIONS = {"politica", "economia", "mundo", "internacional", "eleicoes",
+                  "poder", "brasil", "financas", "mercados", "esportes",
+                  "seguranca", "educacao", "saude"}
+
+
+def pair_window(sec_a, sec_b, default: float = 48) -> float:
+    """Janela em horas para o par: vale a mais duradoura (opinião alcança o fato)."""
+    a, b = _norm_sec(sec_a), _norm_sec(sec_b)
+    if a in LONGFORM_SECTIONS or b in LONGFORM_SECTIONS:
+        return 168.0
+    if a in SHORT_SECTIONS or b in SHORT_SECTIONS:
+        return 24.0
+    return float(default)
+
+
+def rep_score(item: dict, meta: dict) -> float:
+    """Pontua o melhor título representante da história (Fase 2.4).
+
+    Prefere informativo e neutro: tamanho saudável, fonte de factualidade alta,
+    sem clickbait (?, !, CAIXA ALTA) nem excesso de aspas.
+    """
+    t = item.get("title", "")
+    s = min(len(t), 140) / 140
+    f = (meta.get(item.get("source_id"), {}) or {}).get("factuality")
+    if f in ("very_high", "high"):
+        s += 0.30
+    elif f in ("low", "very_low"):
+        s -= 0.30
+    if "?" in t:
+        s -= 0.40
+    if "!" in t:
+        s -= 0.40
+    if sum(1 for w in t.split() if w.isupper() and len(w) > 2):
+        s -= 0.20
+    if t.count('"') >= 4 or t.count("“") + t.count("”") >= 2:
+        s -= 0.10
+    return round(s, 3)
+
+
+def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
+    groups = cluster(articles, thresh=thresh, use_embed=use_embed)
     meta = {s["id"]: s for s in sources}
     stories = []
     for gid, g in enumerate(groups):
@@ -197,7 +340,7 @@ def build(sources, articles, llm_scores, thresh=0.38):
                 blind = "left"
             elif right_out:
                 blind = "right"
-        rep = max(items, key=lambda x: len(x["title"]))
+        rep = max(items, key=lambda x: rep_score(x, meta))
         # resumo: pega o primeiro disponível (sitemaps não trazem dek)
         summary = next((x["summary"] for x in items if x.get("summary")), "")
         stories.append({
@@ -370,6 +513,8 @@ def main():
     ap.add_argument("--no-llm", action="store_true", help=argparse.SUPPRESS)  # compat
     ap.add_argument("--per-feed", type=int, default=25)
     ap.add_argument("--thresh", type=float, default=0.38)
+    ap.add_argument("--embed", action="store_true",
+                    help="usa embeddings semânticos como complemento (híbrido; baixa modelo ~470MB na 1ª vez)")
     ap.add_argument("--no-checks", action="store_true",
                     help="não coleta checagens do G1 Fato ou Fake / Lupa")
     ap.add_argument("--fresh", action="store_true",
@@ -408,7 +553,8 @@ def main():
         print("[2/4] viés fixo por fonte (sem análise por matéria)")
 
     print("[3/4] agrupando stories...")
-    stories = build(sources, articles, llm_scores, thresh=args.thresh)
+    stories = build(sources, articles, llm_scores, thresh=args.thresh,
+                    use_embed=args.embed)
 
     checks = []
     if not args.no_checks:

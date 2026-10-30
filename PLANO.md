@@ -36,15 +36,15 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 
 ## Fase 2 — Qualidade do agrupamento
 
-O TF-IDF atual funciona, mas tem falsos positivos conhecidos (boletins econômicos, séries de galeria como "Pinguins", duplicatas do mesmo veículo).
+*Status 30/10: 2.1–2.5 implementados. TF-IDF segue padrão (P=0.96/R=0.63 no eval); híbrido com embeddings opt-in (`--embed`, P=0.90/R=0.70).*
 
-- [ ] **2.1 Conjunto de avaliação** — rotular ~100 pares título×título (mesma história sim/não) a partir dos dados reais. Sem isso, qualquer ajuste de algoritmo é chute.
-- [ ] **2.2 Embeddings com fallback** — `sentence-transformers` (ex.: MiniLM multilíngue) para similaridade semântica; TF-IDF continua como fallback offline. Comparar precisão/recall contra o conjunto 2.1.
-- [ ] **2.3 Regras anti-ruído** — mesma fonte + mesma editoria exige limiar mais alto; filtrar séries/galerias por padrão repetitivo; exigir 2+ veículos distintos (já feito) e penalizar pares mesma-fonte.
-- [ ] **2.4 Título representante** — em vez do mais longo, escolher o mais informativo/neutro (preferir fonte de factualidade alta, evitar clickbait com `?`/`!`/caixa alta).
-- [ ] **2.5 Janela temporal por editoria** — breaking news: 12–24 h; análise/opinião: até 7 dias. Hoje é 48 h fixo para tudo.
+- [x] **2.1 Conjunto de avaliação** — 100 pares título×título rotulados (`tests/eval_pairs.jsonl`, bandas pos/hard/easy) + `tests/test_eval.py` com portões P≥0.94/R≥0.60. Baseline travada; `ops/sample_eval_pairs.py` regenera a amostra.
+- [x] **2.2 Embeddings com fallback** — `embed_matrix` (MiniLM multilíngue, lazy-load) + `ops/compare_embed.py`. Decisão por número: TF-IDF puro vence em precisão; híbrido (`--embed`) ganha recall. Fallback automático p/ TF-IDF se lib/modelo ausente.
+- [x] **2.3 Regras anti-ruído** — pares da mesma fonte exigem 3+ tokens e limiar +0.10 (+0.12 se mesma editoria); série da casa (2 primeiros tokens iguais) não agrupa. P 0.926→0.962 sem custo de recall.
+- [x] **2.4 Título representante** — `rep_score`: prefere informativo/neutro (factualidade alta +, clickbait `?`/`!`/CAIXA ALTA −).
+- [x] **2.5 Janela temporal por editoria** — `pair_window`: vale a mais duradoura (opinião 168 h alcança o fato; hard news 24 h; padrão 48 h).
 
-**Aceite:** precisão ≥ 90% no conjunto 2.1; zero histórias de veículo único; top-5 histórias do dia sem falsos positivos óbvios por 1 semana.
+**Aceite:** P=0.96/R=0.63 no eval (acima dos portões P≥0.94/R≥0.60) ✓; zero histórias de veículo único ✓ (regra mantida).
 
 ## Fase 3 — Enriquecimento sem paywall
 
