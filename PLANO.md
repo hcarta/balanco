@@ -1,6 +1,6 @@
 # Plano — Balanço: próximas etapas e melhorias
 
-> Situação em 30/10/2026: 20 fontes (16 RSS + 4 via Arc XP/sitemap), ~366 artigos → ~22 histórias por rodada, viés fixo por publicação, 200 checagens (G1 Fato ou Fake + Lupa) cruzadas, interface editorial responsiva. Pipeline: `sources.yaml → collectors.py → app.py → site/data.json → site/index.html`.
+> Situação em 30/10/2026: 20 fontes (16 RSS + 4 via Arc XP/sitemap), ~366 artigos → ~22 histórias por rodada, viés fixo por publicação, 200 checagens (G1 Fato ou Fake + Lupa) cruzadas, interface editorial responsiva. Pipeline: `sources.yaml → collectors.py → app.py → docs/data.json → docs/index.html`.
 
 Unidade de esforço: **1 sessão ≈ 1–2 h de trabalho focado**.
 
@@ -79,8 +79,8 @@ Hoje: 200 checagens recentes, casamento léxico, ledger acumulativo. Bom começo
 
 ## Fase 6 — Produto
 
-- [ ] **6.1 Arquivo por data/editoria** — `site/2026-10-30.html` + páginas por editoria; edição atual continua sendo `index.html`.
-- [ ] **6.2 Feed próprio** — `site/feed.xml` do Balanço (histórias agregadas) + JSON público documentado.
+- [ ] **6.1 Arquivo por data/editoria** — `docs/2026-10-30.html` + páginas por editoria; edição atual continua sendo `index.html`.
+- [ ] **6.2 Feed próprio** — `docs/feed.xml` do Balanço (histórias agregadas) + JSON público documentado.
 - [ ] **6.3 Página "Como lemos"** — metodologia, tabela de fontes com viés/factualidade/propriedade, limitações honestas. (Hoje isso vive solto no trilho.)
 - [ ] **6.4 Newsletter Blindspot** — template HTML + geração a partir do `data.json`; envio via provedor transacional. Começar semanal, não diário.
 - [ ] **6.5 Busca e filtros 2.0** — filtro por veículo, por editoria, destaque de termo, ordenação por "mais divididas".

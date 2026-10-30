@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T21:45:12.219716+00:00",
- "n_articles": 600,
- "n_stories": 33,
+ "generated_at": "2026-10-30T21:56:40.102790+00:00",
+ "n_articles": 620,
+ "n_stories": 36,
  "n_factchecks": 200,
  "n_matches": 0,
- "n_new": 536,
+ "n_new": 35,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 139,
+    "last_ms": 147,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 110,
+    "last_ms": 159,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 15,
-    "last_n_total": 20,
+    "last_n_total": 24,
     "last_status": "ok",
-    "last_ms": 86,
+    "last_ms": 77,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 60,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 124,
+    "last_ms": 127,
     "err_streak": 0,
     "empty": false
    }
@@ -92,11 +92,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 32,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 54,
+    "last_ms": 47,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +111,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 14,
     "last_status": "ok",
-    "last_ms": 68,
+    "last_ms": 69,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +130,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 20,
-    "last_n_total": 31,
+    "last_n_total": 34,
     "last_status": "ok",
-    "last_ms": 312,
+    "last_ms": 325,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +149,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 10,
     "last_n_total": 20,
     "last_status": "ok",
-    "last_ms": 260,
+    "last_ms": 95,
     "err_streak": 0,
     "empty": false
    }
@@ -168,11 +168,11 @@
    "owner_detail": "Nexo Jornal",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 0,
     "last_n_total": 20,
     "last_status": "ok",
-    "last_ms": 108,
+    "last_ms": 78,
     "err_streak": 0,
     "empty": false
    }
@@ -187,11 +187,11 @@
    "owner_detail": "Editora piauí / João Moreira Salles (distribuição Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 0,
     "last_n_total": 1,
     "last_status": "ok",
-    "last_ms": 314,
+    "last_ms": 227,
     "err_streak": 0,
     "empty": false
    }
@@ -206,11 +206,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 10,
     "last_n_total": 17,
     "last_status": "ok",
-    "last_ms": 80,
+    "last_ms": 75,
     "err_streak": 0,
     "empty": false
    }
@@ -225,11 +225,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 10,
-    "last_n_total": 16,
+    "last_n_total": 18,
     "last_status": "ok",
-    "last_ms": 111,
+    "last_ms": 110,
     "err_streak": 0,
     "empty": false
    }
@@ -244,11 +244,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 10,
-    "last_n_total": 11,
+    "last_n_total": 12,
     "last_status": "ok",
-    "last_ms": 630,
+    "last_ms": 628,
     "err_streak": 0,
     "empty": false
    }
@@ -263,11 +263,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
-    "last_n_fresh": 0,
-    "last_n_total": 20,
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
+    "last_n_fresh": 20,
+    "last_n_total": 28,
     "last_status": "ok",
-    "last_ms": 142,
+    "last_ms": 83,
     "err_streak": 0,
     "empty": false
    }
@@ -282,11 +282,11 @@
    "owner_detail": "Grupo Jovem Pan",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 0,
     "last_n_total": 10,
     "last_status": "ok",
-    "last_ms": 80,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -301,11 +301,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 12,
     "last_status": "ok",
-    "last_ms": 103,
+    "last_ms": 84,
     "err_streak": 0,
     "empty": false
    }
@@ -321,11 +321,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 100,
-    "last_n_total": 26,
+    "last_n_total": 28,
     "last_status": "ok",
-    "last_ms": 138,
+    "last_ms": 187,
     "err_streak": 0,
     "empty": false
    }
@@ -341,11 +341,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 204,
+    "last_ms": 175,
     "err_streak": 0,
     "empty": false
    }
@@ -361,11 +361,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 203,
+    "last_ms": 184,
     "err_streak": 0,
     "empty": false
    }
@@ -381,17 +381,25 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-30T21:45:07.183083+00:00",
+    "last_run": "2026-10-30T21:56:35.462947+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 470,
+    "last_ms": 379,
     "err_streak": 0,
     "empty": false
    }
   }
  ],
  "factchecks": [
+  {
+   "checker": "G1 Fato ou Fake",
+   "title": "É #FAKE que Lula anunciou corte de R$ 6 bilhões na Saúde e na Educação após eleição de 2026; vídeo foi exibido no ano retrasado",
+   "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/30/e-fake-que-lula-anunciou-corte-de-r-6-bilhoes-na-saude-e-na-educacao-apos-eleicao-de-2026-video-foi-exibido-no-ano-retrasado.ghtml",
+   "summary": "Não houve anúncio de corte de gastos g1 Circulam nas redes sociais publicações alegando que o governo Lula (PT) anunciou um corte \"de quase R$ 6 bilhões\" na Saúde e na Educação após a vitória sobre Flávio Bolsonaro (PL) no segundo turno das eleições 2026. É #FAKE. Selo Fake (Horizontal) g1 🔴 Como são os posts? Compartilhadas desde segunda-feira (26) no X e no Instagram, as publicações têm esta cai",
+   "published": "2026-10-31T00:33:03+00:00",
+   "verdict": "falso"
+  },
   {
    "checker": "Agência Lupa",
    "title": "Número de eleitores maior que o de habitantes em cidades da Bahia não indica fraude",
@@ -1023,17 +1031,140 @@
    "summary": "Apenas 1% dos presos estão aptos a votar em 2026; votação em unidades prisionais inclui votos de agentes penitenciários",
    "published": "2026-10-12T15:25:54+00:00",
    "verdict": "falso"
-  },
-  {
-   "checker": "Agência Lupa",
-   "title": "É falso que Flávio Bolsonaro teve 54,98% no 1º turno",
-   "link": "https://www.agencialupa.org/verificacao/2026/10/12/e-falso-que-flavio-bolsonaro-teve-5498-no-1o-turno/",
-   "summary": "Imagem circula com percentuais falsos e cálculo incorreto para questionar resultado oficial do TSE; candidato do PL teve 47,03% dos votos válidos",
-   "published": "2026-10-12T12:32:27+00:00",
-   "verdict": "falso"
   }
  ],
  "stories": [
+  {
+   "id": "s001",
+   "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
+   "summary": "Planalto busca acordo para evitar que texto retorne à Câmara e atrase criação do Ministério da Segurança Pública",
+   "section": "politica",
+   "avg_bias": -0.27,
+   "counts": {
+    "L": 2,
+    "C": 7,
+    "R": 0,
+    "total": 9
+   },
+   "pct": {
+    "L": 22,
+    "C": 78,
+    "R": 0
+   },
+   "blindspot": "right",
+   "updated": "2026-10-31T00:32:34+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Alcolumbre marca para terça-feira votação da PEC da Segurança e governo negocia redução da maioridade penal",
+     "link": "https://www.brasil247.com/brasil/alcolumbre-marca-para-terca-feira-votacao-da-pec-da-seguranca-e-governo-negocia-reducao-da-maioridade-penal/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Alcolumbre pauta PEC da Segurança para a próxima terça-feira; governo tenta acordo sobre maioridade penal",
+     "link": "https://www.cartacapital.com.br/politica/alcolumbre-pauta-pec-da-seguranca-para-a-proxima-terca-feira-governo-tenta-acordo-sobre-maioridade-penal/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Alcolumbre pauta PEC da Segurança para terça e governo costura acordo sobre maioridade",
+     "link": "https://www1.folha.uol.com.br/colunas/painel/2026/10/alcolumbre-pauta-pec-da-seguranca-para-terca-e-governo-costura-acordo-sobre-maioridade.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Alcolumbre pauta votação da PEC da Segurança Pública para a próxima terça-feira",
+     "link": "https://g1.globo.com/politica/noticia/2026/10/30/alcolumbre-pauta-votacao-da-pec-da-seguranca-publica-para-a-proxima-terca-feira.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Alcolumbre marca votação da PEC da Segurança para 3ª feira",
+     "link": "https://www.poder360.com.br/poder-congresso/alcolumbre-marca-votacao-da-pec-da-seguranca-para-3a-feira/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-congresso",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Alcolumbre pauta PEC da Segurança e reabre debate sobre maioridade penal",
+     "link": "https://www.metropoles.com/brasil/alcolumbre-pauta-pec-da-seguranca-e-reabre-discussao-sobre-maioridade",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Alcolumbre pauta PEC da Segurança para sessão de terça-feira (3) no Senado",
+     "link": "https://www.cnnbrasil.com.br/politica/alcolumbre-pauta-pec-da-seguranca-para-sessao-de-terca-feira-3-no-senado/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
+     "link": "https://oglobo.globo.com/politica/noticia/2026/10/30/alcolumbre-pauta-pec-da-seguranca-para-terca-feira-e-governo-tenta-acordo-para-deixar-maioridade-penal-fora-da-votacao.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Senado inclui PEC da Segurança na pauta da próxima semana",
+     "link": "https://valor.globo.com/politica/noticia/2026/10/30/senado-inclui-pec-da-segurana-na-pauta-da-prxima-semana.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
   {
    "id": "s000",
    "title": "ANEEL mantém bandeira verde em novembro e livra consumidores de taxa extra na conta de luz",
@@ -1161,232 +1292,6 @@
      "section": "noticia",
      "factuality": "high",
      "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s001",
-   "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
-   "summary": "Planalto busca acordo para evitar que texto retorne à Câmara e atrase criação do Ministério da Segurança Pública",
-   "section": "politica",
-   "avg_bias": -0.15,
-   "counts": {
-    "L": 1,
-    "C": 7,
-    "R": 0,
-    "total": 8
-   },
-   "pct": {
-    "L": 12,
-    "C": 88,
-    "R": 0
-   },
-   "blindspot": "both",
-   "updated": "2026-10-31T00:32:34+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Alcolumbre marca para terça-feira votação da PEC da Segurança e governo negocia redução da maioridade penal",
-     "link": "https://www.brasil247.com/brasil/alcolumbre-marca-para-terca-feira-votacao-da-pec-da-seguranca-e-governo-negocia-reducao-da-maioridade-penal/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Alcolumbre pauta PEC da Segurança para terça e governo costura acordo sobre maioridade",
-     "link": "https://www1.folha.uol.com.br/colunas/painel/2026/10/alcolumbre-pauta-pec-da-seguranca-para-terca-e-governo-costura-acordo-sobre-maioridade.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "colunas",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Alcolumbre pauta votação da PEC da Segurança Pública para a próxima terça-feira",
-     "link": "https://g1.globo.com/politica/noticia/2026/10/30/alcolumbre-pauta-votacao-da-pec-da-seguranca-publica-para-a-proxima-terca-feira.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Alcolumbre marca votação da PEC da Segurança para 3ª feira",
-     "link": "https://www.poder360.com.br/poder-congresso/alcolumbre-marca-votacao-da-pec-da-seguranca-para-3a-feira/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-congresso",
-     "factuality": "high",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Alcolumbre pauta PEC da Segurança e reabre debate sobre maioridade penal",
-     "link": "https://www.metropoles.com/brasil/alcolumbre-pauta-pec-da-seguranca-e-reabre-discussao-sobre-maioridade",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Alcolumbre pauta PEC da Segurança para sessão de terça-feira (3) no Senado",
-     "link": "https://www.cnnbrasil.com.br/politica/alcolumbre-pauta-pec-da-seguranca-para-sessao-de-terca-feira-3-no-senado/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Alcolumbre pauta PEC da Segurança para terça-feira, e governo tenta acordo para deixar maioridade penal fora da votação",
-     "link": "https://oglobo.globo.com/politica/noticia/2026/10/30/alcolumbre-pauta-pec-da-seguranca-para-terca-feira-e-governo-tenta-acordo-para-deixar-maioridade-penal-fora-da-votacao.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Senado inclui PEC da Segurança na pauta da próxima semana",
-     "link": "https://valor.globo.com/politica/noticia/2026/10/30/senado-inclui-pec-da-segurana-na-pauta-da-prxima-semana.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s004",
-   "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei",
-   "summary": "A reunião teve caráter protocolar, sem intenção de repreender o governo argentino. A estratégia de Lula é não alimentar provocações e preservar os canais diplomáticos",
-   "section": "politica",
-   "avg_bias": 0.17,
-   "counts": {
-    "L": 1,
-    "C": 4,
-    "R": 2,
-    "total": 7
-   },
-   "pct": {
-    "L": 14,
-    "C": 57,
-    "R": 29
-   },
-   "blindspot": "left",
-   "updated": "2026-10-30T23:36:06+00:00",
-   "articles": [
-    {
-     "source": "CartaCapital",
-     "source_id": "carta",
-     "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei",
-     "link": "https://www.cartacapital.com.br/politica/itamaraty-convoca-diplomata-argentina-mas-evita-transformar-fuga-de-flavio-bolsonaro-em-crise-com-milei/",
-     "bias": -1.2,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Itamaraty diz ter convocado diplomata após fuga de Flávio pela Argentina; chanceler de Milei nega",
-     "link": "https://www1.folha.uol.com.br/mundo/2026/10/itamaraty-convoca-diplomata-de-milei-apos-fuga-de-flavio-pela-argentina.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "2026",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/deutschewelle/2026/10/30/como-a-fuga-de-flavio-bolsonaro-pode-impactar-o-bolsonarismo.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "ultimas-noticias",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "BBC Brasil",
-     "source_id": "bbcbr",
-     "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
-     "link": "https://www.bbc.com/portuguese/articles/cw98zmy9gnj8o?at_medium=RSS&at_campaign=rss",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "portuguese",
-     "factuality": "very_high",
-     "ownership": "governo"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
-     "link": "https://valor.globo.com/politica/noticia/2026/10/30/governo-lula-convoca-representante-argentina-para-pedir-esclarecimentos-sobre-fuga-de-flavio-bolsonaro.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Argentina nega que Brasil tenha pedido explicações pela fuga de Bolsonaro",
-     "link": "https://jovempan.com.br/mundo/argentina-nega-que-brasil-tenha-pedido-explicacoes-pela-fuga-de-bolsonaro/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Brasil convoca representante da Argentina por fuga de Flávio Bolsonaro",
-     "link": "https://jovempan.com.br/politica/brasil-convoca-representante-da-argentina-por-fuga-de-flavio-bolsonaro/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "mixed",
-     "ownership": "corporacao"
     }
    ],
    "checks": []
@@ -1607,6 +1512,101 @@
   },
   {
    "id": "s006",
+   "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei",
+   "summary": "'Falso. Não houve nenhum pedido de explicações', declarou Pablo Quirno",
+   "section": "politica",
+   "avg_bias": 0.07,
+   "counts": {
+    "L": 2,
+    "C": 2,
+    "R": 2,
+    "total": 6
+   },
+   "pct": {
+    "L": 33,
+    "C": 33,
+    "R": 33
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:58:50+00:00",
+   "articles": [
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Chanceler da Argentina nega que Brasil tenha pedido explicações pela fuga de Flávio Bolsonaro",
+     "link": "https://www.cartacapital.com.br/politica/chanceler-da-argentina-nega-que-brasil-tenha-pedido-explicacoes-pela-fuga-de-bolsonaro/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei",
+     "link": "https://www.cartacapital.com.br/politica/itamaraty-convoca-diplomata-argentina-mas-evita-transformar-fuga-de-flavio-bolsonaro-em-crise-com-milei/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Itamaraty diz ter convocado diplomata após fuga de Flávio pela Argentina; chanceler de Milei nega",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/itamaraty-convoca-diplomata-de-milei-apos-fuga-de-flavio-pela-argentina.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "2026",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
+     "link": "https://valor.globo.com/politica/noticia/2026/10/30/governo-lula-convoca-representante-argentina-para-pedir-esclarecimentos-sobre-fuga-de-flavio-bolsonaro.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Argentina nega que Brasil tenha pedido explicações pela fuga de Bolsonaro",
+     "link": "https://jovempan.com.br/mundo/argentina-nega-que-brasil-tenha-pedido-explicacoes-pela-fuga-de-bolsonaro/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Brasil convoca representante da Argentina por fuga de Flávio Bolsonaro",
+     "link": "https://jovempan.com.br/politica/brasil-convoca-representante-da-argentina-por-fuga-de-flavio-bolsonaro/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s005",
    "title": "Na votação da Bola de Ouro, Mbappé ficou a apenas 28 pontos de Harry Kane, eleito o melhor jogador",
    "summary": "O atacante inglês Harry Kane recebeu a Bola de Ouro nesta semana por uma diferença de apenas 28 pontos sobre o francês Kylian Mbappé, segundo a classificação detalhada publicada pela revista France Football nesta sexta-feira (30).",
    "section": "esportes",
@@ -1701,7 +1701,7 @@
    "checks": []
   },
   {
-   "id": "s005",
+   "id": "s004",
    "title": "Final da Sul-Americana entre Atlético-MG e Boca Juniors tem horário definido; veja",
    "summary": "A Conmebol definiu o horário da final entre Atlético-MG e Boca Juniors pela Sul-Americana. A ...",
    "section": "esportes",
@@ -1796,7 +1796,7 @@
    "checks": []
   },
   {
-   "id": "s008",
+   "id": "s010",
    "title": "Meta chega a acordo em processo sobre vício de adolescentes em redes sociais e evita julgamento",
    "summary": "A Meta fechou um acordo com uma adolescente que acusou a empresa de projetar o Instagram e o Facebook para causar dependência, o que teria provocado problemas de saúde mental e transtornos alimentares, disseram nesta sexta-feira (30) os advogados da jovem. Leia mais (10/30/2026 - 17h06)",
    "section": "economia",
@@ -1867,7 +1867,78 @@
    "checks": []
   },
   {
-   "id": "s007",
+   "id": "s009",
+   "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+   "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
+   "section": "politica",
+   "avg_bias": -0.3,
+   "counts": {
+    "L": 2,
+    "C": 1,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 50,
+    "C": 25,
+    "R": 25
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:56:24+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio",
+     "link": "https://www.diariodocentrodomundo.com.br/michelle-bolsonaro-defende-tarcisio-e-rebate-ataques-de-aliados-de-flavio/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+     "link": "https://www.cartacapital.com.br/politica/michelle-se-manifesta-pela-1a-vez-apos-derrota-de-flavio-e-diz-que-nao-e-momento-de-procurar-culpados/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
+     "link": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/30/michelle-chama-jair-bolsonaro-de-lder-e-diz-que-ex-presidente-pede-unio-no-busca-por-culpados.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
+     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "eleicoes",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s008",
    "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
    "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
    "section": "portuguese",
@@ -1938,7 +2009,78 @@
    "checks": []
   },
   {
-   "id": "s017",
+   "id": "s007",
+   "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
+   "summary": "Dias Toffoli rejeitou o pedido de Filipe Martins para ir ao semiaberto e apontou falta de coerência na petição apresentada pela defesa.",
+   "section": "ultimas-noticias",
+   "avg_bias": -0.48,
+   "counts": {
+    "L": 2,
+    "C": 1,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 50,
+    "C": 25,
+    "R": 25
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:50:13+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Toffoli barra pedido de Filipe Martins para deixar regime fechado",
+     "link": "https://www.diariodocentrodomundo.com.br/toffoli-barra-pedido-de-filipe-martins-para-deixar-regime-fechado/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Toffoli rejeita pedido de semiaberto para Filipe Martins, condenado por golpe",
+     "link": "https://www.brasil247.com/brasilia/toffoli-rejeita-pedido-de-semiaberto-para-filipe-martins-condenado-por-golpe/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasilia",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/toffoli-nega-pedido-de-regime-semiaberto-para-filipe-martins-condenado-pela-trama-golpista.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "ultimas-noticias",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Toffoli rejeita pedido de Filipe Martins para deixar regime fechado",
+     "link": "https://www.gazetadopovo.com.br/republica/toffoli-rejeita-pedido-de-filipe-martins-para-deixar-regime-fechado/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "republica",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s019",
    "title": "Associação de peritos diz que análise contratada pela defesa de Vorcaro não comprova adulteração no celular do banqueiro",
    "summary": "",
    "section": "politica",
@@ -1997,66 +2139,7 @@
    "checks": []
   },
   {
-   "id": "s016",
-   "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-   "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
-   "section": "politica",
-   "avg_bias": 0.0,
-   "counts": {
-    "L": 1,
-    "C": 1,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 33,
-    "C": 33,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T21:04:57+00:00",
-   "articles": [
-    {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio",
-     "link": "https://www.diariodocentrodomundo.com.br/michelle-bolsonaro-defende-tarcisio-e-rebate-ataques-de-aliados-de-flavio/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-     "link": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/30/michelle-chama-jair-bolsonaro-de-lder-e-diz-que-ex-presidente-pede-unio-no-busca-por-culpados.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
-     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "eleicoes",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s015",
+   "id": "s018",
    "title": "Ataque hacker à Binance: veja quanto movimentaram as cinco maiores invasões de cripto do mundo",
    "summary": "A Binance foi alvo de um roubo recorde de US$ 6,3 bilhões (R$ 33 bilhões) na noite de quinta-feira (30), levantando dúvidas sobre como os sistemas da maior corretora de criptomoedas do mundo foram violados. Leia mais (10/30/2026 - 15h59)",
    "section": "economia",
@@ -2115,7 +2198,7 @@
    "checks": []
   },
   {
-   "id": "s014",
+   "id": "s017",
    "title": "Itamaraty convoca encarregada de negócios da Argentina para pedir esclarecimentos sobre passagem de Flávio pelo país",
    "summary": "O Ministério das Relações Exteriores convocou, na tarde de quinta-feira, 29, a encarregada de negócios da embaixada argentina em Brasília, ministra-conselheira Emilia Cortés, para pedir esclarecimentos sobre a possível participação do governo de Javier Milei na viagem do senador Flávio Bolsonaro (PL",
    "section": "politica",
@@ -2174,7 +2257,7 @@
    "checks": []
   },
   {
-   "id": "s013",
+   "id": "s016",
    "title": "Quem é Fernando Sastre, condutor de Porsche que matou motorista e foi condenado a 17 anos de prisão",
    "summary": "acidente que matou o apucaranense Pedro Idalgo Filho, de 57 anos, e outras cinco pessoas na BR-277, em Morretes, no Litoral do Paraná, teve um desfecho no Tribunal do Júri dez anos após a tragédia. ...",
    "section": "sao-paulo",
@@ -2233,7 +2316,7 @@
    "checks": []
   },
   {
-   "id": "s012",
+   "id": "s015",
    "title": "Justiça bloqueia R$10,8 bilhões de alvos da Operação Carbono Oculto a pedido da PGE-SP",
    "summary": "Decisão atende a pedido da PGE-SP e alcança 32 alvos suspeitos de usar fundos e empresas para ocultar patrimônio e dificultar cobranças tributárias",
    "section": "noticia",
@@ -2292,66 +2375,7 @@
    "checks": []
   },
   {
-   "id": "s011",
-   "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
-   "summary": "Ministro do STF considerou a petição da defesa inepta e apontou irregularidades processuais no pedido de progressão do ex-assessor de Bolsonaro",
-   "section": "ultimas-noticias",
-   "avg_bias": -0.13,
-   "counts": {
-    "L": 1,
-    "C": 1,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 33,
-    "C": 33,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T00:07:04+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Toffoli rejeita pedido de semiaberto para Filipe Martins, condenado por golpe",
-     "link": "https://www.brasil247.com/brasilia/toffoli-rejeita-pedido-de-semiaberto-para-filipe-martins-condenado-por-golpe/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasilia",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Toffoli nega pedido de regime semiaberto para Filipe Martins, condenado pela trama golpista",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/toffoli-nega-pedido-de-regime-semiaberto-para-filipe-martins-condenado-pela-trama-golpista.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "ultimas-noticias",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Toffoli rejeita pedido de Filipe Martins para deixar regime fechado",
-     "link": "https://www.gazetadopovo.com.br/republica/toffoli-rejeita-pedido-de-filipe-martins-para-deixar-regime-fechado/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "republica",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s010",
+   "id": "s014",
    "title": "Democratas criticam “negacionismo eleitoral” de Trump e exigem reconhecimento da vitória de Lula",
    "summary": "Parlamentares estadunidenses denunciam tentativa de deslegitimar resultado eleitoral, criticam aliança com Flávio Bolsonaro e prometem ação institucional no Congresso dos EUA",
    "section": "",
@@ -2410,7 +2434,7 @@
    "checks": []
   },
   {
-   "id": "s009",
+   "id": "s013",
    "title": "PM para carro sem placa e encontra R$ 100 mil de influenciador Toguro, que recupera valores ao comprovar origem do dinheiro",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "noticia",
@@ -2469,7 +2493,125 @@
    "checks": []
   },
   {
-   "id": "s035",
+   "id": "s012",
+   "title": "Moraes decide que ‘minuta do golpe’ deve ser armazenada como prova da trama golpista",
+   "summary": "O ministro Alexandre de Moraes, do STF (Supremo Tribunal Federal), determinou que a minuta do golpe encontrada na casa de Anderson Torres permaneça sob guarda da Polícia Federal como prova no processo sobre a trama golpista, segundo o Estadão.",
+   "section": "politica",
+   "avg_bias": -0.17,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:34:38+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Alexandre de Moraes manda PF guardar minuta do golpe como prova",
+     "link": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/10/30/moraes-manda-pf-guardar-minuta-do-golpe-como-prova.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Moraes decide que \"minuta do golpe\" deve continuar sob custódia da PF",
+     "link": "https://www.redetv.uol.com.br/jornalismo/politica/moraes-decide-que-minuta-do-golpe-deve-continuar-sob-custodia-da-pf",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "jornalismo",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Moraes decide que ‘minuta do golpe’ deve ser armazenada como prova da trama golpista",
+     "link": "https://www.estadao.com.br/politica/moraes-decide-que-minuta-do-golpe-deve-ser-armazenada-como-prova-da-trama-golpista-nprp/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s011",
+   "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
+   "summary": "Audiência reunirá clubes de futebol, representantes do governo e entidades dos setores econômico e de jogos",
+   "section": "blogs",
+   "avg_bias": -0.4,
+   "counts": {
+    "L": 1,
+    "C": 2,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 33,
+    "C": 67,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:46:04+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "STF: Fux convoca 26 entidades para audiência sobre proibição das bets",
+     "link": "https://www.brasil247.com/brasil/stf-fux-convoca-26-entidades-para-audiencia-sobre-proibicao-das-bets/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Fux convoca 26 entidades para audiência sobre bets; supermercados e setor de jogos disputam impacto no consumo",
+     "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/10/fux-convoca-26-entidades-para-audiencia-sobre-bets-supermercados-e-setor-de-jogos-disputam-impacto-no-consumo.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "blogs",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Entidades de defesa do consumidor pressionam Fux para participar de julgamento sobre bets",
+     "link": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/10/entidades-de-defesa-do-consumidor-pressionam-fux-para-participar-de-julgamento-sobre-bets.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "blogs",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s037",
    "title": "Lula vai lidar com sua herança maldita",
    "summary": "Em 2027, não haverá antecessor para culpar. A herança agora é dele",
    "section": "vozes",
@@ -2516,7 +2658,54 @@
    "checks": []
   },
   {
-   "id": "s034",
+   "id": "s036",
+   "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
+   "summary": "omo a fuga de Flávio Bolsonaro pode impactar o bolsonarismo - Saída de Flávio do Brasil enfraquece postura do filho de Jair Bolsonaro e abre espaço para outras lideranças do bolsonarismo, até me...",
+   "section": "portuguese",
+   "avg_bias": -0.2,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T21:45:07.825204+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/deutschewelle/2026/10/30/como-a-fuga-de-flavio-bolsonaro-pode-impactar-o-bolsonarismo.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "ultimas-noticias",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?",
+     "link": "https://www.bbc.com/portuguese/articles/cw98zmy9gnj8o?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "portuguese",
+     "factuality": "very_high",
+     "ownership": "governo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s035",
    "title": "Juros futuros têm forte alta com piora na percepção de risco após reeleição de Lula",
    "summary": "Taxa para janeiro de 2028 estava em 14,5%, em alta de 13 pontos-base ante o ajuste de 14,366% da véspera",
    "section": "financas",
@@ -2563,7 +2752,7 @@
    "checks": []
   },
   {
-   "id": "s033",
+   "id": "s034",
    "title": "Palmeiras e Atlético-MG lideram lista de convocados para a seleção brasileira sub-20; Robinho Jr também é chamado",
    "summary": "Técnico Paulo Victor chama 26 jogadores para amistosos contra o Peru em Belém, no Pará, antes do Sul-Americano de 2027",
    "section": "esportes",
@@ -2610,54 +2799,7 @@
    "checks": []
   },
   {
-   "id": "s032",
-   "title": "'Meu irmão comprou sem saber a cápsula de césio-137 que desencadeou maior acidente radioativo do Brasil'",
-   "summary": "Quando coletores de lixo encontraram uma máquina com uma estranha cápsula brilhante, ninguém se deu conta de que ela era altamente radioativa e que destruiria a vida de várias pessoas.",
-   "section": "portuguese",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:17:07+00:00",
-   "articles": [
-    {
-     "source": "BBC Brasil",
-     "source_id": "bbcbr",
-     "title": "'Meu irmão comprou sem saber a cápsula de césio-137 que desencadeou maior acidente radioativo do Brasil'",
-     "link": "https://www.bbc.com/portuguese/articles/ckeq3wgzx83eo?at_medium=RSS&at_campaign=rss",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "portuguese",
-     "factuality": "very_high",
-     "ownership": "governo"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "'Meu irmão comprou sem saber a cápsula de césio-137 que desencadeou maior acidente radioativo do Brasil'",
-     "link": "https://g1.globo.com/go/goias/noticia/2026/10/30/meu-irmao-comprou-sem-saber-a-capsula-de-cesio-137-que-desencadeou-maior-acidente-radioativo-do-brasil.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "go",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s031",
+   "id": "s033",
    "title": "Petróleo Brent sobe quase 20% no mês em meio a novas tensões no Oriente Médio",
    "summary": "Brent para janeiro fechou em alta de 2,37%, a US$ 113,43 o barril, e WTI para dezembro avançou 2,08%, a US$ 104,12 o barril; já na semana, Brent avançou 1,55% na semana e WTI ganhou 0,82%",
    "section": "financas",
@@ -2704,7 +2846,7 @@
    "checks": []
   },
   {
-   "id": "s030",
+   "id": "s032",
    "title": "Ministério da Educação estuda recriar Ciência Sem Fronteiras priorizando áreas como IA, Matemática e engenharias",
    "summary": "Novo programa também poderá contemplar estudantes do ensino médio; governo ainda não definiu orçamento nem número de bolsas",
    "section": "educacao",
@@ -2751,7 +2893,7 @@
    "checks": []
   },
   {
-   "id": "s029",
+   "id": "s031",
    "title": "Quem chega, quem fica e quem sai: quais são os nomes cotados para o governo Lula 4",
    "summary": "Presidente terá que acomodar aliados e o Centrão para tentar governar com o Congresso, além de ajudar a esquerda a formar novos quadros para 2030.",
    "section": "portuguese",
@@ -2798,7 +2940,7 @@
    "checks": []
   },
   {
-   "id": "s028",
+   "id": "s030",
    "title": "Surto de Ebola no Congo mata mais de 5.000 pessoas",
    "summary": "30 Out (Reuters) - O número de mortos pelo surto de Ebola ?na República Democrática do ?Congo ultrapassou 5.000, segundo dados divulgados pelo governo nesta sexta-feira, enquanto as autoridades ainda ?não ?encontraram ?uma maneira de controlar a ?epidemia de Ebola ?mais mortal já registrada no país.",
    "section": "ultimas-noticias",
@@ -2845,7 +2987,7 @@
    "checks": []
   },
   {
-   "id": "s026",
+   "id": "s029",
    "title": "FT: Anthropic pode não ter ‘grau de investimento’ após IPO, diz Blackstone a investidores",
    "summary": "A Blackstone informou a investidores que a Anthropic pode não receber uma classificação de grau de investimento logo após o seu IPO (Oferta Pública Inicial) . A mudança em relação à orientação anterior pode dificultar o financiamento dos altos gastos da empresa de IA ( inteligência artificial ). Lei",
    "section": "financas",
@@ -2892,7 +3034,7 @@
    "checks": []
   },
   {
-   "id": "s025",
+   "id": "s028",
    "title": "Ministro do Trabalho pede que MP acione Nikolas por \"boicote\" a petistas",
    "summary": "Ministro critica publicação do deputado do PL que convoca comerciantes de esquerda a expor bandeiras do PT em seus estabelecimentos",
    "section": "colunas",
@@ -2939,7 +3081,7 @@
    "checks": []
   },
   {
-   "id": "s024",
+   "id": "s027",
    "title": "Stefani e Dabrowski ganham 14ª seguida e avançam à semi em Tóquio após super tie-break",
    "summary": "Luisa Stefani e a canadense Gabriela Dabrowski continuam impecáveis no circuito mundial. Nesta ...",
    "section": "esportes",
@@ -2986,7 +3128,7 @@
    "checks": []
   },
   {
-   "id": "s023",
+   "id": "s026",
    "title": "Sobrevivente de uma execução no Tennessee afirma que está isolada e sofre dores constantes",
    "summary": "30 Out (Reuters) - Christa Pike, condenada à morte no Tennessee, em sua primeira declaração após ter sobrevivido a uma execução malsucedida há um mês, disse que vivia em constante sofrimento físico e mental ?e que estava praticamente isolada das outras pessoas na ala ?hospitalar da prisão.",
    "section": "ultimas-noticias",
@@ -3033,7 +3175,7 @@
    "checks": []
   },
   {
-   "id": "s021",
+   "id": "s024",
    "title": "Criciúma x Ponte Preta pela Série B: onde assistir ao vivo, horário e escalação",
    "summary": "A reta final do Campeonato Brasileiro Série B 2026 ganha contornos de alta tensão nesta sexta- ...",
    "section": "esportes",
@@ -3080,54 +3222,7 @@
    "checks": []
   },
   {
-   "id": "s020",
-   "title": "Moraes decide que ‘minuta do golpe’ deve ser armazenada como prova da trama golpista",
-   "summary": "Ministro também determinou a destruição de armas e munições apreendidas com condenados",
-   "section": "politica",
-   "avg_bias": -0.15,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T00:34:38+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Moraes decide que \"minuta do golpe\" deve continuar sob custódia da PF",
-     "link": "https://www.redetv.uol.com.br/jornalismo/politica/moraes-decide-que-minuta-do-golpe-deve-continuar-sob-custodia-da-pf",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "jornalismo",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Moraes decide que ‘minuta do golpe’ deve ser armazenada como prova da trama golpista",
-     "link": "https://www.estadao.com.br/politica/moraes-decide-que-minuta-do-golpe-deve-ser-armazenada-como-prova-da-trama-golpista-nprp/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "factuality": "high",
-     "ownership": "individuo"
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s019",
+   "id": "s023",
    "title": "Craque Neto pede desculpas após críticas por fala sobre BTS: “Cantam bem”",
    "summary": "Após receber críticas de fãs do grupo, o apresentador pediu desculpas e elogiou os artistas, que se apresentam em São Paulo nesta sexta",
    "section": "celebridades",
@@ -3169,6 +3264,100 @@
      "section": "esportes",
      "factuality": "high",
      "ownership": "corporacao"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s022",
+   "title": "Atores mostram bastidores da cena do primeiro beijo de Mau Mau e Felipe em 'Quem Ama Cuida'",
+   "summary": "Os atores João Victor Gonçalves e Pietro Antonelli divulgaram em suas redes sociais nesta sexta-feira (30) um vídeo com os bastidores do beijo entre Mau Mau e Felipe, personagens que interpretam em \" Quem Ama Cuida \". A previsão é que a cena seja exibida no capítulo desta sexta-feira (30). Leia mais",
+   "section": "televisao",
+   "avg_bias": -0.15,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:46:00+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Atores mostram bastidores da cena do primeiro beijo de Mau Mau e Felipe em 'Quem Ama Cuida'",
+     "link": "https://f5.folha.uol.com.br/televisao/2026/10/atores-mostram-bastidores-da-cena-do-primeiro-beijo-de-mau-mau-e-felipe-em-quem-ama-cuida.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "televisao",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Veja bastidores do beijo de Mau Mau e Felipe que vai ao ar nesta sexta",
+     "link": "https://www.metropoles.com/entretenimento/veja-bastidores-do-beijo-de-mau-mau-e-felipe-que-vai-ao-ar-nesta-sexta",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "entretenimento",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    }
+   ],
+   "checks": []
+  },
+  {
+   "id": "s020",
+   "title": "Carreta carregada com batatas tomba e espalha carga em rodovia de Itapetininga",
+   "summary": "Ninguém ficou ferido Artesp/Divulgação Uma carreta carregada com batatas tombou e interditou parcialmente a Rodovia Antônio Romano Schincariol (SP-127), em Itapetininga (SP), no início da manhã desta sexta-feira (30). Segundo a Motiva SPVias, concessionária que administra o trecho, o acidente aconte",
+   "section": "sp",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:51:20+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Carreta carregada com batatas tomba e espalha carga em rodovia de Itapetininga",
+     "link": "https://g1.globo.com/sp/itapetininga-regiao/noticia/2026/10/30/carreta-carregada-com-batatas-tomba-e-espalha-carga-em-rodovia-de-itapetininga.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sp",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Carreta tomba na BR-381 e carga de rodas é saqueada em MG",
+     "link": "https://www.metropoles.com/minas-gerais/carreta-tomba-na-br-381-e-carga-de-rodas-e-saqueada-em-mg",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "minas-gerais",
+     "factuality": "mixed",
+     "ownership": "individuo"
     }
    ],
    "checks": []

@@ -6,8 +6,8 @@ Inspirado no [Ground.news](https://ground.news/).
 ## Como funciona
 1. `sources.yaml` — fontes + metadados (viés-base, propriedade, factualidade) e o `fetcher` (`rss` ou `sitemap`).
 2. `collectors.py` — adaptadores de coleta: RSS/Atom e Google News sitemap (com resolução de índice por data).
-3. `app.py` — agrupa notícias iguais (TF-IDF + cosseno), aplica **viés fixo da fonte**, gera `site/data.json`.
-4. `site/index.html` — interface estática (sem build): feed, barra de viés, comparação, blindspots.
+3. `app.py` — agrupa notícias iguais (TF-IDF + cosseno), aplica **viés fixo da fonte**, gera `docs/data.json`.
+4. `docs/index.html` — interface estática (sem build): feed, barra de viés, comparação, blindspots.
 5. `classify_llm.py` — classificação por IA **opcional** (só com `--llm`).
 6. `factcheck.py` — checagens do **G1 Fato ou Fake** e da **Agência Lupa** (vereditos + links).
 
@@ -26,8 +26,8 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 ```bash
 pip install -r requirements.txt
 python app.py
-open site/index.html
-# ou: python -m http.server -d site 8000
+open docs/index.html
+# ou: python -m http.server -d docs 8000
 ```
 
 O viés vem de `sources.yaml` (nível de **publicação**) e é o mesmo para toda matéria daquela fonte. **Não há chamada de IA nem custo por artigo.**
@@ -72,14 +72,14 @@ Coletamos **apenas manchete, link, data e editoria** (sem corpo, sem paywall). A
 
 ## Publicação automática (GitHub Actions — Via B)
 
-O workflow `.github/workflows/collect.yml` roda `python app.py` a cada 30 min e commita `site/data.json` + `state/health.json` + ledger. O `cache.db` (binário, 2 MB+) **não** vai para o git — circula via `actions/cache`.
+O workflow `.github/workflows/collect.yml` roda `python app.py` a cada 30 min e commita `docs/data.json` + `state/health.json` + ledger. O `cache.db` (binário, 2 MB+) **não** vai para o git — circula via `actions/cache`.
 
 ```bash
 # 1. criar o repo no GitHub (público: Actions ilimitado)
 gh repo create balanco --public --source=. --push
 # ou manual: github.com/new → git remote add origin … && git push -u origin main
 
-# 2. ativar o site: Settings → Pages → Deploy from branch → main → /site
+# 2. ativar o site: Settings → Pages → Deploy from branch → main → /docs
 # 3. pronto: a cada 30 min a edição se atualiza sozinha
 # manual: aba Actions → "Coleta Balanço" → Run workflow
 ```

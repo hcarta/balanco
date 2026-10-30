@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Balanço MVP — coleta RSS/sitemaps, agrupa stories, gera site/data.json.
+"""Balanço MVP — coleta RSS/sitemaps, agrupa stories, gera docs/data.json.
 
 Viés é FIXO por fonte (posicionamento da publicação), sem análise por matéria.
 O LLM é opt-in (--llm) e só deve ser usado quando explicitamente desejado.
@@ -16,7 +16,7 @@ import numpy as np
 import yaml
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.join(BASE, "site")
+SITE = os.path.join(BASE, "docs")
 
 STOP = set("""a ao aos aquela aquelas aquele aqueles aquilo as até com como da das de do dos
 e ela elas ele eles em entre era eram essa essas esse esses esta estas este estes eu foi foram
@@ -424,7 +424,7 @@ def main():
         json.dump(payload, f, ensure_ascii=False, indent=1)
     with open(os.path.join(BASE, "state", "health.json"), "w", encoding="utf-8") as f:
         json.dump({"run_ts": run_ts, "sources": health}, f, ensure_ascii=False, indent=1)
-    print(f"[4/4] {len(stories)} stories → site/data.json")
+    print(f"[4/4] {len(stories)} stories → docs/data.json")
 
     if store is not None:
         ms = int((_time.monotonic() - t0) * 1000)
