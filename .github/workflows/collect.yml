@@ -36,7 +36,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Rodar coleta
-        run: python app.py
+        run: python app.py --body --body-cap 40
 
       - name: Salvar cache SQLite
         uses: actions/cache/save@v4

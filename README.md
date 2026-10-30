@@ -59,6 +59,13 @@ python app.py --llm
 ```
 Cada artigo é então classificado (-2=extrema-esq … +2=extrema-dir). Sem a flag, o LLM nunca é chamado.
 
+### Enriquecimento (`--body`, opt-in)
+Coleta meta description + corpo público (JSON-LD `articleBody` → `<article>`), com cache de 7 dias, delay e teto por rodada. Detecta muro e não insiste. Regra: **corpo para máquina, curto para humano** — na tela só description ou trecho curto com link. Robots de editoria ignorados por decisão do dono (uso pessoal); o que evita bloqueio é delay + cache + conditional.
+```bash
+python app.py --body --body-cap 40
+```
+Medido em 30/10: 39 resumos preenchidos, 36 com muro (Valor/Globo/Folha/Estadão), 3 corpos íntegros (Gazeta serve `articleBody` no JSON-LD).
+
 ## Checagem de fatos
 O app coleta automaticamente **G1 Fato ou Fake** (RSS) e **Agência Lupa** (categoria *Verificação*), extrai o veredito do título e cruza com as manchetes.
 

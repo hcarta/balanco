@@ -59,6 +59,14 @@ CREATE TABLE IF NOT EXISTS runs(
   n_total INTEGER DEFAULT 0,
   ms INTEGER DEFAULT 0
 );
+CREATE TABLE IF NOT EXISTS bodies(
+  url TEXT PRIMARY KEY,
+  meta TEXT DEFAULT '',
+  body TEXT DEFAULT '',
+  paywalled INTEGER DEFAULT 0,
+  method TEXT DEFAULT '',
+  fetched TEXT NOT NULL
+);
 """
 
 
@@ -113,8 +121,16 @@ class Store:
               a.get("section", ""), a.get("image", ""), now)
              for a in items if a.get("link")],
         )
+        new = self.db.total_changes - before
+        # backfill: imagem que faltava + seção recalculada (cura valores antigos).
+        # Imagem nunca é apagada; seção é atualizada quando a nova difere.
+        self.db.executemany(
+            "UPDATE articles SET image=COALESCE(NULLIF(? ,''), image), section=?"
+            " WHERE link=? AND ((image IS NULL OR image='') OR section != ?)",
+            [(a.get("image", ""), a.get("section", ""), a["link"], a.get("section", ""))
+             for a in items if a.get("link") and (a.get("image") or a.get("section"))])
         self.db.commit()
-        return self.db.total_changes - before
+        return new
 
     def recent(self, source_id: str, window_h: float = RECENT_WINDOW_H,
                limit: int = PER_SOURCE_CAP) -> list[dict]:
@@ -145,6 +161,34 @@ class Store:
             " VALUES(?,?,?,?,?,?)",
             (run_ts, n_ok, n_err, n_new, n_total, ms),
         )
+        self.db.commit()
+
+    # ── corpos (Fase 3.1, TTL 7 dias) ──
+    def get_body(self, url: str, ttl_days: float = 7) -> dict | None:
+        row = self.db.execute(
+            "SELECT meta, body, paywalled, method, fetched FROM bodies WHERE url=?",
+            (url,)).fetchone()
+        if not row:
+            return None
+        try:
+            age = (datetime.now(timezone.utc) -
+                   datetime.fromisoformat(row[4])).total_seconds() / 86400
+        except Exception:
+            age = 999
+        if age > ttl_days:
+            return None
+        return {"meta": row[0], "body": row[1],
+                "paywalled": bool(row[2]), "method": row[3]}
+
+    def save_body(self, url: str, result: dict):
+        self.db.execute(
+            "INSERT INTO bodies(url, meta, body, paywalled, method, fetched)"
+            " VALUES(?,?,?,?,?,?)"
+            " ON CONFLICT(url) DO UPDATE SET meta=excluded.meta, body=excluded.body,"
+            " paywalled=excluded.paywalled, method=excluded.method, fetched=excluded.fetched",
+            (url, result.get("meta", ""), result.get("body", ""),
+             1 if result.get("paywalled") else 0, result.get("method", ""),
+             _now_iso()))
         self.db.commit()
 
     def health(self) -> dict:

@@ -118,22 +118,34 @@ def _canonical_link(url: str) -> str:
     return url.rstrip("?&")
 
 
+GENERIC_SECTIONS = {"noticia", "noticias", "ultimas-noticias", "ultima",
+                     "web", "redir", "portuguese", "c-level",
+                     "article", "articles",
+                     "rfi", "reuters", "afp", "efe", "ap", "bloomberg", "ansa", "lusa",
+                     "agencia-estado", "deutschewelle"}
+
+
 def _section_from_url(url: str) -> str:
-    """Primeiro segmento de caminho útil vira a editoria (politica, economia...)."""
+    """Primeiro segmento de caminho significativo vira a editoria."""
     try:
         path = urllib.parse.urlparse(url).path.strip("/")
     except Exception:
         return ""
     if not path:
         return ""
-    first = path.split("/")[0]
-    if first in {"noticia", "noticias", "mundo", "brasil", "web"} or len(first) < 2:
-        parts = path.split("/")
-        first = parts[1] if len(parts) > 1 else first
-    # descarta slug de matéria (muitos hífens) — só aceita nomes de editoria
-    if first.count("-") > 2 or len(first) > 24:
-        return ""
-    return first
+    for first in path.split("/"):
+        if not first or len(first) < 2:
+            continue
+        if first in GENERIC_SECTIONS or first.isdigit():
+            continue
+        # IDs aleatórios (hashes de URL): têm dígito sem hífen
+        if re.search(r"\d", first) and "-" not in first:
+            continue
+        # descarta slug de matéria (muitos hífens) — só aceita nomes de editoria
+        if first.count("-") > 2 or len(first) > 24:
+            continue
+        return first
+    return ""
 
 
 def _title_from_slug(url: str) -> str:
@@ -165,6 +177,21 @@ def fetch_rss(source: dict, limit: int = 30, store=None) -> tuple[list[dict], di
         pp = e.get("published_parsed") or e.get("updated_parsed")
         dt = datetime.fromtimestamp(time.mktime(pp), tz=timezone.utc) if pp else datetime.now(timezone.utc)
         summary = _clean(e.get("summary") or e.get("description"))
+        img = ""
+        for m in e.get("media_content", []) or []:
+            if isinstance(m, dict) and m.get("url"):
+                img = m["url"]
+                break
+        if not img:
+            for m in e.get("media_thumbnail", []) or []:
+                if isinstance(m, dict) and m.get("url"):
+                    img = m["url"]
+                    break
+        if not img:
+            for m in e.get("enclosures", []) or []:
+                if isinstance(m, dict) and str(m.get("type", "")).startswith("image") and m.get("href"):
+                    img = m["href"]
+                    break
         out.append({
             "title": title,
             "link": link,
@@ -172,6 +199,7 @@ def fetch_rss(source: dict, limit: int = 30, store=None) -> tuple[list[dict], di
             "published": _iso(dt),
             "ts": _to_ts(dt),
             "section": _section_from_url(link),
+            "image": img,
         })
     out.sort(key=lambda a: a["ts"], reverse=True)
     return out[:limit], stats

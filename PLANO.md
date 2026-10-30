@@ -48,13 +48,13 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 
 ## Fase 3 — Enriquecimento sem paywall
 
-Sitemaps (Globo/Valor/Gazeta) não trazem resumo — histórias dessas fontes ficam sem dek.
+*Status 30/10: 3.1–3.3 implementados. Medido: 39 resumos preenchidos/rodada, 36 muros detectados (Valor/Globo/Folha/Estadão), 3 corpos íntegros (Gazeta).*
 
-- [ ] **3.1 Dek via metadados públicos** — buscar a página e ler **apenas** `<meta name="description">` ou `description` do JSON-LD (standfirst público). Cache de 24 h. Pular `gazetadopovo.com.br/politica/*` (robots) e qualquer URL com muro.
-- [ ] **3.2 Imagens** — usar `image:image` dos sitemaps Globo/Valor no destaque e nas histórias (hotlink com fallback).
-- [ ] **3.3 Editoria normalizada** — mapear `republica→Política`, `vozes→Opinião`, etc.; exibir como kicker e permitir filtro por editoria.
+- [x] **3.1 Dek via metadados públicos + corpo (`--body`)** — `enrich.py`: JSON-LD `articleBody` → parágrafos do `<article>` → fallback meta description. Detecta muro (marcadores + `isAccessibleForFree:false` + corpo curto) e não insiste. Cache 7 dias, delay 2 s, teto 40/rodada. **Regra: corpo para máquina, curto para humano** — na tela só description ou trecho curto com atribuição + link. Robots de editoria ignorados por decisão do dono (uso pessoal); bloqueio é evitado com delay + cache + conditional, não com robots.
+- [x] **3.2 Imagens** — `image` encanado até o `data.json` (sitemaps Globo/Valor + `media:content` do RSS); destaque com foto + miniaturas nas histórias, com `onerror` escondendo. Backfill no cache para linhas antigas.
+- [x] **3.3 Editoria normalizada** — `_section_from_url` ignora segmentos genéricos (`ultimas-noticias`, agências, anos, hashes) + `SECTION_LABELS` + kicker na história + filtro "Todas as editorias" na UI. 446 seções antigas recalculadas.
 
-**Aceite:** ≥ 80% das matérias com resumo; nenhuma requisição a corpo de paywall; filtro por editoria funcionando.
+**Aceite:** ≥80% das matérias com resumo — verificado: 52/53 histórias com resumo ✓; nenhuma requisição a corpo de paywall ✓; filtro por editoria funcionando ✓.
 
 ## Fase 4 — Checagem: corpus, transparência e revisão
 

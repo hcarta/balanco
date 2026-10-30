@@ -281,6 +281,37 @@ def pair_window(sec_a, sec_b, default: float = 48) -> float:
     return float(default)
 
 
+# Rótulos de editoria para filtro e kicker (Fase 3.3)
+SECTION_LABELS = {
+    "politica": "Política", "poder": "Poder", "eleicoes": "Eleições",
+    "economia": "Economia", "financas": "Economia", "mercados": "Mercado",
+    "dinheiro": "Economia", "negocios": "Negócios",
+    "mundo": "Mundo", "internacional": "Mundo",
+    "brasil": "Brasil", "sp": "São Paulo", "rio": "Rio",
+    "esportes": "Esportes", "futebol": "Esportes",
+    "cultura": "Cultura", "entretenimento": "Cultura", "celebridades": "Cultura",
+    "tecnologia": "Tecnologia", "ciencia": "Ciência", "saude": "Saúde",
+    "educacao": "Educação", "seguranca": "Segurança",
+    "opiniao": "Opinião", "vozes": "Opinião", "coluna": "Opinião",
+    "colunas": "Opinião", "colunistas": "Opinião", "editorial": "Opinião",
+    "artigo": "Opinião", "artigos": "Opinião", "blogs": "Opinião",
+    "tec": "Tecnologia", "tecmundo": "Tecnologia",
+    "sao-paulo": "São Paulo", "televisao": "TV", "receitas": "Receitas",
+    "empresas": "Negócios", "imprensa": "Mídia", "jornalismo": "Mídia",
+    "poder-internacional": "Poder", "poder-governo": "Poder", "poder-gente": "Poder",
+    "cartalab": "Dados",
+}
+
+
+def section_label(raw: str | None) -> str:
+    key = _norm_sec(raw)
+    if key in SECTION_LABELS:
+        return SECTION_LABELS[key]
+    if key and len(key) <= 24:
+        return key[:1].upper() + key[1:]
+    return "Geral"
+
+
 def rep_score(item: dict, meta: dict) -> float:
     """Pontua o melhor título representante da história (Fase 2.4).
 
@@ -347,6 +378,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "id": f"s{gid:03d}", "title": rep["title"],
             "summary": summary[:300],
             "section": rep.get("section", ""),
+            "section_label": section_label(rep.get("section")),
             "avg_bias": round(avg, 2),
             "counts": {"L": l, "C": c, "R": r, "total": tot},
             "pct": {"L": round(100 * l / tot), "C": round(100 * c / tot), "R": round(100 * r / tot)},
@@ -357,6 +389,8 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                 "title": x["title"], "link": x["link"],
                 "bias": x["bias_score"], "bucket": x["bucket"], "via": x["via"],
                 "section": x.get("section", ""),
+                "section_label": section_label(x.get("section")),
+                "image": x.get("image", ""),
                 "factuality": meta.get(x["source_id"], {}).get("factuality"),
                 "ownership": meta.get(x["source_id"], {}).get("ownership"),
             } for x in items],
@@ -517,6 +551,10 @@ def main():
                     help="usa embeddings semânticos como complemento (híbrido; baixa modelo ~470MB na 1ª vez)")
     ap.add_argument("--no-checks", action="store_true",
                     help="não coleta checagens do G1 Fato ou Fake / Lupa")
+    ap.add_argument("--body", action="store_true",
+                    help="enriquece matérias (meta + corpo público, com cache; ignora robots de editoria)")
+    ap.add_argument("--body-cap", type=int, default=40,
+                    help="máximo de páginas buscadas por rodada com --body")
     ap.add_argument("--fresh", action="store_true",
                     help="ignora o cache (baixa tudo de novo, sem HTTP condicional)")
     ap.add_argument("--window", type=float, default=72,
@@ -540,6 +578,12 @@ def main():
     articles, fsum = fetch_all(sources, per_feed=args.per_feed, store=store,
                                window_h=args.window, run_ts=run_ts)
     print(f"  total: {len(articles)} artigos únicos ({fsum['n_new']} novos no banco)")
+
+    if args.body:
+        from enrich import enrich_articles
+        estats = enrich_articles(articles, store, cap=args.body_cap)
+        print(f"[1b/4] enriquecimento: {estats['filled']} resumos preenchidos, "
+              f"{estats['bodies']} corpos no cache, {estats['paywalled']} com muro")
 
     llm_scores = {}
     if args.llm and not args.no_llm:

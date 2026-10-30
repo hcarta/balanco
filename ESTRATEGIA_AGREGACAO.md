@@ -63,9 +63,10 @@ Ordem de tentativa por fonte:
 4. Bing News RSS.
 5. Só então HTML (último recurso), respeitando `robots`.
 
-## 6. Enriquecimento opcional (fase 2)
+## 6. Enriquecimento (implementado — Fase 3)
 
-- **Dek/resumo**: buscar a página e ler **apenas** `<meta name="description">` ou JSON-LD `description` (standfirst público), com cache de 24 h. Pular `gazeta.com.br/politica/*` (robots) e nunca extrair corpo pago.
+- **Dek/resumo**: página lida para extrair meta description (standfirst público) + `articleBody` do JSON-LD quando disponível; muro detectado e respeitado (sem insistência). Cache de 7 dias. Por decisão do dono (uso pessoal), não há skip de `/politica/` da Gazeta; o que evita bloqueio é delay + cache + conditional.
+- **Regra de exibição**: corpo alimenta só a máquina ( clustering/matching futuros); na tela, description pública ou trecho curto com atribuição + link.
 - **Imagem**: sitemaps do Globo/Valor já trazem `image:image/image:loc`.
 - **Editoria**: derivada do 1º segmento da URL (`politica`, `economia`, `mundo`…), com guarda contra slug.
 - **Tópicos**: entidades (Lula, Flávio, dólar) via NER para os filtros do Ground.news.

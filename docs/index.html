@@ -93,6 +93,14 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .section-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
 .section-head h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em}
 .section-head .count{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.edwrap{display:flex;align-items:center;gap:10px}
+#ed{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-soft);padding:7px 10px;border:1px solid var(--hair-strong);border-radius:99px;background:var(--surface);cursor:pointer;max-width:170px}
+/* imagens (Fase 3.2): destaque + miniaturas, some se quebrar */
+.feat-img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;margin:0 0 18px;display:block}
+.sgrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}
+.thumb{width:118px;height:88px;object-fit:cover;border-radius:8px;margin-top:4px}
+@media(max-width:560px){.thumb{width:88px;height:66px}}
+.kicker-sec{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
 
 /* ── featured ── */
 .featured{padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid var(--hair)}
@@ -259,7 +267,7 @@ footer a.fl:hover{color:var(--accent)}
     <div id="featured"></div>
     <div class="section-head">
       <h2 id="feedTitle">Todas as histórias</h2>
-      <span class="count" id="feedCount"></span>
+      <span class="edwrap"><select id="ed" aria-label="Filtrar por editoria"></select><span class="count" id="feedCount"></span></span>
     </div>
     <div id="feed"><div class="empty">Carregando o balanço do dia…</div></div>
   </section>
@@ -273,6 +281,7 @@ footer a.fl:hover{color:var(--accent)}
       <p><b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. Não há análise matéria a matéria — o mesmo jornal aparece sempre no mesmo lugar do espectro.</p>
       <p>É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Aqui sem AllSides/MBFC, a tabela é curadoria manual.</p>
       <p><b>Checagens</b>: o selo ⚑ liga a história a uma verificação do <b>G1 Fato ou Fake</b> ou da <b>Agência Lupa</b> quando a alegação coincide. É uma checagem <i>relacionada</i>, não um veredito sobre a matéria.</p>
+      <p>Corpos completos (quando públicos) alimentam só a análise; na tela aparecem a description pública ou trechos curtos, sempre com link para o original.</p>
       <p style="font-style:italic;color:var(--faint)">Protótipo: <span id="srcCount">—</span> fontes · atualize rodando <b style="font-style:normal">python app.py</b>.</p>
     </div>
   </aside>
@@ -300,7 +309,7 @@ footer a.fl:hover{color:var(--accent)}
 <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
 
 <script>
-const S = { data:null, filter:'all', q:'', featuredId:null };
+const S = { data:null, filter:'all', q:'', ed:'', featuredId:null };
 
 const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -313,6 +322,7 @@ const vClass = v => 'v-' + (v||'checagem');
 const VL = {falso:'Falso',verdadeiro:'Verdadeiro',enganoso:'Enganoso',checagem:'Checagem'};
 const blindShort = b => b==='both'?'dos dois lados':b==='left'?'esquerda':'direita';
 const blindLong = b => b==='both'?'dos dois lados':b==='left'?'da esquerda':'da direita';
+const storyImg = s => { const a=(s.articles||[]).find(x=>x.image); return a?a.image:''; };
 function checksBadges(s, max=2){
   const cs = (s.checks||[]).slice(0,max);
   if(!cs.length) return '';
@@ -383,11 +393,13 @@ function renderFeatured(){
     ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${top.counts.total} coberturas</div>`
     : `<div class="kicker">Em foco · ${top.counts.total} coberturas</div>`;
   const lead = top.articles[0];
+  const img = storyImg(top);
   el.innerHTML = `<div class="featured">
       ${kick}
       ${checksBadges(top)}
       <h1><a href="${esc(lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
+      ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       ${biasBar(top)}
     </div>`;
 }
@@ -437,6 +449,18 @@ function renderFeed(){
   const q = S.q.trim().toLowerCase();
   if(q) list = list.filter(s => (s.title+' '+s.summary+' '+s.articles.map(a=>a.title+' '+a.source).join(' ')).toLowerCase().includes(q));
 
+  // opções de editoria (preserva seleção)
+  const ecc = {};
+  d.stories.forEach(s=>{
+    new Set([s.section_label].concat((s.articles||[]).map(a=>a.section_label)))
+      .forEach(l=>{ if(l && l!=='Geral') ecc[l]=(ecc[l]||0)+1; });
+  });
+  $('#ed').innerHTML = `<option value="">Todas as editorias</option>` +
+    Object.keys(ecc).sort((a,b)=>a.localeCompare(b,'pt-BR')).map(l=>
+      `<option value="${esc(l)}"${l===S.ed?' selected':''}>${esc(l)} (${ecc[l]})</option>`).join('');
+  if(S.ed) list = list.filter(s => s.section_label===S.ed ||
+    (s.articles||[]).some(a=>a.section_label===S.ed));
+
   let title = 'Todas as histórias';
   if(S.filter==='blind'){ list=list.filter(s=>s.blindspot); title='Blindspots'; }
   else if(S.filter==='L'){ list=list.filter(s=>s.pct.L>=50); title='Maioria esquerda'; }
@@ -459,10 +483,14 @@ function renderFeed(){
       ? `<span class="badge blind"><span class="spark">⚡</span>Blindspot ${blindShort(s.blindspot)}</span>`
       : '';
     const srcs = new Set(s.articles.map(a=>a.source)).size;
+    const img = storyImg(s);
     return `<article class="story" data-id="${s.id}">
       <div class="top">${blind}${checksBadges(s)}<span class="badge plain">${s.counts.total} coberturas · ${srcs} veículos</span></div>
+      <div class="sgrid"><div>
+      ${s.section_label&&s.section_label!=='Geral'?`<div class="kicker-sec">${esc(s.section_label)}</div>`:''}
       <h3><a class="toggle-story" href="#" role="button">${esc(s.title)}</a></h3>
       ${s.summary?`<p class="sum">${esc(s.summary)}</p>`:''}
+      </div>${img?`<img class="thumb" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}</div>
       ${biasBar(s)}
       <div class="foot">
         <div class="meta">
@@ -546,7 +574,7 @@ function renderRail(){
   // jump links in rail
   document.querySelectorAll('[data-jump]').forEach(el=>{
     el.addEventListener('click', ()=>{
-      S.filter='all'; S.q=''; $('#q').value='';
+      S.filter='all'; S.q=''; S.ed=''; $('#q').value='';
       document.querySelectorAll('.pill[data-f]').forEach(p=>p.classList.toggle('on', p.dataset.f==='all'));
       renderFeed();
       expandStory(el.dataset.jump);
@@ -564,6 +592,7 @@ document.querySelectorAll('.pill[data-f]').forEach(p=>{
   });
 });
 $('#q').addEventListener('input', e=>{ S.q = e.target.value; renderFeed(); });
+$('#ed').addEventListener('change', e=>{ S.ed = e.target.value; renderFeed(); });
 document.querySelectorAll('[data-goto]').forEach(a=>{
   a.addEventListener('click', e=>{
     e.preventDefault();
