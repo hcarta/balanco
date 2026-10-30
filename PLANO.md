@@ -29,7 +29,7 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 - [x] **1.2 HTTP condicional** — envia `If-None-Match`/`If-Modified-Since`; respeita 304 (confirmado em G1, Folha, UOL). Reduz carga e risco de bloqueio.
 - [x] **1.3 Retry + backoff** — 1 retry com espera em `collectors._http`; timeout por fonte; fonte com erro usa o cache (status `stale`).
 - [~] **1.4 Saúde das fontes** — `state/health.json` por rodada + selo "instável" no trilho + aviso no console após 2 erros seguidos. Falta: e-mail/webhook.
-- [ ] **1.5 Agendamento** — `launchd` (macOS) ou GitHub Actions a cada 15–30 min rodando `python app.py`; log rotativo em `state/runs.log`.
+- [x] **1.5 Agendamento (Via B)** — `.github/workflows/collect.yml`: roda `app.py` a cada 30 min, `cache.db` via `actions/cache`, commit de `data.json`/`health.json`/ledger. Falta: criar o repo remoto, push e ativar Pages (passos no README).
 - [ ] **1.6 Testes mínimos** — `pytest` com fixtures: canonização de URL, parse de sitemap, extração de veredito, matching sintético. Rodar antes de cada mudança no núcleo.
 
 **Aceite:** 3 rodadas seguidas sem erro ✓ (20/20 ok); `data.json` regenerado em ~4 s com cache quente ✓; alertas testados via `store_alerts` ✓. Falta validar "desligar fonte de propósito" numa rodada real.
@@ -89,7 +89,9 @@ Hoje: 200 checagens recentes, casamento léxico, ledger acumulativo. Bom começo
 
 ## Fase 7 — Publicação
 
-- [ ] **7.1 Hospedagem estática** — GitHub Pages/Netlify + Actions agendadas (coleta → build → deploy). Custo ~zero.
+Parcialmente adiantada pela Via B (Actions + Pages cobrem hospedagem e deploy).
+
+- [x] **7.1 Hospedagem estática + Actions** — workflow `.github/workflows/collect.yml` pronto; falta criar o repo remoto, push e ativar Pages (passos no README). Custo ~zero.
 - [ ] **7.2 Domínio + analytics mínimo + SEO** (sitemap próprio, Open Graph).
 - [ ] **7.3 Revisão jurídica** — termos de uso, política de correção/errata, avaliação do PL 2338/2023 e de republicação de resumos (se Fase 3 publicar deks de terceiros, considerar licenciamento).
 - [ ] **7.4 Modelo** — definir antes de escalar: gratuito aberto (como hoje) vs. assinatura estilo Ground.news. Recomendação: manter aberto até ter tração; monetização depois.

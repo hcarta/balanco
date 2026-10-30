@@ -70,6 +70,25 @@ Estadão, O Globo, Valor e Gazeta bloqueiam RSS, mas expõem caminhos machine-re
 
 Coletamos **apenas manchete, link, data e editoria** (sem corpo, sem paywall). A estratégia completa, com diagnóstico, fallbacks, riscos e faseamento, está em [`ESTRATEGIA_AGREGACAO.md`](ESTRATEGIA_AGREGACAO.md).
 
+## Publicação automática (GitHub Actions — Via B)
+
+O workflow `.github/workflows/collect.yml` roda `python app.py` a cada 30 min e commita `site/data.json` + `state/health.json` + ledger. O `cache.db` (binário, 2 MB+) **não** vai para o git — circula via `actions/cache`.
+
+```bash
+# 1. criar o repo no GitHub (público: Actions ilimitado)
+gh repo create balanco --public --source=. --push
+# ou manual: github.com/new → git remote add origin … && git push -u origin main
+
+# 2. ativar o site: Settings → Pages → Deploy from branch → main → /site
+# 3. pronto: a cada 30 min a edição se atualiza sozinha
+# manual: aba Actions → "Coleta Balanço" → Run workflow
+```
+
+Notas:
+- Cron do Actions pode atrasar alguns minutos; `concurrency` evita rodadas sobrepostas.
+- `state/health.json` no repo = batimento cardíaco (dá para ver se o agendador está vivo).
+- Logs de cada rodada ficam na aba Actions (retention padrão 90 dias).
+
 ## Limitações honestas vs Ground.news
 - Ground usa AllSides/AdFontes/MBFC (só EUA). No Brasil não existe equivalente — aqui o viés é **fixo por publicação** (curadoria manual em `sources.yaml`), **não por artigo isolado**.
 - Clustering aqui é TF-IDF simples (Ground usa ML + curadoria). Precisa de ajuste de threshold.
