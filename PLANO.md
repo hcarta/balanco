@@ -30,7 +30,7 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 - [x] **1.3 Retry + backoff** — 1 retry com espera em `collectors._http`; timeout por fonte; fonte com erro usa o cache (status `stale`).
 - [~] **1.4 Saúde das fontes** — `state/health.json` por rodada + selo "instável" no trilho + aviso no console após 2 erros seguidos. Falta: e-mail/webhook.
 - [x] **1.5 Agendamento (Via B)** — `.github/workflows/collect.yml`: roda `app.py` a cada 30 min, `cache.db` via `actions/cache`, commit de `data.json`/`health.json`/ledger. Falta: criar o repo remoto, push e ativar Pages (passos no README).
-- [ ] **1.6 Testes mínimos** — `pytest` com fixtures: canonização de URL, parse de sitemap, extração de veredito, matching sintético. Rodar antes de cada mudança no núcleo.
+- [x] **1.6 Testes mínimos** — `pytest` com 26 testes: canonização de URL (achou 1 bug real), parse de RSS/sitemap com HTTP simulado, vereditos, cache SQLite, matching, bucket, alertas e clustering. Rodar com `python -m pytest tests/ -q` antes de cada mudança no núcleo.
 
 **Aceite:** 3 rodadas seguidas sem erro ✓ (20/20 ok); `data.json` regenerado em ~4 s com cache quente ✓; alertas testados via `store_alerts` ✓. Falta validar "desligar fonte de propósito" numa rodada real.
 

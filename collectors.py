@@ -113,6 +113,8 @@ def _canonical_link(url: str) -> str:
         url = url.rsplit("*", 1)[-1]
     url = url.split("#", 1)[0]
     url = re.sub(r"[?&](utm_[^=&]+|fbclid|gclid)=[^&]*", "", url)
+    if "&" in url and "?" not in url:
+        url = url.replace("&", "?", 1)  # utm era o 1º param: restaura o ?
     return url.rstrip("?&")
 
 

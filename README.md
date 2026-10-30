@@ -30,6 +30,11 @@ open docs/index.html
 # ou: python -m http.server -d docs 8000
 ```
 
+### Testes (rode antes de mudar o núcleo)
+```bash
+python -m pytest tests/ -q   # 26 testes: coletores, vereditos, cache, matching
+```
+
 O viés vem de `sources.yaml` (nível de **publicação**) e é o mesmo para toda matéria daquela fonte. **Não há chamada de IA nem custo por artigo.**
 
 ```bash

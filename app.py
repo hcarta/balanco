@@ -235,6 +235,34 @@ def _check_payload(c, score):
     }
 
 
+def build_idf(token_sets: list[set]) -> tuple[dict, Counter]:
+    """DF + IDF sobre um corpus de conjuntos de tokens."""
+    n = len(token_sets)
+    df: Counter = Counter()
+    for ts in token_sets:
+        for w in ts:
+            df[w] += 1
+    idf = {w: math.log(n / max(1, c)) + 1 for w, c in df.items()}
+    return idf, df
+
+
+def claim_overlap(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -> float:
+    """Sobreposição ponderada por raridade: separa "mesma alegação" de "mesmo assunto".
+
+    Exige (1) 2+ tokens em comum, (2) ao menos um termo raro (específico da
+    alegação) e (3) força mínima (4+ tokens ou cobertura >= 0.5).
+    Retorna a cobertura (0–1) ou 0.0.
+    """
+    inter = a & b
+    if len(inter) < 2:
+        return 0.0
+    den = min(sum(idf.get(t, 1) for t in a), sum(idf.get(t, 1) for t in b)) or 1
+    cov = sum(idf.get(t, 1) for t in inter) / den
+    rare = any(df[t] <= 4 for t in inter)
+    strong = len(inter) >= 4 or cov >= 0.5
+    return round(cov, 2) if (cov >= floor and rare and strong) else 0.0
+
+
 def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     """Casa histórias/matérias com checagens por sobreposição ponderada (IDF).
 
@@ -255,22 +283,10 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     c_sets = [set(tok(c["title"])) for c in checks]
 
     allsets = s_sets + a_sets + c_sets
-    n = len(allsets)
-    df = Counter()
-    for ts in allsets:
-        for w in ts:
-            df[w] += 1
-    idf = {w: math.log(n / max(1, c)) + 1 for w, c in df.items()}
+    idf, df = build_idf(allsets)
 
     def match(a, b, floor):
-        inter = a & b
-        if len(inter) < 2:
-            return 0.0
-        den = min(sum(idf.get(t, 1) for t in a), sum(idf.get(t, 1) for t in b)) or 1
-        cov = sum(idf.get(t, 1) for t in inter) / den
-        rare = any(df[t] <= 4 for t in inter)      # termo específico da alegação
-        strong = len(inter) >= 4 or cov >= 0.5
-        return round(cov, 2) if (cov >= floor and rare and strong) else 0.0
+        return claim_overlap(a, b, idf, df, floor)
 
     # nível história
     for si, s in enumerate(stories):
