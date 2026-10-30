@@ -325,9 +325,15 @@ const blindLong = b => b==='both'?'dos dois lados':b==='left'?'da esquerda':'da 
 const storyImg = s => { const a=(s.articles||[]).find(x=>x.image); return a?a.image:''; };
 function checksBadges(s, max=2){
   const cs = (s.checks||[]).slice(0,max);
-  if(!cs.length) return '';
-  return cs.map(c=>`<a class="badge check ${vClass(c.verdict)}" href="${esc(c.link)}" target="_blank" rel="noopener"
-      title="${esc(c.checker)} · ${esc(c.title)}">⚑ Checagem: ${esc(c.label)}</a>`).join('');
+  if(!cs.length){
+    const q = encodeURIComponent(s.title.split('—')[0].split(':')[0].slice(0,120));
+    return `<a class="badge check v-checagem" href="https://www.agencialupa.org/?s=${q}" target="_blank" rel="noopener"
+      title="Buscar este tema nas checagens da Lupa">🔍 Verificar este tema</a>`;
+  }
+  return cs.map(c=>{
+    const tt = (c.terms&&c.terms.length) ? ` · termos: ${c.terms.join(', ')}` : '';
+    return `<a class="badge check ${vClass(c.verdict)}" href="${esc(c.link)}" target="_blank" rel="noopener"
+      title="${esc(c.checker)} · ${esc(c.title)}${esc(tt)}">⚑ Checagem: ${esc(c.label)}</a>`;}).join('');
 }
 
 function relTime(iso){
@@ -432,7 +438,7 @@ function comparePanel(s){
             ${a.factuality?`<span class="chip f-${a.factuality}">${factLabel(a.factuality)}</span>`:''}
             ${a.ownership?`<span>· ${esc(a.ownership)}</span>`:''}
           </div>
-          ${a.check?`<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`:''}
+          ${a.check?`<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}${a.check.terms&&a.check.terms.length?` · termos: ${a.check.terms.join(', ')}`:''}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`:''}
           </div>`).join('')
       : `<div class="empty">Sem cobertura deste lado.</div>`;
     return `<div class="col ${k}">
@@ -543,7 +549,7 @@ function renderRail(){
   // checagens recentes (G1 Fato ou Fake + Lupa)
   const checks = (d.factchecks||[]).slice(0,4);
   $('#checkCard').innerHTML = `<div class="rt">⚑ Checagens recentes</div>
-    <p class="rnote">G1 Fato ou Fake · Agência Lupa</p>` + (
+    <p class="rnote">G1 Fato ou Fake · Agência Lupa · Aos Fatos</p>` + (
       checks.length ? checks.map(c=>`
         <div class="checkitem">
           <a class="ct" href="${esc(c.link)}" target="_blank" rel="noopener">${esc(c.title)}</a>

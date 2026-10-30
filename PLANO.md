@@ -58,7 +58,14 @@ Hoje cada rodada rebaixava tudo, sem cache, sem log e sem aviso quando uma fonte
 
 ## Fase 4 — Checagem: corpus, transparência e revisão
 
-Hoje: 200 checagens recentes, casamento léxico, ledger acumulativo. Bom começo, corpus raso.
+*Status 30/10: 4.1–4.5 implementados. Corpus de ~700 checagens (G1 100 + Lupa 500 + Aos Fatos 100).*
+
+- [x] **4.1 Paginar a Lupa** — `fetch_lupa` percorre até 5 páginas da API (100/pág, mais recentes primeiro).
+- [x] **4.2 Terceira fonte** — **Aos Fatos** via Google News RSS (títulos com veredito; links são redirect do Google — documentado).
+- [x] **4.3 "Verificar este tema"** — selo nas histórias sem match, abrindo a busca do tema na Lupa.
+- [x] **4.4 Tooltip do selo** — `terms` (tokens da alegação em comum, até 6) no payload e no `title` do selo/matéria.
+- [x] **4.5 Fila de revisão em CSV** — `ops/export_review.py` gera `state/revisao_checagens.csv` do ledger.
+- [ ] **4.6 Matching semântico (depois)** — embeddings para "mesma alegação com outras palavras". Sem LLM por matéria (manter custo zero).
 
 - [ ] **4.1 Paginar a Lupa** — a API aceita `page`; coletar o histórico completo da categoria Verificação (milhares de itens). G1: avaliar paginação do RSS/páginas seguintes.
 - [ ] **4.2 Terceira fonte** — Aos Fatos (tem API/seções de checagem). Mesma normalização de veredito.

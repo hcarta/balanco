@@ -2,7 +2,7 @@
 import time
 
 import app
-from app import bucket, build_idf, claim_overlap, cluster, store_alerts, tok
+from app import attach_checks, bucket, build_idf, claim_overlap, cluster, store_alerts, tok
 
 CORPUS = [
     "Itamaraty convoca diplomata argentina para explicar fuga de Flávio",
@@ -111,3 +111,23 @@ def test_cluster_respects_section_window():
     sizes = sorted(len(g) for g in groups)
     # breaking (30h) separa; opinião (5d) junta
     assert sizes == [1, 1, 2]
+
+
+def test_attach_checks_includes_terms():
+    stories = [{
+        "id": "s000", "title": "Governo Lula bloqueou Gás do Povo e Bolsa Família após eleições",
+        "articles": [
+            {"title": "Governo Lula bloqueou Gás do Povo após eleições",
+             "link": "https://x/1", "source": "V", "source_id": "v"},
+        ],
+    }]
+    checks = [{
+        "title": "É FAKE que governo Lula bloqueou Gás do Povo e Bolsa Família",
+        "link": "https://c/1", "checker": "Lupa", "published": "2026-10-30T00:00:00+00:00",
+        "verdict": "falso", "label": "Falso",
+    }]
+    out, ledger, matches = attach_checks(stories, checks)
+    assert out[0]["checks"], "era esperado ao menos um casamento"
+    assert set(out[0]["checks"][0]["terms"]) <= {"governo", "lula", "bloqueou", "gás", "povo", "bolsa", "família", "eleições"}
+    assert len(out[0]["checks"][0]["terms"]) >= 2
+    assert matches and matches[0]["terms"]

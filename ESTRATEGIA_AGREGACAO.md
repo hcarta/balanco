@@ -100,7 +100,7 @@ No Brasil, agregar **manchetes + links** é prática consolidada; reproduzir tre
 - 20 fontes integradas (16 RSS + 4 via Arc XP/sitemap).
 - ~340 artigos → ~19 histórias por rodada.
 - **Viés fixo por fonte**, sem análise por matéria e sem custo de tokens (LLM só com `--llm`).
-- **Checagens** do G1 Fato ou Fake e da Lupa cruzadas com as manchetes; histórico por fonte como evidência.
+- **Checagens** do G1 Fato ou Fake, da Lupa (500 mais recentes) e do Aos Fatos cruzadas com as manchetes; histórico por fonte como evidência.
 - Exemplo real: pauta "Itamaraty/Flávio" com 9 coberturas — DCM e Carta (esq), Folha/Estadão/Globo/InfoMoney (centro), Gazeta/Jovem Pan/Oeste (dir).
 
 ## 11. Checagem de fatos (G1 + Lupa)
@@ -108,7 +108,8 @@ No Brasil, agregar **manchetes + links** é prática consolidada; reproduzir tre
 | Fonte | Endpoint | Uso |
 |---|---|---|
 | **G1 Fato ou Fake** | `g1.globo.com/rss/g1/fato-ou-fake/` | RSS com 100 itens; veredito no título (`#FAKE`, `#FATO`, `#NÃOÉBEMASSIM`) |
-| **Agência Lupa** | `agencialupa.org/wp-json/wp/v2/posts?categories=142` | API WordPress; categoria *Verificação*; veredito no título |
+| **Agência Lupa** | `agencialupa.org/wp-json/wp/v2/posts?categories=142` (paginado, 5×100) | API WordPress; categoria *Verificação* (5.700+ itens); veredito no título |
+| **Aos Fatos** | Google News RSS `site:aosfatos.org` | 100 itens; veredito no título; links são redirect do Google |
 
 **Extração de veredito:** não há `ClaimReview` nas páginas. O veredito é lido do título e normalizado em `falso`, `verdadeiro`, `enganoso` ou `checagem` (rodada sem veredito único).
 

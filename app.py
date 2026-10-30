@@ -411,7 +411,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
     return stories
 
 
-def _check_payload(c, score):
+def _check_payload(c, score, terms=()):
     return {
         "verdict": c["verdict"],
         "label": c["label"],
@@ -420,6 +420,7 @@ def _check_payload(c, score):
         "checker": c["checker"],
         "published": c["published"],
         "score": round(score, 2),
+        "terms": sorted(terms)[:6],
     }
 
 
@@ -476,6 +477,9 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     def match(a, b, floor):
         return claim_overlap(a, b, idf, df, floor)
 
+    def terms(a, b):
+        return sorted(a & b)[:6]
+
     # nível história
     for si, s in enumerate(stories):
         cands = []
@@ -484,7 +488,8 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
             if sc:
                 cands.append((sc, ci))
         cands.sort(reverse=True)
-        s["checks"] = [_check_payload(checks[ci], sc) for sc, ci in cands[:2]]
+        s["checks"] = [_check_payload(checks[ci], sc, terms(s_sets[si], c_sets[ci]))
+                       for sc, ci in cands[:2]]
 
     # nível matéria + histórico por fonte
     ledger = {}
@@ -497,7 +502,7 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
         cands.sort(reverse=True)
         sc, ci = cands[0]
         art = stories[si]["articles"][ai]
-        art["check"] = _check_payload(checks[ci], sc)
+        art["check"] = _check_payload(checks[ci], sc, terms(a_sets[k], c_sets[ci]))
         L = ledger.setdefault(art["source_id"], {"total": 0, "falso": 0,
                                                  "enganoso": 0, "verdadeiro": 0, "checagem": 0})
         L["total"] += 1
@@ -509,6 +514,7 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
             "check": checks[ci]["title"], "check_link": checks[ci]["link"],
             "checker": checks[ci]["checker"], "verdict": v,
             "score": sc, "date": checks[ci]["published"],
+            "terms": ";".join(sorted(a_sets[k] & c_sets[ci])[:6]),
         })
 
     for L in ledger.values():
