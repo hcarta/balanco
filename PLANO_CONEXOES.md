@@ -60,6 +60,7 @@ Com o boost ancorado (`entidade OR embedding ≥ 0,75`, opt-in `--embed`): longf
   - + resumo com entidade forte: P 1,00 / **R 0,91** (recupera o caso Flávio/NYT, IN094)
   - **limite deliberado:** o positivo restante (IN099, "Lula" isolado) não é recuperado. Aceitar uma pessoa isolada como âncora derrubou a precisão para 0,43 no conjunto (13 FPs: "Trump" × qualquer pauta, "Halloween" × "Halloween"). Fica para o matcher de evento (F4), não para o léxico.
   - **Produção (31/10):** 3 → 7 histórias com "Lá fora" na rodada; revisão manual das 9 conexões não achou falso positivo. Portão de teste subiu para R ≥ 0,85.
+- [x] **F3.5 Leituras da semana (C-1):** índice de 10 dias no cache (fontes longform), 8 peças no rail, máx. 2 por fonte; o matching por história segue restrito a 72 h para não reintroduzir FPs de entidade.
 - [x] **Aceite:** zero "programa/quiz" sugeridos; redundância mesma-história < 5%; peça repetida em ≤ 2 histórias.
   - **Resultado (31/10):** 44 → 11 conexões; redundância 14 → 0; peças repetidas 6 → 0 (máx. 1); não-jornalismo 2 → 0. Custo: histórias com "Aprofunde-se" caíram de 22 para 8 — o pool tem 85 peças longform/72 h, mas só 11 casam com as pautas do dia. É falta de recall, a ser recuperada em F1/F3.4.
 

@@ -46,8 +46,9 @@ O plano de 5 fases × 3–4 dias é maior que o objetivo atual (precisão das co
 - **F-13:** cache com `run_id` + `restore-keys`; `git pull --rebase -X ours` antes do push. `deploy-pages` fica pendente (mudança de settings do repo).
 - **F-08:** filtros de vídeo/ao vivo, loteria, Finados e bandeira tarifária.
 - **Checagens:** `claim_match` exige entidade multi-palavra específica ou cobertura ≥0,80; os 4 FPs de “linha do tempo”/“Lula” sumiram; P 1,00/R 0,67 no conjunto; **0 matches** na rodada.
+- **C-1/C-5 (leituras):** `build_leituras` lê 10 dias do cache (fontes longform), limita 2 por fonte, sanitiza HTML e exclui anexos de reportagem; 8 peças no rail “Leituras da semana”. O “Aprofunde-se” por história continua nas 72 h — peças antigas não entram no matching para não repetir os FPs de “Flávio”.
 - **Custo:** `data.json` 1,4 MB; arquivo diário slim 717 KB (antes 1,4 MB); rodada ~125 s.
-- **Suíte:** **88 testes**.
+- **Suíte:** **90 testes**.
 
 ### Melhorias pontuais
 - **F-01:** cap 400 + log `kept/in_window`; medir tempo antes de subir para 1.500.
@@ -78,7 +79,7 @@ python ops/eval_connections.py             # P/R por conexão
 
 **Regras (não negociáveis)**
 1. **Não quebrar os 75 testes.** Quando um teste codificar comportamento que este plano muda de propósito, atualize o teste *e* registre o motivo no PR/commit.
-2. **Schema de `data.json` é aditivo.** `docs/index.html` e `feed.xml` consomem `id, title, summary, counts, pct, articles[], longreads[], world[], checks[], hub, developments`. Adicione campos; só remova depois de migrar a UI.
+2. **Schema de `data.json` é aditivo.** `docs/index.html` e `feed.xml` consomem `id, title, summary, counts, pct, articles[], longreads[], world[], checks[], hub, developments, leituras`. Adicione campos; só remova depois de migrar a UI.
 3. **Sem bypass de paywall, sem scraping novo.** Fontes novas só via RSS/sitemap/API pública. Metadados de longform vêm do **próprio feed** (`content:encoded`, `category`, `dc:creator`) ou da API WP pública. Não use nada de `ref/bypass-paywalls/` (está no zip; já é `.gitignore`; **remova do zip/distribuição**).
 4. **Custo zero por artigo por padrão.** LLM só como opt-in (`--llm`), nunca no CI por padrão.
 5. **Medir antes de afirmar.** Toda mudança de matching precisa de P/R antes/depois no conjunto rotulado (seção 8). Não calibrar contra o `data.json` mutável do CI (ver F-12).

@@ -6,6 +6,7 @@ O LLM é opt-in (--llm) e só deve ser usado quando explicitamente desejado.
 """
 import argparse
 import hashlib
+import html
 import json
 import math
 import os
@@ -700,7 +701,9 @@ def entity_match(a: set, b: set) -> tuple[bool, list]:
 NON_JOURNALISM = re.compile(
     r"assist[ai] ao programa|programa de \d|palavras cruzadas|\bquiz\b"
     r"|crossword|ao vivo agora|newsletter de|boletim de \d|edi[çc][ãa]o de hoje"
-    r"|podcast completa|ouvinte|agenda do dia|hor[óo]scopo", re.I)
+    r"|podcast completa|ouvinte|agenda do dia|hor[óo]scopo"
+    r"|respostas? (enviad[ao]s?|da|de) (para )?(empresa|reportagem|redação)"
+    r"|nota da redação|\berrata\b", re.I)
 
 # Marcadores de análise (para F3.2: peça da mesma fonte só entra se for análise)
 ANALYSIS_MARKERS = re.compile(
@@ -913,6 +916,56 @@ def attach_hubs(stories, min_stories=3, window_h=72.0):
 # com entidade em comum ou cobertura de título >= EMB_PREFILTER_COV.
 EMB_BOOST = 0.75
 EMB_PREFILTER_COV = 0.12
+
+
+def _clean_text(text: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", text or "")
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
+    """C-1: índice de longform dos últimos N dias, independente das histórias.
+
+    A janela de 120 dias do cache é a fonte; a seleção limita 2 peças por
+    fonte e exclui não-jornalismo/resumo vazio. Não tenta casar com história
+    (isso é C-3); serve à seção "Leituras da semana".
+    """
+    if store is None:
+        return []
+    exclude = set(exclude_links or [])
+    seen = set()
+    out = []
+    for s in sources:
+        if not s.get("longform"):
+            continue
+        for a in store.recent(s["id"], window_h=days * 24, limit=200):
+            title = a.get("title", "")
+            if not title or NON_JOURNALISM.search(title):
+                continue
+            if excluded_section(a.get("section")) or excluded_title(title):
+                continue
+            summary = _clean_text(a.get("summary"))
+            if summary.lower() in ("", "none", "null"):
+                continue
+            if a["link"] in exclude or a["link"] in seen:
+                continue
+            seen.add(a["link"])
+            out.append({
+                "source_id": s["id"], "source": s["name"],
+                "title": title, "link": a["link"],
+                "published": a["published"], "summary": summary[:240],
+                "bias": float(s.get("bias", 0)),
+            })
+    out.sort(key=lambda x: x["published"], reverse=True)
+    picked, per = [], Counter()
+    for x in out:
+        if per[x["source_id"]] >= 2:
+            continue
+        picked.append(x)
+        per[x["source_id"]] += 1
+        if len(picked) >= limit:
+            break
+    return picked
 
 
 def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=False):
@@ -1263,6 +1316,12 @@ def main():
 
     stories, ledger, matches = attach_checks(stories, checks)
     leverage = merge_factcheck_ledger(matches) if checks else {}
+    # C-1: leituras da semana (janela própria, independente do matching)
+    lr_links = {x["link"] for s in stories for x in s.get("longreads", [])}
+    leituras = build_leituras(store, sources, days=10, limit=8,
+                              exclude_links=lr_links)
+    if leituras:
+        print(f"[3e/4] {len(leituras)} leituras da semana")
     if checks:
         print(f"[3d/4] {len(matches)} matéria(s) casaram com checagens nesta rodada")
 
@@ -1287,6 +1346,7 @@ def main():
                "n_new": fsum["n_new"],
                "sources": sources_out,
                "factchecks": checks[:80],
+               "leituras": leituras,
                "stories": stories}
     with open(os.path.join(SITE, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)

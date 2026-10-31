@@ -267,6 +267,12 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .rail-mini{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--C-bg);margin-bottom:6px}
 .rail-mini .bL{background:var(--L)}.rail-mini .bC{background:var(--C)}.rail-mini .bR{background:var(--R)}
 .rail-item .rl{font-size:10.5px;color:var(--faint);letter-spacing:.02em}
+.read-item{display:block;padding:12px 0;border-bottom:1px solid var(--hair)}
+.read-item:last-child{border-bottom:none;padding-bottom:0}
+.read-item:hover .read-title{color:var(--accent)}
+.read-src{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.read-title{font-family:var(--serif);font-size:15px;line-height:1.3;color:var(--ink);margin-bottom:4px}
+.read-dek{font-family:var(--serif);font-size:12.5px;line-height:1.45;color:var(--muted)}
 .srcrow{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--hair);font-size:13px}
 .srcrow:last-child{border-bottom:none}
 .srclist{max-height:320px;overflow-y:auto;margin:-4px -2px 0;padding:0 2px;scrollbar-width:thin}
@@ -350,6 +356,7 @@ footer a.fl:hover{color:var(--accent)}
   <aside class="rail" id="rail">
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="blindCard"></div>
+    <div class="rail-card" id="readCard"></div>
   </aside>
 </div></main>
 
@@ -773,6 +780,17 @@ function renderRail(){
         </div>`).join('')
       : `<p style="font-family:var(--serif);font-size:14.5px;color:var(--faint);font-style:italic;margin:0">Sem checagens carregadas nesta edição.</p>`
     ) + `<a class="seemore" href="https://www.agencialupa.org/" target="_blank" rel="noopener">Ver mais checagens ↗</a>`;
+
+  // C-1/C-5: leituras da semana (janela própria, sem casar com história)
+  const reads = d.leituras || [];
+  const readCard = $('#readCard');
+  readCard.style.display = reads.length ? '' : 'none';
+  readCard.innerHTML = reads.length ? `<div class="rt">📚 Leituras da semana</div>` +
+    reads.map(x=>`<a class="read-item" href="${esc(x.link)}" target="_blank" rel="noopener">
+      <div class="read-src">${esc(x.source)} · ${relTime(x.published)}</div>
+      <div class="read-title">${esc(x.title)}</div>
+      ${x.summary?`<div class="read-dek">${esc(x.summary.slice(0,150))}${x.summary.length>150?'…':''}</div>`:''}
+    </a>`).join('') : '';
 
   // jump links in rail
   document.querySelectorAll('[data-jump]').forEach(el=>{
