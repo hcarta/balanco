@@ -207,6 +207,8 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .beyond .bart a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
 .beyond .bart a:hover{color:var(--accent);text-decoration:none}
 .beyond .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
+.beyond .bart small a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--hair-strong)}
+.beyond .bart small a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 @media(max-width:720px){.beyond{grid-template-columns:1fr}}
 /* pauta: navegação entre ângulos do mesmo assunto (não funde histórias) */
 .pauta{display:block;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
@@ -684,9 +686,16 @@ function beyond(s){
     const why = x.why ? ` · ${esc(x.why)}` : '';
     return `<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)} · ${rel}${why}</small></div>`;
   }).join('');
+  const wLinks = arr => arr.map(x=>{
+    const n = x.n_sources>1 ? ` · ${x.n_sources} veículos` : '';
+    const srcLinks = x.n_sources>1
+      ? (x.sources||[]).map(s=>`<a href="${esc(s.link)}" target="_blank" rel="noopener" title="${esc(s.title)}">${esc(s.source)}</a>`).join(' · ')
+      : '';
+    return `<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)}${n}${srcLinks?` · ${srcLinks}`:''}</small></div>`;
+  }).join('');
   return `<div class="beyond">
     ${lr.length?`<div class="bl"><div class="bh">📖 Aprofunde-se</div>${lrLinks(lr)}</div>`:''}
-    ${w.length?`<div class="bl"><div class="bh">🌍 Lá fora</div>${links(w)}</div>`:''}
+    ${w.length?`<div class="bl"><div class="bh">🌍 Lá fora</div>${wLinks(w)}</div>`:''}
   </div>`;
 }
 

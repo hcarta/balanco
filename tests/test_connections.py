@@ -7,7 +7,7 @@ futura degrade a conexão sem que alguém veja.
 
 Medido na criação (31/10/2026):
   longform: P 0.94 / R 0.62   (60 pares, 26 positivos)
-  intl:     P 1.00 / R 0.91   (40 pares, 11 positivos; F3.4)
+  intl:     P 1.00 / R 0.91   (40 pares, 11 positivos; F3.4 + B-3)
   check:    P 1.00 / R 0.67   (67 pares,  3 positivos — amostra pequena por
                                 desenho: checagem de mesma alegação é rara;
                                 F4.2 recupera 2/3 sem FP)
@@ -233,3 +233,53 @@ def test_world_piece_not_repeated_across_stories():
            "source_id": "guardian", "source_name": "The Guardian"}
     app.attach_world(stories, [art])
     assert sum(len(s["world"]) for s in stories) == 1
+
+
+def test_world_matches_concept_without_number():
+    from app import _world_match, entities
+    a = "Ataque hacker atinge a Binance"
+    b = "Binance hack: what we know"
+    ok, _ = _world_match(entities(a), b, "", a)
+    assert ok
+
+
+def test_world_concept_rejects_person_only():
+    from app import _world_match, entities
+    a = "Lula defende propostas para o quarto mandato"
+    b = "Brazil’s victory: seven lessons from Lula’s win"
+    ok, _ = _world_match(entities(a), b, "", a)
+    assert not ok
+
+
+def test_world_concept_needs_shared_entity():
+    from app import _world_match, entities
+    a = "Lula anuncia pacote econômico"
+    b = "Trump wins election"
+    ok, _ = _world_match(entities(a), b, "", a)
+    assert not ok
+
+
+def test_intl_groups_by_entity_and_number():
+    import time
+    import app
+    now = time.time()
+    arts = [
+        {"source_id": "bbc", "source_name": "BBC",
+         "title": "What we know about Binance's $6.3bn hack",
+         "link": "b", "summary": "", "ts": now, "section": "mundo"},
+        {"source_id": "nytimes", "source_name": "NYT",
+         "title": "How Binance's $6.3 Billion Hack Went Down",
+         "link": "n", "summary": "", "ts": now, "section": "mundo"},
+        {"source_id": "other", "source_name": "Other",
+         "title": "Ebola outbreak", "link": "e", "summary": "",
+         "ts": now, "section": "mundo"},
+    ]
+    groups = app.group_intl_articles(arts)
+    assert any({a["link"] for a in g} == {"b", "n"} for g in groups)
+    story = {"id": "s1", "title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+             "counts": {"total": 2}, "articles": []}
+    out = app.attach_world([story], arts)
+    w = out[0]["world"]
+    assert len(w) == 1
+    assert w[0]["n_sources"] == 2
+    assert any(s["source"] == "BBC" for s in w[0]["sources"])

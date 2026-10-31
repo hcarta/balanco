@@ -745,6 +745,17 @@ ENTITY_GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us"
 ENTITY_ALIAS = {"brasil": "brazil", "eua": "us", "usa": "us",
                 "estados unidos": "united states", "reino unido": "uk"}
 
+# Pessoas não são âncora suficiente para agrupar eventos nem para o fallback
+# de conceito (evita "Trump" juntar eleições de países diferentes).
+PERSON_ENTITIES = {
+    "lula", "bolsonaro", "jair bolsonaro", "flávio bolsonaro", "flávio",
+    "trump", "donald trump", "milei", "netanyahu", "putin", "zelensky",
+    "biden", "harris", "moraes", "alexandre de moraes", "mendonça",
+    "nunes marques", "dino", "gilmar mendes", "barroso", "tarcísio",
+    "zambelli", "malafaia", "vorcaro", "marco rubio", "rubio",
+    "mauro vieira", "carney", "starmer", "bukele", "maduro",
+}
+
 # F3.4: âncoras BR→EN. Sem isso, "Ucrânia" e "Ukraine" eram entidades
 # diferentes e o par "mísseis Patriot" (IN069) se perdia. Só nomes próprios
 # de lugar/organização: traduzir "senado"→"senate" juntaria Congressos de
@@ -1268,6 +1279,30 @@ def _numbers_match(a: set, b: set) -> bool:
                for x in a for y in b)
 
 
+# B-3: conceitos recorrentes sem nome próprio (PT/EN)
+CONCEPT = {
+    "hack": "cyber", "hacker": "cyber", "hackers": "cyber",
+    "hacking": "cyber", "ciberataque": "cyber", "cyberattack": "cyber",
+    "tarifa": "tariff", "tarifas": "tariff", "tarifaço": "tariff",
+    "tariff": "tariff", "tariffs": "tariff",
+    "eleição": "election", "eleições": "election", "election": "election",
+    "elections": "election", "voto": "election", "vote": "election",
+    "voters": "election", "mandato": "election", "mandatos": "election",
+    "win": "election", "wins": "election", "victory": "election",
+    "vitória": "election", "vitórias": "election", "derrota": "election",
+    "defeat": "election", "juros": "rates", "interest": "rates",
+    "selic": "rates", "protesto": "protest", "protestos": "protest",
+    "protest": "protest", "protests": "protest", "seca": "drought",
+    "drought": "drought", "enchente": "flood", "flood": "flood",
+    "flooding": "flood", "míssil": "missile", "mísseis": "missile",
+    "missile": "missile", "missiles": "missile", "ebola": "ebola",
+}
+
+
+def concepts(text: str | None) -> set[str]:
+    return {CONCEPT[x] for x in tok(text or "") if x in CONCEPT}
+
+
 def _world_match(se: set, intl_title: str, summary: str = "",
                  story_title: str = "") -> tuple[bool, list]:
     """Casa história BR com peça internacional. Título primeiro; o resumo só
@@ -1286,26 +1321,98 @@ def _world_match(se: set, intl_title: str, summary: str = "",
             return True, terms
     # evento com número forte: "Binance" + US$ 6,3 bi × "$6.3 Billion"
     if story_title:
-        shared = {e for e in se & entities(intl_title + " " + summary)
-                  if e not in ENTITY_GENERIC}
-        if shared and _numbers_match(numbers(story_title),
-                                     numbers(intl_title + " " + summary)):
+        text = intl_title + " " + summary
+        shared = {e for e in se & entities(text) if e not in ENTITY_GENERIC}
+        if not shared:
+            return False, []
+        strong = shared - PERSON_ENTITIES
+        if _numbers_match(numbers(story_title), numbers(text)):
             return True, sorted(shared)[:6]
+        if strong and (concepts(story_title) & concepts(text)):
+            return True, sorted(strong)[:6]
     return False, []
 
 
-def attach_world(stories, intl_articles, per_story=3, use_embed=False):
-    """Liga cada história à repercussão internacional (mesmo tópico, outro idioma).
+def group_intl_articles(articles):
+    """B-2: agrupa peças internacionais pelo mesmo evento.
 
-    Medido em 31/10/2026 (40 pares rotulados): entidade traduzida OR resumo
-    com entidade forte OR embedding >= 0.75 → P 1.00, R 0.73→0.91.
+    Combina o cluster TF-IDF (duplicatas de título) com uma regra forte de
+    entidade + número (ex.: "Binance" + US$ 6,3 bi), que o TF-IDF sozinho
+    não pega quando a redação muda.
     """
-    pool = [(a.get("title", ""), a.get("summary") or "", a) for a in intl_articles]
+    if not articles:
+        return []
+    now = datetime.now(timezone.utc).timestamp()
+    for a in articles:
+        a.setdefault("ts", now)
+        a.setdefault("section", "")
+        a.setdefault("source_id", a.get("source", "?"))
+    groups = cluster(articles, thresh=0.38, window_h=72)
+    gents, gnums = [], []
+    for g in groups:
+        e, n = set(), set()
+        for i in g:
+            a = articles[i]
+            text = (a.get("title", "") + " " + (a.get("summary") or ""))
+            e |= entities(text)
+            n |= numbers(text)
+        gents.append(e)
+        gnums.append(n)
+    parent = list(range(len(groups)))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for i in range(len(groups)):
+        for j in range(i + 1, len(groups)):
+            shared = {e for e in gents[i] & gents[j] if e not in ENTITY_GENERIC}
+            shared_strong = shared - PERSON_ENTITIES
+            if shared_strong and _numbers_match(gnums[i], gnums[j]):
+                ri, rj = find(i), find(j)
+                if ri != rj:
+                    parent[ri] = rj
+    merged = {}
+    for gi, g in enumerate(groups):
+        merged.setdefault(find(gi), []).extend(g)
+    out = [[articles[i] for i in idxs] for idxs in merged.values()]
+    out.sort(key=lambda g: (-len(g), -max(a.get("ts", 0) for a in g)))
+    return out
+
+
+def attach_world(stories, intl_articles, per_story=3, use_embed=False,
+                 source_meta=None):
+    """B-2/B-3: liga histórias a grupos internacionais (evento, não peça).
+
+    Cada grupo mostra uma peça representante, o número de veículos e as
+    fontes; a mesma peça nunca aparece em duas histórias.
+    """
+    groups = group_intl_articles(intl_articles)
+    source_meta = source_meta or {}
+    pool = []
+    for g in groups:
+        rep = _representative(g, source_meta)
+        rep_title = _clean_title(rep.get("title", ""))
+        group_summary = " ".join(
+            (a.get("title", "") + " " + (a.get("summary") or ""))
+            for a in g)[:1600]
+        seen_link, sources = set(), []
+        for a in g:
+            src = a.get("source_name", "")
+            link = a.get("link", "")
+            if not src or not link or link in seen_link:
+                continue
+            seen_link.add(link)
+            sources.append({"source": src, "title": a.get("title", ""),
+                            "link": link})
+        pool.append((rep_title, group_summary, rep, g, sources))
     X, n_st = None, len(stories)
     if use_embed and pool:
         try:
             X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
-                             [{"title": it} for it, _, _ in pool])
+                             [{"title": it} for it, _, _, _, _ in pool])
         except Exception as e:
             print(f"  [aviso] embeddings indisponíveis no 'Lá fora' ({e})")
     for si, s in enumerate(stories):
@@ -1316,7 +1423,7 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False):
             continue
         st = set(tok(story_text))
         cands = []
-        for pi, (it, isum, a) in enumerate(pool):
+        for pi, (it, isum, rep, g, sources) in enumerate(pool):
             if not it:
                 continue
             ok, terms = _world_match(se, it, isum, story_text)
@@ -1325,33 +1432,39 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False):
                 if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
                     ok = True
             if ok:
-                cands.append((len(terms), a.get("link", ""), a, terms))
+                n_src = len({a.get("source_name") for a in g
+                             if a.get("source_name")})
+                cands.append((len(terms), rep.get("link", ""), rep, g,
+                              sources, n_src, terms))
         seen, out = set(), []
-        for _, link, a, terms in sorted(cands, reverse=True):
+        for _, link, rep, g, sources, n_src, terms in sorted(cands, reverse=True):
             if not link or link in seen:
                 continue
             seen.add(link)
-            out.append({"source": a.get("source_name", ""), "title": a.get("title", ""),
-                        "link": link, "terms": terms})
+            out.append({
+                "source": rep.get("source_name", ""),
+                "title": _clean_title(rep.get("title", "")),
+                "link": link,
+                "terms": terms,
+                "n_sources": n_src,
+                "sources": sources[:6],
+            })
             if len(out) >= per_story:
                 break
         s["world"] = out
-    # F1.4: a mesma peça internacional não pode aparecer em várias histórias
-    # (o texto do Guardian sobre Flávio saía 4×). Fica na história de maior
-    # correspondência; empate resolve pela primeira.
+    # uma peça/grupo só na história de maior correspondência
     best = {}
     for s in stories:
         total = (s.get("counts") or {}).get("total", 0)
         for w in s.get("world", []):
             score = len(w.get("terms") or [])
-            cand = (score, total, id(s))
+            cand = (total, score, id(s))
             if w["link"] not in best or cand[:2] > best[w["link"]][:2]:
                 best[w["link"]] = cand
     for s in stories:
         s["world"] = [w for w in s.get("world", [])
                       if best.get(w["link"], (0, 0, None))[2] == id(s)]
     return stories
-
 
 def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     """Casa histórias/matérias com checagens por sobreposição ponderada (IDF).
@@ -1557,7 +1670,9 @@ def main():
     stories = attach_longreads(stories, news + longform_extra, longform_ids,
                                use_embed=args.embed)
     stories = diversify_longreads(stories)
-    stories = attach_world(stories, intl, use_embed=args.embed)
+    source_meta = {s["id"]: s for s in sources}
+    stories = attach_world(stories, intl, use_embed=args.embed,
+                           source_meta=source_meta)
     n_lr = sum(1 for s in stories if s.get("longreads"))
     n_w = sum(1 for s in stories if s.get("world"))
     print(f"[3b/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")
