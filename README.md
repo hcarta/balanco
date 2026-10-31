@@ -83,7 +83,7 @@ Mainstream/centro: G1, Folha, UOL, CNN Brasil, BBC Brasil, Poder360, Metrópoles
 Centro-esquerda: **Revista piauí**.
 Esquerda: Brasil 247, Diário do Centro do Mundo, CartaCapital, **Agência Pública**, **The Intercept Brasil**, **Repórter Brasil**.
 Direita: Jovem Pan, Revista Oeste, **Gazeta do Povo**, **R7**, **Veja**, **Crusoé**.
-Internacionais (só em "🌍 Lá fora", fora das barras): **Al Jazeera English**, **CNN International**, **Fox News**, **New York Times**, **The Guardian**, **BBC World**.
+Internacionais (só em "🌍 Lá fora", fora das barras): **Al Jazeera English**, **Fox News**, **New York Times (World + Tecnologia)**, **The Guardian**, **BBC World**.
 
 Fora por ora: **Agência Brasil** (feed parado desde 2023), **Congresso em Foco** (inacessível daqui), **El País Brasil** (encerrado em 2021).
 

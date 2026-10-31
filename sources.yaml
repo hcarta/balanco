@@ -167,14 +167,6 @@ sources:
     factuality: high
     ownership: governo
     owner_detail: Catar (financiamento público)
-  - id: cnnintl
-    name: CNN International
-    rss: http://rss.cnn.com/rss/edition_world.rss
-    kind: intl
-    bias: 0.0
-    factuality: high
-    ownership: corporacao
-    owner_detail: Warner Bros. Discovery
   - id: foxnews
     name: Fox News
     rss: https://feeds.foxnews.com/foxnews/world
@@ -191,6 +183,15 @@ sources:
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
+  - id: nytimestech
+    name: New York Times (Tecnologia)
+    rss: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
+    kind: intl
+    bias: -0.8
+    factuality: high
+    ownership: corporacao
+    owner_detail: The New York Times Company
+
   - id: guardian
     name: The Guardian
     rss: https://www.theguardian.com/world/rss

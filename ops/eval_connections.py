@@ -135,7 +135,8 @@ def main():
         if kind == "intl":
             from app import _world_match, entities as _ents
             preds = [_world_match(_ents(p["a_title"]), p["b_title"],
-                                  p.get("b_summary", ""))[0] for p in sub]
+                                  p.get("b_summary", ""), p["a_title"])[0]
+                     for p in sub]
             labels = [p["label"] for p in sub]
             prec, rec, cm = pr([1.0 if x else 0.0 for x in preds], labels, 0.5)
             print(f"  {'produção (título+resumo+âncoras)':28} "

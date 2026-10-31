@@ -52,9 +52,10 @@
 | The Intercept Brasil | -1.2 | Investigativo progressista, First Look Media |
 | Repórter Brasil | -0.6 | ONG de direitos humanos e trabalho |
 | Al Jazeera English | -0.3 | Catar; progressista em pauta internacional (só em "Lá fora") |
-| CNN International | 0.0 | Padrão CNN global (só em "Lá fora") |
+| CNN International | 0.0 | **Removida em 31/10/2026**: o feed servia anúncios, não notícia |
 | Fox News | +1.2 | Conservadora americana (só em "Lá fora") |
 | New York Times | -0.8 | Liberal americana (só em "Lá fora") |
+| New York Times (Tecnologia) | -0.8 | Mesmo grupo e linha do NYT; feed de Tecnologia (só em "Lá fora") |
 | The Guardian | -0.9 | Progressista britânica, Scott Trust (só em "Lá fora") |
 | BBC World | -0.1 | Serviço público britânico (só em "Lá fora") |
 
@@ -119,8 +120,9 @@ Regras de movimento (evitam rebaixamento arbitrário):
 | The Intercept Brasil | high | Rigor investigativo, linha opinativa explícita |
 | Repórter Brasil | very_high | Investigativo premiado (trabalho escravo, socioambiental) |
 | Al Jazeera English | high | Apuração internacional sólida |
-| CNN International | high | Padrão CNN global |
+| CNN International | high | **Removida em 31/10/2026** (feed morto) |
 | Fox News | mixed | Opinativo, histórico de contestação em checagens |
 | New York Times | high | Padrão rigoroso, correções públicas |
+| New York Times (Tecnologia) | high | Mesmo padrão do NYT; feed de Tecnologia |
 | The Guardian | high | Padrão rigoroso, correções públicas |
 | BBC World | very_high | Padrão BBC global de verificação |

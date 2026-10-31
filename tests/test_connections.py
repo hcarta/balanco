@@ -68,7 +68,7 @@ def test_intl_precision_gate():
     from app import _world_match, entities
     sub = load("intl")
     preds = [_world_match(entities(p["a_title"]), p["b_title"],
-                          p.get("b_summary", ""))[0] for p in sub]
+                          p.get("b_summary", ""), p["a_title"])[0] for p in sub]
     prec, rec, cm = _pr(preds, [p["label"] for p in sub])
     assert prec >= 0.90, f"precisão do Lá fora caiu: {prec:.2f} {cm}"
     assert rec >= 0.85, f"revogação do Lá fora caiu: {rec:.2f} {cm}"
@@ -82,6 +82,24 @@ def test_world_translates_anchors():
     ok, terms = _world_match(entities(a), b)
     assert ok, terms
     assert "ukraine" in terms
+
+
+def test_world_matches_event_number():
+    """Binance: entidade única + número do evento (US$ 6,3 bi) basta (31/10)."""
+    from app import _world_match, entities
+    a = ("Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte "
+         "pode estar por trás do possível maior roubo da história das criptomoedas")
+    b = "Binance’s $6.3 Billion Hack Is Just the Start of a Risky New Era"
+    ok, terms = _world_match(entities(a), b, "The largest cyber heist in history.", a)
+    assert ok and "binance" in terms
+
+
+def test_world_number_needs_shared_entity():
+    from app import _world_match, entities
+    a = "Lula anuncia pacote de R$ 10 bilhões"
+    b = "Trump signs $10 billion package"
+    ok, _ = _world_match(entities(a), b, "", a)
+    assert not ok
 
 
 def test_world_summary_needs_strong_entity():

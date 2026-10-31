@@ -475,3 +475,10 @@ def test_slim_payload_drops_heavy_fields():
     assert "sources" not in s and "factchecks" not in s
     assert s["stories"][0]["articles"][0] == {
         "source": "A", "title": "a", "link": "l", "bucket": "C", "bias": 0}
+
+
+def test_section_labels_hide_generic_and_language_paths():
+    assert app.section_label("Geral") == ""
+    assert app.section_label("Pt-br") == ""
+    assert app.section_label("Pop") == "Cultura"
+    assert app.section_label("Política") == "Política"

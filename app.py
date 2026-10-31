@@ -404,16 +404,35 @@ SECTION_LABELS = {
     "empresas": "Negócios", "imprensa": "Mídia", "jornalismo": "Mídia",
     "poder-internacional": "Poder", "poder-governo": "Poder", "poder-gente": "Poder",
     "cartalab": "Dados",
+    # F-10: editorias genéricas/de idioma não viram filtro
+    "geral": "", "noticias": "", "noticia": "", "ultimas": "",
+    "pt-br": "", "pt_br": "", "br": "", "portuguese": "",
+    "pop": "Cultura", "pop-arte": "Cultura",
+    "agro": "Agro", "carros": "Carros", "cinema": "Cinema", "musica": "Música",
+    "viagem": "Viagem", "comida": "Comida", "pets": "Pets", "consumo": "Consumo",
+    "carreira": "Carreira", "trabalho": "Trabalho", "ilustrada": "Cultura",
+    "folhinha": "Cultura", "guia": "Guia", "play": "Cultura", "style": "Cultura",
+    "voceviu": "Cultura", "pulsa": "Cultura", "rioshow": "Cultura",
+    "minha-serie": "Cultura", "emais": "Cultura", "diversao": "Cultura",
+    "nacional": "Brasil", "republica": "Brasil", "cotidiano": "Cotidiano",
+    "meio-ambiente": "Ambiente", "ambiente": "Ambiente",
+    "legislacao": "Política", "poder-brasil": "Poder",
+    "poder-governo": "Poder", "poder-gente": "Poder",
+    "poder-sportsmkt": "Poder", "poder-internacional": "Poder",
+    "equilibrio": "Saúde", "equilibrioesaude": "Saúde",
+    "folha-social-mais": "Sociedade", "ela": "Sociedade",
+    "patrocinado": "",
+    # UFs viram "Brasil" no filtro (não são editorias)
+    **{uf: "Brasil" for uf in (
+        "ac","al","am","ap","ba","ce","df","es","go","ma","mg","ms","mt",
+        "pa","pb","pe","pi","pr","rj","rn","ro","rr","rs","sc","se","to")},
 }
 
 
 def section_label(raw: str | None) -> str:
     key = _norm_sec(raw)
-    if key in SECTION_LABELS:
-        return SECTION_LABELS[key]
-    if key and len(key) <= 24:
-        return key[:1].upper() + key[1:]
-    return "Geral"
+    # F-10: whitelist; seção desconhecida não vira filtro ("Ac", "Agro"...)
+    return SECTION_LABELS.get(key, "")
 
 
 def rep_score(item: dict, meta: dict) -> float:
@@ -1043,7 +1062,32 @@ def diversify_longreads(stories):
     return stories
 
 
-def _world_match(se: set, intl_title: str, summary: str = "") -> tuple[bool, list]:
+NUM_RE = re.compile(r"\d+(?:[.,]\d+)?")
+
+
+def numbers(text: str | None) -> set[float]:
+    """Números do evento (6,3 / 6.3 / 500), ignorando anos e valores triviais."""
+    out = set()
+    for m in NUM_RE.findall(text or ""):
+        try:
+            v = float(m.replace(",", "."))
+        except ValueError:
+            continue
+        if v < 2:
+            continue
+        if 1900 <= v <= 2100 and v == int(v):
+            continue
+        out.add(round(v, 2))
+    return out
+
+
+def _numbers_match(a: set, b: set) -> bool:
+    return any(abs(x - y) / max(abs(x), abs(y), 1) <= 0.05
+               for x in a for y in b)
+
+
+def _world_match(se: set, intl_title: str, summary: str = "",
+                 story_title: str = "") -> tuple[bool, list]:
     """Casa história BR com peça internacional. Título primeiro; o resumo só
     entra se trouxer uma entidade multi-palavra específica.
 
@@ -1058,6 +1102,13 @@ def _world_match(se: set, intl_title: str, summary: str = "") -> tuple[bool, lis
         ok, terms = entity_match(se, entities(intl_title + " " + summary))
         if ok and any(" " in t and t not in ENTITY_GENERIC for t in terms):
             return True, terms
+    # evento com número forte: "Binance" + US$ 6,3 bi × "$6.3 Billion"
+    if story_title:
+        shared = {e for e in se & entities(intl_title + " " + summary)
+                  if e not in ENTITY_GENERIC}
+        if shared and _numbers_match(numbers(story_title),
+                                     numbers(intl_title + " " + summary)):
+            return True, sorted(shared)[:6]
     return False, []
 
 
@@ -1077,15 +1128,16 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False):
             print(f"  [aviso] embeddings indisponíveis no 'Lá fora' ({e})")
     for si, s in enumerate(stories):
         s["world"] = []
-        se = entities(s.get("title", ""))
+        story_text = s.get("title", "")
+        se = entities(story_text)
         if not se:
             continue
-        st = set(tok(s.get("title", "")))
+        st = set(tok(story_text))
         cands = []
         for pi, (it, isum, a) in enumerate(pool):
             if not it:
                 continue
-            ok, terms = _world_match(se, it, isum)
+            ok, terms = _world_match(se, it, isum, story_text)
             if not ok and X is not None:
                 lex_ok = _title_cov(st, set(tok(it))) >= EMB_PREFILTER_COV
                 if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
@@ -1107,13 +1159,15 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False):
     # correspondência; empate resolve pela primeira.
     best = {}
     for s in stories:
+        total = (s.get("counts") or {}).get("total", 0)
         for w in s.get("world", []):
             score = len(w.get("terms") or [])
-            if w["link"] not in best or score > best[w["link"]][0]:
-                best[w["link"]] = (score, id(s))
+            cand = (score, total, id(s))
+            if w["link"] not in best or cand[:2] > best[w["link"]][:2]:
+                best[w["link"]] = cand
     for s in stories:
         s["world"] = [w for w in s.get("world", [])
-                      if best.get(w["link"], (0, None))[1] == id(s)]
+                      if best.get(w["link"], (0, 0, None))[2] == id(s)]
     return stories
 
 

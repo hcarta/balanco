@@ -528,6 +528,27 @@
    }
   },
   {
+   "id": "nytimestech",
+   "name": "New York Times (Tecnologia)",
+   "rss": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+   "kind": "intl",
+   "bias": -0.8,
+   "factuality": "high",
+   "ownership": "corporacao",
+   "owner_detail": "The New York Times Company",
+   "factcheck": null,
+   "health": {
+    "last_run": "2026-10-31T19:19:54.838378+00:00",
+    "last_n_fresh": 32,
+    "last_n_total": 18,
+    "last_status": "ok",
+    "last_ms": 24,
+    "last_n_window": 18,
+    "err_streak": 0,
+    "empty": false
+   }
+  },
+  {
    "id": "guardian",
    "name": "The Guardian",
    "rss": "https://www.theguardian.com/world/rss",
@@ -2217,7 +2238,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/31a8/live/31633420-d43b-11f1-93e1-3b657b665bcf.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -2231,7 +2252,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "einvestidor",
-     "section_label": "Einvestidor",
+     "section_label": "",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -2658,7 +2679,17 @@
    ],
    "hub": null,
    "longreads": [],
-   "world": [],
+   "world": [
+    {
+     "source": "New York Times (Tecnologia)",
+     "title": "Binance Suspends Withdrawals After Crypto Hackers Steal $6.3 Billion",
+     "link": "https://www.nytimes.com/2026/10/29/technology/binance-hack-crypto.html",
+     "terms": [
+      "binance",
+      "hackers"
+     ]
+    }
+   ],
    "checks": [],
    "aliases": [
     "h55afc503",
@@ -3006,7 +3037,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -3243,7 +3274,7 @@
     "R": 27
    },
    "blindspot": "left",
-   "updated": "2026-10-31T17:19:00+00:00",
+   "updated": "2026-10-31T18:58:28+00:00",
    "articles": [
     {
      "source": "Folha de S.Paulo",
@@ -3254,7 +3285,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "ilustrada",
-     "section_label": "Ilustrada",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -3282,7 +3313,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pop-arte",
-     "section_label": "Pop-arte",
+     "section_label": "Cultura",
      "image": "https://s2-g1.glbimg.com/5-qT-CgHUQDv0vJSElKSsjKy3Fs=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/G/y/hlym4kSCm4MlDntN6OHw/solanoribeiro.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -3324,7 +3355,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pop",
-     "section_label": "Pop",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
@@ -3648,7 +3679,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "vida-e-cidadania",
-     "section_label": "Vida-e-cidadania",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -3662,7 +3693,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -3676,7 +3707,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -3735,7 +3766,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -3835,6 +3866,167 @@
    ]
   },
   {
+   "id": "h120bafc4",
+   "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
+   "summary": "Chanceler argentino contesta informação do Itamaraty sobre pedido de explicações pela possível participação de autoridades do país na saída do senador brasileiro",
+   "section": "",
+   "section_label": "",
+   "avg_bias": 0.04,
+   "counts": {
+    "L": 3,
+    "C": 3,
+    "R": 3,
+    "total": 9
+   },
+   "pct": {
+    "L": 33,
+    "C": 33,
+    "R": 33
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T00:47:41+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Governo Milei nega convocação de diplomata após fuga de Flávio Bolsonaro pela Argentina",
+     "link": "https://www.brasil247.com/america-latina/governo-milei-nega-convocacao-de-diplomata-apos-fuga-de-flavio-bolsonaro-pela-argentina/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "america-latina",
+     "section_label": "",
+     "image": "https://www.brasil247.com/wp-content/uploads/2026/07/milei-de-1.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Flávio retoma discurso golpista, ataca Moraes e nega que tenha avisado a Bolsonaro de fuga",
+     "link": "https://www.cartacapital.com.br/politica/flavio-retoma-discurso-golpista-ataca-moraes-e-nega-que-tenha-avisado-a-bolsonaro-de-fuga/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/09/AFP__20260818__C4VV433__v1__MidRes__BrazilElectionCampaign.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Chanceler da Argentina nega que Brasil tenha pedido explicações pela fuga de Flávio Bolsonaro",
+     "link": "https://www.cartacapital.com.br/politica/chanceler-da-argentina-nega-que-brasil-tenha-pedido-explicacoes-pela-fuga-de-bolsonaro/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/10/flavio-bolsonaro-derrotado-foto-Foto-por-PABLO-PORCIUNCULA-AFP.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Itamaraty diz ter convocado diplomata após fuga de Flávio pela Argentina; chanceler de Milei nega",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/itamaraty-convoca-diplomata-de-milei-apos-fuga-de-flavio-pela-argentina.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
+     "link": "https://www.bbc.com/portuguese/articles/ck3r52z8zwlqo?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "",
+     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/4042/live/3a1f9240-d4b6-11f1-a58c-6d26609b0a57.png",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
+     "link": "https://valor.globo.com/politica/noticia/2026/10/30/governo-lula-convoca-representante-argentina-para-pedir-esclarecimentos-sobre-fuga-de-flavio-bolsonaro.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://s2-valor.glbimg.com/NQjNLL3nLPC50jTfw6GIQT12Z9w=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/O/E/EnHHgVTTKyqGZO5VM1Jg/palacio-itamaraty-div-matheus-costa-mre.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Argentina nega que Brasil tenha pedido explicações pela fuga de Bolsonaro",
+     "link": "https://jovempan.com.br/mundo/argentina-nega-que-brasil-tenha-pedido-explicacoes-pela-fuga-de-bolsonaro/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Brasil convoca representante da Argentina por fuga de Flávio Bolsonaro",
+     "link": "https://jovempan.com.br/politica/brasil-convoca-representante-da-argentina-por-fuga-de-flavio-bolsonaro/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Itamaraty cobra explicações da Argentina sobre viagem de Flávio aos EUA",
+     "link": "https://revistaoeste.com/mundo/itamaraty-cobra-explicacoes-da-argentina-sobre-viagem-de-flavio-aos-eua/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    }
+   ],
+   "hub": {
+    "key": "flávio bolsonaro",
+    "label": "Flávio Bolsonaro",
+    "size": 27
+   },
+   "longreads": [],
+   "world": [],
+   "checks": [],
+   "aliases": [
+    "hfc3c19c1",
+    "s027"
+   ]
+  },
+  {
    "id": "ha671b675",
    "title": "Lula só deve definir ministros do quarto mandato após viagem a Turquia e Filipinas",
    "summary": "Presidente inicia novo mandato em 5 de janeiro de 2027 com propostas para economia, saúde, educação e segurança pública, mas terá de negociar com um Congresso de oposição fortalecido para avançar em sua agenda.",
@@ -3864,7 +4056,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/5e33/live/2ec73440-d211-11f1-b3b6-c1e79e957e40.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -3934,7 +4126,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "eu-e",
-     "section_label": "Eu-e",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/FPjTYIfOPEzDjLDGSUfc2Qw82-0=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/E/m/rGr87ARBygjTxvvAY15g/foto30cul-201-social-d4.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -3948,7 +4140,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -4951,7 +5143,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -5116,7 +5308,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -5941,7 +6133,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -6163,17 +6355,17 @@
    "avg_bias": -0.0,
    "counts": {
     "L": 0,
-    "C": 5,
-    "R": 0,
+    "C": 3,
+    "R": 2,
     "total": 5
    },
    "pct": {
     "L": 0,
-    "C": 100,
-    "R": 0
+    "C": 60,
+    "R": 40
    },
-   "blindspot": null,
-   "updated": "2026-10-31T10:00:01.202000+00:00",
+   "blindspot": "left",
+   "updated": "2026-10-31T11:00:42+00:00",
    "articles": [
     {
      "source": "Nexo Jornal",
@@ -6220,30 +6412,44 @@
     {
      "source": "O Globo",
      "source_id": "oglobo",
-     "title": "Dosimetria volta à pauta no pós-eleição",
-     "link": "https://oglobo.globo.com/blogs/fumus-boni-iuris/post/2026/10/dosimetria-volta-a-pauta-no-pos-eleicao.ghtml",
+     "title": "Nos EUA, Flávio vai adotar estratégia diferente de Eduardo Bolsonaro no STF",
+     "link": "https://oglobo.globo.com/blogs/bela-megale/post/2026/10/nos-eua-flavio-vai-adotar-estrategia-diferente-de-eduardo-bolsonaro-no-stf.ghtml",
      "bias": 0.1,
      "bucket": "C",
      "via": "fonte",
      "section": "blogs",
      "section_label": "Opinião",
-     "image": "https://s2-oglobo.glbimg.com/Dcoq_-mqfkGT-wWxWWgznJe5YJU=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/z/1/RQofHGT0u4ZXaYwzJZoA/tf-plenario.jpg",
+     "image": "https://s2-oglobo.glbimg.com/PIAbPqIgZN6F2Nj-03YSofyp_Cs=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/5/i/la6jYZQ7mLFAY6UmPBTw/afp-20261028-d4pc79e-v2-midres-topshotusbrazilpolitics.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
     },
     {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Multimercado derrapa no pós-eleição",
-     "link": "https://valor.globo.com/financas/noticia/2026/10/29/multimercado-derrapa-no-pos-eleicao.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "A estratégia da Estapar visando a hegemonia do setor",
+     "link": "https://veja.abril.com.br/economia/a-estrategia-da-estapar-visando-a-hegemonia-do-setor/",
+     "bias": 0.5,
+     "bucket": "R",
      "via": "fonte",
-     "section": "financas",
+     "section": "economia",
      "section_label": "Economia",
-     "image": "https://s2-valor.glbimg.com/EVogdtZuLDo2qg54-Hgbt_t-x6I=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/b/U/lpA43pSv2CR2AvECX13g/arte29fin-102-multi-c1.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/10/EMILIO-SANCHES-SALGADO-1765422102159.jpeg",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Flávio Bolsonaro se encontra com Eduardo e Ramagem nos EUA",
+     "link": "https://www.gazetadopovo.com.br/republica/flavio-bolsonaro-se-encontra-com-eduardo-e-ramagem-nos-eua/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "republica",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
     }
    ],
    "hub": {
@@ -6255,7 +6461,7 @@
    "world": [],
    "checks": [],
    "aliases": [
-    "s076"
+    "s043"
    ]
   },
   {
@@ -6676,6 +6882,107 @@
    "longreads": [],
    "world": [],
    "checks": []
+  },
+  {
+   "id": "hb60a2d23",
+   "title": "De hambúrguer 'mofado' a fantasias: comércios de Bauru registram alta de vendas no Halloween",
+   "summary": "Halloween movimenta comércio de Bauru com alta nas vendas de fantasias e atrações O comércio de Bauru (SP) comemora o aumento nas vendas e na busca por produtos temáticos de Halloween, data festiva que é comemorada neste sábado (31). Nas últimas semanas, a data tem movimentado diferentes setores da ",
+   "section": "sp",
+   "section_label": "São Paulo",
+   "avg_bias": 0.2,
+   "counts": {
+    "L": 0,
+    "C": 4,
+    "R": 1,
+    "total": 5
+   },
+   "pct": {
+    "L": 0,
+    "C": 80,
+    "R": 20
+   },
+   "blindspot": "left",
+   "updated": "2026-10-31T18:00:35+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "De hambúrguer 'mofado' a fantasias: comércios de Bauru registram alta de vendas no Halloween",
+     "link": "https://g1.globo.com/sp/bauru-marilia/noticia/2026/10/31/de-hamburguer-mofado-a-fantasias-comercios-de-bauru-registram-alta-de-vendas-no-halloween.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sp",
+     "section_label": "São Paulo",
+     "image": "https://s2-g1.glbimg.com/Jwma83Qh2nTFe5xG0wBqAVV6UJw=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/I/S/08yodsSOWN74Yh4FOt9w/novo-projeto-2026-10-30t101925.770.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Halloween: Tarifas encarecem fantasias e assustam consumidores dos EUA",
+     "link": "https://www.cnnbrasil.com.br/economia/money/negocios/halloween-tarifas-encarecem-fantasias-e-assustam-consumidores-dos-eua/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Veja as fantasias usadas pelas celebridades no Halloween 2026",
+     "link": "https://www.cnnbrasil.com.br/pop/celebridades/veja-as-fantasias-usadas-pelas-celebridades-no-halloween-2026/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pop",
+     "section_label": "Cultura",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Ainda é cedo para um funeral das tarifas dos EUA",
+     "link": "https://valor.globo.com/opiniao/coluna/ainda-e-cedo-para-um-funeral-das-tarifas-dos-eua.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "opiniao",
+     "section_label": "Opinião",
+     "image": "https://s2-valor.glbimg.com/1DwmQJs40kpErnixCoph3oHbwFM=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/7/A/kHmRb9RMed7Av0f9BzMQ/foto13esp-101-tarifas-a18.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Veja",
+     "source_id": "veja",
+     "title": "A nova etapa na disputa das tarifas entre Brasil e EUA",
+     "link": "https://veja.abril.com.br/economia/a-nova-etapa-na-disputa-das-tarifas-entre-brasil-e-eua/",
+     "bias": 0.5,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://veja.abril.com.br/wp-content/uploads/2026/08/GettyImages-2287263418-e1786742881946.jpg",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": [],
+   "aliases": [
+    "h1753fe36",
+    "s261"
+   ]
   },
   {
    "id": "h74b446bf",
@@ -7716,7 +8023,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -8501,7 +8808,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "ela",
-     "section_label": "Ela",
+     "section_label": "Sociedade",
      "image": "https://s2-oglobo.glbimg.com/nM1T_9vq_Pk8kiwU9x6ImXc11vw=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/o/O/XHbpNiTbqqOhAqK0AMZQ/foto-29-10-2026-03-43-22-2-1-1-.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -8788,7 +9095,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -9595,7 +9902,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
@@ -9611,7 +9918,7 @@
    "title": "O teste simples de fitness que prevê o seu risco de morte",
    "summary": "Se o seu coração parece que vai sair pela boca quando você sobe as escadas ou você tem dificuldade de respirar ao correr para pegar o ônibus, talvez seja um sinal de que você não está no auge da sua forma física. Mas o que acontece depois que você termina o exercício pode ser igualmente revelador so",
    "section": "equilibrio",
-   "section_label": "Equilibrio",
+   "section_label": "Saúde",
    "avg_bias": -0.17,
    "counts": {
     "L": 0,
@@ -9636,7 +9943,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "equilibrio",
-     "section_label": "Equilibrio",
+     "section_label": "Saúde",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -9650,7 +9957,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/24c3/live/30d93e20-ce5d-11f1-a166-e30097724580.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -10117,14 +10424,14 @@
    "avg_bias": 0.75,
    "counts": {
     "L": 0,
-    "C": 1,
-    "R": 1,
-    "total": 2
+    "C": 3,
+    "R": 0,
+    "total": 3
    },
    "pct": {
     "L": 0,
-    "C": 50,
-    "R": 50
+    "C": 100,
+    "R": 0
    },
    "blindspot": null,
    "updated": "2026-10-29T02:06:02+00:00",
@@ -10151,11 +10458,25 @@
      "bias": 1.2,
      "bucket": "R",
      "via": "fonte",
-     "section": "republica",
-     "section_label": "Republica",
-     "image": "",
+     "section": "sp",
+     "section_label": "São Paulo",
+     "image": "https://s2-g1.glbimg.com/NJYM1kN9ABQhaGXlL0khxvjJ3TU=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/X/u/iXMu91QfyB0ww0Q47V1A/ilove-1-.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Carreta tomba na BR-381 e carga de rodas é saqueada em MG",
+     "link": "https://www.metropoles.com/minas-gerais/carreta-tomba-na-br-381-e-carga-de-rodas-e-saqueada-em-mg",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "minas-gerais",
+     "section_label": "",
+     "image": "https://images.metroimg.com/2026/10/metadinha-2x-1793396288862.jpg",
      "factuality": "mixed",
-     "ownership": "independente"
+     "ownership": "individuo"
     }
    ],
    "hub": null,
@@ -10295,7 +10616,7 @@
    "title": "Saúde digital avança, mas experiência do paciente é desafio",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10320,7 +10641,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/BjC_RHP006BPNp50PvoMeiXGHqo=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/h/e/VyvN9uSoqBbquHM4WVwg/publicador-api-oglobo-dino-100-bbaa386e-d56d-4bac-8db8-0de9ebc2ebe0.jpeg-20261029101135",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10334,7 +10655,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/R9k4_GdaXwLYXucorYfxjACpobs=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/o/F/zyd1gfQWOZGSFc1EBoDA/publicador-api-valor-dino-100-bbaa386e-d56d-4bac-8db8-0de9ebc2ebe0.jpeg-20261029101133",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10416,7 +10737,7 @@
    "title": "Integralmedica investe em tecnologia para colaboração em projeto com ES TECH e Logitech",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10441,7 +10762,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/Wpe0S4xQNADqebCcxEjF22GhIyg=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/2/D/FaRI8BT8eFMMslRFEM8A/publicador-api-oglobo-pulse-brand-100-7a008c3a-528b-4424-adae-787447252984-20261029102112.jpeg-20261029102121",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10455,7 +10776,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/fo4wza5ezIK40JzyPWpdKtj4bpA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/R/M/53DythTd2bjXKYlBA3Ig/publicador-api-valor-pulse-brand-100-7a008c3a-528b-4424-adae-787447252984-20261029102112.jpeg-20261029102119",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10533,7 +10854,7 @@
    "title": "Robotec Solutions lança sistema de inspeção para indústrias",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10558,7 +10879,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/DO7U8MgLtfeYWfY3OW2csKSf14o=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/3/B/5P6zmmRyav2ko0ExtI5w/publicador-api-oglobo-dino-100-6fa8ee1f-1c64-476e-9463-2334f256cc11.png-20261029110932",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10572,7 +10893,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/q4bMmgP2NW4TYAsz3jAnEiNvdF8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/f/r/iQHZIBRc6AAp2lAdN81g/publicador-api-valor-dino-100-6fa8ee1f-1c64-476e-9463-2334f256cc11.png-20261029110929",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10591,7 +10912,7 @@
    "title": "Assédio eleitoral persiste após as eleições",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10616,7 +10937,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/clUGhHc6t9OBcy9tdYq9WJTtFkI=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/f/I/UmJtqnTjyrugEXIjgy1w/publicador-api-oglobo-dino-100-087e4c4d-7d35-45c9-aabf-216e930e0df8.png-20261029122747",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10630,7 +10951,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/oEjqGFyktg9oDeyxT0cQt9B3mys=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/N/O/VCpynQQH6n1nFUjBSSBw/publicador-api-valor-dino-100-087e4c4d-7d35-45c9-aabf-216e930e0df8.png-20261029122745",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10649,7 +10970,7 @@
    "title": "Rede de mercado autônomo do Brasil atinge 70 lojas no México",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10674,7 +10995,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/4kzaSc9763lVBISdpNPmeeoY1DY=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/G/s/arsjzaQHS00AAlOsPaFw/publicador-api-oglobo-dino-100-e98bc9fe-08ab-4f65-bb2a-134701399bbb.jpeg-20261029124108",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10688,7 +11009,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/_eWVlWwabJcpybPSIu0pDUA2nUI=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/U/k/52OPAgQjaYBiMiopnNFQ/publicador-api-valor-dino-100-e98bc9fe-08ab-4f65-bb2a-134701399bbb.jpeg-20261029124110",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10823,7 +11144,7 @@
    "title": "Estudo pode padronizar medição da pressão nas farmácias",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10848,7 +11169,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/Y0M_fQGy9RFbawRUklg8mV3Qxg8=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/W/K/mcye7kTfA03s2AL140zA/publicador-api-oglobo-dino-100-f533582d-a395-4ba0-bb62-deb107ccd9ca.jpg-20261029124946",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10862,7 +11183,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/A8yw5guMMJ6XEsKUwxowN79LzCw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/S/e/jTZRU2Qoe2cemv8bCW4w/publicador-api-valor-dino-100-f533582d-a395-4ba0-bb62-deb107ccd9ca.jpg-20261029124943",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10882,7 +11203,7 @@
    "title": "PagEdu oferece crédito para escolas investirem em estrutura",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10907,7 +11228,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/eDKCGtwxqa8XBMKAiIm-dYrjOS4=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/g/V/ApOO11RJOv2pEwl82QdQ/publicador-api-oglobo-dino-100-3804a76c-4c33-42f6-9518-b51aed1e64ab.jpg-20261029125502",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10921,7 +11242,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/vCshtsMVG3KmRhSJ_1rdbtZorCg=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/l/W/eNAZlQQ42P1WIzJemHUQ/publicador-api-valor-dino-100-3804a76c-4c33-42f6-9518-b51aed1e64ab.jpg-20261029125459",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10940,7 +11261,7 @@
    "title": "Educação ganha espaço entre os benefícios corporativos",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -10965,7 +11286,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/QoLNFnb6DQ9feieDbN_IMcgH8do=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/K/N/B9AjllSUKIjwQqB0UpCA/publicador-api-oglobo-dino-100-1a7b6b65-f5c7-430b-b8ec-49dc87b16088.jpg-20261029125922",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10979,7 +11300,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/ZxtYZEPvsg6ZDZ5-jnqGUVcrnIo=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/8/1/sg66WqSKiBTdu55trgCA/publicador-api-valor-dino-100-1a7b6b65-f5c7-430b-b8ec-49dc87b16088.jpg-20261029125920",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -10998,7 +11319,7 @@
    "title": "Grupo UNEED amplia equipe em 117% em 12 meses",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11023,7 +11344,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/Fx2MjjIz5xOh5yYG_HIhm2QrWKY=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/N/m/AbyDu5SWmtj408IcFsqA/publicador-api-oglobo-dino-100-3e6dc1ba-c7fd-46e6-9961-66a5a5779b9b.jpeg-20261029130326",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11037,7 +11358,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/GqMuTfKAlo_T5OOGYVm3uVkk7Lw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/s/z/niC4cbSBAgYzkgYaG6Xg/publicador-api-valor-dino-100-3e6dc1ba-c7fd-46e6-9961-66a5a5779b9b.jpeg-20261029130328",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11057,7 +11378,7 @@
    "title": "Future Climate abre a conta de restaurar 12 mil hectares",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11082,7 +11403,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/6ux6j97dxG5b71A9mnT1Tw7J13U=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/E/r/v43V8pTGe1pHTQY7JpaQ/publicador-api-oglobo-dino-100-05c5c618-287f-4032-8b69-db5d1b5a5aaa.jpg-20261029130711",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11096,7 +11417,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/uqwUrAaV8Ev80Tl_cHlPzDuDQKw=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/p/T/jzNIAORaSP3ssAOm6EOg/publicador-api-valor-dino-100-05c5c618-287f-4032-8b69-db5d1b5a5aaa.jpg-20261029130708",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11116,7 +11437,7 @@
    "title": "Instituições de ensino enfrentam onda de certificados falsos",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11141,7 +11462,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/e0SN7FFVTKbcXlVV-mTfoGg1uhI=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/G/L/6Af4UyRUyIxs83WGhDlQ/publicador-api-oglobo-dino-100-8a76d327-a3fc-4685-bba3-bbcf3a3b59dd.jpg-20261029131429",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11155,7 +11476,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/yhsZy-eyQ6pa14VaBTv1VQj1EDY=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/t/9/yfyrzBQ06xQxaaAL4AfA/publicador-api-valor-dino-100-8a76d327-a3fc-4685-bba3-bbcf3a3b59dd.jpg-20261029131432",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11174,7 +11495,7 @@
    "title": "GM Tendas Galpões instala galpões lonados na COP15",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11199,7 +11520,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/x6o1prfOfbwp4G_8gzv0YcEp0cA=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/F/j/lAZlEESseqpdxUbAaQtg/publicador-api-oglobo-dino-100-f05abeb6-091b-4168-93e8-397a1b4f3ab4.jpg-20261029132318",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11213,7 +11534,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/Ns1iVSGe--1dxd1MjPQPpSjpOJI=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/m/9/WiYzV5RsSOBfNqt5tdyA/publicador-api-valor-dino-100-f05abeb6-091b-4168-93e8-397a1b4f3ab4.jpg-20261029132316",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11232,7 +11553,7 @@
    "title": "Sucesso faz empresas ignorarem sinais de declínio, diz líder",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11257,7 +11578,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/h9niP2T46vMdC0rY_kV4vuvoaE4=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/i/o/STcLxgQdCW1QsTPBZi0w/publicador-api-oglobo-dino-100-1c782fab-de2d-4b50-b658-a3d0ae581a22.png-20261029132741",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11271,7 +11592,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/_BE9apBvzjy7VYnIYIVSHrfJvY8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/K/b/DapOG3TMqNlRMrU8nQ3g/publicador-api-valor-dino-100-1c782fab-de2d-4b50-b658-a3d0ae581a22.png-20261029132738",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11290,7 +11611,7 @@
    "title": "Violência doméstica afeta trabalho e mobiliza empresas",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11315,7 +11636,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/OUkthUZmN7vejEJsPT_ywtQxNuQ=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/J/V/aoY46lRyCcrBUjm2KG5w/publicador-api-oglobo-dino-100-077ef78c-7e75-46fe-87d6-2b9fea8122cd.jpeg-20261029133401",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11329,7 +11650,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/3DRbN_jDNugFOMeH8PObJSEp1e8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/3/J/DILAk6StGWyHGLCA87Wg/publicador-api-valor-dino-100-077ef78c-7e75-46fe-87d6-2b9fea8122cd.jpeg-20261029133358",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11406,7 +11727,7 @@
    "title": "AI/R amplia visibilidade e controle de acesso à nuvem",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11431,7 +11752,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/YV4fhKK2GOQUDIlBlGdf-4skluM=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/S/T/2wCJaYTeWxAq91BNED9g/publicador-api-oglobo-dino-100-f319d513-f738-4422-a580-da89b06b5b3a.jpg-20261029134930",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11445,7 +11766,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/DziqZqzJS1_PjVHFuHMfjpw5s3Y=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/B/y/Wjqzk2Q0y9SmhWSh6czQ/publicador-api-valor-dino-100-f319d513-f738-4422-a580-da89b06b5b3a.jpg-20261029134933",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11464,7 +11785,7 @@
    "title": "Mondial é a marca de Air Fryer vencedora do Top of Mind 2026",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -11489,7 +11810,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/FwXlKdvg2QNnoS-UG8GcXxdkUGg=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/4/5/UqCYl8Spifd7RkAWAJDA/publicador-api-oglobo-dino-100-10a6f069-b13d-4a05-a39a-0e20593b936d.jpeg-20261029140401",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11503,7 +11824,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/GW2Wp5Vg-6R-wwyox4CZyo3SWKM=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/d/c/1lqb7LS966CBYGdkZdYw/publicador-api-valor-dino-100-10a6f069-b13d-4a05-a39a-0e20593b936d.jpeg-20261029140359",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -11961,7 +12282,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -11980,7 +12301,7 @@
    "title": "Terracom Saneamento faz 10 anos com salto no esgoto tratado",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -12005,7 +12326,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/r0k1FxBsX6-py-LEqHB5fJseCNA=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/g/D/8qPZ48SmA2fEBVsYdCdw/publicador-api-oglobo-dino-100-1b9d20ea-edfd-40f7-835e-3abab91cdf23.jpg-20261029170104",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12019,7 +12340,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/gwHyOl1V3WAaYvpeScibRvBJj9A=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/X/j/tTE96rQ4Ko2vALVyaFRw/publicador-api-valor-dino-100-1b9d20ea-edfd-40f7-835e-3abab91cdf23.jpg-20261029170101",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12038,7 +12359,7 @@
    "title": "Agir está entre as melhores empresas para se trabalhar",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -12063,7 +12384,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/vVnBpf6V3X68VTlYxhY8YnClNpo=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/Q/z/uK8JZgTn20uqPPsIcEkg/publicador-api-oglobo-dino-100-94c88b4f-9284-40da-9264-3110a326c3f1.jpeg-20261029170740",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12077,7 +12398,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/IKXXr0vzExgn215a3NUEJiE2J7Q=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/v/3/J9fzEZQlWRCNh6eqY6uA/publicador-api-valor-dino-100-94c88b4f-9284-40da-9264-3110a326c3f1.jpeg-20261029170737",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12155,7 +12476,7 @@
    "title": "VGrid orienta segurança de IA conectada ao e-mail",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -12180,7 +12501,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/TORJ-6AMGTgGMv6xZaGXCbe7O94=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/t/5/BoEAfzRtOnH5c8LEExXA/publicador-api-oglobo-dino-100-c9113f73-8019-4799-8f4e-3a9af5411c31.png-20261029174209",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12194,7 +12515,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/goY8-CaqMKdfLSsKA5NJuQ_ciD4=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/R/H/ejpgbET8u9W8RXX0ollw/publicador-api-valor-dino-100-c9113f73-8019-4799-8f4e-3a9af5411c31.png-20261029174207",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12213,7 +12534,7 @@
    "title": "UniFECAF renova com a Confederação Brasileira de Vôlei",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -12238,7 +12559,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/wr-r24ASixRbYGo62ak05INboE4=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/X/P/W93dTgStAUQUDOA9zRGg/publicador-api-oglobo-dino-100-f607b3c5-9194-41f8-9b89-90e4d55bc36b.jpg-20261029174808",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12252,7 +12573,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/RyyS4WRwzm0274m4YFq_2SGNoyM=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/J/A/FxAsftTbyZKcLDf57RnA/publicador-api-valor-dino-100-f607b3c5-9194-41f8-9b89-90e4d55bc36b.jpg-20261029174805",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12330,7 +12651,7 @@
    "title": "Inédito no Brasil: novo tecnólogo em Musculação",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -12355,7 +12676,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/Qc3sO26Zhy0-Q7OE87R6ZGOBL7g=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/S/2/ztQ1VwTzWPhMP5nfCRRw/publicador-api-oglobo-dino-100-8f605670-1ecd-47ae-a8e3-73e7398748df.png-20261029180848",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12369,7 +12690,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/HpmQQJuFkVj-SynBehGiuGEV5q8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/r/m/BKt5OtRJmRB6Tb0CwYAQ/publicador-api-valor-dino-100-8f605670-1ecd-47ae-a8e3-73e7398748df.png-20261029180845",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12680,7 +13001,7 @@
    "title": "CashMe intensifica presença no Centro-Oeste e Minas Gerais",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.15,
    "counts": {
     "L": 0,
@@ -12705,7 +13026,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -12719,7 +13040,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/9GiY1vAtI45RWcJ0mOeyF5heyIU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/n/G/pGQMe5RDCoXBKweGKkUg/publicador-api-valor-dino-100-401b81f0-6e01-4a16-a50f-9a70aae215ff.jpg-20261028180804",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -12810,7 +13131,7 @@
    "title": "Gazeta Agora: Trump afirma que eleição no Brasil foi vergonhosa e que o mercado é prova disso",
    "summary": "",
    "section": "gazeta-agora",
-   "section_label": "Gazeta-agora",
+   "section_label": "",
    "avg_bias": 0.65,
    "counts": {
     "L": 0,
@@ -12849,7 +13170,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "gazeta-agora",
-     "section_label": "Gazeta-agora",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -13191,7 +13512,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pt-br",
-     "section_label": "Pt-br",
+     "section_label": "",
      "image": "https://static.dw.com/image/79786390_605.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -13304,7 +13625,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -13436,7 +13757,7 @@
    "title": "Engetron apresenta soluções para eficiência energética e continuidade de data centers no DCD Connect Brasil 2026",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -13461,7 +13782,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/5CeUDksNI2I2BOGULGLP_6e7238=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/l/w/wBZs4qRw2vnRmZWhZ8rg/publicador-api-oglobo-dino-100-08429a73-a8b6-4a4c-8b61-832e1eef3502.jpeg-20261030091122",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -13475,7 +13796,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/ck-cZ23_K6PpAQXESRneRI_WS2o=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/f/J/0pXKDPRBSFyQGFzKLtAg/publicador-api-valor-pulse-brand-100-c233659e-29b1-4d39-9090-3adf4fa371f8.jpeg-20261029141818",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -13534,7 +13855,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "gpbc",
-     "section_label": "Gpbc",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -13613,7 +13934,7 @@
    "title": "Morre Carlos Augusto Moreira, fundador do Hospital de Olhos do Paraná",
    "summary": "",
    "section": "nacional",
-   "section_label": "Nacional",
+   "section_label": "Brasil",
    "avg_bias": 0.6,
    "counts": {
     "L": 0,
@@ -13638,7 +13959,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -13652,7 +13973,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "parana",
-     "section_label": "Parana",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -14075,7 +14396,7 @@
    "title": "Consequências do split payment para o contencioso tributário",
    "summary": "",
    "section": "legislacao",
-   "section_label": "Legislacao",
+   "section_label": "Política",
    "avg_bias": 0.75,
    "counts": {
     "L": 0,
@@ -14100,7 +14421,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "legislacao",
-     "section_label": "Legislacao",
+     "section_label": "Política",
      "image": "",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14114,7 +14435,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "gpbc",
-     "section_label": "Gpbc",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -14133,7 +14454,7 @@
    "title": "O que está por trás da maquiagem natural escolhida por Juliette para se casar?",
    "summary": "",
    "section": "ela",
-   "section_label": "Ela",
+   "section_label": "Sociedade",
    "avg_bias": 0.65,
    "counts": {
     "L": 0,
@@ -14158,7 +14479,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "ela",
-     "section_label": "Ela",
+     "section_label": "Sociedade",
      "image": "https://s2-oglobo.glbimg.com/UqzimMxHwUQ8Tg3_nZu6CwUQabE=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/9/8/yvldcxSzGJ1dJuIQbJoA/befunky-collage-2026-10-30t120639.380-1-.jpg",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14172,7 +14493,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -14304,7 +14625,7 @@
    "title": "Da assistência à autonomia: os seis níveis que vão transformar o agro",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -14329,7 +14650,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/qa03DLTo14G1smDWBcsIb_N6V4s=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/A/j/XdGmuRT9K5Eqg59FyJoA/publicador-api-oglobo-pulse-brand-100-81a689f6-683a-4b16-b516-f889214f4f0f.jpeg-20261030133432",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14343,7 +14664,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/94xlQmv9sFuIfumqJ35J5iW7mEU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/A/S/Y7eUZDTMu6cazbTOu0hg/publicador-api-valor-pulse-brand-100-81a689f6-683a-4b16-b516-f889214f4f0f.jpeg-20261030133408",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14446,7 +14767,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/9628/live/0518fd40-d3d3-11f1-9c32-1532a6164171.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -14537,7 +14858,7 @@
    "title": "Anna Lourensetti lança plataforma internacional de networking e negócios",
    "summary": "",
    "section": "patrocinado",
-   "section_label": "Patrocinado",
+   "section_label": "",
    "avg_bias": 0.2,
    "counts": {
     "L": 0,
@@ -14562,7 +14883,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-oglobo.glbimg.com/fROts2r42-ml7jQxeOavGHldYz8=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/n/W/Tw146URqA1AfAwfNFXCg/publicador-api-oglobo-dino-100-2f440fa5-ac23-490a-a0a1-f53251f26ebc.png-20261030151404",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14576,7 +14897,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "patrocinado",
-     "section_label": "Patrocinado",
+     "section_label": "",
      "image": "https://s2-valor.glbimg.com/f5OZAq_MP0jNxzFirLsajXAeeOI=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/c/S/VDSQUPRgG93pywKlaLZA/publicador-api-valor-pulse-brand-100-0f02d005-a0c6-41b7-832f-1c767353fb0e.jpeg-20261030113557",
      "factuality": "high",
      "ownership": "conglomerado"
@@ -14851,7 +15172,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "nacional",
-     "section_label": "Nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -15092,7 +15413,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "republica",
-     "section_label": "Republica",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -16012,7 +16333,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pop",
-     "section_label": "Pop",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
@@ -16609,7 +16930,7 @@
    "title": "Médicos são acusados de perseguir colegas e sugerir boicote a pacientes por posicionamento político: 'Senti um alvo na minha cabeça'",
    "summary": "\"Na hora que eu recebi a lista, fiquei sem chão. Senti um alvo na minha cabeça\". A frase é de um médico anestesiologista ouvido pela BBC News Brasil após ter sido incluído em uma lista de profissionais \"esquerdistas\" divulgada em um grupo privado de médicos após a reeleição do presidente Luiz Inácio",
    "section": "equilibrioesaude",
-   "section_label": "Equilibrioesaude",
+   "section_label": "Saúde",
    "avg_bias": -0.25,
    "counts": {
     "L": 0,
@@ -16634,7 +16955,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "equilibrioesaude",
-     "section_label": "Equilibrioesaude",
+     "section_label": "Saúde",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -16648,7 +16969,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "",
-     "section_label": "Geral",
+     "section_label": "",
      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/e36a/live/84fef260-d457-11f1-a701-fddedf244c16.jpg",
      "factuality": "very_high",
      "ownership": "governo"
@@ -16951,7 +17272,7 @@
    "title": "Morre aos 85 anos Nonna Silvi, cozinheira toscana que se tornou fenômeno nas redes",
    "summary": "Fenômeno das redes sociais, a cozinheira italiana Silvana Bini, conhecida como Nonna Silvi, morreu aos 85 anos na madrugada deste sábado (31), em sua casa em Montespertoli, na província de Florença . Leia mais (10/31/2026 - 10h48)",
    "section": "voceviu",
-   "section_label": "Voceviu",
+   "section_label": "Cultura",
    "avg_bias": -0.1,
    "counts": {
     "L": 0,
@@ -16976,7 +17297,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "voceviu",
-     "section_label": "Voceviu",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -16990,7 +17311,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pop",
-     "section_label": "Pop",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
@@ -17121,9 +17442,9 @@
   {
    "id": "h043ade36",
    "title": "Top esportivo: como a sustentação pode fazer diferença no treino",
-   "summary": "",
+   "summary": "Peça ajuda a reduzir a dor e o desconforto; veja dicas para escolher o modelo ideal",
    "section": "pulsa",
-   "section_label": "Pulsa",
+   "section_label": "Cultura",
    "avg_bias": 0.55,
    "counts": {
     "L": 0,
@@ -17148,7 +17469,7 @@
      "bucket": "C",
      "via": "fonte",
      "section": "pulsa",
-     "section_label": "Pulsa",
+     "section_label": "Cultura",
      "image": "",
      "factuality": "high",
      "ownership": "individuo"
@@ -17162,7 +17483,7 @@
      "bucket": "R",
      "via": "fonte",
      "section": "gpbc",
-     "section_label": "Gpbc",
+     "section_label": "",
      "image": "",
      "factuality": "mixed",
      "ownership": "independente"
@@ -18120,11 +18441,180 @@
      "bias": -0.2,
      "bucket": "C",
      "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
+     "section": "pr",
+     "section_label": "Brasil",
+     "image": "https://s2-g1.glbimg.com/s1kSYr827IgSuXqNhbu9fXmgMTk=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/b/s/UIRumLQTidq84WsAJvUg/g1.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Reitor da PUC-PR morto em acidente nos EUA será velado em Curitiba",
+     "link": "https://www.cnnbrasil.com.br/nacional/sul/pr/reitor-da-puc-pr-morto-em-acidente-nos-eua-sera-velado-em-curitiba/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "nacional",
+     "section_label": "Brasil",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "h83802f5d",
+   "title": "Governo calcula base fiel de 200 deputados e mais 100 'em disputa' a partir de 2027",
+   "summary": "Planalto prevê oposição de tamanho semelhante na Câmara e aposta em negociações com o centrão para formar maioria nas votações",
+   "section": "colunas",
+   "section_label": "Opinião",
+   "avg_bias": -0.85,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:15:57+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Governo Lula calcula ter 200 deputados fiéis e busca apoio de outros 100 a partir de 2027",
+     "link": "https://www.brasil247.com/poder/governo-lula-calcula-ter-200-deputados-fieis-e-busca-apoio-de-outros-100-a-partir-de-2027/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "poder",
+     "section_label": "Poder",
+     "image": "https://www.brasil247.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-26-at-19.12.03.jpeg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Governo calcula base fiel de 200 deputados e mais 100 'em disputa' a partir de 2027",
+     "link": "https://www1.folha.uol.com.br/colunas/painel/2026/10/governo-calcula-base-fiel-de-200-deputados-e-mais-100-em-disputa-a-partir-de-2027.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "section_label": "Opinião",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "hub": {
+    "key": "governo lula",
+    "label": "Governo Lula",
+    "size": 6
+   },
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "ha18ee110",
+   "title": "'Quero abrir caminhos', diz paraense coroada Miss Universe Trans Brasil 2026",
+   "summary": "\"Quero que minha história mostre que podemos ir além das expectativas que colocam sobre nós e construir um futuro com dignidade, liberdade e oportunidades. Quero abrir caminhos.\" Leia mais (10/31/2026 - 15h30)",
+   "section": "colunistas",
+   "section_label": "Opinião",
+   "avg_bias": -0.15,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:30:00+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "'Quero abrir caminhos', diz paraense coroada Miss Universe Trans Brasil 2026",
+     "link": "https://f5.folha.uol.com.br/colunistas/de-faixa-a-coroa/2026/10/quero-abrir-caminhos-diz-paraense-coroada-miss-universe-trans-brasil-2026.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunistas",
+     "section_label": "Opinião",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "1º dia do mês: veja oração e rituais recomendados para abrir caminhos",
+     "link": "https://www.terra.com.br/vida-e-estilo/horoscopo/1-dia-do-mes-veja-oracao-e-rituais-recomendados-para-abrir-caminhos,642211ad5e260e1feb3138f945db85f50hpg4ets.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "vida-e-estilo",
+     "section_label": "",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "hacf7fd73",
+   "title": "Barcaça afunda no Porto Gregório Curvo, em Corumbá, e Marinha investiga acidente",
+   "summary": "Barcaça afunda em porto de Corumbá e Marinha abre investigação Reprodução Uma barcaça afundou neste sábado (31) no Porto Gregório Curvo, em Corumbá, na região oeste de Mato Grosso do Sul. A Marinha do Brasil informou que abriu uma investigação para descobrir o que provocou o acidente. Ninguém se fer",
+   "section": "ms",
+   "section_label": "Brasil",
+   "avg_bias": 0.15,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:38:56.817000+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Barcaça afunda no Porto Gregório Curvo, em Corumbá, e Marinha investiga acidente",
+     "link": "https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/10/31/barcaca-afunda-no-porto-gregorio-curvo-em-corumba-e-marinha-investiga-acidente.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "ms",
+     "section_label": "Brasil",
+     "image": "https://s2-g1.glbimg.com/UWz1UMe1UwMkDYF29h8PNO3yia0=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/B/c/TE6nWUTjmj4yJF5fbFJw/fgdthbghnj.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
     },
     {
      "source": "Terra",

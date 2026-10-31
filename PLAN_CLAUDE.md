@@ -47,6 +47,9 @@ O plano de 5 fases × 3–4 dias é maior que o objetivo atual (precisão das co
 - **F-08:** filtros de vídeo/ao vivo, loteria, Finados e bandeira tarifária.
 - **Checagens:** `claim_match` exige entidade multi-palavra específica ou cobertura ≥0,80; os 4 FPs de “linha do tempo”/“Lula” sumiram; P 1,00/R 0,67 no conjunto; **0 matches** na rodada.
 - **C-1/C-5 (leituras):** `build_leituras` lê 10 dias do cache (fontes longform), limita 2 por fonte, sanitiza HTML e exclui anexos de reportagem; 8 peças no rail “Leituras da semana”. O “Aprofunde-se” por história continua nas 72 h — peças antigas não entram no matching para não repetir os FPs de “Flávio”.
+- **F-11:** CNN International removida (o feed servia anúncios de empréstimo); **New York Times (Tecnologia)** adicionado. 36 fontes.
+- **F-10:** `section_label` virou whitelist; “Geral”, “Pt-br”, siglas de UF e editorias desconhecidas não viram mais filtro.
+- **Lá fora / Binance:** número do evento (US$ 6,3 bi) + entidade passou a valer; “Binance” × NYT Technology entrou (P 1,00/R 0,91 do conjunto mantidos). A URL de análise citada aparece na história irmã do Bitcoin; a principal mostra outra peça do NYT.
 - **Custo:** `data.json` 1,4 MB; arquivo diário slim 717 KB (antes 1,4 MB); rodada ~125 s.
 - **Suíte:** **90 testes**.
 

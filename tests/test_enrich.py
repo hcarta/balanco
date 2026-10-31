@@ -69,11 +69,11 @@ def test_enrich_fills_missing_summary_and_caches(tmp_path):
 
 def test_section_label():
     assert section_label("politica") == "Política"
-    assert section_label("republica") == "Republica"  # fora do mapa: capitaliza
+    assert section_label("republica") == "Brasil"  # F-10: UF/editoria mapeada
     assert section_label("vozes") == "Opinião"
     assert section_label("Política") == "Política"  # com acento
-    assert section_label("") == "Geral"
-    assert section_label(None) == "Geral"
+    assert section_label("") == ""  # F-10: desconhecida não vira filtro
+    assert section_label(None) == ""
 
 
 def test_excluded_section():
