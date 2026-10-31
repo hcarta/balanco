@@ -47,6 +47,14 @@
    "verdadeiro": 0,
    "checagem": 1,
    "revisar": false
+  },
+  "gazeta": {
+   "total": 1,
+   "falso": 1,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 0,
+   "revisar": false
   }
  },
  "matches": [
@@ -140,6 +148,19 @@
    "score": 0.5,
    "date": "2026-10-08T07:00:00+00:00",
    "terms": "bolsonaro;flávio;popular"
+  },
+  {
+   "source_id": "gazeta",
+   "source": "Gazeta do Povo",
+   "article": "Ações pedem suspensão de salário de Flávio Bolsonaro após sua saída do Brasil",
+   "article_link": "https://www.gazetadopovo.com.br/republica/acoes-pedem-suspensao-de-salario-de-flavio-bolsonaro-apos-sua-saida-do-brasil/",
+   "check": "Montagem simula notícia do g1 sobre saída de Flávio Bolsonaro do Brasil",
+   "check_link": "https://www.agencialupa.org/verificacao/2026/10/26/montagem-simula-noticia-do-g1-sobre-saida-de-flavio-bolsonaro-do-brasil/",
+   "checker": "Agência Lupa",
+   "verdict": "falso",
+   "score": 0.47,
+   "date": "2026-10-26T11:02:12+00:00",
+   "terms": "bolsonaro;brasil;flávio;saída"
   }
  ]
 }
