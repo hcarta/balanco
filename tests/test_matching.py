@@ -599,3 +599,53 @@ def test_representative_avoids_opinion_blog():
     rep = app._representative(items, meta)
     assert "vexame" not in rep["title"]
     assert "Flávio Bolsonaro" in rep["title"]
+
+
+def test_piece_kind_classifies_urls_titles_and_sources():
+    pk = app.piece_kind
+    assert pk({"link": "https://x/opiniao/foo", "title": "Notícia"}) == "opinion"
+    assert pk({"link": "https://x/podcast/foo", "title": "Notícia"}) == "podcast"
+    assert pk({"link": "https://x/video/foo", "title": "Notícia"}) == "video"
+    assert pk({"link": "https://x/ao-vivo/foo", "title": "Notícia"}) == "live"
+    assert pk({"link": "https://x/n", "title": "Análise: o que muda"}) == "analysis"
+    assert pk({"link": "https://x/n", "title": "Entrevista com o ministro"}) == "interview"
+    assert pk({"link": "https://x/n", "title": "Entenda a proposta"}) == "explainer"
+    assert pk({"link": "https://x/n", "title": "Notícia", "section": "opiniao"}) == "opinion"
+    assert pk({"link": "https://x/n", "title": "Notícia"},
+              {"longform": True}) == "longform"
+    assert pk({"link": "https://x/n", "title": "Notícia",
+               "section": "politica"}) == "hard_news"
+
+
+def test_build_counts_only_coverage_kinds():
+    now = time.time()
+    title = "Protestos na França reúnem 320 mil pessoas, diz governo"
+    srcs = [
+        {"id": "l", "name": "Esquerda", "bias": -1.0, "factuality": "high",
+         "ownership": "independente"},
+        {"id": "c1", "name": "Centro 1", "bias": 0.0, "factuality": "high",
+         "ownership": "familia"},
+        {"id": "c2", "name": "Centro 2", "bias": 0.0, "factuality": "high",
+         "ownership": "globo"},
+        {"id": "r", "name": "Direita", "bias": 1.0, "factuality": "mixed",
+         "ownership": "independente"},
+    ]
+    arts = [{
+        "title": title, "link": f"https://x/{s['id']}", "source_id": s["id"],
+        "source_name": s["name"], "base_bias": s["bias"], "ts": now,
+        "published": "2026-10-31T12:00:00+00:00",
+        "section": "opiniao" if s["id"] == "r" else "mundo",
+        "summary": "", "first_seen": "2026-10-31T12:00:00+00:00",
+    } for s in srcs]
+    out = app.build(srcs, arts, {})
+    assert len(out) == 1
+    s = out[0]
+    assert s["counts"]["total"] == 3
+    assert s["counts"]["frames"] == 1
+    assert s["counts"]["articles"] == 4
+    assert s["counts"]["groups"] == {"L": 1, "C": 2, "R": 0}
+    assert s["counts"]["independent"] == 3
+    assert s["blindspot"] == "right"
+    assert s["pct"] == {"L": 33, "C": 67, "R": 0}
+    op = [a for a in s["articles"] if a["source_id"] == "r"][0]
+    assert op["piece_kind"] == "opinion"

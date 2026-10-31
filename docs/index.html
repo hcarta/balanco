@@ -257,6 +257,9 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .seemore{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:11px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .art .empty{padding:16px;font-family:var(--serif);font-style:italic;color:var(--faint);font-size:13.5px}
+.art .pk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--faint);border:1px solid var(--hair-strong);
+  border-radius:3px;padding:1px 5px}
 @media(max-width:720px){.compare{grid-template-columns:1fr}.col{border-right:none;border-bottom:1px solid var(--hair)}.col:last-child{border-bottom:none}}
 
 /* ── rail ── */
@@ -404,8 +407,13 @@ const VL = {falso:'Falso',verdadeiro:'Verdadeiro',enganoso:'Enganoso',checagem:'
 const blindShort = b => b==='left'?'esquerda':'direita';
 const blindLong = b => b==='left'?'da esquerda':'da direita';
 const storyImg = s => { const a=(s.articles||[]).find(x=>x.image); return a?a.image:''; };
-const centerTrusted = s => (s.articles||[]).filter(a=>a.bucket==='C' &&
-  (a.factuality==='high'||a.factuality==='very_high')).length;
+const COVERAGE = new Set(['hard_news','analysis','explainer']);
+const isCoverage = a => !a.piece_kind || COVERAGE.has(a.piece_kind);
+const PK_LABEL = {opinion:'opinião', longform:'longform', interview:'entrevista',
+  podcast:'podcast', video:'vídeo', live:'ao vivo', service:'serviço',
+  fact_check:'checagem'};
+const centerTrusted = s => (s.articles||[]).filter(a=>isCoverage(a) &&
+  a.bucket==='C' && (a.factuality==='high'||a.factuality==='very_high')).length;
 const hi = (t) => {
   const e = esc(t||''); const q = S.q.trim();
   if(q.length < 2) return e;
@@ -442,8 +450,13 @@ function featuredVisible(){
   return S.filter==='all' && !S.q.trim() && !S.ed && !S.src;
 }
 
-const covLabel = s => `${s.counts.total} coberturas` +
-  (s.counts.independent!=null ? ` · ${s.counts.independent} grupos` : '');
+const covLabel = s => {
+  const n = s.counts.total, g = s.counts.independent, f = s.counts.frames;
+  let out = `${n} cobertura${n===1?'':'s'}`;
+  if(g!=null) out += ` · ${g} grupo${g===1?'':'s'}`;
+  if(f) out += ` · ${f} enquadramento${f===1?'':'s'}`;
+  return out;
+};
 
 /* ordem base do feed: cronologia primeiro; dentro da mesma hora
    (tolerância de ±1h), vale o nº de veículos que cobriram */
@@ -627,6 +640,7 @@ function comparePanel(s){
           <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a>
           <div class="src"><span class="sname">${esc(a.source)}</span>
             ${a.factuality?`<span class="chip f-${a.factuality}">${factLabel(a.factuality)}</span>`:''}
+            ${a.piece_kind && !COVERAGE.has(a.piece_kind)?`<span class="pk">${esc(PK_LABEL[a.piece_kind]||a.piece_kind)}</span>`:''}
             ${a.ownership?`<span>· ${esc(a.ownership)}</span>`:''}
           </div>
           ${a.check?`<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}${a.check.terms&&a.check.terms.length?` · termos: ${a.check.terms.join(', ')}`:''}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`:''}

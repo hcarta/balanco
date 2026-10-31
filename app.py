@@ -591,11 +591,6 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
     meta = {s["id"]: s for s in sources}
     stories = []
     for g in groups:
-        # uma "história" precisa de pelo menos 2 grupos editoriais distintos
-        gids = {meta.get(articles[i]["source_id"], {}).get("group")
-                or articles[i]["source_id"] for i in g}
-        if len(gids) < 2:
-            continue
         items = []
         for i in g:
             a = articles[i]
@@ -606,20 +601,26 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                 # posicionamento FIXO da publicação, sem análise por matéria
                 score, via = round(float(a["base_bias"]), 2), "fonte"
             group = meta.get(a["source_id"], {}).get("group") or a["source_id"]
+            src_meta = meta.get(a["source_id"], {})
             items.append({**a, "bias_score": round(score, 2), "via": via,
-                          "bucket": bucket(score), "group": group})
+                          "bucket": bucket(score), "group": group,
+                          "piece_kind": piece_kind(a, src_meta)})
+        # A-3: opinião/longform aparecem no painel, mas não contam como cobertura
+        coverage = [x for x in items if x["piece_kind"] in COVERAGE_KINDS]
+        if len({x.get("group") or x["source_id"] for x in coverage}) < 2:
+            continue
         items.sort(key=lambda x: x["bias_score"])
-        l = sum(1 for x in items if x["bucket"] == "L")
-        c = sum(1 for x in items if x["bucket"] == "C")
-        r = sum(1 for x in items if x["bucket"] == "R")
-        tot = len(items)
-        gc, ind, avg = independent_counts(items, "bias_score")
+        l = sum(1 for x in coverage if x["bucket"] == "L")
+        c = sum(1 for x in coverage if x["bucket"] == "C")
+        r = sum(1 for x in coverage if x["bucket"] == "R")
+        tot = len(coverage)
+        gc, ind, avg = independent_counts(coverage, "bias_score")
         blind = blindspot_of(gc["L"], gc["C"], gc["R"])
-        rep = _representative(items, meta)
+        rep = _representative(coverage, meta)
         rep_title = _clean_title(rep["title"])
         # resumo: prefere o do representante; senão o primeiro disponível
         summary = rep.get("summary") or next(
-            (x["summary"] for x in items if x.get("summary")), "")
+            (x["summary"] for x in coverage if x.get("summary")), "")
         stories.append({
             "id": _stable_id(items), "title": rep_title,
             "summary": summary[:300],
@@ -627,7 +628,9 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "section_label": section_label(rep.get("section")),
             "avg_bias": round(avg, 2),
             "counts": {"L": l, "C": c, "R": r, "total": tot,
-                       "independent": ind, "groups": gc},
+                       "independent": ind, "groups": gc,
+                       "frames": len(items) - len(coverage),
+                       "articles": len(items)},
             "pct": {"L": round(100 * gc["L"] / ind) if ind else 0,
                     "C": round(100 * gc["C"] / ind) if ind else 0,
                     "R": round(100 * gc["R"] / ind) if ind else 0},
@@ -636,6 +639,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "articles": [{
                 "source": x["source_name"], "source_id": x["source_id"],
                 "group": x.get("group") or x["source_id"],
+                "piece_kind": x.get("piece_kind", "hard_news"),
                 "title": x["title"], "link": x["link"],
                 "bias": x["bias_score"], "bucket": x["bucket"], "via": x["via"],
                 "section": x.get("section", ""),
@@ -819,6 +823,60 @@ def _is_analysis(title: str) -> bool:
     return bool(ANALYSIS_MARKERS.search(title or ""))
 
 
+# A-3: só estas peças contam como cobertura para barra/blindspot
+COVERAGE_KINDS = {"hard_news", "analysis", "explainer"}
+URL_KIND = (
+    (r"/(podcast|podcasts|audio)/", "podcast"),
+    (r"/(video|videos|v[ií]deos)/", "video"),
+    (r"/(ao-vivo|live)/", "live"),
+    (r"/(fato-ou-fake|checagem|verificacao)/", "fact_check"),
+    (r"/(opiniao|opini[aã]o|colunas?|blogs?|editorial|artigos?)/", "opinion"),
+    (r"/analise/", "analysis"),
+    (r"/entrevista/", "interview"),
+)
+
+
+def piece_kind(item: dict, source: dict | None = None) -> str:
+    """Classifica a peça por URL, título, editoria e padrão da fonte (A-3).
+
+    Ordem: URL (mais específica), editoria, título, `longform` da fonte,
+    default hard_news. Opinião/longform não contam na barra; podcasts/vídeos/
+    ao vivo não entram no "Aprofunde-se".
+    """
+    url = (item.get("link") or "").lower()
+    for rx, kind in URL_KIND:
+        if re.search(rx, url):
+            return kind
+    title = item.get("title") or ""
+    sec = _norm_sec(item.get("section"))
+    if sec in {"podcast", "podcasts", "audio"}:
+        return "podcast"
+    if sec in {"video", "videos"}:
+        return "video"
+    if sec in {"ao-vivo", "live"}:
+        return "live"
+    if re.search(r"\bao\s+vivo\b", title, re.I):
+        return "live"
+    if re.search(r"^\s*v[ií]deos?\s*:|\(v[ií]deo\)|\bassista\b", title, re.I):
+        return "video"
+    if re.search(r"\bpodcast\b|\b[áa]udio\b", title, re.I):
+        return "podcast"
+    if re.search(r"\bopini[aã]o\b", title, re.I):
+        return "opinion"
+    if re.search(r"\bentrevista\b", title, re.I):
+        return "interview"
+    if re.search(r"\ban[áa]lise\b", title, re.I) or ANALYSIS_MARKERS.search(title):
+        return "analysis"
+    if re.search(r"\b(entenda|explica|guia|como funciona|o que (é|significa))\b",
+                 title, re.I) or re.search(r"\bpor que\b", title, re.I):
+        return "explainer"
+    if sec in LONGFORM_SECTIONS:
+        return "opinion"
+    if source and source.get("longform"):
+        return "longform"
+    return "hard_news"
+
+
 def _story_entities(s) -> set:
     """Entidades de todas as manchetes da história (recall maior que só a representante)."""
     out: set = set()
@@ -830,12 +888,16 @@ def _story_entities(s) -> set:
 def _recompute(s) -> dict:
     """Recalcula contagens, média e blindspot a partir das matérias da história."""
     arts = s.get("articles", [])
-    l = sum(1 for x in arts if x.get("bucket") == "L")
-    c = sum(1 for x in arts if x.get("bucket") == "C")
-    r = sum(1 for x in arts if x.get("bucket") == "R")
-    gc, ind, avg = independent_counts(arts, "bias")
-    s["counts"] = {"L": l, "C": c, "R": r, "total": len(arts),
-                   "independent": ind, "groups": gc}
+    coverage = [x for x in arts
+                if not x.get("piece_kind") or x["piece_kind"] in COVERAGE_KINDS]
+    l = sum(1 for x in coverage if x.get("bucket") == "L")
+    c = sum(1 for x in coverage if x.get("bucket") == "C")
+    r = sum(1 for x in coverage if x.get("bucket") == "R")
+    gc, ind, avg = independent_counts(coverage, "bias")
+    s["counts"] = {"L": l, "C": c, "R": r, "total": len(coverage),
+                   "independent": ind, "groups": gc,
+                   "frames": len(arts) - len(coverage),
+                   "articles": len(arts)}
     s["pct"] = {"L": round(100 * gc["L"] / ind) if ind else 0,
                 "C": round(100 * gc["C"] / ind) if ind else 0,
                 "R": round(100 * gc["R"] / ind) if ind else 0}
