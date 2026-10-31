@@ -209,7 +209,10 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .beyond .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
 @media(max-width:720px){.beyond{grid-template-columns:1fr}}
 /* pauta: navegação entre ângulos do mesmo assunto (não funde histórias) */
-.pauta{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
+.pauta{display:block;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
+.pauta .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.pauta .bgrid .bart{margin-bottom:0}
+.pauta .bl + .bl{margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)}
 .pauta .bh{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .pauta .bart{margin-bottom:8px}
 .pauta .bart a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
@@ -217,7 +220,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .pauta .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
 .pauta .devin{font-family:var(--serif);font-size:14px;line-height:1.32;color:var(--ink-soft);display:block}
 .badge.hub{background:var(--C-bg);color:var(--muted);border:1px solid var(--hair-strong)}
-@media(max-width:720px){.pauta{grid-template-columns:1fr}}
+@media(max-width:720px){.pauta .bgrid{grid-template-columns:1fr}}
 .col{border-right:1px solid var(--hair);min-width:0}
 .col:last-child{border-right:none}
 .col .ch{padding:12px 16px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center}
@@ -646,8 +649,8 @@ function pauta(s){
   if(!sibs.length && !dev.length) return '';
   return `<div class="pauta">
     ${sibs.length?`<div class="bl"><div class="bh">🔗 Outros ângulos desta pauta · ${esc(s.hub.label)}</div>
-      ${sibs.map(x=>`<div class="bart"><a href="#${esc(x.id)}" class="open-sib" data-id="${esc(x.id)}">${esc(x.title)}</a>
-        <small>${x.counts.total} coberturas${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div>`:''}
+      <div class="bgrid">${sibs.map(x=>`<div class="bart"><a href="#${esc(x.id)}" class="open-sib" data-id="${esc(x.id)}">${esc(x.title)}</a>
+        <small>${x.counts.total} coberturas${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div></div>`:''}
     ${dev.length?`<div class="bl"><div class="bh">＋ Também apurado nesta história</div>
       ${dev.map(d=>`<div class="bart"><span class="devin">${esc(d.title)}</span>
         <small>${d.total} cobertura${d.total===1?'':'s'}</small></div>`).join('')}</div>`:''}
