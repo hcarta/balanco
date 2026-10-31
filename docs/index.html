@@ -390,6 +390,18 @@ function relTime(iso){
 
 function divScore(s){ return Math.abs(s.pct.L - s.pct.R); }
 
+/* ordem base do feed: cronologia primeiro; dentro da mesma hora
+   (tolerância de ±1h), vale o nº de veículos que cobriram */
+function baseOrder(list){
+  return [...list].sort((a,b)=>{
+    const ta = new Date(a.updated).getTime()||0, tb = new Date(b.updated).getTime()||0;
+    const ha = Math.floor(ta/36e5), hb = Math.floor(tb/36e5);
+    if(hb!==ha) return hb-ha;
+    if(b.counts.total!==a.counts.total) return b.counts.total-a.counts.total;
+    return tb-ta;
+  });
+}
+
 async function load(){
   try{
     const r = await fetch('data.json',{cache:'no-store'});
@@ -588,12 +600,12 @@ function renderFeed(){
   if(S.src) list = list.filter(s => (s.articles||[]).some(a=>a.source===S.src));
 
   let title = 'Todas as histórias';
-  if(S.filter==='blind'){ list=list.filter(s=>s.blindspot); title='Blindspots'; }
-  else if(S.filter==='L'){ list=list.filter(s=>s.pct.L>=50); title='Maioria esquerda'; }
-  else if(S.filter==='R'){ list=list.filter(s=>s.pct.R>=50); title='Maioria direita'; }
+  if(S.filter==='blind'){ list=baseOrder(list.filter(s=>s.blindspot)); title='Blindspots'; }
+  else if(S.filter==='L'){ list=baseOrder(list.filter(s=>s.pct.L>=50)); title='Maioria esquerda'; }
+  else if(S.filter==='R'){ list=baseOrder(list.filter(s=>s.pct.R>=50)); title='Maioria direita'; }
   else if(S.filter==='div'){ list.sort((a,b)=>divScore(b)-divScore(a)); title='Mais divididas'; }
   else {
-    list.sort((a,b)=>b.counts.total-a.counts.total);
+    list = baseOrder(list);
     // evita duplicar o destaque no topo do feed
     if(!q && S.featuredId) list = list.filter(s=>s.id!==S.featuredId);
   }
