@@ -329,6 +329,26 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
     return out
 
 
+def blindspot_of(l: int, c: int, r: int):
+    """Blindspot a partir das contagens; 3+ coberturas (pedido do dono, 31/10).
+
+    Com 3 veículos, um lado ausente é 0%; com 4+, a tolerância de 15% evita
+    marcar uma única voz minoritária como ponto cego. Só-centro continua None.
+    """
+    tot = l + c + r
+    if tot < 3:
+        return None
+    left_out = l / tot <= 0.15
+    right_out = r / tot <= 0.15
+    if left_out and right_out:
+        return None  # só o centro cobre: sem viés em jogo
+    if left_out:
+        return "left"
+    if right_out:
+        return "right"
+    return None
+
+
 def bucket(score):
     if score <= -0.5:
         return "L"
@@ -527,16 +547,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         r = sum(1 for x in items if x["bucket"] == "R")
         tot = len(items)
         avg = sum(x["bias_score"] for x in items) / tot
-        blind = None
-        if tot >= 4:
-            left_out = l / tot <= 0.15
-            right_out = r / tot <= 0.15
-            if left_out and right_out:
-                blind = None  # só o centro cobre: sem viés em jogo, não é blindspot
-            elif left_out:
-                blind = "left"
-            elif right_out:
-                blind = "right"
+        blind = blindspot_of(l, c, r)
         rep = max(items, key=lambda x: rep_score(x, meta))
         # resumo: pega o primeiro disponível (sitemaps não trazem dek)
         summary = next((x["summary"] for x in items if x.get("summary")), "")
@@ -750,20 +761,10 @@ def _recompute(s) -> dict:
     c = sum(1 for x in arts if x.get("bucket") == "C")
     r = sum(1 for x in arts if x.get("bucket") == "R")
     tot = len(arts) or 1
-    blind = None
-    if tot >= 4:
-        left_out = l / tot <= 0.15
-        right_out = r / tot <= 0.15
-        if left_out and right_out:
-            blind = None  # só o centro cobre: não é blindspot
-        elif left_out:
-            blind = "left"
-        elif right_out:
-            blind = "right"
     s["counts"] = {"L": l, "C": c, "R": r, "total": len(arts)}
     s["pct"] = {"L": round(100 * l / tot), "C": round(100 * c / tot), "R": round(100 * r / tot)}
     s["avg_bias"] = round(sum(x.get("bias", 0) for x in arts) / tot, 2)
-    s["blindspot"] = blind
+    s["blindspot"] = blindspot_of(l, c, r)
     return s
 
 

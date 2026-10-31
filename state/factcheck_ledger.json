@@ -39,6 +39,14 @@
    "verdadeiro": 0,
    "checagem": 1,
    "revisar": false
+  },
+  "poder360": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
   }
  },
  "matches": [
@@ -119,6 +127,19 @@
    "score": 0.5,
    "date": "2026-09-11T07:00:00+00:00",
    "terms": "linha;tempo;veja"
+  },
+  {
+   "source_id": "poder360",
+   "source": "Poder360",
+   "article": "Ação popular pede suspensão de salário do senador Flávio Bolsonaro",
+   "article_link": "https://www.poder360.com.br/poder-justica/acao-popular-pede-suspensao-de-salario-do-senador-flavio-bolsonaro/",
+   "check": "Flávio Bolsonaro não anunciou que vai acabar com o Farmácia Popular",
+   "check_link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE96TlRpRVFWcno4eEh5TElOY25mTE43TWhCQTdzRlNGSk1WNTlZT3FXV1dHWFJLNWtScVZUWW1TX1VxR2JoekItUV94R0VoRDFpbGM0d05tYVh0dHh0UnNRaTN0RExBazFBcG9IbmVKdk85LVE4TjRJ?oc=5",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.5,
+   "date": "2026-10-08T07:00:00+00:00",
+   "terms": "bolsonaro;flávio;popular"
   }
  ]
 }

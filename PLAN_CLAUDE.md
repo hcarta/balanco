@@ -50,6 +50,7 @@ O plano de 5 fases × 3–4 dias é maior que o objetivo atual (precisão das co
 - **F-11:** CNN International removida (o feed servia anúncios de empréstimo); **New York Times (Tecnologia)** adicionado. 36 fontes.
 - **F-10:** `section_label` virou whitelist; “Geral”, “Pt-br”, siglas de UF e editorias desconhecidas não viram mais filtro.
 - **Lá fora / Binance:** número do evento (US$ 6,3 bi) + entidade passou a valer; “Binance” × NYT Technology entrou (P 1,00/R 0,91 do conjunto mantidos). A URL de análise citada aparece na história irmã do Bitcoin; a principal mostra outra peça do NYT.
+- **Blindspot:** piso baixado para **3+ coberturas** (caso França: 1 L / 2 C / 0 R → blindspot de direita). Só-centro e histórias de 2 veículos continuam `None`; na rodada, 102 blindspots (57 esquerda, 45 direita).
 - **Custo:** `data.json` 1,4 MB; arquivo diário slim 717 KB (antes 1,4 MB); rodada ~125 s.
 - **Suíte:** **90 testes**.
 

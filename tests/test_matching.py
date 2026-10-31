@@ -482,3 +482,36 @@ def test_section_labels_hide_generic_and_language_paths():
     assert app.section_label("Pt-br") == ""
     assert app.section_label("Pop") == "Cultura"
     assert app.section_label("Política") == "Política"
+
+
+def test_blindspot_three_vehicles():
+    """Caso França (31/10): 1 esquerda, 2 centro, 0 direita = blindspot de direita."""
+    assert app.blindspot_of(1, 2, 0) == "right"
+    assert app.blindspot_of(0, 2, 1) == "left"
+    assert app.blindspot_of(0, 3, 0) is None  # só centro não é blindspot
+    assert app.blindspot_of(1, 1, 0) is None  # 2 veículos: cedo demais
+    assert app.blindspot_of(0, 1, 1) is None
+
+
+def test_build_marks_three_vehicle_right_blindspot():
+    """Integração: 1 esquerda + 2 centro + 0 direita => blindspot de direita."""
+    now = time.time()
+    title = "Protestos na França reúnem 320 mil pessoas, diz governo"
+    srcs = [
+        {"id": "b247", "name": "Brasil 247", "bias": -1.0, "factuality": "mixed",
+         "ownership": "independente"},
+        {"id": "folha", "name": "Folha", "bias": 0.0, "factuality": "high",
+         "ownership": "familia"},
+        {"id": "oglobo", "name": "O Globo", "bias": 0.0, "factuality": "high",
+         "ownership": "globo"},
+    ]
+    arts = [{
+        "title": title, "link": f"https://x/{i}", "source_id": s["id"],
+        "source_name": s["name"], "base_bias": s["bias"], "ts": now,
+        "published": "2026-10-31T12:00:00+00:00", "section": "mundo",
+        "summary": "", "first_seen": "2026-10-31T12:00:00+00:00",
+    } for i, s in enumerate(srcs)]
+    out = app.build(srcs, arts, {})
+    assert len(out) == 1
+    assert out[0]["counts"] == {"L": 1, "C": 2, "R": 0, "total": 3}
+    assert out[0]["blindspot"] == "right"
