@@ -434,6 +434,11 @@ function relTime(iso){
 
 function divScore(s){ return Math.abs(s.pct.L - s.pct.R); }
 
+/* o destaque só faz sentido na visão "todas"; em filtro/busca ele empurra o conteúdo */
+function featuredVisible(){
+  return S.filter==='all' && !S.q.trim() && !S.ed && !S.src;
+}
+
 /* ordem base do feed: cronologia primeiro; dentro da mesma hora
    (tolerância de ±1h), vale o nº de veículos que cobriram */
 function baseOrder(list){
@@ -663,6 +668,8 @@ function beyond(s){
 /* ---------- feed ---------- */
 function renderFeed(){
   const d = S.data;
+  const hero = $('#heroSec');
+  if(hero) hero.style.display = featuredVisible() ? '' : 'none';
   let list = d.stories.slice();
   const q = S.q.trim().toLowerCase();
   if(q) list = list.filter(s => (s.title+' '+s.summary+' '+s.articles.map(a=>a.title+' '+a.source).join(' ')).toLowerCase().includes(q));
@@ -694,11 +701,11 @@ function renderFeed(){
   else {
     list = baseOrder(list);
     // evita duplicar o destaque no topo do feed
-    if(!q && S.featuredId) list = list.filter(s=>s.id!==S.featuredId);
+    if(featuredVisible() && S.featuredId) list = list.filter(s=>s.id!==S.featuredId);
   }
 
   $('#feedTitle').textContent = title;
-  $('#feedCount').textContent = list.length ? `${list.length} ${list.length===1?'história':'histórias'}${(!q && S.filter==='all')?' + destaque':''}` : '';
+  $('#feedCount').textContent = list.length ? `${list.length} ${list.length===1?'história':'histórias'}${featuredVisible()?' + destaque':''}` : '';
 
   const wrap = $('#feed');
   if(!list.length){ wrap.innerHTML = '<div class="empty">Nenhuma história com esse filtro. Tente outro termo ou rode <b>python app.py</b>.</div>'; return; }

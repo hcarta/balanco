@@ -21,7 +21,7 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé), máx. 2 por fonte, em **2 colunas** com thumb quando o feed oferece imagem.
 - **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
 - **Aba Metodologia** na navegação + página "Como lemos" com todos os critérios (viés, factualidade, blindspot, agrupamento, checagens, enriquecimento).
-- **Filtros**: todas, blindspots, maioria esquerda/direita, mais divididas + busca.
+- **Filtros**: todas, blindspots, + esquerda/+ direita, mais divididas + busca. Ao filtrar ou buscar, o destaque é ocultado para o resultado começar no topo.
 - **Link direto** para uma história: `index.html?story=h...` (IDs estáveis) ou alias antigo `?story=sNNN` / `#...`.
 - Responsivo (mobile com pílulas roláveis e busca fixa).
 
