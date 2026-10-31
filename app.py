@@ -427,6 +427,9 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
 
 
 def _check_payload(c, score, terms=()):
+    if "label" not in c:  # defesa: checagem vinda de cache/ledger antigo
+        from factcheck import verdict_label
+        c = {**c, "label": verdict_label(c.get("verdict", "checagem"))}
     return {
         "verdict": c["verdict"],
         "label": c["label"],
@@ -730,7 +733,19 @@ def attach_hubs(stories, min_stories=3, window_h=72.0):
     return stories
 
 
-def attach_longreads(stories, articles, longform_ids, per_story=3):
+# Ganho medido em 31/10/2026 sobre 60 pares rotulados de aprofundamento:
+# entidade OR embedding >= 0.75 → P 0.94→0.95, R 0.62→0.69 (0 falso positivo
+# novo). Só vale com --embed; o CI roda a regra lexical.
+#
+# CUIDADO (viés de seleção): a amostra já passava pelo pré-filtro lexical.
+# Aplicar o embedding a TODOS os pares abre conexões sem nenhuma âncora
+# ("diplomata argentina" × "voto das capitais"), então ele só confirma pares
+# com entidade em comum ou cobertura de título >= EMB_PREFILTER_COV.
+EMB_BOOST = 0.75
+EMB_PREFILTER_COV = 0.12
+
+
+def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=False):
     """Liga cada história a longform (piauí & cia) pelo mesmo tópico.
 
     Não afirma nada sobre o artigo: só sugere aprofundamento, com link.
@@ -742,17 +757,30 @@ def attach_longreads(stories, articles, longform_ids, per_story=3):
         if a.get("source_id") in longform_ids:
             if NON_JOURNALISM.search(a.get("title", "")):
                 continue  # F3.1: programa/quiz/agenda não é aprofundamento
-            pool.append((entities(a.get("title", "") + " " + (a.get("summary") or "")),
-                         a))
-    for s in stories:
+            # Só o título: casar pelo resumo ligava qualquer peça que
+            # mencionasse "Flávio" a toda história sobre ele (medido 31/10).
+            pool.append((entities(a.get("title", "")), a))
+    X, n_st = None, len(stories)
+    if use_embed and pool:
+        try:
+            X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
+                             [{"title": a.get("title", "")} for _, a in pool])
+        except Exception as e:
+            print(f"  [aviso] embeddings indisponíveis no aprofundamento ({e})")
+    for si, s in enumerate(stories):
         s["longreads"] = []
         se = entities(s.get("title", ""))
         if not se:
             continue
+        st = set(tok(s.get("title", "")))
         covered = {a.get("source") or a.get("source_name") for a in s.get("articles", [])}
         cands = []
-        for le, a in pool:
+        for pi, (le, a) in enumerate(pool):
             ok, terms = entity_match(se, le)
+            if not ok and X is not None:
+                lex_ok = _title_cov(st, set(tok(a.get("title", "")))) >= EMB_PREFILTER_COV
+                if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
+                    ok = True
             if ok:
                 # F3.2: se a fonte já cobre a história, só peça de análise entra
                 if a.get("source_name") in covered and not _is_analysis(a.get("title", "")):
@@ -792,19 +820,35 @@ def diversify_longreads(stories):
     return stories
 
 
-def attach_world(stories, intl_articles, per_story=3):
-    """Liga cada história à repercussão internacional (mesmo tópico, outro idioma)."""
+def attach_world(stories, intl_articles, per_story=3, use_embed=False):
+    """Liga cada história à repercussão internacional (mesmo tópico, outro idioma).
+
+    Medido em 31/10/2026 (40 pares rotulados): entidade OR embedding >= 0.75
+    → P 1.00, R 0.73→0.82.
+    """
     pool = [(entities(a.get("title", "")), a) for a in intl_articles]
-    for s in stories:
+    X, n_st = None, len(stories)
+    if use_embed and pool:
+        try:
+            X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
+                             [{"title": a.get("title", "")} for _, a in pool])
+        except Exception as e:
+            print(f"  [aviso] embeddings indisponíveis no 'Lá fora' ({e})")
+    for si, s in enumerate(stories):
         s["world"] = []
         se = entities(s.get("title", ""))
         if not se:
             continue
+        st = set(tok(s.get("title", "")))
         cands = []
-        for ie, a in pool:
+        for pi, (ie, a) in enumerate(pool):
             if not ie:
                 continue
             ok, terms = entity_match(se, ie)
+            if not ok and X is not None:
+                lex_ok = _title_cov(st, set(tok(a.get("title", "")))) >= EMB_PREFILTER_COV
+                if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
+                    ok = True
             if ok:
                 cands.append((len(terms), a.get("link", ""), a, terms))
         seen, out = set(), []
@@ -817,6 +861,18 @@ def attach_world(stories, intl_articles, per_story=3):
             if len(out) >= per_story:
                 break
         s["world"] = out
+    # F1.4: a mesma peça internacional não pode aparecer em várias histórias
+    # (o texto do Guardian sobre Flávio saía 4×). Fica na história de maior
+    # correspondência; empate resolve pela primeira.
+    best = {}
+    for s in stories:
+        for w in s.get("world", []):
+            score = len(w.get("terms") or [])
+            if w["link"] not in best or score > best[w["link"]][0]:
+                best[w["link"]] = (score, id(s))
+    for s in stories:
+        s["world"] = [w for w in s.get("world", [])
+                      if best.get(w["link"], (0, None))[1] == id(s)]
     return stories
 
 
@@ -995,9 +1051,9 @@ def main():
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
 
     longform_ids = {s["id"] for s in sources if s.get("longform")}
-    stories = attach_longreads(stories, news, longform_ids)
+    stories = attach_longreads(stories, news, longform_ids, use_embed=args.embed)
     stories = diversify_longreads(stories)
-    stories = attach_world(stories, intl)
+    stories = attach_world(stories, intl, use_embed=args.embed)
     n_lr = sum(1 for s in stories if s.get("longreads"))
     n_w = sum(1 for s in stories if s.get("world"))
     print(f"[3b/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")

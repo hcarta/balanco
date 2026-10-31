@@ -67,3 +67,27 @@ def test_fetch_lupa_paginates(monkeypatch):
     assert [c for c in calls] == [1, 2, 3]
     assert len(items) == 201
     assert all(i["checker"] == "Agência Lupa" for i in items)
+
+
+def test_fetch_all_adds_readable_label(monkeypatch):
+    """Contrato usado pelo payload: todo item tem `label` legível."""
+    base = {"summary": "", "published": "2026-10-30T12:00:00+00:00"}
+    monkeypatch.setattr(factcheck, "fetch_g1", lambda *a, **k: [
+        {"checker": "G1", "title": "É #FAKE que X", "link": "u1",
+         "verdict": "falso", **base}])
+    monkeypatch.setattr(factcheck, "fetch_lupa", lambda *a, **k: [
+        {"checker": "Lupa", "title": "X não indica Y", "link": "u2",
+         "verdict": "enganoso", **base}])
+    monkeypatch.setattr(factcheck, "fetch_aosfatos", lambda *a, **k: [
+        {"checker": "Aos Fatos", "title": "X é verdade", "link": "u3",
+         "verdict": "verdadeiro", **base}])
+    items = factcheck.fetch_all()
+    assert [i["label"] for i in items] == ["Falso", "Enganoso", "Verdadeiro"]
+
+
+def test_check_payload_tolerates_missing_label():
+    """Cache/ledger antigo não pode derrubar a rodada (bug de 31/10/2026)."""
+    import app
+    c = {"verdict": "falso", "title": "t", "link": "l", "checker": "c",
+         "published": "2026-10-30T12:00:00+00:00"}
+    assert app._check_payload(c, 0.5)["label"] == "Falso"

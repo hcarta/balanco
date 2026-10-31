@@ -19,10 +19,25 @@
 ### F1. Conector semântico unificado (prioridade máxima)
 Hoje: 3 matchers (TF-IDF para cluster, `claim_overlap` para checagens, `entity_match` para longform/intl) com limiares calibrados à mão, cada um com seu vocabulário.
 
-- [ ] **F1.1 Embeddings como sinal base compartilhado.** O modelo multilíngue já baixa (`--embed`, MiniLM 384d) e passa no eval (P=0.90/R=0.70). Unificar: `sim(doc_a, doc_b)` retorna cosseno de embeddings + tokens + entidades em um score só, usado pelas 4 conexões com pesos por tipo.
-- [ ] **F1.2 Conjunto rotulado por conexão** (extensão do eval existente): +60 pares notícia↔longform ("é aprofundamento?"), +40 notícia↔internacional ("é a mesma pauta?"), +30 notícia↔checagem. Rotulagem manual sobre amostra estratificada (o script `ops/sample_eval_pairs.py` já faz isso para cluster).
-- [ ] **F1.3 Calibração por grade**: rodar os 4 matchers sobre os conjuntos, plotar P/R por limiar (script tipo `ops/compare_embed.py`), escolher o ponto de operação **por conexão** e travar em teste.
-- [ ] **Aceite:** cada conexão com precisão medida ≥ 0.9 e recall reportado; regressão quebra o build.
+- [x] **F1.1 Embeddings como sinal base compartilhado.** O modelo multilíngue já baixa (`--embed`, MiniLM 384d). Nesta rodada o embedding entrou como **segunda evidência** (não como score único): confirma um par que já tem âncora lexical. A unificação de pesos fica para depois de F4 — os quatro matchers ainda têm vocabulários distintos.
+- [x] **F1.2 Conjunto rotulado por conexão.** 167 pares rotulados à mão (`tests/conn_pairs.jsonl`), amostrados do **pré-filtro** (entidade em comum ou cobertura ≥ 0,12), não do universo de pares: é a distribuição que o scorer vê em produção. Composição: longform 60 (26 positivos), internacional 40 (11), checagem 67 (3). Critério: 1 = mesmo fato/pauta específica; 0 = mesma pessoa/instituição ou tema amplo; artigo idêntico = 0 (redundância).
+- [x] **F1.3 Calibração por grade.** `ops/eval_connections.py` mede P/R por sinal e limiar; `tests/test_connections.py` trava o ponto de operação. Linha de base (regra lexical, 31/10/2026):
+
+  | Conexão | P | R | Suporte |
+  |---|---|---|---|
+  | Aprofunde-se | 0,94 (IC95 0,73–0,99) | 0,62 | 60 pares, 26 pos |
+  | Lá fora | 1,00 (IC95 0,68–1,00) | 0,73 | 40 pares, 11 pos |
+  | Checagens | 1,00 | 0,33 | 67 pares, **3 pos** |
+
+- [x] **F1.4 Dedup global do "Lá fora".** A mesma peça internacional aparece no máximo em **uma** história (a de maior correspondência). Antes, o texto do Guardian sobre Flávio saía 4× em histórias diferentes.
+- [x] **Aceite:** cada conexão com precisão medida ≥ 0,90 e recall reportado; regressão quebra o build. **Cumprido** para longform e internacional. Checagem não tem suporte para calibrar recall (3 positivos em 67 pares) — ver F4.
+
+**Resultado F1 (31/10/2026).** O gargalo não era o score: os matchers já eram precisos; era o **pool** e o **sinal de produção**, que divergia do que o eval media. Duas correções vieram daí:
+
+1. **Aprofunde-se casava por título + resumo.** Qualquer peça cujo resumo mencionasse "Flávio Bolsonaro" grudava em toda história sobre ele (3 falsos positivos em 5 conexões). O eval sempre mediu **só título**; a produção agora usa só título. P 0,94/R 0,62 preservados.
+2. **Boost por embedding fora do pré-filtro.** Aplicado a todos os pares, ligava "diplomata argentina" a "voto das capitais" (cosseno alto, zero relação). A amostra não pegava isso porque **toda ela já passava pelo pré-filtro** (viés de seleção). Agora o embedding só confirma pares com entidade em comum ou cobertura ≥ 0,12 (`EMB_PREFILTER_COV`).
+
+Com o boost ancorado (`entidade OR embedding ≥ 0,75`, opt-in `--embed`): longform P 0,95 / R 0,62→0,69; internacional P 1,00 / R 0,73→0,82, sem novo falso positivo na amostra. **O CI continua na regra lexical** (modelo de 470 MB não roda no Actions); o boost é experimental e local até F4 validar em escala.
 
 ### F2. Consertar o agrupamento (o maior ganho de UX)
 18 grupos para um só fato é o problema mais visível: o feed vira pulverização de 2-coberturas.
@@ -46,6 +61,7 @@ Hoje: 3 matchers (TF-IDF para cluster, `claim_overlap` para checagens, `entity_m
 ### F4. Checagens: corpus histórico + recall
 0 matches em 104 histórias é subaproveitamento do diferencial do produto.
 
+- [x] **F4.0 Diagnóstico do recall (31/10/2026).** Em 67 pares notícia↔checagem rotulados, só **3** são a mesma alegação. O léxico acerta 1 (P 1,00 / R 0,33); os outros 2 não compartilham tokens com o título da matéria. Conclusão: o problema não é limiar, é **representação** — ligar "o que foi checado" à alegação exige extração de claim, não mais TF-IDF.
 - [ ] **F4.1 Lupa completa** (5.753 itens): coletar em lote uma vez (script `ops/backfill_lupa.py`), guardar em SQLite e usar por janela de 30 dias por rodada.
 - [ ] **F4.2 Matching híbrido**: entidades específicas OU `claim_overlap` atual OU embedding ≥ 0.6 (o mesmo conector de F1) — hoje só o léxico com raro-termo decide.
 - [ ] **F4.3 Selo "não checado ≠ verdadeiro"**: manter o botão "verificar tema" em toda história sem match (já existe) e medir taxa de cliques via `data.json` quando houver analytics.

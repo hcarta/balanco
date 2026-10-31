@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-31T15:13:20.579483+00:00",
- "n_articles": 1419,
- "n_stories": 102,
+ "generated_at": "2026-10-31T15:34:42.465307+00:00",
+ "n_articles": 1429,
+ "n_stories": 104,
  "n_factchecks": 700,
  "n_matches": 0,
- "n_new": 33,
+ "n_new": 4,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 100,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 150,
+    "last_ms": 52,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 99,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 136,
+    "last_ms": 104,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 15,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 73,
+    "last_ms": 65,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 53,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 172,
+    "last_ms": 262,
     "err_streak": 0,
     "empty": false
    }
@@ -90,13 +90,20 @@
    "factuality": "very_high",
    "ownership": "governo",
    "owner_detail": "BBC (Reino Unido, financiamento público)",
-   "factcheck": null,
+   "factcheck": {
+    "total": 1,
+    "falso": 0,
+    "enganoso": 0,
+    "verdadeiro": 0,
+    "checagem": 1,
+    "revisar": false
+   },
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 31,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 32,
     "last_n_total": 25,
     "last_status": "ok",
-    "last_ms": 110,
+    "last_ms": 118,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +118,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 41,
+    "last_n_total": 42,
     "last_status": "ok",
-    "last_ms": 63,
+    "last_ms": 62,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +137,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 17,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 289,
+    "last_ms": 606,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +156,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 5,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 7,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 240,
+    "last_ms": 218,
     "err_streak": 0,
     "empty": false
    }
@@ -169,11 +176,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 94,
+    "last_ms": 1118,
     "err_streak": 0,
     "empty": false
    }
@@ -189,11 +196,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 2,
     "last_status": "ok",
-    "last_ms": 208,
+    "last_ms": 194,
     "err_streak": 0,
     "empty": false
    }
@@ -209,11 +216,11 @@
    "owner_detail": "Grupo Silvio Santos (família Abravanel)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 117,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 115,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 120,
+    "last_ms": 135,
     "err_streak": 0,
     "empty": false
    }
@@ -228,11 +235,11 @@
    "owner_detail": "Grupo Record (Edir Macedo)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 100,
     "last_n_total": 17,
     "last_status": "ok",
-    "last_ms": 120,
+    "last_ms": 1207,
     "err_streak": 0,
     "empty": false
    }
@@ -248,11 +255,11 @@
    "owner_detail": "Grupo Bandeirantes (família Saad)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 395,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 392,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 85,
+    "last_ms": 639,
     "err_streak": 0,
     "empty": false
    }
@@ -268,11 +275,11 @@
    "owner_detail": "Deutsche Welle (Alemanha, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 22,
     "last_n_total": 29,
     "last_status": "ok",
-    "last_ms": 413,
+    "last_ms": 494,
     "err_streak": 0,
     "empty": false
    }
@@ -287,11 +294,11 @@
    "owner_detail": "Editora Abril",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 20,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 53,
     "last_status": "ok",
-    "last_ms": 81,
+    "last_ms": 64,
     "err_streak": 0,
     "empty": false
    }
@@ -306,11 +313,11 @@
    "owner_detail": "Editora Três",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 189,
+    "last_ms": 93,
     "err_streak": 0,
     "empty": false
    }
@@ -326,11 +333,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 15,
     "last_n_total": 9,
     "last_status": "ok",
-    "last_ms": 768,
+    "last_ms": 1331,
     "err_streak": 0,
     "empty": false
    }
@@ -346,11 +353,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 10,
     "last_n_total": 10,
     "last_status": "ok",
-    "last_ms": 124,
+    "last_ms": 81,
     "err_streak": 0,
     "empty": false
    }
@@ -366,11 +373,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 5,
     "last_status": "ok",
-    "last_ms": 820,
+    "last_ms": 932,
     "err_streak": 0,
     "empty": false
    }
@@ -386,11 +393,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 3,
     "last_status": "ok",
-    "last_ms": 113,
+    "last_ms": 80,
     "err_streak": 0,
     "empty": false
    }
@@ -406,11 +413,11 @@
    "owner_detail": "Catar (financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 25,
-    "last_n_total": 27,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 28,
     "last_status": "ok",
-    "last_ms": 59,
+    "last_ms": 48,
     "err_streak": 0,
     "empty": false
    }
@@ -426,11 +433,11 @@
    "owner_detail": "Warner Bros. Discovery",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 29,
     "last_n_total": 6,
     "last_status": "ok",
-    "last_ms": 939,
+    "last_ms": 931,
     "err_streak": 0,
     "empty": false
    }
@@ -446,11 +453,11 @@
    "owner_detail": "Fox Corporation",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 12,
+    "last_n_total": 11,
     "last_status": "ok",
-    "last_ms": 212,
+    "last_ms": 449,
     "err_streak": 0,
     "empty": false
    }
@@ -466,11 +473,11 @@
    "owner_detail": "The New York Times Company",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 57,
     "last_n_total": 59,
     "last_status": "ok",
-    "last_ms": 54,
+    "last_ms": 43,
     "err_streak": 0,
     "empty": false
    }
@@ -486,11 +493,11 @@
    "owner_detail": "Scott Trust",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 45,
     "last_n_total": 43,
     "last_status": "ok",
-    "last_ms": 40,
+    "last_ms": 43,
     "err_streak": 0,
     "empty": false
    }
@@ -506,11 +513,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 30,
-    "last_n_total": 37,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 31,
+    "last_n_total": 38,
     "last_status": "ok",
-    "last_ms": 47,
+    "last_ms": 41,
     "err_streak": 0,
     "empty": false
    }
@@ -525,11 +532,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 0,
-    "last_n_total": 47,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 10,
+    "last_n_total": 50,
     "last_status": "ok",
-    "last_ms": 58,
+    "last_ms": 66,
     "err_streak": 0,
     "empty": false
    }
@@ -544,11 +551,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 92,
+    "last_ms": 72,
     "err_streak": 0,
     "empty": false
    }
@@ -563,11 +570,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 44,
+    "last_n_total": 46,
     "last_status": "ok",
-    "last_ms": 404,
+    "last_ms": 373,
     "err_streak": 0,
     "empty": false
    }
@@ -582,11 +589,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 54,
     "last_status": "ok",
-    "last_ms": 90,
+    "last_ms": 61,
     "err_streak": 0,
     "empty": false
    }
@@ -599,13 +606,20 @@
    "factuality": "mixed",
    "ownership": "corporacao",
    "owner_detail": "Grupo Jovem Pan",
-   "factcheck": null,
+   "factcheck": {
+    "total": 1,
+    "falso": 0,
+    "enganoso": 0,
+    "verdadeiro": 0,
+    "checagem": 1,
+    "revisar": false
+   },
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 34,
     "last_status": "ok",
-    "last_ms": 82,
+    "last_ms": 62,
     "err_streak": 0,
     "empty": false
    }
@@ -620,11 +634,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
-    "last_n_total": 39,
+    "last_n_total": 42,
     "last_status": "ok",
-    "last_ms": 88,
+    "last_ms": 61,
     "err_streak": 0,
     "empty": false
    }
@@ -640,11 +654,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 82,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 83,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 86,
+    "last_ms": 153,
     "err_streak": 0,
     "empty": false
    }
@@ -660,11 +674,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 658,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 179,
+    "last_ms": 188,
     "err_streak": 0,
     "empty": false
    }
@@ -680,11 +694,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
-    "last_n_fresh": 720,
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 153,
+    "last_ms": 88,
     "err_streak": 0,
     "empty": false
    }
@@ -700,11 +714,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_run": "2026-10-31T15:33:05.293309+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 475,
+    "last_ms": 377,
     "err_streak": 0,
     "empty": false
    }
@@ -717,7 +731,8 @@
    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWVnWlp1NV9iQlZrRldmZ3R6OFM5QlJ2MnZkWmpxY1lfdzd1blZtSEpacnBaQ21zTjBja3pnQTZ6QWUyYUktT2VEQU9uVEJVdzRsNHJWNFdUTldPZnhVNVhLZW55dU0yelVMMlo2bjJPNnVkS1NzUEI3aFY0ZUlTcEg2M0RXWUdSWjdOYWtUbHZUaUhzRmlzcUkzdUVycS1wektiNW9BV2pVck0?oc=5",
    "summary": "Checagem de fatos pauta debates e mobiliza reação às mentiras eleitorais    Aos Fatos",
    "published": "2026-10-31T01:46:30+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -725,7 +740,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/30/e-fake-que-lula-anunciou-corte-de-r-6-bilhoes-na-saude-e-na-educacao-apos-eleicao-de-2026-video-foi-exibido-no-ano-retrasado.ghtml",
    "summary": "Não houve anúncio de corte de gastos g1 Circulam nas redes sociais publicações alegando que o governo Lula (PT) anunciou um corte \"de quase R$ 6 bilhões\" na Saúde e na Educação após a vitória sobre Flávio Bolsonaro (PL) no segundo turno das eleições 2026. É #FAKE. Selo Fake (Horizontal) g1 🔴 Como são os posts? Compartilhadas desde segunda-feira (26) no X e no Instagram, as publicações têm esta cai",
    "published": "2026-10-31T00:33:03+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -733,7 +749,8 @@
    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcVBFVEdLY0ppVy1ocG9kTHNpOHNicTVnV05jdlotMi0yMy1mbWljOEZOem5IXzhxTjRFbm0zS1liMGpEQUpucU55WUFMR1FodXhrblVzS2doeHhIcGFxZWxJYXh5NWxuaWFBZ0JjTmJKTDhGMzV2Yklmc3c1Vmt1RnppRmFHSEE3Y3c?oc=5",
    "summary": "Lei que restringe auxílio-reclusão foi sancionada em março, não depois das eleições    Aos Fatos",
    "published": "2026-10-31T00:23:39+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -741,7 +758,8 @@
    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOczI5TkRRajgzTEcxNnoxMmJBMGVYMkxXQlNrTlh0RENGLXhXRGRUWWVTMzI0STFiV29pNkhJamdWNDk2Z1g2QVlwd3g2SzNxeXFnc0s4a2dfbDlGRllqcVg2aXFpRkx0Q0N4cFEwTlNCTDBnOWdRay1XMWlNWmlnS1VidW5HSDkwcC1RN2s0Zw?oc=5",
    "summary": "Após derrota, bolsonarismo adere mais à desinformação contra Lula do que sobre fraude eleitoral    Aos Fatos",
    "published": "2026-10-31T00:00:40+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -749,7 +767,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/30/numero-de-eleitores-maior-que-o-de-habitantes-em-cidades-da-bahia-nao-indica-fraude/",
    "summary": "Posts descontextualizam dados de reportagem publicada em julho deste ano; diferença está relacionada à migração",
    "published": "2026-10-30T15:48:31+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -757,7 +776,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/30/e-falso-que-bolsonaro-foi-enviado-de-volta-a-papuda-por-desacato/",
    "summary": "Ex-presidente segue em prisão domiciliar; homem detido por desacato estava em frente à residência dele, no Distrito Federal",
    "published": "2026-10-30T15:48:28+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -765,7 +785,8 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/30/documento-falso-distorce-dados-do-tse-para-alegar-fraude-na-eleicao-presidencial-de-2026/",
    "summary": "Suposto relatório compara incorretamente horários de encerramento das urnas e volume de votos sem biometria para sugerir irregularidades na apuração do 2º turno",
    "published": "2026-10-30T15:38:50+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -773,7 +794,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/30/video-de-professores-em-greve-e-de-paralisacao-estadual-e-nao-tem-relacao-com-corte-federal-na-educacao/",
    "summary": "Gravação é de setembro; professores de Sergipe protestavam por insatisfações com plano de carreira dos profissionais",
    "published": "2026-10-30T11:54:31+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -781,7 +803,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/30/video-de-militares-dos-eua-gargalhando-nao-mostra-resgate-de-flavio-bolsonaro/",
    "summary": "Gravação original mostra atores norte-americanos nos bastidores da série de televisão Seal Team",
    "published": "2026-10-30T09:59:56+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Aos Fatos",
@@ -789,7 +812,8 @@
    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQV01IQjNnZzhFb01CNm9FRmZKeWxtUndzNUJzLWU5cnBFSzRHZHl3S1FVUVhXQjdfYjBWSWdhUXl6b1ZOVldvaU9KaTljcGtzX3BKWTRTQ2ptY0RHSTJRWWZSVGIyV0ZUbHZENTdqSHRUYk1ISzBlOHZrMi05NjU5dWI3dzI2aXJGeS13U1QySjA3dw?oc=5",
    "summary": "Relatório apócrifo distorce microdados do TSE para alegar fraude eleitoral    Aos Fatos",
    "published": "2026-10-29T23:41:03+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -797,7 +821,8 @@
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9HM1RQQkM3aWFJN3FnTmd0YWxBUk9IQkt4ZVZfQWFNbVB6MlIxT0xaY3RNTFF5bGZDMXRjTXFDZE05NURPUHhfZjlFOEM0MkpJcXYwd0ZVeG5obGVGazAyV2JOOFFBTFBpelV0aWluSmpYTzl6NWd6QVhn?oc=5",
    "summary": "Vídeo mostra protesto de professores em setembro, não após reeleição de Lula    Aos Fatos",
    "published": "2026-10-29T23:41:03+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -805,7 +830,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/29/e-fake-que-governo-federal-recuou-sobre-fim-da-escala-6x1-apos-vitoria-de-lula-no-segundo-turno-das-eleicoes-2026.ghtml",
    "summary": "É #FAKE que governo federal tenha recuado sobre o fim da 6x1 Reprodução Circula nas redes sociais um post alegando que o governo federal, depois da vitória do presidente Lula (PT) sobre Flávio Bolsonaro (PL) no segundo turno das eleições 2026, teria recuado sobre o fim da escala 6x1. É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como é publicação? Compartilhado no",
    "published": "2026-10-29T23:02:21+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -813,7 +839,8 @@
    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1DbkE0THZ6OEVIazNrQVVfcThNazFHSlI4WG1aXzFUek03MG83Y2UyVHRrcmlLRU1CdVgtbE9SRWdMNHNaUnBBODNGNUt2LVAwNC1WeXJXUXN0WVY0cWcxRWRndmo5ZDFlaUhkZw?oc=5",
    "summary": "Não é verdade que governo prevê corte de 670 mil beneficiários do BPC    Aos Fatos",
    "published": "2026-10-29T22:16:03+00:00",
-   "verdict": "verdadeiro"
+   "verdict": "verdadeiro",
+   "label": "Verdadeiro"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -821,7 +848,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/29/e-fake-que-governo-lula-bloqueou-gas-do-povo-e-bolsa-familia-apos-eleicoes-de-2026.ghtml",
    "summary": "É #FAKE que Bolsa Família e Vale Gás foram bloqueados Reprodução Circulam nas redes sociais posts sugerindo que o governo federal bloqueou os programas Gás do Povo e Bolsa Família. É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como são os posts? As publicações viralizaram após a vitória de Lula (PT) sobre Flávio Bolsonaro (PL) no segundo turno das eleições 2026, n",
    "published": "2026-10-29T21:52:54+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -829,7 +857,8 @@
    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPY0lvMUlMOFNnOVNISmhGUVBIaU9VLVR3alMwaFV2aXBjU1hVNlo2ZE5IRXVhT3JIV1otQzdudGN2U0VDWE1va3g3eHVNblQxRnpYdUtQZnUwd2wzLVdBM1Fvd3BRQ2xvWGp1aWxrWldqSzVNTXVNQjdCMUE0WVVCOW5INUxDX2l4MXc?oc=5",
    "summary": "Vídeo não mostra urna registrando votos sozinha na prorrogação do segundo turno    Aos Fatos",
    "published": "2026-10-29T21:24:00+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -837,7 +866,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/29/reportagem-que-mostra-cortes-na-saude-e-educacao-nao-e-atual-video-e-de-2024/",
    "summary": "Vídeo da CNN sobre bloqueio de R$ 5,9 bilhões nos dois ministérios circula como se mostrasse medida recente do governo Lula, após as eleições",
    "published": "2026-10-29T17:19:33+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -845,7 +875,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/29/video-de-bandeira-da-palestina-na-torre-eiffel-foi-produzido-por-ia/",
    "summary": "Conteúdo foi publicado por um perfil no Instagram especializado na produção de vídeos com inteligência artificial",
    "published": "2026-10-29T16:03:29+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -853,7 +884,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/29/e-falso-que-trump-recepcionou-flavio-bolsonaro-nos-eua-imagem-foi-gerada-com-ia/",
    "summary": "Segundo agenda oficial, presidente estadunidense estava em outra cidade no dia em que o senador brasileiro desembarcou em Miami",
    "published": "2026-10-29T12:00:30+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -861,7 +893,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/29/video-da-cnn-de-2025-e-usado-para-alegar-que-lula-vai-acabar-com-o-bolsa-familia/",
    "summary": "Trecho de telejornal tratava de regras de transição do programa social, e não do fim do benefício, como desmentiu a própria emissora",
    "published": "2026-10-29T11:24:38+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -869,7 +902,8 @@
    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSUQyX2Z2ekJ2LWRFbTZFMnM4UkdNc1FHVlFqTnhiLTdfQUx6RTNadG9oNXAzbEE4TzRPeEpjUHZvR1BCSEQwZ2hJTTZBeWwwc3E0VWxlV0c4WFk3dFRwUG9qdERIUWlTNy1hVkVuZk54RnB3VDc5eE5LSDEwWkpsMUxPQQ?oc=5",
    "summary": "Vídeo não prova que Lula teve 165 mil votos de origem não identificada    Aos Fatos",
    "published": "2026-10-29T03:10:13+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Aos Fatos",
@@ -877,7 +911,8 @@
    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS1ZOM1NDdWVfYUdDRDIxcGlRWmcxTXE3c3JuXzJhRHJfbThiNWlKVWlfbHVUWEpqbFdPV0xKcWRZdS1vd0owTGozalhhT2NlaGxBRlI2WkxOX3N6YWYxRi1LMkYtdWRXLS1xMlRlWlhXaTgzZHNTbmVTRTA5OFo3Q25qSExtVzg?oc=5",
    "summary": "Soma de votos de três seções eleitorais na BA não comprova fraude    Aos Fatos",
    "published": "2026-10-29T00:10:11+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -885,7 +920,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/28/e-fake-que-video-de-veiculo-transportando-urnas-apos-transmissao-de-votos-indica-fraude-na-apuracao.ghtml",
    "summary": "É #FAKE que vídeo de motorista a serviço da Justiça Eleitoral revele inconsistência na apuração de urnas Reprodução Circula nas redes sociais o vídeo de um motorista a serviço da Justiça eleitoral sentado ao volante do veículo e gravando urnas eletrônicas no porta-malas. Ao mostrar o relógio no painel, às 21h15 deste domingo (25), o homem sugere que o transporte de equipamentos naquele horário ser",
    "published": "2026-10-28T22:56:43+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -893,7 +929,8 @@
    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0tem00TDk5anpaMExRVlpfSjNBVDdaU0VBcEpHekF6US1CUVc4NjFfZnVUZTFjYnd3ZFlGc0MzRkZhOHBLbWlzLUlvR1lTa2tXS0htQkdIM1R2M3hHVUE2bjJ6QkMxUzU1ZlBKQlgzMHhLRmloUjlv?oc=5",
    "summary": "Notícia sobre cortes no Bolsa Família é de 2023, não atual    Aos Fatos",
    "published": "2026-10-28T22:05:09+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -901,7 +938,8 @@
    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5aQjYxdy16WHI4T3l6YzZJSVRmTXM5UDljbmp2anJ0c3ZRZjFDV3NsdVBsNk94eFZNSGN1SG8wUlU5eC1ZaEdyM3hWempXQXVCRlJiaGowYXZ0bVl1bnQyaHJ3TlpjZXZ2bVNBb2d0Zw?oc=5",
    "summary": "Últimas notícias    Aos Fatos",
    "published": "2026-10-28T21:20:37+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -909,7 +947,8 @@
    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQnNUaWw5SzdaOWRnak9CTU5ub0tmaVNnN3J3d0tuMWJNLVVOd01VVVVtc0lOYTJWbEV1ZHh4OGhFM0huNFA4WUtMVS1wU1lycXNZM0h2M1dqUDJoT3NLa3BJZlNJejJTV0xfN2pSNFdjT0FYMGp6bXc2X0ZiTElJSGhR?oc=5",
    "summary": "É falso que governo prometeu R$ 5.000, mas só vai pagar R$ 363 no Pix MEI    Aos Fatos",
    "published": "2026-10-28T20:30:32+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -917,7 +956,8 @@
    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTWNQcU9KRHE3NENkS2NLQmhTdzVJUHhrWThRdXZEM3BZTHZUeXdBNnMzOU5PeTMtOHp3Zk9Rcy1WcHo1UHREUWR3WlpwTDNRdjJkQlJKSWJMdEJ5TzdyempWcGpta0d0TWdEMk5fbXJtSjg4THpGRTFIRmxkR0haZ1cwQXY?oc=5",
    "summary": "Governo Lula não suspendeu pagamento de dezembro do Gás do Povo    Aos Fatos",
    "published": "2026-10-28T19:41:15+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -925,7 +965,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/28/e-fake-que-reportagem-mostrou-plano-de-lula-para-encerrar-bolsa-familia-apos-2o-turno-video-de-2025-citou-mudancas-no-programa.ghtml",
    "summary": "É #FAKE que reportagem citou plano de Lula para acabar com Bolsa Família após 2º turno; vídeo de 2025 relatou mudanças no programa Reprodução Circulam nas redes sociais publicações com um vídeo de uma reportagem supostamente relatando que, após a vitória no segundo turno das eleições, o governo do presidente Lula (PT) acabaria com o Bolsa Família. É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsAp",
    "published": "2026-10-28T17:20:59+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -933,7 +974,8 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/28/e-falso-que-lula-ganhou-2-milhoes-de-votos-na-bahia-apos-decisao-do-stf/",
    "summary": "Dados do TSE mostram que 1.656 votos foram computados em seções baianas que encerraram a votação após as 17h; em todo o país, foram 34.393",
    "published": "2026-10-28T16:52:23+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -941,7 +983,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/28/video-nao-mostra-chegada-de-flavio-bolsonaro-nos-eua-gravacao-e-antiga/",
    "summary": "Imagens são de setembro e mostram recepção ao senador durante visita de campanha a São Luís (MA)",
    "published": "2026-10-28T16:00:08+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -949,7 +992,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/28/e-falso-que-o-governo-lula-recuou-sobre-o-fim-da-escala-6x1/",
    "summary": "Emenda à Constituição aprovada no Congresso não pode ser alterada pelo poder Executivo; texto já previa regras específicas e adaptações por setores",
    "published": "2026-10-28T11:13:03+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -957,7 +1001,8 @@
    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcUpZWG9DM216XzVoUnl4bnJJYVBHSVVZb3o3RElXbFhxNFFGbWhwRFY5RWlkTVlaeU5IOFp4eXF4VUJMeHVFQmxrRU5FZldHZzhoa2JZSnl1cFY0S0hfVjFjdnB5dTFqZjg0dVRQSjI4ZVg0RWNsMlFNVkRPODhWdzJOSTJUREJ4M1BXVFM3cHlCellLUXJvV0ZXOThfbnRmYmJvTXpJSUxlVVBpRWJnMg?oc=5",
    "summary": "Notícia sobre bloqueio de R$ 6 bilhões na Saúde e Educação é de julho de 2024    Aos Fatos",
    "published": "2026-10-28T03:24:44+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -965,7 +1010,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/27/e-fake-que-vereadora-do-pt-morreu-apos-ataque-em-ato-pro-lula-em-montes-claros-mg-ela-teve-alta-e-votou-no-dia-seguinte.ghtml",
    "summary": "Vereadora de Montes Claros atingida por pedra não morreu g1 Circulam nas redes sociais publicações afirmando que Iara Pimentel (PT), vereadora em Montes Claros (MG), morreu após ter sido atingida na cabeça por garrafas, pedras e tijolos durante um ato em favor de Lula (PT) na noite deste sábado (24). É #FAKE. Selo Fake (Horizontal) g1 🔴 Como são os posts? Desde o sábado (24), publicações no X que ",
    "published": "2026-10-28T01:22:52+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -973,7 +1019,8 @@
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5EVFdJRTlmQ2NTcEM2QzJfTjNVMTZKMFkzcUtMeHVSVHVyRkhRNHBZcnp0V1JpMXNKcU5CcjZHdzlhRGRJRGVQWTJGNVhTLVRPclVZMllsNzlIcWV4MFFUVnFMNXQ?oc=5",
    "summary": "É falso que Lula recuou sobre fim da escala 6x1    Aos Fatos",
    "published": "2026-10-27T23:09:40+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -981,7 +1028,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/27/nao-ha-provas-de-que-pt-pagou-barcos-para-levar-eleitores-no-para-as-urnas/",
    "summary": "Decreto do governo estadual instituiu transporte gratuito para eleitores; vídeo mostra passageiros desembarcando de embarcação de empresa participante",
    "published": "2026-10-27T21:51:21+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -989,7 +1037,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/27/e-fake-que-video-de-flavio-bolsonaro-chorando-foi-divulgado-apos-derrota-para-lula-no-segundo-turno-da-eleicao.ghtml",
    "summary": "É #FAKE que vídeo de Flávio Bolsonaro chorando foi divulgado após derrota para Lula no segundo turno da eleição Reprodução Circula nas redes sociais um vídeo que supostamente mostraria Flávio Bolsonaro (PL) chorando após a derrota para Lula (PT) no segundo turno das eleições, neste domingo (25). É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como é o vídeo? Publica",
    "published": "2026-10-27T21:24:41+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -997,7 +1046,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/27/aumento-de-votos-a-lula-nao-reflete-transferencia-automatica-de-votos-de-outros-candidatos/",
    "summary": "Publicações nas redes sociais desconsideram queda de votos nulos e brancos e possibilidade de mudança em eleitores de Flávio Bolsonaro",
    "published": "2026-10-27T16:27:26+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1005,7 +1055,8 @@
    "link": "https://www.agencialupa.org/noticias/2026/10/27/e-falso-que-flavio-bolsonaro-perdeu-votos-em-sc-no-segundo-turno/",
    "summary": "Publicações afirmam que senador perdeu votos enquanto Lula ganhou, mas dados oficiais mostram aumento no percentual de ambos os candidatos",
    "published": "2026-10-27T15:52:56+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -1013,7 +1064,8 @@
    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZW5NUHpuUWdYS0lMdm8yR0s2N0RRNnd1SDRJRjA5MzhFbjY4S3RjOTlKb2RwaG1wOUw5cFcwRTk3cmpCU2s0dHhSbV9LSmN2STNhSVB4OHBWZHZKeWg1TEJJc19TTXczUmg0d2xVc052LTZLenJLZmhPOEVzU0NjUnUyNVlmNTBfTHVIRnhnYjMwdnRnVEZ4WFczbmRzUQ?oc=5",
    "summary": "Votos registrados após as 17h não mudam resultado das eleições    Aos Fatos",
    "published": "2026-10-27T15:08:00+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1021,7 +1073,8 @@
    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUTBseXR3UHdvcDY4Rm8zdEZyZ25KQTRBU2JfMEJVOWdsVGdPQ29naTg5VjFYbzUwcVlqZkpSekJHanN4UXhlZ1U0RDlwUDBhLU9ibVJtNTEyQ016VHhqazI4NUNORE95UXlHb05uVGV6QTlfOHVldVluUjJETEJDSklBWUk?oc=5",
    "summary": "O que se sabe sobre a fuga de Flávio Bolsonaro    Aos Fatos",
    "published": "2026-10-27T15:05:00+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1029,7 +1082,8 @@
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9odENKLUREemhKY09hUjJYbDFaeEphLTNubnhOY3h1VFd6NFBuT3d6MktWV2g4UF85Wkw4WTdxeWlsNTZ5bTBPZHd3Z1Jld0RROEFXTm5WdXFKMmVZNVI1MWNDRUU5QWc?oc=5",
    "summary": "Vídeo que mostra Flávio chorando não foi gravado após derrota    Aos Fatos",
    "published": "2026-10-27T00:48:37+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -1037,7 +1091,8 @@
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5nVVFWLXVLOVBUdDJYM0ViSE0wS0ZtY3hOWFRoaTJBdnFlUFJqMnRkU1lxZUR0TUNRUFdNUzFFRjVINGx2VFpNRlBQSGlrWWh6S0tOTnl3dXUwMGV1Q01CX0lxNTk4YWNsT1F6Z2h6VEgwWnowY2g1ZDRuRzI?oc=5",
    "summary": "Jair Bolsonaro não foi preso por desacato após resultado das eleições    Aos Fatos",
    "published": "2026-10-26T23:13:25+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -1045,7 +1100,8 @@
    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1QblpjTGF4dzVCQ0Rtb2ttbEZqc0xnSmRUcGZtcWNhV2lRdENRZlRHbGdzaGFyQjZIUXRjeC1NRWJyNklMTGQ5WWVxWW05WERXeTZjcDVZU2J1MlJYNGZscUJrRnN3UFhtMF9zQ18xQy1EdnVVeWJiRWZEZGs0dw?oc=5",
    "summary": "Vídeo mostra presos comemorando gol do Santa Cruz, não reeleição de Lula    Aos Fatos",
    "published": "2026-10-26T23:13:25+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1053,7 +1109,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/26/video-de-apreensao-de-r-17-milhao-em-mala-nao-trata-de-compra-de-votos/",
    "summary": "Dinheiro foi encontrado em janeiro, em Goiás, e não há evidências de que a quantia seria destinada à compra de votos no segundo turno",
    "published": "2026-10-26T22:55:13+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1061,7 +1118,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/26/lula-nao-disse-que-servicos-de-saude-sao-para-quem-pode-pagar/",
    "summary": "Publicação no Facebook foi feita parcialmente com IA e usa trechos de um discurso de Lula fora de contexto",
    "published": "2026-10-26T22:47:35+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1069,7 +1127,8 @@
    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTGJDQk5XSFE0c2I3U2s1bWVDMVdQOXUteFQ4YkJ5eUcwOU9sZkRkd0tOOHMyT21CaUZDUWdQX1N4NjZ3cVlCc3Z3dFFwOXZZOHFod01QWElyN1hsZ2lzTzdFbW02TFF0bFVqLVpxaW1QS2stQmZjZ2pNQ0hxbGMzY0ZhLXlrM2w3dGc?oc=5",
    "summary": "Derrotado, Flávio mente ao sugerir que eleição foi fraudada    Aos Fatos",
    "published": "2026-10-26T22:33:25+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1077,7 +1136,8 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/26/tse-desmente-que-fiscais-do-pl-tenham-sido-retirados-de-sala-cofre/",
    "summary": "Em nota, o Tribunal afirmou que o espaço não é aberto à visita e que representantes do PL acompanharam a totalização dos votos em outra sala",
    "published": "2026-10-26T16:59:28+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1085,7 +1145,8 @@
    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNLTNQN0dseHdCcEozZ3hrMDRtOU9zOEtielFZdGFMUnQxYlJGQzNKWHQxYXJIZ0g0bndKNnNqRFhRYWYtMnVHc2dpYzk1WU1EVEg0bTZ2eGJVeE5BWloxMnhHVDhvSkhOVFBla0VabDhRaFV3aEcyV2hzczRiSk5pTjNqdFQzNDFOZlZlUG5NNzZfODBQY05KUXpUa0ExaE1hVWY5M0t0QUs?oc=5",
    "summary": "Vídeo antigo circula nas redes para sugerir que Flávio foi para os EUA    Aos Fatos",
    "published": "2026-10-26T16:53:00+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -1093,7 +1154,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/26/e-falso-que-video-de-meninos-armados-mostre-comemoracao-pela-vitoria-de-lula/",
    "summary": "Gravação circula desde 21 de outubro e mostra integrantes de facção comemorando ataque contra rival no Rio; legenda é usada para associar criminosos ao presidente",
    "published": "2026-10-26T16:36:44+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1101,7 +1163,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/26/video-mostra-detentos-comemorando-gol-em-2022-e-nao-vitoria-de-lula/",
    "summary": "Gravação de fevereiro de 2022 registra festa após gol do Santa Cruz contra o Sport em jogo pelo campeonato pernambucano daquele ano",
    "published": "2026-10-26T16:20:27+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1109,7 +1172,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/26/e-fake-que-video-seja-celebracao-em-presidio-por-vitoria-de-lula-cena-exibe-festa-apos-gol-do-santa-cruz-em-2022.ghtml",
    "summary": "É #FAKE que vídeo seja celebração em presídio por vitória de Lula; cena exibe festa após gol do Santa Cruz em 2022 Reprodução Circula nas redes sociais um vídeo que supostamente mostra uma comemoração em um presídio pela vitória de Lula (PT) neste domingo (25). É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como é o vídeo? Publicado no X nesta segunda-feira (26), a",
    "published": "2026-10-26T15:50:36+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1117,7 +1181,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/26/montagem-simula-noticia-do-g1-sobre-saida-de-flavio-bolsonaro-do-brasil/",
    "summary": "Imagem falsa afirma que senador viajou aos EUA durante apuração das eleições; assessoria do senador disse que conteúdo é falso",
    "published": "2026-10-26T11:02:12+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Aos Fatos",
@@ -1125,7 +1190,8 @@
    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZDY2aFExRnRBd2luNDJOUm5WNVpvd2F5bVlWVGgzLW42VDVPbzllUDNFbndMQzYzNW12T0RJYVY1SjdSaGlGUk0tUnZHSVJHbGVGRTg1LTJQZ2E5TlhqVWlTVFM4QjBWeGcwbDNRR3A3bmI5QkhBS2xxM1l2RG9GcC1ORVBtbXM5VGxz?oc=5",
    "summary": "O que se sabe sobre relatos de supressão do voto e a prorrogação do segundo turno    Aos Fatos",
    "published": "2026-10-26T03:37:48+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1133,7 +1199,8 @@
    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMFZhbElJQlNYUmxIVjZZUjM4Y1BsZmZkQW9JRlRkTXRnd1diVDNlaWVPMW9MRWlFdTlrZFZ3OXlwZjd5TVlkOHpiTlVIVHFqbDFRb3hsZmVIVzZNZnJHTjFIQWl6RDdGMTFVYlVGbnJvSUFrNENBQXVvR3ZoTDJfV3VnVE5xRDdiOEYwdml6RG9sR0ZvNnc?oc=5",
    "summary": "Da IA ultrarrealista ao WhatsApp, como a desinformação moldou as eleições    Aos Fatos",
    "published": "2026-10-26T02:42:47+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1141,7 +1208,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/25/e-fake-que-assinatura-de-eleitor-em-caderno-de-votacao-pode-servir-para-comprovar-eventual-fraude-nas-urnas.ghtml",
    "summary": "É #FAKE que assinar caderno de votação garante futuras auditorias Reprodução Circula nas redes sociais o vídeo de uma mulher recomendando que eleitores assinem o caderno de votação nas eleições para garantir a comprovação do voto e evitar eventuais fraudes nas urnas. É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como é o vídeo? O vídeo viralizou nesta sexta-feira ",
    "published": "2026-10-26T01:05:46+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1149,7 +1217,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/25/e-fake-foto-de-mulher-rasgando-bandeira-de-nossa-senhora-aparecida-em-ato-de-apoio-a-flavio-bolsonaro-cena-foi-criada-com-ia.ghtml",
    "summary": "É #FAKE foto de mulher rasgando bandeira de Nossa Senhora Aparecida em ato de apoio a Flávio Bolsonaro; cena foi criada com IA Reprodução Circula nas redes sociais uma foto que supostamente mostra uma manifestante rasgando uma bandeira de Nossa Senhora Aparecida durante o ato de apoio a Flávio Bolsonaro (PL) neste sábado, em Belo Horizonte (MG). Na lateral, o conteúdo apresenta o logotipo do g1. É",
    "published": "2026-10-25T22:55:00+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1157,7 +1226,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/25/video-sobre-brasileiros-impedidos-de-votar-em-londres-e-do-1o-turno/",
    "summary": "Reportagem da CNN Brasil foi publicada em 4 de outubro, mas gravação circula como se mostrasse problemas no segundo turno",
    "published": "2026-10-25T22:36:07+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1165,7 +1235,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/25/naoebemassim-eleitor-deve-avisar-mesario-se-alguem-votar-em-seu-lugar-mas-investigacao-do-caso-cabe-a-propria-justica-eleitoral.ghtml",
    "summary": "Post mistura procedimentos pertinentes e irregulares, caso o eleitor seja notificado, na seção eleitoral, do registro prévio do voto g1 Circulam nas redes sociais mensagens e vídeos que orientam os eleitores a adotarem medidas na seção eleitoral — como exigir que o presidente da mesa registre a ocorrência na ata da mesa receptora, boletim de ocorrência e fotografar o Caderno de Votação —, caso sej",
    "published": "2026-10-25T21:27:47+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1173,7 +1244,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/25/e-fake-que-todos-os-voos-da-gol-do-sul-para-o-nordeste-foram-cancelados-no-sabado-antes-do-2-turno.ghtml",
    "summary": "É #FAKE que todos os voos da Gol do Sul para o Nordeste foram cancelados no sábado antes do 2° turno Reprodução Circulam nas redes sociais publicações alegando que todos os voos da Gol do Sul para o Nordeste deste sábado (24), um dia antes da votação do segundo turno das eleições, foram cancelados. É #FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como são as publicaç",
    "published": "2026-10-25T21:16:01+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1181,7 +1253,8 @@
    "link": "https://www.agencialupa.org/noticias/2026/10/25/golpe-usa-nome-da-tim-para-ameacar-usuarios-com-bloqueio-de-cpf/",
    "summary": "Mensagens no WhatsApp alegam bloqueio de CPF por dívidas e direcionam usuários a site não oficial; operadora nega autoria",
    "published": "2026-10-25T20:16:02+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1189,7 +1262,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/25/e-falso-video-de-lula-derrubando-mesa-em-entrevista-com-ratinho/",
    "summary": "Vídeo satírico gerado por IA é apresentado como real e simula diálogo sobre MST, picanha e o diabo; entrevista original ocorreu em 2022",
    "published": "2026-10-25T18:54:02+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1197,7 +1271,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/25/video-e-usado-para-negar-problemas-no-transporte-de-salvador-durante-eleicao/",
    "summary": "Gravação mostra um coletivo em circulação; Procon-BA e secretaria de Mobilidade de Salvador afirmam que parte dos veículos estavam parados nas garagens",
    "published": "2026-10-25T18:33:10+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1205,7 +1280,8 @@
    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPakNfa0g3S3RkUFhqdXl1QlFlcVpTX1J1S1JxTm9DbUh0MlprNjJHX1Y1TEdWUUJ1ODdJT3NNUk50NTNMR2w1WThaRXctOVR0UVRyZ0RWdmQwR21DSWN5RGN3bkxkTVAyMGQyekl5VnR2MkxLSU1pQ3dtT0l5RnlZLWpsRGNQUQ?oc=5",
    "summary": "Relatos de mudança no local de votação são fruto de e-Título desatualizado, afirma TSE    Aos Fatos",
    "published": "2026-10-25T18:17:47+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -1213,7 +1289,8 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/25/e-falso-que-vereadora-do-pt-atingida-por-objeto-em-mg-morreu-apos-agressao/",
    "summary": "A assessoria de Iara Pimentel (PT) e postagens da própria vereadora desmentem boato; ela recebeu atendimento médico, está medicada e segue bem.",
    "published": "2026-10-25T18:04:13+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1221,7 +1298,8 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/25/video-antigo-de-pessoas-de-vermelho-em-barco-e-usado-para-alegar-chegada-de-eleitores-de-lula-a-belem/",
    "summary": "Imagens são de 2020 e também circularam no segundo turno das eleições de 2022",
    "published": "2026-10-25T16:14:10+00:00",
-   "verdict": "enganoso"
+   "verdict": "enganoso",
+   "label": "Enganoso"
   },
   {
    "checker": "Agência Lupa",
@@ -1229,7 +1307,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/25/e-falsa-imagem-que-mostra-apoiadora-de-flavio-rasgando-bandeira-de-nossa-senhora-aparecida/",
    "summary": "Montagem que circula nas redes sociais usa logomarca do g1 e atribui episódio a ato em Belo Horizonte",
    "published": "2026-10-25T15:23:08+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1237,7 +1316,8 @@
    "link": "https://www.agencialupa.org/jornalismo/2026/10/25/e-falso-que-cuba-tenha-abolido-todas-as-escalas-de-trabalho/",
    "summary": "Código do Trabalho prevê jornada semanal de 40 a 44 horas e descanso semanal mínimo de 24 horas consecutivas",
    "published": "2026-10-25T14:31:04+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1245,7 +1325,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/25/e-falsa-capa-da-folha-de-s-paulo-sobre-supostos-r-300-bilhoes-em-propinas-de-lula/",
    "summary": "Imagem foi gerada por inteligência artificial e circula em meio à disputa entre o petista e Flávio Bolsonaro pela abertura de sigilos bancários",
    "published": "2026-10-25T12:58:26+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "Agência Lupa",
@@ -1253,7 +1334,17 @@
    "link": "https://www.agencialupa.org/eleicoes/2026/10/25/foto-de-ronaldo-fazendo-o-l-foi-gerada-com-inteligencia-artificial/",
    "summary": "Conteúdo foi identificado como “produzido com IA” por ferramentas de análise; assessoria de Ronaldo afirma que foto foi usada sem autorização",
    "published": "2026-10-25T12:13:21+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
+  },
+  {
+   "checker": "Aos Fatos",
+   "title": "PROCESSO: 0603393-64.2026.6.00.0000 - PETIÇÃO CÍVEL",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQWXVsU2F0R2RhQVNkR3dSME1QdVYwekVMNGtXS1lVLUZzQ29BUnpCUFM5VUcxSU91cnpTOXg4di11V20wbHdMRVVNV3lYX3dGYmMzNk0wb3lpZFA2U2pRY1BvSGFSTFhmeG45RUdiRE1wX3NnZXZ6SDVhN1BQRFR5eG1FMjluemVDUWlUcHY5dTc5bU0?oc=5",
+   "summary": "PROCESSO: 0603393-64.2026.6.00.0000 - PETIÇÃO CÍVEL    Aos Fatos",
+   "published": "2026-10-25T10:00:00+00:00",
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1261,7 +1352,8 @@
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBUeWV4VF9sMUpFakZGQ3dQNFNVSWZuTURhX25jdkJBWlh5QVNXUDhaRFNmQ25oMnE4SjRpQndpam91dVltWGo5NHVhejQ3Y3VCSW5Fb2dFN0VpZngwZFdaUjA0VEpJN3IwT2N0Q1RXWU5RZDQwR2F2UA?oc=5",
    "summary": "Reportagem sobre venda de pele de frango em mercados é de 2022, não atual    Aos Fatos",
    "published": "2026-10-25T00:24:08+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1269,7 +1361,8 @@
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE54RG5iXzBTMllGemkyVEkyZGVnODNQSldVZGc2ZVlVNUNPRzBQU2p3TVpkMTB3TjdFUjJtZ0JLaUFORzhkaFBkNU1iMHQ2cGprTEJ4TV9lT3g2WXVydjZISWhmZlU4TzZfeVB2OXhiOENLZw?oc=5",
    "summary": "Flávio disse no debate da Globo que marginais vão andar ‘com medo’, não ‘comigo’    Aos Fatos",
    "published": "2026-10-24T23:44:00+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Agência Lupa",
@@ -1277,7 +1370,8 @@
    "link": "https://www.agencialupa.org/verificacao/2026/10/24/e-falso-o-audio-em-que-lula-supostamente-xinga-roberta-luchsinger-apos-entrevista-a-cnn/",
    "summary": "Conteúdo gerado por IA simula fala do presidente; empresária é investigada pela PF em operação que apura fraudes no INSS",
    "published": "2026-10-24T17:27:45+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1285,7 +1379,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/24/e-fake-que-flavio-bolsonaro-fez-o-l-durante-debate-da-globo-imagem-foi-fabricada-com-inteligencia-artificial.ghtml",
    "summary": "É #FAKE que Flávio Bolsonaro 'fez o L' durante o debate da Globo Reprodução Circula nas redes sociais uma imagem que supostamente mostra o candidato à Presidência Flávio Bolsonaro (PL) fazendo um \"L\" com as mãos durante o debate da Globo, realizado na noite desta sexta-feira (23). É FAKE. ✅ Siga o canal de Fato ou Fake no WhatsApp Selo Fake (Horizontal) g1 🔴 Como é a foto? Publicada no X e no Inst",
    "published": "2026-10-24T09:22:56+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1293,7 +1388,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/23/veja-o-que-e-fato-ou-fake-nas-falas-de-flavio-bolsonaro-e-lula-no-debate-da-globo-no-2o-turno-das-eleicoes-2026.ghtml",
    "summary": "Flávio Bolsonaro e Lula no estúdio do debate desta sexta-feira (23) Globo/Manoella Mello O Fato ou Fake, serviço de checagens do Grupo Globo, preparou uma cobertura especial para verificar as declarações feitas pelos candidatos Flávio Bolsonaro (PL) e Lula (PT) durante o debate da TV Globo nesta sexta-feira (23). Uma equipe de mais de 30 jornalistas está trabalhando em conjunto para dar agilidade ",
    "published": "2026-10-24T04:15:31+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1301,7 +1397,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/23/fato-ou-fake-veja-como-enviar-sugestoes-participar-do-canal-no-whatsapp-e-seguir-nas-redes-sociais.ghtml",
    "summary": "Banner Fato ou Fake Editoria de Arte/g1 O Fato ou Fake, serviço de checagem do Grupo Globo, foi lançado em 30 de julho de 2018. Participam da apuração equipes de g1, \"O Globo\", \"Extra\", \"Valor\", CBN, GloboNews e TV Globo. Jornalistas fazem um monitoramento diário para identificar conteúdos suspeitos muito compartilhadas nas redes sociais e em aplicativos de mensagens, como o WhatsApp. ✅ Como segui",
    "published": "2026-10-24T01:01:18+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1309,7 +1406,8 @@
    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbjdBSjhMM19MbGgzSmNRVjVKQXRHbVRmOHA5enlIYXBINldVODRQaEJJblZWQmhkaENoYUNFTExHUEZSak9nYVJBSVN2OG01WEFjLVJsU2hmXzdFenhxU2E5UTd4T1NCTmlDcnowRm9EN3NVRDhoVmNRVUJNN3d4QnVaRmw?oc=5",
    "summary": "Checamos Flávio Bolsonaro e Lula no debate da Globo    Aos Fatos",
    "published": "2026-10-23T23:18:00+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "Aos Fatos",
@@ -1317,7 +1415,8 @@
    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRzZjYkl4NFlUNGJtNXdVZWI4UERIY2U0TmtnX3FIVTNwSFVaOGJ0cWFIbDJ5b1RPOGFJX2lNNFlvSXZRLWFBMUE5Y2RSeW5aUGtfTWYtN3duV0lkZlZCRGtKSm9ieF94RjMxQXFaUXhjZG5USm1yenRCSW1ETkpJWDIxMUt1UEVj?oc=5",
    "summary": "É falso que Lula passou mal e não vai ao debate da Globo    Aos Fatos",
    "published": "2026-10-23T20:17:09+00:00",
-   "verdict": "falso"
+   "verdict": "falso",
+   "label": "Falso"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1325,7 +1424,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/23/fato-ou-fake-existe-desde-2018-conheca-o-historico-do-servico-de-checagens-do-grupo-globo.ghtml",
    "summary": "Fato ou Fake existe desde 2018; conheça o histórico do serviço de checagens do Grupo Globo O Fato ou Fake, serviço de checagem do Grupo Globo, reúne jornalistas de sete Redações: TV Globo, g1, GloboNews, \"O Globo\", \"Valor Econômico\", \"Extra\" e CBN. Criada em julho de 2018, a ferramenta unificou iniciativas até então independentes, ampliando a escala de produção e a agilidade das verificações. Desd",
    "published": "2026-10-23T18:29:36+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1333,7 +1433,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/noticia/2026/10/22/fato-ou-fake-entenda-como-funcionam-as-checagens-e-o-trabalho-da-equipe.ghtml",
    "summary": "Fato ou Fake existe desde 2018; conheça o histórico do serviço de checagens do Grupo Globo Lançado em 2018, O Fato ou Fake, serviço de checagem do Grupo Globo, reúne profissionais das sete Redações: TV Globo, g1, GloboNews, \"O Globo\", \"Valor Econômico\", \"Extra\" e CBN e foi lançado em 2018. Desde então, checa declarações de candidatos durante debates e entrevistas. Veja, abaixo, perguntas e respost",
    "published": "2026-10-23T03:35:49+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   },
   {
    "checker": "G1 Fato ou Fake",
@@ -1341,15 +1442,8 @@
    "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/22/fato-fake-e-naoebemassim-entenda-selos-usados-pelo-fato-ou-fake-nas-checagens-de-debates-e-entrevistas-em-eleicoes.ghtml",
    "summary": "Saiba como o Fato ou Fake checará declarações dos candidatos no debate da Globo O Fato ou Fake, serviço de checagens do Grupo Globo, preparou uma cobertura especial para verificar as declarações feitas pelos candidatos Flávio Bolsonaro (PL) e Lula (PT) durante o debate da TV Globo. Uma equipe de mais de 30 jornalistas vai trabalhar em conjunto para dar agilidade ao processo, sem abrir mão do rigor",
    "published": "2026-10-23T01:32:37+00:00",
-   "verdict": "checagem"
-  },
-  {
-   "checker": "G1 Fato ou Fake",
-   "title": "Fato ou Fake: reveja as checagens das entrevistas de Flávio Bolsonaro e Lula e do debate da Band",
-   "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/22/fato-ou-fake-reveja-as-checagens-das-entrevistas-de-flavio-bolsonaro-e-lula-e-do-debate-da-band.ghtml",
-   "summary": "\"Fato ou Fake\" fará checagens das falas dos candidatos à presidência durante o debate O Fato ou Fake, serviço de checagens do Grupo Globo, verificou declarações dos candidatos Flávio Bolsonaro (PL) e Lula (PT) nas entrevistas à TV Globo e no debate da Band, no domingo (18). Clique nos links abaixo para acessar as reportagens: Entrevista de Flávio Bolsonaro (PL) à Globo no 1º turno Entrevista de Fl",
-   "published": "2026-10-22T19:58:48+00:00",
-   "verdict": "checagem"
+   "verdict": "checagem",
+   "label": "Checagem"
   }
  ],
  "stories": [
@@ -1758,7 +1852,7 @@
    "checks": []
   },
   {
-   "id": "s003",
+   "id": "s002",
    "title": "Rubio e Vieira conversam e marcam reunião bilateral até meados de dezembro",
    "summary": "Mauro Vieira e Marco Rubio se cumprimentaram na abertura da reunião de chanceleres do G20, em Atlanta, sem previsão de encontro bilateral.",
    "section": "colunas",
@@ -1936,195 +2030,14 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
    "longreads": [],
    "world": [],
    "checks": []
   },
   {
-   "id": "s002",
-   "title": "RN terá bandeira verde nas contas de energia em novembro de 2026, diz Aneel",
-   "summary": "Abastecimento favorável nos reservatórios assegura segundo mês seguido sem custos adicionais na tarifa energética",
-   "section": "rn",
-   "section_label": "Rn",
-   "avg_bias": 0.03,
-   "counts": {
-    "L": 2,
-    "C": 7,
-    "R": 2,
-    "total": 11
-   },
-   "pct": {
-    "L": 18,
-    "C": 64,
-    "R": 18
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:48:09+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Aneel confirma bandeira verde e garante conta de luz sem taxa extra",
-     "link": "https://www.brasil247.com/economia/aneel-confirma-bandeira-verde-e-garante-conta-de-luz-sem-taxa-extra/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://www.brasil247.com/wp-content/uploads/2026/09/2026-09-25T202344Z_1_LYNXMPEM8O1U0_RTROPTP_4_CLIMATE-COP30-BRAZIL-COAL.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "ANEEL mantém bandeira verde em novembro e livra consumidores de taxa extra na conta de luz",
-     "link": "https://www.brasil247.com/geral/aneel-mantem-bandeira-verde-em-novembro-e-livra-consumidores-de-taxa-extra-na-conta-de-luz/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "geral",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "RN terá bandeira verde nas contas de energia em novembro de 2026, diz Aneel",
-     "link": "https://g1.globo.com/rn/rio-grande-do-norte/noticia/2026/10/31/rn-tera-bandeira-verde-nas-contas-de-energia-em-novembro-de-2026-diz-aneel.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "rn",
-     "section_label": "Rn",
-     "image": "https://s2-g1.glbimg.com/has3jhtNafIO9bM__cuQYEjcsY8=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/H/1/PGdTUqS8ap2qwgDv49YA/conta-de-energia.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Conta de luz terá bandeira verde pelo 2º mês seguido em novembro",
-     "link": "https://www.poder360.com.br/poder-energia/conta-de-luz-ficara-sem-cobranca-adicional-pelo-2o-mes-seguido/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-energia",
-     "section_label": "Poder-energia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Aneel mantém bandeira verde e conta de luz não terá taxa extra em novembro",
-     "link": "https://www.metropoles.com/brasil/aneel-mantem-bandeira-verde-e-conta-de-luz-nao-tera-taxa-extra-em-novembro",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "https://images.metroimg.com/2026/07/conta-de-luz-da-ceb-2.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "SBT News",
-     "source_id": "sbt",
-     "title": "Aneel mantém bandeira verde na conta de luz em novembro",
-     "link": "https://sbtnews.sbt.com.br/noticia/economia/aneel-mantem-bandeira-verde-na-conta-de-luz-em-novembro",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://sbtnews.sbt.com.br/imagens/linhas_de_transmissao_energia_f182b8e638.jpg",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "IstoÉ",
-     "source_id": "istoe",
-     "title": "Conta de luz seguirá sem cobrança extra em novembro, confirma Aneel",
-     "link": "https://istoe.com.br/conta-luz-sem-cobranca-extra-novembro-2026-aneel",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Aneel: mês de novembro terá bandeira tarifária verde",
-     "link": "https://www.infomoney.com.br/brasil/aneel-mes-de-novembro-tera-bandeira-tarifaria-verde/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Conta de luz segue com bandeira verde em novembro, sem taxa adicional",
-     "link": "https://valor.globo.com/brasil/noticia/2026/10/30/conta-de-luz-segue-com-bandeira-verde-em-novembro-sem-taxa-adicional.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "https://s2-valor.glbimg.com/Zobuin0UJoMHsbrOyFT2zeftN5Q=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/s/r/iNMSo5RMmI6MfS9GmBrA/04501024.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Aneel mantém bandeira verde na conta de luz em novembro",
-     "link": "https://www.gazetadopovo.com.br/economia/aneel-mantem-bandeira-verde-na-conta-de-luz-em-novembro/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Aneel mantém bandeira tarifária verde em novembro",
-     "link": "https://jovempan.com.br/brasil/aneel-mantem-bandeira-tarifaria-verde-em-novembro/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s004",
+   "id": "s003",
    "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
    "summary": "O real e a Bolsa de São Paulo encerraram, nesta sexta-feira (30), sua pior semana em anos, sinal do temor dos mercados em relação à política fiscal do presidente Luiz Inácio Lula da Silva (PT), reeleito no domingo para um quarto mandato.",
    "section": "mercados",
@@ -2291,7 +2204,160 @@
    "checks": []
   },
   {
-   "id": "s006",
+   "id": "s004",
+   "title": "Conta de luz segue com bandeira verde em novembro, sem taxa adicional",
+   "summary": "Abastecimento favorável nos reservatórios assegura segundo mês seguido sem custos adicionais na tarifa energética",
+   "section": "brasil",
+   "section_label": "Brasil",
+   "avg_bias": 0.19,
+   "counts": {
+    "L": 1,
+    "C": 6,
+    "R": 2,
+    "total": 9
+   },
+   "pct": {
+    "L": 11,
+    "C": 67,
+    "R": 22
+   },
+   "blindspot": "left",
+   "updated": "2026-10-31T16:48:09+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Aneel confirma bandeira verde e garante conta de luz sem taxa extra",
+     "link": "https://www.brasil247.com/economia/aneel-confirma-bandeira-verde-e-garante-conta-de-luz-sem-taxa-extra/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://www.brasil247.com/wp-content/uploads/2026/09/2026-09-25T202344Z_1_LYNXMPEM8O1U0_RTROPTP_4_CLIMATE-COP30-BRAZIL-COAL.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Conta de luz terá bandeira verde pelo 2º mês seguido em novembro",
+     "link": "https://www.poder360.com.br/poder-energia/conta-de-luz-ficara-sem-cobranca-adicional-pelo-2o-mes-seguido/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-energia",
+     "section_label": "Poder-energia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Aneel mantém bandeira verde e conta de luz não terá taxa extra em novembro",
+     "link": "https://www.metropoles.com/brasil/aneel-mantem-bandeira-verde-e-conta-de-luz-nao-tera-taxa-extra-em-novembro",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://images.metroimg.com/2026/07/conta-de-luz-da-ceb-2.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Aneel mantém bandeira verde na conta de luz em novembro",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/aneel-mantem-bandeira-verde-na-conta-de-luz-em-novembro",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/linhas_de_transmissao_energia_f182b8e638.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "IstoÉ",
+     "source_id": "istoe",
+     "title": "Conta de luz seguirá sem cobrança extra em novembro, confirma Aneel",
+     "link": "https://istoe.com.br/conta-luz-sem-cobranca-extra-novembro-2026-aneel",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Aneel: mês de novembro terá bandeira tarifária verde",
+     "link": "https://www.infomoney.com.br/brasil/aneel-mes-de-novembro-tera-bandeira-tarifaria-verde/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Conta de luz segue com bandeira verde em novembro, sem taxa adicional",
+     "link": "https://valor.globo.com/brasil/noticia/2026/10/30/conta-de-luz-segue-com-bandeira-verde-em-novembro-sem-taxa-adicional.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://s2-valor.glbimg.com/Zobuin0UJoMHsbrOyFT2zeftN5Q=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2019/s/r/iNMSo5RMmI6MfS9GmBrA/04501024.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Aneel mantém bandeira verde na conta de luz em novembro",
+     "link": "https://www.gazetadopovo.com.br/economia/aneel-mantem-bandeira-verde-na-conta-de-luz-em-novembro/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Aneel mantém bandeira tarifária verde em novembro",
+     "link": "https://jovempan.com.br/brasil/aneel-mantem-bandeira-tarifaria-verde-em-novembro/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s007",
    "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
    "summary": "Chanceler argentino contesta informação do Itamaraty sobre pedido de explicações pela possível participação de autoridades do país na saída do senador brasileiro",
    "section": "politica",
@@ -2440,7 +2506,7 @@
    ],
    "developments": [
     {
-     "id": "s038",
+     "id": "s039",
      "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
      "total": 3,
      "blindspot": null
@@ -2449,39 +2515,36 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
    "longreads": [
     {
      "source": "Nexo Jornal",
-     "title": "A diferença no voto das capitais e do interior no 2º turno",
-     "link": "https://www.nexojornal.com.br/grafico/2026/10/30/capitais-resto-estado-2-turno-2026",
+     "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
+     "link": "https://www.nexojornal.com.br/expresso/2026/10/29/flavio-bolsonaro-carta-eua-eleicoes-golpismo-opositores-reacao",
      "terms": [
       "bolsonaro",
       "flávio",
-      "flávio bolsonaro",
+      "flávio bolsonaro"
+     ]
+    },
+    {
+     "source": "The Intercept Brasil",
+     "title": "Sem mandato e temendo prisão, Flávio Bolsonaro foge e vira fardo para a extrema direita",
+     "link": "https://www.intercept.com.br/2026/10/31/derrota-flavio-bolsonaro-cinismo-aliados-midia/",
+     "terms": [
+      "bolsonaro",
+      "flávio",
+      "flávio bolsonaro"
+     ]
+    },
+    {
+     "source": "Revista piauí",
+     "title": "Vitória da democracia: Lula faz história e Flávio encena farsa golpista",
+     "link": "https://piaui.uol.com.br/web/ft136/",
+     "terms": [
+      "flávio",
       "lula"
-     ]
-    },
-    {
-     "source": "The Intercept Brasil",
-     "title": "A fuga de Flávio Bolsonaro e o voo cego da imprensa",
-     "link": "https://www.intercept.com.br/2026/10/29/fuga-flavio-bolsonaro-e-voo-cego-imprensa/",
-     "terms": [
-      "argentina",
-      "bolsonaro",
-      "flávio",
-      "flávio bolsonaro"
-     ]
-    },
-    {
-     "source": "Crusoé",
-     "title": "Presidente de mentira",
-     "link": "https://crusoe.com.br/noticias/presidente-de-mentira/",
-     "terms": [
-      "bolsonaro",
-      "flávio",
-      "flávio bolsonaro"
      ]
     }
    ],
@@ -2639,6 +2702,117 @@
    "checks": []
   },
   {
+   "id": "s006",
+   "title": "França reforça segurança para novos protestos no Halloween e teme ação de mascarados",
+   "summary": "O governo da França mobilizou 70 mil militares para este sábado (31), quando estão previstos novos protestos em massa contra o aumento do custo de vida. As autoridades consideram as manifestações de alto risco diante da possibilidade de episódios de violência e saques. Os atos coincidem com o Hallow",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": 0.48,
+   "counts": {
+    "L": 0,
+    "C": 4,
+    "R": 2,
+    "total": 6
+   },
+   "pct": {
+    "L": 0,
+    "C": 67,
+    "R": 33
+   },
+   "blindspot": "left",
+   "updated": "2026-10-31T18:16:19+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "França reforça segurança para novos protestos no Halloween e teme ação de mascarados",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/franca-reforca-seguranca-para-novos-protestos-no-halloween-e-teme-acao-de-mascarados.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "França mobiliza 70 mil agentes para conter atos e evitar confrontos",
+     "link": "https://www.metropoles.com/mundo/franca-mobiliza-70-mil-agentes-para-conter-atos-e-evitar-confrontos",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://images.metroimg.com/2026/10/franca-protesto.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "França mobiliza 70 mil policiais e teme protestos na noite de Halloween",
+     "link": "https://www.band.com.br/internacional/franca-mobiliza-70-mil-policiais-e-teme-protestos-na-noite-de-halloween",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Novos protestos e Halloween: Paris teme “noite das trevas” e ativa centro de crise",
+     "link": "https://www.infomoney.com.br/mundo/novos-protestos-e-halloween-paris-teme-noite-das-trevas-e-ativa-centro-de-crise/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "França mobiliza 70 mil policiais para conter violência em nova onda de protestos",
+     "link": "https://jovempan.com.br/mundo/franca-mobiliza-70-mil-policiais-para-conter-violencia-em-nova-onda-de-protestos/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "França tem nova onda de protestos",
+     "link": "https://revistaoeste.com/mundo/franca-tem-nova-onda-de-protestos/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Franca.jpg",
+     "factuality": "low",
+     "ownership": "independente"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
    "id": "s012",
    "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
    "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
@@ -2731,120 +2905,12 @@
     }
    ],
    "hub": null,
-   "longreads": [
-    {
-     "source": "Nexo Jornal",
-     "title": "O povo brasileiro passou no teste, ao contrário dos americanos",
-     "link": "https://www.nexojornal.com.br/colunistas/2026/10/28/democracia-trump-lula-governo-americano-reeleicao-lula-brasil",
-     "terms": [
-      "bolsonaro",
-      "jair",
-      "jair bolsonaro"
-     ]
-    }
-   ],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s011",
-   "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
-   "summary": "Os acionistas da Raízen votaram ​nesta sexta-feira a favor ​da aprovação da implementação do ...",
-   "section": "empresas",
-   "section_label": "Negócios",
-   "avg_bias": 0.14,
-   "counts": {
-    "L": 0,
-    "C": 5,
-    "R": 0,
-    "total": 5
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T02:10:42+00:00",
-   "articles": [
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Acionistas aprovam plano de reestruturação da Raízen",
-     "link": "https://www.terra.com.br/economia/acionistas-aprovam-plano-de-reestruturacao-da-raizen,e985cb70300bc4766735187e736b3d83bqfpi8jf.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "SBT News",
-     "source_id": "sbt",
-     "title": "Raízen aprova recuperação extrajudicial e prevê R$ 39,8 bi",
-     "link": "https://sbtnews.sbt.com.br/noticia/economia/raizen-aprova-recuperacao-extrajudicial-e-preve-r-39-8-bi",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://sbtnews.sbt.com.br/imagens/Posto_da_Shell_90169feabe.jpg",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Acionistas da Raízen aprovam plano de segregação da unidade de açúcar e etanol",
-     "link": "https://www.infomoney.com.br/business/acionistas-da-raizen-aprovam-plano-de-segregacao-da-unidade-de-acucar-e-etanol/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "business",
-     "section_label": "Business",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Acionistas da Raízen aprovam plano de recuperação extrajudicial, dizem fontes",
-     "link": "https://www.infomoney.com.br/business/acionistas-da-raizen-aprovam-plano-de-recuperacao-extrajudicial-dizem-fontes/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "business",
-     "section_label": "Business",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
-     "link": "https://valor.globo.com/empresas/noticia/2026/10/30/razen-e-razen-energia-elegem-novos-conselhos-dentro-da-recuperao-extrajudicial.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "empresas",
-     "section_label": "Negócios",
-     "image": "https://s2-valor.glbimg.com/Lsf1ZFISwLu4HeE3pyah9O6lRzA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/V/v/pr45tJSni2WjSagipv3Q/foto16emp-101-raizen-b1.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "hub": null,
    "longreads": [],
    "world": [],
    "checks": []
   },
   {
-   "id": "s010",
+   "id": "s011",
    "title": "Fim de semana terá temporais em parte do Brasil; veja previsão",
    "summary": "Previsão indica temperaturas amenas em Minas Gerais e São Paulo, com risco de temporais no Rio de Janeiro e no Espírito Santo",
    "section": "nacional",
@@ -2941,104 +3007,7 @@
    "checks": []
   },
   {
-   "id": "s009",
-   "title": "França reforça segurança para novos protestos no Halloween e teme ação de mascarados",
-   "summary": "O governo da França mobilizou 70 mil militares para este sábado (31), quando estão previstos novos protestos em massa contra o aumento do custo de vida. As autoridades consideram as manifestações de alto risco diante da possibilidade de episódios de violência e saques. Os atos coincidem com o Hallow",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": 0.26,
-   "counts": {
-    "L": 0,
-    "C": 4,
-    "R": 1,
-    "total": 5
-   },
-   "pct": {
-    "L": 0,
-    "C": 80,
-    "R": 20
-   },
-   "blindspot": "left",
-   "updated": "2026-10-31T16:12:40+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "França reforça segurança para novos protestos no Halloween e teme ação de mascarados",
-     "link": "https://www1.folha.uol.com.br/mundo/2026/10/franca-reforca-seguranca-para-novos-protestos-no-halloween-e-teme-acao-de-mascarados.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "França mobiliza 70 mil agentes para conter atos e evitar confrontos",
-     "link": "https://www.metropoles.com/mundo/franca-mobiliza-70-mil-agentes-para-conter-atos-e-evitar-confrontos",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://images.metroimg.com/2026/10/franca-protesto.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "França mobiliza 70 mil policiais e teme protestos na noite de Halloween",
-     "link": "https://www.band.com.br/internacional/franca-mobiliza-70-mil-policiais-e-teme-protestos-na-noite-de-halloween",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Novos protestos e Halloween: Paris teme “noite das trevas” e ativa centro de crise",
-     "link": "https://www.infomoney.com.br/mundo/novos-protestos-e-halloween-paris-teme-noite-das-trevas-e-ativa-centro-de-crise/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "França mobiliza 70 mil policiais para conter violência em nova onda de protestos",
-     "link": "https://jovempan.com.br/mundo/franca-mobiliza-70-mil-policiais-para-conter-violencia-em-nova-onda-de-protestos/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s008",
+   "id": "s010",
    "title": "Líder do Irã ordena resposta \"sem restrições geográficas\" em caso de ameaças",
    "summary": "O líder supremo do Irã, Mojtaba Khamenei, ordenou uma resposta imediata e sem limites geográficos a eventuais novos ataques dos EUA e de Israel, informou o site americano Axios.",
    "section": "internacional",
@@ -3135,7 +3104,7 @@
    "checks": []
   },
   {
-   "id": "s007",
+   "id": "s009",
    "title": "A Fazenda 18: Mônica Fonseca é expulsa do reality após briga em festa",
    "summary": "Mônica Fonseca foi expulsa de A Fazenda 18 após uma briga com Mayk Leão durante a festa do reality na madrugada deste sábado (31). Pela manhã, Ana Bruna Avila, fazendeira da semana, leu o comunicado oficial da produção que oficializava a decisão: a jornalista está fora do reality show. Leia mais (10",
    "section": "televisao",
@@ -3232,7 +3201,104 @@
    "checks": []
   },
   {
-   "id": "s040",
+   "id": "s008",
+   "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
+   "summary": "Conhecida também como Garota X, a cantora fez sucesso no funk carioca nos anos 2000. A causa da morte ainda não foi divulgada",
+   "section": "pop",
+   "section_label": "Pop",
+   "avg_bias": 0.06,
+   "counts": {
+    "L": 0,
+    "C": 5,
+    "R": 0,
+    "total": 5
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:24:47+00:00",
+   "articles": [
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Morre Mulher Banana, veterana do funk e ex-Furacão 2000",
+     "link": "https://www.metropoles.com/celebridades/morre-mulher-banana-veterana-do-funk-e-ex-furacao-2000",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "celebridades",
+     "section_label": "Cultura",
+     "image": "https://images.metroimg.com/2026/10/mulher-banana.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Quem era Julyana Barbosa, Mulher Banana, que morreu no RJ?",
+     "link": "https://www.band.com.br/entretenimento/celebridades/quem-era-julyana-barbosa-mulher-banana-que-morreu-no-rj",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "entretenimento",
+     "section_label": "Cultura",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Morre Mulher Banana, ícone do funk carioca e ex-Furacão 2000",
+     "link": "https://www.band.com.br/entretenimento/celebridades/morre-mulher-banana-icone-do-funk-carioca-e-ex-furacao-2000",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "entretenimento",
+     "section_label": "Cultura",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
+     "link": "https://www.cnnbrasil.com.br/pop/celebridades/morre-mulher-banana-icone-do-funk-carioca-e-ex-integrante-do-furacao-2000/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pop",
+     "section_label": "Pop",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Quem é Mulher Banana, ícone do funk que morreu neste sábado",
+     "link": "https://www.infomoney.com.br/brasil/quem-e-mulher-banana-icone-do-funk-que-morreu/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s041",
    "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
    "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
    "section": "",
@@ -3325,7 +3391,7 @@
    ],
    "developments": [
     {
-     "id": "s089",
+     "id": "s094",
      "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas",
      "total": 2,
      "blindspot": null
@@ -3583,32 +3649,10 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
-   "longreads": [
-    {
-     "source": "The Intercept Brasil",
-     "title": "Sem mandato e temendo prisão, Flávio Bolsonaro foge e vira fardo para a extrema direita",
-     "link": "https://www.intercept.com.br/2026/10/31/derrota-flavio-bolsonaro-cinismo-aliados-midia/",
-     "terms": [
-      "bolsonaro",
-      "flávio",
-      "flávio bolsonaro"
-     ]
-    }
-   ],
-   "world": [
-    {
-     "source": "The Guardian",
-     "title": "‘Amateur morons’: Flávio Bolsonaro’s short-lived ‘president-elect’ claim met with mockery",
-     "link": "https://www.theguardian.com/world/2026/oct/30/flavio-bolsonaros-president-elect-claim-mockery-brazil",
-     "terms": [
-      "flávio bolsonaro",
-      "bolsonaro",
-      "flávio"
-     ]
-    }
-   ],
+   "longreads": [],
+   "world": [],
    "checks": []
   },
   {
@@ -3944,7 +3988,7 @@
    "checks": []
   },
   {
-   "id": "s059",
+   "id": "s067",
    "title": "Simone Tebet é cotada para o STF caso Lula decida indicar uma mulher para o tribunal",
    "summary": "A ex-ministra Simone Tebet passou a integrar a lista de nomes levados a Lula para futuras indicações ao Supremo Tribunal Federal.",
    "section": "colunas",
@@ -4023,7 +4067,7 @@
    ],
    "developments": [
     {
-     "id": "s096",
+     "id": "s101",
      "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre",
      "total": 2,
      "blindspot": null
@@ -4035,7 +4079,7 @@
    "checks": []
   },
   {
-   "id": "s039",
+   "id": "s040",
    "title": "Justiça manda penhorar mansão de Renato Aragão por dívida",
    "summary": "Decisão da 12ª Vara da Fazenda Pública atende a pedido do Município do Rio para cobrança de débitos de IPTU",
    "section": "brasil",
@@ -4096,6 +4140,75 @@
      "image": "https://veja.abril.com.br/wp-content/uploads/2026/10/Untitled-design-25.jpg",
      "factuality": "mixed",
      "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s038",
+   "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
+   "summary": "Plano reestrutura R$ 61,4 bilhões em dívidas e inclui a separação das operações de combustíveis e de açúcar e etanol",
+   "section": "empresas",
+   "section_label": "Negócios",
+   "avg_bias": 0.17,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:10:42+00:00",
+   "articles": [
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Raízen aprova recuperação extrajudicial e prevê R$ 39,8 bi",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/raizen-aprova-recuperacao-extrajudicial-e-preve-r-39-8-bi",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/Posto_da_Shell_90169feabe.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Acionistas da Raízen aprovam plano de recuperação extrajudicial, dizem fontes",
+     "link": "https://www.infomoney.com.br/business/acionistas-da-raizen-aprovam-plano-de-recuperacao-extrajudicial-dizem-fontes/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "business",
+     "section_label": "Business",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
+     "link": "https://valor.globo.com/empresas/noticia/2026/10/30/razen-e-razen-energia-elegem-novos-conselhos-dentro-da-recuperao-extrajudicial.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "empresas",
+     "section_label": "Negócios",
+     "image": "https://s2-valor.glbimg.com/Lsf1ZFISwLu4HeE3pyah9O6lRzA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/V/v/pr45tJSni2WjSagipv3Q/foto16emp-101-raizen-b1.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
     }
    ],
    "hub": null,
@@ -4239,21 +4352,10 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
    "longreads": [],
-   "world": [
-    {
-     "source": "The Guardian",
-     "title": "‘Amateur morons’: Flávio Bolsonaro’s short-lived ‘president-elect’ claim met with mockery",
-     "link": "https://www.theguardian.com/world/2026/oct/30/flavio-bolsonaros-president-elect-claim-mockery-brazil",
-     "terms": [
-      "flávio bolsonaro",
-      "bolsonaro",
-      "flávio"
-     ]
-    }
-   ],
+   "world": [],
    "checks": []
   },
   {
@@ -4390,18 +4492,7 @@
     }
    ],
    "hub": null,
-   "longreads": [
-    {
-     "source": "Nexo Jornal",
-     "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
-     "link": "https://www.nexojornal.com.br/expresso/2026/10/29/flavio-bolsonaro-carta-eua-eleicoes-golpismo-opositores-reacao",
-     "terms": [
-      "hugo",
-      "hugo motta",
-      "motta"
-     ]
-    }
-   ],
+   "longreads": [],
    "world": [],
    "checks": []
   },
@@ -4614,6 +4705,75 @@
   },
   {
    "id": "s030",
+   "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
+   "summary": "Patrick Stewart morreu na quarta-feira (28/10), em Los Angeles, nos Estados Unidos. Ele era uma lenda dos X-Men",
+   "section": "saude",
+   "section_label": "Saúde",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T16:23:36+00:00",
+   "articles": [
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "O adeus a Patrick Stewart, uma lenda dos X-Men",
+     "link": "https://www.metropoles.com/colunas/metropoles-games/o-adeus-a-patrick-stewart-uma-lenda-dos-x-men",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "section_label": "Opinião",
+     "image": "https://images.metroimg.com/2026/10/alem-da-ficcao-cientifica-patrick-stewart-marcou-o-cinema-como-o-professor-charles-xavier-lider-dos-x-men.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Patrick Stewart quase recusou X-Men após anos em Star Trek: \"Chega de ficção científica\"",
+     "link": "https://www.terra.com.br/diversao/entre-telas/patrick-stewart-quase-recusou-x-men-apos-anos-em-star-trek-chega-de-ficcao-cientifica,eb12b59d1cd4e0dabeb06a176fcd467aw488s0py.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "diversao",
+     "section_label": "Diversao",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
+     "link": "https://sbtnews.sbt.com.br/noticia/saude/patrick-stewart-entenda-doencas-que-afetaram-ator-de-x-men",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "saude",
+     "section_label": "Saúde",
+     "image": "https://sbtnews.sbt.com.br/imagens/Patrick_Stewart_em_2015_4dc6d3ab48.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s029",
    "title": "Justiça condena Sergio Maurício a pagar R$ 10 mil a Erika por danos morais",
    "summary": "O narrador esportivo se referiu a deputada como 'essa coisa' em uma publicação nas redes sociais",
    "section": "politica",
@@ -4682,7 +4842,7 @@
    "checks": []
   },
   {
-   "id": "s029",
+   "id": "s028",
    "title": "Kauã Elias comenta em foto de Virginia Fonseca vestida de coelhinha",
    "summary": "Atacante de 20 anos joga na Europa, espera a primeira filha com a ex-namorada e já se envolveu em polêmicas amorosas",
    "section": "diversao",
@@ -4742,75 +4902,6 @@
      "section_label": "Diversao",
      "image": "",
      "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s028",
-   "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
-   "summary": "Conhecida também como Garota X, a cantora fez sucesso no funk carioca nos anos 2000. A causa da morte ainda não foi divulgada",
-   "section": "pop",
-   "section_label": "Pop",
-   "avg_bias": 0.03,
-   "counts": {
-    "L": 0,
-    "C": 3,
-    "R": 0,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:49:02+00:00",
-   "articles": [
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Morre Mulher Banana, veterana do funk e ex-Furacão 2000",
-     "link": "https://www.metropoles.com/celebridades/morre-mulher-banana-veterana-do-funk-e-ex-furacao-2000",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "celebridades",
-     "section_label": "Cultura",
-     "image": "https://images.metroimg.com/2026/10/mulher-banana.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Morre Mulher Banana, ícone do funk carioca e ex-Furacão 2000",
-     "link": "https://www.band.com.br/entretenimento/celebridades/morre-mulher-banana-icone-do-funk-carioca-e-ex-furacao-2000",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "entretenimento",
-     "section_label": "Cultura",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
-     "link": "https://www.cnnbrasil.com.br/pop/celebridades/morre-mulher-banana-icone-do-funk-carioca-e-ex-integrante-do-furacao-2000/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "pop",
-     "section_label": "Pop",
-     "image": "",
-     "factuality": "high",
      "ownership": "corporacao"
     }
    ],
@@ -4954,104 +5045,21 @@
    ],
    "hub": null,
    "longreads": [],
-   "world": [],
+   "world": [
+    {
+     "source": "BBC World",
+     "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+     "link": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+     "terms": [
+      "congo",
+      "ebola"
+     ]
+    }
+   ],
    "checks": []
   },
   {
    "id": "s025",
-   "title": "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro para os EUA",
-   "summary": "Eventual maioria legislativa de oposição a Trump poderia investigar e fazer pressão política, mas foco deve recair sobre outras pautas",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.53,
-   "counts": {
-    "L": 1,
-    "C": 2,
-    "R": 0,
-    "total": 3
-   },
-   "pct": {
-    "L": 33,
-    "C": 67,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:58:17+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Vitória democrata nos EUA pode abrir investigação sobre fuga de Flávio Bolsonaro e aumentar pressão sobre Trump",
-     "link": "https://www.brasil247.com/brasil/vitoria-democrata-nos-eua-pode-abrir-investigacao-sobre-fuga-de-flavio-bolsonaro-e-aumentar-pressao-sobre-trump/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "https://www.brasil247.com/wp-content/uploads/2026/05/20260527120556_dda1c6e454f62bf7649eb3b5cc6246629dd8670e9afa6bb5d3414a8b51494dda.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro para os EUA",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/trump-e-milei-enfrentam-pressao-por-fuga-de-flavio-bolsonaro-para-os-eua.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "DW Brasil",
-     "source_id": "dw",
-     "title": "O que pode acontecer com Flávio Bolsonaro após fuga aos EUA",
-     "link": "https://www.dw.com/pt-br/inqu%C3%A9ritos-no-stf-e-faltas-no-senado-o-que-pode-acontecer-com-fl%C3%A1vio-ap%C3%B3s-fuga-para-os-eua/a-79796893",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "pt-br",
-     "section_label": "Pt-br",
-     "image": "https://static.dw.com/image/79782764_605.jpg",
-     "factuality": "very_high",
-     "ownership": "governo"
-    }
-   ],
-   "hub": {
-    "key": "flávio bolsonaro",
-    "label": "Flávio Bolsonaro",
-    "size": 8
-   },
-   "longreads": [],
-   "world": [
-    {
-     "source": "The Guardian",
-     "title": "‘Amateur morons’: Flávio Bolsonaro’s short-lived ‘president-elect’ claim met with mockery",
-     "link": "https://www.theguardian.com/world/2026/oct/30/flavio-bolsonaros-president-elect-claim-mockery-brazil",
-     "terms": [
-      "flávio bolsonaro",
-      "bolsonaro",
-      "flávio"
-     ]
-    },
-    {
-     "source": "New York Times",
-     "title": "Trump and His Aides Helped Bolsonaro Flee Brazil and Enter U.S.",
-     "link": "https://www.nytimes.com/2026/10/29/world/americas/flavio-bolsonaro-trump-brazil-us.html",
-     "terms": [
-      "bolsonaro",
-      "trump"
-     ]
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s024",
    "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
    "summary": "O presidente Luiz Inácio Lula da Silva (PT) está em busca de um nome para ocupar o Ministério da Defesa em seu quarto mandato. Como mostrou o Estadão, um dos possíveis nomes é o de Cinara Wagner Fredo, indicada pelo atual ministro da pasta, José Múcio Monteiro.",
    "section": "",
@@ -5120,11 +5128,11 @@
    "checks": []
   },
   {
-   "id": "s023",
-   "title": "Morre Solano Ribeiro, crítico e produtor musical, aos 87 anos",
+   "id": "s024",
+   "title": "Morre Solano Ribeiro, que produziu festivais marcantes da MPB na televisão, aos 87",
    "summary": "Crítico e produtor musical, Solano Ribeiro morreu aos 87 anos em São Paulo. Ele ajudou a organizar festivais que revelaram nomes da MPB.",
-   "section": "sp",
-   "section_label": "São Paulo",
+   "section": "ilustrada",
+   "section_label": "Ilustrada",
    "avg_bias": -0.6,
    "counts": {
     "L": 1,
@@ -5169,18 +5177,18 @@
      "ownership": "individuo"
     },
     {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Morre Solano Ribeiro, crítico e produtor musical, aos 87 anos",
-     "link": "https://g1.globo.com/sp/sao-paulo/noticia/2026/10/31/morre-solano-ribeiro-critico-e-produtor-musical-aos-87-anos.ghtml",
+     "source": "Band",
+     "source_id": "band",
+     "title": "Morre Solano Ribeiro, ícone dos festivais da MPB, aos 87 anos",
+     "link": "https://www.band.com.br/entretenimento/musica/morre-solano-ribeiro-icone-dos-festivais-da-mpb-aos-87-anos",
      "bias": 0.0,
      "bucket": "C",
      "via": "fonte",
-     "section": "sp",
-     "section_label": "São Paulo",
-     "image": "https://s2-g1.glbimg.com/dq2xpS2n3MtvDcT-247kgJIE1Y8=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/m/V/vAlZRjSNqSZEiotaChQQ/fotojet-2026-10-31t105011.798.jpg",
+     "section": "entretenimento",
+     "section_label": "Cultura",
+     "image": "",
      "factuality": "high",
-     "ownership": "conglomerado"
+     "ownership": "individuo"
     }
    ],
    "hub": null,
@@ -5189,7 +5197,7 @@
    "checks": []
   },
   {
-   "id": "s022",
+   "id": "s023",
    "title": "Correspondente da Globo em Londres vai substituir Maju Coutinho no Fantástico",
    "summary": "Rodrigo Carvalho, correspondente da Globo em Londres, vai substituir a apresentadora Maju Coutinho na bancada do Fantástico . Coutinho entrará em licença-maternidade a partir de janeiro, quando deverá dar à luz seu primeiro filho , chamado Malik. Leia mais (10/31/2026 - 10h09)",
    "section": "ilustrada",
@@ -5258,7 +5266,7 @@
    "checks": []
   },
   {
-   "id": "s021",
+   "id": "s022",
    "title": "Rodrigo Bacellar será transferido novamente para presídio estadual no Rio",
    "summary": "Ex-presidente da Alerj deixará penitenciária federal de Mossoró, mas continuará preso preventivamente; desembargador investigado por vazamento de informações foi solto",
    "section": "nacional",
@@ -5327,7 +5335,7 @@
    "checks": []
   },
   {
-   "id": "s020",
+   "id": "s021",
    "title": "Como Miami se tornou refúgio de políticos conservadores da América Latina",
    "summary": "Cidade no sul da Flórida se consolida como abrigo histórico para figuras da extrema-direita latino-americana",
    "section": "mundo",
@@ -5393,14 +5401,14 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
    "longreads": [],
    "world": [],
    "checks": []
   },
   {
-   "id": "s111",
+   "id": "s113",
    "title": "As propostas do presidente Lula para o seu quarto mandato em 8 áreas",
    "summary": "Presidente inicia novo mandato em 5 de janeiro de 2027 com propostas para economia, saúde, educação e segurança pública, mas terá de negociar com um Congresso de oposição fortalecido para avançar em sua agenda.",
    "section": "",
@@ -5455,7 +5463,7 @@
    "checks": []
   },
   {
-   "id": "s110",
+   "id": "s112",
    "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
    "summary": "Em primeira declaração pública após a tentativa frustrada de execução, Christa Pike afirmou que ficou \"profundamente magoada com a incompetência\"",
    "section": "pt-br",
@@ -5510,7 +5518,7 @@
    "checks": []
   },
   {
-   "id": "s109",
+   "id": "s111",
    "title": "Papa Leão XIV vota por correio em eleições dos EUA",
    "summary": "Vaticano confirmou que pontífice, o primeiro da história da Igreja Católica a participar do pleito, enviou cédula eleitoral por correspondência para Chicago",
    "section": "mundo",
@@ -5565,7 +5573,7 @@
    "checks": []
   },
   {
-   "id": "s107",
+   "id": "s109",
    "title": "Lula vai lidar com sua herança maldita",
    "summary": "No atual cenário, não existe solução indolor. Um duro ajuste fiscal será necessário para estabilizar a dívida pública.",
    "section": "vozes",
@@ -5620,7 +5628,7 @@
    "checks": []
   },
   {
-   "id": "s106",
+   "id": "s108",
    "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
    "summary": "Jason Miller acompanhou a apuração do segundo turno ao lado de Eduardo Bolsonaro em Miami e deixou o local após a virada eleitoral.",
    "section": "mundo",
@@ -5675,132 +5683,7 @@
    "checks": []
   },
   {
-   "id": "s105",
-   "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
-   "summary": "Proprietário de jato executivo afirma que pagamento partiu de conta nos Estados Unidos",
-   "section": "politica",
-   "section_label": "Política",
-   "avg_bias": 0.15,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:06:19+00:00",
-   "articles": [
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Dono de avião usado por Flávio ir para os EUA diz ter recebido R$ 800 mil",
-     "link": "https://www.band.com.br/politica/dono-de-aviao-usado-por-flavio-ir-para-os-eua-diz-ter-recebido-r-800-mil",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
-     "link": "https://valor.globo.com/politica/noticia/2026/10/30/dono-de-avio-usado-na-fuga-de-flvio-bolsonaro-afirma-que-voo-foi-pago-a-partir-dos-eua-diz-agncia.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://s2-valor.glbimg.com/5SsUCjlZFK9XYE7PcJ6jBFiZ99k=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/p/c/4krMgIRyKlv0VeH4ksNQ/2026-10-28t132929z-1639054719-rc2dcoaylnfk-rtrmadp-3-brazil-usa.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "hub": {
-    "key": "flávio bolsonaro",
-    "label": "Flávio Bolsonaro",
-    "size": 8
-   },
-   "longreads": [],
-   "world": [
-    {
-     "source": "The Guardian",
-     "title": "‘Amateur morons’: Flávio Bolsonaro’s short-lived ‘president-elect’ claim met with mockery",
-     "link": "https://www.theguardian.com/world/2026/oct/30/flavio-bolsonaros-president-elect-claim-mockery-brazil",
-     "terms": [
-      "flávio bolsonaro",
-      "bolsonaro",
-      "flávio"
-     ]
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s103",
-   "title": "Defesa de Vorcaro aponta alteração em celular e pede anulação de provas",
-   "summary": "Perícia contratada pelo ex-controlador do Banco Master alega violação",
-   "section": "politica",
-   "section_label": "Política",
-   "avg_bias": 0.6,
-   "counts": {
-    "L": 0,
-    "C": 1,
-    "R": 1,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 50,
-    "R": 50
-   },
-   "blindspot": null,
-   "updated": "2026-10-30T23:16:32+00:00",
-   "articles": [
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Defesa de Vorcaro aponta alteração em celular e pede anulação de provas",
-     "link": "https://www.band.com.br/politica/defesa-de-vorcaro-aponta-alteracao-em-celular-e-pede-anulacao-de-provas",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Peritos da PF rebatem laudo da defesa de Vorcaro",
-     "link": "https://www.gazetadopovo.com.br/republica/peritos-da-pf-rebatem-laudo-da-defesa-de-vorcaro/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "republica",
-     "section_label": "Republica",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s102",
+   "id": "s106",
    "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
    "summary": "Acordo com jovem encerra processo contra dona do Instagram em Los Angeles; caso-teste sobre impacto de redes na saúde mental prosseguirá com Snapchat",
    "section": "business",
@@ -5855,7 +5738,7 @@
    "checks": []
   },
   {
-   "id": "s101",
+   "id": "s105",
    "title": "Moraes manda destruir armas de Torres e PMs do 8 de Janeiro",
    "summary": "Ministro deu prazo de 48h para o cumprimento das medidas e também negou devolução de passaportes dos envolvidos no episódio",
    "section": "politica",
@@ -5910,7 +5793,7 @@
    "checks": []
   },
   {
-   "id": "s099",
+   "id": "s103",
    "title": "PM apreende carro ligado a Toguro e encontra R$ 100 mil",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "poder-seguranca-publica",
@@ -5965,7 +5848,7 @@
    "checks": []
   },
   {
-   "id": "s098",
+   "id": "s102",
    "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
    "summary": "O crescimento é particularmente acentuado nos estados com disputas acirradas pelo Senado, onde 35 cadeiras estão em jogo",
    "section": "poder-internacional",
@@ -6020,62 +5903,7 @@
    "checks": []
   },
   {
-   "id": "s097",
-   "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
-   "summary": "BUDAPESTE, 30 Out (Reuters) - Acorrentado, mergulhado de cabeça para baixo em um tanque cheio de ?água e beirando a morte, ?Harry Houdini volta aos palcos em Budapeste nesta sexta-feira, em uma nova produção circense que homenageia o lendário ?mestre da ?fuga um ?século após sua morte.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T01:35:42+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/reuters/2026/10/30/um-seculo-depois-circo-de-budapeste-revive-ousadas-fugas-de-houdini.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
-     "link": "https://www.terra.com.br/noticias/mundo/um-seculo-depois-circo-de-budapeste-revive-ousadas-fugas-de-houdini,96cc74988f8116a332c17510f6cc0406gzqg08i6.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s095",
+   "id": "s100",
    "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados",
    "summary": "O Ebitda de R$ 558 milhões ficou abaixo das estimativas de todas as instituições financeiras; BB Investimentos rebaixou a recomendação da ação",
    "section": "empresas",
@@ -6130,7 +5958,7 @@
    "checks": []
   },
   {
-   "id": "s094",
+   "id": "s099",
    "title": "Banco Master leiloa itens de luxo; veja como participar",
    "summary": "Leilão online reúne 445 lotes de móveis, equipamentos e itens de decoração; lances iniciais vão de R$ 21 a R$ 98 mil",
    "section": "brasil",
@@ -6185,7 +6013,7 @@
    "checks": []
   },
   {
-   "id": "s093",
+   "id": "s098",
    "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
    "summary": "Decisão se dá após viralizarem publicações nas redes sobre exposição, fiscalização e até demissão de funcionários por posições políticas",
    "section": "politica",
@@ -6240,7 +6068,7 @@
    "checks": []
   },
   {
-   "id": "s092",
+   "id": "s097",
    "title": "Após fuga de Flávio, Jorginho Mello se distancia de aliado e diz respeitar resultado das urnas",
    "summary": "governador reeleito de Santa Catarina, Jorginho Mello (PL), se distanciou do discurso adotado por Flávio Bolsonaro (PL), após a derrota do senador na disputa presidencial. Aliado da família Bolsonar...",
    "section": "",
@@ -6295,7 +6123,7 @@
    "checks": []
   },
   {
-   "id": "s091",
+   "id": "s096",
    "title": "Funai aciona PF e pede apuração de casos de ataques contra indígenas",
    "summary": "Indígenas denunciam mais de 30 ataques pós-eleição em MS",
    "section": "politica",
@@ -6350,7 +6178,7 @@
    "checks": []
   },
   {
-   "id": "s090",
+   "id": "s095",
    "title": "TRE-DF apura transporte de urnas em caminhonete com adesivo do PT",
    "summary": "Segundo o Tribunal Superior Eleitoral (TSE), o episódio ocorrido no Distrito Federal não comprometeu os resultados da votação.",
    "section": "republica",
@@ -6405,7 +6233,7 @@
    "checks": []
   },
   {
-   "id": "s088",
+   "id": "s093",
    "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
    "summary": "A Oncoclínicas ​anunciou nesta ​sexta-feira que obteve adesão ⁠suficiente dos ‌credores para dar ...",
    "section": "empresas",
@@ -6460,7 +6288,7 @@
    "checks": []
   },
   {
-   "id": "s086",
+   "id": "s092",
    "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
    "summary": "Afastamento do presidente e do vice do Tribunal Constitucional ocorre em meio à disputa entre Donald Tusk e Karol Nawrocki.",
    "section": "mundo",
@@ -6515,7 +6343,7 @@
    "checks": []
   },
   {
-   "id": "s085",
+   "id": "s091",
    "title": "PGR apoia quebra de sigilo de jornalista que investigou Flávio Dino",
    "summary": "Paulo Gonet defende a legalidade de medidas autorizadas por Moraes para identificar a origem de informações sobre carros usados por Flávio Dino.",
    "section": "brasilia",
@@ -6570,7 +6398,7 @@
    "checks": []
   },
   {
-   "id": "s083",
+   "id": "s089",
    "title": "Corinthians x Mirassol: onde assistir ao vivo e horário",
    "summary": "Corinthians atropela Mirassol e finalmente consegue uma vitória dentro do Campeonato Brasileiro",
    "section": "brasil",
@@ -6625,62 +6453,7 @@
    "checks": []
   },
   {
-   "id": "s082",
-   "title": "'Quem Ama Cuida': Mau Mau e Felipe dão primeiro beijo e animam público: 'Representatividade'",
-   "summary": "A espera dos fãs de Felipe e Mau Mau chegou ao fim em \" Quem Ama Cuida \". Os personagens interpretados por Pietro Antonelli e João Victor Gonçalves deram o primeiro beijo no capítulo exibido nesta sexta-feira (30), em uma sequência romântica que movimentou as redes sociais. Leia mais (10/30/2026 - 2",
-   "section": "televisao",
-   "section_label": "TV",
-   "avg_bias": -0.15,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T05:04:00+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "'Quem Ama Cuida': Mau Mau e Felipe dão primeiro beijo e animam público: 'Representatividade'",
-     "link": "https://f5.folha.uol.com.br/televisao/2026/10/quem-ama-cuida-mau-mau-e-felipe-dao-primeiro-beijo-e-animam-publico-representatividade.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "televisao",
-     "section_label": "TV",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Atores de 'Quem Ama Cuida' revelam bastidores do aguardado primeiro beijo de Mau Mau e Felipe",
-     "link": "https://www.terra.com.br/diversao/tv/novelas/atores-de-quem-ama-cuida-revelam-bastidores-do-aguardado-primeiro-beijo-de-mau-mau-e-felipe,85f457c4de796980c48635f6fcb0387doe79481j.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "diversao",
-     "section_label": "Diversao",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s081",
+   "id": "s088",
    "title": "Lideranças de esquerda no exterior criam canais digitais inspirados no ‘Exército do Lula’",
    "summary": "Canais de apoio a líderes de Argentina, França e Espanha somaram 249.000 integrantes em 2 dias",
    "section": "mundo",
@@ -6730,22 +6503,12 @@
     }
    ],
    "hub": null,
-   "longreads": [
-    {
-     "source": "Nexo Jornal",
-     "title": "O cerco a indígenas pós-eleição. E os desafios para Lula 4",
-     "link": "https://www.nexojornal.com.br/expresso/2026/10/28/indigenas-violencia-ms-para-governo-lula",
-     "terms": [
-      "lideranças",
-      "lula"
-     ]
-    }
-   ],
+   "longreads": [],
    "world": [],
    "checks": []
   },
   {
-   "id": "s080",
+   "id": "s087",
    "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
    "summary": "Redução de pessoal começou em 23 de outubro; funcionários dos EUA precisam de autorização especial para os aeroportos sauditas após os recentes ataques com mísseis e drones, informou a embaixada",
    "section": "mundo",
@@ -6800,62 +6563,7 @@
    "checks": []
   },
   {
-   "id": "s078",
-   "title": "Gostosuras ou travessuras: por que as crianças pedem doces no Halloween?",
-   "summary": "Uma das expressões mais conhecidas do Halloween, “gostosuras ou travessuras?\" é a versão aportuguesada da frase \"trick or treat\", do inglês. Ela é usada",
-   "section": "entretenimento",
-   "section_label": "Cultura",
-   "avg_bias": 0.05,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T10:00:00+00:00",
-   "articles": [
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Gostosuras ou travessuras: por que as crianças pedem doces no Halloween?",
-     "link": "https://www.band.com.br/entretenimento/gostosuras-ou-travessuras-por-que-as-criancas-pedem-doces-no-halloween",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "entretenimento",
-     "section_label": "Cultura",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Halloween: qual é a quantidade ideal de doces para crianças?",
-     "link": "https://oglobo.globo.com/saude/noticia/2026/10/31/halloween-qual-e-a-quantidade-ideal-de-doces-para-criancas.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "saude",
-     "section_label": "Saúde",
-     "image": "https://s2-oglobo.glbimg.com/gjPYS4H9cNzU6bAXmAX0CkwI8tw=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/a/h/WKaRtfRaSQFEZry0a8Mw/tric-treat-baskets-sweets.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s077",
+   "id": "s085",
    "title": "Por que El Salvador está enviando militares ao Haiti",
    "summary": "Governo Bukele anunciou mobilização de mais de 2 mil homens após desaparecimento de quatro soldados salvadorenhos que atuam em força da ONU de repressão a gangues.",
    "section": "pt-br",
@@ -6921,7 +6629,7 @@
    "checks": []
   },
   {
-   "id": "s076",
+   "id": "s084",
    "title": "Seminarista, lenhador e campeão paralímpico: veja as disputas que podem definir o controle do Senado nas eleições de meio de mandato nos EUA",
    "summary": "Nenhum democrata vence uma eleição estadual no Texas há mais de 30 anos, mas a esquerda voltou a se animar com o ex-professor James Talarico, candidato ao Senado",
    "section": "mundo",
@@ -6976,7 +6684,7 @@
    "checks": []
   },
   {
-   "id": "s075",
+   "id": "s083",
    "title": "5 filmes de terror que marcaram época: veja onde assistir aos clássicos",
    "summary": "De possessões demoníacas a assassinos mascarados, alguns filmes se tornaram referências do gênero e seguem um sucesso",
    "section": "entretenimento",
@@ -7031,7 +6739,7 @@
    "checks": []
   },
   {
-   "id": "s074",
+   "id": "s082",
    "title": "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia",
    "summary": "A venda de armamentos ainda precisa ser aprovada pelo Congresso americano",
    "section": "mundo",
@@ -7086,7 +6794,7 @@
    "checks": []
   },
   {
-   "id": "s073",
+   "id": "s081",
    "title": "5 receitas temáticas para o Halloween",
    "summary": "Confira ideias para preparar pratos criativos e deixar o Halloween ainda mais divertido",
    "section": "paladar",
@@ -7141,7 +6849,7 @@
    "checks": []
   },
   {
-   "id": "s072",
+   "id": "s080",
    "title": "Bebê de 12 dias morre após ser atingido na cabeça por abacate na Argentina",
    "summary": "Um bebê de apenas 12 dias morreu após ser atingido na cabeça por um abacate enquanto estava no colo da mãe. O caso ocorreu na cidade de Quilmes, na Argentina.",
    "section": "cotidiano",
@@ -7196,7 +6904,7 @@
    "checks": []
   },
   {
-   "id": "s071",
+   "id": "s079",
    "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
    "summary": "Levantamento com 155 eleitos do PL aponta que 117 ignoraram a carta de Flávio Bolsonaro que questiona o resultado das urnas.",
    "section": "expresso",
@@ -7248,25 +6956,14 @@
    "hub": {
     "key": "flávio bolsonaro",
     "label": "Flávio Bolsonaro",
-    "size": 8
+    "size": 6
    },
    "longreads": [],
-   "world": [
-    {
-     "source": "The Guardian",
-     "title": "‘Amateur morons’: Flávio Bolsonaro’s short-lived ‘president-elect’ claim met with mockery",
-     "link": "https://www.theguardian.com/world/2026/oct/30/flavio-bolsonaros-president-elect-claim-mockery-brazil",
-     "terms": [
-      "flávio bolsonaro",
-      "bolsonaro",
-      "flávio"
-     ]
-    }
-   ],
+   "world": [],
    "checks": []
   },
   {
-   "id": "s070",
+   "id": "s078",
    "title": "Rock the Mountain 2026: tudo o que você precisa saber sobre o festival",
    "summary": "O Rock the Mountain 2026 começou na sexta-feira (30), em Itaipava, distrito de Petrópolis, na Região Serrana do Rio de Janeiro. Em sua 13ª edição, o festival",
    "section": "entretenimento",
@@ -7321,7 +7018,7 @@
    "checks": []
   },
   {
-   "id": "s069",
+   "id": "s077",
    "title": "Marinho diz que não pretende ser chefe de gabinete de Lula",
    "summary": "Apesar da declaração, ministro afirma que está à disposição do presidente para cumprir qualquer missão em 2027",
    "section": "poder-governo",
@@ -7376,7 +7073,7 @@
    "checks": []
   },
   {
-   "id": "s067",
+   "id": "s075",
    "title": "Ex-príncipe Andrew pode ter traficado mulheres para castelo real na Escócia, investiga polícia",
    "summary": "Autoridades apuram denúncias de que residência oficial de férias da monarquia britânica teria sido usada para exploração sexual",
    "section": "mundo",
@@ -7431,7 +7128,7 @@
    "checks": []
   },
   {
-   "id": "s066",
+   "id": "s074",
    "title": "Votos antecipados batem recorde nos EUA, com mais de 49 milhões depositados a três dias das eleições",
    "summary": "A participação antecipada neste ciclo eleitoral dos Estados Unidos bateu um recorde. Mais de 49 milhões de americanos já votaram, seja pessoalmente ou pelo correio , de acordo com o Laboratório Eleitoral da Universidade da Flórida, um aumento em relação aos quase 46 milhões que votaram antes do dia ",
    "section": "mundo",
@@ -7486,7 +7183,7 @@
    "checks": []
   },
   {
-   "id": "s065",
+   "id": "s073",
    "title": "EUA cancelam foto de família do G20 após boicote à Rússia",
    "summary": "Alemanha e Reino Unido recusaram registro com Sergei Lavrov; anfitriões disseram querer evitar que impasse desviasse a atenção das discussões",
    "section": "poder-internacional",
@@ -7541,7 +7238,7 @@
    "checks": []
   },
   {
-   "id": "s064",
+   "id": "s072",
    "title": "Ator demitido pela Marvel afirma que vai se candidatar à presidência dos EUA",
    "summary": "Intérprete de James Rhodes no filme \"Homem de Ferro\", de 2008, Terrence Howard quer se candidatar à presidência dos Estados Unidos . Leia mais (10/31/2026 - 09h18)",
    "section": "voceviu",
@@ -7596,7 +7293,7 @@
    "checks": []
   },
   {
-   "id": "s063",
+   "id": "s071",
    "title": "Irã atualiza alvos de EUA e Israel e ordena resposta sem limites geográficos",
    "summary": "Em um comunicado, o líder supremo do Irã, Mojtaba Khamenei, afirmou neste sábado (31) que o país poderá voltar a atacar os Estados Unidos caso a guerra seja retomada pelos EUA no Oriente Médio. Khamenei mencionou uma retaliação sem \"limites geográficos\" diante de uma eventual ofensiva.",
    "section": "mundo",
@@ -7651,7 +7348,7 @@
    "checks": []
   },
   {
-   "id": "s062",
+   "id": "s070",
    "title": "Mojtaba Khamenei, líder supremo do Irã, adverte Estados Unidos contra novos ataques",
    "summary": "Declaração foi feita num momento de incertezas sobre a continuidade da guerra no Oriente Médio",
    "section": "mundo",
@@ -7706,7 +7403,7 @@
    "checks": []
   },
   {
-   "id": "s061",
+   "id": "s069",
    "title": "Nevoeiro causa cancelamentos e desvios de voos no aeroporto de Confins",
    "summary": "Denso nevoeiro provoca desvios e cancelamentos na madrugada de sábado após fortes chuvas na região metropolitana",
    "section": "brasil",
@@ -7761,7 +7458,7 @@
    "checks": []
   },
   {
-   "id": "s060",
+   "id": "s068",
    "title": "Dólar sobe a R$ 5,44 e tem maior cotação de 2026; alta na semana é de 9,15%",
    "summary": "Indicador avançou depois da vitória de Lula e subiu de 119,26 pontos em 23 de outubro para 141,02 pontos neste sábado (31.out)",
    "section": "mercados",
@@ -7816,7 +7513,7 @@
    "checks": []
   },
   {
-   "id": "s058",
+   "id": "s066",
    "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa, diz PF",
    "summary": "Operação Tomada de Contas indica que conselheiro Sérgio Ricardo de Almeida, preso na quinta, 29, sob suspeita de liderar operadores financeiros em esquema de propinas na Corte estadual, fez 64 saques no guichê da agência e outros 86 em terminal de autoatendimento durante dez meses, em 2025; Estadão ",
    "section": "politica",
@@ -7871,7 +7568,7 @@
    "checks": []
   },
   {
-   "id": "s057",
+   "id": "s065",
    "title": "Caso Porsche: Fernando Sastre é condenado a 17 anos de prisão em SP",
    "summary": "O empresário Fernando Sastre de Andrade Filho foi condenado a 17 anos, um mês e dez dias de prisão, em regime inicialmente fechado, pela morte do motorista de aplicativo Ornaldo da Silva Viana, de 52 anos, e pelos ferimentos graves provocados em um passageiro durante um acidente na zona leste de São",
    "section": "",
@@ -7926,7 +7623,7 @@
    "checks": []
   },
   {
-   "id": "s056",
+   "id": "s064",
    "title": "Chuvas intensas e ar seco atingem o país na virada do mês",
    "summary": "Inmet emite avisos de tempestades para o Sudeste e o Centro-Oeste e alerta para baixa umidade do ar no Nordeste durante o fim de semana",
    "section": "meio-ambiente",
@@ -7981,53 +7678,53 @@
    "checks": []
   },
   {
-   "id": "s055",
-   "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
-   "summary": "Patrick Stewart morreu na quarta-feira (28/10), em Los Angeles, nos Estados Unidos. Ele era uma lenda dos X-Men",
-   "section": "saude",
-   "section_label": "Saúde",
-   "avg_bias": 0.0,
+   "id": "s063",
+   "title": "Jornalista de 36 anos morre após quase dois meses internado por AVC hemorrágico em São Paulo",
+   "summary": "Com 18 anos de carreira, profissional teve passagens pela Record, CBN e UFSCar; família autorizou a doação de órgãos",
+   "section": "brasil",
+   "section_label": "Brasil",
+   "avg_bias": 0.85,
    "counts": {
     "L": 0,
-    "C": 2,
-    "R": 0,
+    "C": 1,
+    "R": 1,
     "total": 2
    },
    "pct": {
     "L": 0,
-    "C": 100,
-    "R": 0
+    "C": 50,
+    "R": 50
    },
    "blindspot": null,
-   "updated": "2026-10-31T16:23:36+00:00",
+   "updated": "2026-10-31T16:13:06+00:00",
    "articles": [
     {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "O adeus a Patrick Stewart, uma lenda dos X-Men",
-     "link": "https://www.metropoles.com/colunas/metropoles-games/o-adeus-a-patrick-stewart-uma-lenda-dos-x-men",
-     "bias": 0.0,
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Jornalista de 36 anos morre após quase dois meses internado por AVC hemorrágico em São Paulo",
+     "link": "https://oglobo.globo.com/brasil/noticia/2026/10/31/jornalista-de-36-anos-morre-apos-quase-dois-meses-internado-por-avc-hemorragico-em-sao-paulo.ghtml",
+     "bias": 0.1,
      "bucket": "C",
      "via": "fonte",
-     "section": "colunas",
-     "section_label": "Opinião",
-     "image": "https://images.metroimg.com/2026/10/alem-da-ficcao-cientifica-patrick-stewart-marcou-o-cinema-como-o-professor-charles-xavier-lider-dos-x-men.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://s2-oglobo.glbimg.com/8zkY_VoolJXIrTyoWLjrxbn9KlE=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/4/p/FhP5OIR3ubArfRBiu3Gw/image-2026-10-31t121059.333.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
     },
     {
-     "source": "SBT News",
-     "source_id": "sbt",
-     "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
-     "link": "https://sbtnews.sbt.com.br/noticia/saude/patrick-stewart-entenda-doencas-que-afetaram-ator-de-x-men",
-     "bias": 0.0,
-     "bucket": "C",
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Jornalista Eduardo Sotto Mayor morre aos 36 anos depois de AVC hemorrágico",
+     "link": "https://revistaoeste.com/imprensa/jornalista-eduardo-sotto-mayor-morre-aos-36-anos-depois-de-avc-hemorragico/",
+     "bias": 1.6,
+     "bucket": "R",
      "via": "fonte",
-     "section": "saude",
-     "section_label": "Saúde",
-     "image": "https://sbtnews.sbt.com.br/imagens/Patrick_Stewart_em_2015_4dc6d3ab48.jpg",
-     "factuality": "high",
-     "ownership": "individuo"
+     "section": "imprensa",
+     "section_label": "Mídia",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Eduardo-Sotto-Mayor.png",
+     "factuality": "low",
+     "ownership": "independente"
     }
    ],
    "hub": null,
@@ -8036,7 +7733,7 @@
    "checks": []
   },
   {
-   "id": "s054",
+   "id": "s062",
    "title": "‘Brasil com S’: estudantes organizam novos atos em defesa da democracia",
    "summary": "Mobilização promovida por entidades estudantis busca dar sustentação ao presidente Lula, reeleito no último domingo",
    "section": "blogs",
@@ -8091,7 +7788,7 @@
    "checks": []
   },
   {
-   "id": "s053",
+   "id": "s061",
    "title": "Veja como se proteger do golpe do WhatsApp que esvazia sua conta com apenas um toque",
    "summary": "Falha em celulares desatualizados permite acesso hacker sem clique em links ou download de arquivos maliciosos. Veja como se proteger",
    "section": "economia",
@@ -8146,7 +7843,7 @@
    "checks": []
   },
   {
-   "id": "s052",
+   "id": "s060",
    "title": "Novo Concurso Nacional Unificado pode oferecer até 3 mil vagas em 2027",
    "summary": "A primeira edição do concurso foi realizada em 2024. A segunda, em 2025",
    "section": "",
@@ -8201,7 +7898,7 @@
    "checks": []
   },
   {
-   "id": "s051",
+   "id": "s059",
    "title": "Ex-BBBs Renata Saldanha e Maike anunciam gravidez do primeiro filho",
    "summary": "Casal formado no reality show revelou a novidade nas redes sociais com um vídeo; veja",
    "section": "entretenimento",
@@ -8256,7 +7953,7 @@
    "checks": []
   },
   {
-   "id": "s050",
+   "id": "s058",
    "title": "Reino Unido sinaliza que governo vai considerar um pedido de desculpas por seu papel na escravidão",
    "summary": "Primeiro-ministro Andy Burnham sinaliza abertura ao reconhecimento da responsabilidade histórica britânica, enquanto países caribenhos mantêm cobrança por reparações",
    "section": "internacional",
@@ -8311,7 +8008,7 @@
    "checks": []
   },
   {
-   "id": "s049",
+   "id": "s057",
    "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça",
    "summary": "Jehanne era praticamente desconhecida na cidade francesa de Dijon durante o inverno de 1472, quando foi vítima de um ato de violência atroz. Leia mais (10/31/2026 - 11h08)",
    "section": "mundo",
@@ -8366,7 +8063,7 @@
    "checks": []
   },
   {
-   "id": "s048",
+   "id": "s056",
    "title": "TJ de Alagoas determina que governo libere acesso de equipe de transição de JHC a sistemas estaduais",
    "summary": "O Governo de Alagoas publicou, nesta sexta-feira (30), o decreto que estabelece as regras para a transição de governo. A abertura dos trabalhos está marcada para a próxima terça-feira (3), pela manhã, na sede da Vice-Governadoria, em Maceió. O governador eleito, João Henrique Caldas (JHC), tem até 6",
    "section": "politica",
@@ -8421,7 +8118,7 @@
    "checks": []
   },
   {
-   "id": "s047",
+   "id": "s055",
    "title": "Lições da vitória: mais povo, menos austeridade",
    "summary": "Após a vitória sobre o fascismo, o desafio é construir uma Pauta do Povo para enfrentar o rentismo, ampliar direitos e reconstruir o país.",
    "section": "opiniao",
@@ -8476,7 +8173,7 @@
    "checks": []
   },
   {
-   "id": "s046",
+   "id": "s054",
    "title": "Homem é preso com arsenal de armas e explosivos em Guarujá",
    "summary": "PM suspeita que arsenal seja usado por facções criminosas para crimes de grande porte. Homem já possuia passagem por porte ilegal de armas",
    "section": "brasil",
@@ -8531,7 +8228,7 @@
    "checks": []
   },
   {
-   "id": "s045",
+   "id": "s053",
    "title": "Vídeo: Incêndio destrói hotel próximo ao Everest em meio a nevasca; hóspedes são evacuados",
    "summary": "Todos os hóspedes foram retirados em segurança e não há relatos sobre vítimas",
    "section": "mundo",
@@ -8586,7 +8283,7 @@
    "checks": []
   },
   {
-   "id": "s044",
+   "id": "s052",
    "title": "Tragédia em Congonhas: acidente com Fokker 100 que matou 99 pessoas completa 30 anos; relembre",
    "summary": "Aeronave caiu sobre casas na zona sul de São Paulo, segundos após decolar do Aeroporto de Congonhas, em 31 de outubro de 1996",
    "section": "brasil",
@@ -8641,7 +8338,7 @@
    "checks": []
   },
   {
-   "id": "s043",
+   "id": "s051",
    "title": "Primeiro paciente recebe tratamento pioneiro no mundo com células-tronco para Parkinson",
    "summary": "Terapia usa células produzidas em laboratório para repor neurônios que fabricam dopamina e foram perdidos em pacientes com Parkinson",
    "section": "saude",
@@ -8696,7 +8393,7 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s050",
    "title": "Binance diz ter coberto 90% das perdas após ataque hacker de mais de US$ 6 bilhões",
    "summary": "Binance promete cobrir prejuízo de investidores após roubo bilionário de hackers A corretora de criptomoedas Binance, alvo de um ataque hacker que resultou no roubo de mais de US$ 6 bilhões, anunciou neste sábado (31) que já conseguiu cobrir 90% do valor das perdas. A empresa afirmou que usará recur",
    "section": "tecnologia",
@@ -8751,7 +8448,7 @@
    "checks": []
   },
   {
-   "id": "s041",
+   "id": "s049",
    "title": "Ministros vão ao Mato Grosso do Sul para investigar violência política contra indígenas",
    "summary": "Denúncias envolvem tentativas de assassinato, incêndio e ameaça de envenenamento de água",
    "section": "brasil",
@@ -8797,6 +8494,391 @@
      "section_label": "Agronegocio",
      "image": "",
      "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s048",
+   "title": "Selma Blair se emociona e pede desculpas após prisão por morder comissários",
+   "summary": "A atriz Selma Blair, de 54 anos, se manifestou pela primeira vez sobre sua prisão, ocorrida em ...",
+   "section": "pop",
+   "section_label": "Pop",
+   "avg_bias": 0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:00:30+00:00",
+   "articles": [
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Selma Blair pede desculpas após morder funcionário de companhia aérea",
+     "link": "https://www.terra.com.br/diversao/gente/selma-blair-pede-desculpas-apos-morder-funcionario-de-companhia-aerea,50959a64d229051405b32edca523a3d6t3wupyo1.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "diversao",
+     "section_label": "Diversao",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Selma Blair se emociona e pede desculpas após prisão por morder comissários",
+     "link": "https://www.cnnbrasil.com.br/pop/celebridades/selma-blair-se-emociona-e-pede-desculpas-apos-prisao-por-morder-comissarios/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "pop",
+     "section_label": "Pop",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s047",
+   "title": "Período de Piracema começa neste domingo e restringe pesca em rios do Oeste Paulista",
+   "summary": "Polícia apreende itens de pesca proibidos e adverte pescadores durante pré-piracema na região de Presidente Prudente (SP) Reprodução/Polícia Ambiental Começa neste domingo (1º) o período da Piracema na região de Presidente Prudente (SP), com restrições severas à pesca que incluem os principais rios ",
+   "section": "sp",
+   "section_label": "São Paulo",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:05:45+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "Período de Piracema começa neste domingo e restringe pesca em rios do Oeste Paulista",
+     "link": "https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/10/31/periodo-de-piracema-comeca-neste-domingo-e-restringe-pesca-em-rios-do-oeste-paulista.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "sp",
+     "section_label": "São Paulo",
+     "image": "https://s2-g1.glbimg.com/TwJx1OCU_pALeY9xr50e2h8P3TA=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/9/b/OcAJmxQHuM40xMtHN3Ag/whatsapp-image-2026-10-21-at-15.23.39.jpeg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Período de defeso da piracema tem início neste domingo em bacias do RS e de SC",
+     "link": "https://www.terra.com.br/noticias/brasil/cidades/periodo-de-defeso-da-piracema-tem-inicio-neste-domingo-em-bacias-do-rs-e-de-sc,4444543d83da6a2048f3ccf0473c85e1hm0y1ag0.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s046",
+   "title": "SBT bate martelo sobre apresentadores de nova atração matinal",
+   "summary": "Revista eletrônica estreia em novembro e terá trio no comando da atração. Saiba detalhes",
+   "section": "colunas",
+   "section_label": "Opinião",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:07:45+00:00",
+   "articles": [
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "SBT bate martelo sobre apresentadores de nova atração matinal",
+     "link": "https://www.metropoles.com/colunas/fabia-oliveira/sbt-bate-martelo-sobre-apresentadores-de-nova-atracao-matinal",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "colunas",
+     "section_label": "Opinião",
+     "image": "https://images.metroimg.com/2026/10/sbt-bate-martelo-sobre-apresentadores-nova-atracao-matinal-3.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "SBT define apresentadores de novo programa matinal",
+     "link": "https://www.terra.com.br/diversao/tv/sbt-define-apresentadores-de-novo-programa-matinal,71f195515c9b0a9e59e69757c547173aztwunpib.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "diversao",
+     "section_label": "Diversao",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s045",
+   "title": "Fuvest: 5 erros para não cometer na hora da prova",
+   "summary": "Primeira fase será realizada neste domingo e terá 80 questões de múltipla escolha, dez a menos do que nas edições anteriores",
+   "section": "educacao",
+   "section_label": "Educação",
+   "avg_bias": -0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:10:52+00:00",
+   "articles": [
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Fuvest: 5 erros para não cometer na hora da prova",
+     "link": "https://www.estadao.com.br/educacao/fuvest-5-erros-para-nao-cometer-na-hora-da-prova/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "educacao",
+     "section_label": "Educação",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Fuvest: 5 erros para não cometer na hora da prova",
+     "link": "https://www.terra.com.br/noticias/educacao/fuvest-5-erros-para-nao-cometer-na-hora-da-prova,fbd4b0cfec5fb73107460d6043014116jnewaf8c.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "educacao",
+     "section_label": "Educação",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s044",
+   "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges",
+   "summary": "Com entrada gratuita, edição de aniversário reúne gerações de artistas e homenageia Lô e a família Borges neste domingo, 1º de novembro",
+   "section": "cultura",
+   "section_label": "Cultura",
+   "avg_bias": -0.05,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:10:56+00:00",
+   "articles": [
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges",
+     "link": "https://www.estadao.com.br/cultura/sarau-brasilis-celebra-tres-anos-e-leva-encontros-musicais-ao-ccsp-com-homenagem-a-lo-borges/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "cultura",
+     "section_label": "Cultura",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges",
+     "link": "https://www.terra.com.br/diversao/sarau-brasilis-celebra-tres-anos-e-leva-encontros-musicais-ao-ccsp-com-homenagem-a-lo-borges,368984f2a3307b377282b59f6def3e07vrvgn23j.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "diversao",
+     "section_label": "Diversao",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s043",
+   "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro",
+   "summary": "Por Luciana Magalhaes e Lisandra Paraguassu",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:11:27+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/reuters/2026/10/31/quando-os-onibus-pararam-no-dia-da-eleicao-o-exercito-de-lula-pegou-as-chaves-do-carro.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro",
+     "link": "https://www.terra.com.br/noticias/brasil/quando-os-onibus-pararam-no-dia-da-eleicao-o-exercito-de-lula-pegou-as-chaves-do-carro,cf64cc964559ad973794303c4c22d6356nepspkg.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s042",
+   "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores",
+   "summary": "Luis Silva deixou o cargo depois de reduções de pena para condenados por abuso sexual de menores",
+   "section": "poder-internacional",
+   "section_label": "Poder",
+   "avg_bias": 0.8,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T18:20:37+00:00",
+   "articles": [
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores",
+     "link": "https://www.poder360.com.br/poder-internacional/vice-ministro-da-justica-do-chile-renuncia-apos-reduzir-pena-de-abusadores/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-internacional",
+     "section_label": "Poder",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Vice-ministro da Justiça do Chile renuncia depois de reduzir pena de abusadores",
+     "link": "https://revistaoeste.com/mundo/vice-ministro-da-justica-do-chile-renuncia-depois-de-reduzir-pena-de-abusadores/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Chile.jpg",
+     "factuality": "low",
      "ownership": "independente"
     }
    ],

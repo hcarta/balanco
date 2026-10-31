@@ -186,4 +186,8 @@ def fetch_all(g1_limit: int = 100, lupa_limit: int = 500,
         seen.add(it["link"])
         uniq.append(it)
     uniq.sort(key=lambda x: x["published"], reverse=True)
+    # O payload do site exibe o rótulo legível; derivar aqui evita que cada
+    # consumidor invente o seu (e evita KeyError em _check_payload).
+    for it in uniq:
+        it["label"] = verdict_label(it["verdict"])
     return uniq

@@ -1,4 +1,48 @@
 {
- "sources": {},
- "matches": []
+ "sources": {
+  "bbcbr": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
+  },
+  "jovempan": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
+  }
+ },
+ "matches": [
+  {
+   "source_id": "bbcbr",
+   "source": "BBC Brasil",
+   "article": "Pragmatismo x ideologia: como Trump vai de fato lidar com as declarações de Flávio Bolsonaro sobre o Brasil?",
+   "article_link": "https://www.bbc.com/portuguese/articles/c64g18gdvqwjo?at_medium=RSS&at_campaign=rss",
+   "check": "Todas as declarações de Bolsonaro, checadas",
+   "check_link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9hVktnYVY1eHRZY3V6MzNrYzRNYk94cGZqNDRud1NhM19Zc29NVDJ4SGhpakNtQkpSVUZhVl8zZkkzVW1wTFpEMkxEZzVJOTd5ZlNFOUZEZkJONjdMejU5RVhJR2ZsN1h0anFR?oc=5",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.55,
+   "date": "2024-07-15T21:50:59+00:00",
+   "terms": "bolsonaro;declarações"
+  },
+  {
+   "source_id": "jovempan",
+   "source": "Jovem Pan",
+   "article": "Em live, Flávio fala em usar Congresso como ‘trincheira’ e diz que saiu do país ‘pelo Brasil’",
+   "article_link": "https://jovempan.com.br/politica/em-live-flavio-fala-em-usar-congresso-como-trincheira-e-diz-que-saiu-do-pais-pelo-brasil/",
+   "check": "Checamos a live de Flávio Bolsonaro",
+   "check_link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1XQmFXUDVTVlJYLUdqM1NqeC1mdy1ZYkh0cjdxRDJFSmZlcjhsX1NwRmdPZTU5YnhNSmNidTJBUm0tdmI0U1hmcWg0VDk0UEtLVFFoS0F4TDl6cFRKYkdLdTBlZldZa09HMGY2MzVKaEVVWk0?oc=5",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.54,
+   "date": "2026-10-02T10:00:00+00:00",
+   "terms": "flávio;live"
+  }
+ ]
 }
