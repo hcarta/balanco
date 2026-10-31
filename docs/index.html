@@ -70,10 +70,9 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 /* ── hero: destaque + repercussão no centro ── */
 .hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;padding:34px 0 6px;align-items:start;border-bottom:2px solid var(--ink)}
 .hero .featured{padding-bottom:0;margin-bottom:0;border-bottom:none}
-.hero-side{padding-top:6px}
-.hero-side .rt{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
-.hero-side .rnote{margin:0 0 4px}
+.hero-side{padding-top:0}
 .hero-side .hitem{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);cursor:pointer;align-items:flex-start}
+.hero-side .hitem:first-child{padding-top:2px}
 .hero-side .hitem:last-child{border-bottom:none}
 .hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:16.5px;line-height:1.3;margin:0 0 6px}
 .hero-side .hitem:hover h4{color:var(--accent)}
@@ -287,8 +286,6 @@ footer a.fl:hover{color:var(--accent)}
   <section class="hero" id="heroSec">
     <div id="featured"></div>
     <aside class="hero-side" id="heroSide">
-      <div class="rt">◎ Em repercussão no centro</div>
-      <p class="rnote">O essencial, segundo os veículos de centro de alta factualidade</p>
       <div id="heroList"></div>
     </aside>
   </section>
@@ -307,7 +304,7 @@ footer a.fl:hover{color:var(--accent)}
     <div class="rail-card" id="srcCard"></div>
     <div class="rail-card method">
       <div class="rt">◎ Como ler este balanço</div>
-      <p><b>Recorte</b>: sem esporte e sem conteúdo de serviço (loteria, horóscopo, previsão do tempo) — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e o bloco "Em repercussão no centro" destacam o que os veículos de centro com alta factualidade cobrem.</p>
+      <p><b>Recorte</b>: sem esporte e sem conteúdo de serviço (loteria, horóscopo, previsão do tempo) — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e as 3 mais repercutidas no centro, ao lado do destaque, mostram o que os veículos de centro com alta factualidade cobrem.</p>
       <p>É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Aqui sem AllSides/MBFC, a tabela é curadoria manual.</p>
       <p><b>Checagens</b>: o selo ⚑ liga a história a uma verificação do <b>G1 Fato ou Fake</b> ou da <b>Agência Lupa</b> quando a alegação coincide. É uma checagem <i>relacionada</i>, não um veredito sobre a matéria.</p>
       <p>Corpos completos (quando públicos) alimentam só a análise; na tela aparecem a description pública ou trechos curtos, sempre com link para o original.</p>
