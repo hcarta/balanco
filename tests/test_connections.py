@@ -8,8 +8,9 @@ futura degrade a conexão sem que alguém veja.
 Medido na criação (31/10/2026):
   longform: P 0.94 / R 0.62   (60 pares, 26 positivos)
   intl:     P 1.00 / R 0.91   (40 pares, 11 positivos; F3.4)
-  check:    P 1.00 / R 0.33   (67 pares,  3 positivos — amostra pequena por
-                                desenho: checagem de mesma alegação é rara)
+  check:    P 1.00 / R 0.67   (67 pares,  3 positivos — amostra pequena por
+                                desenho: checagem de mesma alegação é rara;
+                                F4.2 recupera 2/3 sem FP)
 """
 import json
 import os
@@ -89,14 +90,22 @@ def test_world_summary_needs_strong_entity():
 
 
 def test_check_precision_gate():
-    from app import build_idf, claim_overlap, tok
+    from app import build_idf, claim_match, tok
     sub = load("check")
-    titles = [t for p in sub for t in (p["a_title"], p["b_title"])]
+    # Corpus realista: raridade medida só sobre os 134 títulos dos pares
+    # inflava o DF e o ganho de recall desaparecia em produção (31/10/2026).
+    with open(os.path.join(BASE, "docs", "data.json"), encoding="utf-8") as f:
+        data = json.load(f)
+    bg = [s["title"] for s in data["stories"]]
+    bg += [a["title"] for s in data["stories"] for a in s["articles"]]
+    bg += [c["title"] for c in data.get("factchecks", [])]
+    titles = [t for p in sub for t in (p["a_title"], p["b_title"])] + bg
     idf, df = build_idf([set(tok(t)) for t in titles])
-    preds = [claim_overlap(set(tok(p["a_title"])), set(tok(p["b_title"])), idf, df) > 0
+    preds = [claim_match(set(tok(p["a_title"])), set(tok(p["b_title"])), idf, df) > 0
              for p in sub]
     prec, rec, cm = _pr(preds, [p["label"] for p in sub])
     assert prec >= 0.90, f"precisão das checagens caiu: {prec:.2f} {cm}"
+    assert rec >= 0.60, f"revogação das checagens caiu: {rec:.2f} {cm}"
 
 
 def test_embed_boost_does_not_hurt_precision():

@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-31T16:55:45.799564+00:00",
- "n_articles": 1468,
+ "generated_at": "2026-10-31T17:02:48.316893+00:00",
+ "n_articles": 1470,
  "n_stories": 120,
  "n_factchecks": 700,
  "n_matches": 0,
- "n_new": 170,
+ "n_new": 6,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 140,
+    "last_ms": 108,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 99,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 156,
+    "last_ms": 123,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 14,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 97,
+    "last_ms": 79,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 51,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 52,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 330,
+    "last_ms": 169,
     "err_streak": 0,
     "empty": false
    }
@@ -99,11 +99,11 @@
     "revisar": false
    },
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 31,
     "last_n_total": 26,
     "last_status": "ok",
-    "last_ms": 99,
+    "last_ms": 76,
     "err_streak": 0,
     "empty": false
    }
@@ -118,11 +118,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 48,
     "last_status": "ok",
-    "last_ms": 109,
+    "last_ms": 50,
     "err_streak": 0,
     "empty": false
    }
@@ -137,11 +137,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 16,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 17,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 325,
+    "last_ms": 329,
     "err_streak": 0,
     "empty": false
    }
@@ -156,11 +156,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 5,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 284,
+    "last_ms": 259,
     "err_streak": 0,
     "empty": false
    }
@@ -176,11 +176,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 0,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 135,
+    "last_ms": 85,
     "err_streak": 0,
     "empty": false
    }
@@ -196,11 +196,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 0,
     "last_n_total": 2,
     "last_status": "ok",
-    "last_ms": 273,
+    "last_ms": 344,
     "err_streak": 0,
     "empty": false
    }
@@ -216,11 +216,11 @@
    "owner_detail": "Grupo Silvio Santos (família Abravanel)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 109,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 137,
+    "last_ms": 132,
     "err_streak": 0,
     "empty": false
    }
@@ -235,11 +235,11 @@
    "owner_detail": "Grupo Record (Edir Macedo)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 100,
     "last_n_total": 18,
     "last_status": "ok",
-    "last_ms": 173,
+    "last_ms": 118,
     "err_streak": 0,
     "empty": false
    }
@@ -255,11 +255,11 @@
    "owner_detail": "Grupo Bandeirantes (família Saad)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 375,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 89,
+    "last_ms": 52,
     "err_streak": 0,
     "empty": false
    }
@@ -275,11 +275,11 @@
    "owner_detail": "Deutsche Welle (Alemanha, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 21,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 20,
     "last_n_total": 29,
     "last_status": "ok",
-    "last_ms": 307,
+    "last_ms": 927,
     "err_streak": 0,
     "empty": false
    }
@@ -294,11 +294,11 @@
    "owner_detail": "Editora Abril",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 20,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 59,
     "last_status": "ok",
-    "last_ms": 109,
+    "last_ms": 77,
     "err_streak": 0,
     "empty": false
    }
@@ -313,11 +313,11 @@
    "owner_detail": "Editora Três",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 26,
     "last_status": "ok",
-    "last_ms": 108,
+    "last_ms": 219,
     "err_streak": 0,
     "empty": false
    }
@@ -333,11 +333,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 15,
     "last_n_total": 9,
     "last_status": "ok",
-    "last_ms": 7773,
+    "last_ms": 8009,
     "err_streak": 0,
     "empty": false
    }
@@ -353,11 +353,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 10,
     "last_n_total": 10,
     "last_status": "ok",
-    "last_ms": 170,
+    "last_ms": 119,
     "err_streak": 0,
     "empty": false
    }
@@ -373,11 +373,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 0,
     "last_n_total": 5,
     "last_status": "ok",
-    "last_ms": 845,
+    "last_ms": 984,
     "err_streak": 0,
     "empty": false
    }
@@ -393,11 +393,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 0,
     "last_n_total": 3,
     "last_status": "ok",
-    "last_ms": 130,
+    "last_ms": 122,
     "err_streak": 0,
     "empty": false
    }
@@ -413,11 +413,11 @@
    "owner_detail": "Catar (financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 25,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 30,
     "last_status": "ok",
-    "last_ms": 76,
+    "last_ms": 107,
     "err_streak": 0,
     "empty": false
    }
@@ -433,11 +433,11 @@
    "owner_detail": "Warner Bros. Discovery",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 29,
     "last_n_total": 6,
     "last_status": "ok",
-    "last_ms": 462,
+    "last_ms": 935,
     "err_streak": 0,
     "empty": false
    }
@@ -453,11 +453,11 @@
    "owner_detail": "Fox Corporation",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 25,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 12,
     "last_status": "ok",
-    "last_ms": 267,
+    "last_ms": 253,
     "err_streak": 0,
     "empty": false
    }
@@ -473,11 +473,11 @@
    "owner_detail": "The New York Times Company",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 57,
-    "last_n_total": 59,
+    "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 42,
+    "last_ms": 51,
     "err_streak": 0,
     "empty": false
    }
@@ -493,11 +493,11 @@
    "owner_detail": "Scott Trust",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 45,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 44,
     "last_status": "ok",
-    "last_ms": 50,
+    "last_ms": 47,
     "err_streak": 0,
     "empty": false
    }
@@ -513,11 +513,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 31,
     "last_n_total": 39,
     "last_status": "ok",
-    "last_ms": 52,
+    "last_ms": 47,
     "err_streak": 0,
     "empty": false
    }
@@ -532,11 +532,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 54,
     "last_status": "ok",
-    "last_ms": 82,
+    "last_ms": 100,
     "err_streak": 0,
     "empty": false
    }
@@ -551,11 +551,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 98,
+    "last_ms": 128,
     "err_streak": 0,
     "empty": false
    }
@@ -570,11 +570,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
-    "last_n_total": 49,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
+    "last_n_total": 50,
     "last_status": "ok",
-    "last_ms": 641,
+    "last_ms": 410,
     "err_streak": 0,
     "empty": false
    }
@@ -589,11 +589,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 17,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 56,
     "last_status": "ok",
-    "last_ms": 94,
+    "last_ms": 100,
     "err_streak": 0,
     "empty": false
    }
@@ -615,11 +615,11 @@
     "revisar": false
    },
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 9,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 37,
     "last_status": "ok",
-    "last_ms": 167,
+    "last_ms": 108,
     "err_streak": 0,
     "empty": false
    }
@@ -634,11 +634,11 @@
    "owner_detail": "Revista Oeste",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 45,
     "last_status": "ok",
-    "last_ms": 85,
+    "last_ms": 102,
     "err_streak": 0,
     "empty": false
    }
@@ -654,11 +654,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 85,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 219,
+    "last_ms": 285,
     "err_streak": 0,
     "empty": false
    }
@@ -674,11 +674,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 657,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 245,
+    "last_ms": 194,
     "err_streak": 0,
     "empty": false
    }
@@ -694,11 +694,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 162,
+    "last_ms": 170,
     "err_streak": 0,
     "empty": false
    }
@@ -714,11 +714,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T16:53:56.095636+00:00",
+    "last_run": "2026-10-31T17:00:56.363504+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 512,
+    "last_ms": 391,
     "err_streak": 0,
     "empty": false
    }
@@ -1657,201 +1657,6 @@
    "checks": []
   },
   {
-   "id": "s002",
-   "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe",
-   "summary": "Confronto entre governo e oposição pelo controle do Tribunal Constitucional provoca protestos, mobilização policial e acusações de golpe de Estado",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": 0.13,
-   "counts": {
-    "L": 2,
-    "C": 7,
-    "R": 3,
-    "total": 12
-   },
-   "pct": {
-    "L": 17,
-    "C": 58,
-    "R": 25
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T17:53:21+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Crise institucional na Polônia leva presidente a convocar reuniões de emergência",
-     "link": "https://www.brasil247.com/mundo/crise-institucional-na-polonia-leva-presidente-a-convocar-reunioes-de-emergencia/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://www.brasil247.com/wp-content/uploads/2026/10/Novo-Projeto-2026-10-31T082333.530.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "CartaCapital",
-     "source_id": "carta",
-     "title": "Escalada da crise na Polônia: polícia é mobilizada ao redor do Tribunal Constitucional",
-     "link": "https://www.cartacapital.com.br/mundo/escalada-da-crise-na-polonia-policia-e-mobilizada-ao-redor-do-tribunal-constitucional/",
-     "bias": -1.2,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/10/AFP__20261030__D4YD9ZQ__v1__MidRes__CrisePolitiqueEnPologneLePresidentDuTribunalCons.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe",
-     "link": "https://www1.folha.uol.com.br/mundo/2026/10/presidente-da-polonia-convoca-reunioes-apos-crise-no-tribunal-constitucional-e-acusacao-de-golpe.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Polônia: presidente convoca partidos após bloqueio do Tribunal Constitucional",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/rfi/2026/10/31/polonia-presidente-convoca-partidos-apos-bloqueio-do-tribunal-constitucional.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Polônia convoca reunião de emergência em meio a crise e acusações de golpe",
-     "link": "https://www.metropoles.com/mundo/polonia-convoca-reuniao-de-emergencia-em-meio-a-crise-e-acusacoes-de-golpe",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://images.metroimg.com/2025/10/01181739/polonia-4.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Suspensão de chefe do Tribunal Constitucional gera manifestação na Polônia",
-     "link": "https://www.metropoles.com/mundo/suspensao-de-chefe-do-tribunal-constitucional-gera-manifestacao-na-polonia",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://images.metroimg.com/2026/10/gettyimages-2302290398.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Presidente da Polônia denuncia violação constitucional e convoca reunião",
-     "link": "https://www.band.com.br/internacional/presidente-da-polonia-denuncia-violacao-constitucional-e-convoca-reuniao",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "O Globo",
-     "source_id": "oglobo",
-     "title": "Presidente da Polônia convoca consultas de emergência após crise no Tribunal Constitucional",
-     "link": "https://oglobo.globo.com/mundo/noticia/2026/10/31/presidente-da-polonia-convoca-consultas-de-emergencia-apos-crise-no-tribunal-constitucional.ghtml",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://s2-oglobo.glbimg.com/a0GTxdQY7sE0ZL_ZRWyDd-HmsNI=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/N/Z/KVC0DZTiGOXuNDq17sVw/116768054-protesters-force-open-a-metal-gate-leading-to-the-courtyard-outside-the-headquarters-of-po.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Crise institucional por controle do Supremo se aprofunda na Polônia",
-     "link": "https://valor.globo.com/mundo/noticia/2026/10/31/crise-institucional-por-controle-do-supremo-se-aprofunda-na-polonia.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://s2-valor.glbimg.com/Ng3ZkaZvmXHtiZxqcHV7cbuEvf8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/h/B/bcChwERvinQKKMXlmjeg/2026-10-31t002400z-2229601-rc2zdoaa5vx4-rtrmadp-3-poland-president-judiciary.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Crise no Tribunal Constitucional polonês gera protestos em Varsóvia",
-     "link": "https://www.gazetadopovo.com.br/mundo/crise-no-tribunal-constitucional-polones-gera-protestos-em-varsovia/",
-     "bias": 1.2,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Presidente da Polônia convoca reunião de emergência em meio a crise institucional",
-     "link": "https://jovempan.com.br/mundo/presidente-da-polonia-convoca-reuniao-de-emergencia-em-meio-a-crise-institucional/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "Crise no Tribunal Constitucional da Polônia leva presidente a convocar reunião de emergência",
-     "link": "https://revistaoeste.com/mundo/crise-no-tribunal-constitucional-da-polonia-leva-presidente-a-convocar-reuniao-de-emergencia/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Polonia.jpg",
-     "factuality": "low",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
    "id": "s001",
    "title": "Sem os festivais criados e produzidos por Solano Ribeiro a partir de 1965, a MPB não teria surgido com tanta força",
    "summary": "Crítico e produtor musical, Solano Ribeiro morreu aos 87 anos em São Paulo. Ele ajudou a organizar festivais que revelaram nomes da MPB.",
@@ -2037,6 +1842,187 @@
      "section": "brasil",
      "section_label": "Brasil",
      "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Solano-Ribeiro-2.jpg",
+     "factuality": "low",
+     "ownership": "independente"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s002",
+   "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe",
+   "summary": "Confronto entre governo e oposição pelo controle do Tribunal Constitucional provoca protestos, mobilização policial e acusações de golpe de Estado",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": 0.14,
+   "counts": {
+    "L": 2,
+    "C": 6,
+    "R": 3,
+    "total": 11
+   },
+   "pct": {
+    "L": 18,
+    "C": 55,
+    "R": 27
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T17:53:21+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Crise institucional na Polônia leva presidente a convocar reuniões de emergência",
+     "link": "https://www.brasil247.com/mundo/crise-institucional-na-polonia-leva-presidente-a-convocar-reunioes-de-emergencia/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://www.brasil247.com/wp-content/uploads/2026/10/Novo-Projeto-2026-10-31T082333.530.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Escalada da crise na Polônia: polícia é mobilizada ao redor do Tribunal Constitucional",
+     "link": "https://www.cartacapital.com.br/mundo/escalada-da-crise-na-polonia-policia-e-mobilizada-ao-redor-do-tribunal-constitucional/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/10/AFP__20261030__D4YD9ZQ__v1__MidRes__CrisePolitiqueEnPologneLePresidentDuTribunalCons.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/presidente-da-polonia-convoca-reunioes-apos-crise-no-tribunal-constitucional-e-acusacao-de-golpe.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Polônia: presidente convoca partidos após bloqueio do Tribunal Constitucional",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/rfi/2026/10/31/polonia-presidente-convoca-partidos-apos-bloqueio-do-tribunal-constitucional.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Polônia convoca reunião de emergência em meio a crise e acusações de golpe",
+     "link": "https://www.metropoles.com/mundo/polonia-convoca-reuniao-de-emergencia-em-meio-a-crise-e-acusacoes-de-golpe",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://images.metroimg.com/2025/10/01181739/polonia-4.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Presidente da Polônia denuncia violação constitucional e convoca reunião",
+     "link": "https://www.band.com.br/internacional/presidente-da-polonia-denuncia-violacao-constitucional-e-convoca-reuniao",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "O Globo",
+     "source_id": "oglobo",
+     "title": "Presidente da Polônia convoca consultas de emergência após crise no Tribunal Constitucional",
+     "link": "https://oglobo.globo.com/mundo/noticia/2026/10/31/presidente-da-polonia-convoca-consultas-de-emergencia-apos-crise-no-tribunal-constitucional.ghtml",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://s2-oglobo.glbimg.com/a0GTxdQY7sE0ZL_ZRWyDd-HmsNI=/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2026/N/Z/KVC0DZTiGOXuNDq17sVw/116768054-protesters-force-open-a-metal-gate-leading-to-the-courtyard-outside-the-headquarters-of-po.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "Crise institucional por controle do Supremo se aprofunda na Polônia",
+     "link": "https://valor.globo.com/mundo/noticia/2026/10/31/crise-institucional-por-controle-do-supremo-se-aprofunda-na-polonia.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://s2-valor.glbimg.com/Ng3ZkaZvmXHtiZxqcHV7cbuEvf8=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/h/B/bcChwERvinQKKMXlmjeg/2026-10-31t002400z-2229601-rc2zdoaa5vx4-rtrmadp-3-poland-president-judiciary.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Crise no Tribunal Constitucional polonês gera protestos em Varsóvia",
+     "link": "https://www.gazetadopovo.com.br/mundo/crise-no-tribunal-constitucional-polones-gera-protestos-em-varsovia/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Presidente da Polônia convoca reunião de emergência em meio a crise institucional",
+     "link": "https://jovempan.com.br/mundo/presidente-da-polonia-convoca-reuniao-de-emergencia-em-meio-a-crise-institucional/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Crise no Tribunal Constitucional da Polônia leva presidente a convocar reunião de emergência",
+     "link": "https://revistaoeste.com/mundo/crise-no-tribunal-constitucional-da-polonia-leva-presidente-a-convocar-reuniao-de-emergencia/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/Polonia.jpg",
      "factuality": "low",
      "ownership": "independente"
     }
@@ -2659,7 +2645,7 @@
    ],
    "developments": [
     {
-     "id": "s044",
+     "id": "s043",
      "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
      "total": 3,
      "blindspot": null
@@ -3323,94 +3309,94 @@
    "checks": []
   },
   {
-   "id": "s017",
-   "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-   "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
-   "section": "politica",
-   "section_label": "Política",
-   "avg_bias": -0.24,
+   "id": "s015",
+   "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
+   "summary": "Líderes do Oriente Médio pedem calma diante do risco de escalada entre EUA, Israel e Irã",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": 0.7,
    "counts": {
-    "L": 2,
-    "C": 2,
-    "R": 1,
+    "L": 0,
+    "C": 3,
+    "R": 2,
     "total": 5
    },
    "pct": {
-    "L": 40,
-    "C": 40,
-    "R": 20
+    "L": 0,
+    "C": 60,
+    "R": 40
    },
-   "blindspot": null,
-   "updated": "2026-10-30T23:56:24+00:00",
+   "blindspot": "left",
+   "updated": "2026-10-31T14:58:25+00:00",
    "articles": [
     {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio",
-     "link": "https://www.diariodocentrodomundo.com.br/michelle-bolsonaro-defende-tarcisio-e-rebate-ataques-de-aliados-de-flavio/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "CartaCapital",
-     "source_id": "carta",
-     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
-     "link": "https://www.cartacapital.com.br/politica/michelle-se-manifesta-pela-1a-vez-apos-derrota-de-flavio-e-diz-que-nao-e-momento-de-procurar-culpados/",
-     "bias": -1.2,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/10/AFP__20231008__33XT3AU__v1__MidRes__BrazilAbortionReligionPoliticsProLifeRallyBolson-1.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "SBT News",
-     "source_id": "sbt",
-     "title": "Michelle defende Tarcísio e diz que Bolsonaro é grato a ele",
-     "link": "https://sbtnews.sbt.com.br/noticia/politica/michelle-defende-tarcisio-e-diz-que-bolsonaro-e-grato-a-ele",
+     "source": "Band",
+     "source_id": "band",
+     "title": "Oriente Médio pede calma diante do risco de escalada entre EUA, Israel e Irã",
+     "link": "https://www.band.com.br/internacional/oriente-medio-pede-calma-diante-do-risco-de-escalada-entre-eua-israel-e-ira",
      "bias": 0.0,
      "bucket": "C",
      "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://sbtnews.sbt.com.br/imagens/michelle_6a209bc041.jpg",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "",
      "factuality": "high",
      "ownership": "individuo"
     },
     {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "Michelle chama Jair Bolsonaro de 'líder' e diz que ex-presidente pede união, não busca por culpados",
-     "link": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/30/michelle-chama-jair-bolsonaro-de-lder-e-diz-que-ex-presidente-pede-unio-no-busca-por-culpados.ghtml",
-     "bias": 0.3,
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Arábia Saudita pede paz; Egito alerta para escalada entre EUA, Israel e Irã",
+     "link": "https://www.infomoney.com.br/mundo/arabia-saudita-egito-escalada-eua-israel-ira/",
+     "bias": 0.2,
      "bucket": "C",
      "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "https://s2-valor.glbimg.com/skbiMAJUBbyrsQcFtjGNo9Qw7fA=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/Y/u/4B1yFoSiirMvfL6wOwjQ/55616330404-c6d7329dc7-k.jpg",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
      "factuality": "high",
      "ownership": "conglomerado"
     },
     {
-     "source": "Gazeta do Povo",
-     "source_id": "gazeta",
-     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
-     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
-     "bias": 1.2,
+     "source": "Valor Econômico",
+     "source_id": "valor",
+     "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
+     "link": "https://valor.globo.com/mundo/noticia/2026/10/30/eua-determinam-que-funcionrios-no-essenciais-deixem-arbia-saudita-por-segurana.ghtml",
+     "bias": 0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://s2-valor.glbimg.com/O5M_OIfsW3zKrBTUWeg2wovF4ZU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/z/z/B4FZdpS52aleuDBvPv5Q/2026-10-12t121610z-2072317818-rc2m1oam78h9-rtrmadp-3-iran-crisis-saudi-riyadh.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Líderes do Oriente Médio pedem calma diante do risco de escalada entre os EUA e Irã",
+     "link": "https://jovempan.com.br/mundo/lideres-do-oriente-medio-pedem-calma-diante-do-risco-de-escalada-entre-os-eua-e-ira/",
+     "bias": 1.4,
      "bucket": "R",
      "via": "fonte",
-     "section": "eleicoes",
-     "section_label": "Eleições",
+     "section": "mundo",
+     "section_label": "Mundo",
      "image": "",
      "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "EUA retiram funcionários da Arábia Saudita por risco de ataques",
+     "link": "https://revistaoeste.com/mundo/eua-retiram-funcionarios-da-arabia-saudita-por-risco-de-ataques/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/EUA_Arabia-Saudita.jpeg",
+     "factuality": "low",
      "ownership": "independente"
     }
    ],
@@ -3420,7 +3406,7 @@
    "checks": []
   },
   {
-   "id": "s015",
+   "id": "s014",
    "title": "França mobiliza 70 mil policiais e teme protestos na noite de Halloween",
    "summary": "Manifestações contra o custo de vida e em defesa de estudantes ocorrem neste sábado (31/10) sob temor de confrontos e saques",
    "section": "internacional",
@@ -3536,7 +3522,7 @@
    "checks": []
   },
   {
-   "id": "s014",
+   "id": "s013",
    "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
    "summary": "Conhecida também como Garota X, a cantora fez sucesso no funk carioca nos anos 2000. A causa da morte ainda não foi divulgada",
    "section": "pop",
@@ -3633,7 +3619,7 @@
    "checks": []
   },
   {
-   "id": "s013",
+   "id": "s012",
    "title": "Virginia curte Halloween com fantasia de coelinha da Playboy de R$ 2 milhões",
    "summary": "Recém-separada de Vini Jr, Virginia Fonseca vem mostrando aos seus mais de 56 milhões de seguidores como anda a vida de solteira. Leia mais (10/31/2026 - 12h46)",
    "section": "entretenimento",
@@ -3730,104 +3716,7 @@
    "checks": []
   },
   {
-   "id": "s012",
-   "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões",
-   "summary": "A corretora de criptomoedas Binance anunciou neste sábado (31) que conseguiu cobrir 90% do valor roubado durante o recente ataque hacker aos sistemas da companhia . Leia mais (10/31/2026 - 12h37)",
-   "section": "financas",
-   "section_label": "Economia",
-   "avg_bias": -0.04,
-   "counts": {
-    "L": 0,
-    "C": 5,
-    "R": 0,
-    "total": 5
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T19:08:00+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões",
-     "link": "https://c-level.folha.uol.com.br/financas/2026/10/binance-diz-que-90-dos-ativos-foram-repostos-apos-ataque-hacker-roubar-us-63-bilhoes.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "financas",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Binance diz ter coberto 90% das perdas após ataque hacker de mais de US$ 6 bilhões",
-     "link": "https://g1.globo.com/tecnologia/ciberseguranca/noticia/2026/10/31/binance-diz-ter-coberto-90percent-das-perdas-apos-ataque-hacker-de-mais-de-us-6-bilhoes.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "tecnologia",
-     "section_label": "Tecnologia",
-     "image": "https://s2-g1.glbimg.com/k6ILHTkAySFc9n52EAz-ZDhsi-g=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/t/9/ABU2j5SXeKEdTwn5uV2g/ap26302822880513.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Terra",
-     "source_id": "terra",
-     "title": "Binance diz que 90% dos ativos roubados foram repostos",
-     "link": "https://www.terra.com.br/byte/binance-diz-que-90-dos-ativos-roubados-foram-repostos,801979c3ef1fdad19b44df3a077458fdznd6ne5x.html",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "byte",
-     "section_label": "Byte",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "SBT News",
-     "source_id": "sbt",
-     "title": "Binance diz que 90% dos ativos roubados foram repostos",
-     "link": "https://sbtnews.sbt.com.br/noticia/economia/binance-diz-que-90-dos-ativos-roubados-foram-repostos",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "https://sbtnews.sbt.com.br/imagens/Binance_3ef13fbc91.jpg",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Binance diz que repôs 90% dos ativos roubados após ataque de US$ 6 bilhões",
-     "link": "https://www.cnnbrasil.com.br/economia/money/mercado/binance-diz-que-repos-90-dos-ativos-roubados-apos-ataque-de-us-6-bilhoes/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "economia",
-     "section_label": "Economia",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s046",
+   "id": "s045",
    "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
    "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
    "section": "",
@@ -3924,6 +3813,89 @@
      "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas",
      "total": 2,
      "blindspot": null
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s028",
+   "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+   "summary": "Michelle Bolsonaro defendeu Tarcísio de Freitas nas redes e disse que Jair Bolsonaro guarda gratidão por apoiadores da campanha de Flávio.",
+   "section": "politica",
+   "section_label": "Política",
+   "avg_bias": -0.38,
+   "counts": {
+    "L": 2,
+    "C": 1,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 50,
+    "C": 25,
+    "R": 25
+   },
+   "blindspot": null,
+   "updated": "2026-10-30T23:56:24+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio",
+     "link": "https://www.diariodocentrodomundo.com.br/michelle-bolsonaro-defende-tarcisio-e-rebate-ataques-de-aliados-de-flavio/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "CartaCapital",
+     "source_id": "carta",
+     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+     "link": "https://www.cartacapital.com.br/politica/michelle-se-manifesta-pela-1a-vez-apos-derrota-de-flavio-e-diz-que-nao-e-momento-de-procurar-culpados/",
+     "bias": -1.2,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://www.cartacapital.com.br/wp-content/uploads/2026/10/AFP__20231008__33XT3AU__v1__MidRes__BrazilAbortionReligionPoliticsProLifeRallyBolson-1.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Michelle defende Tarcísio e diz que Bolsonaro é grato a ele",
+     "link": "https://sbtnews.sbt.com.br/noticia/politica/michelle-defende-tarcisio-e-diz-que-bolsonaro-e-grato-a-ele",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "https://sbtnews.sbt.com.br/imagens/michelle_6a209bc041.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Gazeta do Povo",
+     "source_id": "gazeta",
+     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle",
+     "link": "https://www.gazetadopovo.com.br/eleicoes/2026/bolsonaro-defende-uniao-e-rejeita-busca-por-culpados-pela-derrota-de-flavio-diz-michelle/",
+     "bias": 1.2,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "eleicoes",
+     "section_label": "Eleições",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "independente"
     }
    ],
    "hub": null,
@@ -4103,89 +4075,6 @@
   },
   {
    "id": "s025",
-   "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
-   "summary": "Mudança de perfil do exame amplia espaço de temas como inteligência artificial, transição energética e clima",
-   "section": "educacao",
-   "section_label": "Educação",
-   "avg_bias": -0.4,
-   "counts": {
-    "L": 1,
-    "C": 3,
-    "R": 0,
-    "total": 4
-   },
-   "pct": {
-    "L": 25,
-    "C": 75,
-    "R": 0
-   },
-   "blindspot": "right",
-   "updated": "2026-10-31T17:13:17+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Primeira fase do Enem acontece no dia 8; veja os assuntos mais abordados nos últimos anos",
-     "link": "https://www.brasil247.com/brasil/primeira-fase-do-enem-acontece-no-dia-8-veja-os-assuntos-mais-abordados-nos-ultimos-anos/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasil",
-     "section_label": "Brasil",
-     "image": "https://www.brasil247.com/wp-content/uploads/2025/05/20250509210536_2595af45680a70ccac65f04a6c965a2224f5530734b5cc9fb6cf9947f7d54ce4.webp",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
-     "link": "https://www1.folha.uol.com.br/educacao/2026/10/fuvest-aplica-1a-fase-do-vestibular-neste-domingo-1o-veja-mudancas-e-o-que-levar.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "educacao",
-     "section_label": "Educação",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Primeira fase do vestibular da FUVEST acontece neste domingo (01)",
-     "link": "https://www.band.com.br/educacao/primeira-fase-do-vestibular-da-fuvest-acontece-neste-domingo-01",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "educacao",
-     "section_label": "Educação",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "CNN Brasil",
-     "source_id": "cnnbr",
-     "title": "Quais assuntos mais caíram no Enem nos últimos 5 anos?",
-     "link": "https://www.cnnbrasil.com.br/educacao/quais-assuntos-mais-cairam-no-enem-nos-ultimos-5-anos/",
-     "bias": 0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "educacao",
-     "section_label": "Educação",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s024",
    "title": "Nos EUA, filha de brasileira gera indignação com poema sobre Charlie Kirk",
    "summary": "Um vídeo da estudante Isabela Casahuga-Lemgruber repercutiu nas redes sociais após ela declamar, em uma universidade dos EUA, um poema em que, segundo seus críticos, \"celebra\" o assassinato do ativista conservador Charlie Kirk, morto em setembro de 2025 durante um evento universitário no estado de U",
    "section": "internacional",
@@ -4268,7 +4157,7 @@
    "checks": []
   },
   {
-   "id": "s023",
+   "id": "s024",
    "title": "Recorde de voto antecipado e ofensiva judicial de Trump marcam eleição de meio mandato",
    "summary": "A poucos dias das eleições de meio de mandato nos Estados Unidos, a disputa pelo controle do Congresso entra na reta final marcada por uma ofensiva judicial do governo de Donald Trump e por uma participação recorde no voto antecipado. Quase 50 milhões de americanos já depositaram seus votos, número ",
    "section": "",
@@ -4348,6 +4237,99 @@
    "hub": null,
    "longreads": [],
    "world": [],
+   "checks": []
+  },
+  {
+   "id": "s023",
+   "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
+   "summary": "O surto de ebola na República Democrática do Congo já provocou 5.026 mortes entre 10.351 pessoas infectadas, segundo dados divulgados neste sábado, 31, pelo Ministério da Saúde do país. A taxa de letalidade é de quase 50%. Outras 2.788 pessoas se recuperaram da doença.",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": 0.27,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 1,
+    "total": 4
+   },
+   "pct": {
+    "L": 0,
+    "C": 75,
+    "R": 25
+   },
+   "blindspot": "left",
+   "updated": "2026-10-31T17:57:37+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/31/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Estadão",
+     "source_id": "estadao",
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
+     "link": "https://www.estadao.com.br/internacional/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50/",
+     "bias": -0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "internacional",
+     "section_label": "Mundo",
+     "image": "https://www.estadao.com.br/resizer/v2/V6YQYUSFYBHNBA73DU46JQC62A.jpg?auth=f7fb235d517e6b8ef27f5f7c5857fd74cd8932b137effc26da6ed94f43b70a7e&smart=true&width=5760&height=3840",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Surto de ebola já matou mais de 5 mil pessoas na RD do Congo",
+     "link": "https://www.metropoles.com/mundo/surto-de-ebola-ja-matou-mais-de-5-mil-pessoas-na-rd-do-congo",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://images.metroimg.com/2026/10/ebola.jpeg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
+     "link": "https://jovempan.com.br/mundo/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [
+    {
+     "source": "BBC World",
+     "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+     "link": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
+     "terms": [
+      "congo",
+      "ebola"
+     ]
+    }
+   ],
    "checks": []
   },
   {
@@ -4435,6 +4417,89 @@
   },
   {
    "id": "s021",
+   "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões",
+   "summary": "A corretora de criptomoedas Binance anunciou neste sábado (31) que conseguiu cobrir 90% do valor roubado durante o recente ataque hacker aos sistemas da companhia . Leia mais (10/31/2026 - 12h37)",
+   "section": "financas",
+   "section_label": "Economia",
+   "avg_bias": -0.05,
+   "counts": {
+    "L": 0,
+    "C": 4,
+    "R": 0,
+    "total": 4
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T19:08:00+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões",
+     "link": "https://c-level.folha.uol.com.br/financas/2026/10/binance-diz-que-90-dos-ativos-foram-repostos-apos-ataque-hacker-roubar-us-63-bilhoes.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "financas",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Terra",
+     "source_id": "terra",
+     "title": "Binance diz que 90% dos ativos roubados foram repostos",
+     "link": "https://www.terra.com.br/byte/binance-diz-que-90-dos-ativos-roubados-foram-repostos,801979c3ef1fdad19b44df3a077458fdznd6ne5x.html",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "byte",
+     "section_label": "Byte",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "SBT News",
+     "source_id": "sbt",
+     "title": "Binance diz que 90% dos ativos roubados foram repostos",
+     "link": "https://sbtnews.sbt.com.br/noticia/economia/binance-diz-que-90-dos-ativos-roubados-foram-repostos",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "https://sbtnews.sbt.com.br/imagens/Binance_3ef13fbc91.jpg",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Binance diz que repôs 90% dos ativos roubados após ataque de US$ 6 bilhões",
+     "link": "https://www.cnnbrasil.com.br/economia/money/mercado/binance-diz-que-repos-90-dos-ativos-roubados-apos-ataque-de-us-6-bilhoes/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "economia",
+     "section_label": "Economia",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s020",
    "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
    "summary": "Atual secretária-geral do Ministério da Defesa, Cinara tem experiência na administração pública e é cotada para integrar o quarto governo Lula",
    "section": "",
@@ -4517,7 +4582,7 @@
    "checks": []
   },
   {
-   "id": "s020",
+   "id": "s019",
    "title": "Rodrigo Bacellar será transferido novamente para presídio estadual no Rio",
    "summary": "Ex-presidente da Alerj deixará penitenciária federal de Mossoró, mas continuará preso preventivamente; desembargador investigado por vazamento de informações foi solto",
    "section": "nacional",
@@ -4600,7 +4665,7 @@
    "checks": []
   },
   {
-   "id": "s019",
+   "id": "s018",
    "title": "Kassab diz que governo procurou PSD e vincula aproximação a medidas econômicas",
    "summary": "Presidente do PSD vincula maior aproximação a medidas econômicas e não descarta voltar a ser ministro no quarto mandato de Lula.",
    "section": "politica",
@@ -4683,7 +4748,7 @@
    "checks": []
   },
   {
-   "id": "s018",
+   "id": "s017",
    "title": "Carros camuflados, vários jatos, ajuda dos EUA: jornal argentino detalha fuga de Flávio Bolsonaro",
    "summary": "fuga de Flávio Bolsonaro para os Estados Unidos após a derrota na eleição presidencial lembra o enredo de filmes de espionagem, conforme o relato publicado no jornal argentino Clarín na noite desta ...",
    "section": "politica",
@@ -4770,7 +4835,7 @@
    "checks": []
   },
   {
-   "id": "s045",
+   "id": "s044",
    "title": "Justiça manda penhorar mansão de Renato Aragão por dívida",
    "summary": "Decisão da 12ª Vara da Fazenda Pública atende a pedido do Município do Rio para cobrança de débitos de IPTU",
    "section": "brasil",
@@ -4839,7 +4904,7 @@
    "checks": []
   },
   {
-   "id": "s043",
+   "id": "s042",
    "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
    "summary": "O Ministério Público do Trabalho contabilizou mais de 3 mil denúncias após a reeleição do presidente Lula (PT)",
    "section": "politica",
@@ -4908,7 +4973,7 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s041",
    "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
    "summary": "Plano reestrutura R$ 61,4 bilhões em dívidas e inclui a separação das operações de combustíveis e de açúcar e etanol",
    "section": "empresas",
@@ -4977,7 +5042,7 @@
    "checks": []
   },
   {
-   "id": "s041",
+   "id": "s040",
    "title": "Democratas cobram que Trump reconheça vitória de Lula",
    "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
    "section": "mundo",
@@ -5046,7 +5111,7 @@
    "checks": []
   },
   {
-   "id": "s040",
+   "id": "s039",
    "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
    "summary": "A indefinição da liderança e o horizonte incerto para as próximas eleições devem incentivar confrontos internos e tornar mais sedutora a deserção",
    "section": "pt-br",
@@ -5114,75 +5179,6 @@
     "label": "Flávio Bolsonaro",
     "size": 9
    },
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s039",
-   "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado",
-   "summary": "Caciques partidários articulam uso de megabloco da Câmara para alavancar candidatura de senador amapaense em 2027",
-   "section": "brasilia",
-   "section_label": "Brasilia",
-   "avg_bias": 0.07,
-   "counts": {
-    "L": 1,
-    "C": 1,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 33,
-    "C": 33,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T14:20:57+00:00",
-   "articles": [
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado",
-     "link": "https://www.brasil247.com/brasilia/centrao-projeta-apoio-de-hugo-motta-para-reeleger-alcolumbre-presidente-do-senado/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "brasilia",
-     "section_label": "Brasilia",
-     "image": "https://www.brasil247.com/wp-content/uploads/2025/07/20250717200716_c74f6a5b6eeb1ae5c5dcfb85bcac32c45ea4fca94c46b24df3a1f5d9b96121f1.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Para Centrão, Motta pode ajudar Alcolumbre a se reeleger no Senado",
-     "link": "https://www.metropoles.com/colunas/igor-gadelha/para-centrao-motta-pode-ajudar-alcolumbre-a-se-reeleger-no-senado",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "colunas",
-     "section_label": "Opinião",
-     "image": "https://images.metroimg.com/2025/02/03145830/Motta-e-Alcolumbre.jpeg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "Hugo Motta busca apoio do PT para aprovar reforma política",
-     "link": "https://revistaoeste.com/politica/hugo-motta-busca-apoio-do-pt-para-aprovar-reforma-politica/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
    "longreads": [],
    "world": [],
    "checks": []
@@ -5258,75 +5254,6 @@
   },
   {
    "id": "s037",
-   "title": "Oriente Médio pede calma diante do risco de escalada entre EUA, Israel e Irã",
-   "summary": "Líderes do Oriente Médio pedem calma diante do risco de escalada entre EUA, Israel e Irã",
-   "section": "internacional",
-   "section_label": "Mundo",
-   "avg_bias": 0.53,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 67,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T14:58:25+00:00",
-   "articles": [
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Oriente Médio pede calma diante do risco de escalada entre EUA, Israel e Irã",
-     "link": "https://www.band.com.br/internacional/oriente-medio-pede-calma-diante-do-risco-de-escalada-entre-eua-israel-e-ira",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Arábia Saudita pede paz; Egito alerta para escalada entre EUA, Israel e Irã",
-     "link": "https://www.infomoney.com.br/mundo/arabia-saudita-egito-escalada-eua-israel-ira/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Líderes do Oriente Médio pedem calma diante do risco de escalada entre os EUA e Irã",
-     "link": "https://jovempan.com.br/mundo/lideres-do-oriente-medio-pedem-calma-diante-do-risco-de-escalada-entre-os-eua-e-ira/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s036",
    "title": "Filha de Marielle relata ofensas racistas à mãe em grupo da PUC-Rio",
    "summary": "Filha da vereadora cobra apuração de ataques racistas à mãe",
    "section": "poder-brasil",
@@ -5395,7 +5322,7 @@
    "checks": []
   },
   {
-   "id": "s035",
+   "id": "s036",
    "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
    "summary": "Dois cidadãos chineses foram condenados a 30 meses de prisão em regime fechado, seguidos de três anos de liberdade supervisionada, acusados de terem sido recrutados pela China para espionar os Estados Unidos . Leia mais (10/31/2026 - 05h45)",
    "section": "mundo",
@@ -5464,7 +5391,7 @@
    "checks": []
   },
   {
-   "id": "s034",
+   "id": "s035",
    "title": "Justiça condena Sergio Maurício a pagar R$ 10 mil a Erika por danos morais",
    "summary": "O narrador esportivo se referiu a deputada como 'essa coisa' em uma publicação nas redes sociais",
    "section": "politica",
@@ -5533,86 +5460,7 @@
    "checks": []
   },
   {
-   "id": "s033",
-   "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
-   "summary": "O surto de ebola na República Democrática do Congo já provocou 5.026 mortes entre 10.351 pessoas infectadas, segundo dados divulgados neste sábado, 31, pelo Ministério da Saúde do país. A taxa de letalidade é de quase 50%. Outras 2.788 pessoas se recuperaram da doença.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": 0.37,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 1,
-    "total": 3
-   },
-   "pct": {
-    "L": 0,
-    "C": 67,
-    "R": 33
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:53:32+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/31/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
-     "link": "https://www.estadao.com.br/internacional/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "https://www.estadao.com.br/resizer/v2/V6YQYUSFYBHNBA73DU46JQC62A.jpg?auth=f7fb235d517e6b8ef27f5f7c5857fd74cd8932b137effc26da6ed94f43b70a7e&smart=true&width=5760&height=3840",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Jovem Pan",
-     "source_id": "jovempan",
-     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
-     "link": "https://jovempan.com.br/mundo/ebola-ultrapassa-5-mil-mortes-no-congo-e-atinge-letalidade-proxima-de-50/",
-     "bias": 1.4,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "mixed",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [
-    {
-     "source": "BBC World",
-     "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
-     "link": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
-     "terms": [
-      "congo",
-      "ebola"
-     ]
-    }
-   ],
-   "checks": []
-  },
-  {
-   "id": "s032",
+   "id": "s034",
    "title": "Correspondente da Globo em Londres vai substituir Maju Coutinho no Fantástico",
    "summary": "Rodrigo Carvalho, correspondente da Globo em Londres, vai substituir a apresentadora Maju Coutinho na bancada do Fantástico . Coutinho entrará em licença-maternidade a partir de janeiro, quando deverá dar à luz seu primeiro filho , chamado Malik. Leia mais (10/31/2026 - 10h09)",
    "section": "ilustrada",
@@ -5681,7 +5529,7 @@
    "checks": []
   },
   {
-   "id": "s031",
+   "id": "s033",
    "title": "Como Miami se tornou refúgio de políticos conservadores da América Latina",
    "summary": "Cidade no sul da Flórida se consolida como abrigo histórico para figuras da extrema-direita latino-americana",
    "section": "mundo",
@@ -5754,7 +5602,7 @@
    "checks": []
   },
   {
-   "id": "s030",
+   "id": "s032",
    "title": "O que os boicotes e demissões de eleitores de Lula dizem do Brasil",
    "summary": "Procedimento apura listas de boicote e atos discriminatórios no Rio Grande do Sul, em Santa Catarina e no Paraná após a reeleição do presidente",
    "section": "expresso",
@@ -5823,7 +5671,7 @@
    "checks": []
   },
   {
-   "id": "s029",
+   "id": "s031",
    "title": "Tragédia em Congonhas: acidente com Fokker 100 que matou 99 pessoas completa 30 anos; relembre",
    "summary": "Aeronave caiu sobre casas na zona sul de São Paulo, segundos após decolar do Aeroporto de Congonhas, em 31 de outubro de 1996",
    "section": "brasil",
@@ -5892,7 +5740,7 @@
    "checks": []
   },
   {
-   "id": "s028",
+   "id": "s030",
    "title": "Homem é preso com arsenal de armas e explosivos em Guarujá",
    "summary": "A Polícia Militar de São Paulo apreendeu um arsenal com fuzil, submetralhadora de fabricação caseira e outras armas de fogo, além de munições, granadas, materiais explosivos e drones entre a noite de sexta-feira (30) e a madrugada deste sábado (31) em um imóvel em Guarujá , na Baixada Santista . Lei",
    "section": "brasil",
@@ -5953,6 +5801,75 @@
      "image": "https://sbtnews.sbt.com.br/imagens/prisao_arsenal_3498bbd74c.jpg",
      "factuality": "high",
      "ownership": "individuo"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s029",
+   "title": "O teste simples de fitness que prevê o seu risco de morte",
+   "summary": "Se o seu coração parece que vai sair pela boca quando você sobe as escadas ou você tem dificuldade de respirar ao correr para pegar o ônibus, talvez seja um sinal de que você não está no auge da sua forma física. Mas o que acontece depois que você termina o exercício pode ser igualmente revelador so",
+   "section": "equilibrio",
+   "section_label": "Equilibrio",
+   "avg_bias": -0.17,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T19:50:00+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "O teste simples de fitness que prevê o seu risco de morte",
+     "link": "https://www1.folha.uol.com.br/equilibrio/2026/10/o-teste-simples-de-fitness-que-preve-o-seu-risco-de-morte.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "equilibrio",
+     "section_label": "Equilibrio",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "BBC Brasil",
+     "source_id": "bbcbr",
+     "title": "O teste simples de fitness que prevê o seu risco de morte",
+     "link": "https://www.bbc.com/portuguese/articles/cqx287ern61jo?at_medium=RSS&at_campaign=rss",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/24c3/live/30d93e20-ce5d-11f1-a166-e30097724580.jpg",
+     "factuality": "very_high",
+     "ownership": "governo"
+    },
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "title": "O teste simples de fitness que prevê o seu risco de morte",
+     "link": "https://g1.globo.com/saude/noticia/2026/10/31/o-teste-simples-de-fitness-que-preve-o-seu-risco-de-morte.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "saude",
+     "section_label": "Saúde",
+     "image": "https://s2-g1.glbimg.com/j4a-GBzoz157SeanKCt12uthxJI=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/E/E/bvWusUQxyO0kVgZLs62A/fotojet-2-.jpg",
+     "factuality": "high",
+     "ownership": "conglomerado"
     }
    ],
    "hub": null,
@@ -7011,61 +6928,6 @@
   },
   {
    "id": "s104",
-   "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
-   "summary": "Redução de pessoal começou em 23 de outubro; funcionários dos EUA precisam de autorização especial para os aeroportos sauditas após os recentes ataques com mísseis e drones, informou a embaixada",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": 0.95,
-   "counts": {
-    "L": 0,
-    "C": 1,
-    "R": 1,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 50,
-    "R": 50
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T05:55:39+00:00",
-   "articles": [
-    {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
-     "link": "https://valor.globo.com/mundo/noticia/2026/10/30/eua-determinam-que-funcionrios-no-essenciais-deixem-arbia-saudita-por-segurana.ghtml",
-     "bias": 0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://s2-valor.glbimg.com/O5M_OIfsW3zKrBTUWeg2wovF4ZU=/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2026/z/z/B4FZdpS52aleuDBvPv5Q/2026-10-12t121610z-2072317818-rc2m1oam78h9-rtrmadp-3-iran-crisis-saudi-riyadh.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    },
-    {
-     "source": "Revista Oeste",
-     "source_id": "oeste",
-     "title": "EUA retiram funcionários da Arábia Saudita por risco de ataques",
-     "link": "https://revistaoeste.com/mundo/eua-retiram-funcionarios-da-arabia-saudita-por-risco-de-ataques/",
-     "bias": 1.6,
-     "bucket": "R",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://medias-r2.revistaoeste.com/wp-content/uploads/2026/10/EUA_Arabia-Saudita.jpeg",
-     "factuality": "low",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s103",
    "title": "Por que El Salvador está enviando militares ao Haiti",
    "summary": "Governo Bukele anunciou mobilização de mais de 2 mil homens após desaparecimento de quatro soldados salvadorenhos que atuam em força da ONU de repressão a gangues.",
    "section": "pt-br",
@@ -7131,7 +6993,7 @@
    "checks": []
   },
   {
-   "id": "s102",
+   "id": "s103",
    "title": "Seminarista, lenhador e campeão paralímpico: veja as disputas que podem definir o controle do Senado nas eleições de meio de mandato nos EUA",
    "summary": "Nenhum democrata vence uma eleição estadual no Texas há mais de 30 anos, mas a esquerda voltou a se animar com o ex-professor James Talarico, candidato ao Senado",
    "section": "mundo",
@@ -7186,7 +7048,7 @@
    "checks": []
   },
   {
-   "id": "s101",
+   "id": "s102",
    "title": "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia",
    "summary": "A venda de armamentos ainda precisa ser aprovada pelo Congresso americano",
    "section": "mundo",
@@ -7251,7 +7113,7 @@
    "checks": []
   },
   {
-   "id": "s100",
+   "id": "s101",
    "title": "Bebê de 12 dias morre após ser atingido na cabeça por abacate na Argentina",
    "summary": "Um bebê de apenas 12 dias morreu após ser atingido na cabeça por um abacate enquanto estava no colo da mãe. O caso ocorreu na cidade de Quilmes, na Argentina.",
    "section": "cotidiano",
@@ -7306,7 +7168,7 @@
    "checks": []
   },
   {
-   "id": "s099",
+   "id": "s100",
    "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
    "summary": "Levantamento com 155 eleitos do PL aponta que 117 ignoraram a carta de Flávio Bolsonaro que questiona o resultado das urnas.",
    "section": "expresso",
@@ -7365,7 +7227,7 @@
    "checks": []
   },
   {
-   "id": "s098",
+   "id": "s099",
    "title": "Como fica o tempo no feriado de Finados?",
    "summary": "O fim de semana prolongado será de céu encoberto, com pancadas de chuva em boa parte do Brasil, segundo a Climatempo.",
    "section": "",
@@ -7420,7 +7282,7 @@
    "checks": []
   },
   {
-   "id": "s097",
+   "id": "s098",
    "title": "Rock the Mountain 2026: tudo o que você precisa saber sobre o festival",
    "summary": "O Rock the Mountain 2026 começou na sexta-feira (30), em Itaipava, distrito de Petrópolis, na Região Serrana do Rio de Janeiro. Em sua 13ª edição, o festival",
    "section": "entretenimento",
@@ -7475,7 +7337,7 @@
    "checks": []
   },
   {
-   "id": "s096",
+   "id": "s097",
    "title": "Marinho diz que não pretende ser chefe de gabinete de Lula",
    "summary": "Apesar da declaração, ministro afirma que está à disposição do presidente para cumprir qualquer missão em 2027",
    "section": "poder-governo",
@@ -7530,7 +7392,117 @@
    "checks": []
   },
   {
+   "id": "s096",
+   "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado",
+   "summary": "Caciques partidários articulam uso de megabloco da Câmara para alavancar candidatura de senador amapaense em 2027",
+   "section": "brasilia",
+   "section_label": "Brasilia",
+   "avg_bias": 0.1,
+   "counts": {
+    "L": 1,
+    "C": 0,
+    "R": 1,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 0,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T14:20:57+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado",
+     "link": "https://www.brasil247.com/brasilia/centrao-projeta-apoio-de-hugo-motta-para-reeleger-alcolumbre-presidente-do-senado/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasilia",
+     "section_label": "Brasilia",
+     "image": "https://www.brasil247.com/wp-content/uploads/2025/07/20250717200716_c74f6a5b6eeb1ae5c5dcfb85bcac32c45ea4fca94c46b24df3a1f5d9b96121f1.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "Revista Oeste",
+     "source_id": "oeste",
+     "title": "Hugo Motta busca apoio do PT para aprovar reforma política",
+     "link": "https://revistaoeste.com/politica/hugo-motta-busca-apoio-do-pt-para-aprovar-reforma-politica/",
+     "bias": 1.6,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
    "id": "s094",
+   "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
+   "summary": "A Fuvest aplica neste domingo (1º) a primeira fase do vestibular 2027 da USP . A prova começa às 13h, e os candidatos terão cinco horas para responder às 80 questões de múltipla escolha. Os portões serão abertos ao meio-dia e fechados às 13h. Leia mais (10/31/2026 - 04h00)",
+   "section": "educacao",
+   "section_label": "Educação",
+   "avg_bias": -0.15,
+   "counts": {
+    "L": 0,
+    "C": 2,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T14:28:39+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
+     "link": "https://www1.folha.uol.com.br/educacao/2026/10/fuvest-aplica-1a-fase-do-vestibular-neste-domingo-1o-veja-mudancas-e-o-que-levar.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "educacao",
+     "section_label": "Educação",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Primeira fase do vestibular da FUVEST acontece neste domingo (01)",
+     "link": "https://www.band.com.br/educacao/primeira-fase-do-vestibular-da-fuvest-acontece-neste-domingo-01",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "educacao",
+     "section_label": "Educação",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s093",
    "title": "Votos antecipados batem recorde nos EUA, com mais de 49 milhões depositados a três dias das eleições",
    "summary": "A participação antecipada neste ciclo eleitoral dos Estados Unidos bateu um recorde. Mais de 49 milhões de americanos já votaram, seja pessoalmente ou pelo correio , de acordo com o Laboratório Eleitoral da Universidade da Flórida, um aumento em relação aos quase 46 milhões que votaram antes do dia ",
    "section": "mundo",
@@ -7585,7 +7557,7 @@
    "checks": []
   },
   {
-   "id": "s093",
+   "id": "s092",
    "title": "EUA cancelam foto de família do G20 após boicote à Rússia",
    "summary": "Alemanha e Reino Unido recusaram registro com Sergei Lavrov; anfitriões disseram querer evitar que impasse desviasse a atenção das discussões",
    "section": "poder-internacional",
@@ -7650,7 +7622,7 @@
    "checks": []
   },
   {
-   "id": "s092",
+   "id": "s091",
    "title": "Ator demitido pela Marvel afirma que vai se candidatar à presidência dos EUA",
    "summary": "Intérprete de James Rhodes no filme \"Homem de Ferro\", de 2008, Terrence Howard quer se candidatar à presidência dos Estados Unidos . Leia mais (10/31/2026 - 09h18)",
    "section": "voceviu",
@@ -7705,7 +7677,7 @@
    "checks": []
   },
   {
-   "id": "s091",
+   "id": "s090",
    "title": "Irã atualiza alvos de EUA e Israel e ordena resposta sem limites geográficos",
    "summary": "Em um comunicado, o líder supremo do Irã, Mojtaba Khamenei, afirmou neste sábado (31) que o país poderá voltar a atacar os Estados Unidos caso a guerra seja retomada pelos EUA no Oriente Médio. Khamenei mencionou uma retaliação sem \"limites geográficos\" diante de uma eventual ofensiva.",
    "section": "mundo",
@@ -7760,7 +7732,7 @@
    "checks": []
   },
   {
-   "id": "s090",
+   "id": "s089",
    "title": "Nevoeiro causa cancelamentos e desvios de voos no aeroporto de Confins",
    "summary": "Denso nevoeiro provoca desvios e cancelamentos na madrugada de sábado após fortes chuvas na região metropolitana",
    "section": "brasil",
@@ -7815,7 +7787,7 @@
    "checks": []
   },
   {
-   "id": "s089",
+   "id": "s088",
    "title": "Dólar sobe a R$ 5,44 e tem maior cotação de 2026; alta na semana é de 9,15%",
    "summary": "Indicador avançou depois da vitória de Lula e subiu de 119,26 pontos em 23 de outubro para 141,02 pontos neste sábado (31.out)",
    "section": "mercados",
@@ -7870,7 +7842,7 @@
    "checks": []
   },
   {
-   "id": "s088",
+   "id": "s087",
    "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa, diz PF",
    "summary": "Operação Tomada de Contas indica que conselheiro Sérgio Ricardo de Almeida, preso na quinta, 29, sob suspeita de liderar operadores financeiros em esquema de propinas na Corte estadual, fez 64 saques no guichê da agência e outros 86 em terminal de autoatendimento durante dez meses, em 2025; Estadão ",
    "section": "politica",
@@ -7925,7 +7897,7 @@
    "checks": []
   },
   {
-   "id": "s087",
+   "id": "s086",
    "title": "Caso Porsche: Fernando Sastre é condenado a 17 anos de prisão em SP",
    "summary": "O empresário Fernando Sastre de Andrade Filho foi condenado a 17 anos, um mês e dez dias de prisão, em regime inicialmente fechado, pela morte do motorista de aplicativo Ornaldo da Silva Viana, de 52 anos, e pelos ferimentos graves provocados em um passageiro durante um acidente na zona leste de São",
    "section": "",
@@ -7980,7 +7952,7 @@
    "checks": []
   },
   {
-   "id": "s086",
+   "id": "s085",
    "title": "Chuvas intensas e ar seco atingem o país na virada do mês",
    "summary": "Inmet emite avisos de tempestades para o Sudeste e o Centro-Oeste e alerta para baixa umidade do ar no Nordeste durante o fim de semana",
    "section": "meio-ambiente",
@@ -8035,7 +8007,7 @@
    "checks": []
   },
   {
-   "id": "s085",
+   "id": "s084",
    "title": "Jornalista de 36 anos morre após quase dois meses internado por AVC hemorrágico em São Paulo",
    "summary": "Com 18 anos de carreira, profissional teve passagens pela Record, CBN e UFSCar; família autorizou a doação de órgãos",
    "section": "brasil",
@@ -8090,7 +8062,7 @@
    "checks": []
   },
   {
-   "id": "s084",
+   "id": "s083",
    "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
    "summary": "Patrick Stewart morreu na quarta-feira (28/10), em Los Angeles, nos Estados Unidos. Ele era uma lenda dos X-Men",
    "section": "saude",
@@ -8145,7 +8117,7 @@
    "checks": []
   },
   {
-   "id": "s083",
+   "id": "s082",
    "title": "‘Brasil com S’: estudantes organizam novos atos em defesa da democracia",
    "summary": "Mobilização promovida por entidades estudantis busca dar sustentação ao presidente Lula, reeleito no último domingo",
    "section": "blogs",
@@ -8200,7 +8172,7 @@
    "checks": []
   },
   {
-   "id": "s082",
+   "id": "s081",
    "title": "Veja como se proteger do golpe do WhatsApp que esvazia sua conta com apenas um toque",
    "summary": "Falha em celulares desatualizados permite acesso hacker sem clique em links ou download de arquivos maliciosos. Veja como se proteger",
    "section": "economia",
@@ -8255,7 +8227,7 @@
    "checks": []
   },
   {
-   "id": "s081",
+   "id": "s080",
    "title": "Novo Concurso Nacional Unificado pode oferecer até 3 mil vagas em 2027",
    "summary": "A primeira edição do concurso foi realizada em 2024. A segunda, em 2025",
    "section": "",
@@ -8310,7 +8282,7 @@
    "checks": []
   },
   {
-   "id": "s079",
+   "id": "s078",
    "title": "Homem faz filho de 3 anos refém e ameaça explodir residência com gás",
    "summary": "m menino de três anos foi resgatado ileso pela Polícia Militar após ser mantido refém pelo próprio pai durante a madrugada de quinta-feira (29), em Embu das Artes, na Região Metropolitana de São Paul...",
    "section": "cotidiano",
@@ -8365,7 +8337,7 @@
    "checks": []
   },
   {
-   "id": "s078",
+   "id": "s077",
    "title": "Reino Unido sinaliza que governo vai considerar um pedido de desculpas por seu papel na escravidão",
    "summary": "Primeiro-ministro Andy Burnham sinaliza abertura ao reconhecimento da responsabilidade histórica britânica, enquanto países caribenhos mantêm cobrança por reparações",
    "section": "internacional",
@@ -8420,7 +8392,7 @@
    "checks": []
   },
   {
-   "id": "s077",
+   "id": "s076",
    "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça",
    "summary": "Jehanne era praticamente desconhecida na cidade francesa de Dijon durante o inverno de 1472, quando foi vítima de um ato de violência atroz. Leia mais (10/31/2026 - 11h08)",
    "section": "mundo",
@@ -8475,7 +8447,62 @@
    "checks": []
   },
   {
-   "id": "s076",
+   "id": "s075",
+   "title": "Primeira fase do Enem acontece no dia 8; veja os assuntos mais abordados nos últimos anos",
+   "summary": "Mudança de perfil do exame amplia espaço de temas como inteligência artificial, transição energética e clima",
+   "section": "brasil",
+   "section_label": "Brasil",
+   "avg_bias": -0.65,
+   "counts": {
+    "L": 1,
+    "C": 1,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 50,
+    "C": 50,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T17:13:17+00:00",
+   "articles": [
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Primeira fase do Enem acontece no dia 8; veja os assuntos mais abordados nos últimos anos",
+     "link": "https://www.brasil247.com/brasil/primeira-fase-do-enem-acontece-no-dia-8-veja-os-assuntos-mais-abordados-nos-ultimos-anos/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "brasil",
+     "section_label": "Brasil",
+     "image": "https://www.brasil247.com/wp-content/uploads/2025/05/20250509210536_2595af45680a70ccac65f04a6c965a2224f5530734b5cc9fb6cf9947f7d54ce4.webp",
+     "factuality": "mixed",
+     "ownership": "independente"
+    },
+    {
+     "source": "CNN Brasil",
+     "source_id": "cnnbr",
+     "title": "Quais assuntos mais caíram no Enem nos últimos 5 anos?",
+     "link": "https://www.cnnbrasil.com.br/educacao/quais-assuntos-mais-cairam-no-enem-nos-ultimos-5-anos/",
+     "bias": 0.1,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "educacao",
+     "section_label": "Educação",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s074",
    "title": "Lições da vitória: mais povo, menos austeridade",
    "summary": "Após a vitória sobre o fascismo, o desafio é construir uma Pauta do Povo para enfrentar o rentismo, ampliar direitos e reconstruir o país.",
    "section": "opiniao",
@@ -8530,7 +8557,7 @@
    "checks": []
   },
   {
-   "id": "s075",
+   "id": "s073",
    "title": "Vídeo: Incêndio destrói hotel próximo ao Everest em meio a nevasca; hóspedes são evacuados",
    "summary": "Todos os hóspedes foram retirados em segurança e não há relatos sobre vítimas",
    "section": "mundo",
@@ -8585,7 +8612,7 @@
    "checks": []
   },
   {
-   "id": "s074",
+   "id": "s072",
    "title": "Primeiro paciente recebe tratamento pioneiro no mundo com células-tronco para Parkinson",
    "summary": "Terapia usa células produzidas em laboratório para repor neurônios que fabricam dopamina e foram perdidos em pacientes com Parkinson",
    "section": "saude",
@@ -8640,7 +8667,7 @@
    "checks": []
   },
   {
-   "id": "s073",
+   "id": "s071",
    "title": "Ministros vão ao Mato Grosso do Sul para investigar violência política contra indígenas",
    "summary": "Denúncias envolvem tentativas de assassinato, incêndio e ameaça de envenenamento de água",
    "section": "brasil",
@@ -8695,7 +8722,7 @@
    "checks": []
   },
   {
-   "id": "s072",
+   "id": "s070",
    "title": "Selma Blair se emociona e pede desculpas após prisão por morder comissários",
    "summary": "A atriz Selma Blair, de 54 anos, se manifestou pela primeira vez sobre sua prisão, ocorrida em ...",
    "section": "pop",
@@ -8750,7 +8777,7 @@
    "checks": []
   },
   {
-   "id": "s071",
+   "id": "s069",
    "title": "Período de Piracema começa neste domingo e restringe pesca em rios do Oeste Paulista",
    "summary": "Polícia apreende itens de pesca proibidos e adverte pescadores durante pré-piracema na região de Presidente Prudente (SP) Reprodução/Polícia Ambiental Começa neste domingo (1º) o período da Piracema na região de Presidente Prudente (SP), com restrições severas à pesca que incluem os principais rios ",
    "section": "sp",
@@ -8805,7 +8832,7 @@
    "checks": []
   },
   {
-   "id": "s070",
+   "id": "s068",
    "title": "SBT bate martelo sobre apresentadores de nova atração matinal",
    "summary": "Revista eletrônica estreia em novembro e terá trio no comando da atração. Saiba detalhes",
    "section": "colunas",
@@ -8860,7 +8887,7 @@
    "checks": []
   },
   {
-   "id": "s069",
+   "id": "s067",
    "title": "Fuvest: 5 erros para não cometer na hora da prova",
    "summary": "Primeira fase será realizada neste domingo e terá 80 questões de múltipla escolha, dez a menos do que nas edições anteriores",
    "section": "educacao",
@@ -8915,7 +8942,7 @@
    "checks": []
   },
   {
-   "id": "s068",
+   "id": "s066",
    "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges",
    "summary": "Com entrada gratuita, edição de aniversário reúne gerações de artistas e homenageia Lô e a família Borges neste domingo, 1º de novembro",
    "section": "cultura",
@@ -8970,7 +8997,7 @@
    "checks": []
   },
   {
-   "id": "s067",
+   "id": "s065",
    "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro",
    "summary": "Por Luciana Magalhaes e Lisandra Paraguassu",
    "section": "",
@@ -9025,62 +9052,7 @@
    "checks": []
   },
   {
-   "id": "s066",
-   "title": "O teste simples de fitness que prevê o seu risco de morte",
-   "summary": "A rapidez com que a nossa frequência cardíaca volta ao normal depois que praticamos exercício pode trazer revelações surpreendentes sobre a nossa saúde em geral.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T18:17:59+00:00",
-   "articles": [
-    {
-     "source": "BBC Brasil",
-     "source_id": "bbcbr",
-     "title": "O teste simples de fitness que prevê o seu risco de morte",
-     "link": "https://www.bbc.com/portuguese/articles/cqx287ern61jo?at_medium=RSS&at_campaign=rss",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/24c3/live/30d93e20-ce5d-11f1-a166-e30097724580.jpg",
-     "factuality": "very_high",
-     "ownership": "governo"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "O teste simples de fitness que prevê o seu risco de morte",
-     "link": "https://g1.globo.com/saude/noticia/2026/10/31/o-teste-simples-de-fitness-que-preve-o-seu-risco-de-morte.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "saude",
-     "section_label": "Saúde",
-     "image": "https://s2-g1.glbimg.com/j4a-GBzoz157SeanKCt12uthxJI=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/E/E/bvWusUQxyO0kVgZLs62A/fotojet-2-.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s065",
+   "id": "s064",
    "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores",
    "summary": "Luis Silva deixou o cargo depois de reduções de pena para condenados por abuso sexual de menores",
    "section": "poder-internacional",
@@ -9135,7 +9107,7 @@
    "checks": []
   },
   {
-   "id": "s064",
+   "id": "s063",
    "title": "Moradores retirados de Oleshky chegam à Ucrânia, diz Zelensky",
    "summary": "O presidente da Ucrânia, Volodymyr Zelensky, confirmou neste sábado (31) que os moradores da ...",
    "section": "internacional",
@@ -9200,7 +9172,7 @@
    "checks": []
   },
   {
-   "id": "s063",
+   "id": "s062",
    "title": "Médicos são acusados de perseguir colegas e sugerir boicote a pacientes por posicionamento político: 'Senti um alvo na minha cabeça'",
    "summary": "\"Na hora que eu recebi a lista, fiquei sem chão. Senti um alvo na minha cabeça\". A frase é de um médico anestesiologista ouvido pela BBC News Brasil após ter sido incluído em uma lista de profissionais \"esquerdistas\" divulgada em um grupo privado de médicos após a reeleição do presidente Luiz Inácio",
    "section": "equilibrioesaude",
@@ -9255,7 +9227,7 @@
    "checks": []
   },
   {
-   "id": "s062",
+   "id": "s061",
    "title": "Investigado por mais de 20 mortes: quem é Colete, traficante preso que teria trocado de facção em guerra do tráfico em Caxias",
    "summary": "Traficante Colete e outros 4 são presos após madrugada de tiroteio em Caxias, RJ O traficante Caíque Dias de Souza, conhecido como Colete, preso neste sábado (31) pela Polícia Militar, é investigado por mais de 20 mortes na Baixada Fluminense. Segundo as investigações, ele era um dos principais nome",
    "section": "rj",
@@ -9310,7 +9282,7 @@
    "checks": []
   },
   {
-   "id": "s061",
+   "id": "s060",
    "title": "Cresce ameaça a indígenas no MS após de Lula nas eleições",
    "summary": "Além de suposto envenenamento, ruralistas estão tentando atropelar indígenas, diz liderança local.",
    "section": "pt-br",
@@ -9365,7 +9337,7 @@
    "checks": []
   },
   {
-   "id": "s060",
+   "id": "s059",
    "title": "França mobiliza esquema de segurança diante de protestos previstos para este sábado",
    "summary": "Manifestantes cobram melhorias nos serviços públicos e medidas contra o alto custo de vida no país",
    "section": "mundo",
@@ -9420,7 +9392,7 @@
    "checks": []
   },
   {
-   "id": "s059",
+   "id": "s058",
    "title": "Morre aos 85 anos Nonna Silvi, cozinheira toscana que se tornou fenômeno nas redes",
    "summary": "Fenômeno das redes sociais, a cozinheira italiana Silvana Bini, conhecida como Nonna Silvi, morreu aos 85 anos na madrugada deste sábado (31), em sua casa em Montespertoli, na província de Florença . Leia mais (10/31/2026 - 10h48)",
    "section": "voceviu",
@@ -9475,7 +9447,7 @@
    "checks": []
   },
   {
-   "id": "s058",
+   "id": "s057",
    "title": "Site do Corinthians é hackeado e “anuncia” a contratação de Messi",
    "summary": "Invasores publicaram nota inventando transferência do argentino",
    "section": "poder-sportsmkt",
@@ -9530,7 +9502,7 @@
    "checks": []
   },
   {
-   "id": "s057",
+   "id": "s056",
    "title": "Premiê britânico diz estar aberto a pedido formal de desculpas pela escravidão",
    "summary": "O primeiro-ministro do Reino Unido , Andy Burnham , afirmou na sexta-feira (30) estar aberto a que seu governo peça desculpas formalmente pela participação histórica do país no tráfico de pessoas escravizadas, uma mudança importante na política britânica. Leia mais (10/31/2026 - 13h02)",
    "section": "mundo",
@@ -9585,7 +9557,7 @@
    "checks": []
   },
   {
-   "id": "s056",
+   "id": "s055",
    "title": "Carolina Ferraz anuncia que se tornou avó: “Alegria imensa”",
    "summary": "A família de Carolina Ferraz ganhou um novo integrante. Aos 58 anos, a atriz e apresentadora se ...",
    "section": "pop",
@@ -9640,7 +9612,7 @@
    "checks": []
   },
   {
-   "id": "s055",
+   "id": "s054",
    "title": "Cantareira recupera volume, mas segue em risco de escassez; sistema abastece metade da Grande SP",
    "summary": "Reservatórios chegaram a 50,69% do volume útil nesta sexta-feira, ante 41,10% no fim de setembro; classificação de Atenção será mantida em novembro",
    "section": "brasil",
@@ -9695,7 +9667,7 @@
    "checks": []
   },
   {
-   "id": "s054",
+   "id": "s053",
    "title": "Mais de 100 países já reconheceram a vitória de Lula nas eleições de 2026",
    "summary": "Entre as nações que não reconheceram os resultados no país, segundo ferramenta da Corte, estão EUA, Argentina, Hungria e a Suíça",
    "section": "mundo",
@@ -9750,7 +9722,7 @@
    "checks": []
   },
   {
-   "id": "s053",
+   "id": "s052",
    "title": "Governo Trump investiga suposta fraude no Alasca por candidatos rivais com nomes iguais",
    "summary": "O governo do presidente Donald Trump intensificou as investigações criminais e civis sobre as acusações de que os democratas teriam conspirado para recrutar um candidato com intuito fraudulento em uma disputa crucial pelo Senado no Alasca, afirmaram autoridades nesta sexta-feira (30), gerando nova i",
    "section": "mundo",
@@ -9805,7 +9777,7 @@
    "checks": []
   },
   {
-   "id": "s052",
+   "id": "s051",
    "title": "Moraes manda transferir Bacellar e soltar desembargador",
    "summary": "Macário Júdice estava preso desde dezembro de 2025 e deverá usar tornozeleira eletrônica, além de entregar o passaporte à Justiça",
    "section": "brasil",
@@ -9860,7 +9832,7 @@
    "checks": []
   },
   {
-   "id": "s051",
+   "id": "s050",
    "title": "“Nos mataram”: Como o último jornal independente da Rússia fechou as portas",
    "summary": "Fundado nos anos 1990 por um vencedor do Nobel da Paz, o jornal sofreu com a revogação de licença a prisão de jornalistas e o bloqueio de doações no regime de Vladimir Putin",
    "section": "internacional",
@@ -9915,7 +9887,7 @@
    "checks": []
   },
   {
-   "id": "s050",
+   "id": "s049",
    "title": "Derrota eleitoral de Flávio Bolsonaro ameaça lançamento de filme Dark Horse",
    "summary": "O lançamento de “Dark Horse”, cinebiografia de Jair Bolsonaro, enfrenta incertezas diante da apuração sobre o financiamento da produção.",
    "section": "brasil",
@@ -9974,7 +9946,7 @@
    "checks": []
   },
   {
-   "id": "s049",
+   "id": "s048",
    "title": "Missa homenageia vítimas de acidente ferroviário na Espanha; autoridades ainda apuram causas da tragédia",
    "summary": "Moradores e autoridades locais se reuniram neste sábado (31) no vilarejo espanhol de Urda, na província de Toledo, para uma missa em homenagem às vítimas do acidente entre dois trens de alta velocidade que deixou ao menos 69 mortos. A cerimônia ocorreu perto do local da colisão.",
    "section": "",
@@ -10029,7 +10001,7 @@
    "checks": []
   },
   {
-   "id": "s048",
+   "id": "s047",
    "title": "Resoluções de EUA e Rússia sobre Saara Ocidental são rejeitadas no Conselho de Segurança da ONU",
    "summary": "Por Antoni Slodkowski",
    "section": "",
@@ -10084,7 +10056,7 @@
    "checks": []
   },
   {
-   "id": "s047",
+   "id": "s046",
    "title": "Civis deixam cidade ucraniana ocupada pela Rússia; veja imagens",
    "summary": "Operação humanitária em Kherson é a 1ª do tipo desde o início da guerra e envolve rota via Belarus para a Ucrânia",
    "section": "poder-internacional",

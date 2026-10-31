@@ -106,8 +106,15 @@ def main():
         if not sub:
             continue
         if kind == "check":
-            # checagem usa claim_overlap (IDF sobre o corpus do conjunto)
-            titles = [t for p in sub for t in (p["a_title"], p["b_title"])]
+            # Checagem usa claim_match. O IDF inclui o corpus real (histórias,
+            # matérias e checagens do data.json), não só os 134 títulos dos
+            # pares: medir raridade no conjunto pequeno inflava o recall.
+            with open(os.path.join(BASE, "docs", "data.json"), encoding="utf-8") as f:
+                data = json.load(f)
+            bg = [s["title"] for s in data["stories"]]
+            bg += [a["title"] for s in data["stories"] for a in s["articles"]]
+            bg += [c["title"] for c in data.get("factchecks", [])]
+            titles = [t for p in sub for t in (p["a_title"], p["b_title"])] + bg
             idf, df = app.build_idf([set(app.tok(t)) for t in titles])
             scores = [app.claim_overlap(set(app.tok(p["a_title"])),
                                         set(app.tok(p["b_title"])), idf, df)
@@ -117,6 +124,11 @@ def main():
             for thr in (0.0, 0.34, 0.45, 0.60):
                 p, r, cm = pr(scores, labels, thr)
                 print(f"  claim_overlap thr={thr:.2f}: P={p:.2f} R={r:.2f} {cm}")
+            prod = [app.claim_match(set(app.tok(p["a_title"])),
+                                    set(app.tok(p["b_title"])), idf, df) > 0
+                    for p in sub]
+            p, r, cm = pr([1.0 if x else 0.0 for x in prod], labels, 0.5)
+            print(f"  produção (claim_match)          P={p:.2f} R={r:.2f} {cm}")
             continue
         report(kind, sub, signals(sub, use_embed))
         if kind == "intl":

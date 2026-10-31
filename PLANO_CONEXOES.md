@@ -67,10 +67,15 @@ Com o boost ancorado (`entidade OR embedding ≥ 0,75`, opt-in `--embed`): longf
 0 matches em 104 histórias é subaproveitamento do diferencial do produto.
 
 - [x] **F4.0 Diagnóstico do recall (31/10/2026).** Em 67 pares notícia↔checagem rotulados, só **3** são a mesma alegação. O léxico acerta 1 (P 1,00 / R 0,33); os outros 2 não compartilham tokens com o título da matéria. Conclusão: o problema não é limiar, é **representação** — ligar "o que foi checado" à alegação exige extração de claim, não mais TF-IDF.
-- [ ] **F4.1 Lupa completa** (5.753 itens): coletar em lote uma vez (script `ops/backfill_lupa.py`), guardar em SQLite e usar por janela de 30 dias por rodada.
-- [ ] **F4.2 Matching híbrido**: entidades específicas OU `claim_overlap` atual OU embedding ≥ 0.6 (o mesmo conector de F1) — hoje só o léxico com raro-termo decide.
-- [ ] **F4.3 Selo "não checado ≠ verdadeiro"**: manter o botão "verificar tema" em toda história sem match (já existe) e medir taxa de cliques via `data.json` quando houver analytics.
-- [ ] **Aceite:** em dia de pauta política quente, ≥ 30% das histórias com selo ou botão relevante; FP=0 em 30 pares rotulados.
+- [x] **F4.1 Lupa completa — decisão: adiado.** Medido em 31/10: só **170 das 700** checagens estão nos últimos 30 dias (71 nos últimos 7). O backfill de 5.753 itens históricos não acrescenta nada à janela de 30 dias e **dilui a raridade** (a regra usa DF absoluto ≤ 4), podendo reduzir o recall. Fica para quando houver busca histórica, com corpus separado por janela.
+- [x] **F4.2 Matching de alegação (não de entidade).** Regra: `claim_overlap` OU (cobertura ≥ 0,40 + 3 tokens em comum + 1 token com DF ≤ 4). Medido nos 67 pares rotulados, com corpus realista (710 títulos):
+  - `claim_overlap` sozinho: P 1,00 / R 0,33 (1 TP)
+  - regra nova: **P 1,00 / R 0,67** (2 TP, 0 FP) — recupera o golpe do Auxílio Reconstrução (CX005, valor diferente)
+  - **entidade foi rejeitada**: "mesma pessoa" (Flávio, Lula) deu **47 FPs** em 67 pares. Entidade serve para pauta (F2), não para alegação.
+  - **lição registrada:** a primeira versão usava DF ≤ 12 sobre só 134 títulos e mostrava R 0,67; com corpus real o ganho **desaparecia**. O portão agora mede contra o `data.json` versionado, não contra o conjunto pequeno.
+  - **produção:** 0 matches na rodada de 31/10 (o caso não estava no pool); a regra é uma melhora de recall no conjunto, não uma garantia diária.
+- [ ] **F4.3 Selo "não checado ≠ verdadeiro"**: o botão "verificar tema" já existe em toda história sem match; falta medir cliques (sem analytics).
+- [ ] **Aceite:** em dia de pauta política quente, ≥ 30% das histórias com selo ou botão relevante; FP=0 em 30 pares rotulados. **Parcial:** FP=0 sim; cobertura diária ainda depende de o fato ter sido checado. O teto léxico está atingido — o próximo salto exige **extração de alegação** (F4.0), não mais um limiar.
 
 ## Ordem de execução e esforço
 

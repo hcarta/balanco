@@ -453,6 +453,26 @@ def build_idf(token_sets: list[set]) -> tuple[dict, Counter]:
     return idf, df
 
 
+def claim_match(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -> float:
+    """F4.2: mesma alegação = claim_overlap OU (cobertura alta + termo muito raro).
+
+    Medido em 31/10/2026 (67 pares rotulados, corpus realista de 710 títulos):
+    claim_overlap sozinho dá P 1.00/R 0.33; a segunda regra sobe para
+    P 1.00/R 0.67 sem FP. Entidade NÃO entra: "mesma pessoa" (Flávio, Lula)
+    gerou 47 FPs em 67 pares. O limiar de raridade é DF<=4 (não DF<=12):
+    com corpus real, o DF<=12 inflava a raridade e o ganho desaparecia.
+    """
+    sc = claim_overlap(a, b, idf, df, floor)
+    if sc:
+        return sc
+    inter = a & b
+    cov = _title_cov(a, b)
+    rare = any(df.get(w, 99) <= 4 for w in inter)
+    if cov >= max(0.40, floor) and len(inter) >= 3 and rare:
+        return cov
+    return 0.0
+
+
 def claim_overlap(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -> float:
     """Sobreposição ponderada por raridade: separa "mesma alegação" de "mesmo assunto".
 
@@ -937,7 +957,7 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     idf, df = build_idf(allsets)
 
     def match(a, b, floor):
-        return claim_overlap(a, b, idf, df, floor)
+        return claim_match(a, b, idf, df, floor)
 
     def terms(a, b):
         return sorted(a & b)[:6]
