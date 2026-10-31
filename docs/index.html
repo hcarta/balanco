@@ -67,6 +67,16 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .nav .search input:focus{outline:none;border-color:var(--ink);width:230px}
 .nav .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--faint)}
 
+/* ── hero: destaque + repercussão no centro ── */
+.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;padding:34px 0 6px;align-items:start;border-bottom:2px solid var(--ink)}
+.hero .featured{padding-bottom:0;margin-bottom:0;border-bottom:none}
+.hero-side{padding-top:6px}
+.hero-side .rt{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.hero-side .hero-item{padding:13px 0;border-bottom:1px solid var(--hair);cursor:pointer}
+.hero-side .hero-item:last-child{border-bottom:none}
+.hero-side .hero-item h4{font-family:var(--serif);font-weight:500;font-size:15.5px;line-height:1.32;margin:0 0 7px}
+.hero-side .hero-item:hover h4{color:var(--accent)}
+@media(max-width:940px){.hero{grid-template-columns:1fr;gap:10px}}
 /* ── layout ── */
 .main{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:48px;padding:40px 0 70px;align-items:start}
 .main.solo{grid-template-columns:1fr}
@@ -268,9 +278,17 @@ footer a.fl:hover{color:var(--accent)}
   </label>
 </div></nav>
 
-<main class="wrap"><div class="main" id="main">
-  <section id="feedCol">
+<main class="wrap">
+  <section class="hero" id="heroSec">
     <div id="featured"></div>
+    <aside class="hero-side" id="heroSide">
+      <div class="rt">◎ Em repercussão no centro</div>
+      <p class="rnote">O essencial, segundo os veículos de centro de alta factualidade</p>
+      <div id="heroList"></div>
+    </aside>
+  </section>
+  <div class="main" id="main">
+  <section id="feedCol">
     <div class="section-head">
       <h2 id="feedTitle">Todas as histórias</h2>
       <span class="edwrap"><select id="ed" aria-label="Filtrar por editoria"></select><select id="src" aria-label="Filtrar por veículo"></select><span class="count" id="feedCount"></span></span>
@@ -281,11 +299,10 @@ footer a.fl:hover{color:var(--accent)}
   <aside class="rail" id="rail">
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="blindCard"></div>
-    <div class="rail-card" id="consCard"></div>
     <div class="rail-card" id="srcCard"></div>
     <div class="rail-card method">
       <div class="rt">◎ Como ler este balanço</div>
-      <p><b>Recorte</b>: sem esporte — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e o trilho "Em consenso" destacam o que os veículos de centro com alta factualidade cobrem.</p>
+      <p><b>Recorte</b>: sem esporte — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e o bloco "Em repercussão no centro" destacam o que os veículos de centro com alta factualidade cobrem.</p>
       <p>É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Aqui sem AllSides/MBFC, a tabela é curadoria manual.</p>
       <p><b>Checagens</b>: o selo ⚑ liga a história a uma verificação do <b>G1 Fato ou Fake</b> ou da <b>Agência Lupa</b> quando a alegação coincide. É uma checagem <i>relacionada</i>, não um veredito sobre a matéria.</p>
       <p>Corpos completos (quando públicos) alimentam só a análise; na tela aparecem a description pública ou trechos curtos, sempre com link para o original.</p>
@@ -410,7 +427,8 @@ function openFromUrl(){
 /* ---------- featured ---------- */
 function renderFeatured(){
   const stories = S.data.stories.filter(s=>s.counts.total>=4);
-  const top = [...stories].sort((a,b)=> (b.blindspot?1:0)-(a.blindspot?1:0) || b.counts.total-a.counts.total)[0];
+  // destaque = a mais repercutida entre os veículos
+  const top = [...stories].sort((a,b)=>b.counts.total-a.counts.total)[0];
   const el = $('#featured');
   if(!top){ el.innerHTML=''; S.featuredId=null; return; }
   S.featuredId = top.id;
@@ -429,6 +447,24 @@ function renderFeatured(){
       ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       ${biasBar(top)}
     </div>`;
+  // 3 mais repercutidas no centro (exceto o destaque)
+  const side = stories.filter(s=>s.id!==top.id)
+    .map(s=>({s, n:centerTrusted(s)}))
+    .filter(x=>x.n>=2)
+    .sort((a,b)=>b.n-a.n || b.s.counts.total-a.s.counts.total)
+    .slice(0,3);
+  const hl = $('#heroList');
+  $('#heroSide').style.display = side.length ? '' : 'none';
+  hl.innerHTML = side.map(({s,n})=>`
+    <div class="hero-item" data-jump="${s.id}">
+      <h4>${esc(s.title)}</h4>
+      <div class="rail-mini">
+        <span class="bL" style="width:${s.pct.L}%"></span>
+        <span class="bC" style="width:${s.pct.C}%"></span>
+        <span class="bR" style="width:${s.pct.R}%"></span>
+      </div>
+      <div class="rl">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
+    </div>`).join('');
 }
 
 /* ---------- bias bar ---------- */
@@ -573,22 +609,6 @@ function renderRail(){
       </div>`;
     }).join('')
     : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Nenhuma história com cobertura desequilibrada suficiente para virar blindspot nesta edição.</p>`
-  );
-
-  // em consenso: o que o centro confiável está cobrindo (hierarquia)
-  const cons = d.stories
-    .map(s=>({s, n:centerTrusted(s)}))
-    .filter(x=>x.n>=2)
-    .sort((a,b)=>b.n-a.n || b.s.counts.total-a.s.counts.total)
-    .slice(0,4);
-  $('#consCard').innerHTML = `<div class="rt">◎ Em consenso</div>
-    <p class="rnote">O essencial, segundo o centro de alta factualidade</p>` + (
-    cons.length ? cons.map(({s,n})=>`
-      <div class="rail-item" data-jump="${s.id}">
-        <h4>${esc(s.title)}</h4>
-        <div class="rl">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
-      </div>`).join('')
-    : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Sem consenso claro nesta edição.</p>`
   );
 
   // checagens recentes (G1 Fato ou Fake + Lupa)

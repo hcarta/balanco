@@ -51,7 +51,8 @@
 
 ## 3. Processo de decisão
 
-1. **Proposta**: qualquer mudança de viés vem com 3–5 manchetes-exemplo que a sustentem.
+1. **Origem**: o posicionamento inicial de cada veículo foi proposto por análise prévia de IA do perfil editorial (linha histórica, propriedade, enquadramento típico) e validado pela curadoria — não houve classificação manual veículo a veículo do zero.
+2. **Proposta**: qualquer mudança de viés vem com 3–5 manchetes-exemplo que a sustentem.
 2. **Evidência**: `state/factcheck_ledger.json` (padrão de checagens), amostragem de 20 manchetes recentes, comparação com a cobertura dos pares no Balanço.
 3. **Registro**: toda mudança entra em `state/vies_changelog.md` com data, antes/depois e motivo.
 4. **Vedações**: viés nunca muda por causa de UMA matéria; nunca muda automaticamente por checagem (o ledger é evidência, não sentença).

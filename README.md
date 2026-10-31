@@ -14,7 +14,8 @@ Inspirado no [Ground.news](https://ground.news/).
 ## Interface
 Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, respiro, pequenos caps) com a leitura de viés do **Ground.news** (barra Esq/Centro/Dir).
 
-- **Masthead + destaque**: a história mais relevante do dia abre a edição.
+- **Masthead + destaque**: a história mais repercutida entre os veículos abre a edição.
+- **Hero lateral**: as 3 mais repercutidas no centro de alta factualidade, ao lado do destaque.
 - **Barra de viés** em cada história, com contagem e percentuais por lado.
 - **Comparar os lados**: painel em 3 colunas (esquerda/centro/direita) com veículo, factualidade e propriedade.
 - **Trilho lateral**: checagens recentes no topo, blindspots do dia, fontes monitoradas (com viés) e metodologia.
