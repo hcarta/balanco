@@ -21,6 +21,7 @@ Hoje: 3 matchers (TF-IDF para cluster, `claim_overlap` para checagens, `entity_m
 
 - [x] **F1.1 Embeddings como sinal base compartilhado.** O modelo multilíngue já baixa (`--embed`, MiniLM 384d). Nesta rodada o embedding entrou como **segunda evidência** (não como score único): confirma um par que já tem âncora lexical. A unificação de pesos fica para depois de F4 — os quatro matchers ainda têm vocabulários distintos.
 - [x] **F1.2 Conjunto rotulado por conexão.** 167 pares rotulados à mão (`tests/conn_pairs.jsonl`), amostrados do **pré-filtro** (entidade em comum ou cobertura ≥ 0,12), não do universo de pares: é a distribuição que o scorer vê em produção. Composição: longform 60 (26 positivos), internacional 40 (11), checagem 67 (3). Critério: 1 = mesmo fato/pauta específica; 0 = mesma pessoa/instituição ou tema amplo; artigo idêntico = 0 (redundância).
+  - **Limite epistêmico:** a rotulagem é de **um único anotador** (o agente), sem segundo rótulo independente. Os números medem consistência com esse critério, não concordância entre humanos; casos limítrofes (mesma pessoa, fato distinto) foram tratados como 0. Um segundo anotador é pré-requisito para tratar P/R como benchmark.
 - [x] **F1.3 Calibração por grade.** `ops/eval_connections.py` mede P/R por sinal e limiar; `tests/test_connections.py` trava o ponto de operação. Linha de base (regra lexical, 31/10/2026):
 
   | Conexão | P | R | Suporte |
