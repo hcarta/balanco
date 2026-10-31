@@ -4,99 +4,194 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leituras da semana — Balanço</title>
+<script>try{var _t=localStorage.getItem('balanco-theme');if(!_t)_t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=_t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#faf8f4; --surface:#fff; --ink:#16130f; --ink-soft:#3d3831;
-  --muted:#6b655c; --faint:#8a8378; --hair:#e5ded2; --accent:#1d4ed8;
-  --L:#1a7f4b; --C:#6b7280; --R:#b45309;
+  --paper:#faf8f4; --surface:#ffffff; --ink:#16130f; --ink-soft:#3d3833;
+  --muted:#6f675e; --faint:#9a9187; --hair:#e6e0d6; --hair-strong:#d8d0c3;
+  --accent:#b3261e; --accent-soft:#f6e9e7;
+  --L:#2e7d32; --L-bg:#e7f2ea; --C:#8a8178; --C-bg:#efece7;
+  --R:#9a7200; --R-bg:#faf3dc;
+  --serif:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --maxw:1180px;
 }
-@media (prefers-color-scheme: dark){
-  :root{--paper:#141210; --surface:#1c1916; --ink:#f2ede4; --ink-soft:#d8d0c4;
-        --muted:#a79f93; --faint:#8a8378; --hair:#332e28; --accent:#8ab4ff;}
+html[data-theme="dark"]{
+  --paper:#161310; --surface:#221d16; --ink:#ece4d3; --ink-soft:#d3c8b4;
+  --muted:#a89d89; --faint:#7e7462; --hair:#383126; --hair-strong:#4d4435;
+  --accent:#d0604f; --accent-soft:#3a211c;
+  --L:#7cc490; --L-bg:#1c3325; --C:#a8a29e; --C-bg:#2c2822;
+  --R:#d9a400; --R-bg:#332a10;
 }
+html[data-theme="dark"] img{filter:brightness(.93)}
+html[data-theme="dark"] .nav{background:rgba(22,19,16,.94)}
+html[data-theme="dark"] .nav a.pill.on{background:var(--ink);color:#161310;border-color:var(--ink)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:Georgia,"Times New Roman",serif;line-height:1.55}
-.wrap{max-width:760px;margin:0 auto;padding:40px 24px 70px}
-.top{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
-  border-bottom:1px solid var(--hair);padding-bottom:18px;margin-bottom:30px;flex-wrap:wrap}
-.brand{font-weight:600;font-size:24px;letter-spacing:-.01em}
-.brand .dot{color:var(--accent)}
-.top a{font-family:system-ui,sans-serif;font-size:12px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none}
-h1{font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:0 0 12px}
-.dek{font-size:16px;color:var(--muted);max-width:620px;margin:0 0 34px}
-.read{border-top:1px solid var(--hair);padding:24px 0}
-.read:first-of-type{border-top:none;padding-top:0}
-.src{font-family:system-ui,sans-serif;font-size:11px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
-  display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-.bias{font-size:9.5px;padding:2px 7px;border-radius:3px;letter-spacing:.04em}
-.bias.L{background:rgba(26,127,75,.12);color:var(--L)}
-.bias.C{background:rgba(107,114,128,.14);color:var(--C)}
-.bias.R{background:rgba(180,83,9,.14);color:var(--R)}
-.read h2{font-size:24px;line-height:1.2;margin:0 0 8px;font-weight:600}
-.read h2 a{color:var(--ink);text-decoration:none}
-.read h2 a:hover{color:var(--accent)}
-.read p{margin:0;color:var(--muted);font-size:15px}
-.note{margin-top:40px;padding-top:20px;border-top:1px solid var(--hair);
-  font-size:12.5px;color:var(--faint)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ── cabeçalho (mesmo da home) ── */
+.strip{border-bottom:1px solid var(--hair);background:var(--paper)}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:38px;font-size:12px;color:var(--muted)}
+.strip .tag{letter-spacing:.02em}
+.strip .tag b{color:var(--accent);font-weight:700}
+.strip .date{font-style:italic;font-family:var(--serif)}
+.masthead{text-align:center;padding:34px 0 20px}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:clamp(40px,7vw,66px);line-height:.95;letter-spacing:-.02em;display:inline-flex;align-items:flex-start;gap:10px}
+.wordmark .dot{width:.16em;height:.16em;background:var(--accent);border-radius:50%;margin-top:.34em;display:inline-block}
+.wordmark small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:.55em}
+.tagline{font-family:var(--serif);font-size:16px;color:var(--muted);margin:14px 0 0}
+.tagline b{color:var(--ink-soft);font-weight:600}
+.nav{position:sticky;top:0;z-index:30;background:rgba(250,248,244,.94);backdrop-filter:blur(10px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair-strong)}
+.nav .wrap{display:flex;align-items:center;gap:6px;height:52px;overflow:visible}
+.nav .links{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav .links::-webkit-scrollbar{display:none}
+.nav .brand{font-family:var(--serif);font-weight:600;font-size:20px;margin-right:14px;white-space:nowrap}
+.nav .brand .dot{color:var(--accent)}
+.nav a.pill,.nav button.pill{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);padding:7px 13px;border-radius:99px;border:1px solid transparent;background:none;cursor:pointer;white-space:nowrap;transition:.15s}
+.nav a.pill:hover,.nav button.pill:hover{color:var(--ink);text-decoration:none;background:#f1ece4}
+.nav a.pill.on,.nav button.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.nav .search{position:relative;flex:0 0 auto}
+.nav .search input{width:190px;padding:8px 12px 8px 32px;border:1px solid var(--hair-strong);border-radius:99px;background:var(--surface);font-size:13px;font-family:var(--sans);color:var(--ink);transition:.2s}
+.nav .search input:focus{outline:none;border-color:var(--ink);width:230px}
+.nav .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--faint)}
+@media(max-width:940px){
+  .nav .brand{display:none}
+  .nav .links{min-width:0;flex:1;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .nav .wrap{gap:4px}
+  .nav .search input{width:120px}
+  .nav .search input:focus{width:150px}
+}
+
+/* ── conteúdo ── */
+main{padding:38px 0 70px}
+.lead{max-width:760px;margin-bottom:30px}
+h1{font-family:var(--serif);font-size:clamp(34px,5vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px;font-weight:600}
+.dek{font-family:var(--serif);font-size:16.5px;line-height:1.55;color:var(--muted);margin:0}
+.reads-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.read{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden}
+.read:hover{border-color:var(--hair-strong)}
+.thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--hair)}
+.read-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.src{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.bias{font-size:9.5px;padding:2px 7px;border-radius:3px;letter-spacing:.03em}
+.bias.L{background:var(--L-bg);color:var(--L)}
+.bias.C{background:var(--C-bg);color:var(--C)}
+.bias.R{background:var(--R-bg);color:var(--R)}
+.read h2{font-family:var(--serif);font-size:22px;line-height:1.2;margin:0 0 9px;font-weight:600}
+.read h2 a{color:var(--ink)}
+.read h2 a:hover{color:var(--accent);text-decoration:none}
+.read p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+.note{margin-top:38px;padding-top:20px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--faint);max-width:760px}
 .note a{color:var(--accent)}
-.empty{color:var(--muted);font-style:italic}
-@media(max-width:560px){h1{font-size:32px}.read h2{font-size:20px}}
+.empty{font-family:var(--serif);font-style:italic;color:var(--faint);font-size:16px}
+@media(max-width:760px){
+  .reads-grid{grid-template-columns:1fr}
+  .read h2{font-size:20px}
+  main{padding-top:28px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <div class="brand">Balanço<span class="dot">.</span></div>
-    <a href="./">← Voltar ao balanço do dia</a>
+
+<div class="strip"><div class="wrap">
+  <span class="tag"><b>Leituras</b> · textos de fôlego da semana</span>
+  <span class="date" id="dateLine">carregando edição…</span>
+</div></div>
+
+<header class="masthead"><div class="wrap">
+  <div class="wordmark"><span class="dot"></span>Balanço<small>beta</small></div>
+  <p class="tagline">A mesma notícia, de <b>todos os lados</b> — esquerda, centro e direita lado a lado.</p>
+</div></header>
+
+<nav class="nav"><div class="wrap">
+  <span class="brand">Balanço<span class="dot">.</span></span>
+  <div class="links">
+    <a class="pill" href="./">Todas as histórias</a>
+    <a class="pill" href="./?f=blind">⚡ Blindspots</a>
+    <a class="pill" href="./?f=L">+ Esquerda</a>
+    <a class="pill" href="./?f=R">+ Direita</a>
+    <a class="pill" href="./?f=div">Mais divididas</a>
+    <a class="pill on" href="leituras.html">📚 Leituras</a>
+    <a class="pill" href="como-lemos.html">ⓘ Metodologia</a>
+  </div>
+  <form class="search" action="./" method="get" role="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="search" name="q" placeholder="Buscar…" aria-label="Buscar histórias">
+  </form>
+  <button class="pill" id="themeBtn" title="Alternar modo claro/escuro" aria-label="Alternar modo claro/escuro">🌙</button>
+</div></nav>
+
+<main class="wrap">
+  <div class="lead">
+    <h1>Leituras da semana</h1>
+    <p class="dek">Textos de fôlego das fontes de longform, escolhidos por recência e
+    diversidade de fonte — não por alinhamento político e sem juízo de qualidade.
+    A seleção é independente das histórias do dia; o link leva sempre ao original.</p>
   </div>
 
-  <h1>Leituras da semana</h1>
-  <p class="dek">Textos de fôlego das fontes de longform, escolhidos por recência e
-  diversidade de fonte — não por alinhamento político e sem juízo de qualidade.
-  A seleção é independente das histórias do dia; o link leva sempre ao original.</p>
-
-  <div id="list"><p class="empty">Carregando leituras…</p></div>
+  <div class="reads-grid" id="list"><p class="empty">Carregando leituras…</p></div>
 
   <p class="note">Critérios completos em <a href="como-lemos.html">Como lemos</a>.
   O Balanço não reproduz o texto das peças: exibe título público, fonte e resumo do feed.</p>
-</div>
+</main>
 
 <script>
 const esc = s => (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const biasLabel = b => b <= -0.5 ? ['L','Esquerda'] : b >= 0.5 ? ['R','Direita'] : ['C','Centro'];
-const date = iso => {
+const fmtDate = iso => {
   const d = new Date(iso);
   return isNaN(d) ? '' : d.toLocaleDateString('pt-BR', {day:'numeric', month:'long', year:'numeric'});
 };
 
+const themeBtn = document.querySelector('#themeBtn');
+function syncThemeIcon(){ if(themeBtn) themeBtn.textContent = document.documentElement.dataset.theme === 'dark' ? '☀️' : '🌙'; }
+if(themeBtn) themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = cur;
+  try{ localStorage.setItem('balanco-theme', cur); }catch(e){}
+  syncThemeIcon();
+});
+syncThemeIcon();
+
 fetch('data.json', {cache:'no-store'})
   .then(r => r.json())
   .then(d => {
+    const gen = new Date(d.generated_at);
+    const dl = document.querySelector('#dateLine');
+    if(dl && !isNaN(gen)) dl.textContent = gen.toLocaleDateString('pt-BR', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
     const items = d.leituras || [];
-    const el = document.getElementById('list');
+    const el = document.querySelector('#list');
     if (!items.length) {
       el.innerHTML = '<p class="empty">Nenhuma leitura carregada nesta edição.</p>';
       return;
     }
     el.innerHTML = items.map(x => {
       const [cls, label] = biasLabel(Number(x.bias || 0));
+      const img = x.image ? `<img class="thumb" src="${esc(x.image)}" alt="" loading="lazy" onerror="this.remove()">` : '';
       return `<article class="read">
-        <div class="src">
-          <span>${esc(x.source)}</span>
-          <span>· ${esc(date(x.published))}</span>
-          <span class="bias ${cls}">${label}</span>
+        ${img}
+        <div class="read-body">
+          <div class="src">
+            <span>${esc(x.source)}</span>
+            <span>· ${esc(fmtDate(x.published))}</span>
+            <span class="bias ${cls}">${label}</span>
+          </div>
+          <h2><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a></h2>
+          ${x.summary ? `<p>${esc(x.summary)}</p>` : ''}
         </div>
-        <h2><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a></h2>
-        ${x.summary ? `<p>${esc(x.summary)}</p>` : ''}
       </article>`;
     }).join('');
   })
   .catch(() => {
-    document.getElementById('list').innerHTML =
-      '<p class="empty">Não foi possível carregar data.json.</p>';
+    const el = document.querySelector('#list');
+    if (el) el.innerHTML = '<p class="empty">Não foi possível carregar data.json.</p>';
   });
 </script>
 </body>

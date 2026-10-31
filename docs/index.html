@@ -79,11 +79,11 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 
 /* ── nav ── */
 .nav{position:sticky;top:0;z-index:30;background:rgba(250,248,244,.94);backdrop-filter:blur(10px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair-strong)}
-.nav .wrap{display:flex;align-items:center;gap:6px;height:52px;overflow-x:auto;scrollbar-width:none}
-.nav .wrap::-webkit-scrollbar{display:none}
+.nav .wrap{display:flex;align-items:center;gap:6px;height:52px;overflow:visible}
+.nav .links{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav .links::-webkit-scrollbar{display:none}
 .nav .brand{font-family:var(--serif);font-weight:600;font-size:20px;margin-right:14px;white-space:nowrap}
 .nav .brand .dot{color:var(--accent)}
-.nav .links{display:flex;gap:2px;flex:1}
 .nav a.pill,.nav button.pill{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);padding:7px 13px;border-radius:99px;border:1px solid transparent;background:none;cursor:pointer;white-space:nowrap;transition:.15s}
 .nav a.pill:hover,.nav button.pill:hover{color:var(--ink);text-decoration:none;background:#f1ece4}
 .nav button.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -324,8 +324,8 @@ footer a.fl:hover{color:var(--accent)}
   <div class="links">
     <button class="pill on" data-f="all">Todas as histórias</button>
     <button class="pill" data-f="blind">⚡ Blindspots</button>
-    <button class="pill" data-f="L">Maioria esquerda</button>
-    <button class="pill" data-f="R">Maioria direita</button>
+    <button class="pill" data-f="L">+ Esquerda</button>
+    <button class="pill" data-f="R">+ Direita</button>
     <button class="pill" data-f="div">Mais divididas</button>
     <a class="pill" href="leituras.html">📚 Leituras</a>
     <a class="pill" href="como-lemos.html">ⓘ Metodologia</a>
@@ -459,6 +459,14 @@ async function load(){
 
 function renderAll(){
   const d = S.data;
+  // estado vindo de links (ex.: menu da página de Leituras)
+  const params = new URLSearchParams(location.search);
+  const qp = params.get('q');
+  if(qp !== null){ S.q = qp; const qi = $('#q'); if(qi) qi.value = qp; }
+  const fp = params.get('f');
+  if(fp && ['all','blind','L','R','div'].includes(fp)) S.filter = fp;
+  document.querySelectorAll('.pill[data-f]').forEach(el=>
+    el.classList.toggle('on', el.dataset.f===S.filter));
   const gen = new Date(d.generated_at);
   $('#dateLine').textContent = isNaN(gen)? '' :
     gen.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});

@@ -974,7 +974,7 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
                 "source_id": s["id"], "source": s["name"],
                 "title": title, "link": a["link"],
                 "published": a["published"], "summary": summary[:240],
-                "bias": float(s.get("bias", 0)),
+                "image": a.get("image", ""), "bias": float(s.get("bias", 0)),
             })
     out.sort(key=lambda x: x["published"], reverse=True)
     picked, per = [], Counter()
