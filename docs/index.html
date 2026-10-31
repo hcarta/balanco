@@ -78,6 +78,8 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:16.5px;line-height:1.3;margin:0 0 6px}
 .hero-side .hitem:hover h4{color:var(--accent)}
 .hero-side .hthumb{width:128px;height:128px;object-fit:cover;border-radius:8px;flex:0 0 auto}
+.hero-side .hleft{display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
+.hero-side .hleft .rail-mini{margin:0}
 .hero-side .hsum{font-family:var(--serif);font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hero-side .hmeta{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.02em}
 @media(max-width:560px){.hero-side .hthumb{width:96px;height:96px}}
@@ -461,17 +463,18 @@ function renderFeatured(){
   $('#heroSide').style.display = side.length ? '' : 'none';
   hl.innerHTML = side.map(({s,n})=>{
     const im = storyImg(s);
-    return `
-    <div class="hitem" data-jump="${s.id}">
-      ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
-      <div>
-        <h4>${esc(s.title)}</h4>
-        ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
-        <div class="rail-mini" role="img" aria-label="Esquerda ${s.pct.L}%, centro ${s.pct.C}%, direita ${s.pct.R}%">
+    const bar = `<div class="rail-mini" role="img" aria-label="Esquerda ${s.pct.L}%, centro ${s.pct.C}%, direita ${s.pct.R}%">
           <span class="bL" style="width:${s.pct.L}%"></span>
           <span class="bC" style="width:${s.pct.C}%"></span>
           <span class="bR" style="width:${s.pct.R}%"></span>
-        </div>
+        </div>`;
+    return `
+    <div class="hitem" data-jump="${s.id}">
+      ${im?`<div class="hleft"><img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">${bar}</div>`:''}
+      <div>
+        <h4>${esc(s.title)}</h4>
+        ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
+        ${im?'':bar}
         <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
       </div>
     </div>`;}).join('');
