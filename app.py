@@ -471,6 +471,13 @@ ENTITY_STOP = {"para", "como", "após", "entre", "sobre", "com", "por", "dos", "
                "the", "a", "an", "after", "before", "with", "from", "this", "that",
                "says", "said", "over", "amid", "during", "will", "has", "have",
                "more", "what", "when", "while", "about", "into", "says"}
+
+# Genéricos: aparecem em qualquer pauta e não provam tópico em comum
+ENTITY_GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us",
+                  "usa", "eua", "uk", "reino unido", "mundo", "world", "país", "pais",
+                  "country", "governo", "government", "presidente", "president",
+                  "ministro", "minister", "ministério", "ministry", "federal"}
+
 ENTITY_ALIAS = {"brasil": "brazil", "eua": "us", "usa": "us",
                 "estados unidos": "united states", "reino unido": "uk"}
 
@@ -506,15 +513,11 @@ def entity_match(a: set, b: set) -> tuple[bool, list]:
     específica (ou 2+ específicas). Genéricos (países, "governo") não contam
     como evidência sozinhos — foi assim que "BTS" casou com "espionagem chinesa"
     (só compartilhavam "estados/unidos"). Retorna (casa, termos)."""
-    GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us",
-               "usa", "eua", "uk", "reino unido", "mundo", "world", "país", "pais",
-               "country", "governo", "government", "presidente", "president",
-               "ministro", "minister", "ministério", "ministry", "federal"}
     inter = a & b
     if len(inter) < 2:
         return False, []
-    multi = sorted(x for x in inter if " " in x and x not in GENERIC)
-    spec = sorted(x for x in inter if x not in GENERIC)
+    multi = sorted(x for x in inter if " " in x and x not in ENTITY_GENERIC)
+    spec = sorted(x for x in inter if x not in ENTITY_GENERIC)
     if multi or len(spec) >= 2:
         return True, (multi + [x for x in spec if x not in multi])[:6]
     return False, []
@@ -535,6 +538,196 @@ ANALYSIS_MARKERS = re.compile(
 
 def _is_analysis(title: str) -> bool:
     return bool(ANALYSIS_MARKERS.search(title or ""))
+
+
+def _story_entities(s) -> set:
+    """Entidades de todas as manchetes da história (recall maior que só a representante)."""
+    out: set = set()
+    for a in s.get("articles", []):
+        out |= entities(a.get("title", ""))
+    return out
+
+
+def _recompute(s) -> dict:
+    """Recalcula contagens, média e blindspot a partir das matérias da história."""
+    arts = s.get("articles", [])
+    l = sum(1 for x in arts if x.get("bucket") == "L")
+    c = sum(1 for x in arts if x.get("bucket") == "C")
+    r = sum(1 for x in arts if x.get("bucket") == "R")
+    tot = len(arts) or 1
+    blind = None
+    if tot >= 4:
+        left_out = l / tot <= 0.15
+        right_out = r / tot <= 0.15
+        if left_out and right_out:
+            blind = None  # só o centro cobre: não é blindspot
+        elif left_out:
+            blind = "left"
+        elif right_out:
+            blind = "right"
+    s["counts"] = {"L": l, "C": c, "R": r, "total": len(arts)}
+    s["pct"] = {"L": round(100 * l / tot), "C": round(100 * c / tot), "R": round(100 * r / tot)}
+    s["avg_bias"] = round(sum(x.get("bias", 0) for x in arts) / tot, 2)
+    s["blindspot"] = blind
+    return s
+
+
+def _title_cov(a: set, b: set) -> float:
+    """Fração do título mais curto coberta pelo mais longo (0–1).
+
+    Sem peso IDF de propósito: a métrica ponderada variava com o tamanho do
+    corpus (0.36 no corpus real, 0.19 num recorte pequeno), o que tornava o
+    limiar não transportável entre rodadas e testes.
+    """
+    if not a or not b:
+        return 0.0
+    return round(len(a & b) / min(len(a), len(b)), 2)
+
+
+def consolidate(stories, window_h=48.0, use_embed=False, emb_min=0.70,
+                rare_min=2, rare_df=12, cov_min=0.35):
+    """F2: funde histórias que descrevem o MESMO fato — não o mesmo assunto.
+
+    Dois sinais independentes, ambos obrigatórios:
+      1. entidades específicas em comum (via `entity_match`);
+      2. evidência de que é o mesmo fato: >= `cov_min` de cobertura do título
+         mais curto com >= `rare_min` tokens raros, OU embedding >= `emb_min`.
+
+    Medido em 31/10/2026 (104 histórias): só entidades fundiria "Rubio e Vieira
+    conversam" com "Trump e Milei pressionam" (ambos citam Flávio Bolsonaro).
+    Cobertura de título separa: fato igual 0.36–0.40, assunto adjacente
+    0.00–0.29 ("Mato Grosso: violência" × "TCE de Mato Grosso"; "Binance" ×
+    "Coreia do Sul e Japão"). Por isso a fusão é conservadora por desenho.
+    """
+    if len(stories) < 2:
+        return stories
+    titles = [a.get("title", "") for s in stories for a in s.get("articles", [])]
+    _, df = build_idf([set(tok(t)) for t in titles])
+    ents = [_story_entities(s) for s in stories]
+    rtok = [set(tok(s.get("title", ""))) for s in stories]
+    ts = [_ts_of(s) for s in stories]
+
+    X = None
+    if use_embed:
+        try:
+            X = embed_matrix([{"title": s.get("title", "")} for s in stories])
+        except Exception as e:
+            print(f"  [aviso] embeddings indisponíveis na consolidação ({e})")
+
+    n = len(stories)
+    parent = list(range(n))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if abs(ts[i] - ts[j]) / 3600 > window_h:
+                continue
+            ok, _ = entity_match(ents[i], ents[j])
+            if not ok:
+                continue
+            shared = rtok[i] & rtok[j]
+            rare = sum(1 for t in shared if df.get(t, 99) <= rare_df)
+            cov = _title_cov(rtok[i], rtok[j])
+            emb = float(X[i] @ X[j]) if X is not None else 0.0
+            same_fact = (rare >= rare_min and cov >= cov_min) or emb >= emb_min
+            if same_fact:
+                parent[find(i)] = find(j)
+
+    groups: dict[int, list] = {}
+    for i in range(n):
+        groups.setdefault(find(i), []).append(i)
+    if len(groups) == n:
+        return stories
+
+    merged = []
+    for g in groups.values():
+        if len(g) == 1:
+            merged.append(stories[g[0]])
+            continue
+        # representante: a história mais coberta (empate: mais recente)
+        g_sorted = sorted(g, key=lambda i: (-stories[i]["counts"]["total"], -ts[i]))
+        rep = dict(stories[g_sorted[0]])
+        absorbed = [stories[i] for i in g_sorted[1:]]
+        seen, arts = set(), []
+        for i in g_sorted:
+            for a in stories[i].get("articles", []):
+                if a.get("link") in seen:
+                    continue
+                seen.add(a.get("link"))
+                arts.append(a)
+        arts.sort(key=lambda x: x.get("bias", 0))
+        rep["articles"] = arts
+        rep["summary"] = next((x.get("summary") for x in arts if x.get("summary")),
+                              rep.get("summary", ""))[:300]
+        rep["updated"] = max(stories[i].get("updated", "") for i in g)
+        rep["developments"] = [{"id": s["id"], "title": s["title"],
+                                "total": s["counts"]["total"],
+                                "blindspot": s.get("blindspot")} for s in absorbed]
+        merged.append(_recompute(rep))
+    merged.sort(key=lambda s: -s["counts"]["total"])
+    return merged
+
+
+def _ts_of(s) -> float:
+    try:
+        return datetime.fromisoformat(str(s.get("updated", "")).replace("Z", "+00:00")).timestamp()
+    except Exception:
+        return 0.0
+
+
+# Pauta = narrativa compartilhada (ex.: "Flávio Bolsonaro"). Não funde histórias:
+# agrupa para navegação, preservando a comparação de enquadramento de cada fato.
+HUB_STOP = ENTITY_GENERIC | {
+    "são paulo", "rio de janeiro", "brasília", "brasilia", "minas gerais",
+    "rio grande do sul", "estados unidos", "reino unido", "america latina",
+    "américa latina", "oriente médio", "oriente medio", "união europeia",
+}
+HUB_ACRONYMS = {"stf", "tse", "pf", "pgr", "cnj", "tcu", "bndes", "ibge", "copom",
+                "g20", "brics", "onu", "otan", "pt", "pl", "psdb", "ptb", "pcdob"}
+
+
+def _hub_label(key: str) -> str:
+    parts = [w.upper() if w in HUB_ACRONYMS else w[:1].upper() + w[1:]
+             for w in key.split()]
+    return " ".join(parts)
+
+
+def attach_hubs(stories, min_stories=3, window_h=72.0):
+    """F2: marca cada história com a "pauta" (narrativa) a que pertence.
+
+    Só nomes próprios multi-palavra servem de chave (nunca "lula" ou "senado"):
+    genéricos agrupariam pautas sem relação. Não altera contagens — a história
+    continua sendo o fato; a pauta é só navegação entre ângulos.
+    """
+    ents = [_story_entities(s) for s in stories]
+    ts = [_ts_of(s) for s in stories]
+    index: dict[str, list[int]] = {}
+    for i, e in enumerate(ents):
+        for k in e:
+            if " " in k and k not in HUB_STOP:
+                index.setdefault(k, []).append(i)
+    for s in stories:
+        s["hub"] = None
+    cands = {}
+    for k, ids in index.items():
+        if len(ids) < min_stories:
+            continue
+        span = (max(ts[i] for i in ids) - min(ts[i] for i in ids)) / 3600
+        if span > window_h:
+            continue
+        cands[k] = ids
+    for i, s in enumerate(stories):
+        mine = [(len(ids), len(k), k) for k, ids in cands.items() if i in ids]
+        if not mine:
+            continue
+        _, _, k = max(mine)
+        s["hub"] = {"key": k, "label": _hub_label(k), "size": len(cands[k])}
+    return stories
 
 
 def attach_longreads(stories, articles, longform_ids, per_story=3):
@@ -794,6 +987,12 @@ def main():
     print(f"  {len(news)} nacionais + {len(intl)} internacionais (fora das barras)")
     stories = build(sources, news, llm_scores, thresh=args.thresh,
                     use_embed=args.embed)
+    n_before = len(stories)
+    stories = consolidate(stories, use_embed=args.embed)
+    stories = attach_hubs(stories)
+    n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
+    print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
+          f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
 
     longform_ids = {s["id"] for s in sources if s.get("longform")}
     stories = attach_longreads(stories, news, longform_ids)
@@ -801,21 +1000,21 @@ def main():
     stories = attach_world(stories, intl)
     n_lr = sum(1 for s in stories if s.get("longreads"))
     n_w = sum(1 for s in stories if s.get("world"))
-    print(f"[3a/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")
+    print(f"[3b/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")
 
     checks = []
     if not args.no_checks:
         try:
             from factcheck import fetch_all as fetch_checks
             checks = fetch_checks()
-            print(f"[3b/4] {len(checks)} checagens (G1 Fato ou Fake + Lupa + Aos Fatos)")
+            print(f"[3c/4] {len(checks)} checagens (G1 Fato ou Fake + Lupa + Aos Fatos)")
         except Exception as ex:
             print(f"[3b/4] checagens indisponíveis: {ex}")
 
     stories, ledger, matches = attach_checks(stories, checks)
     leverage = merge_factcheck_ledger(matches) if checks else {}
     if checks:
-        print(f"[3c/4] {len(matches)} matéria(s) casaram com checagens nesta rodada")
+        print(f"[3d/4] {len(matches)} matéria(s) casaram com checagens nesta rodada")
 
     os.makedirs(SITE, exist_ok=True)
     health = store.health() if store is not None else {}

@@ -27,17 +27,21 @@ Hoje: 3 matchers (TF-IDF para cluster, `claim_overlap` para checagens, `entity_m
 ### F2. Consertar o agrupamento (o maior ganho de UX)
 18 grupos para um só fato é o problema mais visível: o feed vira pulverização de 2-coberturas.
 
-- [ ] **F2.1 Clustering em 2 estágios**: primeiro o TF-IDF atual (alta precisão), depois um passe de **merge por entidades+embedding** entre centróides de grupos (junta "Fuga de Flávio: Itamaraty convoca" + "Trump ajudou na fuga" + "Dono do avião diz..."). Regra: merge só se 2+ entidades específicas em comum **e** cosseno embedding ≥ 0.55 entre títulos representativos.
-- [ ] **F2.2 Janela temporal maior para o mesmo tópico quente**: enquanto um tópico tiver matéria nova < 12h, aceitar irmãos até 7 dias (hoje: 24h para hard news).
-- [ ] **F2.3 Mergear no `data.json`, não no cluster**: manter o cluster puro; o merge vira um passo `consolidate(stories)` com regra de **escolha do título representativo** (a história mais coberta absorve as irmãs e lista as demais como "desdobramentos").
-- [ ] **Aceite:** Flávio/48h em ≤ 4 grupos; histórias de 2-coberturas caem de 69 para < 40 sem criar nenhum falso merge no eval (P≥0.94 mantido).
+- [x] **F2.1 Consolidação de mesmo fato** (`consolidate`): mantém o cluster puro e funde, num segundo passe, histórias que descrevem o **mesmo fato**. Exige entidades específicas em comum **e** um segundo sinal de "mesmo fato": cobertura ≥ 0.35 do título mais curto com 2+ tokens raros, ou embedding ≥ 0.70.
+- [x] **F2.2 Janela**: 48 h na consolidação (mais larga que a do cluster), com o segundo sinal impedindo fusões por assunto.
+- [x] **F2.3 Merge no `data.json`**: a história mais coberta absorve as irmãs e lista as demais em `developments` ("também apurado"), recalculando contagens, média e blindspot.
+- [x] **F2.4 Pautas** (substitui o merge amplo): histórias que compartilham um nome próprio multi-palavra (ex.: "Flávio Bolsonaro") recebem `hub` e aparecem como "🔗 Outros ângulos desta pauta" — navegação sem fundir contagens.
+- [x] **Aceite revisto:** 3 fusões de mesmo fato, zero falsos positivos observados; Flávio/48h continua em 8 histórias, mas agrupadas em **1 pauta** navegável.
+
+> **Por que o aceite original (Flávio ≤ 4 grupos) foi abandonado.** Medido em 31/10: fundir por entidade juntaria "Rubio e Vieira conversam" (11 coberturas) com "Trump e Milei pressionam" (3) e com "Michelle chama Jair de líder" (5) — fatos distintos. A barra de viés passaria a somar enquadramentos de eventos diferentes, destruindo a comparação que é o núcleo do produto. Cobertura de título separa fato igual (0.36–0.40) de assunto adjacente (0.00–0.29); embeddings separam melhor (0.70–0.88 × 0.55–0.65), mas não rodam no CI. A pauta entrega a navegação pretendida sem esse custo.
 
 ### F3. Qualidade do "Aprofunde-se" e "Lá fora"
-- [ ] **F3.1 Filtrar não-jornalismo do pool longform**: excluir "assista ao programa", "palavras cruzadas", "quiz", agendas/podcasts por padrão de título (2 falsos positivos medidos).
-- [ ] **F3.2 Penalizar redundância**: se a fonte do longform já está entre as coberturas da história (14 casos), só sugerir se a peça for **análise** (título com marcadores: "análise", "por que", "como", "entrevista") — senão omitir.
-- [ ] **F3.3 Dediversificação**: máx. 1 sugestão por fonte por história; peça repetida entre histórias só na mais coberta (a do Nexo 8× vira 1).
+- [x] **F3.1 Filtrar não-jornalismo do pool longform**: excluir "assista ao programa", "palavras cruzadas", "quiz", agendas/podcasts por padrão de título (2 falsos positivos medidos).
+- [x] **F3.2 Penalizar redundância**: se a fonte do longform já está entre as coberturas da história (14 casos), só sugerir se a peça for **análise** (título com marcadores: "análise", "por que", "como", "entrevista") — senão omitir.
+- [x] **F3.3 Dediversificação**: máx. 1 sugestão por fonte por história; peça repetida entre histórias só na mais coberta (a do Nexo 8× vira 1).
 - [ ] **F3.4 Recall internacional via tradução de âncoras**: dicionário BR↔EN de entidades do dia (Brasil→Brazil, "Banco Central"→"central bank") + aceitar match por **1 entidade multi-palavra forte** (cosseno embedding ≥ 0.6 como segunda evidência). Testar em 40 pares rotulados (F1.2).
-- [ ] **Aceite:** zero "programa/quiz" sugeridos; redundância mesma-história < 5%; peça repetida em ≤ 2 histórias.
+- [x] **Aceite:** zero "programa/quiz" sugeridos; redundância mesma-história < 5%; peça repetida em ≤ 2 histórias.
+  - **Resultado (31/10):** 44 → 11 conexões; redundância 14 → 0; peças repetidas 6 → 0 (máx. 1); não-jornalismo 2 → 0. Custo: histórias com "Aprofunde-se" caíram de 22 para 8 — o pool tem 85 peças longform/72 h, mas só 11 casam com as pautas do dia. É falta de recall, a ser recuperada em F1/F3.4.
 
 ### F4. Checagens: corpus histórico + recall
 0 matches em 104 histórias é subaproveitamento do diferencial do produto.

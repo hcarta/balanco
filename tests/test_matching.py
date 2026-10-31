@@ -277,3 +277,81 @@ def test_diversify_longreads_no_duplicate_fallback():
     out = diversify_longreads([big, small])
     assert [lr["link"] for lr in out[0]["longreads"]] == ["https://x/p"]
     assert out[1]["longreads"] == [], "peça de outra história não pode ser reposta"
+
+
+# ── F2: consolidação de mesmo fato + pautas ────────────────────────────────
+def _story(sid, title, arts, updated="2026-10-31T10:00:00+00:00"):
+    items = [{"source": src, "title": t, "link": f"https://x/{sid}/{i}",
+              "bias": b, "bucket": bk, "summary": ""}
+             for i, (src, t, b, bk) in enumerate(arts)]
+    return {"id": sid, "title": title, "summary": "", "articles": items,
+            "counts": {"L": 0, "C": 0, "R": 0, "total": len(items)},
+            "pct": {"L": 0, "C": 0, "R": 0}, "avg_bias": 0.0,
+            "blindspot": None, "updated": updated}
+
+
+def test_consolidate_merges_same_fact():
+    from app import consolidate
+    a = _story("s1", "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
+               [("G1", "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro", 0, "C"),
+                ("Folha", "Itamaraty chama embaixador argentino para tratar da fuga de Flávio Bolsonaro", -0.5, "L")])
+    b = _story("s2", "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
+               [("UOL", "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro", 0, "C"),
+                ("CNN", "Brasil cobra explicações da Argentina sobre a viagem de Flávio Bolsonaro", 0, "C")])
+    out = consolidate([a, b])
+    assert len(out) == 1, "mesmo fato deveria virar uma história"
+    assert out[0]["counts"]["total"] == 4
+    assert len(out[0]["developments"]) == 1
+
+
+def test_consolidate_rejects_same_person_different_fact():
+    from app import consolidate
+    # ambos citam Flávio Bolsonaro em alguma matéria, mas são fatos distintos
+    a = _story("s1", "Rubio e Vieira conversam e marcam reunião bilateral",
+               [("G1", "Rubio e Vieira conversam e marcam reunião bilateral", 0, "C"),
+                ("Folha", "Reunião bilateral após a fuga de Flávio Bolsonaro", -0.5, "L")])
+    b = _story("s2", "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro",
+               [("UOL", "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro", 0, "C")])
+    out = consolidate([a, b])
+    assert len(out) == 2, "entidade em comum não basta: são fatos diferentes"
+
+
+def test_consolidate_rejects_place_name_coincidence():
+    from app import consolidate
+    a = _story("s1", "Ministros vão ao Mato Grosso do Sul para investigar violência política",
+               [("G1", "Ministros vão ao Mato Grosso do Sul para investigar violência política", 0, "C")])
+    b = _story("s2", "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa",
+               [("UOL", "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro", 0.5, "R")])
+    out = consolidate([a, b])
+    assert len(out) == 2, "'Mato Grosso' é lugar, não prova de mesmo fato"
+
+
+def test_consolidate_recomputes_counts_and_blindspot():
+    from app import consolidate
+    a = _story("s1", "Binance sofre ataque hacker de US$ 6,3 bilhões",
+               [("G1", "Binance sofre ataque hacker de US$ 6,3 bilhões", 0.5, "R"),
+                ("UOL", "Binance sofre ataque hacker de US$ 6,3 bilhões: Coreia do Norte é suspeita", 0.5, "R")])
+    b = _story("s2", "Ataque à Binance: hackers norte-coreanos de criptomoedas estão entre os suspeitos",
+               [("CNN", "Ataque à Binance: hackers norte-coreanos de criptomoedas estão entre os suspeitos", 0.5, "R"),
+                ("Folha", "Hackers da Coreia do Norte roubam US$ 6,3 bilhões da Binance", 0.5, "R")])
+    out = consolidate([a, b])
+    assert len(out) == 1
+    s = out[0]
+    assert s["counts"] == {"L": 0, "C": 0, "R": 4, "total": 4}
+    assert s["blindspot"] == "left", "4 matérias de direita e nenhuma de esquerda"
+
+
+def test_attach_hubs_groups_narrative_without_merging():
+    from app import attach_hubs
+    def st(sid, t):
+        return _story(sid, t, [("G1", t, 0, "C")])
+    stories = [st("s1", "Flávio Bolsonaro fala pela 1ª vez dos EUA"),
+               st("s2", "Trump e a fuga de Flávio Bolsonaro"),
+               st("s3", "Como aliados reagem ao golpismo de Flávio Bolsonaro"),
+               st("s4", "Conta de luz segue com bandeira verde em novembro")]
+    out = attach_hubs(stories)
+    assert out[0]["hub"]["key"] == "flávio bolsonaro"
+    assert out[0]["hub"]["size"] == 3
+    assert out[0]["hub"]["label"] == "Flávio Bolsonaro"
+    assert out[3]["hub"] is None, "pauta exige 3+ histórias do mesmo nome próprio"
+    assert len(out) == 4, "pauta não funde histórias"
