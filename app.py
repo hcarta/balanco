@@ -5,6 +5,7 @@ Viés é FIXO por fonte (posicionamento da publicação), sem análise por maté
 O LLM é opt-in (--llm) e só deve ser usado quando explicitamente desejado.
 """
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -66,12 +67,19 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
                 n_new += n_got_new
                 got = store.recent(s["id"], window_h=window_h,
                                    limit=max(per_feed, PER_SOURCE_CAP))
+                # F-01/F-08: o cache pode ter itens antigos de loteria/esporte
+                # que passaram antes do filtro; filtrar também o que veio dele.
+                got = [a for a in got
+                       if not excluded_section(a.get("section"))
+                       and not excluded_title(a.get("title"))]
+                n_window = store.count_recent(s["id"], window_h=window_h)
                 status = hs.get("status", "ok")
                 if hs.get("status") == "error" and got:
                     status = "stale"  # usa cache porque a rede falhou
                 store.log_fetch(s["id"], run_ts, len(fresh), len(got),
                                 status, hs.get("ms", 0),
-                                "; ".join(hs.get("errors", [])))
+                                "; ".join(hs.get("errors", [])),
+                                n_window=n_window)
             else:
                 got = fresh[:per_feed]
             for a in got:
@@ -194,6 +202,86 @@ def eval_pairs(pairs: list[tuple], thresh: float = 0.38):
     return prec, rec, (tp, fp, fn, tn)
 
 
+# F-04: coerência de cluster. O single-link cria cadeias (uma história de
+# 140 artigos misturando fuga, G20 e carta golpista). Grupos grandes são
+# validados contra o medoide; os ejetados são re-agrupados com limiar maior.
+COHERE_MIN = 12          # só vale a pena olhar grupos deste tamanho
+COHERE_TAU = 0.30        # similaridade mínima com o medoide
+COHERE_RECLUSTER = 0.42  # limiar mais duro para os ejetados
+COHERE_MAX_DEPTH = 6
+
+
+def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
+    """Decisão de par (extraída para o cluster e a coerência usarem a mesma)."""
+    shared = toksets[i] & toksets[j]
+    if len(shared) < 1:
+        return False
+    pred = S[i, j] >= th and len(shared) >= 2
+    if Se is not None and not pred and Se[i, j] >= 0.70 and len(shared) >= 1:
+        pred = True  # híbrido: paráfrase semântica (Fase 2.2)
+    if not pred:
+        return False
+    si, sj = articles[i].get("source_id"), articles[j].get("source_id")
+    if si is not None and si == sj:
+        # mesma fonte: exige mais evidência (Fase 2.3)
+        ti, tj = tok(articles[i]["title"]), tok(articles[j]["title"])
+        if len(ti) >= 2 and len(tj) >= 2 and ti[:2] == tj[:2]:
+            return False  # série da casa ("Pinguins X", "VÍDEOS: Jornal ...")
+        same_sec = bool(articles[i].get("section")) and \
+            articles[i].get("section") == articles[j].get("section")
+        floor = th + (0.12 if same_sec else 0.10)
+        if S[i, j] < floor or len(shared) < 3:
+            return False
+    dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
+    w = pair_window(articles[i].get("section"), articles[j].get("section"),
+                    window_h)
+    return dt <= w
+
+
+def _components(indices, articles, toksets, S, Se, th, window_h):
+    idx = list(indices)
+    parent = {i: i for i in idx}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for p, i in enumerate(idx):
+        for j in idx[p + 1:]:
+            if _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
+                ri, rj = find(i), find(j)
+                if ri != rj:
+                    parent[ri] = rj
+    out: dict[int, list] = {}
+    for i in idx:
+        out.setdefault(find(i), []).append(i)
+    return list(out.values())
+
+
+def _cohere(groups, articles, toksets, S, Se, window_h):
+    def split(g, depth=0):
+        if len(g) < COHERE_MIN or depth >= COHERE_MAX_DEPTH:
+            return [g]
+        sub = S[np.ix_(g, g)]
+        med = g[int(np.argmax(sub.mean(axis=1)))]
+        keep = [i for i in g if i == med or S[med, i] >= COHERE_TAU]
+        if len(keep) == len(g):
+            return [g]
+        out = [keep]
+        eject = [i for i in g if i not in set(keep)]
+        for subg in _components(eject, articles, toksets, S, Se,
+                                COHERE_RECLUSTER, window_h):
+            out.extend(split(subg, depth + 1))
+        return out
+
+    out = []
+    for g in groups:
+        out.extend(split(g))
+    return out
+
+
 def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
     n = len(articles)
     if n == 0:
@@ -222,37 +310,21 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
         if ra != rb:
             parent[ra] = rb
 
-    for i in range(n):
-        for j in range(i + 1, n):
-            shared = toksets[i] & toksets[j]
-            if len(shared) < 1:
-                continue
-            pred = S[i, j] >= thresh and len(shared) >= 2
-            if Se is not None and not pred and Se[i, j] >= 0.70 and len(shared) >= 1:
-                pred = True  # híbrido: paráfrase semântica (Fase 2.2)
-            if not pred:
-                continue
-            si, sj = articles[i].get("source_id"), articles[j].get("source_id")
-            if si is not None and si == sj:
-                # mesma fonte: exige mais evidência (Fase 2.3)
-                ti, tj = tok(articles[i]["title"]), tok(articles[j]["title"])
-                if len(ti) >= 2 and len(tj) >= 2 and ti[:2] == tj[:2]:
-                    continue  # série da casa ("Pinguins X", "VÍDEOS: Jornal ...")
-                same_sec = bool(articles[i].get("section")) and \
-                    articles[i].get("section") == articles[j].get("section")
-                floor = thresh + (0.12 if same_sec else 0.10)
-                if S[i, j] < floor or len(shared) < 3:
-                    continue
-            dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
-            w = pair_window(articles[i].get("section"), articles[j].get("section"),
-                              window_h)
-            if dt <= w:
-                union(i, j)
+    # F-14: candidatos via matriz (já calculada), não O(n²) em Python.
+    cand = S >= thresh
+    if Se is not None:
+        cand = cand | (Se >= 0.70)
+    ii, jj = np.where(np.triu(cand, k=1))
+    for i, j in zip(ii.tolist(), jj.tolist()):
+        if _pair_ok(articles, toksets, S, Se, i, j, thresh, window_h):
+            union(i, j)
     groups: dict[int, list] = {}
     for i in range(n):
         groups.setdefault(find(i), []).append(i)
+    # F-04: valida grupos grandes contra o medoide e separa ejetados
+    groups_out = _cohere(list(groups.values()), articles, toksets, S, Se, window_h)
     # ordena grupos por tamanho e recência
-    out = sorted(groups.values(), key=lambda g: (-len(g), -max(articles[i]["ts"] for i in g)))
+    out = sorted(groups_out, key=lambda g: (-len(g), -max(articles[i]["ts"] for i in g)))
     return out
 
 
@@ -272,7 +344,12 @@ EXCLUDED_TITLE = re.compile(
     r"lotof[aá]cil|mega-sena|megasena|lotomania|dupla\ssena|timemania"
     r"|\bquina\b[^.]{0,40}(sorteio|resultado|concurso|dezenas)"
     r"|hor[oó]scopo|mapa\s+astral|previs[aã]o\s+do\s+tempo|fases?\s+da\s+lua"
-    r"|\bloteria\b.{0,40}(sorteio|resultado|concurso|pr[eê]mio)",
+    r"|\bloteria\b.{0,40}(sorteio|resultado|concurso|pr[eê]mio)"
+    # F-08: rundown de vídeo/programa ao vivo não é notícia de cobertura
+    r"|^\s*v[ií]deos?\s*:|^\s*assist[ai]\s+ao\s+programa|\bao\s+vivo\b"
+    # serviço local: cemitérios/visitação de Finados e bandeira tarifária
+    r"|\bcemit[eé]rios?\b.{0,80}\b(finados|visitantes|missas)\b"
+    r"|\bbandeira (verde|amarela|vermelha)\b.{0,60}\b(energia|conta|tarifa)\b",
     re.I)
 
 
@@ -362,11 +439,54 @@ def rep_score(item: dict, meta: dict) -> float:
     return round(s, 3)
 
 
+def _stable_id(items):
+    """F-03: id ancorado no artigo mais antigo por `first_seen`.
+
+    IDs posicionais (`s000`) mudavam a cada rodada. O primeiro artigo visto
+    é estável mesmo quando um artigo mais antigo chega atrasado.
+    """
+    anchor = min(items, key=lambda a: (a.get("first_seen") or "",
+                                        a.get("published") or "",
+                                        a.get("link") or ""))
+    link = anchor.get("link") or anchor.get("title", "")
+    return "h" + hashlib.sha1(link.encode("utf-8")).hexdigest()[:8]
+
+
+def assign_aliases(stories, previous):
+    """Mantém `?story=` antigo funcionando: mapeia id anterior por sobreposição."""
+    if not previous:
+        return stories
+    old = [(p.get("id"), {a.get("link") for a in p.get("articles", [])},
+            set(p.get("aliases") or []))
+           for p in previous if p.get("id")]
+    for s in stories:
+        links = {a.get("link") for a in s.get("articles", [])}
+        best_j, best_id, best_old = 0.0, None, set()
+        for oid, olinks, oaliases in old:
+            if not links or not olinks:
+                continue
+            j = len(links & olinks) / len(links | olinks)
+            if j > best_j:
+                best_j, best_id, best_old = j, oid, oaliases
+        aliases = set(s.get("aliases") or [])
+        if best_id and best_j >= 0.40:
+            aliases |= best_old  # herda aliases legados (ex.: s000)
+            if best_id != s["id"]:
+                aliases.add(best_id)
+        if aliases:
+            s["aliases"] = sorted(aliases)
+    return stories
+
+
 def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
+    # rede de segurança: nenhum título de serviço/loteria entra na capa
+    articles = [a for a in articles
+                if not excluded_section(a.get("section"))
+                and not excluded_title(a.get("title"))]
     groups = cluster(articles, thresh=thresh, use_embed=use_embed)
     meta = {s["id"]: s for s in sources}
     stories = []
-    for gid, g in enumerate(groups):
+    for g in groups:
         # uma "história" precisa de pelo menos 2 veículos distintos
         if len({articles[i]["source_id"] for i in g}) < 2:
             continue
@@ -401,7 +521,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         # resumo: pega o primeiro disponível (sitemaps não trazem dek)
         summary = next((x["summary"] for x in items if x.get("summary")), "")
         stories.append({
-            "id": f"s{gid:03d}", "title": rep["title"],
+            "id": _stable_id(items), "title": rep["title"],
             "summary": summary[:300],
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
@@ -453,24 +573,34 @@ def build_idf(token_sets: list[set]) -> tuple[dict, Counter]:
     return idf, df
 
 
-def claim_match(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -> float:
-    """F4.2: mesma alegação = claim_overlap OU (cobertura alta + termo muito raro).
+def claim_match(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34,
+                a_text: str = "", b_text: str = "") -> float:
+    """F4.2: mesma alegação, com precisão antes de recall.
 
-    Medido em 31/10/2026 (67 pares rotulados, corpus realista de 710 títulos):
-    claim_overlap sozinho dá P 1.00/R 0.33; a segunda regra sobe para
-    P 1.00/R 0.67 sem FP. Entidade NÃO entra: "mesma pessoa" (Flávio, Lula)
-    gerou 47 FPs em 67 pares. O limiar de raridade é DF<=4 (não DF<=12):
-    com corpus real, o DF<=12 inflava a raridade e o ganho desaparecia.
+    Além do score lexical, exige uma das duas evidências:
+      - título quase idêntico (cobertura >= 0.80), ou
+      - entidade multi-palavra específica em comum ("Auxílio Reconstrução").
+    Sem isso, frases genéricas ("linha do tempo", "Lula") ligavam qualquer
+    matéria a qualquer checagem (4/4 FPs medidos em 31/10).
+    Medido nos 67 pares: P 1.00/R 0.67 com a guarda.
     """
-    sc = claim_overlap(a, b, idf, df, floor)
-    if sc:
-        return sc
     inter = a & b
     cov = _title_cov(a, b)
+    strong_ent = False
+    if a_text and b_text:
+        shared = entities(a_text) & entities(b_text)
+        strong_ent = any(" " in e and e not in ENTITY_GENERIC for e in shared)
+    sc = claim_overlap(a, b, idf, df, floor)
+    if sc:
+        if (a_text and b_text) and not (strong_ent or cov >= 0.80):
+            return 0.0
+        return sc
     rare = any(df.get(w, 99) <= 4 for w in inter)
-    if cov >= max(0.40, floor) and len(inter) >= 3 and rare:
-        return cov
-    return 0.0
+    if not (cov >= max(0.40, floor) and len(inter) >= 3 and rare):
+        return 0.0
+    if (a_text and b_text) and not strong_ent:
+        return 0.0
+    return cov
 
 
 def claim_overlap(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -> float:
@@ -956,8 +1086,10 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     allsets = s_sets + a_sets + c_sets
     idf, df = build_idf(allsets)
 
-    def match(a, b, floor):
-        return claim_match(a, b, idf, df, floor)
+    c_titles = [c["title"] for c in checks]
+
+    def match(a, b, floor, at="", bt=""):
+        return claim_match(a, b, idf, df, floor, at, bt)
 
     def terms(a, b):
         return sorted(a & b)[:6]
@@ -966,7 +1098,8 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     for si, s in enumerate(stories):
         cands = []
         for ci, c in enumerate(checks):
-            sc = match(s_sets[si], c_sets[ci], story_min)
+            sc = match(s_sets[si], c_sets[ci], story_min,
+                       s["title"], c_titles[ci])
             if sc:
                 cands.append((sc, ci))
         cands.sort(reverse=True)
@@ -977,7 +1110,10 @@ def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     ledger = {}
     matches = []
     for k, (si, ai) in enumerate(a_ref):
-        cands = [(match(a_sets[k], c_sets[ci], article_min), ci) for ci in range(len(checks))]
+        a_title = stories[si]["articles"][ai]["title"]
+        cands = [(match(a_sets[k], c_sets[ci], article_min,
+                        a_title, c_titles[ci]), ci)
+                 for ci in range(len(checks))]
         cands = [(sc, ci) for sc, ci in cands if sc]
         if not cands:
             continue
@@ -1131,6 +1267,16 @@ def main():
         print(f"[3d/4] {len(matches)} matéria(s) casaram com checagens nesta rodada")
 
     os.makedirs(SITE, exist_ok=True)
+    # F-03: ids estáveis; aliases preservam links ?story= da rodada anterior
+    prev_stories = []
+    prev_path = os.path.join(SITE, "data.json")
+    if os.path.exists(prev_path):
+        try:
+            with open(prev_path, encoding="utf-8") as f:
+                prev_stories = json.load(f).get("stories", [])
+        except Exception:
+            prev_stories = []
+    stories = assign_aliases(stories, prev_stories)
     health = store.health() if store is not None else {}
     sources_out = [{**s, "factcheck": leverage.get(s["id"]) or ledger.get(s["id"]),
                     "health": health.get(s["id"])}
@@ -1168,6 +1314,23 @@ SITE_URL = "https://hcarta.github.io/balanco"
 ARCHIVE_KEEP = 90  # edições diárias mantidas
 
 
+def _slim_payload(payload: dict) -> dict:
+    """F-15: arquivo diário só com o necessário para reler a edição."""
+    keep_story = ("id", "title", "summary", "section", "section_label",
+                  "avg_bias", "counts", "pct", "blindspot", "updated", "aliases")
+    keep_art = ("source", "title", "link", "bucket", "bias")
+    return {
+        "generated_at": payload.get("generated_at"),
+        "n_stories": payload.get("n_stories"),
+        "stories": [
+            {**{k: s.get(k) for k in keep_story if k in s},
+             "articles": [{k: a.get(k) for k in keep_art if k in a}
+                          for a in s.get("articles", [])]}
+            for s in payload.get("stories", [])
+        ],
+    }
+
+
 def archive_snapshot(site_dir: str, payload: dict) -> str | None:
     """Guarda uma edição por dia em arquivo/AAAA-MM-DD.json (Fase 6.1)."""
     import glob
@@ -1177,7 +1340,7 @@ def archive_snapshot(site_dir: str, payload: dict) -> str | None:
     dest = os.path.join(adir, f"{day}.json")
     if not os.path.exists(dest):
         with open(dest, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False)
+            json.dump(_slim_payload(payload), f, ensure_ascii=False)
     files = sorted(glob.glob(os.path.join(adir, "????-??-??.json")))
     for old in files[:-ARCHIVE_KEEP]:
         try:

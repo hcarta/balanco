@@ -125,7 +125,8 @@ def main():
                 p, r, cm = pr(scores, labels, thr)
                 print(f"  claim_overlap thr={thr:.2f}: P={p:.2f} R={r:.2f} {cm}")
             prod = [app.claim_match(set(app.tok(p["a_title"])),
-                                    set(app.tok(p["b_title"])), idf, df) > 0
+                                    set(app.tok(p["b_title"])), idf, df, 0.34,
+                                    p["a_title"], p["b_title"]) > 0
                     for p in sub]
             p, r, cm = pr([1.0 if x else 0.0 for x in prod], labels, 0.5)
             print(f"  produção (claim_match)          P={p:.2f} R={r:.2f} {cm}")

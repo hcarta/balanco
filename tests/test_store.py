@@ -43,3 +43,26 @@ def test_cond_headers_roundtrip(tmp_path):
     h = s.cond_headers("https://x/feed")
     assert h == {"If-None-Match": '"abc"', "If-Modified-Since": "Thu, 30 Oct 2026 00:00:00 GMT"}
     s.close()
+
+
+def test_count_recent_and_window_in_health(tmp_path):
+    s = make_store(tmp_path)
+    now = time.time()
+    s.upsert_articles("g1", [
+        {"title": f"Nova {i}", "link": f"https://x/{i}", "summary": "",
+         "published": "2026-10-31T00:00:00+00:00", "ts": now,
+         "section": "", "image": ""} for i in range(3)
+    ])
+    s.upsert_articles("g1", [
+        {"title": "Velha", "link": "https://x/velha", "summary": "",
+         "published": "2026-10-01T00:00:00+00:00", "ts": now - 30 * 86400,
+         "section": "", "image": ""}
+    ])
+    assert s.count_recent("g1", window_h=72) == 3
+    assert len(s.recent("g1", window_h=72, limit=2)) == 2  # cap
+    s.log_fetch("g1", "2026-10-31T12:00:00+00:00", 3, 2, "ok", 10,
+                n_window=3)
+    h = s.health()["g1"]
+    assert h["last_n_window"] == 3
+    assert h["last_n_total"] == 2
+    s.close()

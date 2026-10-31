@@ -1,6 +1,14 @@
 {
  "sources": {
   "bbcbr": {
+   "total": 2,
+   "falso": 1,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
+  },
+  "jovempan": {
    "total": 1,
    "falso": 0,
    "enganoso": 0,
@@ -8,7 +16,23 @@
    "checagem": 1,
    "revisar": false
   },
-  "jovempan": {
+  "g1": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
+  },
+  "terra": {
+   "total": 1,
+   "falso": 1,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 0,
+   "revisar": false
+  },
+  "sbt": {
    "total": 1,
    "falso": 0,
    "enganoso": 0,
@@ -43,6 +67,58 @@
    "score": 0.54,
    "date": "2026-10-02T10:00:00+00:00",
    "terms": "flávio;live"
+  },
+  {
+   "source_id": "g1",
+   "source": "G1",
+   "article": "Luana Piovani x Neymar: veja a linha do tempo da briga entre atriz e jogador",
+   "article_link": "https://g1.globo.com/pop-arte/noticia/2026/10/31/luana-piovani-x-neymar-veja-a-linha-do-tempo-da-briga-entre-atriz-e-jogador.ghtml",
+   "check": "A crise do STF em 30 atos; veja linha do tempo",
+   "check_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M2g1RU5FQXUtNktJYnIzcmo2Y3ZwRDdrVl9wd3lxbmt2cXBlRTNUVTQ5NUpVTXdvX3FsR2d3dlFjMnJNN3BORWFIdHF0SDR4Z2lZS1RiZGRNZWFfa0xqRHBJbGRyTE0?oc=5",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.5,
+   "date": "2026-09-11T07:00:00+00:00",
+   "terms": "linha;tempo;veja"
+  },
+  {
+   "source_id": "bbcbr",
+   "source": "BBC Brasil",
+   "article": "'Bolsonarismo não está derrotado, está disseminado. Basta ver os patrões demitindo funcionários que votaram no Lula', diz filósofo Renato Lessa",
+   "article_link": "https://www.bbc.com/portuguese/articles/cwzd679v845vo?at_medium=RSS&at_campaign=rss",
+   "check": "É falso que mais de 90% dos presos votaram em Lula",
+   "check_link": "https://www.agencialupa.org/eleicoes/2026/10/12/e-falso-que-mais-de-90-dos-presos-votaram-em-lula/",
+   "checker": "Agência Lupa",
+   "verdict": "falso",
+   "score": 0.51,
+   "date": "2026-10-12T15:25:54+00:00",
+   "terms": "lula;votaram"
+  },
+  {
+   "source_id": "terra",
+   "source": "Terra",
+   "article": "'Bolsonarismo não está derrotado, está disseminado. Basta ver os patrões demitindo funcionários que votaram no Lula', diz filósofo Renato Lessa",
+   "article_link": "https://www.terra.com.br/noticias/brasil/bolsonarismo-nao-esta-derrotado-esta-disseminado-basta-ver-os-patroes-demitindo-funcionarios-que-votaram-no-lula-diz-filosofo-renato-lessa,323afe95eb5fa7bb65b1554ccaa93272g2yi7o48.html",
+   "check": "É falso que mais de 90% dos presos votaram em Lula",
+   "check_link": "https://www.agencialupa.org/eleicoes/2026/10/12/e-falso-que-mais-de-90-dos-presos-votaram-em-lula/",
+   "checker": "Agência Lupa",
+   "verdict": "falso",
+   "score": 0.51,
+   "date": "2026-10-12T15:25:54+00:00",
+   "terms": "lula;votaram"
+  },
+  {
+   "source_id": "sbt",
+   "source": "SBT News",
+   "article": "Flávio: veja linha do tempo da fuga à carta golpista",
+   "article_link": "https://sbtnews.sbt.com.br/noticia/brasil/flavio-veja-linha-do-tempo-da-fuga-a-carta-golpista",
+   "check": "A crise do STF em 30 atos; veja linha do tempo",
+   "check_link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94M2g1RU5FQXUtNktJYnIzcmo2Y3ZwRDdrVl9wd3lxbmt2cXBlRTNUVTQ5NUpVTXdvX3FsR2d3dlFjMnJNN3BORWFIdHF0SDR4Z2lZS1RiZGRNZWFfa0xqRHBJbGRyTE0?oc=5",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.5,
+   "date": "2026-09-11T07:00:00+00:00",
+   "terms": "linha;tempo;veja"
   }
  ]
 }

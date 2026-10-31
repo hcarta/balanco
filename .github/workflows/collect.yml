@@ -30,7 +30,10 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: state/cache.db
-          key: balanco-cache
+          # chave única por rodada: actions/cache é imutável por chave;
+          # restore-keys recupera o cache mais recente e o save cria um novo.
+          key: balanco-cache-${{ github.run_id }}
+          restore-keys: balanco-cache-
 
       - name: Instalar dependências
         run: pip install -r requirements.txt
@@ -43,7 +46,7 @@ jobs:
         if: always()
         with:
           path: state/cache.db
-          key: balanco-cache
+          key: balanco-cache-${{ github.run_id }}
 
       - name: Commit dos dados
         run: |
@@ -51,4 +54,6 @@ jobs:
           git config user.email "balanco-bot@local"
           git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json
           git diff --cached --quiet || git commit -m "atualização automática $(date -u +%FT%TZ)"
+          # se um commit manual entrou durante a rodada, rebase antes do push
+          git pull --rebase -X ours origin main
           git push

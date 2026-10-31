@@ -13,6 +13,7 @@ Regras de ouro:
 """
 from __future__ import annotations
 
+import calendar
 import html
 import re
 import time
@@ -175,7 +176,10 @@ def fetch_rss(source: dict, limit: int = 30, store=None) -> tuple[list[dict], di
         if not title or not link:
             continue
         pp = e.get("published_parsed") or e.get("updated_parsed")
-        dt = datetime.fromtimestamp(time.mktime(pp), tz=timezone.utc) if pp else datetime.now(timezone.utc)
+        # calendar.timegm: struct UTC não pode ser interpretado como hora local
+        # (o mktime somava o offset do runner e jogava itens ~3 h no futuro).
+        ts = min(calendar.timegm(pp), time.time() + 300) if pp else time.time()
+        dt = datetime.fromtimestamp(ts, tz=timezone.utc)
         summary = _clean(e.get("summary") or e.get("description"))
         img = ""
         for m in e.get("media_content", []) or []:

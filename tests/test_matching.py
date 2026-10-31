@@ -355,3 +355,123 @@ def test_attach_hubs_groups_narrative_without_merging():
     assert out[0]["hub"]["label"] == "Flávio Bolsonaro"
     assert out[3]["hub"] is None, "pauta exige 3+ histórias do mesmo nome próprio"
     assert len(out) == 4, "pauta não funde histórias"
+
+
+def _legacy_cluster(articles, thresh=0.38, window_h=48):
+    """Implementação anterior (O(n²) em Python), só para equivalência."""
+    n = len(articles)
+    X = app.tfidf_matrix(articles)
+    S = X @ X.T
+    toksets = [set(app.tok(a["title"])) for a in articles]
+    parent = list(range(n))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            shared = toksets[i] & toksets[j]
+            if len(shared) < 1:
+                continue
+            pred = S[i, j] >= thresh and len(shared) >= 2
+            if not pred:
+                continue
+            si, sj = articles[i].get("source_id"), articles[j].get("source_id")
+            if si is not None and si == sj:
+                ti, tj = app.tok(articles[i]["title"]), app.tok(articles[j]["title"])
+                if len(ti) >= 2 and len(tj) >= 2 and ti[:2] == tj[:2]:
+                    continue
+                same_sec = bool(articles[i].get("section")) and \
+                    articles[i].get("section") == articles[j].get("section")
+                floor = thresh + (0.12 if same_sec else 0.10)
+                if S[i, j] < floor or len(shared) < 3:
+                    continue
+            dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
+            w = app.pair_window(articles[i].get("section"),
+                                articles[j].get("section"), window_h)
+            if dt <= w:
+                union(i, j)
+    groups = {}
+    for i in range(n):
+        groups.setdefault(find(i), []).append(i)
+    return sorted(groups.values(), key=lambda g: (-len(g),
+                                                  -max(articles[i]["ts"] for i in g)))
+
+
+def test_vectorized_cluster_matches_reference():
+    now = time.time()
+    arts = [
+        {"title": "Senado aprova marco fiscal em votação apertada", "ts": now,
+         "section": "politica", "source_id": "a"},
+        {"title": "Senado aprova marco fiscal em votação apertada no plenário",
+         "ts": now, "section": "politica", "source_id": "b"},
+        {"title": "Itamaraty convoca diplomata argentina para explicar fuga de Flávio",
+         "ts": now, "section": "politica", "source_id": "c"},
+        {"title": "Itamaraty convoca diplomata argentina para explicar fuga de senador",
+         "ts": now, "section": "politica", "source_id": "d"},
+        {"title": "Festival de cinema exibe filmes nacionais premiados", "ts": now,
+         "section": "cultura", "source_id": "e"},
+        {"title": "Pinguins vencem clássico no gelo", "ts": now,
+         "section": "esporte", "source_id": "f"},
+        {"title": "Pinguins vencem clássico no gelo em prorrogação", "ts": now,
+         "section": "esporte", "source_id": "f"},
+        {"title": "Senado aprova marco fiscal em votação apertada",
+         "ts": now - 30 * 3600, "section": "politica", "source_id": "g"},
+        {"title": "Crítica teatral: a nova montagem de Hamlet no municipal",
+         "ts": now, "section": "vozes", "source_id": "h"},
+        {"title": "Crítica teatral: nova montagem de Hamlet em cartaz no municipal",
+         "ts": now - 5 * 86400, "section": "vozes", "source_id": "i"},
+    ]
+    new = {frozenset(g) for g in cluster(arts)}
+    old = {frozenset(g) for g in _legacy_cluster(arts)}
+    assert new == old
+
+
+def test_coherence_splits_a_chain_group():
+    """F-04: um grupo single-link com dois fatos vira dois grupos."""
+    import numpy as np
+    now = time.time()
+    arts = [{"title": f"Notícia {i}", "ts": now, "source_id": f"s{i}",
+             "section": "politica"} for i in range(20)]
+    toksets = [{"a1", "a2", "a3"} if i < 10 else {"b1", "b2", "b3"}
+               for i in range(20)]
+    S = np.full((20, 20), 0.1, dtype="float32")
+    S[:10, :10] = 0.8
+    S[10:, 10:] = 0.8
+    np.fill_diagonal(S, 1.0)
+    out = app._cohere([list(range(20))], arts, toksets, S, None, 48)
+    assert sorted(len(g) for g in out) == [10, 10]
+    assert not any(0 in g and 10 in g for g in out)
+
+
+def test_excluded_title_filters_service_but_not_news():
+    assert app.excluded_title("VÍDEOS: AB1 de sábado, 31 de outubro de 2026")
+    assert app.excluded_title("Jornal da Noite ao vivo: acompanhe a edição de hoje")
+    assert app.excluded_title("Veja o resultado da Quina concurso 7156 desta sexta-feira")
+    assert app.excluded_title(
+        "Dia de Finados: cemitérios de São José dos Campos esperam 50 mil visitantes")
+    assert app.excluded_title(
+        "RN terá bandeira verde nas contas de energia em novembro de 2026")
+    # notícia sobre o feriado não é serviço
+    assert not app.excluded_title("Ataque durante o Dia de Finados deixa dois feridos")
+
+
+def test_slim_payload_drops_heavy_fields():
+    p = {"generated_at": "x", "n_stories": 1,
+         "sources": [{"id": "a"}], "factchecks": [{"title": "c"}],
+         "stories": [{"id": "h1", "title": "t", "counts": {"total": 2},
+                      "articles": [{"source": "A", "title": "a",
+                                    "link": "l", "bucket": "C", "bias": 0,
+                                    "image": "x", "ownership": "y"}]}]}
+    s = app._slim_payload(p)
+    assert "sources" not in s and "factchecks" not in s
+    assert s["stories"][0]["articles"][0] == {
+        "source": "A", "title": "a", "link": "l", "bucket": "C", "bias": 0}

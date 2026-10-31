@@ -19,12 +19,22 @@ import pytest
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAIRS = os.path.join(BASE, "tests", "conn_pairs.jsonl")
+FIXTURE = os.path.join(BASE, "tests", "fixtures", "corpus_2026-10-31.json")
 
 
 def load(kind):
     with open(PAIRS, encoding="utf-8") as f:
         rows = [json.loads(l) for l in f if l.strip()]
     return [p for p in rows if p["kind"] == kind]
+
+
+def _fixture_titles():
+    with open(FIXTURE, encoding="utf-8") as f:
+        data = json.load(f)
+    bg = [s["title"] for s in data["stories"]]
+    bg += [a["title"] for s in data["stories"] for a in s["articles"]]
+    bg += [c["title"] for c in data.get("factchecks", [])]
+    return bg
 
 
 def _pr(preds, labels):
@@ -89,23 +99,45 @@ def test_world_summary_needs_strong_entity():
     assert ok and "flávio bolsonaro" in terms
 
 
+def test_fixture_is_frozen():
+    with open(FIXTURE, encoding="utf-8") as f:
+        data = json.load(f)
+    assert data["meta"]["frozen_at"] == "2026-10-31"
+    assert len(data["stories"]) >= 100
+    assert data["meta"]["n_articles"] >= 300
+    assert len(data["factchecks"]) >= 60
+
+
 def test_check_precision_gate():
     from app import build_idf, claim_match, tok
     sub = load("check")
-    # Corpus realista: raridade medida só sobre os 134 títulos dos pares
-    # inflava o DF e o ganho de recall desaparecia em produção (31/10/2026).
-    with open(os.path.join(BASE, "docs", "data.json"), encoding="utf-8") as f:
-        data = json.load(f)
-    bg = [s["title"] for s in data["stories"]]
-    bg += [a["title"] for s in data["stories"] for a in s["articles"]]
-    bg += [c["title"] for c in data.get("factchecks", [])]
-    titles = [t for p in sub for t in (p["a_title"], p["b_title"])] + bg
+    # Corpus congelado (F-12): ler docs/data.json fazia o portão derivar a
+    # cada rodada do CI. A raridade tem de ser medida no mesmo corpus sempre.
+    titles = [t for p in sub for t in (p["a_title"], p["b_title"])] + _fixture_titles()
     idf, df = build_idf([set(tok(t)) for t in titles])
-    preds = [claim_match(set(tok(p["a_title"])), set(tok(p["b_title"])), idf, df) > 0
+    preds = [claim_match(set(tok(p["a_title"])), set(tok(p["b_title"])), idf, df,
+                         0.34, p["a_title"], p["b_title"]) > 0
              for p in sub]
     prec, rec, cm = _pr(preds, [p["label"] for p in sub])
     assert prec >= 0.90, f"precisão das checagens caiu: {prec:.2f} {cm}"
     assert rec >= 0.60, f"revogação das checagens caiu: {rec:.2f} {cm}"
+
+
+def test_claim_rejects_generic_overlap():
+    """FPs reais de 31/10: "linha do tempo" e "Lula" isolado não são alegação."""
+    from app import build_idf, claim_match, tok
+    pairs = [
+        ("Flávio: veja linha do tempo da fuga à carta golpista",
+         "A crise do STF em 30 atos; veja linha do tempo"),
+        ("Luana Piovani x Neymar: veja a linha do tempo da briga entre atriz e jogador",
+         "A crise do STF em 30 atos; veja linha do tempo"),
+        ("'Bolsonarismo não está derrotado, está disseminado. Basta ver os patrões de",
+         "É falso que mais de 90% dos presos votaram em Lula"),
+    ]
+    bg = _fixture_titles()
+    for a, b in pairs:
+        idf, df = build_idf([set(tok(t)) for t in [a, b] + bg])
+        assert claim_match(set(tok(a)), set(tok(b)), idf, df, 0.34, a, b) == 0
 
 
 def test_embed_boost_does_not_hurt_precision():

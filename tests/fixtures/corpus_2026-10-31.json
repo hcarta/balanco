@@ -1,0 +1,1979 @@
+{
+ "meta": {
+  "frozen_at": "2026-10-31",
+  "source": "docs/data.json",
+  "n_stories": 120,
+  "n_articles": 375,
+  "n_factchecks": 80,
+  "note": "Corpus congelado para testes; não atualizar a cada rodada."
+ },
+ "stories": [
+  {
+   "title": "Segurança pública será pauta central no 4º mandato de Lula",
+   "articles": [
+    {
+     "title": "Maioridade penal aos 14 anos vira obstáculo para aprovação da PEC da Segurança"
+    },
+    {
+     "title": "Alcolumbre pauta votação da PEC da Segurança Pública para terça-feira"
+    },
+    {
+     "title": "Alcolumbre pauta PEC da Segurança para a próxima terça-feira; governo tenta acordo sobre maioridade penal"
+    },
+    {
+     "title": "Alcolumbre pauta PEC da Segurança para terça após feriado de Finados"
+    },
+    {
+     "title": "Segurança pública será pauta central no 4º mandato de Lula"
+    },
+    {
+     "title": "Alcolumbre marca votação da PEC da Segurança para 3ª feira"
+    },
+    {
+     "title": "Alcolumbre vota PEC da Segurança, bandeira de Lula, na terça"
+    },
+    {
+     "title": "Senado inclui PEC da Segurança na pauta da próxima semana"
+    },
+    {
+     "title": "Alcolumbre pauta PEC da Segurança para a próxima terça-feira"
+    },
+    {
+     "title": "Alcolumbre marca votação da PEC da Segurança Pública para terça (3)"
+    },
+    {
+     "title": "Alcolumbre pauta para próxima terça-feira votação da PEC da Segurança Pública"
+    },
+    {
+     "title": "EUA renovam Câmara e parte do Senado na próxima terça-feira; votação já começou"
+    },
+    {
+     "title": "Alcolumbre inclui PEC da Segurança na pauta de terça-feira"
+    }
+   ]
+  },
+  {
+   "title": "Sem os festivais criados e produzidos por Solano Ribeiro a partir de 1965, a MPB não teria surgido com tanta força",
+   "articles": [
+    {
+     "title": "Morre Solano Ribeiro, produtor que marcou os festivais da MPB, aos 87 anos"
+    },
+    {
+     "title": "Morre Solano Ribeiro, que produziu festivais marcantes da MPB na televisão, aos 87"
+    },
+    {
+     "title": "Morre Solano Ribeiro, produtor que ajudou a escrever a história dos festivais de MPB no Brasil"
+    },
+    {
+     "title": "Sem os festivais criados e produzidos por Solano Ribeiro a partir de 1965, a MPB não teria surgido com tanta força"
+    },
+    {
+     "title": "Morre Solano Ribeiro, crítico e produtor musical"
+    },
+    {
+     "title": "Morre Solano Ribeiro, produtor que ajudou a escrever a história dos festivais de MPB no Brasil"
+    },
+    {
+     "title": "Morre Solano Ribeiro, idealizador de festivais da MPB na TV, aos 87 anos"
+    },
+    {
+     "title": "Morre Solano Ribeiro, ícone dos festivais da MPB, aos 87 anos"
+    },
+    {
+     "title": "Morre Solano Ribeiro, produtor musical que marcou a história dos festivais da MPB, aos 87 anos"
+    },
+    {
+     "title": "Morre Solano Ribeiro, produtor que revelou grandes nomes da MPB, aos 87 anos"
+    },
+    {
+     "title": "O Brasil que Lutero ajudou a construir"
+    },
+    {
+     "title": "Morre Solano Ribeiro, criador de festivais de MPB na televisão"
+    }
+   ]
+  },
+  {
+   "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe",
+   "articles": [
+    {
+     "title": "Crise institucional na Polônia leva presidente a convocar reuniões de emergência"
+    },
+    {
+     "title": "Escalada da crise na Polônia: polícia é mobilizada ao redor do Tribunal Constitucional"
+    },
+    {
+     "title": "Presidente da Polônia convoca reuniões após crise no Tribunal Constitucional e acusação de golpe"
+    },
+    {
+     "title": "Polônia: presidente convoca partidos após bloqueio do Tribunal Constitucional"
+    },
+    {
+     "title": "Polônia convoca reunião de emergência em meio a crise e acusações de golpe"
+    },
+    {
+     "title": "Presidente da Polônia denuncia violação constitucional e convoca reunião"
+    },
+    {
+     "title": "Presidente da Polônia convoca consultas de emergência após crise no Tribunal Constitucional"
+    },
+    {
+     "title": "Crise institucional por controle do Supremo se aprofunda na Polônia"
+    },
+    {
+     "title": "Crise no Tribunal Constitucional polonês gera protestos em Varsóvia"
+    },
+    {
+     "title": "Presidente da Polônia convoca reunião de emergência em meio a crise institucional"
+    },
+    {
+     "title": "Crise no Tribunal Constitucional da Polônia leva presidente a convocar reunião de emergência"
+    }
+   ]
+  },
+  {
+   "title": "Rubio e Vieira conversam e marcam reunião bilateral até meados de dezembro",
+   "articles": [
+    {
+     "title": "O primeiro encontro de Mauro Vieira e Marco Rubio após a eleição brasileira"
+    },
+    {
+     "title": "Mauro Vieira e Sergey Lavrov conversam em evento do G20 nos EUA (vídeo)"
+    },
+    {
+     "title": "Marco Rubio e Mauro Vieira acertam reunião antes de encontro entre Lula e Trump"
+    },
+    {
+     "title": "Vieira encontra Rubio nos EUA após vitória de Lula e fuga de Flávio"
+    },
+    {
+     "title": "Rubio e Vieira conversam e marcam reunião bilateral até meados de dezembro"
+    },
+    {
+     "title": "Mauro Vieira e Marco Rubio se encontram nos EUA e marcam reunião bilateral antes de cúpula do G-20"
+    },
+    {
+     "title": "Mauro Vieira conversa com chanceler da Rússia durante coquetel no G20"
+    },
+    {
+     "title": "Mauro Vieira conversa com Marco Rubio dias após fuga de Flávio Bolsonaro aos EUA"
+    },
+    {
+     "title": "Mauro Vieira e Marco Rubio conversam em evento e marcam reunião bilateral"
+    },
+    {
+     "title": "Vieira e Rubio marcam reunião bilateral antes da cúpula do G20"
+    }
+   ]
+  },
+  {
+   "title": "Conta de luz segue com bandeira verde em novembro, sem taxa adicional",
+   "articles": [
+    {
+     "title": "Aneel confirma bandeira verde e garante conta de luz sem taxa extra"
+    },
+    {
+     "title": "Conta de luz terá bandeira verde pelo 2º mês seguido em novembro"
+    },
+    {
+     "title": "Aneel mantém bandeira verde e conta de luz não terá taxa extra em novembro"
+    },
+    {
+     "title": "Aneel mantém bandeira verde na conta de luz em novembro"
+    },
+    {
+     "title": "Conta de luz seguirá sem cobrança extra em novembro, confirma Aneel"
+    },
+    {
+     "title": "Aneel: mês de novembro terá bandeira tarifária verde"
+    },
+    {
+     "title": "Conta de luz segue com bandeira verde em novembro, sem taxa adicional"
+    },
+    {
+     "title": "Aneel mantém bandeira verde na conta de luz em novembro"
+    },
+    {
+     "title": "Aneel mantém bandeira tarifária verde em novembro"
+    }
+   ]
+  },
+  {
+   "title": "Tiroteio em loja de Halloween na Califórnia deixa um morto e seis feridos",
+   "articles": [
+    {
+     "title": "Ataque a tiros deixa 1 morto e 6 feridos na Califórnia"
+    },
+    {
+     "title": "Tiroteio em loja de Halloween nos EUA deixa um morto e seis feridos"
+    },
+    {
+     "title": "EUA: ataque a loja de Halloween deixa um morto e 6 feridos"
+    },
+    {
+     "title": "Tiroteio em loja de Halloween deixa um morto e seis feridos nos EUA"
+    },
+    {
+     "title": "Ataque a tiros em loja de Halloween nos EUA deixa um morto e seis feridos"
+    },
+    {
+     "title": "Tiroteio em loja de Halloween na Califórnia deixa um morto e seis feridos"
+    },
+    {
+     "title": "Ataque a tiros em loja de Halloween deixa um morto e seis feridos na Califórnia"
+    },
+    {
+     "title": "Tiroteio em loja de Halloween deixa um morto e seis feridos nos EUA"
+    },
+    {
+     "title": "Tiroteio em loja de Halloween nos EUA deixa 1 morto e 6 feridos"
+    }
+   ]
+  },
+  {
+   "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro",
+   "articles": [
+    {
+     "title": "Chanceler da Argentina nega que Brasil tenha pedido explicações pela fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Itamaraty convoca diplomata argentina, mas evita transformar fuga de Flávio Bolsonaro em crise com Milei"
+    },
+    {
+     "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro"
+    },
+    {
+     "title": "Governo Lula convoca representante da Argentina para pedir explicações sobre fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Itamaraty cobra explicações da Argentina sobre passagem de Flávio pelo país vizinho rumo aos EUA"
+    },
+    {
+     "title": "Argentina nega que Brasil tenha pedido explicações pela fuga de Bolsonaro"
+    },
+    {
+     "title": "Brasil convoca representante da Argentina por fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Itamaraty cobra explicações da Argentina sobre viagem de Flávio aos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real",
+   "articles": [
+    {
+     "title": "Bolsa tem 5ª maior queda desde Plano Real após reeleição de Lula"
+    },
+    {
+     "title": "Ibovespa tem pior semana desde a pandemia"
+    },
+    {
+     "title": "Ibovespa cai 18,12% na semana, maior baixa desde 2020 e 5ª maior desde o Plano Real"
+    },
+    {
+     "title": "Ibovespa emenda 5ª baixa e tem pior semana desde 2020; outubro é o pior mês do ano"
+    },
+    {
+     "title": "Ibovespa cai 18% no pós-reeleição de Lula, maior perda semanal desde março de 2020"
+    },
+    {
+     "title": "Após reeleição de Lula, Ibovespa tem pior semana desde a pandemia e dólar dispara"
+    },
+    {
+     "title": "Ibovespa perde 18% na semana da reeleição de Lula; dólar dispara 9%"
+    }
+   ]
+  },
+  {
+   "title": "Tributária: Comissão do Senado confirma Braga como relator da CBS e vai convidar Durigan para debate",
+   "articles": [
+    {
+     "title": "Tributária: Comissão do Senado confirma Braga como relator da CBS e vai convidar Durigan para debate"
+    },
+    {
+     "title": "Comissão do Senado analisa alíquota da CBS a partir de 11 de novembro"
+    },
+    {
+     "title": "Comissão do Senado confirma Eduardo Braga como relator da alíquota da CBS"
+    },
+    {
+     "title": "Eduardo Braga será relator da alíquota da CBS; CAE convidará Durigan"
+    },
+    {
+     "title": "Eduardo Braga será relator da alíquota da CBS; CAE convidará Durigan"
+    },
+    {
+     "title": "Comissão do Senado fará audiências sobre alíquota da CBS a partir de 11 de novembro"
+    },
+    {
+     "title": "Eduardo Braga será relator de projeto sobre alíquota de novo imposto em comissão do Senado"
+    }
+   ]
+  },
+  {
+   "title": "Mônica Fonseca é expulsa de 'A Fazenda 18' após confusão com participante; entenda",
+   "articles": [
+    {
+     "title": "A Fazenda 18: Mônica Fonseca é expulsa do reality após briga em festa"
+    },
+    {
+     "title": "Quem é Mônica Fonseca, expulsa de A Fazenda 18 após empurrar participante"
+    },
+    {
+     "title": "A Fazenda 18: Mônica Fonseca é expulsa após empurrar participante"
+    },
+    {
+     "title": "'A Fazenda 18': Ninjas entram em festa após briga intensa entre peões e produção expulsa"
+    },
+    {
+     "title": "Mônica Fonseca é expulsa de 'A Fazenda' após empurrar Mayk em festa"
+    },
+    {
+     "title": "Mônica Fonseca é expulsa de “A Fazenda 18” após empurrar participante; veja"
+    },
+    {
+     "title": "Mônica Fonseca é expulsa de 'A Fazenda 18' após confusão com participante; entenda"
+    }
+   ]
+  },
+  {
+   "title": "Fim de semana terá temporais em parte do Brasil; veja previsão",
+   "articles": [
+    {
+     "title": "Feriado de Finados terá sol e chuva forte na região Sudeste"
+    },
+    {
+     "title": "Calor e temporais marcam feriado de Finados na região Norte"
+    },
+    {
+     "title": "Finados terá calor intenso e risco de temporais em oito estados; veja a previsão"
+    },
+    {
+     "title": "Fim de semana terá temporais em parte do Brasil; veja previsão"
+    },
+    {
+     "title": "Finados terá chuva, raios e calor de até 40°C; veja a previsão por região"
+    },
+    {
+     "title": "Feriado de Finados terá chuva em boa parte do Brasil e calor de até 40°C; confira"
+    }
+   ]
+  },
+  {
+   "title": "Líder do Irã ordena resposta \"sem restrições geográficas\" em caso de ameaças",
+   "articles": [
+    {
+     "title": "Líder do Irã ordena resposta 'máxima' em caso de ataque dos EUA, diz site"
+    },
+    {
+     "title": "Líder do Irã ordena resposta “sem restrições” em caso de ataque"
+    },
+    {
+     "title": "Líder do Irã ordena resposta \"sem restrições\" em caso de ataque dos EUA"
+    },
+    {
+     "title": "Líder do Irã ordena resposta \"sem restrições geográficas\" em caso de ameaças"
+    },
+    {
+     "title": "Líder supremo do Irã ordena resposta militar a qualquer ameaça inimiga"
+    },
+    {
+     "title": "Líder supremo do Irã ordena resposta ‘sem restrições geográficas’ em caso de ameaças"
+    }
+   ]
+  },
+  {
+   "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
+   "articles": [
+    {
+     "title": "Oriente Médio pede calma diante do risco de escalada entre EUA, Israel e Irã"
+    },
+    {
+     "title": "Arábia Saudita pede paz; Egito alerta para escalada entre EUA, Israel e Irã"
+    },
+    {
+     "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança"
+    },
+    {
+     "title": "Líderes do Oriente Médio pedem calma diante do risco de escalada entre os EUA e Irã"
+    },
+    {
+     "title": "EUA retiram funcionários da Arábia Saudita por risco de ataques"
+    }
+   ]
+  },
+  {
+   "title": "França mobiliza 70 mil policiais e teme protestos na noite de Halloween",
+   "articles": [
+    {
+     "title": "França mobiliza 70 mil agentes para conter atos e evitar confrontos"
+    },
+    {
+     "title": "França mobiliza 70 mil policiais e teme protestos na noite de Halloween"
+    },
+    {
+     "title": "Novos protestos e Halloween: Paris teme “noite das trevas” e ativa centro de crise"
+    },
+    {
+     "title": "França mobiliza 70 mil policiais para conter violência em nova onda de protestos"
+    },
+    {
+     "title": "França tem nova onda de protestos"
+    }
+   ]
+  },
+  {
+   "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
+   "articles": [
+    {
+     "title": "Morre Mulher Banana, veterana do funk e ex-Furacão 2000"
+    },
+    {
+     "title": "Quem era Julyana Barbosa, Mulher Banana, que morreu no RJ?"
+    },
+    {
+     "title": "Morre Mulher Banana, ícone do funk carioca e ex-Furacão 2000"
+    },
+    {
+     "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000"
+    },
+    {
+     "title": "Quem é Mulher Banana, ícone do funk que morreu neste sábado"
+    }
+   ]
+  },
+  {
+   "title": "Virginia curte Halloween com fantasia de coelinha da Playboy de R$ 2 milhões",
+   "articles": [
+    {
+     "title": "Virginia Fonseca se fantasia de coelhinha para festa de Halloween"
+    },
+    {
+     "title": "Quem é Kauã Elias, jogador milionário que deu em cima de Virginia"
+    },
+    {
+     "title": "Virginia posa de coelhinha e ganha recado de jogador Kauã Elias"
+    },
+    {
+     "title": "Kauã Elias comenta em foto de Virginia Fonseca vestida de coelhinha"
+    },
+    {
+     "title": "Virginia curte Halloween com fantasia de coelinha da Playboy de R$ 2 milhões"
+    }
+   ]
+  },
+  {
+   "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
+   "articles": [
+    {
+     "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas"
+    },
+    {
+     "title": "Hackers fazem maior roubo de criptomoedas da história"
+    },
+    {
+     "title": "Como aconteceu o maior roubo de criptomoedas da história"
+    },
+    {
+     "title": "Hackers norte-coreanos ligados estão entre os melhores do mundo, dizem especialistas"
+    },
+    {
+     "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas"
+    }
+   ]
+  },
+  {
+   "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados",
+   "articles": [
+    {
+     "title": "Michelle Bolsonaro defende Tarcísio e rebate ataques de aliados de Flávio"
+    },
+    {
+     "title": "Michelle se manifesta pela 1ª vez após derrota de Flávio e diz que não é momento de procurar culpados"
+    },
+    {
+     "title": "Michelle defende Tarcísio e diz que Bolsonaro é grato a ele"
+    },
+    {
+     "title": "Bolsonaro defende união e rejeita busca por culpados pela derrota de Flávio, diz Michelle"
+    }
+   ]
+  },
+  {
+   "title": "Toffoli rejeita pedido de Filipe Martins para semiaberto",
+   "articles": [
+    {
+     "title": "Toffoli barra pedido de Filipe Martins para deixar regime fechado"
+    },
+    {
+     "title": "Toffoli rejeita pedido de Filipe Martins para semiaberto"
+    },
+    {
+     "title": "Ministro Dias Toffoli mantém Filipe Martins em regime de prisão fechado"
+    },
+    {
+     "title": "Toffoli rejeita pedido de Filipe Martins para deixar regime fechado"
+    }
+   ]
+  },
+  {
+   "title": "Flávio Bolsonaro fala pela 1ª vez dos EUA e cita concorrer em eleições antes de 2030",
+   "articles": [
+    {
+     "title": "Nos EUA, Flávio fala em disputar eleição antes de 2030"
+    },
+    {
+     "title": "Flávio Bolsonaro admite disputar nova eleição presidencial antes de 2030"
+    },
+    {
+     "title": "Flávio Bolsonaro fala pela 1ª vez dos EUA e cita concorrer em eleições antes de 2030"
+    },
+    {
+     "title": "Dos EUA, Flávio prevê crise econômica de Lula e fala em possível eleição antes de 2030"
+    }
+   ]
+  },
+  {
+   "title": "Nos EUA, filha de brasileira gera indignação com poema sobre Charlie Kirk",
+   "articles": [
+    {
+     "title": "Nos EUA, filha de brasileira gera indignação com poema sobre Charlie Kirk"
+    },
+    {
+     "title": "Jovem de origem brasileira celebra a morte de Charlie Kirk e causa indignação nos EUA"
+    },
+    {
+     "title": "Filha de brasileira causa polêmica nos EUA após poema sobre morte de Charlie Kirk"
+    },
+    {
+     "title": "Brasileira debocha do assassinato de Charlie Kirk em universidade nos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Recorde de voto antecipado e ofensiva judicial de Trump marcam eleição de meio mandato",
+   "articles": [
+    {
+     "title": "Recorde de voto antecipado e ofensiva judicial de Trump marcam eleição de meio mandato"
+    },
+    {
+     "title": "Em recorde, voto antecipado de meio de mandato nos EUA passa de 49 milhões"
+    },
+    {
+     "title": "Recorde de voto antecipado e ofensiva judicial de Trump marcam eleição de meio mandato"
+    },
+    {
+     "title": "Eleição de meio de mandado nos EUA tem recorde no voto antecipado: 48 mi"
+    }
+   ]
+  },
+  {
+   "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
+   "articles": [
+    {
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%"
+    },
+    {
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%"
+    },
+    {
+     "title": "Surto de ebola já matou mais de 5 mil pessoas na RD do Congo"
+    },
+    {
+     "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%"
+    }
+   ]
+  },
+  {
+   "title": "Mojtaba Khamenei, líder supremo do Irã, adverte Estados Unidos contra novos ataques",
+   "articles": [
+    {
+     "title": "Líder supremo do Irã adverte EUA contra novos ataques ao país"
+    },
+    {
+     "title": "Mojtaba Khamenei, líder supremo do Irã, adverte Estados Unidos contra novos ataques"
+    },
+    {
+     "title": "Líder supremo do Irã se reúne com altos comandantes militares e faz alerta aos Estados Unidos"
+    },
+    {
+     "title": "Líder do Irã ameaça responder a novos ataques dos EUA e de Israel"
+    }
+   ]
+  },
+  {
+   "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões",
+   "articles": [
+    {
+     "title": "Binance diz que 90% dos ativos foram repostos após ataque hacker roubar US$ 6,3 bilhões"
+    },
+    {
+     "title": "Binance diz que 90% dos ativos roubados foram repostos"
+    },
+    {
+     "title": "Binance diz que 90% dos ativos roubados foram repostos"
+    },
+    {
+     "title": "Binance diz que repôs 90% dos ativos roubados após ataque de US$ 6 bilhões"
+    }
+   ]
+  },
+  {
+   "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
+   "articles": [
+    {
+     "title": "Indicada por José Múcio, Cinara Fredo pode ser a primeira mulher a comandar a Defesa"
+    },
+    {
+     "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa"
+    },
+    {
+     "title": "Quem é Cinara Wagner Fredo, cotada para ser a 1ª mulher ministra da Defesa"
+    },
+    {
+     "title": "Cinara Fredo pode ser 1ª mulher na Defesa após indicação de Múcio"
+    }
+   ]
+  },
+  {
+   "title": "Rodrigo Bacellar será transferido novamente para presídio estadual no Rio",
+   "articles": [
+    {
+     "title": "Moraes autoriza transferência de Rodrigo Bacellar para presídio no Rio de Janeiro"
+    },
+    {
+     "title": "Rodrigo Bacellar será transferido novamente para presídio estadual no Rio"
+    },
+    {
+     "title": "Após decisão de Moraes, Bacellar será transferido para presídio no Rio"
+    },
+    {
+     "title": "Rodrigo Bacellar será transferido para presídio estadual no Rio de Janeiro"
+    }
+   ]
+  },
+  {
+   "title": "Kassab diz que governo procurou PSD e vincula aproximação a medidas econômicas",
+   "articles": [
+    {
+     "title": "Kassab diz que governo Lula procurou PSD e admite relação “mais profunda”"
+    },
+    {
+     "title": "Governo Lula já procurou PSD e relação pode se aprofundar, diz Kassab"
+    },
+    {
+     "title": "Kassab diz que governo procurou PSD e vincula aproximação a medidas econômicas"
+    },
+    {
+     "title": "Governo Lula já procurou PSD e relação pode se aprofundar, diz Kassab"
+    }
+   ]
+  },
+  {
+   "title": "Carros camuflados, vários jatos, ajuda dos EUA: jornal argentino detalha fuga de Flávio Bolsonaro",
+   "articles": [
+    {
+     "title": "Carros camuflados, jatos, ajuda dos EUA: Clarín detalha fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Carros camuflados, vários jatos, ajuda dos EUA: jornal argentino detalha fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Carros camuflados, jatos, ajuda dos EUA: Clarín detalha fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Carros camuflados, jatos e ajuda dos EUA: jornal argentino detalha fuga de Flávio"
+    }
+   ]
+  },
+  {
+   "title": "Justiça manda penhorar mansão de Renato Aragão por dívida",
+   "articles": [
+    {
+     "title": "TJ-RJ determina penhora de mansão do humorista Renato Aragão"
+    },
+    {
+     "title": "Justiça manda penhorar mansão de Renato Aragão por dívida"
+    },
+    {
+     "title": "As comodidades da mansão de Renato Aragão, que foi penhorada pela Justiça"
+    }
+   ]
+  },
+  {
+   "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
+   "articles": [
+    {
+     "title": "‘Demita um petista’: Justiça do Trabalho determina que Meta exclua conteúdos de assédio eleitoral"
+    },
+    {
+     "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral"
+    },
+    {
+     "title": "Justiça manda Meta remover posts que incentivam demissão por voto político"
+    }
+   ]
+  },
+  {
+   "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial",
+   "articles": [
+    {
+     "title": "Raízen aprova recuperação extrajudicial e prevê R$ 39,8 bi"
+    },
+    {
+     "title": "Acionistas da Raízen aprovam plano de recuperação extrajudicial, dizem fontes"
+    },
+    {
+     "title": "Raízen e Raízen Energia elegem novos conselhos dentro da recuperação extrajudicial"
+    }
+   ]
+  },
+  {
+   "title": "Democratas cobram que Trump reconheça vitória de Lula",
+   "articles": [
+    {
+     "title": "Democratas cobram que Trump reconheça vitória de Lula: “Negacionismo eleitoral”"
+    },
+    {
+     "title": "Congressistas dos EUA cobram de Trump o reconhecimento da vitória de Lula: ‘Sem negacionismo eleitoral’"
+    },
+    {
+     "title": "Democratas cobram que Trump reconheça vitória de Lula"
+    }
+   ]
+  },
+  {
+   "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo",
+   "articles": [
+    {
+     "title": "A fuga, os golpes e o futuro do bolsonarismo"
+    },
+    {
+     "title": "Qual o futuro do bolsonarismo após Flávio Bolsonaro ir para os EUA?"
+    },
+    {
+     "title": "Como a fuga de Flávio Bolsonaro pode impactar o bolsonarismo"
+    }
+   ]
+  },
+  {
+   "title": "Lula deve convidar Trump e Milei para posse em janeiro, apesar de tensões",
+   "articles": [
+    {
+     "title": "Lula vai convidar Trump e Milei para a posse?"
+    },
+    {
+     "title": "Lula avalia convidar rivais de Milei para posse em janeiro"
+    },
+    {
+     "title": "Lula deve convidar Trump e Milei para posse em janeiro, apesar de tensões"
+    }
+   ]
+  },
+  {
+   "title": "Filha de Marielle relata ofensas racistas à mãe em grupo da PUC-Rio",
+   "articles": [
+    {
+     "title": "Família denuncia agressão a Marielle em grupo de WhatsApp da PUC-Rio"
+    },
+    {
+     "title": "Filha de Marielle relata ofensas racistas à mãe em grupo da PUC-Rio"
+    },
+    {
+     "title": "Filha de Marielle Franco denuncia ataques racistas em grupo ligado à PUC-Rio"
+    }
+   ]
+  },
+  {
+   "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
+   "articles": [
+    {
+     "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos"
+    },
+    {
+     "title": "Chineses são condenados por espionagem nos EUA"
+    },
+    {
+     "title": "Estados Unidos condenam dois cidadãos chineses por espionagem"
+    }
+   ]
+  },
+  {
+   "title": "Justiça condena Sergio Maurício a pagar R$ 10 mil a Erika por danos morais",
+   "articles": [
+    {
+     "title": "Narrador Sérgio Maurício é condenado a indenizar Erika Hilton por transfobia"
+    },
+    {
+     "title": "Justiça condena Sérgio Maurício por transfobia contra Erika Hilton"
+    },
+    {
+     "title": "Justiça condena Sergio Maurício a pagar R$ 10 mil a Erika por danos morais"
+    }
+   ]
+  },
+  {
+   "title": "Correspondente da Globo em Londres vai substituir Maju Coutinho no Fantástico",
+   "articles": [
+    {
+     "title": "Correspondente da Globo em Londres vai substituir Maju Coutinho no Fantástico"
+    },
+    {
+     "title": "Globo toma atitude e define substituto de Maju Coutinho no 'Fantástico'"
+    },
+    {
+     "title": "Globo escolhe substituto de Maju Coutinho no ‘Fantástico’ durante licença-maternidade"
+    }
+   ]
+  },
+  {
+   "title": "Como Miami se tornou refúgio de políticos conservadores da América Latina",
+   "articles": [
+    {
+     "title": "Flávio Bolsonaro entra para lista de políticos ‘conservadores’ abrigados em Miami"
+    },
+    {
+     "title": "Como Miami se tornou refúgio de políticos conservadores da América Latina"
+    },
+    {
+     "title": "Miami, a base de políticos conservadores da América Latina"
+    }
+   ]
+  },
+  {
+   "title": "O que os boicotes e demissões de eleitores de Lula dizem do Brasil",
+   "articles": [
+    {
+     "title": "MPF investiga perseguição e boicotes contra eleitores de Lula no Sul do país"
+    },
+    {
+     "title": "O que os boicotes e demissões de eleitores de Lula dizem do Brasil"
+    },
+    {
+     "title": "MPF apura discriminação e atos de ódio contra eleitores de Lula na região Sul do país"
+    }
+   ]
+  },
+  {
+   "title": "Tragédia em Congonhas: acidente com Fokker 100 que matou 99 pessoas completa 30 anos; relembre",
+   "articles": [
+    {
+     "title": "Acidente aéreo da TAM que matou 99 pessoas completa 30 anos"
+    },
+    {
+     "title": "Acidente com Fokker da TAM completa 30 anos; viúva diz que “luto é permanente”"
+    },
+    {
+     "title": "Tragédia em Congonhas: acidente com Fokker 100 que matou 99 pessoas completa 30 anos; relembre"
+    }
+   ]
+  },
+  {
+   "title": "Homem é preso com arsenal de armas e explosivos em Guarujá",
+   "articles": [
+    {
+     "title": "PM apreende arsenal com fuzil, submetralhadora, drone e explosivos no Guarujá (SP)"
+    },
+    {
+     "title": "Submetralhadora e explosivos: homem é preso com arsenal bélico no Guarujá"
+    },
+    {
+     "title": "Homem é preso com arsenal de armas e explosivos em Guarujá"
+    }
+   ]
+  },
+  {
+   "title": "O teste simples de fitness que prevê o seu risco de morte",
+   "articles": [
+    {
+     "title": "O teste simples de fitness que prevê o seu risco de morte"
+    },
+    {
+     "title": "O teste simples de fitness que prevê o seu risco de morte"
+    },
+    {
+     "title": "O teste simples de fitness que prevê o seu risco de morte"
+    }
+   ]
+  },
+  {
+   "title": "As propostas do presidente Lula para o seu quarto mandato em 8 áreas",
+   "articles": [
+    {
+     "title": "As propostas do presidente Lula para o seu quarto mandato em 8 áreas"
+    },
+    {
+     "title": "A economia no quarto mandato de Lula"
+    }
+   ]
+  },
+  {
+   "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
+   "articles": [
+    {
+     "title": "Sobrevivente de injeção letal diz estar com \"dor na alma\""
+    },
+    {
+     "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal"
+    }
+   ]
+  },
+  {
+   "title": "Papa Leão XIV vota por correio em eleições dos EUA",
+   "articles": [
+    {
+     "title": "Papa Leão XIV vota por correio em eleições dos EUA"
+    },
+    {
+     "title": "Papa Leão 14 vota por correio em eleição dos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
+   "articles": [
+    {
+     "title": "A fuga de Flávio Bolsonaro e o voo cego da imprensa"
+    },
+    {
+     "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência"
+    }
+   ]
+  },
+  {
+   "title": "Lula vai lidar com sua herança maldita",
+   "articles": [
+    {
+     "title": "Lula vai lidar com sua herança maldita"
+    },
+    {
+     "title": "Lula e a herança que ele mesmo deixou"
+    }
+   ]
+  },
+  {
+   "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
+   "articles": [
+    {
+     "title": "Assessor de Trump que ajudou na fuga de Flávio acompanhou votação com Eduardo"
+    },
+    {
+     "title": "Quem é o assessor de Trump que ajudou Flávio a fugir"
+    }
+   ]
+  },
+  {
+   "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
+   "articles": [
+    {
+     "title": "Meta faz acordo com adolescente nos EUA por vício digital"
+    },
+    {
+     "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Moraes manda destruir armas de Torres e PMs do 8 de Janeiro",
+   "articles": [
+    {
+     "title": "Moraes manda destruir armas de Torres e PMs do 8 de Janeiro"
+    },
+    {
+     "title": "Moraes manda PF guardar “minuta do golpe” e destruir armas de Torres e PMs"
+    }
+   ]
+  },
+  {
+   "title": "PM apreende carro ligado a Toguro e encontra R$ 100 mil",
+   "articles": [
+    {
+     "title": "PM apreende carro ligado a Toguro e encontra R$ 100 mil"
+    },
+    {
+     "title": "PM apreende carro sem placa e R$ 100 mil de Toguro; origem foi comprovada e bens devolvidos"
+    }
+   ]
+  },
+  {
+   "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
+   "articles": [
+    {
+     "title": "Votação antecipada nos EUA atinge participação recorde de 48 milhões"
+    },
+    {
+     "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores"
+    }
+   ]
+  },
+  {
+   "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre",
+   "articles": [
+    {
+     "title": "Lula não pretende desistir de indicar Jorge Messias ao STF"
+    },
+    {
+     "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre"
+    }
+   ]
+  },
+  {
+   "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados",
+   "articles": [
+    {
+     "title": "Analistas veem pressão sobre margens da Usiminas após trimestre fraco no setor siderúrgico"
+    },
+    {
+     "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados"
+    }
+   ]
+  },
+  {
+   "title": "Banco Master leiloa itens de luxo; veja como participar",
+   "articles": [
+    {
+     "title": "Banco Master leiloa itens de luxo; veja como participar"
+    },
+    {
+     "title": "Leilão do Banco Master oferta móveis de luxo e TVs de 98 polegadas"
+    }
+   ]
+  },
+  {
+   "title": "Funai aciona PF e pede apuração de casos de ataques contra indígenas",
+   "articles": [
+    {
+     "title": "Funai aciona PF e pede apuração de casos de ataques contra indígenas"
+    },
+    {
+     "title": "Funai aciona PF e pede apuração de casos de ataques contra indígenas"
+    }
+   ]
+  },
+  {
+   "title": "TRE-DF apura transporte de urnas em caminhonete com adesivo do PT",
+   "articles": [
+    {
+     "title": "TRE-DF apura transporte de urnas em caminhonete com adesivo do PT"
+    },
+    {
+     "title": "Justiça apura transporte de urnas em caminhonete com adesivo do PT"
+    }
+   ]
+  },
+  {
+   "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
+   "articles": [
+    {
+     "title": "Oncoclínicas diz que obteve adesão necessária de credores para recuperação extrajudicial"
+    },
+    {
+     "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial"
+    }
+   ]
+  },
+  {
+   "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
+   "articles": [
+    {
+     "title": "Premiê da Polônia é acusado de tentativa de golpe após cerco policial a tribunal"
+    },
+    {
+     "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal"
+    }
+   ]
+  },
+  {
+   "title": "PGR apoia quebra de sigilo de jornalista que investigou Flávio Dino",
+   "articles": [
+    {
+     "title": "PGR considera legal quebra de sigilo de jornalista em investigação sobre Dino"
+    },
+    {
+     "title": "PGR apoia quebra de sigilo de jornalista que investigou Flávio Dino"
+    }
+   ]
+  },
+  {
+   "title": "Lideranças de esquerda no exterior criam canais digitais inspirados no ‘Exército do Lula’",
+   "articles": [
+    {
+     "title": "Grupos inspirados no “Exército do Lula” crescem no exterior"
+    },
+    {
+     "title": "Lideranças de esquerda no exterior criam canais digitais inspirados no ‘Exército do Lula’"
+    }
+   ]
+  },
+  {
+   "title": "Por que El Salvador está enviando militares ao Haiti",
+   "articles": [
+    {
+     "title": "Por que El Salvador está enviando militares ao Haiti"
+    },
+    {
+     "title": "Bukele, de El Salvador, pode ser o salvador do Haiti?"
+    }
+   ]
+  },
+  {
+   "title": "Seminarista, lenhador e campeão paralímpico: veja as disputas que podem definir o controle do Senado nas eleições de meio de mandato nos EUA",
+   "articles": [
+    {
+     "title": "Seminarista, lenhador e campeão paralímpico: veja as disputas que podem definir o controle do Senado nas eleições de meio de mandato nos EUA"
+    },
+    {
+     "title": "Eleições de meio de mandato definem o controle do Congresso nos EUA"
+    }
+   ]
+  },
+  {
+   "title": "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia",
+   "articles": [
+    {
+     "title": "Governo Trump aprova venda de 500 mísseis à Ucrânia"
+    },
+    {
+     "title": "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia"
+    }
+   ]
+  },
+  {
+   "title": "Bebê de 12 dias morre após ser atingido na cabeça por abacate na Argentina",
+   "articles": [
+    {
+     "title": "Bebê de 12 dias morre após ser atingido na cabeça por abacate na Argentina"
+    },
+    {
+     "title": "Bebê de 12 dias morre após ser atingido por abacate na Argentina"
+    }
+   ]
+  },
+  {
+   "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
+   "articles": [
+    {
+     "title": "PL rechaça golpismo e isola Flávio Bolsonaro"
+    },
+    {
+     "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro"
+    }
+   ]
+  },
+  {
+   "title": "Como fica o tempo no feriado de Finados?",
+   "articles": [
+    {
+     "title": "Como fica o tempo no feriado de Finados?"
+    },
+    {
+     "title": "Como fica o tempo no feriado de Finados?"
+    }
+   ]
+  },
+  {
+   "title": "Rock the Mountain 2026: tudo o que você precisa saber sobre o festival",
+   "articles": [
+    {
+     "title": "Rock the Mountain 2026: tudo o que você precisa saber sobre o festival"
+    },
+    {
+     "title": "O que você precisa saber sobre as Midterms de 2026 nos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Marinho diz que não pretende ser chefe de gabinete de Lula",
+   "articles": [
+    {
+     "title": "Marinho diz que não pretende ser chefe de gabinete de Lula"
+    },
+    {
+     "title": "Ministro do Trabalho responde se será chefe de gabinete de Lula; vídeo"
+    }
+   ]
+  },
+  {
+   "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado",
+   "articles": [
+    {
+     "title": "Centrão projeta apoio de Hugo Motta para reeleger Alcolumbre presidente do Senado"
+    },
+    {
+     "title": "Hugo Motta busca apoio do PT para aprovar reforma política"
+    }
+   ]
+  },
+  {
+   "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
+   "articles": [
+    {
+     "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar"
+    },
+    {
+     "title": "Primeira fase do vestibular da FUVEST acontece neste domingo (01)"
+    }
+   ]
+  },
+  {
+   "title": "Votos antecipados batem recorde nos EUA, com mais de 49 milhões depositados a três dias das eleições",
+   "articles": [
+    {
+     "title": "Votos antecipados batem recorde nos EUA, com mais de 49 milhões depositados a três dias das eleições"
+    },
+    {
+     "title": "Eleições nos EUA registram recorde de quase 48 milhões de votos antecipados"
+    }
+   ]
+  },
+  {
+   "title": "EUA cancelam foto de família do G20 após boicote à Rússia",
+   "articles": [
+    {
+     "title": "Climão no G20: europeus rejeitam foto com russo e EUA cancelam “foto de família”"
+    },
+    {
+     "title": "EUA cancelam foto de família do G20 após boicote à Rússia"
+    }
+   ]
+  },
+  {
+   "title": "Ator demitido pela Marvel afirma que vai se candidatar à presidência dos EUA",
+   "articles": [
+    {
+     "title": "Ator demitido pela Marvel afirma que vai se candidatar à presidência dos EUA"
+    },
+    {
+     "title": "Ator demitido pela Marvel diz que pretende se candidatar à presidência dos EUA"
+    }
+   ]
+  },
+  {
+   "title": "Irã atualiza alvos de EUA e Israel e ordena resposta sem limites geográficos",
+   "articles": [
+    {
+     "title": "Irã promete retaliação sem 'limites geográficos' em caso de ataque dos EUA"
+    },
+    {
+     "title": "Irã atualiza alvos de EUA e Israel e ordena resposta sem limites geográficos"
+    }
+   ]
+  },
+  {
+   "title": "Nevoeiro causa cancelamentos e desvios de voos no aeroporto de Confins",
+   "articles": [
+    {
+     "title": "Neblina fecha aeroporto de Confins e altera voos na Grande BH"
+    },
+    {
+     "title": "Nevoeiro causa cancelamentos e desvios de voos no aeroporto de Confins"
+    }
+   ]
+  },
+  {
+   "title": "Dólar sobe a R$ 5,44 e tem maior cotação de 2026; alta na semana é de 9,15%",
+   "articles": [
+    {
+     "title": "Risco país sobe 18% em uma semana"
+    },
+    {
+     "title": "Dólar sobe a R$ 5,44 e tem maior cotação de 2026; alta na semana é de 9,15%"
+    }
+   ]
+  },
+  {
+   "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa, diz PF",
+   "articles": [
+    {
+     "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa, diz PF"
+    },
+    {
+     "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões na boca do caixa, diz PF"
+    }
+   ]
+  },
+  {
+   "title": "Caso Porsche: Fernando Sastre é condenado a 17 anos de prisão em SP",
+   "articles": [
+    {
+     "title": "Caso Porsche: Fernando Sastre é condenado a 17 anos de prisão em SP"
+    },
+    {
+     "title": "Empresário do caso Porsche é condenado a 17 anos de prisão"
+    }
+   ]
+  },
+  {
+   "title": "Chuvas intensas e ar seco atingem o país na virada do mês",
+   "articles": [
+    {
+     "title": "Chuvas intensas e ar seco atingem o país na virada do mês"
+    },
+    {
+     "title": "Sábado de chuvas intensas no país"
+    }
+   ]
+  },
+  {
+   "title": "Jornalista de 36 anos morre após quase dois meses internado por AVC hemorrágico em São Paulo",
+   "articles": [
+    {
+     "title": "Jornalista de 36 anos morre após quase dois meses internado por AVC hemorrágico em São Paulo"
+    },
+    {
+     "title": "Jornalista Eduardo Sotto Mayor morre aos 36 anos depois de AVC hemorrágico"
+    }
+   ]
+  },
+  {
+   "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
+   "articles": [
+    {
+     "title": "O adeus a Patrick Stewart, uma lenda dos X-Men"
+    },
+    {
+     "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men"
+    }
+   ]
+  },
+  {
+   "title": "‘Brasil com S’: estudantes organizam novos atos em defesa da democracia",
+   "articles": [
+    {
+     "title": "“Brasil com S”: estudantes convocam novas manifestações em defesa da democracia"
+    },
+    {
+     "title": "‘Brasil com S’: estudantes organizam novos atos em defesa da democracia"
+    }
+   ]
+  },
+  {
+   "title": "Veja como se proteger do golpe do WhatsApp que esvazia sua conta com apenas um toque",
+   "articles": [
+    {
+     "title": "Cuidado! Golpe no WhatsApp pode roubar sua conta com apenas um toque"
+    },
+    {
+     "title": "Veja como se proteger do golpe do WhatsApp que esvazia sua conta com apenas um toque"
+    }
+   ]
+  },
+  {
+   "title": "Novo Concurso Nacional Unificado pode oferecer até 3 mil vagas em 2027",
+   "articles": [
+    {
+     "title": "Terceira edição do CNU pode oferecer até 3 mil vagas em 2027"
+    },
+    {
+     "title": "Novo Concurso Nacional Unificado pode oferecer até 3 mil vagas em 2027"
+    }
+   ]
+  },
+  {
+   "title": "Homem faz filho de 3 anos refém e ameaça explodir residência com gás",
+   "articles": [
+    {
+     "title": "Homem faz filho de 3 anos refém e ameaça explodir residência com gás"
+    },
+    {
+     "title": "Homem faz filho de 3 anos refém e ameaça explodir casa com gás em SP"
+    }
+   ]
+  },
+  {
+   "title": "Reino Unido sinaliza que governo vai considerar um pedido de desculpas por seu papel na escravidão",
+   "articles": [
+    {
+     "title": "Reino Unido admite pedir desculpas pela escravidão, mas rejeita indenizações financeiras"
+    },
+    {
+     "title": "Reino Unido sinaliza que governo vai considerar um pedido de desculpas por seu papel na escravidão"
+    }
+   ]
+  },
+  {
+   "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça",
+   "articles": [
+    {
+     "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça"
+    },
+    {
+     "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça"
+    }
+   ]
+  },
+  {
+   "title": "Primeira fase do Enem acontece no dia 8; veja os assuntos mais abordados nos últimos anos",
+   "articles": [
+    {
+     "title": "Primeira fase do Enem acontece no dia 8; veja os assuntos mais abordados nos últimos anos"
+    },
+    {
+     "title": "Quais assuntos mais caíram no Enem nos últimos 5 anos?"
+    }
+   ]
+  },
+  {
+   "title": "Lições da vitória: mais povo, menos austeridade",
+   "articles": [
+    {
+     "title": "Depois da grande vitória, a Pauta do Povo"
+    },
+    {
+     "title": "Lições da vitória: mais povo, menos austeridade"
+    }
+   ]
+  },
+  {
+   "title": "Vídeo: Incêndio destrói hotel próximo ao Everest em meio a nevasca; hóspedes são evacuados",
+   "articles": [
+    {
+     "title": "Incêndio destrói hotel próximo ao Everest durante nevasca; assista"
+    },
+    {
+     "title": "Vídeo: Incêndio destrói hotel próximo ao Everest em meio a nevasca; hóspedes são evacuados"
+    }
+   ]
+  },
+  {
+   "title": "Primeiro paciente recebe tratamento pioneiro no mundo com células-tronco para Parkinson",
+   "articles": [
+    {
+     "title": "Japão inicia transplante de células-tronco para tratar Parkinson"
+    },
+    {
+     "title": "Primeiro paciente recebe tratamento pioneiro no mundo com células-tronco para Parkinson"
+    }
+   ]
+  },
+  {
+   "title": "Ministros vão ao Mato Grosso do Sul para investigar violência política contra indígenas",
+   "articles": [
+    {
+     "title": "Ministros vão ao Mato Grosso do Sul para investigar violência política contra indígenas"
+    },
+    {
+     "title": "Família Machado prospera com diversificação produtiva no interior do Mato Grosso do Sul"
+    }
+   ]
+  },
+  {
+   "title": "Selma Blair se emociona e pede desculpas após prisão por morder comissários",
+   "articles": [
+    {
+     "title": "Selma Blair pede desculpas após morder funcionário de companhia aérea"
+    },
+    {
+     "title": "Selma Blair se emociona e pede desculpas após prisão por morder comissários"
+    }
+   ]
+  },
+  {
+   "title": "Período de Piracema começa neste domingo e restringe pesca em rios do Oeste Paulista",
+   "articles": [
+    {
+     "title": "Período de Piracema começa neste domingo e restringe pesca em rios do Oeste Paulista"
+    },
+    {
+     "title": "Período de defeso da piracema tem início neste domingo em bacias do RS e de SC"
+    }
+   ]
+  },
+  {
+   "title": "SBT bate martelo sobre apresentadores de nova atração matinal",
+   "articles": [
+    {
+     "title": "SBT bate martelo sobre apresentadores de nova atração matinal"
+    },
+    {
+     "title": "SBT define apresentadores de novo programa matinal"
+    }
+   ]
+  },
+  {
+   "title": "Fuvest: 5 erros para não cometer na hora da prova",
+   "articles": [
+    {
+     "title": "Fuvest: 5 erros para não cometer na hora da prova"
+    },
+    {
+     "title": "Fuvest: 5 erros para não cometer na hora da prova"
+    }
+   ]
+  },
+  {
+   "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges",
+   "articles": [
+    {
+     "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges"
+    },
+    {
+     "title": "Sarau Brasilis celebra três anos e leva encontros musicais ao CCSP, com homenagem a Lô Borges"
+    }
+   ]
+  },
+  {
+   "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro",
+   "articles": [
+    {
+     "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro"
+    },
+    {
+     "title": "Quando os ônibus pararam no dia da eleição, o \"Exército de Lula\" pegou as chaves do carro"
+    }
+   ]
+  },
+  {
+   "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores",
+   "articles": [
+    {
+     "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores"
+    },
+    {
+     "title": "Vice-ministro da Justiça do Chile renuncia depois de reduzir pena de abusadores"
+    }
+   ]
+  },
+  {
+   "title": "Moradores retirados de Oleshky chegam à Ucrânia, diz Zelensky",
+   "articles": [
+    {
+     "title": "Evacuados da cidade de Oleshky chegam à Ucrânia"
+    },
+    {
+     "title": "Moradores retirados de Oleshky chegam à Ucrânia, diz Zelensky"
+    }
+   ]
+  },
+  {
+   "title": "Médicos são acusados de perseguir colegas e sugerir boicote a pacientes por posicionamento político: 'Senti um alvo na minha cabeça'",
+   "articles": [
+    {
+     "title": "Médicos são acusados de perseguir colegas e sugerir boicote a pacientes por posicionamento político: 'Senti um alvo na minha cabeça'"
+    },
+    {
+     "title": "Médicos são acusados de perseguir colegas e sugerir boicote a pacientes por posicionamento político: 'Senti um alvo na minha cabeça'"
+    }
+   ]
+  },
+  {
+   "title": "Investigado por mais de 20 mortes: quem é Colete, traficante preso que teria trocado de facção em guerra do tráfico em Caxias",
+   "articles": [
+    {
+     "title": "Investigado por mais de 20 mortes: quem é Colete, traficante preso que teria trocado de facção em guerra do tráfico em Caxias"
+    },
+    {
+     "title": "“Colete”, traficante do CV, é preso após tiroteio em Duque de Caxias (RJ)"
+    }
+   ]
+  },
+  {
+   "title": "Cresce ameaça a indígenas no MS após de Lula nas eleições",
+   "articles": [
+    {
+     "title": "“Veneno na água”: cresce ameaça a indígenas após reeleição de Lula"
+    },
+    {
+     "title": "Cresce ameaça a indígenas no MS após de Lula nas eleições"
+    }
+   ]
+  },
+  {
+   "title": "França mobiliza esquema de segurança diante de protestos previstos para este sábado",
+   "articles": [
+    {
+     "title": "França mobiliza 70.000 agentes para novos protestos neste sábado"
+    },
+    {
+     "title": "França mobiliza esquema de segurança diante de protestos previstos para este sábado"
+    }
+   ]
+  },
+  {
+   "title": "Morre aos 85 anos Nonna Silvi, cozinheira toscana que se tornou fenômeno nas redes",
+   "articles": [
+    {
+     "title": "Morre aos 85 anos Nonna Silvi, cozinheira toscana que se tornou fenômeno nas redes"
+    },
+    {
+     "title": "Morre Nonna Silvi, cozinheira que se tornou fenômeno nas redes, aos 85 anos"
+    }
+   ]
+  },
+  {
+   "title": "Site do Corinthians é hackeado e “anuncia” a contratação de Messi",
+   "articles": [
+    {
+     "title": "Ataque ao site do Corinthians gera falso anúncio de Messi para 2027"
+    },
+    {
+     "title": "Site do Corinthians é hackeado e “anuncia” a contratação de Messi"
+    }
+   ]
+  },
+  {
+   "title": "Premiê britânico diz estar aberto a pedido formal de desculpas pela escravidão",
+   "articles": [
+    {
+     "title": "Premiê britânico diz estar aberto a pedido formal de desculpas pela escravidão"
+    },
+    {
+     "title": "Premiê britânico faz aceno a pedido formal de desculpas por escravidão, mas rejeita reparação financeira"
+    }
+   ]
+  },
+  {
+   "title": "Carolina Ferraz anuncia que se tornou avó: “Alegria imensa”",
+   "articles": [
+    {
+     "title": "Carolina Ferraz se torna avó pela primeira vez; filha anuncia nascimento do bebê"
+    },
+    {
+     "title": "Carolina Ferraz anuncia que se tornou avó: “Alegria imensa”"
+    }
+   ]
+  },
+  {
+   "title": "Cantareira recupera volume, mas segue em risco de escassez; sistema abastece metade da Grande SP",
+   "articles": [
+    {
+     "title": "Cantareira recupera volume, mas segue em risco de escassez; sistema abastece metade da Grande SP"
+    },
+    {
+     "title": "Sistema da Cantareira recupera volume, mas segue em risco de escassez em SP"
+    }
+   ]
+  },
+  {
+   "title": "Mais de 100 países já reconheceram a vitória de Lula nas eleições de 2026",
+   "articles": [
+    {
+     "title": "112 países reconheceram vitória de Lula, diz mapa do TSE"
+    },
+    {
+     "title": "Mais de 100 países já reconheceram a vitória de Lula nas eleições de 2026"
+    }
+   ]
+  },
+  {
+   "title": "Governo Trump investiga suposta fraude no Alasca por candidatos rivais com nomes iguais",
+   "articles": [
+    {
+     "title": "Governo Trump investiga suposta fraude no Alasca por candidatos rivais com nomes iguais"
+    },
+    {
+     "title": "Midterms: caso de nomes iguais no Alasca faz Trump mobilizar o FBI"
+    }
+   ]
+  },
+  {
+   "title": "Moraes manda transferir Bacellar e soltar desembargador",
+   "articles": [
+    {
+     "title": "Moraes manda soltar desembargador suspeito de vazar operação contra o Comando Vermelho"
+    },
+    {
+     "title": "Moraes manda transferir Bacellar e soltar desembargador"
+    }
+   ]
+  },
+  {
+   "title": "“Nos mataram”: Como o último jornal independente da Rússia fechou as portas",
+   "articles": [
+    {
+     "title": "“Nos mataram”: Como o último jornal independente da Rússia fechou as portas"
+    },
+    {
+     "title": "Jornal independente Novaya Gazeta fecha na Rússia"
+    }
+   ]
+  },
+  {
+   "title": "Derrota eleitoral de Flávio Bolsonaro ameaça lançamento de filme Dark Horse",
+   "articles": [
+    {
+     "title": "O que acontece com “Dark Horse” após fuga de Flávio Bolsonaro"
+    },
+    {
+     "title": "Derrota eleitoral de Flávio Bolsonaro ameaça lançamento de filme Dark Horse"
+    }
+   ]
+  },
+  {
+   "title": "Missa homenageia vítimas de acidente ferroviário na Espanha; autoridades ainda apuram causas da tragédia",
+   "articles": [
+    {
+     "title": "Missa homenageia vítimas de acidente ferroviário na Espanha; autoridades ainda apuram causas da tragédia"
+    },
+    {
+     "title": "Missa homenageia vítimas de acidente ferroviário na Espanha; autoridades ainda apuram causas da tragédia"
+    }
+   ]
+  },
+  {
+   "title": "Resoluções de EUA e Rússia sobre Saara Ocidental são rejeitadas no Conselho de Segurança da ONU",
+   "articles": [
+    {
+     "title": "Resoluções de EUA e Rússia sobre Saara Ocidental são rejeitadas no Conselho de Segurança da ONU"
+    },
+    {
+     "title": "Resoluções de EUA e Rússia sobre Saara Ocidental são rejeitadas no Conselho de Segurança da ONU"
+    }
+   ]
+  },
+  {
+   "title": "Civis deixam cidade ucraniana ocupada pela Rússia; veja imagens",
+   "articles": [
+    {
+     "title": "Civis deixam cidade ucraniana ocupada pela Rússia; veja imagens"
+    },
+    {
+     "title": "Vídeo: civis deixam cidade ucraniana invadida pelas forças russas"
+    }
+   ]
+  }
+ ],
+ "factchecks": [
+  {
+   "title": "Checagem de fatos pauta debates e mobiliza reação às mentiras eleitorais"
+  },
+  {
+   "title": "É #FAKE que Lula anunciou corte de R$ 6 bilhões na Saúde e na Educação após eleição de 2026; vídeo foi exibido no ano retrasado"
+  },
+  {
+   "title": "Lei que restringe auxílio-reclusão foi sancionada em março, não depois das eleições"
+  },
+  {
+   "title": "Após derrota, bolsonarismo adere mais à desinformação contra Lula do que sobre fraude eleitoral"
+  },
+  {
+   "title": "Número de eleitores maior que o de habitantes em cidades da Bahia não indica fraude"
+  },
+  {
+   "title": "É falso que Bolsonaro foi enviado de volta à Papuda por desacato"
+  },
+  {
+   "title": "Documento falso distorce dados do TSE para alegar fraude na eleição presidencial de 2026"
+  },
+  {
+   "title": "Vídeo de professores em greve é de paralisação estadual e não tem relação com corte federal na educação"
+  },
+  {
+   "title": "Vídeo de militares dos EUA gargalhando não mostra ‘resgate’ de Flávio Bolsonaro"
+  },
+  {
+   "title": "Relatório apócrifo distorce microdados do TSE para alegar fraude eleitoral"
+  },
+  {
+   "title": "Vídeo mostra protesto de professores em setembro, não após reeleição de Lula"
+  },
+  {
+   "title": "É #FAKE que governo federal recuou sobre fim da escala 6x1 após vitória de Lula no segundo turno das eleições 2026"
+  },
+  {
+   "title": "Não é verdade que governo prevê corte de 670 mil beneficiários do BPC"
+  },
+  {
+   "title": "É #FAKE que governo Lula 'bloqueou' Gás do Povo e Bolsa Família após eleições de 2026"
+  },
+  {
+   "title": "Vídeo não mostra urna registrando votos sozinha na prorrogação do segundo turno"
+  },
+  {
+   "title": "Reportagem que mostra cortes na Saúde e Educação não é atual; vídeo é de 2024"
+  },
+  {
+   "title": "Vídeo de bandeira da Palestina na Torre Eiffel foi produzido por IA"
+  },
+  {
+   "title": "É falso que Trump recepcionou Flávio Bolsonaro nos EUA; imagem foi gerada com IA"
+  },
+  {
+   "title": "Vídeo da CNN de 2025 é usado para alegar que Lula vai acabar com o Bolsa Família"
+  },
+  {
+   "title": "Vídeo não prova que Lula teve 165 mil votos de origem não identificada"
+  },
+  {
+   "title": "Soma de votos de três seções eleitorais na BA não comprova fraude"
+  },
+  {
+   "title": "É #FAKE que vídeo de veículo transportando urnas após transmissão de votos indica fraude na apuração"
+  },
+  {
+   "title": "Notícia sobre cortes no Bolsa Família é de 2023, não atual"
+  },
+  {
+   "title": "Últimas notícias"
+  },
+  {
+   "title": "É falso que governo prometeu R$ 5.000, mas só vai pagar R$ 363 no Pix MEI"
+  },
+  {
+   "title": "Governo Lula não suspendeu pagamento de dezembro do Gás do Povo"
+  },
+  {
+   "title": "É #FAKE que reportagem mostrou plano de Lula para encerrar Bolsa Família após 2º turno; vídeo de 2025 citou mudanças no programa"
+  },
+  {
+   "title": "É falso que Lula ganhou 2 milhões de votos na Bahia após decisão do STF"
+  },
+  {
+   "title": "Vídeo não mostra chegada de Flávio Bolsonaro nos EUA; gravação é antiga"
+  },
+  {
+   "title": "É falso que o governo Lula recuou sobre o fim da escala 6×1"
+  },
+  {
+   "title": "Notícia sobre bloqueio de R$ 6 bilhões na Saúde e Educação é de julho de 2024"
+  },
+  {
+   "title": "É #FAKE que vereadora do PT morreu após ataque em ato pró-Lula em Montes Claros (MG); ela teve alta e votou no dia seguinte"
+  },
+  {
+   "title": "É falso que Lula recuou sobre fim da escala 6x1"
+  },
+  {
+   "title": "Não há provas de que PT pagou barcos para levar eleitores no Pará às urnas"
+  },
+  {
+   "title": "É #FAKE que vídeo de Flávio Bolsonaro chorando foi divulgado após derrota para Lula no segundo turno da eleição"
+  },
+  {
+   "title": "Aumento de votos a Lula não reflete transferência automática de votos de outros candidatos"
+  },
+  {
+   "title": "É falso que Flávio Bolsonaro perdeu votos em SC no segundo turno"
+  },
+  {
+   "title": "Votos registrados após as 17h não mudam resultado das eleições"
+  },
+  {
+   "title": "O que se sabe sobre a fuga de Flávio Bolsonaro"
+  },
+  {
+   "title": "Vídeo que mostra Flávio chorando não foi gravado após derrota"
+  },
+  {
+   "title": "Jair Bolsonaro não foi preso por desacato após resultado das eleições"
+  },
+  {
+   "title": "Vídeo mostra presos comemorando gol do Santa Cruz, não reeleição de Lula"
+  },
+  {
+   "title": "Vídeo de apreensão de R$ 1,7 milhão em mala não trata de compra de votos"
+  },
+  {
+   "title": "Lula não disse que serviços de saúde são para quem pode pagar"
+  },
+  {
+   "title": "Derrotado, Flávio mente ao sugerir que eleição foi fraudada"
+  },
+  {
+   "title": "TSE desmente que fiscais do PL tenham sido retirados de sala-cofre"
+  },
+  {
+   "title": "Vídeo antigo circula nas redes para sugerir que Flávio foi para os EUA"
+  },
+  {
+   "title": "É falso que vídeo de ‘meninos’ armados mostre comemoração pela vitória de Lula"
+  },
+  {
+   "title": "Vídeo mostra detentos comemorando gol em 2022, e não vitória de Lula"
+  },
+  {
+   "title": "É #FAKE que vídeo mostre celebração em presídio por vitória de Lula; cena exibe festa após gol do Santa Cruz em 2022"
+  },
+  {
+   "title": "Montagem simula notícia do g1 sobre saída de Flávio Bolsonaro do Brasil"
+  },
+  {
+   "title": "O que se sabe sobre relatos de supressão do voto e a prorrogação do segundo turno"
+  },
+  {
+   "title": "Da IA ultrarrealista ao WhatsApp, como a desinformação moldou as eleições"
+  },
+  {
+   "title": "É #FAKE que assinatura de eleitor em caderno de votação pode servir para comprovar eventual fraude nas urnas"
+  },
+  {
+   "title": "É #FAKE foto de mulher rasgando bandeira de Nossa Senhora Aparecida em ato de apoio a Flávio Bolsonaro; cena foi criada com IA"
+  },
+  {
+   "title": "Vídeo sobre brasileiros impedidos de votar em Londres é do 1º turno"
+  },
+  {
+   "title": "#NÃOÉBEMASSIM: Eleitor deve avisar mesário se alguém votar em seu lugar, mas investigação do caso cabe à própria Justiça Eleitoral"
+  },
+  {
+   "title": "É #FAKE que todos os voos da Gol do Sul para o Nordeste foram cancelados no sábado antes do 2° turno"
+  },
+  {
+   "title": "Golpe usa nome da TIM para ameaçar usuários com bloqueio de CPF"
+  },
+  {
+   "title": "É falso vídeo de Lula derrubando mesa em entrevista com Ratinho"
+  },
+  {
+   "title": "Vídeo é usado para negar problemas no transporte de Salvador durante eleição"
+  },
+  {
+   "title": "Relatos de mudança no local de votação são fruto de e-Título desatualizado, afirma TSE"
+  },
+  {
+   "title": "É falso que vereadora do PT atingida por objeto em MG morreu após agressão"
+  },
+  {
+   "title": "Vídeo antigo de pessoas de vermelho em barco é usado para alegar chegada de eleitores de Lula a Belém"
+  },
+  {
+   "title": "É falsa imagem que mostra apoiadora de Flávio rasgando bandeira de Nossa Senhora Aparecida"
+  },
+  {
+   "title": "É falso que Cuba tenha abolido todas as escalas de trabalho"
+  },
+  {
+   "title": "É falsa capa da Folha de S. Paulo sobre supostos R$ 300 bilhões em propinas de Lula"
+  },
+  {
+   "title": "Foto de Ronaldo fazendo o ‘L’ foi gerada com inteligência artificial"
+  },
+  {
+   "title": "PROCESSO: 0603393-64.2026.6.00.0000 - PETIÇÃO CÍVEL"
+  },
+  {
+   "title": "Reportagem sobre venda de pele de frango em mercados é de 2022, não atual"
+  },
+  {
+   "title": "Flávio disse no debate da Globo que marginais vão andar ‘com medo’, não ‘comigo’"
+  },
+  {
+   "title": "É falso o áudio em que Lula supostamente xinga Roberta Luchsinger após entrevista à CNN"
+  },
+  {
+   "title": "É #FAKE que Flávio Bolsonaro fez o 'L' durante debate da Globo; imagem foi fabricada com inteligência artificial"
+  },
+  {
+   "title": "Veja o que é #FATO ou #FAKE nas falas de Flávio Bolsonaro e Lula no debate da Globo no 2º turno das eleições 2026"
+  },
+  {
+   "title": "Fato ou Fake: veja como enviar sugestões, participar do canal no WhatsApp e seguir nas redes sociais"
+  },
+  {
+   "title": "Checamos Flávio Bolsonaro e Lula no debate da Globo"
+  },
+  {
+   "title": "É falso que Lula passou mal e não vai ao debate da Globo"
+  },
+  {
+   "title": "Fato ou Fake existe desde 2018; conheça o histórico do serviço de checagens do Grupo Globo"
+  },
+  {
+   "title": "Fato ou Fake: entenda como funcionam as checagens e o trabalho da equipe"
+  },
+  {
+   "title": "#FATO, #FAKE e #NÃOÉBEMASSIM: Entenda selos usados pelo Fato ou Fake nas checagens de debates e entrevistas em eleições"
+  }
+ ]
+}

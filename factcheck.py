@@ -8,8 +8,10 @@ Camada de checagem de fatos — G1 Fato ou Fake + Agência Lupa.
 """
 from __future__ import annotations
 
+import calendar
 import html
 import re
+import time
 from datetime import datetime, timezone
 
 import feedparser
@@ -90,8 +92,8 @@ def fetch_g1(limit: int = 100) -> list[dict]:
         if not title or not link:
             continue
         pp = e.get("published_parsed")
-        dt = datetime.fromtimestamp(
-            __import__("time").mktime(pp), tz=timezone.utc) if pp else datetime.now(timezone.utc)
+        ts = min(calendar.timegm(pp), time.time() + 300) if pp else time.time()
+        dt = datetime.fromtimestamp(ts, tz=timezone.utc)
         out.append({
             "checker": "G1 Fato ou Fake",
             "title": title,
@@ -156,8 +158,8 @@ def fetch_aosfatos(limit: int = 100) -> list[dict]:
         if not title or not link:
             continue
         pp = e.get("published_parsed") or e.get("updated_parsed")
-        dt = datetime.fromtimestamp(
-            __import__("time").mktime(pp), tz=timezone.utc) if pp else datetime.now(timezone.utc)
+        ts = min(calendar.timegm(pp), time.time() + 300) if pp else time.time()
+        dt = datetime.fromtimestamp(ts, tz=timezone.utc)
         out.append({
             "checker": "Aos Fatos",
             "title": title,

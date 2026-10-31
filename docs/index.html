@@ -474,7 +474,11 @@ function expandStory(id, scroll=true){
 
 function openFromUrl(){
   const m = new URLSearchParams(location.search).get('story') || location.hash.replace('#','');
-  if(m) expandStory(m);
+  if(!m) return;
+  // F-03: id estável; links antigos (?story=sNNN) resolvem por alias
+  const s = S.data.stories.find(x=>x.id===m)
+    || S.data.stories.find(x=>(x.aliases||[]).includes(m));
+  if(s) expandStory(s.id);
 }
 
 /* ---------- featured ---------- */

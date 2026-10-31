@@ -19,7 +19,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_DB = os.path.join(BASE, "state", "cache.db")
 
 RECENT_WINDOW_H = 72
-PER_SOURCE_CAP = 60
+PER_SOURCE_CAP = 900
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS articles(
@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS fetches(
   n_total INTEGER DEFAULT 0,
   status TEXT NOT NULL,
   ms INTEGER DEFAULT 0,
-  note TEXT DEFAULT ''
+  note TEXT DEFAULT '',
+  n_window INTEGER DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS idx_fetches_src ON fetches(source_id, id DESC);
 CREATE TABLE IF NOT EXISTS runs(
@@ -81,6 +82,9 @@ class Store:
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA busy_timeout=5000")
         self.db.executescript(SCHEMA)
+        cols = {r[1] for r in self.db.execute("PRAGMA table_info(fetches)")}
+        if "n_window" not in cols:  # migração aditiva (F-01)
+            self.db.execute("ALTER TABLE fetches ADD COLUMN n_window INTEGER DEFAULT 0")
 
     # ── HTTP condicional ──
     def cond_headers(self, url: str) -> dict:
@@ -136,21 +140,29 @@ class Store:
                limit: int = PER_SOURCE_CAP) -> list[dict]:
         cutoff = datetime.now(timezone.utc).timestamp() - window_h * 3600
         rows = self.db.execute(
-            "SELECT title, link, summary, published, ts, section, image"
+            "SELECT title, link, summary, published, ts, section, image, first_seen"
             " FROM articles WHERE source_id=? AND ts>? ORDER BY ts DESC LIMIT ?",
             (source_id, cutoff, limit),
         ).fetchall()
         return [{"title": r[0], "link": r[1], "summary": r[2] or "",
                  "published": r[3], "ts": r[4], "section": r[5] or "",
-                 "image": r[6] or ""} for r in rows]
+                 "image": r[6] or "", "first_seen": r[7] or ""} for r in rows]
+
+    def count_recent(self, source_id: str, window_h: float = RECENT_WINDOW_H) -> int:
+        """Quantos artigos a fonte tem na janela (independente do cap)."""
+        cutoff = datetime.now(timezone.utc).timestamp() - window_h * 3600
+        return self.db.execute(
+            "SELECT COUNT(*) FROM articles WHERE source_id=? AND ts>?",
+            (source_id, cutoff)).fetchone()[0]
 
     # ── rodadas e saúde ──
     def log_fetch(self, source_id: str, run_ts: str, n_fresh: int,
-                  n_total: int, status: str, ms: int, note: str = ""):
+                  n_total: int, status: str, ms: int, note: str = "",
+                  n_window: int = 0):
         self.db.execute(
-            "INSERT INTO fetches(source_id, run_ts, n_fresh, n_total, status, ms, note)"
-            " VALUES(?,?,?,?,?,?,?)",
-            (source_id, run_ts, n_fresh, n_total, status, ms, note[:300]),
+            "INSERT INTO fetches(source_id, run_ts, n_fresh, n_total, status, ms, note, n_window)"
+            " VALUES(?,?,?,?,?,?,?,?)",
+            (source_id, run_ts, n_fresh, n_total, status, ms, note[:300], n_window),
         )
         self.db.commit()
 
@@ -198,7 +210,7 @@ class Store:
             "SELECT DISTINCT source_id FROM fetches").fetchall()]
         for s in srcs:
             rows = self.db.execute(
-                "SELECT run_ts, n_fresh, n_total, status, ms FROM fetches"
+                "SELECT run_ts, n_fresh, n_total, status, ms, n_window FROM fetches"
                 " WHERE source_id=? ORDER BY id DESC LIMIT 5", (s,)).fetchall()
             if not rows:
                 continue
@@ -214,6 +226,7 @@ class Store:
                 "last_n_total": rows[0][2],
                 "last_status": rows[0][3],
                 "last_ms": rows[0][4],
+                "last_n_window": rows[0][5],
                 "err_streak": err_streak,
                 "empty": rows[0][2] == 0,
             }
