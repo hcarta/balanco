@@ -79,6 +79,7 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
                     "source_id": s["id"],
                     "source_name": s["name"],
                     "base_bias": float(s.get("bias", 0)),
+                    "kind": s.get("kind", "br"),
                 })
             articles.extend(got)
             kind = s.get("fetcher", "rss")
@@ -466,6 +467,114 @@ def claim_overlap(a: set, b: set, idf: dict, df: Counter, floor: float = 0.34) -
     return round(cov, 2) if (cov >= floor and rare and strong) else 0.0
 
 
+ENTITY_STOP = {"para", "como", "após", "entre", "sobre", "com", "por", "dos", "das",
+               "the", "a", "an", "after", "before", "with", "from", "this", "that",
+               "says", "said", "over", "amid", "during", "will", "has", "have",
+               "more", "what", "when", "while", "about", "into", "says"}
+ENTITY_ALIAS = {"brasil": "brazil", "eua": "us", "usa": "us",
+                "estados unidos": "united states", "reino unido": "uk"}
+
+
+def entities(title: str | None) -> set:
+    """Nomes próprios e siglas: âncoras de tópico entre idiomas e estilos.
+
+    Inclui sequências capitalizadas multi-palavra (+ seus pares internos),
+    capitalizadas isoladas fora do início e siglas (US, ONU)."""
+    t = title or ""
+    runs = re.findall(r"[A-ZÀ-Ú][\wà-ú]+(?:\s+[A-ZÀ-Ú][\wà-ú]+)+", t)
+    out: set = set()
+    for run in runs:
+        parts = run.split()
+        out.add(run.lower())
+        for a, b in zip(parts, parts[1:]):
+            out.add(f"{a} {b}".lower())
+    toks = re.findall(r"[A-ZÀ-Ú][\wà-ú]*", t)
+    for w in toks[1:]:
+        if len(w) >= 3:
+            out.add(w.lower())
+    for w in toks:
+        if re.fullmatch(r"[A-Z]{2,3}", w or ""):
+            out.add(w.lower())
+    if toks and len(toks[0]) >= 4:
+        out.add(toks[0].lower())
+    norm = {ENTITY_ALIAS.get(w, w) for w in out}
+    return {w for w in norm if w not in ENTITY_STOP and len(w) >= 2}
+
+
+def entity_match(a: set, b: set) -> tuple[bool, list]:
+    """Mesmo tópico? 2+ entidades em comum, com ao menos uma multi-palavra
+    (ou 3+ simples). Retorna (casa, termos)."""
+    inter = a & b
+    multi = sorted(x for x in inter if " " in x)
+    rest = sorted(x for x in inter if " " not in x)
+    if len(inter) >= 2 and (multi or len(inter) >= 3):
+        return True, (multi + rest)[:6]
+    return False, []
+
+
+def attach_longreads(stories, articles, longform_ids, per_story=3):
+    """Liga cada história a longform (piauí & cia) pelo mesmo tópico.
+
+    Não afirma nada sobre o artigo: só sugere aprofundamento, com link.
+    """
+    pool = []
+    for a in articles:
+        if a.get("source_id") in longform_ids:
+            pool.append((entities(a.get("title", "") + " " + (a.get("summary") or "")),
+                         a))
+    for s in stories:
+        s["longreads"] = []
+        se = entities(s.get("title", ""))
+        if not se:
+            continue
+        cands = []
+        for le, a in pool:
+            ok, terms = entity_match(se, le)
+            if ok:
+                cands.append((len(terms), a["link"], a))
+        seen, out = set(), []
+        for _, link, a in sorted(cands, reverse=True):
+            if link in seen:
+                continue
+            seen.add(link)
+            out.append({"source": a.get("source_name", ""), "title": a.get("title", ""),
+                        "link": link,
+                        "terms": sorted((se & entities(a.get("title", ""))) |
+                                        (se & entities(a.get("summary") or "")))[:6]})
+            if len(out) >= per_story:
+                break
+        s["longreads"] = out
+    return stories
+
+
+def attach_world(stories, intl_articles, per_story=3):
+    """Liga cada história à repercussão internacional (mesmo tópico, outro idioma)."""
+    pool = [(entities(a.get("title", "")), a) for a in intl_articles]
+    for s in stories:
+        s["world"] = []
+        se = entities(s.get("title", ""))
+        if not se:
+            continue
+        cands = []
+        for ie, a in pool:
+            if not ie:
+                continue
+            ok, terms = entity_match(se, ie)
+            if ok:
+                cands.append((len(terms), a.get("link", ""), a, terms))
+        seen, out = set(), []
+        for _, link, a, terms in sorted(cands, reverse=True):
+            if not link or link in seen:
+                continue
+            seen.add(link)
+            out.append({"source": a.get("source_name", ""), "title": a.get("title", ""),
+                        "link": link, "terms": terms})
+            if len(out) >= per_story:
+                break
+        s["world"] = out
+    return stories
+
+
 def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     """Casa histórias/matérias com checagens por sobreposição ponderada (IDF).
 
@@ -628,15 +737,25 @@ def main():
         print("[2/4] viés fixo por fonte (sem análise por matéria)")
 
     print("[3/4] agrupando stories...")
-    stories = build(sources, articles, llm_scores, thresh=args.thresh,
+    news = [a for a in articles if a.get("kind", "br") != "intl"]
+    intl = [a for a in articles if a.get("kind") == "intl"]
+    print(f"  {len(news)} nacionais + {len(intl)} internacionais (fora das barras)")
+    stories = build(sources, news, llm_scores, thresh=args.thresh,
                     use_embed=args.embed)
+
+    longform_ids = {s["id"] for s in sources if s.get("longform")}
+    stories = attach_longreads(stories, news, longform_ids)
+    stories = attach_world(stories, intl)
+    n_lr = sum(1 for s in stories if s.get("longreads"))
+    n_w = sum(1 for s in stories if s.get("world"))
+    print(f"[3a/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")
 
     checks = []
     if not args.no_checks:
         try:
             from factcheck import fetch_all as fetch_checks
             checks = fetch_checks()
-            print(f"[3b/4] {len(checks)} checagens (G1 Fato ou Fake + Lupa)")
+            print(f"[3b/4] {len(checks)} checagens (G1 Fato ou Fake + Lupa + Aos Fatos)")
         except Exception as ex:
             print(f"[3b/4] checagens indisponíveis: {ex}")
 

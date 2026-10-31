@@ -48,6 +48,15 @@
 | Veja | +0.5 | Liberal-conservadora; historicamente anti-PT. Factualidade rebaixada p/ mista em 30/10 (caso Lula–Vorcaro questionado) |
 | IstoÉ | 0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
+| Agência Pública | -0.8 | Investigativo progressista sem fins lucrativos |
+| The Intercept Brasil | -1.2 | Investigativo progressista, First Look Media |
+| Repórter Brasil | -0.6 | ONG de direitos humanos e trabalho |
+| Al Jazeera English | -0.3 | Catar; progressista em pauta internacional (só em "Lá fora") |
+| CNN International | 0.0 | Padrão CNN global (só em "Lá fora") |
+| Fox News | +1.2 | Conservadora americana (só em "Lá fora") |
+| New York Times | -0.8 | Liberal americana (só em "Lá fora") |
+| The Guardian | -0.9 | Progressista britânica, Scott Trust (só em "Lá fora") |
+| BBC World | -0.1 | Serviço público britânico (só em "Lá fora") |
 
 ## 3. Processo de decisão
 
@@ -106,3 +115,12 @@ Regras de movimento (evitam rebaixamento arbitrário):
 | Gazeta do Povo | mixed | Opinião conservadora explícita + apuração própria |
 | Diário do Centro do Mundo | low | Militância com pouco lastro apuratório |
 | Revista Oeste | low | Padrão de imprecisão apontado na curadoria (30/10) |
+| Agência Pública | very_high | Investigativo premiado, método documentado |
+| The Intercept Brasil | high | Rigor investigativo, linha opinativa explícita |
+| Repórter Brasil | very_high | Investigativo premiado (trabalho escravo, socioambiental) |
+| Al Jazeera English | high | Apuração internacional sólida |
+| CNN International | high | Padrão CNN global |
+| Fox News | mixed | Opinativo, histórico de contestação em checagens |
+| New York Times | high | Padrão rigoroso, correções públicas |
+| The Guardian | high | Padrão rigoroso, correções públicas |
+| BBC World | very_high | Padrão BBC global de verificação |

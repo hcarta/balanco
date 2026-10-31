@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Como lemos — Balanço</title>
+<script>try{var _t=localStorage.getItem('balanco-theme');if(!_t)_t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=_t;}catch(e){}</script>
 <style>
 :root{--paper:#faf8f4;--ink:#16130f;--muted:#6f675e;--hair:#e6e0d6;--accent:#b3261e;--L:#2e7d32;--C:#8a8178;--R:#9a7200}
+html[data-theme="dark"]{--paper:#161310;--ink:#ece4d3;--muted:#a89d89;--hair:#383126;--accent:#d0604f;--L:#7cc490;--C:#a8a29e;--R:#d9a400}
+html[data-theme="dark"] code{background:#2c2822}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Palatino Linotype',Palatino,serif;line-height:1.65}
 .wrap{max-width:680px;margin:0 auto;padding:0 24px 70px}
 header{text-align:center;padding:36px 0 8px}
@@ -74,6 +77,30 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 
 <h2>Atualização e arquivo</h2>
 <p>Uma coleta roda a cada 30 minutos; cada edição diária é arquivada (<a href="arquivo/">ver arquivo</a>) e o <a href="feed.xml">feed RSS do Balanço</a> republica as 30 principais histórias com link para a comparação lado a lado.</p>
+
+<h2>Fontes monitoradas (<span id="nSrc">…</span>)</h2>
+<p>Tabela viva, gerada da mesma configuração do coletor. 🌍 = fonte internacional (só aparece em "Lá fora", fora das barras). 📖 = publica longform usado no "Aprofunde-se". ⚠ = instável na última coleta. ✓N = matérias que casaram com checagens.</p>
+<table id="srcTable">
+<tr><th>Veículo</th><th>Viés</th><th>Factualidade</th><th>Propriedade</th><th>Estado</th></tr>
+</table>
+<script>
+fetch('data.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  const FL={very_high:'Muito alta',high:'Alta',mixed:'Mista',low:'Baixa',very_low:'Muito baixa'};
+  const rows=(d.sources||[]).slice().sort((a,b)=>a.bias-b.bias).map(s=>{
+    const b=(s.bias>0?'+':'')+Number(s.bias).toFixed(1);
+    const h=s.health||{};
+    const bad=h&&(h.err_streak>=2||h.last_status==='error'||h.empty);
+    const fc=s.factcheck||{};
+    const st=[bad?'⚠ instável':'● ok', fc.total?`✓${fc.total}`:''].filter(Boolean).join(' · ');
+    const kind=s.kind==='intl'?' 🌍':'', lf=s.longform?' 📖':'';
+    return `<tr><td><b>${s.name}</b>${kind}${lf}<br><small style="color:#6f675e">${s.owner_detail||''}</small></td>`
+      +`<td>${b}</td><td>${FL[s.factuality]||s.factuality}</td>`
+      +`<td>${s.ownership||''}</td><td>${st}</td></tr>`;
+  }).join('');
+  document.querySelector('#srcTable').insertAdjacentHTML('beforeend',rows);
+  document.querySelector('#nSrc').textContent=(d.sources||[]).length;
+}).catch(()=>{ document.querySelector('#nSrc').textContent='—'; });
+</script>
 
 <h2>Limitações honestas</h2>
 <ul>

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Balanço — todos os lados da notícia</title>
+<script>try{var _t=localStorage.getItem('balanco-theme');if(!_t)_t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=_t;}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,9 +30,33 @@
   --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --maxw:1180px;
 }
+html[data-theme="dark"]{
+  --paper:#161310;
+  --surface:#221d16;
+  --ink:#ece4d3;
+  --ink-soft:#d3c8b4;
+  --muted:#a89d89;
+  --faint:#7e7462;
+  --hair:#383126;
+  --hair-strong:#4d4435;
+  --accent:#d0604f;
+  --accent-soft:#3a211c;
+  --L:#7cc490;
+  --L-bg:#1c3325;
+  --C:#a8a29e;
+  --C-bg:#2c2822;
+  --R:#d9a400;
+  --R-bg:#332a10;
+}
+html[data-theme="dark"] img{filter:brightness(.93)}
+html[data-theme="dark"] .nav{background:rgba(22,19,16,.94)}
+html[data-theme="dark"] .nav button.pill.on{background:var(--ink);color:#161310;border-color:var(--ink)}
+html[data-theme="dark"] .btn:hover{background:var(--ink);color:#161310}
+html[data-theme="dark"] .badge.cons{background:var(--ink);color:#161310}
+html[data-theme="dark"] .to-top{background:var(--ink);color:#161310}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:2px}
 kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -78,10 +103,10 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero-side .hitem .rail-mini{margin:10px 0 0}
 .hero-side .hitem:first-child{padding-top:2px}
 .hero-side .hitem:last-child{border-bottom:none}
-.hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:16.5px;line-height:1.3;margin:0 0 6px}
+.hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.3;margin:0 0 6px}
 .hero-side .hitem:hover h4{color:var(--accent)}
 .hero-side .hthumb{width:128px;height:128px;object-fit:cover;border-radius:8px;flex:0 0 auto}
-.hero-side .hsum{font-family:var(--serif);font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hero-side .hsum{font-family:var(--serif);font-size:14px;line-height:1.45;color:var(--muted);margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hero-side .hmeta{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.02em}
 @media(max-width:560px){.hero-side .hthumb{width:96px;height:96px}}
 @media(max-width:940px){.hero{grid-template-columns:1fr;gap:10px}}
@@ -131,9 +156,9 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .featured .kicker::before{content:"";width:26px;height:2px;background:var(--accent)}
 .featured .kicker.blind{color:var(--L)}
 .featured .kicker.blind::before{background:var(--L)}
-.featured h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,42px);line-height:1.12;letter-spacing:-.015em;margin:0 0 14px}
+.featured h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,44px);line-height:1.12;letter-spacing:-.015em;margin:0 0 14px}
 .featured h1 a:hover{text-decoration:none;color:var(--accent)}
-.featured .dek{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--ink-soft);margin:0 0 20px;max-width:720px}
+.featured .dek{font-family:var(--serif);font-size:18.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 20px;max-width:720px}
 
 /* ── story cards ── */
 .story{display:grid;grid-template-columns:1fr;gap:0;padding:26px 0;border-bottom:1px solid var(--hair)}
@@ -149,25 +174,25 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .badge.v-verdadeiro{background:#e9f2ec;color:#2f6b43;border-color:#cfe3d6}
 .badge.v-enganoso{background:#f7f0df;color:#8a6a1f;border-color:#ecd9b0}
 .badge.v-checagem{background:#eef0f2;color:#5b6570;border-color:#dde1e5}
-.story h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2.6vw,26px);line-height:1.22;letter-spacing:-.01em;margin:0 0 8px}
+.story h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.8vw,28px);line-height:1.22;letter-spacing:-.01em;margin:0 0 8px}
 .story h3 a{cursor:pointer}
 .story h3 a:hover{text-decoration:none;color:var(--accent)}
-.story .sum{font-family:var(--serif);font-size:15.5px;color:var(--muted);line-height:1.55;margin:0 0 16px;max-width:760px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.story .sum{font-family:var(--serif);font-size:16.5px;color:var(--muted);line-height:1.55;margin:0 0 16px;max-width:760px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* bias bar */
 .biasrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
 .bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:var(--C-bg);flex:1;min-width:180px;max-width:440px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
 .bar span{height:100%;transition:width .5s ease}
 .bar .bL{background:var(--L)}.bar .bC{background:var(--C)}.bar .bR{background:var(--R)}
-.biaslegend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.biaslegend{display:flex;gap:14px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
 .biaslegend b{color:var(--ink-soft);font-weight:600}
 .biaslegend .sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
 
 /* meta + actions */
 .story .foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between}
-.meta{font-size:12.5px;color:var(--faint);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.meta{font-size:13.5px;color:var(--faint);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .meta .sep{width:3px;height:3px;border-radius:50%;background:var(--hair-strong)}
-.btn{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--ink);background:var(--surface);border:1px solid var(--hair-strong);padding:8px 15px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.15s}
+.btn{font-family:var(--sans);font-size:13.5px;font-weight:700;letter-spacing:.03em;color:var(--ink);background:var(--surface);border:1px solid var(--hair-strong);padding:8px 15px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.15s}
 .btn:hover{border-color:var(--ink);background:var(--ink);color:#fff}
 .btn .arw{transition:transform .2s}
 .btn.open .arw{transform:rotate(90deg)}
@@ -175,6 +200,14 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 /* compare panel */
 .compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:18px;border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--surface)}
 .compare[hidden]{display:none}
+/* para ir além: aprofundamento + repercussão internacional */
+.beyond{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
+.beyond .bh{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.beyond .bart{margin-bottom:8px}
+.beyond .bart a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
+.beyond .bart a:hover{color:var(--accent);text-decoration:none}
+.beyond .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
+@media(max-width:720px){.beyond{grid-template-columns:1fr}}
 .col{border-right:1px solid var(--hair);min-width:0}
 .col:last-child{border-right:none}
 .col .ch{padding:12px 16px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center}
@@ -185,7 +218,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .col .body{padding:6px 0}
 .art{padding:11px 16px;border-bottom:1px solid var(--hair)}
 .art:last-child{border-bottom:none}
-.art a{font-family:var(--serif);font-size:14.5px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
+.art a{font-family:var(--serif);font-size:15.5px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
 .art a:hover{color:var(--accent);text-decoration:none}
 .art .src{display:flex;align-items:center;gap:7px;margin-top:6px;font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.02em;flex-wrap:wrap}
 .art .src .sname{color:var(--muted);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
@@ -204,7 +237,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .acheck a:hover{text-decoration:none;filter:brightness(.96)}
 .checkitem{padding:11px 0;border-bottom:1px solid var(--hair)}
 .checkitem:last-child{border-bottom:none;padding-bottom:2px}
-.checkitem a.ct{font-family:var(--serif);font-size:13.5px;line-height:1.32;display:block;margin-bottom:6px;color:var(--ink)}
+.checkitem a.ct{font-family:var(--serif);font-size:14.5px;line-height:1.32;display:block;margin-bottom:6px;color:var(--ink)}
 .checkitem a.ct:hover{color:var(--accent);text-decoration:none}
 .checkitem .cm{display:flex;gap:7px;align-items:center;font-size:10px;color:var(--faint);flex-wrap:wrap}
 .rnote{font-size:11px;color:var(--faint);margin:-8px 0 4px;font-family:var(--sans)}
@@ -219,7 +252,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .rail-card h3{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 4px;line-height:1.25}
 .rail-item{padding:12px 0;border-bottom:1px solid var(--hair);cursor:pointer}
 .rail-item:last-child{border-bottom:none;padding-bottom:0}
-.rail-item h4{font-family:var(--serif);font-weight:500;font-size:14.5px;line-height:1.3;margin:0 0 7px}
+.rail-item h4{font-family:var(--serif);font-weight:500;font-size:15.5px;line-height:1.3;margin:0 0 7px}
 .rail-item:hover h4{color:var(--accent)}
 .rail-mini{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--C-bg);margin-bottom:6px}
 .rail-mini .bL{background:var(--L)}.rail-mini .bC{background:var(--C)}.rail-mini .bR{background:var(--R)}
@@ -284,6 +317,7 @@ footer a.fl:hover{color:var(--accent)}
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
     <input type="search" id="q" placeholder="Buscar…" aria-label="Buscar histórias">
   </label>
+  <button class="pill" id="themeBtn" title="Alternar modo claro/escuro" aria-label="Alternar modo claro/escuro">🌙</button>
 </div></nav>
 
 <main class="wrap">
@@ -306,15 +340,6 @@ footer a.fl:hover{color:var(--accent)}
   <aside class="rail" id="rail">
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="blindCard"></div>
-    <div class="rail-card" id="srcCard"></div>
-    <div class="rail-card method">
-      <div class="rt">◎ Como ler este balanço</div>
-      <p><b>Recorte</b>: sem esporte e sem conteúdo de serviço (loteria, horóscopo, previsão do tempo) — o foco é poder, economia e sociedade. <b>Viés fixo por publicação</b>: cada veículo tem um posicionamento definido em <b>sources.yaml</b> e todas as suas matérias herdam esse valor. <b>Hierarquia</b>: o selo ✓ Consenso e as 3 mais repercutidas no centro, ao lado do destaque, mostram o que os veículos de centro com alta factualidade cobrem.</p>
-      <p>É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Aqui sem AllSides/MBFC, a tabela é curadoria manual.</p>
-      <p><b>Checagens</b>: o selo ⚑ liga a história a uma verificação do <b>G1 Fato ou Fake</b> ou da <b>Agência Lupa</b> quando a alegação coincide. É uma checagem <i>relacionada</i>, não um veredito sobre a matéria.</p>
-      <p>Corpos completos (quando públicos) alimentam só a análise; na tela aparecem a description pública ou trechos curtos, sempre com link para o original.</p>
-      <p style="font-style:italic;color:var(--faint)">Protótipo: <span id="srcCount">—</span> fontes · atualize rodando <b style="font-style:normal">python app.py</b>.</p>
-    </div>
   </aside>
 </div></main>
 
@@ -418,7 +443,6 @@ function renderAll(){
   const gen = new Date(d.generated_at);
   $('#dateLine').textContent = isNaN(gen)? '' :
     gen.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  const sc = $('#srcCount'); if(sc) sc.textContent = (d.sources||[]).length;
   renderFeatured();
   renderFeed();
   renderRail();
@@ -570,7 +594,19 @@ function comparePanel(s){
       <div class="ch"><span>${BUCKET[k]}</span><span class="n">${g[k].length}</span></div>
       <div class="body">${list}</div></div>`;
   };
-  return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}</div>`;
+  return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}</div>
+  ${beyond(s)}`;
+}
+
+function beyond(s){
+  const lr = (s.longreads||[]).slice(0,3);
+  const w = (s.world||[]).slice(0,3);
+  if(!lr.length && !w.length) return '';
+  const links = arr => arr.map(x=>`<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)}</small></div>`).join('');
+  return `<div class="beyond">
+    ${lr.length?`<div class="bl"><div class="bh">📖 Aprofunde-se</div>${links(lr)}</div>`:''}
+    ${w.length?`<div class="bl"><div class="bh">🌍 Lá fora</div>${links(w)}</div>`:''}
+  </div>`;
 }
 
 /* ---------- feed ---------- */
@@ -676,7 +712,7 @@ function renderRail(){
         <div class="rl">${desc} · ${s.counts.total} coberturas</div>
       </div>`;
     }).join('')
-    : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Nenhuma história com cobertura desequilibrada suficiente para virar blindspot nesta edição.</p>`
+    : `<p style="font-family:var(--serif);font-size:14.5px;color:var(--faint);font-style:italic;margin:0">Nenhuma história com cobertura desequilibrada suficiente para virar blindspot nesta edição.</p>`
   );
 
   // checagens recentes (G1 Fato ou Fake + Lupa)
@@ -688,27 +724,8 @@ function renderRail(){
           <a class="ct" href="${esc(c.link)}" target="_blank" rel="noopener">${esc(c.title)}</a>
           <div class="cm"><span class="chip ${vClass(c.verdict)}">${esc(VL[c.verdict]||'Checagem')}</span>${esc(c.checker)} · ${relTime(c.published)}</div>
         </div>`).join('')
-      : `<p style="font-family:var(--serif);font-size:13.5px;color:var(--faint);font-style:italic;margin:0">Sem checagens carregadas nesta edição.</p>`
+      : `<p style="font-family:var(--serif);font-size:14.5px;color:var(--faint);font-style:italic;margin:0">Sem checagens carregadas nesta edição.</p>`
     ) + `<a class="seemore" href="https://www.agencialupa.org/" target="_blank" rel="noopener">Ver mais checagens ↗</a>`;
-
-  // sources
-  const srcs = (d.sources||[]).slice().sort((a,b)=>a.bias-b.bias);
-  const funnel = s => s.bias<=-0.5?'L':s.bias>=0.5?'R':'C';
-  $('#srcCard').innerHTML = `<div class="rt">◎ Fontes monitoradas</div><div class="srclist">` +
-    srcs.map(s=>{
-      const fc = s.factcheck;
-      const badge = fc && fc.total
-        ? `<span class="fc" title="${fc.total} matéria(s) desta fonte casaram com checagem: ${fc.falso||0} falsa(s), ${fc.enganoso||0} enganosa(s)">${fc.total}✓</span>`
-        : '';
-      const h = s.health;
-      const bad = h && (h.err_streak >= 2 || h.last_status === 'error' || h.empty);
-      const warn = bad
-        ? `<span class="unstable" title="Instável: ${esc(h.last_status||'sem dados')} na última coleta (${esc((h.last_run||'').slice(0,16).replace('T',' ') )})"></span>`
-        : '';
-      return `<div class="srcrow">
-      <span class="nm">${esc(s.name)}${badge}${warn}</span>
-      <span class="bias ${cls(funnel(s))}">${s.bias>0?'+':''}${s.bias.toFixed(1)}</span>
-    </div>`;}).join('') + `</div>`;
 
   // jump links in rail
   document.querySelectorAll('[data-jump]').forEach(el=>{
@@ -746,6 +763,16 @@ document.querySelectorAll('[data-goto]').forEach(a=>{
 const toTop = $('#toTop');
 window.addEventListener('scroll', ()=>{ toTop.classList.toggle('show', window.scrollY>600); });
 toTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const themeBtn = $('#themeBtn');
+function syncThemeIcon(){ if(themeBtn) themeBtn.textContent = document.documentElement.dataset.theme==='dark' ? '☀️' : '🌙'; }
+if(themeBtn) themeBtn.addEventListener('click', ()=>{
+  const cur = document.documentElement.dataset.theme==='dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = cur;
+  try{ localStorage.setItem('balanco-theme', cur); }catch(e){}
+  syncThemeIcon();
+});
+syncThemeIcon();
 
 load();
 </script>

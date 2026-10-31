@@ -39,6 +39,8 @@ def test_sources_valid():
         assert s.get("name"), f"{s.get('id')}: sem nome"
         assert s.get("rss", "").startswith("http"), f"{s['id']}: rss inválido"
         assert s.get("fetcher", "rss") in ("rss", "sitemap"), f"{s['id']}: fetcher inválido"
+        assert s.get("kind", "br") in ("br", "intl"), f"{s['id']}: kind inválido"
+        assert isinstance(s.get("longform", False), bool), f"{s['id']}: longform inválido"
         assert -2.0 <= float(s.get("bias", 0)) <= 2.0, f"{s['id']}: viés fora da escala"
         assert s.get("factuality") in ("very_high", "high", "mixed", "low", "very_low"), \
             f"{s['id']}: factualidade inválida"

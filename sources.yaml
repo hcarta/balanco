@@ -65,6 +65,7 @@ sources:
     factuality: very_high
     ownership: independente
     owner_detail: Nexo Jornal
+    longform: true
   - id: piaui
     name: Revista piauí
     rss: https://piaui.folha.uol.com.br/feed/
@@ -72,6 +73,7 @@ sources:
     factuality: very_high
     ownership: individuo
     owner_detail: Editora piauí / João Moreira Salles (distribuição Folha)
+    longform: true
 
   # ── 2ª leva (Fase 5): testadas em 30/10/2026 ──
   # Agência Brasil: feed RSS desatualizado (último item 2023) e sitemap sem
@@ -128,6 +130,83 @@ sources:
     factuality: mixed
     ownership: independente
     owner_detail: Grupo O Antagonista
+    longform: true
+
+  # ── Longform investigativo (Fase 6+): entram nas barras e no "Aprofunde-se" ──
+  - id: apublica
+    name: Agência Pública
+    rss: https://apublica.org/feed/
+    bias: -0.8
+    factuality: very_high
+    ownership: independente
+    owner_detail: ONG jornalística sem fins lucrativos
+    longform: true
+  - id: intercept
+    name: The Intercept Brasil
+    rss: https://www.intercept.com.br/feed/?lang=pt
+    bias: -1.2
+    factuality: high
+    ownership: independente
+    owner_detail: First Look Media (sem fins lucrativos)
+    longform: true
+  - id: reporterbr
+    name: Repórter Brasil
+    rss: https://reporterbrasil.org.br/feed/
+    bias: -0.6
+    factuality: very_high
+    ownership: independente
+    owner_detail: ONG jornalística sem fins lucrativos
+    longform: true
+
+  # ── Internacionais (kind=intl): fora das barras L/C/R, só em "Lá fora" ──
+  - id: ajen
+    name: Al Jazeera English
+    rss: https://www.aljazeera.com/xml/rss/all.xml
+    kind: intl
+    bias: -0.3
+    factuality: high
+    ownership: governo
+    owner_detail: Catar (financiamento público)
+  - id: cnnintl
+    name: CNN International
+    rss: http://rss.cnn.com/rss/edition_world.rss
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: corporacao
+    owner_detail: Warner Bros. Discovery
+  - id: foxnews
+    name: Fox News
+    rss: https://feeds.foxnews.com/foxnews/world
+    kind: intl
+    bias: 1.2
+    factuality: mixed
+    ownership: corporacao
+    owner_detail: Fox Corporation
+  - id: nytimes
+    name: New York Times
+    rss: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    kind: intl
+    bias: -0.8
+    factuality: high
+    ownership: corporacao
+    owner_detail: The New York Times Company
+  - id: guardian
+    name: The Guardian
+    rss: https://www.theguardian.com/world/rss
+    kind: intl
+    bias: -0.9
+    factuality: high
+    ownership: independente
+    owner_detail: Scott Trust
+  - id: bbcworld
+    name: BBC World
+    rss: https://feeds.bbci.co.uk/news/world/rss.xml
+    kind: intl
+    bias: -0.1
+    factuality: very_high
+    ownership: governo
+    owner_detail: BBC (Reino Unido, financiamento público)
   - id: infomoney
     name: InfoMoney
     rss: https://www.infomoney.com.br/feed/
@@ -170,6 +249,7 @@ sources:
     factuality: low
     ownership: independente
     owner_detail: Revista Oeste
+    longform: true
 
   # ── Fontes sem RSS público (coleta via Arc XP / Google News sitemap) ──
   - id: estadao
