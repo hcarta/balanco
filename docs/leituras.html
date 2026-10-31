@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leituras da semana — Balanço</title>
+<style>
+:root{
+  --paper:#faf8f4; --surface:#fff; --ink:#16130f; --ink-soft:#3d3831;
+  --muted:#6b655c; --faint:#8a8378; --hair:#e5ded2; --accent:#1d4ed8;
+  --L:#1a7f4b; --C:#6b7280; --R:#b45309;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#141210; --surface:#1c1916; --ink:#f2ede4; --ink-soft:#d8d0c4;
+        --muted:#a79f93; --faint:#8a8378; --hair:#332e28; --accent:#8ab4ff;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:40px 24px 70px}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+  border-bottom:1px solid var(--hair);padding-bottom:18px;margin-bottom:30px;flex-wrap:wrap}
+.brand{font-weight:600;font-size:24px;letter-spacing:-.01em}
+.brand .dot{color:var(--accent)}
+.top a{font-family:system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+h1{font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:0 0 12px}
+.dek{font-size:16px;color:var(--muted);max-width:620px;margin:0 0 34px}
+.read{border-top:1px solid var(--hair);padding:24px 0}
+.read:first-of-type{border-top:none;padding-top:0}
+.src{font-family:system-ui,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+  display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.bias{font-size:9.5px;padding:2px 7px;border-radius:3px;letter-spacing:.04em}
+.bias.L{background:rgba(26,127,75,.12);color:var(--L)}
+.bias.C{background:rgba(107,114,128,.14);color:var(--C)}
+.bias.R{background:rgba(180,83,9,.14);color:var(--R)}
+.read h2{font-size:24px;line-height:1.2;margin:0 0 8px;font-weight:600}
+.read h2 a{color:var(--ink);text-decoration:none}
+.read h2 a:hover{color:var(--accent)}
+.read p{margin:0;color:var(--muted);font-size:15px}
+.note{margin-top:40px;padding-top:20px;border-top:1px solid var(--hair);
+  font-size:12.5px;color:var(--faint)}
+.note a{color:var(--accent)}
+.empty{color:var(--muted);font-style:italic}
+@media(max-width:560px){h1{font-size:32px}.read h2{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">Balanço<span class="dot">.</span></div>
+    <a href="./">← Voltar ao balanço do dia</a>
+  </div>
+
+  <h1>Leituras da semana</h1>
+  <p class="dek">Textos de fôlego das fontes de longform, escolhidos por recência e
+  diversidade de fonte — não por alinhamento político e sem juízo de qualidade.
+  A seleção é independente das histórias do dia; o link leva sempre ao original.</p>
+
+  <div id="list"><p class="empty">Carregando leituras…</p></div>
+
+  <p class="note">Critérios completos em <a href="como-lemos.html">Como lemos</a>.
+  O Balanço não reproduz o texto das peças: exibe título público, fonte e resumo do feed.</p>
+</div>
+
+<script>
+const esc = s => (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const biasLabel = b => b <= -0.5 ? ['L','Esquerda'] : b >= 0.5 ? ['R','Direita'] : ['C','Centro'];
+const date = iso => {
+  const d = new Date(iso);
+  return isNaN(d) ? '' : d.toLocaleDateString('pt-BR', {day:'numeric', month:'long', year:'numeric'});
+};
+
+fetch('data.json', {cache:'no-store'})
+  .then(r => r.json())
+  .then(d => {
+    const items = d.leituras || [];
+    const el = document.getElementById('list');
+    if (!items.length) {
+      el.innerHTML = '<p class="empty">Nenhuma leitura carregada nesta edição.</p>';
+      return;
+    }
+    el.innerHTML = items.map(x => {
+      const [cls, label] = biasLabel(Number(x.bias || 0));
+      return `<article class="read">
+        <div class="src">
+          <span>${esc(x.source)}</span>
+          <span>· ${esc(date(x.published))}</span>
+          <span class="bias ${cls}">${label}</span>
+        </div>
+        <h2><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a></h2>
+        ${x.summary ? `<p>${esc(x.summary)}</p>` : ''}
+      </article>`;
+    }).join('');
+  })
+  .catch(() => {
+    document.getElementById('list').innerHTML =
+      '<p class="empty">Não foi possível carregar data.json.</p>';
+  });
+</script>
+</body>
+</html>

@@ -18,7 +18,8 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Hero lateral**: as 3 mais repercutidas no centro de alta factualidade, ao lado do destaque.
 - **Barra de viés** em cada história, com contagem e percentuais por lado.
 - **Comparar os lados**: painel em 3 colunas (esquerda/centro/direita) com veículo, factualidade e propriedade.
-- **Trilho lateral**: checagens recentes, blindspots do dia, **Leituras da semana** (índice de longform de 10 dias) e fontes monitoradas (com viés).
+- **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé), máx. 2 por fonte.
+- **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
 - **Aba Metodologia** na navegação + página "Como lemos" com todos os critérios (viés, factualidade, blindspot, agrupamento, checagens, enriquecimento).
 - **Filtros**: todas, blindspots, maioria esquerda/direita, mais divididas + busca.
 - **Link direto** para uma história: `index.html?story=h...` (IDs estáveis) ou alias antigo `?story=sNNN` / `#...`.
