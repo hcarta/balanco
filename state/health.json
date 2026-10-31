@@ -1,327 +1,327 @@
 {
- "run_ts": "2026-10-31T14:11:56.026154+00:00",
+ "run_ts": "2026-10-31T14:30:15.873582+00:00",
  "sources": {
   "ajen": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 0,
    "last_n_total": 25,
    "last_status": "ok",
-   "last_ms": 51,
+   "last_ms": 53,
    "err_streak": 0,
    "empty": false
   },
   "apublica": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 10,
    "last_n_total": 10,
-   "last_status": "ok",
-   "last_ms": 103,
-   "err_streak": 0,
-   "empty": false
-  },
-  "b247": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 10,
-   "last_n_total": 60,
-   "last_status": "ok",
-   "last_ms": 80,
-   "err_streak": 0,
-   "empty": false
-  },
-  "band": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 406,
-   "last_n_total": 60,
-   "last_status": "ok",
-   "last_ms": 898,
-   "err_streak": 0,
-   "empty": false
-  },
-  "bbcbr": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 31,
-   "last_n_total": 25,
-   "last_status": "ok",
-   "last_ms": 65,
-   "err_streak": 0,
-   "empty": false
-  },
-  "bbcworld": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 36,
-   "last_n_total": 36,
-   "last_status": "ok",
-   "last_ms": 37,
-   "err_streak": 0,
-   "empty": false
-  },
-  "carta": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 0,
-   "last_n_total": 54,
    "last_status": "ok",
    "last_ms": 101,
    "err_streak": 0,
    "empty": false
   },
-  "cnnbr": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 48,
+  "b247": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 370,
+   "last_ms": 77,
+   "err_streak": 0,
+   "empty": false
+  },
+  "band": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 50,
+   "err_streak": 0,
+   "empty": false
+  },
+  "bbcbr": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 31,
+   "last_n_total": 25,
+   "last_status": "ok",
+   "last_ms": 91,
+   "err_streak": 0,
+   "empty": false
+  },
+  "bbcworld": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 36,
+   "last_n_total": 36,
+   "last_status": "ok",
+   "last_ms": 32,
+   "err_streak": 0,
+   "empty": false
+  },
+  "carta": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 54,
+   "last_status": "ok",
+   "last_ms": 75,
+   "err_streak": 0,
+   "empty": false
+  },
+  "cnnbr": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 121,
    "err_streak": 0,
    "empty": false
   },
   "cnnintl": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 29,
    "last_n_total": 6,
    "last_status": "ok",
-   "last_ms": 353,
+   "last_ms": 872,
    "err_streak": 0,
    "empty": false
   },
   "crusoe": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 15,
    "last_n_total": 9,
    "last_status": "ok",
-   "last_ms": 5390,
+   "last_ms": 5002,
    "err_streak": 0,
    "empty": false
   },
   "dcm": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 10,
-   "last_n_total": 42,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 43,
    "last_status": "ok",
-   "last_ms": 632,
+   "last_ms": 376,
    "err_streak": 0,
    "empty": false
   },
   "dw": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 21,
-   "last_n_total": 26,
+   "last_n_total": 28,
    "last_status": "ok",
-   "last_ms": 458,
+   "last_ms": 312,
    "err_streak": 0,
    "empty": false
   },
   "estadao": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 83,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 476,
+   "last_ms": 272,
    "err_streak": 0,
    "empty": false
   },
   "folha": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 99,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 238,
+   "last_ms": 121,
    "err_streak": 0,
    "empty": false
   },
   "foxnews": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 0,
    "last_n_total": 11,
    "last_status": "ok",
-   "last_ms": 224,
+   "last_ms": 584,
    "err_streak": 0,
    "empty": false
   },
   "g1": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 99,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 133,
+   "last_ms": 61,
    "err_streak": 0,
    "empty": false
   },
   "gazeta": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 0,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 493,
+   "last_ms": 379,
    "err_streak": 0,
    "empty": false
   },
   "guardian": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 45,
    "last_n_total": 38,
    "last_status": "ok",
-   "last_ms": 52,
+   "last_ms": 43,
    "err_streak": 0,
    "empty": false
   },
   "infomoney": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 9,
-   "last_n_total": 40,
+   "last_n_total": 43,
    "last_status": "ok",
-   "last_ms": 99,
+   "last_ms": 64,
    "err_streak": 0,
    "empty": false
   },
   "intercept": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 0,
    "last_n_total": 5,
    "last_status": "ok",
-   "last_ms": 936,
+   "last_ms": 846,
    "err_streak": 0,
    "empty": false
   },
   "istoe": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 10,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 21,
    "last_status": "ok",
-   "last_ms": 110,
+   "last_ms": 103,
    "err_streak": 0,
    "empty": false
   },
   "jovempan": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 0,
    "last_n_total": 32,
-   "last_status": "ok",
-   "last_ms": 86,
-   "err_streak": 0,
-   "empty": false
-  },
-  "metropoles": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 18,
-   "last_n_total": 60,
-   "last_status": "ok",
-   "last_ms": 219,
-   "err_streak": 0,
-   "empty": false
-  },
-  "nexo": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 0,
-   "last_n_total": 22,
-   "last_status": "ok",
-   "last_ms": 114,
-   "err_streak": 0,
-   "empty": false
-  },
-  "nytimes": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 56,
-   "last_n_total": 57,
-   "last_status": "ok",
-   "last_ms": 40,
-   "err_streak": 0,
-   "empty": false
-  },
-  "oeste": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 10,
-   "last_n_total": 34,
-   "last_status": "ok",
-   "last_ms": 86,
-   "err_streak": 0,
-   "empty": false
-  },
-  "oglobo": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 658,
-   "last_n_total": 60,
-   "last_status": "ok",
-   "last_ms": 172,
-   "err_streak": 0,
-   "empty": false
-  },
-  "piaui": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 0,
-   "last_n_total": 2,
-   "last_status": "ok",
-   "last_ms": 361,
-   "err_streak": 0,
-   "empty": false
-  },
-  "poder360": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 0,
-   "last_n_total": 38,
-   "last_status": "ok",
-   "last_ms": 84,
-   "err_streak": 0,
-   "empty": false
-  },
-  "r7": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 100,
-   "last_n_total": 17,
-   "last_status": "ok",
-   "last_ms": 214,
-   "err_streak": 0,
-   "empty": false
-  },
-  "reporterbr": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 0,
-   "last_n_total": 3,
-   "last_status": "ok",
-   "last_ms": 113,
-   "err_streak": 0,
-   "empty": false
-  },
-  "sbt": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 121,
-   "last_n_total": 60,
    "last_status": "ok",
    "last_ms": 138,
    "err_streak": 0,
    "empty": false
   },
-  "terra": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 7,
+  "metropoles": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 18,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 228,
+   "err_streak": 0,
+   "empty": false
+  },
+  "nexo": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 22,
+   "last_status": "ok",
+   "last_ms": 1190,
+   "err_streak": 0,
+   "empty": false
+  },
+  "nytimes": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 56,
    "last_n_total": 58,
    "last_status": "ok",
-   "last_ms": 234,
+   "last_ms": 48,
+   "err_streak": 0,
+   "empty": false
+  },
+  "oeste": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 34,
+   "last_status": "ok",
+   "last_ms": 74,
+   "err_streak": 0,
+   "empty": false
+  },
+  "oglobo": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 658,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 240,
+   "err_streak": 0,
+   "empty": false
+  },
+  "piaui": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 2,
+   "last_status": "ok",
+   "last_ms": 185,
+   "err_streak": 0,
+   "empty": false
+  },
+  "poder360": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 40,
+   "last_status": "ok",
+   "last_ms": 71,
+   "err_streak": 0,
+   "empty": false
+  },
+  "r7": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 100,
+   "last_n_total": 17,
+   "last_status": "ok",
+   "last_ms": 165,
+   "err_streak": 0,
+   "empty": false
+  },
+  "reporterbr": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
+   "last_n_total": 3,
+   "last_status": "ok",
+   "last_ms": 66,
+   "err_streak": 0,
+   "empty": false
+  },
+  "sbt": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 121,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 126,
+   "err_streak": 0,
+   "empty": false
+  },
+  "terra": {
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 8,
+   "last_n_total": 60,
+   "last_status": "ok",
+   "last_ms": 237,
    "err_streak": 0,
    "empty": false
   },
   "uol": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 15,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 82,
+   "last_ms": 88,
    "err_streak": 0,
    "empty": false
   },
   "valor": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
    "last_n_fresh": 720,
    "last_n_total": 60,
    "last_status": "ok",
-   "last_ms": 146,
+   "last_ms": 169,
    "err_streak": 0,
    "empty": false
   },
   "veja": {
-   "last_run": "2026-10-31T14:11:56.026154+00:00",
-   "last_n_fresh": 20,
+   "last_run": "2026-10-31T14:30:15.873582+00:00",
+   "last_n_fresh": 0,
    "last_n_total": 49,
    "last_status": "ok",
-   "last_ms": 78,
+   "last_ms": 74,
    "err_streak": 0,
    "empty": false
   }

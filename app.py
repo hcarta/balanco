@@ -520,14 +520,35 @@ def entity_match(a: set, b: set) -> tuple[bool, list]:
     return False, []
 
 
+# Não-jornalismo no pool longform: programas, quizzes, agendas, podcasts (F3.1)
+NON_JOURNALISM = re.compile(
+    r"assist[ai] ao programa|programa de \d|palavras cruzadas|\bquiz\b"
+    r"|crossword|ao vivo agora|newsletter de|boletim de \d|edi[çc][ãa]o de hoje"
+    r"|podcast completa|ouvinte|agenda do dia|hor[óo]scopo", re.I)
+
+# Marcadores de análise (para F3.2: peça da mesma fonte só entra se for análise)
+ANALYSIS_MARKERS = re.compile(
+    r"an[áa]lise|por que|como \w+ (funciona|mudou|afeta)|entrevista"
+    r"|conversa com|bastidores|longform|reportagem especial|perfil"
+    r"|o que (isso|isso significa)|o futuro d[oe]|guia", re.I)
+
+
+def _is_analysis(title: str) -> bool:
+    return bool(ANALYSIS_MARKERS.search(title or ""))
+
+
 def attach_longreads(stories, articles, longform_ids, per_story=3):
     """Liga cada história a longform (piauí & cia) pelo mesmo tópico.
 
     Não afirma nada sobre o artigo: só sugere aprofundamento, com link.
+    F3: exclui não-jornalismo, evita redundância com a cobertura da própria
+    história (exceto análise) e limita a 1 peça por fonte.
     """
     pool = []
     for a in articles:
         if a.get("source_id") in longform_ids:
+            if NON_JOURNALISM.search(a.get("title", "")):
+                continue  # F3.1: programa/quiz/agenda não é aprofundamento
             pool.append((entities(a.get("title", "") + " " + (a.get("summary") or "")),
                          a))
     for s in stories:
@@ -535,16 +556,21 @@ def attach_longreads(stories, articles, longform_ids, per_story=3):
         se = entities(s.get("title", ""))
         if not se:
             continue
+        covered = {a.get("source") or a.get("source_name") for a in s.get("articles", [])}
         cands = []
         for le, a in pool:
             ok, terms = entity_match(se, le)
             if ok:
+                # F3.2: se a fonte já cobre a história, só peça de análise entra
+                if a.get("source_name") in covered and not _is_analysis(a.get("title", "")):
+                    continue
                 cands.append((len(terms), a["link"], a))
-        seen, out = set(), []
+        seen, out, used_src = set(), [], set()
         for _, link, a in sorted(cands, reverse=True):
-            if link in seen:
-                continue
+            if link in seen or a.get("source_name") in used_src:
+                continue  # F3.3: no máx. 1 peça por fonte por história
             seen.add(link)
+            used_src.add(a.get("source_name"))
             out.append({"source": a.get("source_name", ""), "title": a.get("title", ""),
                         "link": link,
                         "terms": sorted((se & entities(a.get("title", ""))) |
@@ -552,6 +578,24 @@ def attach_longreads(stories, articles, longform_ids, per_story=3):
             if len(out) >= per_story:
                 break
         s["longreads"] = out
+    return stories
+
+
+def diversify_longreads(stories):
+    """F3.3: uma mesma peça só é sugerida na história mais coberta do seu tópico.
+
+    Evita que uma peça viral (ex.: a mesma análise do Nexo) apareça em 8
+    histórias diferentes do mesmo dia. Não há fallback: se a história perde
+    todas as peças, ela fica sem "Aprofunde-se" — repetir a peça de outra
+    história seria pior que omitir.
+    """
+    best = {}
+    for s in sorted(stories, key=lambda x: (-x.get("counts", {}).get("total", 0), x.get("updated", ""))):
+        for lr in s.get("longreads", []):
+            best.setdefault(lr["link"], s["id"])
+    for s in stories:
+        s["longreads"] = [lr for lr in s.get("longreads", [])
+                          if best.get(lr["link"]) == s["id"]]
     return stories
 
 
@@ -753,6 +797,7 @@ def main():
 
     longform_ids = {s["id"] for s in sources if s.get("longform")}
     stories = attach_longreads(stories, news, longform_ids)
+    stories = diversify_longreads(stories)
     stories = attach_world(stories, intl)
     n_lr = sum(1 for s in stories if s.get("longreads"))
     n_w = sum(1 for s in stories if s.get("world"))

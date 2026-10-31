@@ -188,3 +188,92 @@ def test_entity_match_keeps_specific():
     b = entities("O usurpador: Flávio Bolsonaro sequestrou o discurso anticorrupção")
     ok, terms = entity_match(a, b)
     assert ok and "flávio bolsonaro" in terms
+
+
+def _lf_article(title, src="piaui", link="https://x/lr", summary=""):
+    return {"source_id": src, "source_name": "piauí" if src == "piaui" else src,
+            "title": title, "link": link, "summary": summary,
+            "published": "2026-10-31T00:00:00+00:00", "ts": 1.0}
+
+
+def test_longreads_excludes_non_journalism():
+    from app import attach_longreads, entities, entity_match
+    story = {"id": "s1", "title": "BTS faz show em São Paulo e mobiliza fãs",
+             "articles": [{"source": "G1"}], "counts": {"total": 2}}
+    bad = [
+        "Oeste Sem Filtro: assista ao programa sobre o BTS em São Paulo",
+        "Palavras Cruzadas do 'Nexo': o BTS e São Paulo",
+    ]
+    good = "Análise: por que o BTS lota estádios em São Paulo"
+    arts = [_lf_article(bad[0], src="oeste", link="https://x/prog"),
+            _lf_article(bad[1], src="nexo", link="https://x/quiz"),
+            _lf_article(good, link="https://x/ok")]
+    # garante que o teste não passa por "não casou": os 3 casam no tópico
+    for t in bad + [good]:
+        ok, _ = entity_match(entities(story["title"]), entities(t))
+        assert ok, f"fixture inválida: '{t}' não casa no tópico"
+    out = attach_longreads([story], arts, {"piaui", "oeste", "nexo"})
+    titles = [lr["title"] for lr in out[0]["longreads"]]
+    assert good in titles
+    assert not any(t in titles for t in bad), f"não-jornalismo vazou: {titles}"
+
+
+def test_longreads_redundant_source_only_if_analysis():
+    from app import attach_longreads
+    # Nexo já cobre a história; peça comum não entra, análise sim
+    stories = [{"id": "s1", "title": "Flávio Bolsonaro fala pela 1ª vez dos EUA",
+                "articles": [{"source": "Nexo Jornal"}, {"source": "G1"}],
+                "counts": {"total": 2}}]
+    arts = [
+        _lf_article("Flávio Bolsonaro fala pela 1ª vez dos EUA", src="nexo",
+                    link="https://x/n1"),
+        _lf_article("Análise: por que a fuga de Flávio Bolsonaro muda o jogo",
+                    src="nexo", link="https://x/n2"),
+    ]
+    out = attach_longreads(stories, arts, {"nexo"})
+    titles = [lr["title"] for lr in out[0]["longreads"]]
+    assert "Análise: por que a fuga de Flávio Bolsonaro muda o jogo" in titles
+    assert "Flávio Bolsonaro fala pela 1ª vez dos EUA" not in titles
+
+
+def test_longreads_one_per_source():
+    from app import attach_longreads
+    stories = [{"id": "s1", "title": "Fuga de Flávio Bolsonaro para os EUA",
+                "articles": [{"source": "G1"}, {"source": "Folha"}],
+                "counts": {"total": 3}}]
+    arts = [
+        _lf_article("A fuga de Flávio Bolsonaro e o voo cego", src="piaui",
+                    link="https://x/a"),
+        _lf_article("Flávio Bolsonaro: o usurpador", src="piaui", link="https://x/b"),
+        _lf_article("Análise: a fuga de Flávio Bolsonaro e o Congresso", src="nexo",
+                    link="https://x/c"),
+    ]
+    out = attach_longreads(stories, arts, {"piaui", "nexo"})
+    srcs = [lr["source"] for lr in out[0]["longreads"]]
+    assert len(srcs) == len(set(srcs)), f"fonte repetida: {srcs}"
+
+
+def test_diversify_longreads_keeps_best_owner():
+    from app import diversify_longreads
+    s_big = {"id": "s1", "title": "Governo Lula convoca a Argentina sobre Flávio Bolsonaro",
+             "counts": {"total": 9}, "updated": "2026-10-31T10:00:00+00:00",
+             "longreads": [{"link": "https://x/p", "source": "Nexo", "title": "P", "terms": ["a"]}]}
+    s_small = {"id": "s2", "title": "Trump e a fuga de Flávio Bolsonaro",
+               "counts": {"total": 2}, "updated": "2026-10-31T11:00:00+00:00",
+               "longreads": [{"link": "https://x/p", "source": "Nexo", "title": "P", "terms": ["a"]},
+                             {"link": "https://x/q", "source": "piauí", "title": "Q", "terms": ["b"]}]}
+    out = diversify_longreads([s_big, s_small])
+    assert out[0]["longreads"] and out[0]["longreads"][0]["link"] == "https://x/p"
+    links = [lr["link"] for lr in out[1]["longreads"]]
+    assert "https://x/p" not in links and "https://x/q" in links
+
+
+def test_diversify_longreads_no_duplicate_fallback():
+    from app import diversify_longreads
+    big = {"id": "s1", "counts": {"total": 9}, "updated": "2026-10-31T10:00:00+00:00",
+           "longreads": [{"link": "https://x/p", "source": "Nexo", "title": "P", "terms": []}]}
+    small = {"id": "s2", "counts": {"total": 2}, "updated": "2026-10-31T11:00:00+00:00",
+             "longreads": [{"link": "https://x/p", "source": "Nexo", "title": "P", "terms": []}]}
+    out = diversify_longreads([big, small])
+    assert [lr["link"] for lr in out[0]["longreads"]] == ["https://x/p"]
+    assert out[1]["longreads"] == [], "peça de outra história não pode ser reposta"
