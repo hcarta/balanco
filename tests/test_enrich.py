@@ -77,13 +77,27 @@ def test_section_label():
 
 
 def test_excluded_section():
-    from app import excluded_section
+    from app import excluded_section, excluded_title
     assert excluded_section("esportes")
     assert excluded_section("futebol")
+    assert excluded_section("astrologia")
     assert excluded_section("Esportes")
     assert not excluded_section("politica")
     assert not excluded_section("")
     assert not excluded_section(None)
+
+
+def test_excluded_title_service_content():
+    from app import excluded_title
+    assert excluded_title("Lotofácil hoje, concurso 3817: confira o resultado sorteado")
+    assert excluded_title("Mega-Sena sorteia prêmio de R$ 6 milhões nesta sexta-feira")
+    assert excluded_title("Quina 6262: veja o resultado do sorteio de hoje")
+    assert excluded_title("Horóscopo de hoje: previsão para seu signo")
+    assert excluded_title("Previsão do tempo: sol e pancadas no Sudeste")
+    assert excluded_title("Fases da lua em novembro: confira o calendário")
+    assert not excluded_title("Esquina do bairro ganha nova praça")  # "quina" dentro de outra palavra
+    assert not excluded_title("Itamaraty convoca diplomata argentina")
+    assert not excluded_title("")
 
 
 def test_build_keeps_image_and_section_label():

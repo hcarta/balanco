@@ -55,7 +55,9 @@ def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
         try:
             fresh, hs = collect_one(s, limit=per_feed if store is None else 2000,
                                     store=store)
-            kept = [a for a in fresh if not excluded_section(a.get("section"))]
+            kept = [a for a in fresh
+                    if not excluded_section(a.get("section"))
+                    and not excluded_title(a.get("title"))]
             n_dropped += len(fresh) - len(kept)
             fresh = kept
             n_got_new = 0
@@ -262,11 +264,23 @@ def bucket(score):
 
 
 # Editorias fora da edição (o foco é poder, economia e sociedade)
-EXCLUDED_SECTIONS = {"esportes", "futebol"}
+EXCLUDED_SECTIONS = {"esportes", "futebol", "astrologia", "loterias"}
+
+# Conteúdo de serviço mora em editorias genéricas: filtra pelo título
+EXCLUDED_TITLE = re.compile(
+    r"lotof[aá]cil|mega-sena|megasena|lotomania|dupla\ssena|timemania"
+    r"|\bquina\b[^.]{0,40}(sorteio|resultado|concurso|dezenas)"
+    r"|hor[oó]scopo|mapa\s+astral|previs[aã]o\s+do\s+tempo|fases?\s+da\s+lua"
+    r"|\bloteria\b.{0,40}(sorteio|resultado|concurso|pr[eê]mio)",
+    re.I)
 
 
 def excluded_section(raw: str | None) -> bool:
     return _norm_sec(raw) in EXCLUDED_SECTIONS
+
+
+def excluded_title(title: str | None) -> bool:
+    return bool(EXCLUDED_TITLE.search(title or ""))
 
 
 def _norm_sec(s: str) -> str:
@@ -594,7 +608,7 @@ def main():
     print(f"[1/4] coletando {len(sources)} feeds...")
     articles, fsum = fetch_all(sources, per_feed=args.per_feed, store=store,
                                window_h=args.window, run_ts=run_ts)
-    print(f"  total: {len(articles)} artigos únicos ({fsum['n_new']} novos no banco, {fsum['n_dropped']} de esporte fora)")
+    print(f"  total: {len(articles)} artigos únicos ({fsum['n_new']} novos no banco, {fsum['n_dropped']} fora do recorte)")
 
     if args.body:
         from enrich import enrich_articles
