@@ -71,11 +71,16 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;padding:34px 0 6px;align-items:start;border-bottom:2px solid var(--ink)}
 .hero .featured{padding-bottom:0;margin-bottom:0;border-bottom:none}
 .hero-side{padding-top:6px}
-.hero-side .rt{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.hero-side .hero-item{padding:13px 0;border-bottom:1px solid var(--hair);cursor:pointer}
-.hero-side .hero-item:last-child{border-bottom:none}
-.hero-side .hero-item h4{font-family:var(--serif);font-weight:500;font-size:15.5px;line-height:1.32;margin:0 0 7px}
-.hero-side .hero-item:hover h4{color:var(--accent)}
+.hero-side .rt{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.hero-side .rnote{margin:0 0 4px}
+.hero-side .hitem{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);cursor:pointer;align-items:flex-start}
+.hero-side .hitem:last-child{border-bottom:none}
+.hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:16.5px;line-height:1.3;margin:0 0 6px}
+.hero-side .hitem:hover h4{color:var(--accent)}
+.hero-side .hthumb{width:128px;height:128px;object-fit:cover;border-radius:8px;flex:0 0 auto}
+.hero-side .hsum{font-family:var(--serif);font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hero-side .hmeta{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.02em}
+@media(max-width:560px){.hero-side .hthumb{width:96px;height:96px}}
 @media(max-width:940px){.hero{grid-template-columns:1fr;gap:10px}}
 /* ── layout ── */
 .main{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:48px;padding:40px 0 70px;align-items:start}
@@ -441,10 +446,10 @@ function renderFeatured(){
     ? `<span class="badge cons" title="${centerTrusted(top)} veículos de centro com alta factualidade cobrem esta história">✓ Consenso</span>` : '';
   el.innerHTML = `<div class="featured">
       ${kick}
+      ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       ${checksBadges(top)}${featCons}
       <h1><a href="${esc(lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
-      ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       ${biasBar(top)}
     </div>`;
   // 3 mais repercutidas no centro (exceto o destaque)
@@ -455,16 +460,17 @@ function renderFeatured(){
     .slice(0,3);
   const hl = $('#heroList');
   $('#heroSide').style.display = side.length ? '' : 'none';
-  hl.innerHTML = side.map(({s,n})=>`
-    <div class="hero-item" data-jump="${s.id}">
-      <h4>${esc(s.title)}</h4>
-      <div class="rail-mini">
-        <span class="bL" style="width:${s.pct.L}%"></span>
-        <span class="bC" style="width:${s.pct.C}%"></span>
-        <span class="bR" style="width:${s.pct.R}%"></span>
+  hl.innerHTML = side.map(({s,n})=>{
+    const im = storyImg(s);
+    return `
+    <div class="hitem" data-jump="${s.id}">
+      ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
+      <div>
+        <h4>${esc(s.title)}</h4>
+        ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
+        <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
       </div>
-      <div class="rl">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
-    </div>`).join('');
+    </div>`;}).join('');
 }
 
 /* ---------- bias bar ---------- */
