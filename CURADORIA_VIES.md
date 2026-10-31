@@ -38,7 +38,7 @@
 | Diário do Centro do Mundo | -1.5 | Partidário pró-esquerda; tom militante |
 | CartaCapital | -1.2 | Esquerda assumida; crítica sistemática à direita e ao mercado |
 | Jovem Pan | +1.4 | Partidária pró-Bolsonaro/direita; linguagem militante frequente |
-| Revista Oeste | +1.6 | Direita assumida; linha editorial abertamente conservadora. Factualidade rebaixada p/ baixa em 30/10 (padrão de imprecisão) |
+| Revista Oeste | +1.6 | Direita assumida; linha editorial abertamente conservadora. `low` com evidência (30/10): 2 FALSO do Aos Fatos sobre conteúdo publicado pela revista (NASA/Amazônia jul/2021; São Lourenço/tratamento precoce), com aval do TJ-SP |
 | Gazeta do Povo | +1.2 | Direita curitibana; conservadora em costumes e mercado |
 | Agência Brasil | — (pendente) | Feed RSS parado desde 2023; sitemap sem namespace de notícias. Revisitar se publicarem feed vivo |
 | SBT News | 0.0 | Popular, factual; sem linha partidária detectável |
