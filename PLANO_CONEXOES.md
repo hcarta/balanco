@@ -55,7 +55,11 @@ Com o boost ancorado (`entidade OR embedding ≥ 0,75`, opt-in `--embed`): longf
 - [x] **F3.1 Filtrar não-jornalismo do pool longform**: excluir "assista ao programa", "palavras cruzadas", "quiz", agendas/podcasts por padrão de título (2 falsos positivos medidos).
 - [x] **F3.2 Penalizar redundância**: se a fonte do longform já está entre as coberturas da história (14 casos), só sugerir se a peça for **análise** (título com marcadores: "análise", "por que", "como", "entrevista") — senão omitir.
 - [x] **F3.3 Dediversificação**: máx. 1 sugestão por fonte por história; peça repetida entre histórias só na mais coberta (a do Nexo 8× vira 1).
-- [ ] **F3.4 Recall internacional via tradução de âncoras**: dicionário BR↔EN de entidades do dia (Brasil→Brazil, "Banco Central"→"central bank") + aceitar match por **1 entidade multi-palavra forte** (cosseno embedding ≥ 0.6 como segunda evidência). Testar em 40 pares rotulados (F1.2).
+- [x] **F3.4 Recall internacional via tradução de âncoras.** Dicionário BR↔EN de lugares/organizações (`ENTITY_TRANSLATE`: Ucrânia→Ukraine, Rússia→Russia, OTAN→NATO…) + resumo da peça internacional aceito **só** quando traz entidade multi-palavra específica (`_world_match`). Testado nos 40 pares rotulados:
+  - tradução de âncoras: P 1,00 / R 0,73→0,82 (recupera "mísseis Patriot"/Ucrânia, IN069)
+  - + resumo com entidade forte: P 1,00 / **R 0,91** (recupera o caso Flávio/NYT, IN094)
+  - **limite deliberado:** o positivo restante (IN099, "Lula" isolado) não é recuperado. Aceitar uma pessoa isolada como âncora derrubou a precisão para 0,43 no conjunto (13 FPs: "Trump" × qualquer pauta, "Halloween" × "Halloween"). Fica para o matcher de evento (F4), não para o léxico.
+  - **Produção (31/10):** 3 → 7 histórias com "Lá fora" na rodada; revisão manual das 9 conexões não achou falso positivo. Portão de teste subiu para R ≥ 0,85.
 - [x] **Aceite:** zero "programa/quiz" sugeridos; redundância mesma-história < 5%; peça repetida em ≤ 2 histórias.
   - **Resultado (31/10):** 44 → 11 conexões; redundância 14 → 0; peças repetidas 6 → 0 (máx. 1); não-jornalismo 2 → 0. Custo: histórias com "Aprofunde-se" caíram de 22 para 8 — o pool tem 85 peças longform/72 h, mas só 11 casam com as pautas do dia. É falta de recall, a ser recuperada em F1/F3.4.
 

@@ -484,6 +484,25 @@ ENTITY_GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us"
 ENTITY_ALIAS = {"brasil": "brazil", "eua": "us", "usa": "us",
                 "estados unidos": "united states", "reino unido": "uk"}
 
+# F3.4: âncoras BR→EN. Sem isso, "Ucrânia" e "Ukraine" eram entidades
+# diferentes e o par "mísseis Patriot" (IN069) se perdia. Só nomes próprios
+# de lugar/organização: traduzir "senado"→"senate" juntaria Congressos de
+# países distintos.
+ENTITY_TRANSLATE = {
+    "ucrânia": "ukraine", "rússia": "russia", "alemanha": "germany",
+    "frança": "france", "espanha": "spain", "itália": "italy",
+    "japão": "japan", "irã": "iran", "coreia do norte": "north korea",
+    "coreia do sul": "south korea", "união europeia": "european union",
+    "otan": "nato", "onu": "un", "amazônia": "amazon", "méxico": "mexico",
+    "canadá": "canada", "austrália": "australia",
+    "áfrica do sul": "south africa", "nigéria": "nigeria", "índia": "india",
+    "paquistão": "pakistan", "afeganistão": "afghanistan", "síria": "syria",
+    "líbano": "lebanon", "iêmen": "yemen", "colômbia": "colombia",
+    "bolívia": "bolivia", "equador": "ecuador", "egito": "egypt",
+    "sudão": "sudan", "etiópia": "ethiopia", "somália": "somalia",
+    "quênia": "kenya", "moçambique": "mozambique",
+}
+
 
 def entities(title: str | None) -> set:
     """Nomes próprios e siglas: âncoras de tópico entre idiomas e estilos.
@@ -508,6 +527,7 @@ def entities(title: str | None) -> set:
     if toks and len(toks[0]) >= 4:
         out.add(toks[0].lower())
     norm = {ENTITY_ALIAS.get(w, w) for w in out}
+    norm = {ENTITY_TRANSLATE.get(w, w) for w in norm}
     return {w for w in norm if w not in ENTITY_STOP and len(w) >= 2}
 
 
@@ -820,18 +840,36 @@ def diversify_longreads(stories):
     return stories
 
 
+def _world_match(se: set, intl_title: str, summary: str = "") -> tuple[bool, list]:
+    """Casa história BR com peça internacional. Título primeiro; o resumo só
+    entra se trouxer uma entidade multi-palavra específica.
+
+    Medido em 31/10/2026 (40 pares rotulados): título + tradução de âncoras
+    dá P 1.00/R 0.82; o resumo com essa guarda sobe para R 0.91 sem FP.
+    Resumo sozinho (entidade ampla) abriria "Trump" × qualquer pauta.
+    """
+    ok, terms = entity_match(se, entities(intl_title))
+    if ok:
+        return True, terms
+    if summary:
+        ok, terms = entity_match(se, entities(intl_title + " " + summary))
+        if ok and any(" " in t and t not in ENTITY_GENERIC for t in terms):
+            return True, terms
+    return False, []
+
+
 def attach_world(stories, intl_articles, per_story=3, use_embed=False):
     """Liga cada história à repercussão internacional (mesmo tópico, outro idioma).
 
-    Medido em 31/10/2026 (40 pares rotulados): entidade OR embedding >= 0.75
-    → P 1.00, R 0.73→0.82.
+    Medido em 31/10/2026 (40 pares rotulados): entidade traduzida OR resumo
+    com entidade forte OR embedding >= 0.75 → P 1.00, R 0.73→0.91.
     """
-    pool = [(entities(a.get("title", "")), a) for a in intl_articles]
+    pool = [(a.get("title", ""), a.get("summary") or "", a) for a in intl_articles]
     X, n_st = None, len(stories)
     if use_embed and pool:
         try:
             X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
-                             [{"title": a.get("title", "")} for _, a in pool])
+                             [{"title": it} for it, _, _ in pool])
         except Exception as e:
             print(f"  [aviso] embeddings indisponíveis no 'Lá fora' ({e})")
     for si, s in enumerate(stories):
@@ -841,12 +879,12 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False):
             continue
         st = set(tok(s.get("title", "")))
         cands = []
-        for pi, (ie, a) in enumerate(pool):
-            if not ie:
+        for pi, (it, isum, a) in enumerate(pool):
+            if not it:
                 continue
-            ok, terms = entity_match(se, ie)
+            ok, terms = _world_match(se, it, isum)
             if not ok and X is not None:
-                lex_ok = _title_cov(st, set(tok(a.get("title", "")))) >= EMB_PREFILTER_COV
+                lex_ok = _title_cov(st, set(tok(it))) >= EMB_PREFILTER_COV
                 if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
                     ok = True
             if ok:

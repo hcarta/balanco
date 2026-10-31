@@ -7,7 +7,7 @@ futura degrade a conexão sem que alguém veja.
 
 Medido na criação (31/10/2026):
   longform: P 0.94 / R 0.62   (60 pares, 26 positivos)
-  intl:     P 1.00 / R 0.73   (40 pares, 11 positivos)
+  intl:     P 1.00 / R 0.91   (40 pares, 11 positivos; F3.4)
   check:    P 1.00 / R 0.33   (67 pares,  3 positivos — amostra pequena por
                                 desenho: checagem de mesma alegação é rara)
 """
@@ -54,12 +54,38 @@ def test_longform_precision_gate():
 
 
 def test_intl_precision_gate():
-    from app import entities, entity_match
+    from app import _world_match, entities
     sub = load("intl")
-    preds = [entity_match(entities(p["a_title"]), entities(p["b_title"]))[0] for p in sub]
+    preds = [_world_match(entities(p["a_title"]), p["b_title"],
+                          p.get("b_summary", ""))[0] for p in sub]
     prec, rec, cm = _pr(preds, [p["label"] for p in sub])
     assert prec >= 0.90, f"precisão do Lá fora caiu: {prec:.2f} {cm}"
-    assert rec >= 0.65, f"revogação do Lá fora caiu: {rec:.2f} {cm}"
+    assert rec >= 0.85, f"revogação do Lá fora caiu: {rec:.2f} {cm}"
+
+
+def test_world_translates_anchors():
+    """F3.4: Ucrânia/Ukraine é a mesma âncora (IN069)."""
+    from app import _world_match, entities
+    a = "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia"
+    b = "US approves sale of 500 Patriot missiles to Ukraine"
+    ok, terms = _world_match(entities(a), b)
+    assert ok, terms
+    assert "ukraine" in terms
+
+
+def test_world_summary_needs_strong_entity():
+    """Resumo com entidade ampla não basta; multi-palavra específica basta."""
+    from app import _world_match, entities
+    story = entities("Lula anuncia pacote econômico")
+    ok, _ = _world_match(story, "Trump signs executive order",
+                         "Trump falou sobre a economia.")
+    assert not ok
+
+    story = entities("Flávio Bolsonaro foge para os EUA")
+    ok, terms = _world_match(story,
+                             "Trump and His Aides Helped Bolsonaro Flee Brazil",
+                             "Flávio Bolsonaro embarcou para os Estados Unidos.")
+    assert ok and "flávio bolsonaro" in terms
 
 
 def test_check_precision_gate():
