@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-31T15:04:40.605335+00:00",
- "n_articles": 1413,
- "n_stories": 106,
+ "generated_at": "2026-10-31T15:13:20.579483+00:00",
+ "n_articles": 1419,
+ "n_stories": 102,
  "n_factchecks": 700,
  "n_matches": 0,
- "n_new": 8,
+ "n_new": 33,
  "sources": [
   {
    "id": "g1",
@@ -16,11 +16,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 100,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 122,
+    "last_ms": 150,
     "err_streak": 0,
     "empty": false
    }
@@ -35,11 +35,11 @@
    "owner_detail": "Família Frias (Grupo Folha)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 99,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 156,
+    "last_ms": 136,
     "err_streak": 0,
     "empty": false
    }
@@ -54,11 +54,11 @@
    "owner_detail": "Grupo Folha / PagSeguro",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 15,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 128,
+    "last_ms": 73,
     "err_streak": 0,
     "empty": false
    }
@@ -73,11 +73,11 @@
    "owner_detail": "Licença CNN / Novus Media",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 53,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 296,
+    "last_ms": 172,
     "err_streak": 0,
     "empty": false
    }
@@ -92,11 +92,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 31,
-    "last_n_total": 26,
+    "last_n_total": 25,
     "last_status": "ok",
-    "last_ms": 54,
+    "last_ms": 110,
     "err_streak": 0,
     "empty": false
    }
@@ -111,11 +111,11 @@
    "owner_detail": "Poder360 Jornalismo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 41,
     "last_status": "ok",
-    "last_ms": 58,
+    "last_ms": 63,
     "err_streak": 0,
     "empty": false
    }
@@ -130,11 +130,11 @@
    "owner_detail": "Luiz Estevão",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 16,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 17,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 477,
+    "last_ms": 289,
     "err_streak": 0,
     "empty": false
    }
@@ -149,11 +149,11 @@
    "owner_detail": "Telefônica / Vivo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 5,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 247,
+    "last_ms": 240,
     "err_streak": 0,
     "empty": false
    }
@@ -169,11 +169,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 22,
     "last_status": "ok",
-    "last_ms": 60,
+    "last_ms": 94,
     "err_streak": 0,
     "empty": false
    }
@@ -189,11 +189,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 2,
     "last_status": "ok",
-    "last_ms": 193,
+    "last_ms": 208,
     "err_streak": 0,
     "empty": false
    }
@@ -209,11 +209,11 @@
    "owner_detail": "Grupo Silvio Santos (família Abravanel)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 117,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 282,
+    "last_ms": 120,
     "err_streak": 0,
     "empty": false
    }
@@ -228,11 +228,11 @@
    "owner_detail": "Grupo Record (Edir Macedo)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 100,
     "last_n_total": 17,
     "last_status": "ok",
-    "last_ms": 68,
+    "last_ms": 120,
     "err_streak": 0,
     "empty": false
    }
@@ -248,11 +248,11 @@
    "owner_detail": "Grupo Bandeirantes (família Saad)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 0,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 395,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 58,
+    "last_ms": 85,
     "err_streak": 0,
     "empty": false
    }
@@ -268,11 +268,11 @@
    "owner_detail": "Deutsche Welle (Alemanha, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 22,
     "last_n_total": 29,
     "last_status": "ok",
-    "last_ms": 306,
+    "last_ms": 413,
     "err_streak": 0,
     "empty": false
    }
@@ -287,11 +287,11 @@
    "owner_detail": "Editora Abril",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 0,
-    "last_n_total": 50,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 20,
+    "last_n_total": 53,
     "last_status": "ok",
-    "last_ms": 79,
+    "last_ms": 81,
     "err_streak": 0,
     "empty": false
    }
@@ -306,11 +306,11 @@
    "owner_detail": "Editora Três",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 21,
     "last_status": "ok",
-    "last_ms": 204,
+    "last_ms": 189,
     "err_streak": 0,
     "empty": false
    }
@@ -326,11 +326,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 15,
     "last_n_total": 9,
     "last_status": "ok",
-    "last_ms": 794,
+    "last_ms": 768,
     "err_streak": 0,
     "empty": false
    }
@@ -346,11 +346,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 10,
     "last_n_total": 10,
     "last_status": "ok",
-    "last_ms": 71,
+    "last_ms": 124,
     "err_streak": 0,
     "empty": false
    }
@@ -366,11 +366,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 5,
     "last_status": "ok",
-    "last_ms": 975,
+    "last_ms": 820,
     "err_streak": 0,
     "empty": false
    }
@@ -386,11 +386,11 @@
    "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 3,
     "last_status": "ok",
-    "last_ms": 69,
+    "last_ms": 113,
     "err_streak": 0,
     "empty": false
    }
@@ -406,11 +406,11 @@
    "owner_detail": "Catar (financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 0,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 25,
     "last_n_total": 27,
     "last_status": "ok",
-    "last_ms": 51,
+    "last_ms": 59,
     "err_streak": 0,
     "empty": false
    }
@@ -426,11 +426,11 @@
    "owner_detail": "Warner Bros. Discovery",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 29,
     "last_n_total": 6,
     "last_status": "ok",
-    "last_ms": 849,
+    "last_ms": 939,
     "err_streak": 0,
     "empty": false
    }
@@ -446,11 +446,11 @@
    "owner_detail": "Fox Corporation",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 12,
     "last_status": "ok",
-    "last_ms": 90,
+    "last_ms": 212,
     "err_streak": 0,
     "empty": false
    }
@@ -466,11 +466,11 @@
    "owner_detail": "The New York Times Company",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 56,
-    "last_n_total": 58,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 57,
+    "last_n_total": 59,
     "last_status": "ok",
-    "last_ms": 42,
+    "last_ms": 54,
     "err_streak": 0,
     "empty": false
    }
@@ -486,11 +486,11 @@
    "owner_detail": "Scott Trust",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 45,
-    "last_n_total": 40,
+    "last_n_total": 43,
     "last_status": "ok",
-    "last_ms": 36,
+    "last_ms": 40,
     "err_streak": 0,
     "empty": false
    }
@@ -506,11 +506,11 @@
    "owner_detail": "BBC (Reino Unido, financiamento público)",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 30,
     "last_n_total": 37,
     "last_status": "ok",
-    "last_ms": 33,
+    "last_ms": 47,
     "err_streak": 0,
     "empty": false
    }
@@ -525,11 +525,11 @@
    "owner_detail": "XP Inc.",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 47,
     "last_status": "ok",
-    "last_ms": 60,
+    "last_ms": 58,
     "err_streak": 0,
     "empty": false
    }
@@ -544,11 +544,11 @@
    "owner_detail": "Editora 247",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 85,
+    "last_ms": 92,
     "err_streak": 0,
     "empty": false
    }
@@ -563,11 +563,11 @@
    "owner_detail": "DCM",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 44,
     "last_status": "ok",
-    "last_ms": 637,
+    "last_ms": 404,
     "err_streak": 0,
     "empty": false
    }
@@ -582,11 +582,11 @@
    "owner_detail": "Editora Confiança",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 54,
     "last_status": "ok",
-    "last_ms": 53,
+    "last_ms": 90,
     "err_streak": 0,
     "empty": false
    }
@@ -601,11 +601,11 @@
    "owner_detail": "Grupo Jovem Pan",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 34,
     "last_status": "ok",
-    "last_ms": 72,
+    "last_ms": 82,
     "err_streak": 0,
     "empty": false
    }
@@ -618,14 +618,13 @@
    "factuality": "low",
    "ownership": "independente",
    "owner_detail": "Revista Oeste",
-   "longform": true,
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 10,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 0,
     "last_n_total": 39,
     "last_status": "ok",
-    "last_ms": 66,
+    "last_ms": 88,
     "err_streak": 0,
     "empty": false
    }
@@ -641,11 +640,11 @@
    "owner_detail": "Família Mesquita",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 82,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 131,
+    "last_ms": 86,
     "err_streak": 0,
     "empty": false
    }
@@ -661,11 +660,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 658,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 173,
+    "last_ms": 179,
     "err_streak": 0,
     "empty": false
    }
@@ -681,11 +680,11 @@
    "owner_detail": "Grupo Globo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
-    "last_n_fresh": 0,
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
+    "last_n_fresh": 720,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 104,
+    "last_ms": 153,
     "err_streak": 0,
     "empty": false
    }
@@ -701,11 +700,11 @@
    "owner_detail": "Gazeta do Povo",
    "factcheck": null,
    "health": {
-    "last_run": "2026-10-31T15:03:03.885931+00:00",
+    "last_run": "2026-10-31T15:11:42.950591+00:00",
     "last_n_fresh": 0,
     "last_n_total": 60,
     "last_status": "ok",
-    "last_ms": 370,
+    "last_ms": 475,
     "err_streak": 0,
     "empty": false
    }
@@ -1258,14 +1257,6 @@
   },
   {
    "checker": "Aos Fatos",
-   "title": "PROCESSO: 0603393-64.2026.6.00.0000 - PETIÇÃO CÍVEL",
-   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQWXVsU2F0R2RhQVNkR3dSME1QdVYwekVMNGtXS1lVLUZzQ29BUnpCUFM5VUcxSU91cnpTOXg4di11V20wbHdMRVVNV3lYX3dGYmMzNk0wb3lpZFA2U2pRY1BvSGFSTFhmeG45RUdiRE1wX3NnZXZ6SDVhN1BQRFR5eG1FMjluemVDUWlUcHY5dTc5bU0?oc=5",
-   "summary": "PROCESSO: 0603393-64.2026.6.00.0000 - PETIÇÃO CÍVEL    Aos Fatos",
-   "published": "2026-10-25T10:00:00+00:00",
-   "verdict": "checagem"
-  },
-  {
-   "checker": "Aos Fatos",
    "title": "Reportagem sobre venda de pele de frango em mercados é de 2022, não atual",
    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBUeWV4VF9sMUpFakZGQ3dQNFNVSWZuTURhX25jdkJBWlh5QVNXUDhaRFNmQ25oMnE4SjRpQndpam91dVltWGo5NHVhejQ3Y3VCSW5Fb2dFN0VpZngwZFdaUjA0VEpJN3IwT2N0Q1RXWU5RZDQwR2F2UA?oc=5",
    "summary": "Reportagem sobre venda de pele de frango em mercados é de 2022, não atual    Aos Fatos",
@@ -1351,6 +1342,14 @@
    "summary": "Saiba como o Fato ou Fake checará declarações dos candidatos no debate da Globo O Fato ou Fake, serviço de checagens do Grupo Globo, preparou uma cobertura especial para verificar as declarações feitas pelos candidatos Flávio Bolsonaro (PL) e Lula (PT) durante o debate da TV Globo. Uma equipe de mais de 30 jornalistas vai trabalhar em conjunto para dar agilidade ao processo, sem abrir mão do rigor",
    "published": "2026-10-23T01:32:37+00:00",
    "verdict": "checagem"
+  },
+  {
+   "checker": "G1 Fato ou Fake",
+   "title": "Fato ou Fake: reveja as checagens das entrevistas de Flávio Bolsonaro e Lula e do debate da Band",
+   "link": "https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/22/fato-ou-fake-reveja-as-checagens-das-entrevistas-de-flavio-bolsonaro-e-lula-e-do-debate-da-band.ghtml",
+   "summary": "\"Fato ou Fake\" fará checagens das falas dos candidatos à presidência durante o debate O Fato ou Fake, serviço de checagens do Grupo Globo, verificou declarações dos candidatos Flávio Bolsonaro (PL) e Lula (PT) nas entrevistas à TV Globo e no debate da Band, no domingo (18). Clique nos links abaixo para acessar as reportagens: Entrevista de Flávio Bolsonaro (PL) à Globo no 1º turno Entrevista de Fl",
+   "published": "2026-10-22T19:58:48+00:00",
+   "verdict": "checagem"
   }
  ],
  "stories": [
@@ -1360,17 +1359,17 @@
    "summary": "Disputa sobre redução da maioridade penal segue sem acordo; Lula condiciona novo ministério à aprovação da proposta",
    "section": "poder-governo",
    "section_label": "Poder",
-   "avg_bias": 0.15,
+   "avg_bias": 0.18,
    "counts": {
     "L": 3,
-    "C": 6,
+    "C": 5,
     "R": 5,
-    "total": 14
+    "total": 13
    },
    "pct": {
-    "L": 21,
-    "C": 43,
-    "R": 36
+    "L": 23,
+    "C": 38,
+    "R": 38
    },
    "blindspot": null,
    "updated": "2026-10-31T16:00:00+00:00",
@@ -1427,20 +1426,6 @@
      "via": "fonte",
      "section": "politica",
      "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Davi Alcolumbre pauta votação da PEC da Segurança no Senado para terça-feira",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/30/davi-alcolumbre-pauta-votacao-da-pec-da-seguranca-no-senado-para-terca-feira.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
@@ -2455,7 +2440,7 @@
    ],
    "developments": [
     {
-     "id": "s039",
+     "id": "s038",
      "title": "Brasil diz ter convocado diplomata argentina para cobrar explicações sobre viagem de Flávio Bolsonaro",
      "total": 3,
      "blindspot": null
@@ -2747,17 +2732,6 @@
    ],
    "hub": null,
    "longreads": [
-    {
-     "source": "Revista Oeste",
-     "title": "Bolsonaro vê Nunes e Tarcísio como ‘leais’ e rejeita críticas de aliados à dupla",
-     "link": "https://revistaoeste.com/no-ponto/bolsonaro-ve-nunes-e-tarcisio-como-leais-e-rejeita-criticas-de-aliados-a-dupla/",
-     "terms": [
-      "bolsonaro",
-      "jair",
-      "jair bolsonaro",
-      "michelle"
-     ]
-    },
     {
      "source": "Nexo Jornal",
      "title": "O povo brasileiro passou no teste, ao contrário dos americanos",
@@ -3156,17 +3130,7 @@
     }
    ],
    "hub": null,
-   "longreads": [
-    {
-     "source": "Revista Oeste",
-     "title": "Líder do Irã ameaça responder a novos ataques dos EUA e de Israel",
-     "link": "https://revistaoeste.com/mundo/lider-do-ira-ameaca-responder-a-novos-ataques-dos-eua-e-de-israel/",
-     "terms": [
-      "irã",
-      "líder"
-     ]
-    }
-   ],
+   "longreads": [],
    "world": [],
    "checks": []
   },
@@ -3268,7 +3232,7 @@
    "checks": []
   },
   {
-   "id": "s041",
+   "id": "s040",
    "title": "Binance sofre ataque hacker de US$ 6,3 bilhões: por que Coreia do Norte pode estar por trás do possível maior roubo da história das criptomoedas",
    "summary": "Duas empresas de análise de dados sugeriram que o crime teria sido cometido por hackers de um grupo norte-coreano chamado TraderTraitor.",
    "section": "",
@@ -3361,7 +3325,7 @@
    ],
    "developments": [
     {
-     "id": "s092",
+     "id": "s089",
      "title": "Ataque à Binance: Hackers norte-coreanos de criptomoedas estão entre os melhores do mundo, dizem especialistas",
      "total": 2,
      "blindspot": null
@@ -3373,7 +3337,7 @@
    "checks": []
   },
   {
-   "id": "s021",
+   "id": "s019",
    "title": "Toffoli rejeita pedido de Filipe Martins para semiaberto",
    "summary": "Dias Toffoli rejeitou o pedido de Filipe Martins para ir ao semiaberto e apontou falta de coerência na petição apresentada pela defesa.",
    "section": "politica",
@@ -3456,7 +3420,7 @@
    "checks": []
   },
   {
-   "id": "s020",
+   "id": "s018",
    "title": "Lula avalia convidar opositores de Milei para posse",
    "summary": "Lula deve estender convites a Donald Trump e Javier Milei para a posse de seu novo mandato, marcada para 5 de janeiro de 2027.",
    "section": "politica",
@@ -3539,7 +3503,7 @@
    "checks": []
   },
   {
-   "id": "s019",
+   "id": "s017",
    "title": "Flávio Bolsonaro fala pela 1ª vez dos EUA e cita concorrer em eleições antes de 2030",
    "summary": "Candidato derrotado à Presidência diz em live que fuga não é fraqueza e aposta em desgaste do governo Lula com economia ruim",
    "section": "politica",
@@ -3648,90 +3612,7 @@
    "checks": []
   },
   {
-   "id": "s018",
-   "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
-   "summary": "Dois cidadãos chineses foram condenados a 30 meses de prisão em regime fechado, seguidos de três anos de liberdade supervisionada, acusados de terem sido recrutados pela China para espionar os Estados Unidos . Leia mais (10/31/2026 - 05h45)",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 4,
-    "R": 0,
-    "total": 4
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:17:15+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
-     "link": "https://www1.folha.uol.com.br/mundo/2026/10/chineses-acusados-de-espionagem-sao-condenados-a-prisao-nos-estados-unidos.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "EUA condenam dois cidadãos chineses por espionagem e conspiração",
-     "link": "https://www.estadao.com.br/internacional/eua-condena-dois-cidadaos-chineses-por-espionagem-e-conspiracao-npr/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Chineses são condenados por espionagem nos EUA",
-     "link": "https://www.poder360.com.br/poder-internacional/chineses-sao-condenados-por-espionagem-nos-eua/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-internacional",
-     "section_label": "Poder",
-     "image": "",
-     "factuality": "high",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Estados Unidos condenam dois cidadãos chineses por espionagem",
-     "link": "https://www.metropoles.com/mundo/estados-unidos-condenam-dois-cidadaos-chineses-por-espionagem",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://images.metroimg.com/07c555a0-bandeira-da-china.jpg",
-     "factuality": "mixed",
-     "ownership": "individuo"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s017",
+   "id": "s016",
    "title": "Fuvest aplica 1ª fase do vestibular neste domingo (1º); veja mudanças e o que levar",
    "summary": "Mudança de perfil do exame amplia espaço de temas como inteligência artificial, transição energética e clima",
    "section": "educacao",
@@ -3806,89 +3687,6 @@
      "image": "",
      "factuality": "high",
      "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s016",
-   "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
-   "summary": "O presidente Luiz Inácio Lula da Silva (PT) está em busca de um nome para ocupar o Ministério da Defesa em seu quarto mandato. Como mostrou o Estadão, um dos possíveis nomes é o de Cinara Wagner Fredo, indicada pelo atual ministro da pasta, José Múcio Monteiro.",
-   "section": "",
-   "section_label": "Geral",
-   "avg_bias": -0.03,
-   "counts": {
-    "L": 0,
-    "C": 4,
-    "R": 0,
-    "total": 4
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T17:15:50+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/31/quem-e-cinara-wagner-fredo-cotada-para-ser-a-primeira-mulher-ministra-da-defesa.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
-     "link": "https://www.estadao.com.br/politica/quem-e-cinara-wagner-fredo-cotada-para-ser-a-1-mulher-ministra-da-defesa/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Band",
-     "source_id": "band",
-     "title": "Quem é Cinara Wagner Fredo, cotada para ser a 1ª mulher ministra da Defesa",
-     "link": "https://www.band.com.br/politica/quem-e-cinara-wagner-fredo-cotada-para-ser-a-1a-mulher-ministra-da-defesa",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "InfoMoney",
-     "source_id": "infomoney",
-     "title": "Cinara Fredo pode ser 1ª mulher na Defesa após indicação de Múcio",
-     "link": "https://www.infomoney.com.br/politica/cinara-wagner-fredo-ministerio-defesa-indicacao-mucio/",
-     "bias": 0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "politica",
-     "section_label": "Política",
-     "image": "",
-     "factuality": "high",
-     "ownership": "conglomerado"
     }
    ],
    "hub": null,
@@ -4146,7 +3944,7 @@
    "checks": []
   },
   {
-   "id": "s064",
+   "id": "s059",
    "title": "Simone Tebet é cotada para o STF caso Lula decida indicar uma mulher para o tribunal",
    "summary": "A ex-ministra Simone Tebet passou a integrar a lista de nomes levados a Lula para futuras indicações ao Supremo Tribunal Federal.",
    "section": "colunas",
@@ -4225,29 +4023,19 @@
    ],
    "developments": [
     {
-     "id": "s099",
+     "id": "s096",
      "title": "Lula deve indicar Messias novamente ao STF, agora com apoio de Alcolumbre",
      "total": 2,
      "blindspot": null
     }
    ],
    "hub": null,
-   "longreads": [
-    {
-     "source": "Revista Oeste",
-     "title": "Com Alcolumbre, Moraes está garantido no STF, diz Ives Gandra",
-     "link": "https://revistaoeste.com/no-ponto/com-alcolumbre-moraes-esta-garantido-no-stf-diz-ives-gandra/",
-     "terms": [
-      "lula",
-      "stf"
-     ]
-    }
-   ],
+   "longreads": [],
    "world": [],
    "checks": []
   },
   {
-   "id": "s040",
+   "id": "s039",
    "title": "Justiça manda penhorar mansão de Renato Aragão por dívida",
    "summary": "Decisão da 12ª Vara da Fazenda Pública atende a pedido do Município do Rio para cobrança de débitos de IPTU",
    "section": "brasil",
@@ -4316,7 +4104,7 @@
    "checks": []
   },
   {
-   "id": "s038",
+   "id": "s037",
    "title": "Democratas cobram que Trump reconheça vitória de Lula",
    "summary": "Parlamentares da ala progressista do Congresso dos EUA dizem que Trump alimenta negacionismo eleitoral ao contestar o resultado brasileiro.",
    "section": "mundo",
@@ -4376,75 +4164,6 @@
      "section_label": "Mundo",
      "image": "https://sbtnews.sbt.com.br/imagens/trump_lula_2ec5b51cb9.jpg",
      "factuality": "high",
-     "ownership": "individuo"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s037",
-   "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
-   "summary": "Afastamento do presidente e do vice do Tribunal Constitucional ocorre em meio à disputa entre Donald Tusk e Karol Nawrocki.",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": -0.97,
-   "counts": {
-    "L": 2,
-    "C": 1,
-    "R": 0,
-    "total": 3
-   },
-   "pct": {
-    "L": 67,
-    "C": 33,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T02:44:26+00:00",
-   "articles": [
-    {
-     "source": "Diário do Centro do Mundo",
-     "source_id": "dcm",
-     "title": "Premiê da Polônia é acusado de tentativa de golpe após cerco policial a tribunal",
-     "link": "https://www.diariodocentrodomundo.com.br/premie-da-polonia-e-acusado-de-tentativa-de-golpe-apos-cerco-policial-a-tribunal/",
-     "bias": -1.5,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "low",
-     "ownership": "independente"
-    },
-    {
-     "source": "Brasil 247",
-     "source_id": "b247",
-     "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
-     "link": "https://www.brasil247.com/mundo/premier-da-polonia-e-acusado-de-tentativa-de-golpe-de-estado-apos-cerco-a-tribunal/",
-     "bias": -1.4,
-     "bucket": "L",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://www.brasil247.com/wp-content/uploads/2024/11/20241126161140_356dc11a021ec9752c6b51740f18315cca9f8cc8a231573f1c4920fad014849a.jpg",
-     "factuality": "mixed",
-     "ownership": "independente"
-    },
-    {
-     "source": "Metrópoles",
-     "source_id": "metropoles",
-     "title": "Premier da Polônia é acusado de tentar realizar golpe de Estado",
-     "link": "https://www.metropoles.com/mundo/premier-da-polonia-e-acusado-de-tentar-realizar-golpe-de-estado",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://images.metroimg.com/2025/09/10121806/Donald-Tusk-2.jpg",
-     "factuality": "mixed",
      "ownership": "individuo"
     }
    ],
@@ -4826,6 +4545,75 @@
   },
   {
    "id": "s031",
+   "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
+   "summary": "Dois cidadãos chineses foram condenados a 30 meses de prisão em regime fechado, seguidos de três anos de liberdade supervisionada, acusados de terem sido recrutados pela China para espionar os Estados Unidos . Leia mais (10/31/2026 - 05h45)",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": -0.1,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T16:17:15+00:00",
+   "articles": [
+    {
+     "source": "Folha de S.Paulo",
+     "source_id": "folha",
+     "title": "Chineses acusados de espionagem são condenados à prisão nos Estados Unidos",
+     "link": "https://www1.folha.uol.com.br/mundo/2026/10/chineses-acusados-de-espionagem-sao-condenados-a-prisao-nos-estados-unidos.shtml",
+     "bias": -0.3,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "Poder360",
+     "source_id": "poder360",
+     "title": "Chineses são condenados por espionagem nos EUA",
+     "link": "https://www.poder360.com.br/poder-internacional/chineses-sao-condenados-por-espionagem-nos-eua/",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "poder-internacional",
+     "section_label": "Poder",
+     "image": "",
+     "factuality": "high",
+     "ownership": "independente"
+    },
+    {
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "title": "Estados Unidos condenam dois cidadãos chineses por espionagem",
+     "link": "https://www.metropoles.com/mundo/estados-unidos-condenam-dois-cidadaos-chineses-por-espionagem",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://images.metroimg.com/07c555a0-bandeira-da-china.jpg",
+     "factuality": "mixed",
+     "ownership": "individuo"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s030",
    "title": "Justiça condena Sergio Maurício a pagar R$ 10 mil a Erika por danos morais",
    "summary": "O narrador esportivo se referiu a deputada como 'essa coisa' em uma publicação nas redes sociais",
    "section": "politica",
@@ -4894,7 +4682,7 @@
    "checks": []
   },
   {
-   "id": "s030",
+   "id": "s029",
    "title": "Kauã Elias comenta em foto de Virginia Fonseca vestida de coelhinha",
    "summary": "Atacante de 20 anos joga na Europa, espera a primeira filha com a ex-namorada e já se envolveu em polêmicas amorosas",
    "section": "diversao",
@@ -4963,7 +4751,7 @@
    "checks": []
   },
   {
-   "id": "s029",
+   "id": "s028",
    "title": "Morre Mulher Banana, ícone do funk carioca e ex-integrante do Furacão 2000",
    "summary": "Conhecida também como Garota X, a cantora fez sucesso no funk carioca nos anos 2000. A causa da morte ainda não foi divulgada",
    "section": "pop",
@@ -5032,7 +4820,7 @@
    "checks": []
   },
   {
-   "id": "s028",
+   "id": "s027",
    "title": "Kassab diz que governo procurou PSD e vincula aproximação a medidas econômicas",
    "summary": "O presidente do PSD, Gilberto Kassab, disse em entrevista ao jornal O Globo que a derrota de Flávio Bolsonaro (PL) e o quarto mandato de Luiz Inácio Lula da Silva (PT) se explicam, sobretudo, por erros do candidato da direita e pela exploração dessas fragilidades pela campanha petista. Ele disse que",
    "section": "politica",
@@ -5101,7 +4889,7 @@
    "checks": []
   },
   {
-   "id": "s027",
+   "id": "s026",
    "title": "Ebola ultrapassa 5 mil mortes no Congo e atinge letalidade próxima de 50%",
    "summary": "O surto de ebola na República Democrática do Congo já provocou 5.026 mortes entre 10.351 pessoas infectadas, segundo dados divulgados neste sábado, 31, pelo Ministério da Saúde do país. A taxa de letalidade é de quase 50%. Outras 2.788 pessoas se recuperaram da doença.",
    "section": "",
@@ -5170,7 +4958,7 @@
    "checks": []
   },
   {
-   "id": "s026",
+   "id": "s025",
    "title": "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro para os EUA",
    "summary": "Eventual maioria legislativa de oposição a Trump poderia investigar e fazer pressão política, mas foco deve recair sobre outras pautas",
    "section": "",
@@ -5238,20 +5026,7 @@
     "label": "Flávio Bolsonaro",
     "size": 8
    },
-   "longreads": [
-    {
-     "source": "Revista Oeste",
-     "title": "Itamaraty cobra explicações da Argentina sobre viagem de Flávio aos EUA",
-     "link": "https://revistaoeste.com/mundo/itamaraty-cobra-explicacoes-da-argentina-sobre-viagem-de-flavio-aos-eua/",
-     "terms": [
-      "bolsonaro",
-      "flávio",
-      "flávio bolsonaro",
-      "milei",
-      "us"
-     ]
-    }
-   ],
+   "longreads": [],
    "world": [
     {
      "source": "The Guardian",
@@ -5276,7 +5051,76 @@
    "checks": []
   },
   {
-   "id": "s025",
+   "id": "s024",
+   "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
+   "summary": "O presidente Luiz Inácio Lula da Silva (PT) está em busca de um nome para ocupar o Ministério da Defesa em seu quarto mandato. Como mostrou o Estadão, um dos possíveis nomes é o de Cinara Wagner Fredo, indicada pelo atual ministro da pasta, José Múcio Monteiro.",
+   "section": "",
+   "section_label": "Geral",
+   "avg_bias": 0.0,
+   "counts": {
+    "L": 0,
+    "C": 3,
+    "R": 0,
+    "total": 3
+   },
+   "pct": {
+    "L": 0,
+    "C": 100,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T17:15:50+00:00",
+   "articles": [
+    {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "title": "Quem é Cinara Wagner Fredo, cotada para ser a primeira mulher ministra da Defesa",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/31/quem-e-cinara-wagner-fredo-cotada-para-ser-a-primeira-mulher-ministra-da-defesa.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
+     "source": "Band",
+     "source_id": "band",
+     "title": "Quem é Cinara Wagner Fredo, cotada para ser a 1ª mulher ministra da Defesa",
+     "link": "https://www.band.com.br/politica/quem-e-cinara-wagner-fredo-cotada-para-ser-a-1a-mulher-ministra-da-defesa",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "InfoMoney",
+     "source_id": "infomoney",
+     "title": "Cinara Fredo pode ser 1ª mulher na Defesa após indicação de Múcio",
+     "link": "https://www.infomoney.com.br/politica/cinara-wagner-fredo-ministerio-defesa-indicacao-mucio/",
+     "bias": 0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s023",
    "title": "Morre Solano Ribeiro, crítico e produtor musical, aos 87 anos",
    "summary": "Crítico e produtor musical, Solano Ribeiro morreu aos 87 anos em São Paulo. Ele ajudou a organizar festivais que revelaram nomes da MPB.",
    "section": "sp",
@@ -5345,7 +5189,7 @@
    "checks": []
   },
   {
-   "id": "s024",
+   "id": "s022",
    "title": "Correspondente da Globo em Londres vai substituir Maju Coutinho no Fantástico",
    "summary": "Rodrigo Carvalho, correspondente da Globo em Londres, vai substituir a apresentadora Maju Coutinho na bancada do Fantástico . Coutinho entrará em licença-maternidade a partir de janeiro, quando deverá dar à luz seu primeiro filho , chamado Malik. Leia mais (10/31/2026 - 10h09)",
    "section": "ilustrada",
@@ -5414,7 +5258,7 @@
    "checks": []
   },
   {
-   "id": "s023",
+   "id": "s021",
    "title": "Rodrigo Bacellar será transferido novamente para presídio estadual no Rio",
    "summary": "Ex-presidente da Alerj deixará penitenciária federal de Mossoró, mas continuará preso preventivamente; desembargador investigado por vazamento de informações foi solto",
    "section": "nacional",
@@ -5483,7 +5327,7 @@
    "checks": []
   },
   {
-   "id": "s022",
+   "id": "s020",
    "title": "Como Miami se tornou refúgio de políticos conservadores da América Latina",
    "summary": "Cidade no sul da Flórida se consolida como abrigo histórico para figuras da extrema-direita latino-americana",
    "section": "mundo",
@@ -5556,7 +5400,7 @@
    "checks": []
   },
   {
-   "id": "s114",
+   "id": "s111",
    "title": "As propostas do presidente Lula para o seu quarto mandato em 8 áreas",
    "summary": "Presidente inicia novo mandato em 5 de janeiro de 2027 com propostas para economia, saúde, educação e segurança pública, mas terá de negociar com um Congresso de oposição fortalecido para avançar em sua agenda.",
    "section": "",
@@ -5611,7 +5455,7 @@
    "checks": []
   },
   {
-   "id": "s113",
+   "id": "s110",
    "title": "\"Incompetentes\", diz mulher que sobreviveu à injeção letal",
    "summary": "Em primeira declaração pública após a tentativa frustrada de execução, Christa Pike afirmou que ficou \"profundamente magoada com a incompetência\"",
    "section": "pt-br",
@@ -5666,7 +5510,7 @@
    "checks": []
   },
   {
-   "id": "s112",
+   "id": "s109",
    "title": "Papa Leão XIV vota por correio em eleições dos EUA",
    "summary": "Vaticano confirmou que pontífice, o primeiro da história da Igreja Católica a participar do pleito, enviou cédula eleitoral por correspondência para Chicago",
    "section": "mundo",
@@ -5721,7 +5565,7 @@
    "checks": []
   },
   {
-   "id": "s110",
+   "id": "s107",
    "title": "Lula vai lidar com sua herança maldita",
    "summary": "No atual cenário, não existe solução indolor. Um duro ajuste fiscal será necessário para estabilizar a dívida pública.",
    "section": "vozes",
@@ -5776,7 +5620,7 @@
    "checks": []
   },
   {
-   "id": "s109",
+   "id": "s106",
    "title": "Quem é o assessor de Trump que ajudou Flávio a fugir",
    "summary": "Jason Miller acompanhou a apuração do segundo turno ao lado de Eduardo Bolsonaro em Miami e deixou o local após a virada eleitoral.",
    "section": "mundo",
@@ -5831,7 +5675,7 @@
    "checks": []
   },
   {
-   "id": "s108",
+   "id": "s105",
    "title": "Dono de avião usado na fuga de Flávio Bolsonaro afirma que voo foi pago a partir dos EUA, diz agência",
    "summary": "Proprietário de jato executivo afirma que pagamento partiu de conta nos Estados Unidos",
    "section": "politica",
@@ -5901,7 +5745,7 @@
    "checks": []
   },
   {
-   "id": "s106",
+   "id": "s103",
    "title": "Defesa de Vorcaro aponta alteração em celular e pede anulação de provas",
    "summary": "Perícia contratada pelo ex-controlador do Banco Master alega violação",
    "section": "politica",
@@ -5956,7 +5800,7 @@
    "checks": []
   },
   {
-   "id": "s105",
+   "id": "s102",
    "title": "Meta fecha acordo em processo sobre vício em redes sociais e evita julgamento nos EUA",
    "summary": "Acordo com jovem encerra processo contra dona do Instagram em Los Angeles; caso-teste sobre impacto de redes na saúde mental prosseguirá com Snapchat",
    "section": "business",
@@ -6011,7 +5855,7 @@
    "checks": []
   },
   {
-   "id": "s104",
+   "id": "s101",
    "title": "Moraes manda destruir armas de Torres e PMs do 8 de Janeiro",
    "summary": "Ministro deu prazo de 48h para o cumprimento das medidas e também negou devolução de passaportes dos envolvidos no episódio",
    "section": "politica",
@@ -6066,7 +5910,7 @@
    "checks": []
   },
   {
-   "id": "s102",
+   "id": "s099",
    "title": "PM apreende carro ligado a Toguro e encontra R$ 100 mil",
    "summary": "Influenciador publicou vídeos sobre os valores de honestidade e caráter nas redes sociais depois da ocorrência; dinheiro foi devolvido após esclarecimentos",
    "section": "poder-seguranca-publica",
@@ -6121,7 +5965,7 @@
    "checks": []
   },
   {
-   "id": "s101",
+   "id": "s098",
    "title": "Votação antecipada nos EUA tem recorde de 48 mi de eleitores",
    "summary": "O crescimento é particularmente acentuado nos estados com disputas acirradas pelo Senado, onde 35 cadeiras estão em jogo",
    "section": "poder-internacional",
@@ -6176,7 +6020,7 @@
    "checks": []
   },
   {
-   "id": "s100",
+   "id": "s097",
    "title": "Um século depois, circo de Budapeste revive ousadas fugas de Houdini",
    "summary": "BUDAPESTE, 30 Out (Reuters) - Acorrentado, mergulhado de cabeça para baixo em um tanque cheio de ?água e beirando a morte, ?Harry Houdini volta aos palcos em Budapeste nesta sexta-feira, em uma nova produção circense que homenageia o lendário ?mestre da ?fuga um ?século após sua morte.",
    "section": "",
@@ -6231,7 +6075,7 @@
    "checks": []
   },
   {
-   "id": "s098",
+   "id": "s095",
    "title": "Usiminas tem trimestre fraco e analistas veem continuidade da pressão sobre resultados",
    "summary": "O Ebitda de R$ 558 milhões ficou abaixo das estimativas de todas as instituições financeiras; BB Investimentos rebaixou a recomendação da ação",
    "section": "empresas",
@@ -6286,7 +6130,7 @@
    "checks": []
   },
   {
-   "id": "s097",
+   "id": "s094",
    "title": "Banco Master leiloa itens de luxo; veja como participar",
    "summary": "Leilão online reúne 445 lotes de móveis, equipamentos e itens de decoração; lances iniciais vão de R$ 21 a R$ 98 mil",
    "section": "brasil",
@@ -6341,7 +6185,7 @@
    "checks": []
   },
   {
-   "id": "s096",
+   "id": "s093",
    "title": "Justiça de SP manda Meta derrubar posts de assédio eleitoral",
    "summary": "Decisão se dá após viralizarem publicações nas redes sobre exposição, fiscalização e até demissão de funcionários por posições políticas",
    "section": "politica",
@@ -6396,7 +6240,7 @@
    "checks": []
   },
   {
-   "id": "s095",
+   "id": "s092",
    "title": "Após fuga de Flávio, Jorginho Mello se distancia de aliado e diz respeitar resultado das urnas",
    "summary": "governador reeleito de Santa Catarina, Jorginho Mello (PL), se distanciou do discurso adotado por Flávio Bolsonaro (PL), após a derrota do senador na disputa presidencial. Aliado da família Bolsonar...",
    "section": "",
@@ -6451,7 +6295,7 @@
    "checks": []
   },
   {
-   "id": "s094",
+   "id": "s091",
    "title": "Funai aciona PF e pede apuração de casos de ataques contra indígenas",
    "summary": "Indígenas denunciam mais de 30 ataques pós-eleição em MS",
    "section": "politica",
@@ -6506,7 +6350,7 @@
    "checks": []
   },
   {
-   "id": "s093",
+   "id": "s090",
    "title": "TRE-DF apura transporte de urnas em caminhonete com adesivo do PT",
    "summary": "Segundo o Tribunal Superior Eleitoral (TSE), o episódio ocorrido no Distrito Federal não comprometeu os resultados da votação.",
    "section": "republica",
@@ -6561,7 +6405,7 @@
    "checks": []
   },
   {
-   "id": "s091",
+   "id": "s088",
    "title": "Oncoclínicas obtém apoio de 61,6% dos credores e avança com recuperação extrajudicial",
    "summary": "A Oncoclínicas ​anunciou nesta ​sexta-feira que obteve adesão ⁠suficiente dos ‌credores para dar ...",
    "section": "empresas",
@@ -6616,7 +6460,62 @@
    "checks": []
   },
   {
-   "id": "s090",
+   "id": "s086",
+   "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
+   "summary": "Afastamento do presidente e do vice do Tribunal Constitucional ocorre em meio à disputa entre Donald Tusk e Karol Nawrocki.",
+   "section": "mundo",
+   "section_label": "Mundo",
+   "avg_bias": -1.45,
+   "counts": {
+    "L": 2,
+    "C": 0,
+    "R": 0,
+    "total": 2
+   },
+   "pct": {
+    "L": 100,
+    "C": 0,
+    "R": 0
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T02:44:26+00:00",
+   "articles": [
+    {
+     "source": "Diário do Centro do Mundo",
+     "source_id": "dcm",
+     "title": "Premiê da Polônia é acusado de tentativa de golpe após cerco policial a tribunal",
+     "link": "https://www.diariodocentrodomundo.com.br/premie-da-polonia-e-acusado-de-tentativa-de-golpe-apos-cerco-policial-a-tribunal/",
+     "bias": -1.5,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "",
+     "section_label": "Geral",
+     "image": "",
+     "factuality": "low",
+     "ownership": "independente"
+    },
+    {
+     "source": "Brasil 247",
+     "source_id": "b247",
+     "title": "Premier da Polônia é acusado de tentativa de golpe de Estado após cerco a tribunal",
+     "link": "https://www.brasil247.com/mundo/premier-da-polonia-e-acusado-de-tentativa-de-golpe-de-estado-apos-cerco-a-tribunal/",
+     "bias": -1.4,
+     "bucket": "L",
+     "via": "fonte",
+     "section": "mundo",
+     "section_label": "Mundo",
+     "image": "https://www.brasil247.com/wp-content/uploads/2024/11/20241126161140_356dc11a021ec9752c6b51740f18315cca9f8cc8a231573f1c4920fad014849a.jpg",
+     "factuality": "mixed",
+     "ownership": "independente"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "s085",
    "title": "PGR apoia quebra de sigilo de jornalista que investigou Flávio Dino",
    "summary": "Paulo Gonet defende a legalidade de medidas autorizadas por Moraes para identificar a origem de informações sobre carros usados por Flávio Dino.",
    "section": "brasilia",
@@ -6671,7 +6570,7 @@
    "checks": []
   },
   {
-   "id": "s088",
+   "id": "s083",
    "title": "Corinthians x Mirassol: onde assistir ao vivo e horário",
    "summary": "Corinthians atropela Mirassol e finalmente consegue uma vitória dentro do Campeonato Brasileiro",
    "section": "brasil",
@@ -6726,7 +6625,7 @@
    "checks": []
   },
   {
-   "id": "s087",
+   "id": "s082",
    "title": "'Quem Ama Cuida': Mau Mau e Felipe dão primeiro beijo e animam público: 'Representatividade'",
    "summary": "A espera dos fãs de Felipe e Mau Mau chegou ao fim em \" Quem Ama Cuida \". Os personagens interpretados por Pietro Antonelli e João Victor Gonçalves deram o primeiro beijo no capítulo exibido nesta sexta-feira (30), em uma sequência romântica que movimentou as redes sociais. Leia mais (10/30/2026 - 2",
    "section": "televisao",
@@ -6781,7 +6680,7 @@
    "checks": []
   },
   {
-   "id": "s086",
+   "id": "s081",
    "title": "Lideranças de esquerda no exterior criam canais digitais inspirados no ‘Exército do Lula’",
    "summary": "Canais de apoio a líderes de Argentina, França e Espanha somaram 249.000 integrantes em 2 dias",
    "section": "mundo",
@@ -6846,7 +6745,7 @@
    "checks": []
   },
   {
-   "id": "s085",
+   "id": "s080",
    "title": "EUA determinam que funcionários não essenciais deixem Arábia Saudita por segurança",
    "summary": "Redução de pessoal começou em 23 de outubro; funcionários dos EUA precisam de autorização especial para os aeroportos sauditas após os recentes ataques com mísseis e drones, informou a embaixada",
    "section": "mundo",
@@ -6901,7 +6800,7 @@
    "checks": []
   },
   {
-   "id": "s083",
+   "id": "s078",
    "title": "Gostosuras ou travessuras: por que as crianças pedem doces no Halloween?",
    "summary": "Uma das expressões mais conhecidas do Halloween, “gostosuras ou travessuras?\" é a versão aportuguesada da frase \"trick or treat\", do inglês. Ela é usada",
    "section": "entretenimento",
@@ -6956,7 +6855,7 @@
    "checks": []
   },
   {
-   "id": "s082",
+   "id": "s077",
    "title": "Por que El Salvador está enviando militares ao Haiti",
    "summary": "Governo Bukele anunciou mobilização de mais de 2 mil homens após desaparecimento de quatro soldados salvadorenhos que atuam em força da ONU de repressão a gangues.",
    "section": "pt-br",
@@ -7022,7 +6921,7 @@
    "checks": []
   },
   {
-   "id": "s081",
+   "id": "s076",
    "title": "Seminarista, lenhador e campeão paralímpico: veja as disputas que podem definir o controle do Senado nas eleições de meio de mandato nos EUA",
    "summary": "Nenhum democrata vence uma eleição estadual no Texas há mais de 30 anos, mas a esquerda voltou a se animar com o ex-professor James Talarico, candidato ao Senado",
    "section": "mundo",
@@ -7077,7 +6976,7 @@
    "checks": []
   },
   {
-   "id": "s080",
+   "id": "s075",
    "title": "5 filmes de terror que marcaram época: veja onde assistir aos clássicos",
    "summary": "De possessões demoníacas a assassinos mascarados, alguns filmes se tornaram referências do gênero e seguem um sucesso",
    "section": "entretenimento",
@@ -7132,7 +7031,7 @@
    "checks": []
   },
   {
-   "id": "s079",
+   "id": "s074",
    "title": "EUA aprovam venda de 500 mísseis Patriot para a Ucrânia",
    "summary": "A venda de armamentos ainda precisa ser aprovada pelo Congresso americano",
    "section": "mundo",
@@ -7187,7 +7086,7 @@
    "checks": []
   },
   {
-   "id": "s078",
+   "id": "s073",
    "title": "5 receitas temáticas para o Halloween",
    "summary": "Confira ideias para preparar pratos criativos e deixar o Halloween ainda mais divertido",
    "section": "paladar",
@@ -7242,7 +7141,7 @@
    "checks": []
   },
   {
-   "id": "s077",
+   "id": "s072",
    "title": "Bebê de 12 dias morre após ser atingido na cabeça por abacate na Argentina",
    "summary": "Um bebê de apenas 12 dias morreu após ser atingido na cabeça por um abacate enquanto estava no colo da mãe. O caso ocorreu na cidade de Quilmes, na Argentina.",
    "section": "cotidiano",
@@ -7297,7 +7196,7 @@
    "checks": []
   },
   {
-   "id": "s076",
+   "id": "s071",
    "title": "Como aliados reagem ao golpismo de Flávio Bolsonaro",
    "summary": "Levantamento com 155 eleitos do PL aponta que 117 ignoraram a carta de Flávio Bolsonaro que questiona o resultado das urnas.",
    "section": "expresso",
@@ -7367,7 +7266,7 @@
    "checks": []
   },
   {
-   "id": "s075",
+   "id": "s070",
    "title": "Rock the Mountain 2026: tudo o que você precisa saber sobre o festival",
    "summary": "O Rock the Mountain 2026 começou na sexta-feira (30), em Itaipava, distrito de Petrópolis, na Região Serrana do Rio de Janeiro. Em sua 13ª edição, o festival",
    "section": "entretenimento",
@@ -7422,7 +7321,7 @@
    "checks": []
   },
   {
-   "id": "s074",
+   "id": "s069",
    "title": "Marinho diz que não pretende ser chefe de gabinete de Lula",
    "summary": "Apesar da declaração, ministro afirma que está à disposição do presidente para cumprir qualquer missão em 2027",
    "section": "poder-governo",
@@ -7477,7 +7376,7 @@
    "checks": []
   },
   {
-   "id": "s072",
+   "id": "s067",
    "title": "Ex-príncipe Andrew pode ter traficado mulheres para castelo real na Escócia, investiga polícia",
    "summary": "Autoridades apuram denúncias de que residência oficial de férias da monarquia britânica teria sido usada para exploração sexual",
    "section": "mundo",
@@ -7532,7 +7431,7 @@
    "checks": []
   },
   {
-   "id": "s071",
+   "id": "s066",
    "title": "Votos antecipados batem recorde nos EUA, com mais de 49 milhões depositados a três dias das eleições",
    "summary": "A participação antecipada neste ciclo eleitoral dos Estados Unidos bateu um recorde. Mais de 49 milhões de americanos já votaram, seja pessoalmente ou pelo correio , de acordo com o Laboratório Eleitoral da Universidade da Flórida, um aumento em relação aos quase 46 milhões que votaram antes do dia ",
    "section": "mundo",
@@ -7587,7 +7486,7 @@
    "checks": []
   },
   {
-   "id": "s070",
+   "id": "s065",
    "title": "EUA cancelam foto de família do G20 após boicote à Rússia",
    "summary": "Alemanha e Reino Unido recusaram registro com Sergei Lavrov; anfitriões disseram querer evitar que impasse desviasse a atenção das discussões",
    "section": "poder-internacional",
@@ -7642,7 +7541,7 @@
    "checks": []
   },
   {
-   "id": "s069",
+   "id": "s064",
    "title": "Ator demitido pela Marvel afirma que vai se candidatar à presidência dos EUA",
    "summary": "Intérprete de James Rhodes no filme \"Homem de Ferro\", de 2008, Terrence Howard quer se candidatar à presidência dos Estados Unidos . Leia mais (10/31/2026 - 09h18)",
    "section": "voceviu",
@@ -7697,7 +7596,7 @@
    "checks": []
   },
   {
-   "id": "s068",
+   "id": "s063",
    "title": "Irã atualiza alvos de EUA e Israel e ordena resposta sem limites geográficos",
    "summary": "Em um comunicado, o líder supremo do Irã, Mojtaba Khamenei, afirmou neste sábado (31) que o país poderá voltar a atacar os Estados Unidos caso a guerra seja retomada pelos EUA no Oriente Médio. Khamenei mencionou uma retaliação sem \"limites geográficos\" diante de uma eventual ofensiva.",
    "section": "mundo",
@@ -7752,7 +7651,7 @@
    "checks": []
   },
   {
-   "id": "s067",
+   "id": "s062",
    "title": "Mojtaba Khamenei, líder supremo do Irã, adverte Estados Unidos contra novos ataques",
    "summary": "Declaração foi feita num momento de incertezas sobre a continuidade da guerra no Oriente Médio",
    "section": "mundo",
@@ -7807,7 +7706,7 @@
    "checks": []
   },
   {
-   "id": "s066",
+   "id": "s061",
    "title": "Nevoeiro causa cancelamentos e desvios de voos no aeroporto de Confins",
    "summary": "Denso nevoeiro provoca desvios e cancelamentos na madrugada de sábado após fortes chuvas na região metropolitana",
    "section": "brasil",
@@ -7862,7 +7761,7 @@
    "checks": []
   },
   {
-   "id": "s065",
+   "id": "s060",
    "title": "Dólar sobe a R$ 5,44 e tem maior cotação de 2026; alta na semana é de 9,15%",
    "summary": "Indicador avançou depois da vitória de Lula e subiu de 119,26 pontos em 23 de outubro para 141,02 pontos neste sábado (31.out)",
    "section": "mercados",
@@ -7917,7 +7816,7 @@
    "checks": []
   },
   {
-   "id": "s063",
+   "id": "s058",
    "title": "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro na boca do caixa, diz PF",
    "summary": "Operação Tomada de Contas indica que conselheiro Sérgio Ricardo de Almeida, preso na quinta, 29, sob suspeita de liderar operadores financeiros em esquema de propinas na Corte estadual, fez 64 saques no guichê da agência e outros 86 em terminal de autoatendimento durante dez meses, em 2025; Estadão ",
    "section": "politica",
@@ -7972,7 +7871,7 @@
    "checks": []
   },
   {
-   "id": "s062",
+   "id": "s057",
    "title": "Caso Porsche: Fernando Sastre é condenado a 17 anos de prisão em SP",
    "summary": "O empresário Fernando Sastre de Andrade Filho foi condenado a 17 anos, um mês e dez dias de prisão, em regime inicialmente fechado, pela morte do motorista de aplicativo Ornaldo da Silva Viana, de 52 anos, e pelos ferimentos graves provocados em um passageiro durante um acidente na zona leste de São",
    "section": "",
@@ -8027,7 +7926,7 @@
    "checks": []
   },
   {
-   "id": "s061",
+   "id": "s056",
    "title": "Chuvas intensas e ar seco atingem o país na virada do mês",
    "summary": "Inmet emite avisos de tempestades para o Sudeste e o Centro-Oeste e alerta para baixa umidade do ar no Nordeste durante o fim de semana",
    "section": "meio-ambiente",
@@ -8082,7 +7981,7 @@
    "checks": []
   },
   {
-   "id": "s060",
+   "id": "s055",
    "title": "Patrick Stewart: entenda doenças que afetaram ator de X-Men",
    "summary": "Patrick Stewart morreu na quarta-feira (28/10), em Los Angeles, nos Estados Unidos. Ele era uma lenda dos X-Men",
    "section": "saude",
@@ -8137,7 +8036,7 @@
    "checks": []
   },
   {
-   "id": "s059",
+   "id": "s054",
    "title": "‘Brasil com S’: estudantes organizam novos atos em defesa da democracia",
    "summary": "Mobilização promovida por entidades estudantis busca dar sustentação ao presidente Lula, reeleito no último domingo",
    "section": "blogs",
@@ -8192,117 +8091,7 @@
    "checks": []
   },
   {
-   "id": "s058",
-   "title": "EUA, Coreia do Sul e Japão voltam a se comprometer com a desnuclearização ‘completa’ do Norte",
-   "summary": "Representantes de Washington, Seul e Tóquio reafirmaram objetivo enquanto cresce expectativa para encontro entre Donald Trump e Kim Jong-un na China em novembro",
-   "section": "internacional",
-   "section_label": "Mundo",
-   "avg_bias": -0.05,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:34:43+00:00",
-   "articles": [
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "EUA, Coreia do Sul e Japão voltam a se comprometer com a desnuclearização ‘completa’ do Norte",
-     "link": "https://www.estadao.com.br/internacional/eua-coreia-do-sul-e-japao-voltam-a-se-comprometer-com-a-desnuclearizacao-completa-do-norte-npr/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "EUA, Coreia do Sul e Japão se comprometem com desnuclearização do Norte",
-     "link": "https://www.poder360.com.br/poder-internacional/eua-coreia-do-sul-e-japao-se-comprometem-com-desnuclearizacao-do-norte/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-internacional",
-     "section_label": "Poder",
-     "image": "",
-     "factuality": "high",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s057",
-   "title": "Alemanha mobiliza polícia antes de protestos de jovens em mais de 30 Cidades",
-   "summary": "A polícia alemã foi mobilizada neste sábado (31) em todo o país, enquanto muitos comerciantes protegiam suas vitrines e fachadas antes de manifestações que podem reunir dezenas de milhares de jovens.",
-   "section": "mundo",
-   "section_label": "Mundo",
-   "avg_bias": -0.1,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T16:37:09+00:00",
-   "articles": [
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Alemanha mobiliza a polícia antes de um grande dia de protestos juvenis",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/31/alemanha-mobiliza-a-policia-antes-de-um-grande-dia-de-protestos-juvenis.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    },
-    {
-     "source": "G1",
-     "source_id": "g1",
-     "title": "Alemanha mobiliza polícia antes de protestos de jovens em mais de 30 Cidades",
-     "link": "https://g1.globo.com/mundo/noticia/2026/10/31/alemanha-mobiliza-a-policia-antes-de-um-grande-dia-de-protestos-juvenis.ghtml",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mundo",
-     "section_label": "Mundo",
-     "image": "https://s2-g1.glbimg.com/a6dIGiV9iLcS3CB5-2u22jOIbcE=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/f/h/ENoVCIRGeiiBrQUQvyiQ/afp-20261031-d4zl4hh-v1-midres-germanypoliticsprotests.jpg",
-     "factuality": "high",
-     "ownership": "conglomerado"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s056",
+   "id": "s053",
    "title": "Veja como se proteger do golpe do WhatsApp que esvazia sua conta com apenas um toque",
    "summary": "Falha em celulares desatualizados permite acesso hacker sem clique em links ou download de arquivos maliciosos. Veja como se proteger",
    "section": "economia",
@@ -8357,7 +8146,7 @@
    "checks": []
   },
   {
-   "id": "s055",
+   "id": "s052",
    "title": "Novo Concurso Nacional Unificado pode oferecer até 3 mil vagas em 2027",
    "summary": "A primeira edição do concurso foi realizada em 2024. A segunda, em 2025",
    "section": "",
@@ -8412,7 +8201,7 @@
    "checks": []
   },
   {
-   "id": "s054",
+   "id": "s051",
    "title": "Ex-BBBs Renata Saldanha e Maike anunciam gravidez do primeiro filho",
    "summary": "Casal formado no reality show revelou a novidade nas redes sociais com um vídeo; veja",
    "section": "entretenimento",
@@ -8467,7 +8256,7 @@
    "checks": []
   },
   {
-   "id": "s053",
+   "id": "s050",
    "title": "Reino Unido sinaliza que governo vai considerar um pedido de desculpas por seu papel na escravidão",
    "summary": "Primeiro-ministro Andy Burnham sinaliza abertura ao reconhecimento da responsabilidade histórica britânica, enquanto países caribenhos mantêm cobrança por reparações",
    "section": "internacional",
@@ -8522,7 +8311,7 @@
    "checks": []
   },
   {
-   "id": "s052",
+   "id": "s049",
    "title": "A história de como uma sobrevivente de violência sexual do século 15 buscou justiça",
    "summary": "Jehanne era praticamente desconhecida na cidade francesa de Dijon durante o inverno de 1472, quando foi vítima de um ato de violência atroz. Leia mais (10/31/2026 - 11h08)",
    "section": "mundo",
@@ -8577,7 +8366,7 @@
    "checks": []
   },
   {
-   "id": "s051",
+   "id": "s048",
    "title": "TJ de Alagoas determina que governo libere acesso de equipe de transição de JHC a sistemas estaduais",
    "summary": "O Governo de Alagoas publicou, nesta sexta-feira (30), o decreto que estabelece as regras para a transição de governo. A abertura dos trabalhos está marcada para a próxima terça-feira (3), pela manhã, na sede da Vice-Governadoria, em Maceió. O governador eleito, João Henrique Caldas (JHC), tem até 6",
    "section": "politica",
@@ -8632,62 +8421,7 @@
    "checks": []
   },
   {
-   "id": "s050",
-   "title": "Chile: vice-ministro de Justiça renuncia após assinar redução de penas de abusadores de menores",
-   "summary": "Ao todo, 56 condenados por abuso sexual de menores foram beneficiados. Três pessoas condenadas por violações de direitos humanos durante a ditadura Pinochet também tiveram penas reduzidas",
-   "section": "internacional",
-   "section_label": "Mundo",
-   "avg_bias": -0.05,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T17:18:45+00:00",
-   "articles": [
-    {
-     "source": "Estadão",
-     "source_id": "estadao",
-     "title": "Chile: vice-ministro de Justiça renuncia após assinar redução de penas de abusadores de menores",
-     "link": "https://www.estadao.com.br/internacional/chile-vice-ministro-de-justica-renuncia-apos-assinar-reducao-de-penas-de-abusadores-de-menores-npr/",
-     "bias": -0.1,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "internacional",
-     "section_label": "Mundo",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "Poder360",
-     "source_id": "poder360",
-     "title": "Vice-ministro da Justiça do Chile renuncia após reduzir pena de abusadores",
-     "link": "https://www.poder360.com.br/poder-internacional/vice-ministro-da-justica-do-chile-renuncia-apos-reduzir-pena-de-abusadores/",
-     "bias": 0.0,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "poder-internacional",
-     "section_label": "Poder",
-     "image": "",
-     "factuality": "high",
-     "ownership": "independente"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s049",
+   "id": "s047",
    "title": "Lições da vitória: mais povo, menos austeridade",
    "summary": "Após a vitória sobre o fascismo, o desafio é construir uma Pauta do Povo para enfrentar o rentismo, ampliar direitos e reconstruir o país.",
    "section": "opiniao",
@@ -8742,7 +8476,7 @@
    "checks": []
   },
   {
-   "id": "s048",
+   "id": "s046",
    "title": "Homem é preso com arsenal de armas e explosivos em Guarujá",
    "summary": "PM suspeita que arsenal seja usado por facções criminosas para crimes de grande porte. Homem já possuia passagem por porte ilegal de armas",
    "section": "brasil",
@@ -8797,7 +8531,7 @@
    "checks": []
   },
   {
-   "id": "s047",
+   "id": "s045",
    "title": "Vídeo: Incêndio destrói hotel próximo ao Everest em meio a nevasca; hóspedes são evacuados",
    "summary": "Todos os hóspedes foram retirados em segurança e não há relatos sobre vítimas",
    "section": "mundo",
@@ -8852,7 +8586,7 @@
    "checks": []
   },
   {
-   "id": "s046",
+   "id": "s044",
    "title": "Tragédia em Congonhas: acidente com Fokker 100 que matou 99 pessoas completa 30 anos; relembre",
    "summary": "Aeronave caiu sobre casas na zona sul de São Paulo, segundos após decolar do Aeroporto de Congonhas, em 31 de outubro de 1996",
    "section": "brasil",
@@ -8907,7 +8641,7 @@
    "checks": []
   },
   {
-   "id": "s045",
+   "id": "s043",
    "title": "Primeiro paciente recebe tratamento pioneiro no mundo com células-tronco para Parkinson",
    "summary": "Terapia usa células produzidas em laboratório para repor neurônios que fabricam dopamina e foram perdidos em pacientes com Parkinson",
    "section": "saude",
@@ -8962,62 +8696,7 @@
    "checks": []
   },
   {
-   "id": "s044",
-   "title": "Fitch rebaixa perspectiva da nota de crédito da França após contração da economia",
-   "summary": "A agência de classificação de risco Fitch mudou a perspectiva da nota de crédito da França para negativa em uma decisão extraordinária, anunciada pouco depois da divulgação de dados que mostraram uma contração inesperada da economia no terceiro trimestre. Leia mais (10/31/2026 - 11h45)",
-   "section": "mercado",
-   "section_label": "Mercado",
-   "avg_bias": -0.25,
-   "counts": {
-    "L": 0,
-    "C": 2,
-    "R": 0,
-    "total": 2
-   },
-   "pct": {
-    "L": 0,
-    "C": 100,
-    "R": 0
-   },
-   "blindspot": null,
-   "updated": "2026-10-31T17:45:00+00:00",
-   "articles": [
-    {
-     "source": "Folha de S.Paulo",
-     "source_id": "folha",
-     "title": "Fitch rebaixa perspectiva da nota de crédito da França após contração da economia",
-     "link": "https://www1.folha.uol.com.br/mercado/2026/10/fitch-rebaixa-perspectiva-da-nota-de-credito-da-franca-apos-contracao-da-economia.shtml",
-     "bias": -0.3,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "mercado",
-     "section_label": "Mercado",
-     "image": "",
-     "factuality": "high",
-     "ownership": "individuo"
-    },
-    {
-     "source": "UOL Notícias",
-     "source_id": "uol",
-     "title": "Fitch mantém classificação A+ da dívida da França, mas rebaixa sua perspectiva",
-     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/fitch-mantem-classificacao-a-da-divida-da-franca-mas-rebaixa-sua-perspectiva.htm",
-     "bias": -0.2,
-     "bucket": "C",
-     "via": "fonte",
-     "section": "",
-     "section_label": "Geral",
-     "image": "",
-     "factuality": "high",
-     "ownership": "corporacao"
-    }
-   ],
-   "hub": null,
-   "longreads": [],
-   "world": [],
-   "checks": []
-  },
-  {
-   "id": "s043",
+   "id": "s042",
    "title": "Binance diz ter coberto 90% das perdas após ataque hacker de mais de US$ 6 bilhões",
    "summary": "Binance promete cobrir prejuízo de investidores após roubo bilionário de hackers A corretora de criptomoedas Binance, alvo de um ataque hacker que resultou no roubo de mais de US$ 6 bilhões, anunciou neste sábado (31) que já conseguiu cobrir 90% do valor das perdas. A empresa afirmou que usará recur",
    "section": "tecnologia",
@@ -9072,7 +8751,7 @@
    "checks": []
   },
   {
-   "id": "s042",
+   "id": "s041",
    "title": "Ministros vão ao Mato Grosso do Sul para investigar violência política contra indígenas",
    "summary": "Denúncias envolvem tentativas de assassinato, incêndio e ameaça de envenenamento de água",
    "section": "brasil",

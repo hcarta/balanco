@@ -249,7 +249,7 @@ sources:
     factuality: low
     ownership: independente
     owner_detail: Revista Oeste
-    longform: true
+    # fora do "Aprofunde-se": publica notícia, não texto de fôlego (31/10/2026)
 
   # ── Fontes sem RSS público (coleta via Arc XP / Google News sitemap) ──
   - id: estadao
