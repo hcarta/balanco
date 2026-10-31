@@ -9,6 +9,7 @@ sources:
     factuality: high
     ownership: conglomerado
     owner_detail: Grupo Globo
+    group: globo
   - id: folha
     name: Folha de S.Paulo
     rss: https://feeds.folha.uol.com.br/emcimadahora/rss091.xml
@@ -37,6 +38,7 @@ sources:
     factuality: very_high
     ownership: governo
     owner_detail: BBC (Reino Unido, financiamento público)
+    group: bbc
   - id: poder360
     name: Poder360
     rss: https://www.poder360.com.br/feed/
@@ -183,6 +185,7 @@ sources:
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
+    group: nytimes
   - id: nytimestech
     name: New York Times (Tecnologia)
     rss: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
@@ -191,6 +194,7 @@ sources:
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
+    group: nytimes
 
   - id: guardian
     name: The Guardian
@@ -208,6 +212,7 @@ sources:
     factuality: very_high
     ownership: governo
     owner_detail: BBC (Reino Unido, financiamento público)
+    group: bbc
   - id: infomoney
     name: InfoMoney
     rss: https://www.infomoney.com.br/feed/
@@ -269,6 +274,7 @@ sources:
     factuality: high
     ownership: conglomerado
     owner_detail: Grupo Globo
+    group: globo
   - id: valor
     name: Valor Econômico
     rss: https://valor.globo.com/sitemap/valor/news.xml
@@ -277,6 +283,7 @@ sources:
     factuality: high
     ownership: conglomerado
     owner_detail: Grupo Globo
+    group: globo
   - id: gazeta
     name: Gazeta do Povo
     rss: https://www.gazetadopovo.com.br/sitemap.xml

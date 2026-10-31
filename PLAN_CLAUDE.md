@@ -11,7 +11,7 @@
 > Esta seção foi escrita após a implementação das fases F1–F4 de `PLANO_CONEXOES.md`. O restante do documento continua válido como diagnóstico; onde houver divergência, vale esta revisão.
 
 ### Baseline atualizado
-- **88 testes, 0 skipped** (não 74/1). O `README.md` foi atualizado.
+- **99 testes, 0 skipped** (não 74/1). O `README.md` foi atualizado.
 - 120 histórias · 1.470 artigos · 375 em histórias · 1 com longreads · 7 com world · 0 checagens · 9 hubs · 2 developments · 76 com 2 veículos.
 - Conexões medidas: longform P 0,94/R 0,62; internacional P 1,00/R 0,91 (40 pares); checagens P 1,00/R 0,67 (67 pares, corpus realista) — mas **0 matches na rodada**.
 
@@ -51,6 +51,8 @@ O plano de 5 fases × 3–4 dias é maior que o objetivo atual (precisão das co
 - **F-10:** `section_label` virou whitelist; “Geral”, “Pt-br”, siglas de UF e editorias desconhecidas não viram mais filtro.
 - **Lá fora / Binance:** número do evento (US$ 6,3 bi) + entidade passou a valer; “Binance” × NYT Technology entrou (P 1,00/R 0,91 do conjunto mantidos). A URL de análise citada aparece na história irmã do Bitcoin; a principal mostra outra peça do NYT.
 - **Blindspot:** piso baixado para **3+ coberturas** (caso França: 1 L / 2 C / 0 R → blindspot de direita). Só-centro e histórias de 2 veículos continuam `None`; na rodada, 102 blindspots (57 esquerda, 45 direita).
+- **F-05:** título representante por **medoide** (similaridade média com as demais manchetes), com `rep_score` só como desempate; sufixos de veículo e marcadores de vídeo removidos.
+- **A-7:** grupos editoriais independentes em `sources.yaml` — Globo (G1/O Globo/Valor), BBC (Brasil/World) e NYT (World/Tecnologia). `counts.independent`/`counts.groups`; barra e blindspot usam grupos; a UI mostra “coberturas · grupos”. Histórias de um só grupo não entram. **99 testes**.
 - **Custo:** `data.json` 1,4 MB; arquivo diário slim 717 KB (antes 1,4 MB); rodada ~125 s.
 - **Suíte:** **90 testes**.
 

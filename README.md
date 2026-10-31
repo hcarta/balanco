@@ -16,7 +16,7 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 
 - **Masthead + destaque**: a história mais repercutida entre os veículos abre a edição.
 - **Hero lateral**: as 3 mais repercutidas no centro de alta factualidade, ao lado do destaque.
-- **Barra de viés** em cada história, com contagem e percentuais por lado.
+- **Barra de viés** em cada história, com percentuais por **grupos editoriais independentes** (G1 + O Globo + Valor = 1 voz; a etiqueta mostra coberturas · grupos).
 - **Comparar os lados**: painel em 3 colunas (esquerda/centro/direita) com veículo, factualidade e propriedade.
 - **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé), máx. 2 por fonte, em **2 colunas** com thumb quando o feed oferece imagem.
 - **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
@@ -42,7 +42,7 @@ Complementa o TF-IDF com similaridade semântica (regra híbrida: TF-IDF **ou** 
 
 ### Testes (rode antes de mudar o núcleo)
 ```bash
-python -m pytest tests/ -q   # 88 testes: coletores, vereditos, cache, matching, conexões, fuso, ids
+python -m pytest tests/ -q   # 99 testes: coletores, vereditos, cache, matching, conexões, fuso, ids
 ```
 
 O viés vem de `sources.yaml` (nível de **publicação**) e é o mesmo para toda matéria daquela fonte. **Não há chamada de IA nem custo por artigo.** Esporte (`esportes`, `futebol`) e conteúdo de serviço (loteria, horóscopo, previsão do tempo) ficam fora da edição por decisão editorial.

@@ -357,6 +357,31 @@ def bucket(score):
     return "C"
 
 
+def _group_key(x):
+    return x.get("group") or x.get("source_id") or x.get("source") or "?"
+
+
+def independent_counts(arts, bias_key="bias"):
+    """Conta grupos editoriais, não matérias (A-7).
+
+    G1 + O Globo + Valor = 1 grupo (Globo); BBC Brasil/World = 1; NYT
+    World/Tecnologia = 1. O bucket do grupo é o do viés médio das matérias.
+    """
+    by = {}
+    for x in arts:
+        by.setdefault(_group_key(x), []).append(x)
+    gc = {"L": 0, "C": 0, "R": 0}
+    biases = []
+    for xs in by.values():
+        vals = [float(x.get(bias_key, 0) or 0) for x in xs]
+        gb = sum(vals) / len(vals) if vals else 0.0
+        gc[bucket(gb)] += 1
+        biases.append(gb)
+    ind = sum(gc.values())
+    avg = sum(biases) / len(biases) if biases else 0.0
+    return gc, ind, avg
+
+
 # Editorias fora da edição (o foco é poder, economia e sociedade)
 EXCLUDED_SECTIONS = {"esportes", "futebol", "astrologia", "loterias"}
 
@@ -463,6 +488,9 @@ def rep_score(item: dict, meta: dict) -> float:
     """
     t = item.get("title", "")
     s = min(len(t), 140) / 140
+    sec = _norm_sec(item.get("section"))
+    if sec in LONGFORM_SECTIONS:
+        s -= 0.25  # opinião/blog/coluna não é a melhor manchete factual
     f = (meta.get(item.get("source_id"), {}) or {}).get("factuality")
     if f in ("very_high", "high"):
         s += 0.30
@@ -518,6 +546,42 @@ def assign_aliases(stories, previous):
     return stories
 
 
+SOURCE_SUFFIX = re.compile(
+    r"\s+[-–|]\s+(Folha de S\.Paulo|Folha|G1|O Globo|Estadão|UOL|CNN Brasil|"
+    r"BBC Brasil|BBC News|The Guardian|New York Times|Valor Econômico|"
+    r"Metrópoles|Poder360|Gazeta do Povo|InfoMoney|Veja|Exame|SBT News|"
+    r"Band|Terra|R7|IstoÉ|CartaCapital|Brasil 247|Jovem Pan|Crusoé|"
+    r"Nexo Jornal|Agência Pública|The Intercept Brasil|Repórter Brasil)\s*$",
+    re.I)
+
+
+def _clean_title(t: str | None) -> str:
+    """F-05: remove sufixo de veículo e marcador de vídeo do título exibido."""
+    t = (t or "").strip()
+    t = SOURCE_SUFFIX.sub("", t).strip()
+    t = re.sub(r"^\s*(VÍDEOS?|AO VIVO|ASSISTA)\s*:\s*", "", t, flags=re.I)
+    t = re.sub(r"\s*\((vídeo|ao vivo|podcast|áudio)\)\s*$", "", t, flags=re.I)
+    return t.strip() or (t or "")
+
+
+def _representative(items, meta):
+    """F-05: medoide (maior similaridade média com os demais títulos).
+
+    O comprimento/factualidade (rep_score) só desempata. Assim a manchete é
+    a mais central, não a mais longa ou a mais chamativa.
+    """
+    if len(items) <= 1:
+        return items[0]
+    X = tfidf_matrix([{"title": x.get("title", "")} for x in items])
+    S = X @ X.T
+    means = (S.sum(axis=1) - 1) / (len(items) - 1)
+    scores = [rep_score(x, meta) for x in items]
+    floor = max(scores) - 0.25
+    cand = [i for i, sc in enumerate(scores) if sc >= floor]
+    best = max(cand, key=lambda i: (float(means[i]), scores[i]))
+    return items[best]
+
+
 def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
     # rede de segurança: nenhum título de serviço/loteria entra na capa
     articles = [a for a in articles
@@ -527,8 +591,10 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
     meta = {s["id"]: s for s in sources}
     stories = []
     for g in groups:
-        # uma "história" precisa de pelo menos 2 veículos distintos
-        if len({articles[i]["source_id"] for i in g}) < 2:
+        # uma "história" precisa de pelo menos 2 grupos editoriais distintos
+        gids = {meta.get(articles[i]["source_id"], {}).get("group")
+                or articles[i]["source_id"] for i in g}
+        if len(gids) < 2:
             continue
         items = []
         for i in g:
@@ -539,30 +605,37 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             else:
                 # posicionamento FIXO da publicação, sem análise por matéria
                 score, via = round(float(a["base_bias"]), 2), "fonte"
+            group = meta.get(a["source_id"], {}).get("group") or a["source_id"]
             items.append({**a, "bias_score": round(score, 2), "via": via,
-                          "bucket": bucket(score)})
+                          "bucket": bucket(score), "group": group})
         items.sort(key=lambda x: x["bias_score"])
         l = sum(1 for x in items if x["bucket"] == "L")
         c = sum(1 for x in items if x["bucket"] == "C")
         r = sum(1 for x in items if x["bucket"] == "R")
         tot = len(items)
-        avg = sum(x["bias_score"] for x in items) / tot
-        blind = blindspot_of(l, c, r)
-        rep = max(items, key=lambda x: rep_score(x, meta))
-        # resumo: pega o primeiro disponível (sitemaps não trazem dek)
-        summary = next((x["summary"] for x in items if x.get("summary")), "")
+        gc, ind, avg = independent_counts(items, "bias_score")
+        blind = blindspot_of(gc["L"], gc["C"], gc["R"])
+        rep = _representative(items, meta)
+        rep_title = _clean_title(rep["title"])
+        # resumo: prefere o do representante; senão o primeiro disponível
+        summary = rep.get("summary") or next(
+            (x["summary"] for x in items if x.get("summary")), "")
         stories.append({
-            "id": _stable_id(items), "title": rep["title"],
+            "id": _stable_id(items), "title": rep_title,
             "summary": summary[:300],
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
             "avg_bias": round(avg, 2),
-            "counts": {"L": l, "C": c, "R": r, "total": tot},
-            "pct": {"L": round(100 * l / tot), "C": round(100 * c / tot), "R": round(100 * r / tot)},
+            "counts": {"L": l, "C": c, "R": r, "total": tot,
+                       "independent": ind, "groups": gc},
+            "pct": {"L": round(100 * gc["L"] / ind) if ind else 0,
+                    "C": round(100 * gc["C"] / ind) if ind else 0,
+                    "R": round(100 * gc["R"] / ind) if ind else 0},
             "blindspot": blind,
             "updated": max(x["published"] for x in items),
             "articles": [{
                 "source": x["source_name"], "source_id": x["source_id"],
+                "group": x.get("group") or x["source_id"],
                 "title": x["title"], "link": x["link"],
                 "bias": x["bias_score"], "bucket": x["bucket"], "via": x["via"],
                 "section": x.get("section", ""),
@@ -760,11 +833,14 @@ def _recompute(s) -> dict:
     l = sum(1 for x in arts if x.get("bucket") == "L")
     c = sum(1 for x in arts if x.get("bucket") == "C")
     r = sum(1 for x in arts if x.get("bucket") == "R")
-    tot = len(arts) or 1
-    s["counts"] = {"L": l, "C": c, "R": r, "total": len(arts)}
-    s["pct"] = {"L": round(100 * l / tot), "C": round(100 * c / tot), "R": round(100 * r / tot)}
-    s["avg_bias"] = round(sum(x.get("bias", 0) for x in arts) / tot, 2)
-    s["blindspot"] = blindspot_of(l, c, r)
+    gc, ind, avg = independent_counts(arts, "bias")
+    s["counts"] = {"L": l, "C": c, "R": r, "total": len(arts),
+                   "independent": ind, "groups": gc}
+    s["pct"] = {"L": round(100 * gc["L"] / ind) if ind else 0,
+                "C": round(100 * gc["C"] / ind) if ind else 0,
+                "R": round(100 * gc["R"] / ind) if ind else 0}
+    s["avg_bias"] = round(avg, 2)
+    s["blindspot"] = blindspot_of(gc["L"], gc["C"], gc["R"])
     return s
 
 

@@ -442,6 +442,9 @@ function featuredVisible(){
   return S.filter==='all' && !S.q.trim() && !S.ed && !S.src;
 }
 
+const covLabel = s => `${s.counts.total} coberturas` +
+  (s.counts.independent!=null ? ` · ${s.counts.independent} grupos` : '');
+
 /* ordem base do feed: cronologia primeiro; dentro da mesma hora
    (tolerância de ±1h), vale o nº de veículos que cobriram */
 function baseOrder(list){
@@ -515,8 +518,8 @@ function renderFeatured(){
   if(!top){ el.innerHTML=''; S.featuredId=null; return; }
   S.featuredId = top.id;
   const kick = top.blindspot
-    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${top.counts.total} coberturas</div>`
-    : `<div class="kicker">Em foco · ${top.counts.total} coberturas</div>`;
+    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${covLabel(top)}</div>`
+    : `<div class="kicker">Em foco · ${covLabel(top)}</div>`;
   const lead = top.articles[0];
   const img = storyImg(top);
   const featCons = centerTrusted(top) >= 3
@@ -551,7 +554,7 @@ function renderFeatured(){
         <div>
           <h4>${esc(s.title)}</h4>
           ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
-          <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
+          <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}</div>
         </div>
       </div>
       ${bar}
@@ -650,7 +653,7 @@ function pauta(s){
   return `<div class="pauta">
     ${sibs.length?`<div class="bl"><div class="bh">🔗 Outros ângulos desta pauta · ${esc(s.hub.label)}</div>
       <div class="bgrid">${sibs.map(x=>`<div class="bart"><a href="#${esc(x.id)}" class="open-sib" data-id="${esc(x.id)}">${esc(x.title)}</a>
-        <small>${x.counts.total} coberturas${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div></div>`:''}
+        <small>${covLabel(x)}${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div></div>`:''}
     ${dev.length?`<div class="bl"><div class="bh">＋ Também apurado nesta história</div>
       ${dev.map(d=>`<div class="bart"><span class="devin">${esc(d.title)}</span>
         <small>${d.total} cobertura${d.total===1?'':'s'}</small></div>`).join('')}</div>`:''}
@@ -717,12 +720,11 @@ function renderFeed(){
     const blind = s.blindspot
       ? `<span class="badge blind"><span class="spark">⚡</span>Blindspot ${blindShort(s.blindspot)}</span>`
       : '';
-    const srcs = new Set(s.articles.map(a=>a.source)).size;
     const img = storyImg(s);
     const cons = centerTrusted(s) >= 3
       ? `<span class="badge cons" title="${centerTrusted(s)} veículos de centro com alta factualidade cobrem esta história">✓ Consenso</span>` : '';
     return `<article class="story" data-id="${s.id}">
-      <div class="top">${blind}${checksBadges(s)}${cons}<span class="badge plain">${s.counts.total} coberturas · ${srcs} veículos</span>${s.hub?`<span class="badge hub" title="Esta história faz parte de uma pauta com ${s.hub.size} ângulos">🔗 pauta · ${esc(s.hub.label)}</span>`:''}</div>
+      <div class="top">${blind}${checksBadges(s)}${cons}<span class="badge plain">${covLabel(s)}</span>${s.hub?`<span class="badge hub" title="Esta história faz parte de uma pauta com ${s.hub.size} ângulos">🔗 pauta · ${esc(s.hub.label)}</span>`:''}</div>
       <div class="sgrid"><div>
       ${s.section_label&&s.section_label!=='Geral'?`<div class="kicker-sec">${esc(s.section_label)}</div>`:''}
       <h3><a class="toggle-story" href="#" role="button">${hi(s.title)}</a></h3>
@@ -783,7 +785,7 @@ function renderRail(){
           <span class="bC" style="width:${s.pct.C}%"></span>
           <span class="bR" style="width:${s.pct.R}%"></span>
         </div>
-        <div class="rl">${desc} · ${s.counts.total} coberturas</div>
+        <div class="rl">${desc} · ${covLabel(s)}</div>
       </div>`;
     }).join('')
     : `<p style="font-family:var(--serif);font-size:14.5px;color:var(--faint);font-style:italic;margin:0">Nenhuma história com cobertura desequilibrada suficiente para virar blindspot nesta edição.</p>`

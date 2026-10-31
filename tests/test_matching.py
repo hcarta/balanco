@@ -337,8 +337,13 @@ def test_consolidate_recomputes_counts_and_blindspot():
     out = consolidate([a, b])
     assert len(out) == 1
     s = out[0]
-    assert s["counts"] == {"L": 0, "C": 0, "R": 4, "total": 4}
-    assert s["blindspot"] == "left", "4 matérias de direita e nenhuma de esquerda"
+    assert s["counts"]["L"] == 0
+    assert s["counts"]["C"] == 0
+    assert s["counts"]["R"] == 4
+    assert s["counts"]["total"] == 4
+    assert s["counts"]["independent"] == 4
+    assert s["counts"]["groups"] == {"L": 0, "C": 0, "R": 4}
+    assert s["blindspot"] == "left", "4 grupos de direita e nenhum de esquerda"
 
 
 def test_attach_hubs_groups_narrative_without_merging():
@@ -513,5 +518,84 @@ def test_build_marks_three_vehicle_right_blindspot():
     } for i, s in enumerate(srcs)]
     out = app.build(srcs, arts, {})
     assert len(out) == 1
-    assert out[0]["counts"] == {"L": 1, "C": 2, "R": 0, "total": 3}
+    assert out[0]["counts"]["L"] == 1
+    assert out[0]["counts"]["C"] == 2
+    assert out[0]["counts"]["R"] == 0
+    assert out[0]["counts"]["total"] == 3
+    assert out[0]["counts"]["independent"] == 3
+    assert out[0]["counts"]["groups"] == {"L": 1, "C": 2, "R": 0}
     assert out[0]["blindspot"] == "right"
+
+
+def test_independent_counts_collapses_same_owner():
+    arts = [
+        {"source_id": "g1", "group": "globo", "bias": 0.0, "bucket": "C"},
+        {"source_id": "oglobo", "group": "globo", "bias": 0.1, "bucket": "C"},
+        {"source_id": "folha", "group": "folha", "bias": -0.6, "bucket": "L"},
+        {"source_id": "uol", "group": "uol", "bias": 0.0, "bucket": "C"},
+    ]
+    gc, ind, avg = app.independent_counts(arts, "bias")
+    assert gc == {"L": 1, "C": 2, "R": 0}
+    assert ind == 3
+
+
+def test_build_requires_two_independent_groups_and_counts_them():
+    now = time.time()
+    title = "Senado aprova marco fiscal em votação apertada"
+    srcs = [
+        {"id": "g1", "name": "G1", "group": "globo", "bias": 0.0,
+         "factuality": "high", "ownership": "conglomerado"},
+        {"id": "oglobo", "name": "O Globo", "group": "globo", "bias": 0.1,
+         "factuality": "high", "ownership": "conglomerado"},
+        {"id": "folha", "name": "Folha", "group": "folha", "bias": -0.6,
+         "factuality": "high", "ownership": "familia"},
+    ]
+    arts = [{
+        "title": title, "link": f"https://x/{s['id']}", "source_id": s["id"],
+        "source_name": s["name"], "base_bias": s["bias"], "ts": now,
+        "published": "2026-10-31T12:00:00+00:00", "section": "politica",
+        "summary": "", "first_seen": "2026-10-31T12:00:00+00:00",
+    } for s in srcs]
+    out = app.build(srcs, arts, {})
+    assert len(out) == 1
+    assert out[0]["counts"]["total"] == 3
+    assert out[0]["counts"]["independent"] == 2
+    assert out[0]["counts"]["groups"] == {"L": 1, "C": 1, "R": 0}
+    assert out[0]["pct"] == {"L": 50, "C": 50, "R": 0}
+
+    # só Globo (G1 + O Globo) não é uma história entre veículos independentes
+    out2 = app.build(srcs[:2], arts[:2], {})
+    assert out2 == []
+
+
+def test_representative_prefers_medoid_and_clean_title():
+    items = [
+        {"title": "Senado aprova marco fiscal em votação apertada",
+         "source_id": "a"},
+        {"title": "Senado aprova marco fiscal em votação apertada no plenário",
+         "source_id": "b"},
+        {"title": "VOCÊ NÃO VAI ACREDITAR: Senado aprova marco fiscal?!",
+         "source_id": "c"},
+    ]
+    meta = {k: {"factuality": "high"} for k in ("a", "b", "c")}
+    rep = app._representative(items, meta)
+    assert "Senado aprova marco fiscal" in rep["title"]
+    assert "VOCÊ NÃO" not in rep["title"]
+    assert app._clean_title("Senado aprova marco fiscal - G1") == \
+        "Senado aprova marco fiscal"
+    assert app._clean_title("VÍDEOS: Jornal da Noite") == "Jornal da Noite"
+
+
+def test_representative_avoids_opinion_blog():
+    items = [
+        {"title": "Flávio Bolsonaro submete a direita ao vexame com fuga e carta golpista",
+         "source_id": "oglobo", "section": "blogs"},
+        {"title": "Valdemar diz que não gostou de carta golpista publicada por Flávio Bolsonaro",
+         "source_id": "folha", "section": "politica"},
+        {"title": "Aliados rejeitam tom golpista de carta de Flávio Bolsonaro",
+         "source_id": "g1", "section": "politica"},
+    ]
+    meta = {k: {"factuality": "high"} for k in ("oglobo", "folha", "g1")}
+    rep = app._representative(items, meta)
+    assert "vexame" not in rep["title"]
+    assert "Flávio Bolsonaro" in rep["title"]
