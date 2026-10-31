@@ -467,6 +467,11 @@ function renderFeatured(){
       <div>
         <h4>${esc(s.title)}</h4>
         ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
+        <div class="rail-mini" role="img" aria-label="Esquerda ${s.pct.L}%, centro ${s.pct.C}%, direita ${s.pct.R}%">
+          <span class="bL" style="width:${s.pct.L}%"></span>
+          <span class="bC" style="width:${s.pct.C}%"></span>
+          <span class="bR" style="width:${s.pct.R}%"></span>
+        </div>
         <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
       </div>
     </div>`;}).join('');
