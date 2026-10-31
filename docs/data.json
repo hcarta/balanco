@@ -1749,6 +1749,22 @@
      "ownership": "corporacao"
     },
     {
+     "source": "UOL Notícias",
+     "source_id": "uol",
+     "group": "uol",
+     "piece_kind": "hard_news",
+     "title": "Trump e Milei enfrentam pressão por fuga de Flávio Bolsonaro para os EUA",
+     "link": "https://noticias.uol.com.br/ultimas-noticias/afp/2026/10/30/trump-e-milei-enfrentam-pressao-por-fuga-de-flavio-bolsonaro-para-os-eua.htm",
+     "bias": -0.2,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "",
+     "section_label": "",
+     "image": "",
+     "factuality": "high",
+     "ownership": "corporacao"
+    },
+    {
      "source": "Estadão",
      "source_id": "estadao",
      "group": "estadao",
@@ -2194,12 +2210,28 @@
      "section_label": "",
      "image": "",
      "factuality": "high",
+     "ownership": "individuo"
+    },
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "group": "globo",
+     "piece_kind": "hard_news",
+     "title": "Binance diz ter coberto 90% das perdas após ataque hacker de mais de US$ 6 bilhões",
+     "link": "https://g1.globo.com/tecnologia/ciberseguranca/noticia/2026/10/31/binance-diz-ter-coberto-90percent-das-perdas-apos-ataque-hacker-de-mais-de-us-6-bilhoes.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "tecnologia",
+     "section_label": "Tecnologia",
+     "image": "https://s2-g1.glbimg.com/k6ILHTkAySFc9n52EAz-ZDhsi-g=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/t/9/ABU2j5SXeKEdTwn5uV2g/ap26302822880513.jpg",
+     "factuality": "high",
      "ownership": "conglomerado"
     },
     {
-     "source": "Valor Econômico",
-     "source_id": "valor",
-     "group": "globo",
+     "source": "Metrópoles",
+     "source_id": "metropoles",
+     "group": "metropoles",
      "piece_kind": "hard_news",
      "title": "Ajuda argentina na fuga de Flávio Bolsonaro afeta cooperação jurídica com Brasil, afirma especialista",
      "link": "https://valor.globo.com/politica/noticia/2026/10/29/ajuda-argentina-na-fuga-de-flvio-afeta-cooperao-jurdica-com-brasil-afirma-especialista.ghtml",
@@ -3414,7 +3446,21 @@
     "label": "Banco Master",
     "size": 3
    },
-   "longreads": [],
+   "longreads": [
+    {
+     "source": "The Intercept Brasil",
+     "title": "Documento obtido pela PF contradiz Flávio e aponta dinheiro ilegal de Vorcaro para ‘Dark Horse",
+     "link": "https://www.intercept.com.br/2026/10/23/documento-pf-flavio-dinheiro-ilegal-vorcaro-dark-horse/",
+     "terms": [
+      "pf",
+      "vorcaro"
+     ],
+     "relation": "same",
+     "age_days": 7.9,
+     "why": "pf, vorcaro",
+     "kind": "longform"
+    }
+   ],
    "world": [],
    "checks": [],
    "aliases": [
@@ -7594,7 +7640,7 @@
   {
    "id": "hc9150075",
    "title": "TSE decide que condenação por violência contra mulher pode tornar candidato inelegível",
-   "summary": "Ministros decidiram que lesão corporal contra mulher está entre os crimes que impedem candidatura pela Lei da Ficha Limpa",
+   "summary": "Por unanimidade, ministros enquadraram lesão corporal contra mulher entre os crimes que impedem candidatura pela Lei da Ficha Limpa",
    "section": "politica",
    "section_label": "Política",
    "avg_bias": 0.35,
@@ -17875,9 +17921,9 @@
   },
   {
    "id": "hb46483f2",
-   "title": "Homem é morto com tiros na cabeça na região norte de Palmas, diz PM",
-   "summary": "Crime foi registrado na Avenida NS-10, no Plano Diretor Norte, em Palmas. Divulgação/Amigo Quarteirão Um homem foi morto com quatro tiros na cabeça na noite desta sexta-feira (30), na Avenida NS-10, no Plano Diretor Norte de Palmas. Segundo a Secretaria da Segurança Pública (SSP), a vítima foi ident",
-   "section": "to",
+   "title": "Homem de 29 anos é morto a tiros dentro de marcenaria em SJC",
+   "summary": "Caso aconteceu no Campo dos Alemães, zona sul da cidade; ninguém foi preso",
+   "section": "nacional",
    "section_label": "Brasil",
    "avg_bias": 0.0,
    "counts": {
@@ -20654,6 +20700,73 @@
      "image": "https://s2-g1.glbimg.com/uzGSnExq8qpjfE2bh7qpjrT7V_s=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/9/y/7VpbaoQeA8v166Bi7UOw/namorado-.png",
      "factuality": "high",
      "ownership": "conglomerado"
+    }
+   ],
+   "hub": null,
+   "longreads": [],
+   "world": [],
+   "checks": []
+  },
+  {
+   "id": "h65a3fbd6",
+   "title": "Força Nacional vai permanecer em aldeias indígenas de MS por tempo indeterminado, diz ministro da Justiça",
+   "summary": "Governo federal cria força-tarefa para apurar ameaças contra indígenas em MS A Força Nacional de Segurança Pública, que está realizando patrulhamento em três comunidades indígenas de Mato Grosso do Sul desde a quinta-feira (29), deve permanecer em tempo indeterminado nas aldeias. A informação foi co",
+   "section": "ms",
+   "section_label": "Brasil",
+   "avg_bias": 0.7,
+   "counts": {
+    "L": 0,
+    "C": 1,
+    "R": 1,
+    "total": 2,
+    "independent": 2,
+    "groups": {
+     "L": 0,
+     "C": 1,
+     "R": 1
+    },
+    "frames": 0,
+    "articles": 2
+   },
+   "pct": {
+    "L": 0,
+    "C": 50,
+    "R": 50
+   },
+   "blindspot": null,
+   "updated": "2026-10-31T21:41:05+00:00",
+   "articles": [
+    {
+     "source": "G1",
+     "source_id": "g1",
+     "group": "globo",
+     "piece_kind": "hard_news",
+     "title": "Força Nacional vai permanecer em aldeias indígenas de MS por tempo indeterminado, diz ministro da Justiça",
+     "link": "https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/10/31/forca-nacional-vai-permanecer-em-aldeias-indigenas-de-ms-por-tempo-indeterminado-diz-ministro-da-justica.ghtml",
+     "bias": 0.0,
+     "bucket": "C",
+     "via": "fonte",
+     "section": "ms",
+     "section_label": "Brasil",
+     "image": "https://s2-g1.glbimg.com/rmmRy9eQuQaKp6hk56AfD-bGXk4=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/A/P/xOBYECSpa7meRTAacesg/opkcpoklpco.png",
+     "factuality": "high",
+     "ownership": "conglomerado"
+    },
+    {
+     "source": "Jovem Pan",
+     "source_id": "jovempan",
+     "group": "jovempan",
+     "piece_kind": "hard_news",
+     "title": "Aldeias em MS vão receber proteção da Força Nacional",
+     "link": "https://jovempan.com.br/politica/aldeias-em-ms-vao-receber-protecao-da-forca-nacional/",
+     "bias": 1.4,
+     "bucket": "R",
+     "via": "fonte",
+     "section": "politica",
+     "section_label": "Política",
+     "image": "",
+     "factuality": "mixed",
+     "ownership": "corporacao"
     }
    ],
    "hub": null,

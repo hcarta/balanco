@@ -11,7 +11,7 @@
 > Esta seção foi escrita após a implementação das fases F1–F4 de `PLANO_CONEXOES.md`. O restante do documento continua válido como diagnóstico; onde houver divergência, vale esta revisão.
 
 ### Baseline atualizado
-- **101 testes, 0 skipped** (não 74/1). O `README.md` foi atualizado.
+- **104 testes, 0 skipped** (não 74/1). O `README.md` foi atualizado.
 - 120 histórias · 1.470 artigos · 375 em histórias · 1 com longreads · 7 com world · 0 checagens · 9 hubs · 2 developments · 76 com 2 veículos.
 - Conexões medidas: longform P 0,94/R 0,62; internacional P 1,00/R 0,91 (40 pares); checagens P 1,00/R 0,67 (67 pares, corpus realista) — mas **0 matches na rodada**.
 
@@ -46,7 +46,8 @@ O plano de 5 fases × 3–4 dias é maior que o objetivo atual (precisão das co
 - **F-13:** cache com `run_id` + `restore-keys`; `git pull --rebase -X ours` antes do push. `deploy-pages` fica pendente (mudança de settings do repo).
 - **F-08:** filtros de vídeo/ao vivo, loteria, Finados e bandeira tarifária.
 - **Checagens:** `claim_match` exige entidade multi-palavra específica ou cobertura ≥0,80; os 4 FPs de “linha do tempo”/“Lula” sumiram; P 1,00/R 0,67 no conjunto; **0 matches** na rodada.
-- **C-1/C-5 (leituras):** `build_leituras` lê 10 dias do cache (fontes longform), limita 2 por fonte, sanitiza HTML e exclui anexos de reportagem; 8 peças na página própria **📚 Leituras** e no rail, em 2 colunas e com thumb quando o feed oferece imagem. A página resolve a distância no mobile (o rail fica depois de 490+ histórias). O “Aprofunde-se” por história continua nas 72 h — peças antigas não entram no matching para não repetir os FPs de “Flávio”.
+- **C-1/C-5 (leituras):** `build_leituras` lê 10 dias do cache (fontes longform), limita 2 por fonte, sanitiza HTML e exclui anexos de reportagem; 8 peças na página própria **📚 Leituras** e no rail, em 2 colunas e com thumb quando o feed oferece imagem. A página resolve a distância no mobile (o rail fica depois de 490+ histórias).
+- **C-2/C-3 (Aprofunde-se):** índice de 120 dias no pool; duas relações — “same” (até 14 dias, regra de entidade atual) e “background” (15–120 dias, exige 2+ entidades específicas distintas e cobertura ≥ 0,20); 1 por fonte, 3 por história, dedup global. UI mostra a relação e as entidades em comum. Nesta edição: 7 sugestões “same” e 0 “background” (o feed da piauí veio com dek curto; o background só entra com 2+ entidades e cobertura ≥0,30). **104 testes**. O “Aprofunde-se” por história continua nas 72 h — peças antigas não entram no matching para não repetir os FPs de “Flávio”.
 - **F-11:** CNN International removida (o feed servia anúncios de empréstimo); **New York Times (Tecnologia)** adicionado. 36 fontes.
 - **F-10:** `section_label` virou whitelist; “Geral”, “Pt-br”, siglas de UF e editorias desconhecidas não viram mais filtro.
 - **Lá fora / Binance:** número do evento (US$ 6,3 bi) + entidade passou a valer; “Binance” × NYT Technology entrou (P 1,00/R 0,91 do conjunto mantidos). A URL de análise citada aparece na história irmã do Bitcoin; a principal mostra outra peça do NYT.

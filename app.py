@@ -737,7 +737,10 @@ ENTITY_STOP = {"para", "como", "após", "entre", "sobre", "com", "por", "dos", "
 ENTITY_GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us",
                   "usa", "eua", "uk", "reino unido", "mundo", "world", "país", "pais",
                   "country", "governo", "government", "presidente", "president",
-                  "ministro", "minister", "ministério", "ministry", "federal"}
+                  "ministro", "minister", "ministério", "ministry", "federal",
+                  "deputado", "deputada", "senador", "senadora", "candidato",
+                  "candidata", "governador", "governadora", "prefeito",
+                  "prefeita", "vereador", "vereadora"}
 
 ENTITY_ALIAS = {"brasil": "brazil", "eua": "us", "usa": "us",
                 "estados unidos": "united states", "reino unido": "uk"}
@@ -802,6 +805,15 @@ def entity_match(a: set, b: set) -> tuple[bool, list]:
     if multi or len(spec) >= 2:
         return True, (multi + [x for x in spec if x not in multi])[:6]
     return False, []
+
+
+def _distinct_entities(ents: set) -> set:
+    """Colapsa aliases: "Flávio Bolsonaro"/"Flávio"/"Bolsonaro" = 1 entidade."""
+    multi = {e for e in ents if " " in e and e not in ENTITY_GENERIC}
+    parts = {p for e in multi for p in e.split()}
+    single = {e for e in ents
+              if " " not in e and e not in ENTITY_GENERIC and e not in parts}
+    return multi | single
 
 
 # Não-jornalismo no pool longform: programas, quizzes, agendas, podcasts (F3.1)
@@ -1127,27 +1139,30 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
 
 
 def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=False):
-    """Liga cada história a longform (piauí & cia) pelo mesmo tópico.
+    """Liga cada história a longform (piauí & cia) em duas relações (C-2).
 
-    Não afirma nada sobre o artigo: só sugere aprofundamento, com link.
-    F3: exclui não-jornalismo, evita redundância com a cobertura da própria
-    história (exceto análise) e limita a 1 peça por fonte.
+    - "same" (até 14 dias): mesmo fato; mantém a regra de entidade atual.
+    - "background" (15–120 dias): pano de fundo; exige 2+ entidades
+      específicas distintas e cobertura de título >= 0,20, para não repetir
+      o flood de "Flávio" medido com 120 dias.
+    Não afirma nada sobre o artigo: só sugere leitura, com link.
     """
     pool = []
     for a in articles:
         if a.get("source_id") in longform_ids:
             if NON_JOURNALISM.search(a.get("title", "")):
                 continue  # F3.1: programa/quiz/agenda não é aprofundamento
-            # Só o título: casar pelo resumo ligava qualquer peça que
-            # mencionasse "Flávio" a toda história sobre ele (medido 31/10).
-            pool.append((entities(a.get("title", "")), a))
+            pool.append((entities(a.get("title", "")),
+                         entities(a.get("title", "") + " " + (a.get("summary") or "")),
+                         a))
     X, n_st = None, len(stories)
     if use_embed and pool:
         try:
             X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
-                             [{"title": a.get("title", "")} for _, a in pool])
+                             [{"title": a.get("title", "")} for _, _, a in pool])
         except Exception as e:
             print(f"  [aviso] embeddings indisponíveis no aprofundamento ({e})")
+    now = datetime.now(timezone.utc).timestamp()
     for si, s in enumerate(stories):
         s["longreads"] = []
         se = entities(s.get("title", ""))
@@ -1156,32 +1171,60 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
         st = set(tok(s.get("title", "")))
         covered = {a.get("source") or a.get("source_name") for a in s.get("articles", [])}
         cands = []
-        for pi, (le, a) in enumerate(pool):
+        for pi, (le_title, le_full, a) in enumerate(pool):
+            link = a.get("link", "")
+            if not link:
+                continue
+            try:
+                ts = float(a.get("ts")) if a.get("ts") else now
+            except (TypeError, ValueError):
+                ts = now
+            age_days = max(0.0, (now - ts) / 86400)
+            if age_days > 120:
+                continue
+            relation = "same" if age_days <= 14 else "background"
+            le = le_title if relation == "same" else le_full
             ok, terms = entity_match(se, le)
             if not ok and X is not None:
                 lex_ok = _title_cov(st, set(tok(a.get("title", "")))) >= EMB_PREFILTER_COV
                 if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
                     ok = True
-            if ok:
-                # F3.2: se a fonte já cobre a história, só peça de análise entra
-                if a.get("source_name") in covered and not _is_analysis(a.get("title", "")):
-                    continue
-                cands.append((len(terms), a["link"], a))
+            if not ok:
+                continue
+            shared = se & le
+            distinct = _distinct_entities(shared)
+            cov = _title_cov(st, set(tok(a.get("title", ""))))
+            if relation == "same" and age_days > 3 and len(distinct) < 2:
+                continue
+            if relation == "background" and (len(distinct) < 2 or cov < 0.30):
+                continue
+            # F3.2: se a fonte já cobre a história, só peça de análise entra
+            if a.get("source_name") in covered and not _is_analysis(a.get("title", "")):
+                continue
+            why = sorted(shared | (se & entities(a.get("summary") or "")))[:4]
+            score = (1 if relation == "same" else 0, len(distinct),
+                     round(cov, 3), len(terms))
+            cands.append((score, link, a, relation, age_days, why))
         seen, out, used_src = set(), [], set()
-        for _, link, a in sorted(cands, reverse=True):
+        for _, link, a, relation, age_days, why in sorted(cands, reverse=True):
             if link in seen or a.get("source_name") in used_src:
                 continue  # F3.3: no máx. 1 peça por fonte por história
             seen.add(link)
             used_src.add(a.get("source_name"))
-            out.append({"source": a.get("source_name", ""), "title": a.get("title", ""),
-                        "link": link,
-                        "terms": sorted((se & entities(a.get("title", ""))) |
-                                        (se & entities(a.get("summary") or "")))[:6]})
+            out.append({
+                "source": a.get("source_name", ""),
+                "title": a.get("title", ""),
+                "link": link,
+                "terms": why,
+                "relation": relation,
+                "age_days": round(age_days, 1),
+                "why": ", ".join(why[:3]),
+                "kind": a.get("piece_kind") or "longform",
+            })
             if len(out) >= per_story:
                 break
         s["longreads"] = out
     return stories
-
 
 def diversify_longreads(stories):
     """F3.3: uma mesma peça só é sugerida na história mais coberta do seu tópico.
@@ -1491,7 +1534,28 @@ def main():
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
 
     longform_ids = {s["id"] for s in sources if s.get("longform")}
-    stories = attach_longreads(stories, news, longform_ids, use_embed=args.embed)
+    # C-1/C-2: índice de 120 dias independente da janela de 72 h das notícias
+    longform_extra = []
+    if store is not None:
+        from store import PER_SOURCE_CAP
+        seen_links = {a.get("link") for a in articles}
+        for src in sources:
+            if src["id"] not in longform_ids:
+                continue
+            for a in store.recent(src["id"], window_h=120 * 24,
+                                  limit=PER_SOURCE_CAP):
+                if not a.get("link") or a["link"] in seen_links:
+                    continue
+                if NON_JOURNALISM.search(a.get("title", "")):
+                    continue
+                if excluded_section(a.get("section")) or excluded_title(a.get("title")):
+                    continue
+                a.update(source_id=src["id"], source_name=src["name"],
+                         base_bias=float(src.get("bias", 0)),
+                         kind=src.get("kind", "br"))
+                longform_extra.append(a)
+    stories = attach_longreads(stories, news + longform_extra, longform_ids,
+                               use_embed=args.embed)
     stories = diversify_longreads(stories)
     stories = attach_world(stories, intl, use_embed=args.embed)
     n_lr = sum(1 for s in stories if s.get("longreads"))

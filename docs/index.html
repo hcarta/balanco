@@ -679,8 +679,13 @@ function beyond(s){
   const w = (s.world||[]).slice(0,3);
   if(!lr.length && !w.length) return '';
   const links = arr => arr.map(x=>`<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)}</small></div>`).join('');
+  const lrLinks = arr => arr.map(x=>{
+    const rel = x.relation==='background' ? 'Para entender melhor' : 'Análise desta pauta';
+    const why = x.why ? ` · ${esc(x.why)}` : '';
+    return `<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)} · ${rel}${why}</small></div>`;
+  }).join('');
   return `<div class="beyond">
-    ${lr.length?`<div class="bl"><div class="bh">📖 Aprofunde-se</div>${links(lr)}</div>`:''}
+    ${lr.length?`<div class="bl"><div class="bh">📖 Aprofunde-se</div>${lrLinks(lr)}</div>`:''}
     ${w.length?`<div class="bl"><div class="bh">🌍 Lá fora</div>${links(w)}</div>`:''}
   </div>`;
 }

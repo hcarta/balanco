@@ -190,10 +190,12 @@ def test_entity_match_keeps_specific():
     assert ok and "flávio bolsonaro" in terms
 
 
-def _lf_article(title, src="piaui", link="https://x/lr", summary=""):
-    return {"source_id": src, "source_name": "piauí" if src == "piaui" else src,
+def _lf_article(title, src="piaui", link="https://x/lr", summary="", ts=None):
+    names = {"piaui": "piauí", "nexo": "Nexo Jornal", "oeste": "Revista Oeste"}
+    return {"source_id": src, "source_name": names.get(src, src),
             "title": title, "link": link, "summary": summary,
-            "published": "2026-10-31T00:00:00+00:00", "ts": 1.0}
+            "published": "2026-10-31T00:00:00+00:00",
+            "ts": time.time() if ts is None else ts}
 
 
 def test_longreads_excludes_non_journalism():
@@ -649,3 +651,46 @@ def test_build_counts_only_coverage_kinds():
     assert s["pct"] == {"L": 33, "C": 67, "R": 0}
     op = [a for a in s["articles"] if a["source_id"] == "r"][0]
     assert op["piece_kind"] == "opinion"
+
+
+def test_longreads_background_requires_two_entities():
+    from app import attach_longreads
+    story = {"id": "s1",
+             "title": "Nunes Marques e Mendonça tentam se afastar de Flávio Bolsonaro",
+             "articles": [{"source": "G1"}], "counts": {"total": 2}}
+    old = time.time() - 30 * 86400
+    two = _lf_article("Nunes Marques e Mendonça: o que muda no TSE",
+                      src="piaui", link="https://x/two", ts=old)
+    one = _lf_article("Flávio Bolsonaro foge para os EUA",
+                      src="nexo", link="https://x/one", ts=old)
+    out = attach_longreads([story], [two, one], {"piaui", "nexo"})
+    lr = out[0]["longreads"]
+    assert any(x["link"] == "https://x/two" and x["relation"] == "background"
+               for x in lr)
+    assert not any(x["link"] == "https://x/one" for x in lr)
+
+
+def test_longreads_recent_is_same_relation():
+    from app import attach_longreads
+    story = {"id": "s1",
+             "title": "Nunes Marques e Mendonça tentam se afastar de Flávio Bolsonaro",
+             "articles": [{"source": "G1"}], "counts": {"total": 2}}
+    piece = _lf_article("Nunes Marques e Mendonça: o que muda no TSE",
+                        src="piaui", link="https://x/r")
+    out = attach_longreads([story], [piece], {"piaui"})
+    assert out[0]["longreads"][0]["relation"] == "same"
+
+
+def test_longreads_background_uses_dek():
+    from app import attach_longreads
+    story = {"id": "s1", "title": "Fachin devolve caso INSS a Mendonça",
+             "articles": [{"source": "G1"}], "counts": {"total": 2}}
+    old = time.time() - 30 * 86400
+    piece = _lf_article(
+        "O instituto de Mendonça", src="piaui", link="https://x/dek",
+        summary="Como André Mendonça transformou o Master e o INSS em plataforma eleitoral",
+        ts=old)
+    out = attach_longreads([story], [piece], {"piaui"})
+    lr = out[0]["longreads"]
+    assert lr and lr[0]["relation"] == "background"
+    assert "mendonça" in lr[0]["why"]
