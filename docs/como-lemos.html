@@ -45,14 +45,35 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 </table>
 <p>Os critérios completos, a posição de cada um dos 27 veículos e o histórico de mudanças estão em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
 
+<h2>Factualidade: rubrica pública</h2>
+<p>Cada veículo também tem um nível de factualidade, com critérios observáveis — e regras que impedem rebaixamento arbitrário:</p>
+<table>
+<tr><th>Nível</th><th>Significado</th></tr>
+<tr><td>Muito alta</td><td>Apuração própria predominante; correção pública e rápida; separa fato de opinião; sem desmentidos relevantes</td></tr>
+<tr><td>Alta</td><td>Majoritariamente factual, com produção própria frequente; corrige erros; opinião rotulada</td></tr>
+<tr><td>Mista</td><td>Mistura estrutural de apuração e opinião — ou alvo de checagens "falso/enganoso", ou correções inconsistentes</td></tr>
+<tr><td>Baixa</td><td>Padrão recorrente de imprecisão: alegações sem lastro, fontes anônimas sem corroboração, resistência a corrigir; múltiplos desmentidos documentados</td></tr>
+<tr><td>Muito baixa</td><td>Desinformação sistemática (nenhuma fonte atual)</td></tr>
+</table>
+<p><b>Travas:</b> <code>mixed→low</code> exige 2+ "falso" documentados; <code>low→mixed</code> exige 12 meses limpos; <code>high→very_high</code> exige correção pública + 24 meses limpos. O histórico de checagens por veículo (<code>factcheck_ledger.json</code>, público no repositório) é evidência para revisão humana — <b>nunca</b> altera a factualidade sozinho.</p>
+
 <h2>O que é um blindspot</h2>
 <p>Uma história com 4+ coberturas em que um dos lados está quase ausente (≤ 15%) enquanto o outro cobre. Não marcamos histórias cobertas <b>só pelo centro</b>: sem viés em jogo, não há ponto cego político.</p>
 
+<h2>Em consenso: a hierarquia do centro</h2>
+<p>Nem toda história divide opiniões — e o leitor precisa saber quais fatos estão <b>estabelecidos</b>. O selo <b>✓ Consenso</b> e o trilho "Em consenso" destacam histórias com 3+ coberturas de veículos de <b>centro com factualidade alta ou muito alta</b>: é o que a apuração mais confiável confirma hoje, independentemente do barulho partidário ao redor.</p>
+
 <h2>Checagens: evidência, não sentença</h2>
-<p>Cruzamos manchetes com <b>G1 Fato ou Fake</b>, <b>Agência Lupa</b> e <b>Aos Fatos</b> (~700 verificações). Quando a alegação coincide, exibimos o selo <b>⚑ Checagem</b> com os termos em comum — é uma checagem <i>relacionada</i>, nunca um veredito sobre a matéria. O histórico por veículo serve à revisão humana e <b>nunca</b> altera a factualidade automaticamente.</p>
+<p>Cruzamos manchetes com <b>G1 Fato ou Fake</b>, <b>Agência Lupa</b> e <b>Aos Fatos</b> (~700 verificações). Quando a alegação coincide, exibimos o selo <b>⚑ Checagem</b> com os termos em comum — é uma checagem <i>relacionada</i>, nunca um veredito sobre a matéria. Os vereditos são lidos do título da checagem (não há <code>ClaimReview</code> estruturado nessas páginas). O histórico por veículo serve à revisão humana e <b>nunca</b> altera a factualidade automaticamente.</p>
+
+<h2>Como as histórias são montadas</h2>
+<p><b>Coleta:</b> feeds RSS e sitemaps de notícias publicados pelos próprios veículos (só manchete, link, data e editoria — sem corpo, sem paywall). <b>Agrupamento:</b> títulos viram vetores TF-IDF; pares com cosseno ≥ 0,38 e 2+ palavras em comum, na mesma janela de 48 h (24 h para hard news, 7 dias para opinião), formam uma história. Pares do mesmo veículo exigem evidência maior. Há um conjunto de 100 pares rotulados que trava precisão e revocação a cada mudança.</p>
 
 <h2>De onde vêm os textos e fotos</h2>
-<p>Manchete, link, data e editoria vêm de feeds e sitemaps públicos. Resumos vêm do próprio feed ou da <i>meta description</i> pública da página; corpos completos alimentam só a análise interna e nunca são exibidos. Imagens vêm dos sitemaps e feeds, com link para o original em cada matéria.</p>
+<p>Resumos vêm do próprio feed ou da <i>meta description</i> pública da página (opcional <code>--body</code>); corpos completos alimentam só a análise interna e nunca são exibidos. Imagens vêm dos sitemaps e feeds, com link para o original em cada matéria. <b>Paywalls não são contornados:</b> de Valor, Globo, Folha e Estadão usamos título, meta description e dados estruturados.</p>
+
+<h2>Atualização e arquivo</h2>
+<p>Uma coleta roda a cada 30 minutos; cada edição diária é arquivada (<a href="arquivo/">ver arquivo</a>) e o <a href="feed.xml">feed RSS do Balanço</a> republica as 30 principais histórias com link para a comparação lado a lado.</p>
 
 <h2>Limitações honestas</h2>
 <ul>
