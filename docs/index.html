@@ -71,6 +71,7 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;padding:34px 0 6px;align-items:start;border-bottom:2px solid var(--ink)}
 .hero .featured{padding-bottom:0;margin-bottom:0;border-bottom:none}
 .hero-side{padding-top:0}
+.hero-side .kspacer{display:flex;margin-bottom:14px}
 .hero-side .hitem{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);cursor:pointer;align-items:flex-start}
 .hero-side .hitem:first-child{padding-top:2px}
 .hero-side .hitem:last-child{border-bottom:none}
@@ -115,7 +116,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .badge.cons{background:var(--ink);color:#fff;border:1px solid var(--ink)}
 .kicker-sec{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
 /* imagens (Fase 3.2): destaque + miniaturas, some se quebrar */
-.feat-img{width:100%;max-height:340px;object-fit:cover;border-radius:12px;margin:0 0 18px;display:block}
+.feat-img{width:100%;aspect-ratio:16/9;max-height:340px;object-fit:cover;border-radius:12px;margin:0 0 18px;display:block}
 .sgrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}
 .thumb{width:118px;height:88px;object-fit:cover;border-radius:8px;margin-top:4px}
 @media(max-width:560px){.thumb{width:88px;height:66px}}
@@ -286,6 +287,7 @@ footer a.fl:hover{color:var(--accent)}
   <section class="hero" id="heroSec">
     <div id="featured"></div>
     <aside class="hero-side" id="heroSide">
+      <div class="kicker kspacer" aria-hidden="true" style="visibility:hidden">Em foco</div>
       <div id="heroList"></div>
     </aside>
   </section>
@@ -468,7 +470,47 @@ function renderFeatured(){
         <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${s.counts.total} coberturas</div>
       </div>
     </div>`;}).join('');
+  requestAnimationFrame(alignHero);
+  alignHero();
+  document.querySelectorAll('#featured img, #heroList img').forEach(im=>{
+    if(!im.complete){ im.addEventListener('load', alignHero); im.addEventListener('error', alignHero); }
+  });
+  // recalibra a cada mudança real de layout (imagens, fontes) — sem depender de timing
+  if('ResizeObserver' in window){
+    let rT = null;
+    const _sec = document.getElementById('heroSec');
+    if(_sec) new ResizeObserver(()=>{ clearTimeout(rT); rT = setTimeout(alignHero, 60); }).observe(_sec);
+  }
 }
+
+/* alinha a lateral ao destaque: topo do 1º thumb = topo da imagem;
+   base da última imagem = base do texto (só desktop) */
+let _alignT = null;
+function alignHero(){
+  if(window.innerWidth <= 940) return;
+  const sec = document.getElementById('heroSec');
+  const feat = document.querySelector('#featured .featured');
+  const side = document.getElementById('heroSide');
+  const list = document.getElementById('heroList');
+  if(!feat || !side || !list || side.style.display==='none') return;
+  // topo resolvido por construção (espaçador com a classe do kicker);
+  // aqui só a base: última imagem = base do texto
+  const txt = feat.querySelector('.dek') || feat.querySelector('h1');
+  if(!txt) return;
+  const h = txt.getBoundingClientRect().bottom - list.getBoundingClientRect().top;
+  if(h > 240){
+    list.style.display = 'flex';
+    list.style.flexDirection = 'column';
+    list.style.justifyContent = 'space-between';
+    list.style.height = h + 'px';
+  } else {
+    list.style.height = '';
+  }
+}
+window.addEventListener('resize', ()=>{ clearTimeout(_alignT); _alignT = setTimeout(alignHero, 150); });
+window.addEventListener('load', alignHero);
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) alignHero(); });
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>alignHero());
 
 /* ---------- bias bar ---------- */
 function biasBar(s){
