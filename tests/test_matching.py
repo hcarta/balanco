@@ -172,3 +172,19 @@ def test_write_feed_is_valid_rss(tmp_path):
     items = root.find("channel").findall("item")
     assert len(items) == 1
     assert items[0].find("link").text.endswith("?story=s001")
+
+
+def test_entity_match_rejects_generic_only():
+    from app import entity_match, entities
+    story = entities("Chineses acusados de espionagem são condenados à prisão nos Estados Unidos")
+    bts = entities("O que faz o BTS arrastar multidões de fãs pelo Brasil")
+    ok, _ = entity_match(story, bts)
+    assert not ok, "BTS não tem nada com espionagem chinesa (só 'estados/unidos' em comum)"
+
+
+def test_entity_match_keeps_specific():
+    from app import entity_match, entities
+    a = entities("Governo Lula convoca representante da Argentina sobre a saída de Flávio Bolsonaro")
+    b = entities("O usurpador: Flávio Bolsonaro sequestrou o discurso anticorrupção")
+    ok, terms = entity_match(a, b)
+    assert ok and "flávio bolsonaro" in terms

@@ -503,12 +503,20 @@ def entities(title: str | None) -> set:
 
 def entity_match(a: set, b: set) -> tuple[bool, list]:
     """Mesmo tópico? 2+ entidades em comum, com ao menos uma multi-palavra
-    (ou 3+ simples). Retorna (casa, termos)."""
+    específica (ou 2+ específicas). Genéricos (países, "governo") não contam
+    como evidência sozinhos — foi assim que "BTS" casou com "espionagem chinesa"
+    (só compartilhavam "estados/unidos"). Retorna (casa, termos)."""
+    GENERIC = {"brasil", "brazil", "estados", "unidos", "united states", "us",
+               "usa", "eua", "uk", "reino unido", "mundo", "world", "país", "pais",
+               "country", "governo", "government", "presidente", "president",
+               "ministro", "minister", "ministério", "ministry", "federal"}
     inter = a & b
-    multi = sorted(x for x in inter if " " in x)
-    rest = sorted(x for x in inter if " " not in x)
-    if len(inter) >= 2 and (multi or len(inter) >= 3):
-        return True, (multi + rest)[:6]
+    if len(inter) < 2:
+        return False, []
+    multi = sorted(x for x in inter if " " in x and x not in GENERIC)
+    spec = sorted(x for x in inter if x not in GENERIC)
+    if multi or len(spec) >= 2:
+        return True, (multi + [x for x in spec if x not in multi])[:6]
     return False, []
 
 
