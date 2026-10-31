@@ -22,6 +22,14 @@ def load_curation_ids():
     return set(re.findall(r"^\| ([^|]+) \| [+-]?\d", txt, re.M))
 
 
+def load_curation_factuality():
+    import re
+    txt = open(os.path.join(BASE, "CURADORIA_VIES.md"), encoding="utf-8").read()
+    m = re.search(r"## 5\. Factualidade.*?(?=\n## |\Z)", txt, re.S)
+    section = m.group(0) if m else ""
+    return set(re.findall(r"^\| ([^|]+) \| (?:very_high|high|mixed|low|very_low) \|", section, re.M))
+
+
 def test_sources_valid():
     srcs = load_sources()
     assert len(srcs) >= 20, "esperava ao menos 20 fontes"
@@ -42,3 +50,14 @@ def test_all_sources_in_curation():
     names = load_curation_ids()
     missing = [s["name"] for s in srcs if s["name"] not in names]
     assert not missing, f"fontes sem justificativa na curadoria: {missing}"
+
+
+def test_all_sources_have_factuality_rationale():
+    srcs = load_sources()
+    names = load_curation_factuality()
+    missing = [s["name"] for s in srcs if s["name"] not in names]
+    assert not missing, f"fontes sem justificativa de factualidade na curadoria: {missing}"
+    from collections import Counter
+    got = Counter(s["factuality"] for s in srcs)
+    assert set(got) <= {"very_high", "high", "mixed", "low", "very_low"}
+    assert "very_low" not in got, "very_low exigiria evidência de desinformação sistemática"

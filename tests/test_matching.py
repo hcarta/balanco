@@ -134,6 +134,7 @@ def test_attach_checks_includes_terms():
 
 
 def test_archive_snapshot_and_prune(tmp_path):
+    import datetime as _dt
     import json as _json
     from app import archive_snapshot
     site = tmp_path / "site"
@@ -150,9 +151,10 @@ def test_archive_snapshot_and_prune(tmp_path):
     finally:
         _app.ARCHIVE_KEEP = old_keep
     import glob as _glob
-    assert sorted(_glob.glob(str(site / "arquivo" / "????-??-??.json"))) == sorted(
-        _glob.glob(str(site / "arquivo" / "2026-10-?9.json")) +
-        _glob.glob(str(site / "arquivo" / "2026-10-30.json")))
+    today = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
+    expected = sorted(["2026-10-28", "2026-10-29", "2026-10-30", today])[-2:]
+    got = sorted(_glob.glob(str(site / "arquivo" / "????-??-??.json")))
+    assert [g[-15:-5] for g in got] == expected
     assert (site / "arquivo" / "index.html").exists()
 
 

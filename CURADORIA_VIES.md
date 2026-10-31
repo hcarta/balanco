@@ -59,3 +59,49 @@
 ## 4. Revisão trimestral
 
 A cada 3 meses, reavaliar 3–5 fontes, priorizando: (a) `revisar=true` no ledger, (b) fontes novas da última leva, (c) reclamações documentadas. Próxima revisão: **jan/2027**.
+
+## 5. Factualidade — rubrica e posições (30/10/2026)
+
+Mesma escala do Ground.news. Critérios observáveis por nível:
+
+- **very_high** — apuração própria predominante; política de correção pública e rápida (errata visível, ouvidoria ou equivalente); separa fato de opinião; sem desmentidos relevantes no histórico.
+- **high** — majoritariamente factual, com produção própria frequente; corrige erros (nem sempre com destaque); opinião existe mas é rotulada.
+- **mixed** — mistura estrutural de apuração e conteúdo opinativo/militante; OU já foi alvo de checagens "falso/enganoso"; OU correções inconsistentes.
+- **low** — padrão recorrente de imprecisão: alegações sem lastro, fontes anônimas sem corroboração, resistência a corrigir; múltiplos desmentidos documentados.
+- **very_low** — desinformação sistemática. (Nenhuma fonte atual.)
+
+Regras de movimento (evitam rebaixamento arbitrário):
+- `mixed→low`: 2+ "falso" documentados (ledger ou desmentidos de verificadores, citados).
+- `low→mixed`: 12 meses sem novo "falso" + correção visível adotada.
+- `high→very_high`: política de correção pública + 24 meses sem "falso".
+- Ledger vazio (como hoje) não move ninguém em nenhuma direção.
+
+| Fonte | Nível | Justificativa (1–2 linhas) |
+|---|---|---|
+| G1 | high | Maior redação do país, apuração própria diária, correções publicadas; hard news sem linha opinativa |
+| Folha de S.Paulo | high | Ouvidoria + seção "Erramos"; apuração própria forte |
+| UOL Notícias | high | Padrão Folha + produção própria; factual sem militância |
+| CNN Brasil | high | Padrão profissional licenciado; factual |
+| Poder360 | high | Cobertura seca de poder, sem opinião |
+| SBT News | high | Jornalismo factual popular; sem apuração investigativa de fôlego, sem desmentidos relevantes |
+| Band | high | Comercial neutra; factual sem linha opinativa |
+| InfoMoney | high | Dados e mercado, factual; opinião rotulada em colunas |
+| Estadão | high | Correções publicadas; apuração própria histórica |
+| O Globo | high | Factual com linha liberal explícita mas separada da apuração |
+| Valor Econômico | high | Padrão rigoroso de finanças; factual |
+| BBC Brasil | very_high | Padrão BBC global de verificação, correções públicas |
+| Nexo Jornal | very_high | Método explicativo documentado, fontes citadas |
+| Revista piauí | very_high | Longform com apuração longa e checagem interna |
+| DW Brasil | very_high | Padrão do serviço público alemão |
+| Metrópoles | mixed | Factual no hard news, mas sensacionalismo policial/celebridades e clickbait |
+| Terra | mixed | Agregador, pouca apuração própria, caça-cliques |
+| R7 | mixed | Linha popular sensacionalista do Grupo Record |
+| Veja | mixed | Apuração tradicional forte, mas capas opinativas frequentes + caso Lula–Vorcaro questionado (30/10) |
+| IstoÉ | mixed | Histórico sensacionalista, apuração fina irregular |
+| Crusoé | mixed | Investigativo de linha opinativa declarada |
+| Brasil 247 | mixed | Partidário com linguagem militante, mas sem 2+ desmentidos documentados (critério de `low` não atingido) |
+| CartaCapital | mixed | Opinião de esquerda explícita, sem 2+ desmentidos documentados |
+| Jovem Pan | mixed | Comentário opinativo dominante no ar; jornalismo factual existe |
+| Gazeta do Povo | mixed | Opinião conservadora explícita + apuração própria |
+| Diário do Centro do Mundo | low | Militância com pouco lastro apuratório |
+| Revista Oeste | low | Padrão de imprecisão apontado na curadoria (30/10) |
