@@ -170,7 +170,7 @@ O modelo domina a regra na curva PR (a P≈0,70: R 0,87 vs 0,67 da regra), mas
 não alcança o ponto exigido — a classe `related` é lexicamente quase
 idêntica a `same` só com títulos. Opções: expandir F1 a 600, adicionar
 resumos como sinal, ou gate conservador (P~0,93/R~0,43: mais preciso que a
-regra, fragmenta mais). **Não avançar ao F3 sem decidir.**
+regra, fragmenta mais). **Não avançar ao F3 sem decidir.** Diagnóstico completo para outro agente em `PLAN_F2_DIAGNOSTICO.md` (bugs de instrumentação, perguntas abertas, reprodução).
 
 - [ ] `ops/pair_features.py` com vetor fixo e determinístico:
       `cos_tfidf, cos_emb, jaccard, cov_short, cov_rep, shared_all, shared_spec,
