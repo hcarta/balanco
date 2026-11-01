@@ -25,6 +25,8 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Lá fora**: peças internacionais agrupadas por evento (cluster + entidade/número), com número de veículos e fontes no cartão; casamento por entidade traduzida, número e conceito.
 - **Agrupamento com âncora de entidade**: dois títulos só viram a mesma história se compartilharem um nome próprio específico **e** conteúdo além do nome, ou forem quase-duplicatas. Vocabulário de tema ("eleição presidencial", "menor nível") não funde fatos distintos — foi o que ligava a eleição na Bulgária ao Flávio Bolsonaro.
 - **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
+- **Pautas (Outros ângulos)**: a história só entra na pauta de um nome próprio se ele está na manchete e em pelo menos 2 títulos; menção lateral ("Democratas cobram Trump…" citando Flávio) não conta. Prenome sozinho vale como alias ("Flávio"); sobrenome não ("Bolsonaro" é o Jair).
+- **Seções recolhíveis**: “Aprofunde-se”, “Lá fora”, “Outros ângulos desta pauta” e “Também apurado nesta história” são `<details>` fechados por padrão, com contador no cabeçalho.
 - **Aba Metodologia** na navegação + página "Como lemos" com todos os critérios (viés, factualidade, blindspot, agrupamento, checagens, enriquecimento).
 - **Filtros**: todas, blindspots, + esquerda/+ direita, mais divididas + busca. Ao filtrar ou buscar, o destaque é ocultado para o resultado começar no topo.
 - **Link direto** para uma história: `index.html?story=h...` (IDs estáveis) ou alias antigo `?story=sNNN` / `#...`.

@@ -1212,20 +1212,49 @@ def _hub_label(key: str) -> str:
     return " ".join(parts)
 
 
+def _supports_entity(title_ents: set, key: str) -> bool:
+    """O título trata do nome? Aceita só o prenome como alias.
+
+    "Flávio" sozinho representa "Flávio Bolsonaro"; "Bolsonaro" sozinho é o
+    Jair (ou a família), então não vale como apoio.
+    """
+    if key in title_ents:
+        return True
+    first = key.split()[0]
+    return len(first) >= 4 and first not in ENTITY_GENERIC and first in title_ents
+
+
 def attach_hubs(stories, min_stories=3, window_h=72.0):
     """F2: marca cada história com a "pauta" (narrativa) a que pertence.
 
     Só nomes próprios multi-palavra servem de chave (nunca "lula" ou "senado"):
-    genéricos agrupariam pautas sem relação. Não altera contagens — a história
+    genéricos agruparia pautas sem relação. Não altera contagens — a história
     continua sendo o fato; a pauta é só navegação entre ângulos.
+
+    A entidade precisa ser **assunto** da história, não menção lateral: tem de
+    estar na manchete e em pelo menos 2 títulos. Sem isso, "Democratas cobram
+    que Trump reconheça vitória de Lula" entrava na pauta "Flávio Bolsonaro"
+    por causa de uma citação solta.
     """
-    ents = [_story_entities(s) for s in stories]
     ts = [_ts_of(s) for s in stories]
+    per_title = [[_title_entities(a.get("title", "")) for a in s.get("articles", [])]
+                 for s in stories]
+
+    def support(i: int, key: str) -> int:
+        return sum(1 for e in per_title[i] if _supports_entity(e, key))
+
     index: dict[str, list[int]] = {}
-    for i, e in enumerate(ents):
-        for k in e:
-            if " " in k and k not in HUB_STOP:
-                index.setdefault(k, []).append(i)
+    for i, s in enumerate(stories):
+        rep = _title_entities(s.get("title", ""))
+        keys = {k for e in per_title[i] for k in e
+                if " " in k and k not in HUB_STOP}
+        for k in keys:
+            if not _supports_entity(rep, k):
+                continue
+            need = min(2, len(per_title[i]))  # história de 1 matéria basta a manchete
+            if support(i, k) < need:
+                continue
+            index.setdefault(k, []).append(i)
     for s in stories:
         s["hub"] = None
     cands = {}

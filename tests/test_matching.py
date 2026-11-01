@@ -855,3 +855,36 @@ def test_cluster_still_merges_same_fact_with_entity():
     ]
     groups = cluster(arts)
     assert len(groups) == 1, [sorted(g) for g in groups]
+
+
+def test_attach_hubs_ignores_lateral_mention():
+    """Menção de passagem no título não faz a história entrar na pauta."""
+    from app import attach_hubs
+    def st(sid, title, arts):
+        return _story(sid, title, arts)
+    stories = [
+        st("s1", "Flávio Bolsonaro fala pela 1ª vez dos EUA",
+           [("G1", "Flávio Bolsonaro fala pela 1ª vez dos EUA", 0, "C"),
+            ("UOL", "Flávio Bolsonaro cita eleições antes de 2030", 0, "C")]),
+        st("s2", "Trump e a fuga de Flávio Bolsonaro",
+           [("G1", "Trump e a fuga de Flávio Bolsonaro", 0, "C"),
+            ("UOL", "Trump diz que Flávio pode ficar nos EUA", 0, "C")]),
+        st("s3", "Como aliados reagem ao golpismo de Flávio Bolsonaro",
+           [("G1", "Como aliados reagem ao golpismo de Flávio Bolsonaro", 0, "C"),
+            ("UOL", "Aliados de Flávio Bolsonaro reagem à fuga", 0, "C")]),
+        # história sobre outra coisa: Flávio aparece só numa citação lateral
+        st("s4", "Democratas cobram que Trump reconheça vitória de Lula",
+           [("G1", "Democratas cobram que Trump reconheça vitória de Lula", 0, "C"),
+            ("UOL", "Democratas criticam negacionismo de Trump", 0, "C"),
+            ("Folha", "Deputados democratas exigem nota de Trump", 0, "C")]),
+        st("s5", "Michelle defende Tarcísio e critica aliados de Flávio",
+           [("G1", "Michelle chama Jair Bolsonaro de líder", 0, "C"),
+            ("UOL", "Michelle defende Tarcísio e rebate aliados", 0, "C")]),
+    ]
+    out = attach_hubs(stories)
+    by = {s["id"]: s.get("hub") for s in out}
+    assert by["s1"]["key"] == "flávio bolsonaro"
+    assert by["s2"]["key"] == "flávio bolsonaro"
+    assert by["s3"]["key"] == "flávio bolsonaro"
+    assert by["s4"] is None, "citação solta de Flávio não é pauta"
+    assert by["s5"] is None, "só sobrenome (Bolsonaro) não ancora a pauta Flávio"

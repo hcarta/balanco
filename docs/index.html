@@ -211,23 +211,37 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .tlrow a{font-family:var(--serif);font-size:13.5px;line-height:1.3;color:var(--ink)}
 .tlrow a:hover{color:var(--accent);text-decoration:none}
 /* para ir além: aprofundamento + repercussão internacional */
-.beyond{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
+/* ---------- folds: Aprofunde-se / Lá fora / Outros ângulos ---------- */
+.fold{border:1px solid var(--hair);border-radius:10px;background:var(--surface);overflow:hidden}
+.fold summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);padding:11px 14px;user-select:none}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::after{content:"+";margin-left:auto;font-size:15px;line-height:1;color:var(--faint);font-weight:400}
+.fold[open] summary::after{content:"–"}
+.fold summary:hover{color:var(--ink)}
+.fold .fcount{font-weight:600;letter-spacing:0;color:var(--faint)}
+.fold[open] summary{border-bottom:1px solid var(--hair)}
+.fold .fb{padding:10px 14px 6px}
+.beyond{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;align-items:start}
+.beyond.single{grid-template-columns:1fr}
 .beyond .bh{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .beyond .bart{margin-bottom:8px}
-.beyond .bart a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
+.beyond .bart > a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
 .beyond .bart a:hover{color:var(--accent);text-decoration:none}
 .beyond .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
-.beyond .bart small a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--hair-strong)}
+.beyond .bart small a{display:inline;color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--hair-strong)}
 .beyond .bart small a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 @media(max-width:720px){.beyond{grid-template-columns:1fr}}
 /* pauta: navegação entre ângulos do mesmo assunto (não funde histórias) */
-.pauta{display:block;margin-top:14px;padding:14px 16px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
+.pauta{display:block;margin-top:14px;overflow:hidden}
+.pauta .fold + .fold{border-top:none;margin-top:8px}
 .pauta .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
 .pauta .bgrid .bart{margin-bottom:0}
 .pauta .bl + .bl{margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)}
 .pauta .bh{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .pauta .bart{margin-bottom:8px}
-.pauta .bart a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
+.pauta .bart > a{font-family:var(--serif);font-size:14px;line-height:1.32;font-weight:500;display:block;color:var(--ink)}
 .pauta .bart a:hover{color:var(--accent);text-decoration:none}
 .pauta .bart small{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.03em}
 .pauta .devin{font-family:var(--serif);font-size:14px;line-height:1.32;color:var(--ink-soft);display:block}
@@ -734,6 +748,11 @@ function comparePanel(s){
 }
 
 /* outros ângulos da mesma pauta + o que foi fundido nesta história */
+const foldHTML = (label, n, body) => `<details class="fold">
+  <summary><span>${label}</span><span class="fcount">${n}</span></summary>
+  <div class="fb">${body}</div>
+</details>`;
+
 function pauta(s){
   const key = s.hub && s.hub.key;
   const dev = s.developments || [];
@@ -742,13 +761,13 @@ function pauta(s){
         .sort((a,b)=>b.counts.total-a.counts.total).slice(0,5)
     : [];
   if(!sibs.length && !dev.length) return '';
+  const sibBody = `<div class="bgrid">${sibs.map(x=>`<div class="bart"><a href="#${esc(x.id)}" class="open-sib" data-id="${esc(x.id)}">${esc(x.title)}</a>
+      <small>${covLabel(x)}${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div>`;
+  const devBody = dev.map(d=>`<div class="bart"><span class="devin">${esc(d.title)}</span>
+      <small>${d.total} cobertura${d.total===1?'':'s'}</small></div>`).join('');
   return `<div class="pauta">
-    ${sibs.length?`<div class="bl"><div class="bh">🔗 Outros ângulos desta pauta · ${esc(s.hub.label)}</div>
-      <div class="bgrid">${sibs.map(x=>`<div class="bart"><a href="#${esc(x.id)}" class="open-sib" data-id="${esc(x.id)}">${esc(x.title)}</a>
-        <small>${covLabel(x)}${x.blindspot?' · blindspot':''}</small></div>`).join('')}</div></div>`:''}
-    ${dev.length?`<div class="bl"><div class="bh">＋ Também apurado nesta história</div>
-      ${dev.map(d=>`<div class="bart"><span class="devin">${esc(d.title)}</span>
-        <small>${d.total} cobertura${d.total===1?'':'s'}</small></div>`).join('')}</div>`:''}
+    ${sibs.length?foldHTML(`🔗 Outros ângulos desta pauta · ${esc(s.hub.label)}`, sibs.length, sibBody):''}
+    ${dev.length?foldHTML('＋ Também apurado nesta história', dev.length, devBody):''}
   </div>`;
 }
 
@@ -756,7 +775,6 @@ function beyond(s){
   const lr = (s.longreads||[]).slice(0,3);
   const w = (s.world||[]).slice(0,3);
   if(!lr.length && !w.length) return '';
-  const links = arr => arr.map(x=>`<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)}</small></div>`).join('');
   const lrLinks = arr => arr.map(x=>{
     const rel = x.relation==='background' ? 'Para entender melhor' : 'Análise desta pauta';
     const why = x.why ? ` · ${esc(x.why)}` : '';
@@ -769,9 +787,10 @@ function beyond(s){
       : '';
     return `<div class="bart"><a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><small>${esc(x.source)}${n}${srcLinks?` · ${srcLinks}`:''}</small></div>`;
   }).join('');
-  return `<div class="beyond">
-    ${lr.length?`<div class="bl"><div class="bh">📖 Aprofunde-se</div>${lrLinks(lr)}</div>`:''}
-    ${w.length?`<div class="bl"><div class="bh">🌍 Lá fora</div>${wLinks(w)}</div>`:''}
+  const single = !(lr.length && w.length) ? ' single' : '';
+  return `<div class="beyond${single}">
+    ${lr.length?foldHTML('📖 Aprofunde-se', lr.length, lrLinks(lr)):''}
+    ${w.length?foldHTML('🌍 Lá fora', w.length, wLinks(w)):''}
   </div>`;
 }
 
