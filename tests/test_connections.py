@@ -361,3 +361,17 @@ def test_longform_hybrid_orders_by_emb_score(monkeypatch):
                                use_embed=True)
     links = [lr["link"] for lr in got[0]["longreads"]]
     assert links and links[0] == "https://x/p2", f"maior emb_score primeiro: {links}"
+
+
+def test_longform_pool_excludes_foro_de_teresina():
+    """F-08: peça /web/ftNNN/ não entra no pool do Aprofunde-se."""
+    import app
+    assert app.piece_kind(
+        {"title": "Vitória da democracia",
+         "link": "https://piaui.uol.com.br/web/ft136/"}, None) == "podcast"
+    story = _lr_story("Lula faz história e Flávio encena farsa")
+    ft = _lr_piece("Vitória da democracia: Lula faz história e Flávio encena farsa golpista",
+                   summary="Episódio com análise da semana",
+                   link="https://piaui.uol.com.br/web/ft136/")
+    got = app.attach_longreads([story], [ft], {"piaui"}, use_embed=False)
+    assert got[0]["longreads"] == []

@@ -52,3 +52,21 @@ def test_build_leituras_filters_and_diversifies():
 
 def test_build_leituras_without_store_is_empty():
     assert app.build_leituras(None, SOURCES) == []
+
+
+def test_build_leituras_excludes_foro_de_teresina():
+    """F-08: /web/ftNNN/ (Foro de Teresina, podcast) não entra nem com dek."""
+    store = FakeStore({
+        "piaui": [
+            art("Vitória da democracia: Lula faz história",
+                "https://piaui.uol.com.br/web/ft136/",
+                "2026-10-30T13:06:54+00:00",
+                summary="Episódio com análise da semana"),
+            art("O instituto de Mendonça",
+                "https://piaui.uol.com.br/web/andre-mendonca-instituto-iter/",
+                "2026-10-27T09:00:00+00:00"),
+        ],
+    })
+    out = app.build_leituras(store, SOURCES, days=10, limit=8)
+    assert [x["link"] for x in out] == [
+        "https://piaui.uol.com.br/web/andre-mendonca-instituto-iter/"]

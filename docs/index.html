@@ -283,6 +283,9 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .seemore{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:11px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .art .empty{padding:16px;font-family:var(--serif);font-style:italic;color:var(--faint);font-size:13.5px}
+.framing{padding:10px 16px;border-top:1px solid var(--hair);font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.02em}
+.framing .frows{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.framing .frow b{color:var(--ink)}
 .more-art{margin:0 0 10px}
 .more-art summary{cursor:pointer;list-style:none;font-family:var(--sans);font-size:10px;
   font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
@@ -667,6 +670,15 @@ function biasBar(s){
 }
 
 /* ---------- compare ---------- */
+function framingHTML(s){
+  const f = s.framing || {};
+  const rows = [['L','Esq'],['C','Centro'],['R','Dir']]
+    .filter(([k]) => (f[k]||[]).length)
+    .map(([k,lab]) => `<span class="frow"><b>${lab}:</b> ${f[k].map(esc).join(' · ')}</span>`);
+  if(rows.length < 2) return '';
+  return `<div class="framing" title="Termos que cada lado usa mais nos títulos desta história">🪞 Como cada lado intitulou <span class="frows">${rows.join('')}</span></div>`;
+}
+
 function timelineHTML(s){
   const tl = (s.timeline || []).slice(0, 6);
   if(!tl.length) return '';
@@ -742,7 +754,7 @@ function comparePanel(s){
       <div class="ch"><span>${BUCKET[k]}</span><span class="n">${groups.length}</span></div>
       <div class="body">${list}</div></div>`;
   };
-  return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}${timelineHTML(s)}</div>
+  return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}${framingHTML(s)}${timelineHTML(s)}</div>
   ${beyond(s)}
   ${pauta(s)}`;
 }

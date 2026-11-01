@@ -643,6 +643,43 @@ def section_label(raw: str | None) -> str:
     return SECTION_LABELS.get(key, "")
 
 
+def framing_terms(coverage, top_n=3, min_count=2, alpha=0.5):
+    """A-9: termos distintivos por bucket (log-odds com suavização).
+
+    Compara como cada lado (L/C/R) intitulou o mesmo fato. Só cobertura,
+    só tokens com >= min_count na história; ignora bucket vazio ou história
+    de lado único. Retorna {"L": [...], "C": [...], "R": [...]}.
+    """
+    buckets = ("L", "C", "R")
+    toks = {b: [] for b in buckets}
+    for x in coverage:
+        if x.get("bucket") in toks:
+            toks[x["bucket"]] += tok(x.get("title", ""))
+    present = [b for b in buckets if toks[b]]
+    if len(present) < 2:
+        return {}
+    df = Counter(w for x in coverage for w in set(tok(x.get("title", ""))))
+    vocab = [w for w, c in df.items() if c >= min_count]
+    if not vocab:
+        return {}
+    n = {b: len(toks[b]) or 1 for b in buckets}
+    out = {}
+    for b in buckets:
+        if not toks[b]:
+            continue
+        cb = Counter(toks[b])
+        scored = []
+        for w in vocab:
+            rest = sum(1 for o in buckets if o != b for t in toks[o] if t == w)
+            lo = math.log((cb.get(w, 0) + alpha) / (n[b] + alpha * len(vocab)))
+            lo -= math.log((rest + alpha) / (sum(n[o] for o in buckets if o != b)
+                                             + alpha * len(vocab)))
+            if cb.get(w, 0) >= min_count:
+                scored.append((lo, w))
+        out[b] = [w for _, w in sorted(scored, reverse=True)[:top_n]]
+    return out
+
+
 def rep_score(item: dict, meta: dict) -> float:
     """Pontua o melhor título representante da história (Fase 2.4).
 
@@ -832,6 +869,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         stories.append({
             "id": _stable_id(items), "title": rep_title,
             "rep_link": rep.get("link", ""),
+            "framing": framing_terms(coverage),
             "summary": summary[:300],
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
@@ -1060,6 +1098,8 @@ def _is_analysis(title: str) -> bool:
 # A-3: só estas peças contam como cobertura para barra/blindspot
 COVERAGE_KINDS = {"hard_news", "analysis", "explainer"}
 URL_KIND = (
+    # Foro de Teresina: /web/ftNNN/ com imagem foro_news_*, sem autor/dek
+    (r"piaui\.uol\.com\.br/web/ft\d", "podcast"),
     (r"/(podcast|podcasts|audio)/", "podcast"),
     (r"/(video|videos|v[ií]deos)/", "video"),
     (r"/(ao-vivo|live)/", "live"),
@@ -1068,6 +1108,15 @@ URL_KIND = (
     (r"/analise/", "analysis"),
     (r"/entrevista/", "interview"),
 )
+
+
+def _is_non_text_url(url: str | None) -> bool:
+    """URL de peça não-textual (podcast/vídeo/live) pelos padrões de URL."""
+    u = (url or "").lower()
+    for rx, kind in URL_KIND:
+        if kind in ("podcast", "video", "live") and re.search(rx, u):
+            return True
+    return False
 
 
 def piece_kind(item: dict, source: dict | None = None) -> str:
@@ -1398,6 +1447,8 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
             title = a.get("title", "")
             if not title or NON_JOURNALISM.search(title):
                 continue
+            if piece_kind(a, s) in ("podcast", "video", "live"):
+                continue  # F-08: Foro de Teresina & cia não são leitura
             if excluded_section(a.get("section")) or excluded_title(title):
                 continue
             summary = _clean_text(a.get("summary"))
@@ -1438,6 +1489,8 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
         if a.get("source_id") in longform_ids:
             if NON_JOURNALISM.search(a.get("title", "")):
                 continue  # F3.1: programa/quiz/agenda não é aprofundamento
+            if _is_non_text_url(a.get("link")):
+                continue  # F-08: Foro de Teresina & cia não é aprofundamento
             pool.append((entities(a.get("title", "")),
                          entities(a.get("title", "") + " " + (a.get("summary") or "")),
                          a))

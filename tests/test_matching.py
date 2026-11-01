@@ -926,3 +926,38 @@ def test_cluster_audit_opt_in_does_not_change_groups(tmp_path):
     assert all(set(r) >= {"a", "b", "cos", "shared", "decision", "rule"}
                for r in recs)
     assert {r["decision"] for r in recs} <= {"fused", "rejected"}
+
+
+def test_framing_terms_distinguishes_sides():
+    cov = [
+        {"title": "Fuga de Flávio expõe crise do governo", "bucket": "L"},
+        {"title": "Fuga de Flávio aprofunda crise do governo", "bucket": "L"},
+        {"title": "Viagem de Flávio aos EUA preserva família", "bucket": "R"},
+        {"title": "Viagem de Flávio garante segurança da família", "bucket": "R"},
+    ]
+    f = app.framing_terms(cov)
+    assert "fuga" in f["L"] and "viagem" in f["R"]
+    assert app.framing_terms(cov[:2]) == {}, "lado único não tem enquadramento"
+
+
+def test_build_includes_framing():
+    arts = [
+        {"title": "Fuga de Flávio expõe crise do governo", "link": "https://x/l1",
+         "source_id": "l", "source_name": "L", "base_bias": -0.6, "ts": 1.0,
+         "published": "2026-11-01T10:00:00+00:00", "section": "politica", "summary": ""},
+        {"title": "Fuga de Flávio aprofunda crise do governo", "link": "https://x/l2",
+         "source_id": "l2", "source_name": "L2", "base_bias": -0.6, "ts": 1.0,
+         "published": "2026-11-01T10:00:00+00:00", "section": "politica", "summary": ""},
+        {"title": "Viagem de Flávio aos EUA preserva família", "link": "https://x/r1",
+         "source_id": "r", "source_name": "R", "base_bias": 0.6, "ts": 1.0,
+         "published": "2026-11-01T10:00:00+00:00", "section": "politica", "summary": ""},
+        {"title": "Viagem de Flávio garante segurança da família", "link": "https://x/r2",
+         "source_id": "r2", "source_name": "R2", "base_bias": 0.6, "ts": 1.0,
+         "published": "2026-11-01T10:00:00+00:00", "section": "politica", "summary": ""},
+    ]
+    srcs = [{"id": "l", "name": "L", "bias": -0.6, "ownership": "x"},
+            {"id": "l2", "name": "L2", "bias": -0.6, "ownership": "x"},
+            {"id": "r", "name": "R", "bias": 0.6, "ownership": "y"},
+            {"id": "r2", "name": "R2", "bias": 0.6, "ownership": "y"}]
+    out = app.build(srcs, arts, {})
+    assert out and "framing" in out[0]
