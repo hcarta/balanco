@@ -269,6 +269,16 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .seemore{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:11px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .art .empty{padding:16px;font-family:var(--serif);font-style:italic;color:var(--faint);font-size:13.5px}
+.more-art{margin:0 0 10px}
+.more-art summary{cursor:pointer;list-style:none;font-family:var(--sans);font-size:10px;
+  font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
+  padding:0 16px 8px}
+.more-art summary::-webkit-details-marker{display:none}
+.more-art summary::before{content:"▸";margin-right:5px}
+.more-art[open] summary::before{content:"▾"}
+.more-art .art.sub{padding:8px 16px;border-bottom:none;border-top:1px dashed var(--hair)}
+.more-art .art.sub a{font-size:13.5px}
+.more-art .art.sub .src{margin-top:4px}
 .art .pk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:var(--faint);border:1px solid var(--hair-strong);
   border-radius:3px;padding:1px 5px}
@@ -553,7 +563,7 @@ function renderFeatured(){
       ${kick}
       ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       ${checksBadges(top)}${featCons}
-      <h1><a href="${esc(lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
+      <h1><a href="${esc(top.rep_link || lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
       ${biasBar(top)}
     </div>`;
@@ -659,20 +669,63 @@ function timelineHTML(s){
 function comparePanel(s){
   const g={L:[],C:[],R:[]};
   s.articles.forEach(a=>g[a.bucket].push(a));
+
+  const checkHTML = a => a.check
+    ? `<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}${a.check.terms&&a.check.terms.length?` · termos: ${a.check.terms.join(', ')}`:''}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`
+    : '';
+
+  const artHTML = (a, sub=false) => {
+    const pk = a.piece_kind && !COVERAGE.has(a.piece_kind)
+      ? `<span class="pk">${esc(PK_LABEL[a.piece_kind]||a.piece_kind)}</span>` : '';
+    if(sub){
+      return `<div class="art sub">
+        <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a>
+        ${pk?`<div class="src">${pk}</div>`:''}
+        ${checkHTML(a)}
+      </div>`;
+    }
+    return `<div class="art">
+      <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a>
+      <div class="src"><span class="sname">${esc(a.source)}</span>
+        ${a.factuality?`<span class="chip f-${a.factuality}">${factLabel(a.factuality)}</span>`:''}
+        ${pk}
+        ${a.ownership?`<span>· ${esc(a.ownership)}</span>`:''}
+      </div>
+      ${checkHTML(a)}
+    </div>`;
+  };
+
+  // um veículo por linha: manchete principal + detalhes dos demais artigos
+  const group = arr => {
+    const by = {};
+    arr.forEach(a=>{ const key=a.source||'?'; (by[key] ||= []).push(a); });
+    const groups = Object.values(by).map(xs=>{
+      xs.sort((a,b)=>{
+        const ca=isCoverage(a)?1:0, cb=isCoverage(b)?1:0;
+        if(ca!==cb) return cb-ca;
+        return String(b.published||b.first_seen||'').localeCompare(
+          String(a.published||a.first_seen||''));
+      });
+      return xs;
+    });
+    groups.sort((x,y)=>String(y[0].published||y[0].first_seen||'').localeCompare(
+      String(x[0].published||x[0].first_seen||'')));
+    return groups;
+  };
+
   const col=(k)=>{
-    const list = g[k].length
-      ? g[k].map(a=>`<div class="art">
-          <a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a>
-          <div class="src"><span class="sname">${esc(a.source)}</span>
-            ${a.factuality?`<span class="chip f-${a.factuality}">${factLabel(a.factuality)}</span>`:''}
-            ${a.piece_kind && !COVERAGE.has(a.piece_kind)?`<span class="pk">${esc(PK_LABEL[a.piece_kind]||a.piece_kind)}</span>`:''}
-            ${a.ownership?`<span>· ${esc(a.ownership)}</span>`:''}
-          </div>
-          ${a.check?`<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}${a.check.terms&&a.check.terms.length?` · termos: ${a.check.terms.join(', ')}`:''}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`:''}
-          </div>`).join('')
+    const groups = group(g[k]);
+    const list = groups.length
+      ? groups.map(xs=>{
+          const [main, ...rest] = xs;
+          const more = rest.length
+            ? `<details class="more-art"><summary>Mais artigos deste veículo (${rest.length})</summary>${rest.map(a=>artHTML(a,true)).join('')}</details>`
+            : '';
+          return artHTML(main) + more;
+        }).join('')
       : `<div class="empty">Sem cobertura deste lado.</div>`;
     return `<div class="col ${k}">
-      <div class="ch"><span>${BUCKET[k]}</span><span class="n">${g[k].length}</span></div>
+      <div class="ch"><span>${BUCKET[k]}</span><span class="n">${groups.length}</span></div>
       <div class="body">${list}</div></div>`;
   };
   return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}${timelineHTML(s)}</div>

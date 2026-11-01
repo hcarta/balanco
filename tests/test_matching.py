@@ -720,3 +720,53 @@ def test_build_timeline_orders_by_first_seen():
     out = app.build(srcs, arts, {})
     assert len(out) == 1
     assert [x["source"] for x in out[0]["timeline"]] == ["A", "C", "B"]
+
+
+def test_representative_prefers_recent_among_central():
+    items = [
+        {"title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+         "source_id": "a", "section": "tecnologia",
+         "published": "2026-10-31T13:00:00+00:00"},
+        {"title": "Binance diz ter coberto 90% das perdas após ataque hacker",
+         "source_id": "b", "section": "tecnologia",
+         "published": "2026-11-01T12:00:00+00:00"},
+        {"title": "Binance suspende saques após ataque hacker",
+         "source_id": "c", "section": "tecnologia",
+         "published": "2026-11-01T10:00:00+00:00"},
+    ]
+    meta = {k: {"factuality": "high"} for k in ("a", "b", "c")}
+    rep = app._representative(items, meta)
+    assert rep["published"].startswith("2026-11-01")
+
+
+def test_build_updated_ignores_frames():
+    title = "Binance retoma saques após ataque hacker"
+    srcs = [
+        {"id": "l", "name": "L", "bias": -0.6, "factuality": "high",
+         "ownership": "independente"},
+        {"id": "c", "name": "C", "bias": 0.0, "factuality": "high",
+         "ownership": "familia"},
+        {"id": "r", "name": "R", "bias": 0.6, "factuality": "mixed",
+         "ownership": "globo"},
+    ]
+    arts = [
+        {"title": title, "link": "https://x/l", "source_id": "l",
+         "source_name": "L", "base_bias": -0.6, "ts": 1.0,
+         "published": "2026-10-31T13:00:00+00:00",
+         "first_seen": "2026-10-31T13:10:00+00:00", "section": "economia",
+         "summary": ""},
+        {"title": title, "link": "https://x/c", "source_id": "c",
+         "source_name": "C", "base_bias": 0.0, "ts": 1.0,
+         "published": "2026-10-31T13:00:00+00:00",
+         "first_seen": "2026-10-31T13:10:00+00:00", "section": "economia",
+         "summary": ""},
+        {"title": title, "link": "https://x/r", "source_id": "r",
+         "source_name": "R", "base_bias": 0.6, "ts": 1.0,
+         "published": "2026-11-01T13:00:00+00:00",
+         "first_seen": "2026-11-01T13:10:00+00:00", "section": "opiniao",
+         "summary": ""},
+    ]
+    out = app.build(srcs, arts, {})
+    assert len(out) == 1
+    assert out[0]["counts"]["frames"] == 1
+    assert out[0]["updated"].startswith("2026-10-31T13:00")

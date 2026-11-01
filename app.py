@@ -613,6 +613,30 @@ def _representative(items, meta):
     scores = [rep_score(x, meta) for x in items]
     floor = max(scores) - 0.25
     cand = [i for i, sc in enumerate(scores) if sc >= floor]
+
+    def _pub(i):
+        for key in ("published", "first_seen"):
+            v = items[i].get(key)
+            if not v:
+                continue
+            try:
+                return datetime.fromisoformat(v).timestamp()
+            except ValueError:
+                pass
+        return 0.0
+
+    # a manchete não pode ser uma versão antiga de uma história que segue
+    # atualizada: entre a cobertura das últimas 24 h, pega a janela de 6 h do
+    # artigo mais recente e escolhe o de melhor qualidade (rep_score); o
+    # medoide só vale quando não há atualização.
+    now = datetime.now(timezone.utc).timestamp()
+    recent = [i for i in range(len(items))
+              if _pub(i) and (now - _pub(i)) / 3600 <= 24]
+    if recent:
+        latest = max(_pub(i) for i in recent)
+        window = [i for i in recent if latest - _pub(i) <= 6 * 3600]
+        best = max(window, key=lambda i: (scores[i], float(means[i]), _pub(i)))
+        return items[best]
     best = max(cand, key=lambda i: (float(means[i]), scores[i]))
     return items[best]
 
@@ -668,6 +692,10 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "first_seen": x.get("first_seen") or _pub(x),
         } for x in sorted(by_source.values(),
                           key=lambda y: (_pub(y), y.get("source_name", "")))[:6]]
+        # updated = última COBERTURA (opinião/vídeo não rejuvenesce a história)
+        updated = max((_pub(x) for x in coverage), default="")
+        if not updated:
+            updated = max((_pub(x) for x in items), default="")
         rep = _representative(coverage, meta)
         rep_title = _clean_title(rep["title"])
         # resumo: prefere o do representante; senão o primeiro disponível
@@ -675,6 +703,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             (x["summary"] for x in coverage if x.get("summary")), "")
         stories.append({
             "id": _stable_id(items), "title": rep_title,
+            "rep_link": rep.get("link", ""),
             "summary": summary[:300],
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
@@ -687,7 +716,7 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                     "C": round(100 * gc["C"] / ind) if ind else 0,
                     "R": round(100 * gc["R"] / ind) if ind else 0},
             "blindspot": blind,
-            "updated": max(x["published"] for x in items),
+            "updated": updated,
             "timeline": timeline,
             "articles": [{
                 "source": x["source_name"], "source_id": x["source_id"],
