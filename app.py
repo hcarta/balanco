@@ -1197,9 +1197,34 @@ def _ts_of(s) -> float:
 
 # Pauta = narrativa compartilhada (ex.: "Flávio Bolsonaro"). Não funde histórias:
 # agrupa para navegação, preservando a comparação de enquadramento de cada fato.
-HUB_STOP = ENTITY_GENERIC | {
-    "são paulo", "rio de janeiro", "brasília", "brasilia", "minas gerais",
-    "rio grande do sul", "estados unidos", "reino unido", "america latina",
+# Lugar é "onde", não "sobre": um estado/cidade junta pautas sem relação
+# ("Mato Grosso" = violência em MS + soja + TCE). Países seguem valendo
+# (guerra, eleição), então a lista é subnacional de propósito.
+HUB_STOP_GEO = {
+    "acre", "alagoas", "amapá", "amapa", "amazonas", "bahia", "ceará", "ceara",
+    "distrito federal", "espírito santo", "espirito santo", "goiás", "goias",
+    "maranhão", "maranhao", "mato grosso", "mato grosso do sul", "minas gerais",
+    "pará", "para", "paraíba", "paraiba", "paraná", "parana", "pernambuco",
+    "piauí", "piaui", "rio de janeiro", "rio grande do norte",
+    "rio grande do sul", "rondônia", "rondonia", "roraima", "santa catarina",
+    "são paulo", "sao paulo", "sergipe", "tocantins", "brasília", "brasilia",
+    # capitais e cidades grandes (as multi-palavra são as que viram chave)
+    "belo horizonte", "porto alegre", "foz do iguaçu", "foz do iguacu",
+    "são josé dos campos", "sao josé dos campos", "são bernardo do campo",
+    "santo andré", "santo andre", "juiz de fora", "campos dos goytacazes",
+    "feira de santana", "montes claros", "ribeirão preto", "ribeirao preto",
+    "são josé do rio preto", "sao josé do rio preto", "joinville", "londrina",
+    "maringá", "maringa", "uberlândia", "uberlandia", "cuiabá", "cuiaba",
+    "campo grande", "são luís", "sao luis", "belém", "belem", "manaus",
+    "macapá", "macapa", "porto velho", "boa vista", "rio branco", "palmas",
+    "teresina", "fortaleza", "natal", "joão pessoa", "joao pessoa", "maceió",
+    "maceio", "aracaju", "salvador", "vitória", "vitoria", "florianópolis",
+    "florianopolis", "curitiba", "goiânia", "goiania", "campinas", "santos",
+    "niterói", "niteroi", "duque de caxias", "nova iguaçu", "nova iguacu",
+}
+
+HUB_STOP = ENTITY_GENERIC | HUB_STOP_GEO | {
+    "estados unidos", "reino unido", "america latina",
     "américa latina", "oriente médio", "oriente medio", "união europeia",
 }
 HUB_ACRONYMS = {"stf", "tse", "pf", "pgr", "cnj", "tcu", "bndes", "ibge", "copom",

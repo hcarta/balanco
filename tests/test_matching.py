@@ -888,3 +888,19 @@ def test_attach_hubs_ignores_lateral_mention():
     assert by["s3"]["key"] == "flávio bolsonaro"
     assert by["s4"] is None, "citação solta de Flávio não é pauta"
     assert by["s5"] is None, "só sobrenome (Bolsonaro) não ancora a pauta Flávio"
+
+
+def test_attach_hubs_ignores_place_names():
+    """Estado/cidade não é pauta: 'Mato Grosso' juntava soja, TCE e violência."""
+    from app import attach_hubs
+    def st(sid, t):
+        return _story(sid, t, [("G1", t, 0, "C"), ("UOL", t, 0, "C")])
+    stories = [
+        st("s1", "Ministros vão a Mato Grosso do Sul verificar denúncias de violência"),
+        st("s2", "Esmagamento de soja em Mato Grosso bate recorde histórico em 2026"),
+        st("s3", "Presidente do TCE de Mato Grosso sacou R$ 15 milhões em dinheiro"),
+        st("s4", "São José dos Campos terá novas linhas de ônibus elétricos"),
+        st("s5", "São José dos Campos amplia horário do Anel Viário no sábado"),
+    ]
+    out = attach_hubs(stories)
+    assert all(s.get("hub") is None for s in out), [s.get("hub") for s in out]
