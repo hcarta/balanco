@@ -56,7 +56,12 @@ Uso no cluster: fundir **só** pares `same` (mesmo acontecimento); `related`
 
 ## 5. Bugs e armadilhas de instrumentação (não são limite real)
 
-1. **`dt_hours` é constante 0 no treino — BUG.** Os scripts F0/F1 preencheram
+1. **`dt_hours` é constante 0 no treino — BUG (CORRIGIDO em 01/11/2026).**
+   `ops/rebuild_pair_dt.py` recomputa o Δt a partir do cache (`ts` do artigo),
+   reaproveitando os rótulos: 143/154 pares com Δt real (mediana 8,7 h; p90 41 h).
+   Re-treino: **AUC 0,835 → 0,904**; em P≈0,94 o recall sobe de 0,43 para 0,53
+   (thr 0,8: P 0,94 test / R 0,53). Ainda não há ponto P≥0,97 & R≥0,80, mas o
+   sinal temporal era real e ficou comprovado. Histórico do bug: Os scripts F0/F1 preencheram
    `ts` com `app._ts_of(article)`, mas `_ts_of` lê o campo `updated` (de
    história), retornando 0,0 para artigos. Artigos têm `published`/`first_seen`;
    é preciso converter esses campos para timestamp ao gerar features. O sinal
