@@ -283,3 +283,81 @@ def test_intl_groups_by_entity_and_number():
     assert len(w) == 1
     assert w[0]["n_sources"] == 2
     assert any(s["source"] == "BBC" for s in w[0]["sources"])
+
+
+def _lr_story(title, link="https://x/s", ts=None):
+    import time
+    return {"id": "h1", "title": title, "summary": "",
+            "articles": [{"source": "G1", "title": title, "link": link}],
+            "counts": {"total": 1}, "updated": "2026-11-01T10:00:00+00:00"}
+
+
+def _lr_piece(title, summary="", ts=None, source_id="piaui", link="https://x/p"):
+    import time
+    return {"title": title, "summary": summary, "link": link,
+            "source_id": source_id, "source_name": "Piauí",
+            "ts": ts or time.time(), "section": "reportagem"}
+
+
+def test_longform_hybrid_admits_with_anchor_but_no_entity_match(monkeypatch):
+    """C-3: com --embed, a âncora lexical + scorer >= limiar admite;
+    sem embed, a regra de entidade barra. Sem modelo real (mock)."""
+    import numpy as np
+    import app
+    story = "Banco Master: como Vorcaro transformou o banco em plataforma"
+    piece = "O instituto de Mendonça e o caso Master no STF"
+    st = _lr_story(story)
+    pc = _lr_piece(piece, summary="Mendonça e o caso Master no Supremo")
+    # âncora lexical existe, mas entity_match exige 2+ entidades
+    assert app._title_cov(set(app.tok(story)), set(app.tok(piece))) >= app.EMB_PREFILTER_COV
+    assert app.entity_match(app.entities(story), app.entities(piece))[0] is False
+
+    def fake_embed(docs):
+        n = len(docs)
+        X = np.zeros((n, 2))
+        X[0] = [1.0, 0.0]   # história
+        X[1] = [1.0, 0.0]   # peça: cosseno 1.0
+        return X
+
+    monkeypatch.setattr(app, "embed_matrix", fake_embed)
+    got = app.attach_longreads([dict(st)], [dict(pc)], {"piaui"}, use_embed=True)
+    assert len(got[0]["longreads"]) == 1, "scorer alto + âncora deveria admitir"
+
+    def fake_zero(docs):
+        n = len(docs)
+        X = np.zeros((n, 2))
+        X[0] = [1.0, 0.0]
+        X[1] = [0.0, 1.0]   # cosseno 0.0
+        return X
+
+    monkeypatch.setattr(app, "embed_matrix", fake_zero)
+    got2 = app.attach_longreads([dict(st)], [dict(pc)], {"piaui"}, use_embed=True)
+    assert got2[0]["longreads"] == [], "scorer baixo não admite"
+
+    got3 = app.attach_longreads([dict(st)], [dict(pc)], {"piaui"},
+                                use_embed=False)
+    assert got3[0]["longreads"] == [], "sem embed a regra barra (fallback)"
+
+
+def test_longform_hybrid_orders_by_emb_score(monkeypatch):
+    import numpy as np
+    import app
+    story = "Crise no Banco Master chega ao STF com Mendonça relator"
+    st = _lr_story(story)
+    p1 = _lr_piece("O instituto de Mendonça", summary="Mendonça e o Master",
+                   link="https://x/p1")
+    p2 = _lr_piece("Mendonça e o caso Master no STF: entenda a crise do banco",
+                   summary="relatoria de Mendonça no caso Master",
+                   link="https://x/p2")
+
+    def fake_embed(docs):
+        # docs = [história, p1, p2]; p1 cos 0.9, p2 cos 0.99
+        X = np.array([[1.0, 0.0], [0.9, 0.436], [0.99, 0.141]])
+        Xn = X / np.linalg.norm(X, axis=1, keepdims=True)
+        return Xn
+
+    monkeypatch.setattr(app, "embed_matrix", fake_embed)
+    got = app.attach_longreads([dict(st)], [dict(p1), dict(p2)], {"piaui"},
+                               use_embed=True)
+    links = [lr["link"] for lr in got[0]["longreads"]]
+    assert links and links[0] == "https://x/p2", f"maior emb_score primeiro: {links}"

@@ -1361,6 +1361,16 @@ def attach_hubs(stories, min_stories=3, window_h=72.0):
 # ("diplomata argentina" × "voto das capitais"), então ele só confirma pares
 # com entidade em comum ou cobertura de título >= EMB_PREFILTER_COV.
 EMB_BOOST = 0.75
+# C-3 híbrido (decisão 01/11/2026): limiares do eval em 120 pares
+# (same P 0.80/R 0.75, rel P 0.88/R 0.71; top-3 idêntico à regra).
+EMB_SAME_TH = 0.55
+EMB_REL_TH = 0.45
+
+
+def longform_emb_score(ent, rec, emb_cos, cov, quality=1.0):
+    """Scorer híbrido do eval (modo emb), mesma fórmula calibrada."""
+    return (0.45 * emb_cos + 0.30 * ent + 0.10 * rec
+            + 0.10 * quality + 0.05 * cov)
 EMB_PREFILTER_COV = 0.12
 
 
@@ -1432,11 +1442,16 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
                          entities(a.get("title", "") + " " + (a.get("summary") or "")),
                          a))
     X, n_st = None, len(stories)
+    idf = None
     if use_embed and pool:
         try:
             X = embed_matrix([{"title": s.get("title", "")} for s in stories] +
                              [{"title": a.get("title", "")} for _, _, a in pool])
+            idf, _ = build_idf(
+                [set(tok(s.get("title", ""))) for s in stories] +
+                [set(tok(a.get("title", ""))) for _, _, a in pool])
         except Exception as e:
+            X = None
             print(f"  [aviso] embeddings indisponíveis no aprofundamento ({e})")
     now = datetime.now(timezone.utc).timestamp()
     for si, s in enumerate(stories):
@@ -1461,10 +1476,24 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
             relation = "same" if age_days <= 14 else "background"
             le = le_title if relation == "same" else le_full
             ok, terms = entity_match(se, le)
-            if not ok and X is not None:
+            emb_score = None
+            if X is not None:
+                emb_cos = float(X[si] @ X[n_st + pi])
+                pe = entities(a.get("title", "") + " " + (a.get("summary") or ""))
+                den = sum(idf.get(e, 1) for e in pe) or 1
+                ent = sum(idf.get(e, 1)
+                          for e in _distinct_entities(se & pe)) / den
+                rec = math.exp(-age_days / 60.0)
+                cov = _title_cov(st, set(tok(a.get("title", ""))))
+                emb_score = longform_emb_score(ent, rec, emb_cos, cov)
+            if not ok and emb_score is not None:
+                # C-3 híbrido: âncora lexical obrigatória (decisão 01/11/2026),
+                # admissão pelo scorer calibrado no eval.
                 lex_ok = _title_cov(st, set(tok(a.get("title", "")))) >= EMB_PREFILTER_COV
-                if lex_ok and float(X[si] @ X[n_st + pi]) >= EMB_BOOST:
+                thr = EMB_SAME_TH if relation == "same" else EMB_REL_TH
+                if lex_ok and emb_score >= thr:
                     ok = True
+                    terms = sorted((se & pe) - ENTITY_GENERIC)[:6]
             if not ok:
                 continue
             shared = se & le
@@ -1478,8 +1507,12 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
             if a.get("source_name") in covered and not _is_analysis(a.get("title", "")):
                 continue
             why = sorted(shared | (se & entities(a.get("summary") or "")))[:4]
-            score = (1 if relation == "same" else 0, len(distinct),
-                     round(cov, 3), len(terms))
+            if emb_score is not None:
+                score = (round(emb_score, 4), len(distinct),
+                         round(cov, 3), len(terms))
+            else:
+                score = (1 if relation == "same" else 0, len(distinct),
+                         round(cov, 3), len(terms))
             cands.append((score, link, a, relation, age_days, why))
         seen, out, used_src = set(), [], set()
         for _, link, a, relation, age_days, why in sorted(cands, reverse=True):

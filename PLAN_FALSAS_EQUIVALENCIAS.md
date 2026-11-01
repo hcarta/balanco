@@ -159,7 +159,7 @@ Determinístico (duas rodadas byte-idênticas) e com teste em
 `tests/test_cluster_pairs.py`. Sinal visível: `shared_spec` médio 3,86 (same)
 vs 2,26 (different); o FN c076 carrega `numbers_match=1, subject_match=1`.
 
-**Treino bloqueado até a decisão do C-3 híbrido** (revisão §0).
+**Treino desbloqueado:** C-3 híbrido decidido e integrado em 01/11/2026 (artefato e limiares independentes do cluster). Próximo: `ops/eval_pair_model.py`.
 
 - [ ] `ops/pair_features.py` com vetor fixo e determinístico:
       `cos_tfidf, cos_emb, jaccard, cov_short, cov_rep, shared_all, shared_spec,

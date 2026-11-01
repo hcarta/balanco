@@ -43,7 +43,7 @@ open docs/index.html
 
 ### Opcional: embeddings semânticos
 
-O `--embed` usa o MiniLM multilíngue para complementar as conexões de longform e internacionais. No CI, o backend é **ONNX/fastembed** (`requirements-embed.txt`, ~220 MB, sem torch) com o modelo em cache; localmente, se `fastembed` não estiver instalado, cai para `sentence_transformers`. Sem modelo, tudo volta ao TF-IDF/regras lexicais.
+O `--embed` usa o MiniLM multilíngue para complementar as conexões de longform e internacionais. No Aprofunde-se, o scorer híbrido (embedding + entidade-idf + recência) admite e ordena peças sob `--embed`, com âncora lexical obrigatória; sem `--embed`, vale a regra de entidade. No CI, o backend é **ONNX/fastembed** (`requirements-embed.txt`, ~220 MB, sem torch) com o modelo em cache; localmente, se `fastembed` não estiver instalado, cai para `sentence_transformers`. Sem modelo, tudo volta ao TF-IDF/regras lexicais.
 
 O agrupamento usa embeddings apenas com `--embed-cluster` (experimental): a coerência A-4 ainda não está calibrada para isso, e a versão anterior criou uma história com 645 coberturas.
 
