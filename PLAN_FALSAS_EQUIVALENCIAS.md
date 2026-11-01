@@ -64,17 +64,55 @@ Por que este caminho:
 | Clusterização por comunidade (DBSCAN/Louvain) | resolve o grafo, não o par: o erro continua na aresta |
 | Só stoplist de palavras | infinito: sempre aparece um novo tema genérico (“menor nível”, “eleição”) |
 
+## 0. Revisão (01/11/2026) — convivência com o outro plano em curso
+
+O outro plano em execução é **C-3 híbrido (scorer história×longform, opt-in via
+`--embed`) + A-9 (enquadramento comparado)**. Este plano atua em **artigo×artigo**
+(cluster). Convivência:
+
+- **Escopos disjuntos:** `tests/longform_pairs.jsonl` (C-3, 120 pares) ≠
+  `tests/cluster_pairs.jsonl` (novo, F1). Não renomear nem mesclar.
+- **Artefatos disjuntos:** scorer longform (se integrado) ≠ `state/pair_model.json`
+  (F2, cluster). Limiares independentes (0,70–0,75 no longform/internacional;
+  τ calibrado do zero aqui).
+- **Único compartilhamento:** backend `embed_matrix` e `entities()`. Nenhuma
+  mudança neste plano pode alterar o comportamento do `--embed` nas conexões.
+- **Ordem:** F0 (instrumentação, opt-in) + F1 (rotulagem) rodam em paralelo agora;
+  F2 (treino) só depois da decisão do C-3 híbrido, para não calibrar dois modelos
+  sobre embeddings ao mesmo tempo; F3 (flag `--pair-model`) por último.
+- **Restrições herdadas:** schema de `data.json` aditivo; CI < 10 min; auditoria
+  desligada por padrão (não pode atrasar testes nem rodadas); `state/audit/`
+  nunca versionado.
+
+Ajustes aplicados às fases abaixo: F0 opt-in via `audit_path`/env; F1 começa com
+seed de 150–200 pares e expande; F2 inferência só-numpy em `app.py`.
+
 ## 4. Fases
 
 Cada fase termina com critério de aceite e commit próprio. Não avance sem o aceite.
 
-### F0 — Instrumentação (½ dia)
+### F0 — Instrumentação (½ dia) — ✅ feito (01/11/2026)
 
-- [ ] Em `app.py`, dentro de `cluster()`, registrar cada par **fundido** e cada par
-      **rejeitado com cosseno ≥ 0,30** em `state/audit/pairs-<run_id>.jsonl`:
-      `{a, b, source_a, source_b, section_a, section_b, dt_h, cos, shared, ents, decision, rule}`.
-- [ ] `ops/audit_pairs.py`: imprime os 30 pares menos similares que foram fundidos
-      e os 30 mais similares que foram rejeitados (para revisão manual).
+- [x] `cluster(..., audit_path=None)` opt-in (env `BALANCO_AUDIT` como
+      alternativa) em `app.py`; sem `audit_path`, clustering byte-idêntico
+      (validado: 5.052 artigos → 3.564 grupos, 0,4 s com e sem audit).
+- [x] `ops/audit_pairs.py` (`--run … --top 30`). Primeira rodada real: 4.785
+      pares candidatos (3.400 fundidos, 1.385 rejeitados).
+- [x] `state/audit/` no `.gitignore`; teste de não-regressão em
+      `tests/test_matching.py` (124 testes).
+- [x] Seed inicial do F1: `tests/cluster_pairs_seed.jsonl` (16 pares:
+      6 same / 2 related / 8 different) a partir das regressões + audit.
+
+- [ ] Em `app.py`, `cluster(..., audit_path=None)` opt-in (env `BALANCO_AUDIT`
+      como alternativa): registrar cada par **candidato** (cos ≥ thresh ou
+      Se ≥ 0,70) em `state/audit/pairs-<run_id>.jsonl`:
+      `{a, b, source_a, source_b, section_a, section_b, dt_h, cos, cos_emb,
+      shared, ents, decision, rule}`.
+      `decision` ∈ {`fused`, `rejected`}; `rule` = estágio que decidiu
+      (`low_sim`, `near_dup`, `no_entity`, `no_content`, `same_source`,
+      `time_window`, `fused`). Sem `audit_path`, o clustering é byte-idêntico.
+- [ ] `ops/audit_pairs.py`: imprime os 30 pares fundidos menos similares e
+      os 30 rejeitados mais similares (para revisão manual).
 - [ ] Não versionar `state/audit/` (gitignore).
 
 **Aceite:** uma rodada real gera o arquivo; é possível reconstruir por que cada
@@ -82,7 +120,12 @@ história grande tem os membros que tem.
 
 ### F1 — Conjunto rotulado (1–2 dias)
 
-- [ ] `tests/cluster_pairs.jsonl`, 600–900 pares, 3 rótulos:
+Seed primeiro, expansão depois: começar com **150–200 pares** (regressões já
+existentes em `tests/test_matching.py` + top do `ops/audit_pairs.py` — seed de
+16 em `tests/cluster_pairs_seed.jsonl`), expandir
+para 600–900 na sequência. Formato e amostragem:
+
+- [ ] `tests/cluster_pairs.jsonl`, 3 rótulos:
       `same` (mesmo fato), `related` (mesmo tema/desdobramento, não o mesmo fato),
       `different` (assuntos distintos).
 - [ ] Amostragem estratificada por dia (não por rodada), para evitar vazamento:
@@ -96,7 +139,7 @@ história grande tem os membros que tem.
       ataque) é `related`.
 - [ ] Dividir em `train`/`test` **por data** (`ops/eval_pair_model.py --split date`).
 
-**Aceite:** ≥ 600 pares, ≥ 25% de negativos difíceis, distribuição de rótulos
+**Aceite:** seed de ≥ 150 pares (expansão a ≥ 600), ≥ 25% de negativos difíceis, distribuição de rótulos
 documentada no cabeçalho do arquivo.
 
 ### F2 — Features + modelo (1 dia)
@@ -108,6 +151,7 @@ documentada no cabeçalho do arquivo.
 - [ ] Treinar `LogisticRegression` (L2) ou `HistGradientBoosting`, com
       `class_weight="balanced"`; salvar em `state/pair_model.json`
       (coeficientes + nomes das features + limiar, sem pickle).
+      **sklearn só em `ops/`; `app.py` usa inferência só-numpy a partir do JSON.**
 - [ ] Escolher o limiar por **precisão ≥ 0,97** na classe `same` (curva PR), e
       reportar o recall correspondente.
 - [ ] `ops/eval_pair_model.py`: P/R/F1 por rótulo, matriz de confusão e os 20 erros

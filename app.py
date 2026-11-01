@@ -271,45 +271,63 @@ def _near_duplicate(shared, toksets, i, j, s_ij) -> bool:
     return (len(shared) >= 4 and len(shared) / small >= 0.5) or s_ij >= 0.62
 
 
-def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
-    """Decisão de par (extraída para o cluster e a coerência usarem a mesma)."""
+def _pair_decision(articles, toksets, S, Se, i, j, th, window_h):
+    """Decisão de par com motivo (para auditoria F0; `_pair_ok` é o wrapper).
+
+    Retorna (funde: bool, rule: str). `rule` é o estágio que decidiu:
+    low_sim | near_dup_ok | no_entity | no_content | same_source |
+    time_window | fused.
+    """
     shared = toksets[i] & toksets[j]
     if len(shared) < 1:
-        return False
+        return False, "low_sim"
     pred = S[i, j] >= th and len(shared) >= 2
     if Se is not None and not pred and Se[i, j] >= 0.70 and len(shared) >= 1:
         pred = True  # híbrido: paráfrase semântica (Fase 2.2)
     if not pred:
-        return False
+        return False, "low_sim"
     # título praticamente igual dispensa as âncoras abaixo
     if not _near_duplicate(shared, toksets, i, j, S[i, j]):
         # dois fatos distintos compartilham vocabulário de tema ("eleição
         # presidencial", "guerra", "Rússia"); sem nome próprio em comum o
         # par não é a mesma notícia.
         if not _entity_anchor(articles[i], articles[j]):
-            return False
+            return False, "no_entity"
         # e o nome próprio sozinho não basta: "Papa Leão XIV vota" × "Papa
         # Leão XIV pede paz" são fatos diferentes. Precisa de conteúdo em
         # comum além das entidades (nomes/cargos/siglas não são assunto).
         ents = (_title_entities(articles[i].get("title", ""))
                 | _title_entities(articles[j].get("title", "")))
         if not (shared - ents):
-            return False
+            return False, "no_content"
+    else:
+        # passou pelo atalho de quase-duplicata; ainda valida fonte/tempo
+        pass
     si, sj = articles[i].get("source_id"), articles[j].get("source_id")
     if si is not None and si == sj:
         # mesma fonte: exige mais evidência (Fase 2.3)
         ti, tj = tok(articles[i]["title"]), tok(articles[j]["title"])
         if len(ti) >= 2 and len(tj) >= 2 and ti[:2] == tj[:2]:
-            return False  # série da casa ("Pinguins X", "VÍDEOS: Jornal ...")
+            return False, "same_source"  # série da casa ("Pinguins X", "VÍDEOS: Jornal ...")
         same_sec = bool(articles[i].get("section")) and \
             articles[i].get("section") == articles[j].get("section")
         floor = th + (0.12 if same_sec else 0.10)
         if S[i, j] < floor or len(shared) < 3:
-            return False
+            return False, "same_source"
     dt = abs(articles[i]["ts"] - articles[j]["ts"]) / 3600
     w = pair_window(articles[i].get("section"), articles[j].get("section"),
                     window_h)
-    return dt <= w
+    if dt > w:
+        return False, "time_window"
+    if _near_duplicate(shared, toksets, i, j, S[i, j]):
+        return True, "near_dup_ok"
+    return True, "fused"
+
+
+def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
+    """Decisão de par (extraída para o cluster e a coerência usarem a mesma)."""
+    ok, _ = _pair_decision(articles, toksets, S, Se, i, j, th, window_h)
+    return ok
 
 
 def _components(indices, articles, toksets, S, Se, th, window_h):
@@ -356,7 +374,13 @@ def _cohere(groups, articles, toksets, S, Se, window_h):
     return out
 
 
-def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
+def cluster(articles, thresh=0.38, window_h=48, use_embed=False,
+            audit_path=None):
+    """Agrupa artigos em histórias. `audit_path` (F0) é opt-in: sem ele o
+    resultado é byte-idêntico ao anterior."""
+    import os as _os
+    if audit_path is None:
+        audit_path = _os.environ.get("BALANCO_AUDIT") or None
     n = len(articles)
     if n == 0:
         return []
@@ -389,9 +413,38 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False):
     if Se is not None:
         cand = cand | (Se >= 0.70)
     ii, jj = np.where(np.triu(cand, k=1))
+    _audit = [] if audit_path else None
     for i, j in zip(ii.tolist(), jj.tolist()):
-        if _pair_ok(articles, toksets, S, Se, i, j, thresh, window_h):
+        ok, rule = _pair_decision(articles, toksets, S, Se, i, j, thresh,
+                                  window_h)
+        if _audit is not None:
+            ai, aj = articles[i], articles[j]
+            try:
+                dt_h = abs(ai.get("ts", 0) - aj.get("ts", 0)) / 3600
+            except TypeError:
+                dt_h = None
+            _audit.append({
+                "a": ai.get("title", ""), "b": aj.get("title", ""),
+                "source_a": ai.get("source_id"), "source_b": aj.get("source_id"),
+                "section_a": ai.get("section"), "section_b": aj.get("section"),
+                "dt_h": round(dt_h, 2) if dt_h is not None else None,
+                "cos": round(float(S[i, j]), 4),
+                "cos_emb": round(float(Se[i, j]), 4) if Se is not None else None,
+                "shared": sorted(toksets[i] & toksets[j]),
+                "ents": sorted(_title_entities(ai.get("title", ""))
+                               & _title_entities(aj.get("title", ""))),
+                "decision": "fused" if ok else "rejected",
+                "rule": rule,
+            })
+        if ok:
             union(i, j)
+    if _audit is not None:
+        import json as _json
+        _os.makedirs(_os.path.dirname(_os.path.abspath(audit_path)),
+                     exist_ok=True)
+        with open(audit_path, "w", encoding="utf-8") as f:
+            for rec in _audit:
+                f.write(_json.dumps(rec, ensure_ascii=False) + "\n")
     groups: dict[int, list] = {}
     for i in range(n):
         groups.setdefault(find(i), []).append(i)

@@ -904,3 +904,25 @@ def test_attach_hubs_ignores_place_names():
     ]
     out = attach_hubs(stories)
     assert all(s.get("hub") is None for s in out), [s.get("hub") for s in out]
+
+
+def test_cluster_audit_opt_in_does_not_change_groups(tmp_path):
+    import json
+    now = time.time()
+    arts = [
+        {"title": "Bulgária elege presidente pró-Rússia em eleição apertada",
+         "ts": now, "source_id": "a", "section": "mundo"},
+        {"title": "Bulgária: presidente pró-Rússia vence eleição apertada",
+         "ts": now, "source_id": "b", "section": "mundo"},
+        {"title": "Papa Leão XIV pede paz na Ucrânia",
+         "ts": now, "source_id": "c", "section": "mundo"},
+    ]
+    plain = cluster(arts)
+    audit = tmp_path / "pairs.jsonl"
+    with_audit = cluster(arts, audit_path=str(audit))
+    assert [sorted(g) for g in with_audit] == [sorted(g) for g in plain]
+    recs = [json.loads(l) for l in audit.read_text(encoding="utf-8").splitlines()]
+    assert recs, "auditoria deve registrar os pares candidatos"
+    assert all(set(r) >= {"a", "b", "cos", "shared", "decision", "rule"}
+               for r in recs)
+    assert {r["decision"] for r in recs} <= {"fused", "rejected"}

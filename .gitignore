@@ -10,3 +10,4 @@ ref/
 
 # modelo ONNX de embeddings (cache do Actions)
 state/models/
+state/audit/
