@@ -190,9 +190,14 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
       Crusoé, Agência Pública, Nexo, Folha, Ponte, Sumaúma.
 - [x] Aceite: **142 passed + 56 xfailed**; distribuição 5 colunas L11/CL9/C19/CR8/R6.
 
-### Fase 2 — 5 colunas (1–2 dias) — **a maior mudança**
+### Fase 2 — 5 colunas (1–2 dias) — ✅ feito (01/11/2026)
 
-- [ ] Implementar tudo da §3 (app.py + docs/index.html + testes).
+- [x] Implementado da §3: `bucket()` 5 vias + `BIAS_EDGES`; `blindspot_of5`;
+      `counts`/`pct`/`gc`/`framing` 5 vias; UI com 5 colunas, barra de 5 segmentos,
+      cores `--CL/--CR` (claro e escuro), legenda só com faixas presentes, filtros
+      Esq/Dir por bloco; `como-lemos.html` explica as 5 faixas.
+- [x] Telas médias: rolagem horizontal (colunas de 168px) em vez de esmagar;
+      mobile empilha.
 - [ ] Validar visualmente no `http://localhost:8003` (5 colunas, barra, blindspot,
       framing) e no mobile.
 - [ ] Medir distribuição: % de histórias com cada blindspot; garantir que 5 colunas

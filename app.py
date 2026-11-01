@@ -456,16 +456,22 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False,
 
 
 def blindspot_of(l: int, c: int, r: int):
-    """Blindspot a partir das contagens; 3+ coberturas (pedido do dono, 31/10).
+    """Blindspot na assinatura de 3 blocos (compatibilidade/testes)."""
+    return blindspot_of5(l, 0, c, 0, r)
 
-    Com 3 veículos, um lado ausente é 0%; com 4+, a tolerância de 15% evita
-    marcar uma única voz minoritária como ponto cego. Só-centro continua None.
+
+def blindspot_of5(l: int, cl: int, c: int, cr: int, r: int):
+    """Blindspot com 5 faixas; agrega blocos (L+CL) e (CR+R).
+
+    3+ coberturas; tolerância de 15%; só-centro continua None.
     """
-    tot = l + c + r
+    left = l + cl
+    right = r + cr
+    tot = left + c + right
     if tot < 3:
         return None
-    left_out = l / tot <= 0.15
-    right_out = r / tot <= 0.15
+    left_out = left / tot <= 0.15
+    right_out = right / tot <= 0.15
     if left_out and right_out:
         return None  # só o centro cobre: sem viés em jogo
     if left_out:
@@ -475,12 +481,23 @@ def blindspot_of(l: int, c: int, r: int):
     return None
 
 
+# PLAN_FINAL Fase 2: 5 colunas (aproximando Ground.news). Uma constante só.
+BIAS_EDGES = (-0.8, -0.3, 0.3, 0.8)   # L | CL | C | CR | R
+BUCKETS = ("L", "CL", "C", "CR", "R")
+
+
 def bucket(score):
-    if score <= -0.5:
+    """Classifica o viés em 5 faixas: L, CL, C, CR, R."""
+    lo_l, lo_cl, lo_cr, lo_r = BIAS_EDGES
+    if score <= lo_l:
         return "L"
-    if score >= 0.5:
-        return "R"
-    return "C"
+    if score <= lo_cl:
+        return "CL"
+    if score < lo_cr:
+        return "C"
+    if score < lo_r:
+        return "CR"
+    return "R"
 
 
 def _group_key(x):
@@ -496,7 +513,7 @@ def independent_counts(arts, bias_key="bias"):
     by = {}
     for x in arts:
         by.setdefault(_group_key(x), []).append(x)
-    gc = {"L": 0, "C": 0, "R": 0}
+    gc = {b: 0 for b in BUCKETS}
     biases = []
     for xs in by.values():
         vals = [float(x.get(bias_key, 0) or 0) for x in xs]
@@ -650,7 +667,7 @@ def framing_terms(coverage, top_n=3, min_count=2, alpha=0.5):
     só tokens com >= min_count na história; ignora bucket vazio ou história
     de lado único. Retorna {"L": [...], "C": [...], "R": [...]}.
     """
-    buckets = ("L", "C", "R")
+    buckets = BUCKETS
     toks = {b: [] for b in buckets}
     for x in coverage:
         if x.get("bucket") in toks:
@@ -834,12 +851,11 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         if len({x.get("group") or x["source_id"] for x in coverage}) < 2:
             continue
         items.sort(key=lambda x: x["bias_score"])
-        l = sum(1 for x in coverage if x["bucket"] == "L")
-        c = sum(1 for x in coverage if x["bucket"] == "C")
-        r = sum(1 for x in coverage if x["bucket"] == "R")
+        by_b = {b: sum(1 for x in coverage if x["bucket"] == b)
+                for b in BUCKETS}
         tot = len(coverage)
         gc, ind, avg = independent_counts(coverage, "bias_score")
-        blind = blindspot_of(gc["L"], gc["C"], gc["R"])
+        blind = blindspot_of5(gc["L"], gc["CL"], gc["C"], gc["CR"], gc["R"])
         # A-6: quem deu primeiro (um por veículo, por first_seen)
         def _pub(x):
             # "quem deu primeiro" = publicação; first_seen é só fallback
@@ -874,13 +890,12 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
             "avg_bias": round(avg, 2),
-            "counts": {"L": l, "C": c, "R": r, "total": tot,
+            "counts": {**by_b, "total": tot,
                        "independent": ind, "groups": gc,
                        "frames": len(items) - len(coverage),
                        "articles": len(items)},
-            "pct": {"L": round(100 * gc["L"] / ind) if ind else 0,
-                    "C": round(100 * gc["C"] / ind) if ind else 0,
-                    "R": round(100 * gc["R"] / ind) if ind else 0},
+            "pct": {b: (round(100 * gc[b] / ind) if ind else 0)
+                    for b in BUCKETS},
             "blindspot": blind,
             "updated": updated,
             "timeline": timeline,
@@ -1172,19 +1187,16 @@ def _recompute(s) -> dict:
     arts = s.get("articles", [])
     coverage = [x for x in arts
                 if not x.get("piece_kind") or x["piece_kind"] in COVERAGE_KINDS]
-    l = sum(1 for x in coverage if x.get("bucket") == "L")
-    c = sum(1 for x in coverage if x.get("bucket") == "C")
-    r = sum(1 for x in coverage if x.get("bucket") == "R")
+    by_b = {b: sum(1 for x in coverage if x.get("bucket") == b)
+            for b in BUCKETS}
     gc, ind, avg = independent_counts(coverage, "bias")
-    s["counts"] = {"L": l, "C": c, "R": r, "total": len(coverage),
+    s["counts"] = {**by_b, "total": len(coverage),
                    "independent": ind, "groups": gc,
                    "frames": len(arts) - len(coverage),
                    "articles": len(arts)}
-    s["pct"] = {"L": round(100 * gc["L"] / ind) if ind else 0,
-                "C": round(100 * gc["C"] / ind) if ind else 0,
-                "R": round(100 * gc["R"] / ind) if ind else 0}
+    s["pct"] = {b: (round(100 * gc[b] / ind) if ind else 0) for b in BUCKETS}
     s["avg_bias"] = round(avg, 2)
-    s["blindspot"] = blindspot_of(gc["L"], gc["C"], gc["R"])
+    s["blindspot"] = blindspot_of5(*[gc[b] for b in BUCKETS])
     return s
 
 
@@ -2156,7 +2168,11 @@ def main():
     # soltas (sem par) p/ debug
     print("Top stories:")
     for s in stories[:8]:
-        print(f"  [{s['counts']['total']:2}x L{s['pct']['L']:2}% C{s['pct']['C']:2}% R{s['pct']['R']:2}%] {s['title'][:80]}")
+        pc = s["pct"]
+        print(f"  [{s['counts']['total']:2}x "
+              f"E{(pc.get('L',0)+pc.get('CL',0)):2}% "
+              f"C{pc.get('C',0):2}% "
+              f"D{(pc.get('R',0)+pc.get('CR',0)):2}%] {s['title'][:80]}")
 
 
 SITE_URL = os.environ.get("BALANCO_SITE_URL",

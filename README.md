@@ -24,7 +24,8 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Comparar os lados por veículo**: uma manchete principal por veículo; os demais artigos ficam em “Mais artigos deste veículo” (details). O `updated` da história usa só cobertura — opinião/vídeo não rejuvenesce a notícia.
 - **Lá fora**: peças internacionais agrupadas por evento (cluster + entidade/número), com número de veículos e fontes no cartão; casamento por entidade traduzida, número e conceito. 16 fontes intl (LatAm/hispânicas + europeias), todas com país/bloco/idioma.
 - **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana, “🌍 Só lá fora” (o exterior cobre, o Brasil não) e “🇧🇷 Brasil visto de fora”, e fontes monitoradas (com viés).
-- **Enquadramento comparado**: “🪞 Como cada lado intitulou” mostra os termos que cada lado usa mais nos títulos (log-odds por bucket).
+- **Cinco colunas de viés**: esquerda · centro-esquerda · centro · centro-direita · direita (faixas ≤−0,8 / −0,8 a −0,3 / −0,3 a +0,3 / +0,3 a +0,8 / ≥+0,8), como no Ground.news. Barra, blindspot (blocos L+CL e CR+R) e “como cada lado intitulou” usam as 5 faixas.
+- **Enquadramento comparado**- **Enquadramento comparado**: “🪞 Como cada lado intitulou” mostra os termos que cada lado usa mais nos títulos (log-odds por bucket).
 - **Agrupamento com âncora de entidade**: dois títulos só viram a mesma história se compartilharem um nome próprio específico **e** conteúdo além do nome, ou forem quase-duplicatas. Vocabulário de tema ("eleição presidencial", "menor nível") não funde fatos distintos — foi o que ligava a eleição na Bulgária ao Flávio Bolsonaro.
 
 - **Pautas (Outros ângulos)**: lugar não é pauta — estado/cidade fica em `HUB_STOP_GEO` (“Mato Grosso” juntava violência em MS, soja e TCE).

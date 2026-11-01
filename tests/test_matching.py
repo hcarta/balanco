@@ -36,12 +36,17 @@ def test_claim_overlap_single_shared_token_is_zero():
 
 
 def test_bucket_thresholds():
-    assert bucket(-1.5) == "L"
-    assert bucket(-0.5) == "L"
-    assert bucket(-0.3) == "C"
+    """Fase 2: 5 faixas (L/CL/C/CR/R) com bordas -0.8/-0.3/0.3/0.8."""
+    assert bucket(-1.6) == "L"
+    assert bucket(-0.8) == "L"
+    assert bucket(-0.5) == "CL"
+    assert bucket(-0.3) == "CL"
+    assert bucket(-0.2) == "C"
     assert bucket(0.0) == "C"
     assert bucket(0.2) == "C"
-    assert bucket(0.5) == "R"
+    assert bucket(0.3) == "CR"
+    assert bucket(0.5) == "CR"
+    assert bucket(0.8) == "R"
     assert bucket(1.6) == "R"
 
 
@@ -331,11 +336,11 @@ def test_consolidate_rejects_place_name_coincidence():
 def test_consolidate_recomputes_counts_and_blindspot():
     from app import consolidate
     a = _story("s1", "Binance sofre ataque hacker de US$ 6,3 bilhões",
-               [("G1", "Binance sofre ataque hacker de US$ 6,3 bilhões", 0.5, "R"),
-                ("UOL", "Binance sofre ataque hacker de US$ 6,3 bilhões: Coreia do Norte é suspeita", 0.5, "R")])
+               [("G1", "Binance sofre ataque hacker de US$ 6,3 bilhões", 1.0, "R"),
+                ("UOL", "Binance sofre ataque hacker de US$ 6,3 bilhões: Coreia do Norte é suspeita", 1.0, "R")])
     b = _story("s2", "Ataque à Binance: hackers norte-coreanos de criptomoedas estão entre os suspeitos",
-               [("CNN", "Ataque à Binance: hackers norte-coreanos de criptomoedas estão entre os suspeitos", 0.5, "R"),
-                ("Folha", "Hackers da Coreia do Norte roubam US$ 6,3 bilhões da Binance", 0.5, "R")])
+               [("CNN", "Ataque à Binance: hackers norte-coreanos de criptomoedas estão entre os suspeitos", 1.0, "R"),
+                ("Folha", "Hackers da Coreia do Norte roubam US$ 6,3 bilhões da Binance", 1.0, "R")])
     out = consolidate([a, b])
     assert len(out) == 1
     s = out[0]
@@ -344,7 +349,8 @@ def test_consolidate_recomputes_counts_and_blindspot():
     assert s["counts"]["R"] == 4
     assert s["counts"]["total"] == 4
     assert s["counts"]["independent"] == 4
-    assert s["counts"]["groups"] == {"L": 0, "C": 0, "R": 4}
+    g = s["counts"]["groups"]
+    assert g["R"] == 4 and sum(g[b] for b in app.BUCKETS) == 4
     assert s["blindspot"] == "left", "4 grupos de direita e nenhum de esquerda"
 
 
@@ -525,7 +531,8 @@ def test_build_marks_three_vehicle_right_blindspot():
     assert out[0]["counts"]["R"] == 0
     assert out[0]["counts"]["total"] == 3
     assert out[0]["counts"]["independent"] == 3
-    assert out[0]["counts"]["groups"] == {"L": 1, "C": 2, "R": 0}
+    g = out[0]["counts"]["groups"]
+    assert g["L"] == 1 and g["C"] == 2 and g["CL"] == g["CR"] == g["R"] == 0
     assert out[0]["blindspot"] == "right"
 
 
@@ -537,7 +544,7 @@ def test_independent_counts_collapses_same_owner():
         {"source_id": "uol", "group": "uol", "bias": 0.0, "bucket": "C"},
     ]
     gc, ind, avg = app.independent_counts(arts, "bias")
-    assert gc == {"L": 1, "C": 2, "R": 0}
+    assert gc["CL"] == 1 and gc["C"] == 2 and gc["L"] == gc["CR"] == gc["R"] == 0
     assert ind == 3
 
 
@@ -562,8 +569,9 @@ def test_build_requires_two_independent_groups_and_counts_them():
     assert len(out) == 1
     assert out[0]["counts"]["total"] == 3
     assert out[0]["counts"]["independent"] == 2
-    assert out[0]["counts"]["groups"] == {"L": 1, "C": 1, "R": 0}
-    assert out[0]["pct"] == {"L": 50, "C": 50, "R": 0}
+    g = out[0]["counts"]["groups"]
+    assert g["CL"] == 1 and g["C"] == 1
+    assert out[0]["pct"]["CL"] == 50 and out[0]["pct"]["C"] == 50
 
     # só Globo (G1 + O Globo) não é uma história entre veículos independentes
     out2 = app.build(srcs[:2], arts[:2], {})
@@ -645,10 +653,11 @@ def test_build_counts_only_coverage_kinds():
     assert s["counts"]["total"] == 3
     assert s["counts"]["frames"] == 1
     assert s["counts"]["articles"] == 4
-    assert s["counts"]["groups"] == {"L": 1, "C": 2, "R": 0}
+    g = s["counts"]["groups"]
+    assert g["L"] == 1 and g["C"] == 2 and g["R"] == 0
     assert s["counts"]["independent"] == 3
     assert s["blindspot"] == "right"
-    assert s["pct"] == {"L": 33, "C": 67, "R": 0}
+    assert s["pct"]["L"] == 33 and s["pct"]["C"] == 67 and s["pct"]["R"] == 0
     op = [a for a in s["articles"] if a["source_id"] == "r"][0]
     assert op["piece_kind"] == "opinion"
 

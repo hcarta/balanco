@@ -6,8 +6,8 @@
 <title>Como lemos — Balanço</title>
 <script>try{var _t=localStorage.getItem('balanco-theme');if(!_t)_t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=_t;}catch(e){}</script>
 <style>
-:root{--paper:#faf8f4;--ink:#16130f;--muted:#6f675e;--hair:#e6e0d6;--accent:#b3261e;--L:#2e7d32;--C:#8a8178;--R:#9a7200}
-html[data-theme="dark"]{--paper:#161310;--ink:#ece4d3;--muted:#a89d89;--hair:#383126;--accent:#d0604f;--L:#7cc490;--C:#a8a29e;--R:#d9a400}
+:root{--paper:#faf8f4;--ink:#16130f;--muted:#6f675e;--hair:#e6e0d6;--accent:#b3261e;--L:#2e7d32;--CL:#4f7a3b;--C:#8a8178;--CR:#a67c2e;--R:#9a7200}
+html[data-theme="dark"]{--paper:#161310;--ink:#ece4d3;--muted:#a89d89;--hair:#383126;--accent:#d0604f;--L:#7cc490;--CL:#8fbf7a;--C:#a8a29e;--CR:#c9a45a;--R:#d9a400}
 html[data-theme="dark"] code{background:#2c2822}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Palatino Linotype',Palatino,serif;line-height:1.65}
 .wrap{max-width:680px;margin:0 auto;padding:0 24px 70px}
@@ -36,17 +36,19 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 <p class="sub">Metodologia aberta do protótipo brasileiro inspirado no Ground.news.</p>
 
 <h2>O que o Balanço faz</h2>
-<p>Coletamos manchetes de 27 veículos brasileiros, agrupamos as que contam <b>a mesma história</b> e mostramos <b>quem cobre o quê</b>: quantos veículos de esquerda, centro e direita estão contando aquele fato — lado a lado, sem algoritmo de engajamento no meio.</p>
+<p>Coletamos manchetes de dezenas de veículos brasileiros e 16 internacionais, agrupamos as que contam <b>a mesma história</b> e mostramos <b>quem cobre o quê</b>: quantos veículos de esquerda, centro e direita estão contando aquele fato — lado a lado, sem algoritmo de engajamento no meio.</p>
 
 <h2>Viés fixo por publicação</h2>
 <p>Cada veículo tem <b>um posicionamento</b> (de −2 a +2). O ponto de partida <b>não foi classificação manual caso a caso</b>: foi uma <b>análise prévia por IA do perfil editorial</b> de cada veículo — linha histórica, propriedade, enquadramento típico e seleção de pauta. A curadoria humana validou e ajustou essa tabela inicial. Todas as matérias de um veículo herdam esse valor. É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Não há análise por IA em cada matéria e nenhum token é gasto por artigo.</p>
 <table>
-<tr><th>Posição</th><th>Significado</th></tr>
-<tr><td><i class="sw" style="background:var(--L)"></i>Esquerda (≤ −0,5)</td><td>Enquadramento sistematicamente favorável à esquerda/progressismo</td></tr>
-<tr><td><i class="sw" style="background:var(--C)"></i>Centro</td><td>Factual, múltiplos lados, sem loaded words sistemáticas</td></tr>
-<tr><td><i class="sw" style="background:var(--R)"></i>Direita (≥ +0,5)</td><td>Enquadramento sistematicamente favorável à direita/conservadorismo</td></tr>
+<tr><th>Posição</th><th>Faixa</th><th>Significado</th></tr>
+<tr><td><i class="sw" style="background:var(--L)"></i>Esquerda</td><td>≤ −0,8</td><td>Enquadramento sistematicamente favorável à esquerda/progressismo</td></tr>
+<tr><td><i class="sw" style="background:var(--CL)"></i>Centro-esquerda</td><td>−0,8 a −0,3</td><td>Predominância progressista, com contraponto factual</td></tr>
+<tr><td><i class="sw" style="background:var(--C)"></i>Centro</td><td>−0,3 a +0,3</td><td>Factual, múltiplos lados, sem loaded words sistemáticas</td></tr>
+<tr><td><i class="sw" style="background:var(--CR)"></i>Centro-direita</td><td>+0,3 a +0,8</td><td>Predominância conservadora/liberal, com contraponto factual</td></tr>
+<tr><td><i class="sw" style="background:var(--R)"></i>Direita</td><td>≥ +0,8</td><td>Enquadramento sistematicamente favorável à direita/conservadorismo</td></tr>
 </table>
-<p>Os critérios completos, a posição de cada um dos 27 veículos e o histórico de mudanças estão em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
+<p>A escala tem <b>5 faixas</b> (esquerda, centro-esquerda, centro, centro-direita, direita), como no Ground.news: o centro é estreito e as faixas intermediárias dão nuance a veículos que não são nem radicais nem neutros. Em novembro de 2026 a tabela foi reconciliada com <b>duas avaliações independentes por modelos diferentes</b>; mudanças grandes com discordância entre elas ficam para revisão humana. Os critérios completos, a posição de cada veículo e o histórico de mudanças estão em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
 
 <h2>Factualidade: rubrica pública</h2>
 <p>Cada veículo também tem um nível de factualidade, com critérios observáveis — e regras que impedem rebaixamento arbitrário:</p>

@@ -22,8 +22,12 @@
   --accent-soft:#f6e9e7;
   --L:#2e7d32;
   --L-bg:#e7f2ea;
+  --CL:#4f7a3b;
+  --CL-bg:#ecf2e4;
   --C:#8a8178;
   --C-bg:#efece7;
+  --CR:#a67c2e;
+  --CR-bg:#f8f1e1;
   --R:#9a7200;
   --R-bg:#faf3dc;
   --serif:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
@@ -43,8 +47,12 @@ html[data-theme="dark"]{
   --accent-soft:#3a211c;
   --L:#7cc490;
   --L-bg:#1c3325;
+  --CL:#8fbf7a;
+  --CL-bg:#222f1b;
   --C:#a8a29e;
   --C-bg:#2c2822;
+  --CR:#c9a45a;
+  --CR-bg:#332b1b;
   --R:#d9a400;
   --R-bg:#332a10;
 }
@@ -183,7 +191,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .biasrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
 .bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:var(--C-bg);flex:1;min-width:180px;max-width:440px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
 .bar span{height:100%;transition:width .5s ease}
-.bar .bL{background:var(--L)}.bar .bC{background:var(--C)}.bar .bR{background:var(--R)}
+.bar .bL{background:var(--L)}.bar .bCL{background:var(--CL)}.bar .bC{background:var(--C)}.bar .bCR{background:var(--CR)}.bar .bR{background:var(--R)}
 .biaslegend{display:flex;gap:14px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
 .biaslegend b{color:var(--ink-soft);font-weight:600}
 .biaslegend .sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
@@ -198,7 +206,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .btn.open .arw{transform:rotate(90deg)}
 
 /* compare panel */
-.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:18px;border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--surface)}
+.compare{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:18px;border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--surface)}
 .compare[hidden]{display:none}
 .timeline{grid-column:1/-1;border-top:1px solid var(--hair);padding:14px 16px;background:var(--paper)}
 .timeline .tlh{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.1em;
@@ -251,7 +259,9 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .col:last-child{border-right:none}
 .col .ch{padding:12px 16px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center}
 .col.L .ch{color:var(--L);background:var(--L-bg)}
+.col.CL .ch{color:var(--CL);background:var(--CL-bg)}
 .col.C .ch{color:var(--C);background:var(--C-bg)}
+.col.CR .ch{color:var(--CR);background:var(--CR-bg)}
 .col.R .ch{color:var(--R);background:var(--R-bg)}
 .col .ch .n{font-weight:600;opacity:.7;letter-spacing:0}
 .col .body{padding:6px 0}
@@ -303,7 +313,19 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .art .pk{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:var(--faint);border:1px solid var(--hair-strong);
   border-radius:3px;padding:1px 5px}
+/* 5 colunas: em telas médias, rola na horizontal em vez de esmagar */
+@media(max-width:1000px) and (min-width:721px){
+  .compare{grid-template-columns:repeat(5,minmax(168px,1fr));overflow-x:auto}
+}
 @media(max-width:720px){.compare{grid-template-columns:1fr}.col{border-right:none;border-bottom:1px solid var(--hair)}.col:last-child{border-bottom:none}}
+/* densidade: com 5 colunas, títulos menores cabem melhor */
+.compare .art{padding:9px 12px}
+.compare .art a{font-size:14px;line-height:1.28}
+.compare .art .src{font-size:10px;gap:5px}
+.compare .col .ch{padding:10px 12px;font-size:10px;letter-spacing:.06em}
+.compare .more-art summary{padding:0 12px 8px}
+.compare .more-art .art.sub{padding:7px 12px}
+.compare .more-art .art.sub a{font-size:12.5px}
 
 /* ── rail ── */
 .rail-card{background:var(--surface);border:1px solid var(--hair);border-radius:12px;padding:20px}
@@ -314,7 +336,7 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .rail-item h4{font-family:var(--serif);font-weight:500;font-size:15.5px;line-height:1.3;margin:0 0 7px}
 .rail-item:hover h4{color:var(--accent)}
 .rail-mini{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--C-bg);margin-bottom:6px}
-.rail-mini .bL{background:var(--L)}.rail-mini .bC{background:var(--C)}.rail-mini .bR{background:var(--R)}
+.rail-mini .bL{background:var(--L)}.rail-mini .bCL{background:var(--CL)}.rail-mini .bC{background:var(--C)}.rail-mini .bCR{background:var(--CR)}.rail-mini .bR{background:var(--R)}
 .rail-item .rl{font-size:10.5px;color:var(--faint);letter-spacing:.02em}
 .read-item{display:block;padding:12px 0;border-bottom:1px solid var(--hair)}
 .read-item:last-child{border-bottom:none;padding-bottom:0}
@@ -333,7 +355,9 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .srcrow .nm .sub{display:block;font-size:10px;color:var(--faint);font-weight:400;margin-top:1px}
 .srcrow .nm{font-weight:600;color:var(--ink-soft)}
 .srcrow .bias{font-family:var(--sans);font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:.03em}
-.bias.bL{background:var(--L-bg);color:var(--L)}.bias.bC{background:var(--C-bg);color:var(--C)}.bias.bR{background:var(--R-bg);color:var(--R)}
+.bias.bL{background:var(--L-bg);color:var(--L)}.bias.bCL{background:var(--CL-bg);color:var(--CL)}
+.bias.bC{background:var(--C-bg);color:var(--C)}.bias.bCR{background:var(--CR-bg);color:var(--CR)}
+.bias.bR{background:var(--R-bg);color:var(--R)}
 .method p{font-family:var(--serif);font-size:13.5px;line-height:1.6;color:var(--muted);margin:0 0 10px}
 .method p:last-child{margin:0}
 .method b{color:var(--ink-soft);font-weight:600}
@@ -443,8 +467,15 @@ const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pct = v => Math.round(v);
 
-const BUCKET = {L:'Esquerda',C:'Centro',R:'Direita'};
-const cls = b => b==='L'?'bL':b==='C'?'bC':'bR';
+const BUCKET = {L:'Esquerda',CL:'Centro-esq.',C:'Centro',CR:'Centro-dir.',R:'Direita'};
+const BUCKET_LONG = {L:'Esquerda',CL:'Centro-esquerda',C:'Centro',CR:'Centro-direita',R:'Direita'};
+const ORDER = ['L','CL','C','CR','R'];
+const cls = b => 'b'+b;
+const pv = (s,k) => (s.pct && s.pct[k]) || 0;
+const leftPct = s => pv(s,'L') + pv(s,'CL');
+const rightPct = s => pv(s,'R') + pv(s,'CR');
+const barSegs = s => ORDER.map(k=>`<span class="b${k}" style="width:${pv(s,k)}%"></span>`).join('');
+const barAria = s => ORDER.map(k=>`${BUCKET_LONG[k]} ${pv(s,k)}%`).join(', ');
 const factLabel = f => ({very_high:'Muito alta',high:'Alta',mixed:'Mista',low:'Baixa',very_low:'Muito baixa'})[f]||'';
 const vClass = v => 'v-' + (v||'checagem');
 const VL = {falso:'Falso',verdadeiro:'Verdadeiro',enganoso:'Enganoso',checagem:'Checagem'};
@@ -487,7 +518,7 @@ function relTime(iso){
   return `há ${dd} ${dd===1?'dia':'dias'}`;
 }
 
-function divScore(s){ return Math.abs(s.pct.L - s.pct.R); }
+function divScore(s){ return Math.abs(leftPct(s) - rightPct(s)); }
 
 /* o destaque só faz sentido na visão "todas"; em filtro/busca ele empurra o conteúdo */
 function featuredVisible(){
@@ -600,11 +631,7 @@ function renderFeatured(){
   $('#heroSide').style.display = side.length ? '' : 'none';
   hl.innerHTML = side.map(({s,n})=>{
     const im = storyImg(s);
-    const bar = `<div class="rail-mini" role="img" aria-label="Esquerda ${s.pct.L}%, centro ${s.pct.C}%, direita ${s.pct.R}%">
-          <span class="bL" style="width:${s.pct.L}%"></span>
-          <span class="bC" style="width:${s.pct.C}%"></span>
-          <span class="bR" style="width:${s.pct.R}%"></span>
-        </div>`;
+    const bar = `<div class="rail-mini" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>`;
     return `
     <div class="hitem" data-jump="${s.id}">
       <div class="hrow">
@@ -661,24 +688,18 @@ if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>alignHe
 
 /* ---------- bias bar ---------- */
 function biasBar(s){
+  const legend = ORDER.filter(k=>pv(s,k)>0).map(k=>
+    `<span><i class="sw" style="background:var(--${k})"></i>${BUCKET[k]} <b>${pv(s,k)}%</b></span>`).join('');
   return `<div class="biasrow">
-    <div class="bar" role="img" aria-label="Esquerda ${s.pct.L}%, centro ${s.pct.C}%, direita ${s.pct.R}%">
-      <span class="bL" style="width:${s.pct.L}%"></span>
-      <span class="bC" style="width:${s.pct.C}%"></span>
-      <span class="bR" style="width:${s.pct.R}%"></span>
-    </div>
-    <div class="biaslegend">
-      <span><i class="sw" style="background:var(--L)"></i>Esq <b>${s.pct.L}%</b></span>
-      <span><i class="sw" style="background:var(--C)"></i>Centro <b>${s.pct.C}%</b></span>
-      <span><i class="sw" style="background:var(--R)"></i>Dir <b>${s.pct.R}%</b></span>
-    </div>
+    <div class="bar" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>
+    <div class="biaslegend">${legend}</div>
   </div>`;
 }
 
 /* ---------- compare ---------- */
 function framingHTML(s){
   const f = s.framing || {};
-  const rows = [['L','Esq'],['C','Centro'],['R','Dir']]
+  const rows = [['L','Esq'],['CL','Centro-esq.'],['C','Centro'],['CR','Centro-dir.'],['R','Dir']]
     .filter(([k]) => (f[k]||[]).length)
     .map(([k,lab]) => `<span class="frow"><b>${lab}:</b> ${f[k].map(esc).join(' · ')}</span>`);
   if(rows.length < 2) return '';
@@ -699,8 +720,8 @@ function timelineHTML(s){
 }
 
 function comparePanel(s){
-  const g={L:[],C:[],R:[]};
-  s.articles.forEach(a=>g[a.bucket].push(a));
+  const g={L:[],CL:[],C:[],CR:[],R:[]};
+  s.articles.forEach(a=>{ (g[a.bucket]||g.C).push(a); });
 
   const checkHTML = a => a.check
     ? `<div class="acheck"><a class="${vClass(a.check.verdict)}" href="${esc(a.check.link)}" target="_blank" rel="noopener" title="${esc(a.check.title)}${a.check.terms&&a.check.terms.length?` · termos: ${a.check.terms.join(', ')}`:''}">⚑ Checagem: ${esc(a.check.label)} ↗</a></div>`
@@ -760,7 +781,7 @@ function comparePanel(s){
       <div class="ch"><span>${BUCKET[k]}</span><span class="n">${groups.length}</span></div>
       <div class="body">${list}</div></div>`;
   };
-  return `<div class="compare" hidden>${col('L')}${col('C')}${col('R')}${framingHTML(s)}${timelineHTML(s)}</div>
+  return `<div class="compare" hidden>${ORDER.map(col).join('')}${framingHTML(s)}${timelineHTML(s)}</div>
   ${beyond(s)}
   ${pauta(s)}`;
 }
@@ -890,8 +911,8 @@ function renderFeed(){
 
   let title = 'Todas as histórias';
   if(S.filter==='blind'){ list=baseOrder(list.filter(s=>s.blindspot)); title='Blindspots'; }
-  else if(S.filter==='L'){ list=baseOrder(list.filter(s=>s.pct.L>=50)); title='Maioria esquerda'; }
-  else if(S.filter==='R'){ list=baseOrder(list.filter(s=>s.pct.R>=50)); title='Maioria direita'; }
+  else if(S.filter==='L'){ list=baseOrder(list.filter(s=>leftPct(s)>=50)); title='Maioria esquerda'; }
+  else if(S.filter==='R'){ list=baseOrder(list.filter(s=>rightPct(s)>=50)); title='Maioria direita'; }
   else if(S.filter==='div'){ list.sort((a,b)=>divScore(b)-divScore(a)); title='Mais divididas'; }
   else {
     list = baseOrder(list);
@@ -977,9 +998,7 @@ function renderRail(){
       return `<div class="rail-item" data-jump="${s.id}">
         <h4>${esc(s.title)}</h4>
         <div class="rail-mini">
-          <span class="bL" style="width:${s.pct.L}%"></span>
-          <span class="bC" style="width:${s.pct.C}%"></span>
-          <span class="bR" style="width:${s.pct.R}%"></span>
+          ${barSegs(s)}
         </div>
         <div class="rl">${desc} · ${covLabel(s)}</div>
       </div>`;
