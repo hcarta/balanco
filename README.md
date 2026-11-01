@@ -20,7 +20,7 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Comparar os lados**: painel em 3 colunas (esquerda/centro/direita) com veículo, factualidade e propriedade.
 - **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé), máx. 2 por fonte, em **2 colunas** com thumb quando o feed oferece imagem.
 - **Aprofunde-se**: duas relações — “Análise desta pauta” (mesmo fato, até 14 dias) e “Para entender melhor” (pano de fundo, até 120 dias, exige 2+ entidades específicas); máx. 1 por fonte e 3 por história.
-- **Quem deu primeiro**: linha do tempo por veículo no painel de comparação, ordenada pelo `first_seen` do coletor.
+- **Quem deu primeiro**: linha do tempo por veículo no painel de comparação, ordenada pela **publicação** (`published`; `first_seen` como fallback).
 - **Lá fora**: peças internacionais agrupadas por evento (cluster + entidade/número), com número de veículos e fontes no cartão; casamento por entidade traduzida, número e conceito.
 - **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
 - **Aba Metodologia** na navegação + página "Como lemos" com todos os critérios (viés, factualidade, blindspot, agrupamento, checagens, enriquecimento).
