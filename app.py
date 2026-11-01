@@ -247,6 +247,30 @@ COHERE_RECLUSTER = 0.42  # limiar mais duro para os ejetados
 COHERE_MAX_DEPTH = 6
 
 
+_ENT_CACHE: dict[str, set] = {}
+
+
+def _title_entities(title: str) -> set:
+    e = _ENT_CACHE.get(title)
+    if e is None:
+        e = entities(title)
+        _ENT_CACHE[title] = e
+    return e
+
+
+def _entity_anchor(a: dict, b: dict) -> bool:
+    """Há nome próprio específico em comum? "eleição presidencial" não é âncora."""
+    inter = _title_entities(a.get("title", "")) & \
+        _title_entities(b.get("title", ""))
+    return any(x not in ENTITY_GENERIC for x in inter)
+
+
+def _near_duplicate(shared, toksets, i, j, s_ij) -> bool:
+    """Título praticamente igual — dispensa âncora de entidade."""
+    small = min(len(toksets[i]), len(toksets[j])) or 1
+    return (len(shared) >= 4 and len(shared) / small >= 0.5) or s_ij >= 0.62
+
+
 def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
     """Decisão de par (extraída para o cluster e a coerência usarem a mesma)."""
     shared = toksets[i] & toksets[j]
@@ -257,6 +281,20 @@ def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
         pred = True  # híbrido: paráfrase semântica (Fase 2.2)
     if not pred:
         return False
+    # título praticamente igual dispensa as âncoras abaixo
+    if not _near_duplicate(shared, toksets, i, j, S[i, j]):
+        # dois fatos distintos compartilham vocabulário de tema ("eleição
+        # presidencial", "guerra", "Rússia"); sem nome próprio em comum o
+        # par não é a mesma notícia.
+        if not _entity_anchor(articles[i], articles[j]):
+            return False
+        # e o nome próprio sozinho não basta: "Papa Leão XIV vota" × "Papa
+        # Leão XIV pede paz" são fatos diferentes. Precisa de conteúdo em
+        # comum além das entidades (nomes/cargos/siglas não são assunto).
+        ents = (_title_entities(articles[i].get("title", ""))
+                | _title_entities(articles[j].get("title", "")))
+        if not (shared - ents):
+            return False
     si, sj = articles[i].get("source_id"), articles[j].get("source_id")
     if si is not None and si == sj:
         # mesma fonte: exige mais evidência (Fase 2.3)

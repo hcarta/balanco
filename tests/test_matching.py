@@ -808,3 +808,50 @@ def test_weather_forecast_out_but_impact_stays():
     ]
     assert all(app.excluded_title(t) for t in forecasts)
     assert not any(app.excluded_title(t) for t in impact)
+
+
+def test_cluster_needs_entity_anchor_not_topic_words():
+    """Caso real: 'eleição presidencial' ligava a Bulgária ao Flávio Bolsonaro."""
+    now = time.time()
+    arts = [
+        {"title": "Bulgária: eleição presidencial traz visões opostas sobre Rússia e guerra na Ucrânia",
+         "ts": now, "source_id": "uol", "section": "mundo"},
+        {"title": "A eleição presidencial: 3 observações e uma sugestão",
+         "ts": now, "source_id": "oeste", "section": "vozes"},
+        {"title": "Flávio Bolsonaro admite disputar nova eleição presidencial antes de 2030",
+         "ts": now, "source_id": "istoe", "section": "politica"},
+        {"title": "Nos EUA, Flávio fala em disputar eleição antes de 2030",
+         "ts": now, "source_id": "sbt", "section": "politica"},
+    ]
+    groups = cluster(arts)
+    assert len(groups) == 3, [sorted(g) for g in groups]
+    for g in groups:
+        titles = " ".join(arts[i]["title"].lower() for i in g)
+        assert not ("bulgária" in titles and "flávio" in titles)
+
+
+def test_cluster_same_entity_different_fact_stays_apart():
+    now = time.time()
+    arts = [
+        {"title": "Papa Leão XIV vota pelo correio nas eleições dos EUA",
+         "ts": now, "source_id": "a", "section": "mundo"},
+        {"title": "Papa Leão XIV pede esforços de paz entre Rússia e Ucrânia",
+         "ts": now, "source_id": "b", "section": "mundo"},
+        {"title": "Papa Leão XIV alerta que IA nunca poderá substituir o ser humano",
+         "ts": now, "source_id": "c", "section": "mundo"},
+    ]
+    assert len(cluster(arts)) == 3
+
+
+def test_cluster_still_merges_same_fact_with_entity():
+    now = time.time()
+    arts = [
+        {"title": "Bulgária elege presidente pró-Rússia em eleição apertada",
+         "ts": now, "source_id": "a", "section": "mundo"},
+        {"title": "Bulgária: presidente pró-Rússia vence eleição apertada",
+         "ts": now, "source_id": "b", "section": "mundo"},
+        {"title": "Bulgária elege presidente pró-Rússia em pleito apertado",
+         "ts": now, "source_id": "c", "section": "mundo"},
+    ]
+    groups = cluster(arts)
+    assert len(groups) == 1, [sorted(g) for g in groups]
