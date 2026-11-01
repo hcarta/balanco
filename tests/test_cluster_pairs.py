@@ -103,3 +103,20 @@ def test_known_false_negatives(pid):
         pytest.skip(f"{pid} voltou a fundir — remover de KNOWN_FN")
     pytest.xfail(f"FN conhecido ({rule}): funde no corpus real via "
                  "transitividade/IDF, não no harness isolado — alvo do F2/F3")
+
+
+def test_pair_features_schema_and_determinism(tmp_path):
+    from ops.pair_features import FEATURE_NAMES, build
+    rows1 = build("tests/cluster_pairs.jsonl")
+    rows2 = build("tests/cluster_pairs.jsonl")
+    assert [r["id"] for r in rows1] == [r["id"] for r in rows2]
+    assert rows1 == rows2, "extração de features deve ser determinística"
+    assert len(rows1) >= 150
+    for r in rows1:
+        assert list(r["features"]) == FEATURE_NAMES
+        assert r["label"] in {"same", "related", "different"}
+    by = {r["id"]: r for r in rows1}
+    # c076 (Solano, FN do no_content) tem os sinais que o modelo deve aprender
+    f = by["c076"]["features"]
+    assert f["numbers_match"] == 1 and f["subject_match"] == 1
+    assert by["c076"]["decision_now"] == "rejected"
