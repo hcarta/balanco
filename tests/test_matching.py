@@ -775,3 +775,36 @@ def test_build_updated_ignores_frames():
 def test_excluded_title_filters_weather_not_market():
     assert app.excluded_title("Novembro em SP começa com chuva e calor; veja previsão completa")
     assert not app.excluded_title("Previsão do mercado para o próximo trimestre")
+
+
+def test_excluded_title_filters_payment_calendars():
+    service = [
+        "Calendário do Bolsa Família: confira a data de pagamento para novembro",
+        "Bolsa Família de novembro: veja o calendário de pagamentos",
+        "Calendário do INSS: datas de pagamento por final de benefício",
+        "FGTS: calendário de saque e pagamento em novembro",
+    ]
+    news = [
+        "Governo antecipa pagamento do Bolsa Família em novembro",
+        "Bolsa Família terá novo valor em 2027, diz ministro",
+        "INSS divulga reajuste de benefícios acima da inflação",
+    ]
+    assert all(app.excluded_title(t) for t in service)
+    assert not any(app.excluded_title(t) for t in news)
+
+
+def test_weather_forecast_out_but_impact_stays():
+    forecasts = [
+        "Novembro começa com calor e pancadas de chuva em São Paulo",
+        "Volta a chover em São Paulo? Veja a previsão para os próximos dias",
+        "Inmet emite alerta de tempestade para Apucarana e região",
+        "Fim de semana terá temporais em parte do Brasil",
+        "Novembro terá chuvas acima da média e gangorra nas temperaturas",
+    ]
+    impact = [
+        "Chuva forte provoca alagamentos e deixa moradores ilhados em Santo Antônio de Pádua",
+        "Temporal deixa três mortos e 200 desabrigados no Sul",
+        "Previsão do mercado para o próximo trimestre",
+    ]
+    assert all(app.excluded_title(t) for t in forecasts)
+    assert not any(app.excluded_title(t) for t in impact)

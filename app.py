@@ -432,7 +432,15 @@ EXCLUDED_TITLE = re.compile(
     r"|\bcemit[eé]rios?\b.{0,80}\b(finados|visitantes|missas)\b"
     r"|\bbandeira (verde|amarela|vermelha)\b.{0,60}\b(energia|conta|tarifa)\b"
     r"|\b(chuva|calor|frio|clima|temperatura)\b.{0,60}\bprevis[aã]o\b"
-    r"|previs[aã]o\b.{0,60}\b(tempo|chuva|calor|frio|clima|temperatura)\b",
+    r"|previs[aã]o\b.{0,60}\b(tempo|chuva|calor|frio|clima|temperatura)\b"
+    # calendário de pagamento/benefício é serviço, não notícia de política
+    r"|\bcalend[aá]rio\b.{0,80}\b(pagamentos?|benef[ií]cios?|bolsa\s+fam[ií]lia"
+    r"|inss|aux[ií]lio|abono|fgts|\bpis\b|13[ºo°]|aposentad|seguro-desemprego"
+    r"|sal[aá]rio)\w*\b"
+    r"|\b(bolsa\s+fam[ií]lia|inss|aux[ií]lio|abono|fgts|benef[ií]cio)\b.{0,60}"
+    r"\bcalend[aá]rio\b"
+    r"|\bdatas?\s+de\s+pagamentos?\b.{0,60}\b(benef[ií]cios?|bolsa\s+fam[ií]lia"
+    r"|inss|aux[ií]lio|abono|fgts|sal[aá]rio)\b",
     re.I)
 
 
@@ -440,8 +448,35 @@ def excluded_section(raw: str | None) -> bool:
     return _norm_sec(raw) in EXCLUDED_SECTIONS
 
 
+# Previsão/alerta meteorológico é serviço. Evento com impacto (alagamento,
+# ilhados, sem luz) continua sendo notícia e não cai neste filtro.
+WEATHER_SERVICE = re.compile(
+    r"\bprevis[aã]o\b.{0,60}\b(tempo|chuva|chuvas|chover|calor|frio|clima"
+    r"|temperatura|temporais?|semana|dias)\b"
+    r"|\b(chuva|chuvas|chover|calor|frio|clima|temperatura|sol)\b.{0,60}\bprevis[aã]o\b"
+    r"|\b(alerta|avisos?)\b.{0,40}\b(chuva|chuvas|tempestade|temporal|vendaval|umidade"
+    r"|frio|calor|rajadas)\b"
+    r"|\b(inmet|defesa civil)\b.{0,60}\balerta\b"
+    r"|\b(calor|frio|sol)\b.{0,40}\b(chuva|chuvas|chover|pancadas|temporais?)\b"
+    r"|\b(chuva|chuvas|chover|pancadas|temporais?)\b.{0,40}\b(calor|frio|sol|feriado"
+    r"|fim de semana)\b"
+    r"|\bchuvas?\b.{0,40}\b(acima|abaixo) da m[eé]dia\b"
+    r"|\bchuvas? (fortes|intensas)\b.{0,40}\b(pa[ií]s|virada|m[eê]s|semana)\b"
+    r"|\btemporais?\b.{0,40}\b(brasil|pa[ií]s|novembro|semana|fim de semana)\b",
+    re.I)
+
+WEATHER_IMPACT = re.compile(
+    r"alagament|desabament|desabrigad|desalojad|ilhad|enchente|inunda"
+    r"|\bmorreu?\b|\bmort[eo]s?\b|v[ií]timas|sem luz|falta de (luz|energia)"
+    r"|destru|interditad|queda de [aá]rvore|cancelad",
+    re.I)
+
+
 def excluded_title(title: str | None) -> bool:
-    return bool(EXCLUDED_TITLE.search(title or ""))
+    t = title or ""
+    if EXCLUDED_TITLE.search(t):
+        return True
+    return bool(WEATHER_SERVICE.search(t) and not WEATHER_IMPACT.search(t))
 
 
 def _norm_sec(s: str) -> str:

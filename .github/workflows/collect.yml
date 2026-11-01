@@ -107,7 +107,11 @@ jobs:
           git pull --rebase -X ours origin main
           git push
 
+      # O site já foi publicado acima; este passo só arquiva o dia no git.
+      # Se ele falhar, mantém o run verde e registra o aviso — o arquivo é
+      # secundário e pode ser recuperado na próxima rodada.
       - name: Commit diário do arquivo e do estado
+        continue-on-error: true
         run: |
           git config user.name "balanco-bot"
           git config user.email "balanco-bot@local"
@@ -117,6 +121,9 @@ jobs:
             echo "arquivo/estado já registrados hoje"
             exit 0
           fi
+          # data/feed saem pelo artefato do Pages; voltam ao estado do git
+          git restore docs/data.json 2>/dev/null || true
+          git restore docs/feed.xml 2>/dev/null || true
           git add docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
           echo "$DAY" > "$MARK"
           git add "$MARK" docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
@@ -125,7 +132,17 @@ jobs:
             exit 0
           fi
           git commit -m "arquivo diário $DAY"
-          # data/feed já estão no artefato do Pages; não vão para o git
-          git checkout -- docs/data.json docs/feed.xml 2>/dev/null || true
-          git pull --rebase -X ours origin main
-          git push
+          # sobras do working tree vão para o autostash; se o remoto andou,
+          # rebase e nova tentativa em vez de derrubar o run
+          for i in 1 2 3; do
+            if git -c rebase.autoStash=true pull --rebase -X ours origin main \
+               && git push origin HEAD:main; then
+              echo "estado publicado"
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "tentativa $i falhou; repetindo em $((i * 10))s"
+            sleep $((i * 10))
+          done
+          echo "::warning::não foi possível arquivar o estado diário; o site já estava publicado"
+          exit 1
