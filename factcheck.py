@@ -12,6 +12,7 @@ import calendar
 import html
 import re
 import time
+import urllib.parse
 from datetime import datetime, timezone
 
 import feedparser
@@ -26,6 +27,52 @@ LUPA_VERIFICACAO_CAT = 142  # categoria "Verificação"
 LUPA_MAX_PAGES = 5  # 5 x 100 itens mais recentes
 AOSF_RSS = ("https://news.google.com/rss/search"
             "?q=site:aosfatos.org&hl=pt-BR&gl=BR&ceid=BR:pt-419")
+# O Google News devolve redirect JS (não resolve por HEAD/GET). Usamos o
+# sitemap público do Aos Fatos para achar a URL real pelo slug e, na falta,
+# a busca do próprio site. Sem bypass: só páginas públicas.
+AOSF_SITEMAP = "https://www.aosfatos.org/sitemap-noticias.xml"
+AOSF_SEARCH = "https://www.aosfatos.org/?s="
+_WORD = re.compile(r"[a-zà-ú0-9]+")
+
+
+def _aosf_urls() -> list[str]:
+    try:
+        r = requests.get(AOSF_SITEMAP, timeout=TIMEOUT,
+                         headers={"User-Agent": UA})
+        r.raise_for_status()
+        return re.findall(r"<loc>(https://www\.aosfatos\.org/noticias/[^<]+)"
+                          r"</loc>", r.text)
+    except Exception:
+        return []
+
+
+def _slug_tokens(text: str) -> set[str]:
+    import unicodedata
+    norm = unicodedata.normalize("NFKD", (text or "").lower())
+    norm = "".join(c for c in norm if not unicodedata.combining(c))
+    return {w for w in _WORD.findall(norm) if len(w) >= 4}
+
+
+def _best_aosf_link(title: str, urls: list[str]) -> str | None:
+    """Acha a URL real pelo slug; exige >=80% dos tokens e 3 em comum.
+
+    Conservador de propósito: link errado (checagem de outro tema) é pior que
+    cair na busca do site.
+    """
+    toks = _slug_tokens(title)
+    if not toks or not urls:
+        return None
+    best, score = None, 0.0
+    for u in urls:
+        slug = u.rstrip("/").rsplit("/", 1)[-1]
+        st = _slug_tokens(slug)
+        if not st:
+            continue
+        shared = len(toks & st)
+        s = shared / len(toks)
+        if shared >= 3 and s > score:
+            best, score = u, s
+    return best if score >= 0.8 else None
 
 
 def _clean(text: str | None) -> str:
@@ -150,6 +197,7 @@ def fetch_aosfatos(limit: int = 100) -> list[dict]:
     r = requests.get(AOSF_RSS, timeout=TIMEOUT, headers={"User-Agent": UA})
     r.raise_for_status()
     d = feedparser.parse(r.content)
+    urls = _aosf_urls()
     out = []
     for e in d.entries[:limit]:
         title = _clean(e.get("title"))
@@ -157,6 +205,9 @@ def fetch_aosfatos(limit: int = 100) -> list[dict]:
         link = (e.get("link") or "").strip()
         if not title or not link:
             continue
+        # troca o redirect do Google pela URL pública real (ou pela busca)
+        real = _best_aosf_link(title, urls)
+        link = real or (AOSF_SEARCH + urllib.parse.quote(title[:120]))
         pp = e.get("published_parsed") or e.get("updated_parsed")
         ts = min(calendar.timegm(pp), time.time() + 300) if pp else time.time()
         dt = datetime.fromtimestamp(ts, tz=timezone.utc)

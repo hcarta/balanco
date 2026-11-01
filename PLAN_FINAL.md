@@ -163,16 +163,19 @@ senão                   -> None
 
 Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
 
-### Fase 0 — Correções e higiene (1 dia)
+### Fase 0 — Correções e higiene (1 dia) — ✅ parcial (01/11/2026)
 
-- [ ] **`dt_hours`**: `ops/pair_features.py` deve calcular `dt` a partir de
-      `published`/`first_seen` do artigo (não `updated` de história). Regenerar
-      `state/pair_features.jsonl` e re-medir AUC (o sinal temporal nunca foi testado).
-- [ ] **Aos Fatos redirect**: resolver o destino real do link via `HEAD`/`GET` com
-      `allow_redirects` em `factcheck.py`, ou marcar o link intermediário como tal na UI.
-- [ ] **Limiares hardcoded**: centralizar em um dataclass `Config` no topo de `app.py`
-      (`COS_LO`, `COS_HI`, `EMB_BOOST`, `BIAS_EDGES`, caps) — sem mudar valores.
-- [ ] Rodar `python -m pytest tests/ -q`; aceite: 141 passed, 0 novos xfail.
+- [x] **`dt_hours` corrigido**: `ops/rebuild_pair_dt.py` recomputa o Δt pelo cache
+      (143/154 pares; mediana 8,7 h). Re-treino: **AUC 0,835 → 0,904**; em P≈0,94 o
+      recall sobe 0,43 → 0,53. Ainda sem P≥0,97 & R≥0,80.
+- [x] **Aos Fatos**: o redirect do Google News não resolve (HTTP 302 para si mesmo).
+      `fetch_aosfatos` mantém os títulos/vereditos do Google e troca o link pela URL
+      real achada no `sitemap-noticias.xml` (match ≥80% de tokens + 3 em comum);
+      senão, busca do próprio site. 8/20 links diretos na amostra; teste de
+      conservadorismo em `test_aosf_link_matcher_is_conservative`.
+- [ ] **Limiares hardcoded** → `Config`: **adiado** (refactor amplo, risco>ganho
+      imediato; fazer junto da Fase 4).
+- [x] `python -m pytest tests/ -q` → **142 passed + 56 xfailed**.
 
 ### Fase 1 — Viés e factualidade (½ dia + revisão do dono)
 

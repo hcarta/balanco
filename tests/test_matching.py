@@ -987,3 +987,15 @@ def test_site_url_respects_env(monkeypatch):
     monkeypatch.delenv("BALANCO_SITE_URL")
     importlib.reload(appmod)
     assert appmod.SITE_URL == "https://hcarta.github.io/balanco"
+
+
+def test_aosf_link_matcher_is_conservative():
+    """Fase 0: não ligar checagem ao tema errado; cai na busca do site."""
+    from factcheck import _best_aosf_link
+    urls = [
+        "https://www.aosfatos.org/noticias/falso-governo-lula-imposto-sobre-heranca-40-porcento/",
+        "https://www.aosfatos.org/noticias/video-antigo-circula-nas-redes-para-sugerir-que-flavio-foi-para-os-eua/",
+    ]
+    ok = _best_aosf_link("Vídeo antigo circula nas redes para sugerir que Flávio foi para os EUA", urls)
+    assert ok and "video-antigo" in ok
+    assert _best_aosf_link("É falso que Lula recuou sobre fim da escala 6x1", urls) is None
