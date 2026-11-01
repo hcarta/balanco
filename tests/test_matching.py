@@ -694,3 +694,29 @@ def test_longreads_background_uses_dek():
     lr = out[0]["longreads"]
     assert lr and lr[0]["relation"] == "background"
     assert "mendonça" in lr[0]["why"]
+
+
+def test_build_timeline_orders_by_first_seen():
+    now = time.time()
+    title = "Senado aprova marco fiscal em votação apertada"
+    srcs = [
+        {"id": "a", "name": "A", "bias": -0.6, "factuality": "high",
+         "ownership": "independente"},
+        {"id": "b", "name": "B", "bias": 0.0, "factuality": "high",
+         "ownership": "familia"},
+        {"id": "c", "name": "C", "bias": 0.6, "factuality": "high",
+         "ownership": "globo"},
+    ]
+    times = ["2026-10-31T10:00:00+00:00", "2026-10-31T10:05:00+00:00",
+             "2026-10-31T10:02:00+00:00"]
+    seen = ["2026-10-31T10:10:00+00:00", "2026-10-31T10:06:00+00:00",
+            "2026-10-31T10:03:00+00:00"]
+    arts = [{
+        "title": title, "link": f"https://x/{s['id']}", "source_id": s["id"],
+        "source_name": s["name"], "base_bias": s["bias"], "ts": now,
+        "published": times[i], "first_seen": seen[i], "section": "politica",
+        "summary": "",
+    } for i, s in enumerate(srcs)]
+    out = app.build(srcs, arts, {})
+    assert len(out) == 1
+    assert [x["source"] for x in out[0]["timeline"]] == ["A", "C", "B"]

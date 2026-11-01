@@ -66,3 +66,35 @@ def test_count_recent_and_window_in_health(tmp_path):
     assert h["last_n_window"] == 3
     assert h["last_n_total"] == 2
     s.close()
+
+
+def _story(sid, links, title="História"):
+    return {"id": sid, "title": title,
+            "articles": [{"link": l, "first_seen": "2026-10-31T10:00:00+00:00",
+                          "source": "Fonte"} for l in links],
+            "aliases": []}
+
+
+def test_sync_stories_persists_members_and_events(tmp_path):
+    s = make_store(tmp_path)
+    s.sync_stories([_story("h1", ["l1", "l2"])], "2026-10-31T12:00:00+00:00")
+    assert s.db.execute("SELECT COUNT(*) FROM stories").fetchone()[0] == 1
+    assert s.db.execute("SELECT COUNT(*) FROM story_members").fetchone()[0] == 2
+    kinds = [r[0] for r in s.db.execute("SELECT kind FROM story_events")]
+    assert "new_member" in kinds
+    s.sync_stories([_story("h1", ["l1", "l2", "l3"])],
+                   "2026-10-31T12:30:00+00:00")
+    assert s.db.execute("SELECT COUNT(*) FROM story_members").fetchone()[0] == 3
+    s.close()
+
+
+def test_sync_stories_aliases_and_split(tmp_path):
+    s = make_store(tmp_path)
+    s.sync_stories([_story("h1", ["l1", "l2"])], "2026-10-31T12:00:00+00:00")
+    # l1/l2 migram para h2 (novo id)
+    s.sync_stories([_story("h2", ["l1", "l2"])], "2026-10-31T12:30:00+00:00")
+    aliases = s.aliases_map()
+    assert aliases.get("h2") == ["h1"]
+    kinds = [r[0] for r in s.db.execute("SELECT kind FROM story_events")]
+    assert "merge" in kinds or "split" in kinds
+    s.close()

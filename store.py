@@ -68,7 +68,37 @@ CREATE TABLE IF NOT EXISTS bodies(
   method TEXT DEFAULT '',
   fetched TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS stories(
+  story_id TEXT PRIMARY KEY,
+  created TEXT NOT NULL,
+  last_seen TEXT NOT NULL,
+  anchor_link TEXT DEFAULT '',
+  title TEXT DEFAULT '',
+  status TEXT DEFAULT 'active'
+);
+CREATE TABLE IF NOT EXISTS story_members(
+  story_id TEXT NOT NULL,
+  link TEXT NOT NULL,
+  first_seen TEXT DEFAULT '',
+  PRIMARY KEY(story_id, link)
+);
+CREATE INDEX IF NOT EXISTS idx_story_members_link ON story_members(link);
+CREATE TABLE IF NOT EXISTS story_alias(
+  alias TEXT PRIMARY KEY,
+  story_id TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS story_events(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts TEXT NOT NULL,
+  story_id TEXT NOT NULL,
+  kind TEXT NOT NULL,
+  detail TEXT DEFAULT ''
+);
 """
+
+
+def _first_seen(value: str | None) -> str:
+    return value or ""
 
 
 def _now_iso() -> str:
@@ -154,6 +184,85 @@ class Store:
         return self.db.execute(
             "SELECT COUNT(*) FROM articles WHERE source_id=? AND ts>?",
             (source_id, cutoff)).fetchone()[0]
+
+    def sync_stories(self, stories: list[dict], run_ts: str):
+        """A-6: persiste identidade, membros, aliases e eventos entre rodadas.
+
+        Cada link pertence a uma história por vez. Quando um link muda de
+        história, o id antigo vira alias do novo e registramos merge/split.
+        """
+        prev = {}
+        for sid, link, fs in self.db.execute(
+                "SELECT story_id, link, first_seen FROM story_members"):
+            prev.setdefault(link, (sid, fs))
+        for s in stories:
+            sid = s.get("id")
+            if not sid:
+                continue
+            arts = s.get("articles", [])
+            anchor = ""
+            for a in arts:
+                if a.get("link"):
+                    anchor = a["link"]
+                    break
+            self.db.execute(
+                "INSERT INTO stories(story_id, created, last_seen, anchor_link, title, status)"
+                " VALUES(?,?,?,?,?,'active')"
+                " ON CONFLICT(story_id) DO UPDATE SET last_seen=excluded.last_seen,"
+                " title=excluded.title, status='active'",
+                (sid, run_ts, run_ts, anchor, s.get("title", "")))
+            new_links = []
+            for a in arts:
+                link = a.get("link")
+                if not link:
+                    continue
+                fs = _first_seen(a.get("first_seen") or a.get("published")) or run_ts
+                old = prev.get(link)
+                if old and old[0] != sid:
+                    old_id = old[0]
+                    self.db.execute(
+                        "INSERT OR IGNORE INTO story_alias(alias, story_id) VALUES(?,?)",
+                        (old_id, sid))
+                    self.db.execute(
+                        "DELETE FROM story_members WHERE link=? AND story_id<>?",
+                        (link, sid))
+                    remaining = self.db.execute(
+                        "SELECT COUNT(*) FROM story_members WHERE story_id=?",
+                        (old_id,)).fetchone()[0]
+                    status = "split" if remaining else "merged"
+                    self.db.execute("UPDATE stories SET status=? WHERE story_id=?",
+                                    (status, old_id))
+                    self.db.execute(
+                        "INSERT INTO story_events(ts, story_id, kind, detail)"
+                        " VALUES(?,?,?,?)",
+                        (run_ts, sid, "merge" if not remaining else "split", old_id))
+                self.db.execute(
+                    "INSERT INTO story_members(story_id, link, first_seen)"
+                    " VALUES(?,?,?) ON CONFLICT(story_id, link) DO UPDATE SET"
+                    " first_seen=CASE WHEN story_members.first_seen=''"
+                    " OR excluded.first_seen<story_members.first_seen"
+                    " THEN excluded.first_seen ELSE story_members.first_seen END",
+                    (sid, link, fs))
+                if link not in prev:
+                    new_links.append(link)
+            for alias in s.get("aliases", []) or []:
+                if alias and alias != sid:
+                    self.db.execute(
+                        "INSERT OR IGNORE INTO story_alias(alias, story_id) VALUES(?,?)",
+                        (alias, sid))
+            if new_links:
+                self.db.execute(
+                    "INSERT INTO story_events(ts, story_id, kind, detail)"
+                    " VALUES(?,?,?,?)",
+                    (run_ts, sid, "new_member", f"{len(new_links)} novo(s)"))
+        self.db.commit()
+
+    def aliases_map(self) -> dict[str, list[str]]:
+        out: dict[str, list[str]] = {}
+        for alias, sid in self.db.execute(
+                "SELECT alias, story_id FROM story_alias ORDER BY alias"):
+            out.setdefault(sid, []).append(alias)
+        return out
 
     # ── rodadas e saúde ──
     def log_fetch(self, source_id: str, run_ts: str, n_fresh: int,

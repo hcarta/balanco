@@ -616,6 +616,23 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         tot = len(coverage)
         gc, ind, avg = independent_counts(coverage, "bias_score")
         blind = blindspot_of(gc["L"], gc["C"], gc["R"])
+        # A-6: quem deu primeiro (um por veículo, por first_seen)
+        def _pub(x):
+            # "quem deu primeiro" = publicação; first_seen é só fallback
+            return x.get("published") or x.get("first_seen") or ""
+        by_source = {}
+        for x in sorted(coverage, key=lambda y: (_pub(y), y.get("source_name", ""))):
+            src = x.get("source_name") or x.get("source_id") or ""
+            if src and src not in by_source:
+                by_source[src] = x
+        timeline = [{
+            "source": x.get("source_name", ""),
+            "title": x.get("title", ""),
+            "link": x.get("link", ""),
+            "published": _pub(x),
+            "first_seen": x.get("first_seen") or _pub(x),
+        } for x in sorted(by_source.values(),
+                          key=lambda y: (_pub(y), y.get("source_name", "")))[:6]]
         rep = _representative(coverage, meta)
         rep_title = _clean_title(rep["title"])
         # resumo: prefere o do representante; senão o primeiro disponível
@@ -636,10 +653,12 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                     "R": round(100 * gc["R"] / ind) if ind else 0},
             "blindspot": blind,
             "updated": max(x["published"] for x in items),
+            "timeline": timeline,
             "articles": [{
                 "source": x["source_name"], "source_id": x["source_id"],
                 "group": x.get("group") or x["source_id"],
                 "piece_kind": x.get("piece_kind", "hard_news"),
+                "first_seen": x.get("first_seen") or x.get("published", ""),
                 "title": x["title"], "link": x["link"],
                 "bias": x["bias_score"], "bucket": x["bucket"], "via": x["via"],
                 "section": x.get("section", ""),
@@ -1708,6 +1727,14 @@ def main():
         except Exception:
             prev_stories = []
     stories = assign_aliases(stories, prev_stories)
+    # A-6: identidade/membros/eventos persistentes + aliases de rodadas antigas
+    if store is not None:
+        store.sync_stories(stories, run_ts)
+        db_aliases = store.aliases_map()
+        for s in stories:
+            aliases = set(s.get("aliases") or []) | set(db_aliases.get(s["id"], []))
+            if aliases:
+                s["aliases"] = sorted(aliases)
     health = store.health() if store is not None else {}
     sources_out = [{**s, "factcheck": leverage.get(s["id"]) or ledger.get(s["id"]),
                     "health": health.get(s["id"])}
