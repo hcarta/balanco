@@ -1,0 +1,289 @@
+Bugs & Issues
+
+dt_hours instrumentation bug (confirmed): In the F2 pair model training, _ts_of reads updated from the story object instead of published, making dt_hours a constant 0 for all pairs. This means the temporal signal feature is entirely broken and must be refixed using published timestamps before any conclusions about the value of temporal signals.
+
+Over-merge bug with embed-cluster: When using --embed-cluster, the system created a single story with 645 coverages, merging unrelated articles. The entity anchor wasn't sufficient to prevent this. Marked as experimental and not recommended for production.
+
+Safra Trump × Papa case: A cluster incorrectly merged stories about Trump tariffs on EU agricultural products with stories about the Pope's death. Both shared entities ("Trump", "Papa") but were about completely different events. This is the canonical test case for the false-equivalence gate.
+
+Factuality score display inconsistency: Some sources have factuality ratings that were set by a single annotator (the project owner). The ratings need validation from 2+ independent models/annotators.
+
+Timezone handling: There were issues with timezone handling in article timestamps, particularly with feeds that don't specify timezone. Tests were added (test_timezones.py).
+
+Google News redirect links from Aos Fatos: The Aos Fatos feed via Google News RSS returns redirect URLs instead of direct links. This is documented but not fully resolved.
+
+Design Decisions
+
+Fixed bias per source (not per article): Unlike Ground.news which rates articles individually, Balanço uses a fixed bias rating per publication from sources.yaml. This is a deliberate decision to avoid AI costs per article, though LLM classification is available opt-in via --llm.
+
+Editorial group deduplication: When calculating bias bars, articles from the same editorial group (e.g., G1 + O Globo + Valor = Grupo Globo) count as 1 voice, not 3. This prevents conglomerates from dominating the bias distribution.
+
+Static site, no backend: The entire output is a static HTML page with a JSON data file. No server, no database in production. GitHub Pages serves it.
+
+Conservative fact-check matching: Uses IDF-weighted term overlap rather than semantic similarity to match fact-checks to stories. This avoids false positives (matching "same topic" instead of "same claim").
+
+Body for machine, short for human: Even when --body fetches full article text, only the description or a short excerpt is shown to the user. Full body is for clustering/matching algorithms only.
+
+Service content filtered out: Lottery, horoscope, weather forecasts, payment calendars are excluded by editorial decision. Weather events with impact (flooding, etc.) are kept.
+
+Foro de Teresina = podcast: Specifically filtered as podcast content, not hard news.
+
+Entity as subject + place is not a "pauta": Geographic locations alone don't constitute a topic/thread. "Mato Grosso" was incorrectly grouping violence in MS, soy farming, and state court stories.
+
+Opinion/longform don't age stories: The updated timestamp of a story uses only hard news coverage; opinion pieces and videos don't make the story appear "fresh".
+
+Gate approach for false equivalences: Two approaches were debated:
+
+Hard gate: Remove pairs where P(same) < threshold. Problem: recall drops to ~0.3
+Veto: Only reject pairs where P(same) < ~0.2. Would break bridges like "safra Trump × Papa" without recall cost.
+Neither was implemented yet.
+Performance Concerns
+
+TF-IDF matrix recomputation: The tfidf_matrix is computed fresh each run. With min_df=1, simplifying would change all cosine similarities and require recalibrating thresholds (0.38/0.62).
+
+O(n²) pairwise comparison: The clustering uses pairwise cosine similarity, which is O(n²) in the number of articles (~440/round). This is acceptable now but may not scale.
+
+Embedding model loading: MiniLM model loading takes significant time on first run. Cached in state/models/ for subsequent runs. ONNX/fastembed backend is lighter than full torch.
+
+HTTP requests: Even with caching and conditional requests, 53 sources × 1 request each = 53 minimum requests per cycle. The 30-minute cron is appropriate but could be tuned.
+
+Body enrichment bottleneck: --body with 40-cap and 2-second delay = up to 80 seconds of serial fetching per round.
+
+UI/UX Items
+
+Atlantic-inspired editorial design: Serif fonts, thin rules, small caps, breathing space. Combined with Ground.news-style bias bar (Left/Center/Right).
+
+Collapsible sections: "Aprofunde-se", "Lá fora", "Outros ângulos desta pauta" use <details> closed by default with counter headers.
+
+Mobile responsive: Pill-style scrollable filters, fixed search bar on mobile.
+
+Deep links: Stories are linkable via ?story=hXXX with stable IDs.
+
+Local analytics only: Usage tracking (?uso=1) stores clicks in localStorage only — no network, no cookies. Export/clear available.
+
+"Leituras da semana": Separate page for longform readings, 2-column layout with thumbnails.
+
+Framing comparison ("Como cada lado intitulou"): Log-odds analysis of terms used by each political side in headlines.
+
+"Quem deu primeiro": Timeline showing which outlet published first, ordered by publication date.
+
+Open Questions
+
+F3: Hard gate vs veto? The pair model (AUC 0.835) doesn't reach P≥0.97/R≥0.80. Hard gate fragments clusters (R~0.3); veto (reject if P(same)<~0.2) would break false bridges without recall cost. Neither implemented.
+
+same vs related boundary: The related class is lexically almost identical to same using only titles. Options: use summaries as signal, verb features, expand F1 to 600 pairs, or accept conservative gate (P0.93/R0.43).
+
+tfidf_matrix simplification: Should min_df=1 be applied? Would change all cosine scores and require threshold recalibration.
+
+Bias/factuality governance: Current ratings are from a single annotator. Need 2+ independent models/annotators and reported agreement metrics.
+
+Newsletter provider: Newsletter feature designed but no email provider chosen yet.
+
+Domain/SEO/Analytics: Site is live on GitHub Pages but lacks custom domain, proper analytics, and SEO optimization.
+
+Legal review: Terms of use, correction/errata policy, evaluation of PL 2338/2023, and republication licensing considerations pending.
+
+Improvement Suggestions (from the session)
+
+Semantic matching for fact-checks: Use embeddings to match "same claim with different words" — planned but not implemented (would need embeddings, not LLM per article).
+
+Multiple bias raters: Get 2+ independent models to rate bias/factuality and report inter-rater agreement.
+
+Embed-cluster calibration: The A-4 coherence check needs calibration before embed-cluster can work in production.
+
+Longform connections: C-3 hybrid scorer (embedding + entity-IDF + recency) is working (P@3 0.56, 17 stories/round) but could be improved.
+
+Feature engineering for pair model: dt_hours bug fix, add verb/action features, add summary overlap signal.
+
+Quarterly review process: Systematic bias review every 3 months (first planned: Jan 2027).
+
+International sources expansion: Currently 16 international sources, with LatAm/Hispanic and European coverage.
+
+Archive with pruning: Daily snapshots in docs/arquivo/, pruned to 90 days.
+
+[Message from subagent 6eee4e32-5526-4513-b6b2-fdec77c68e12]
+
+Balanço Codebase Analysis Report
+File Summaries
+1. app.py — Main Pipeline Orchestrator
+Lines: ~1,700
+Role: Central pipeline: source loading → collection → caching → clustering → enrichment → hub/pauta generation → longform → international → fact-checking → HTML generation
+Key Functions:
+build_tfidf_matrix() — Builds TF-IDF matrix from titles for cosine similarity
+cluster_stories() — Groups articles into stories via cosine similarity with entity anchoring
+_anchor_ok() — Entity anchor validation (requires shared named entity beyond vocabulary words)
+build_hubs() / assign_pautas() — Groups related stories into topic hubs
+build_longform_connections() — Connects longform/analysis pieces to hard news stories
+build_intl_connections() — Connects international coverage to domestic stories
+render_html() — Generates the full HTML output
+embed_matrix() — Optional embedding-based similarity (MiniLM via fastembed/sentence_transformers)
+_blindspot() — Detects stories covered disproportionately by one political side
+_rep_score() — Scores titles for representativeness (prefers informative/neutral)
+_pair_window() — Section-aware temporal window for pairing
+Issues Found:
+Monolithic file: 1,700 lines doing collection, clustering, rendering, enrichment, connections. Should be split.
+HTML generation inline: The render_html() function builds HTML strings via f-strings and concatenation (~600+ lines of HTML generation mixed with Python logic). Should use a template engine or at least separate the template.
+TF-IDF recalculation: Matrix is rebuilt every run even if articles haven't changed. Could cache the matrix.
+O(n²) clustering: Pairwise cosine on ~440 articles/round. Currently acceptable but the inner loop also calls _anchor_ok() for NER, adding overhead.
+Global state: Several module-level lists and dicts (_ENTITY_CACHE, _IDF_CACHE, etc.) make testing harder.
+Hardcoded thresholds: Cosine thresholds (0.38, 0.62), various magic numbers throughout.
+_ts_of bug (documented): Reads updated instead of published for temporal features.
+2. collectors.py — Source Fetching
+Lines: ~380
+Role: HTTP fetching adapters for RSS, Atom, Arc XP, Google News sitemaps
+Key Functions:
+fetch_rss() — Standard RSS/Atom feed parser
+fetch_sitemap() — Google News sitemap parser (Estadão, O Globo, Valor, Gazeta)
+_http() — Central HTTP client with retry, backoff, conditional requests (ETag/If-Modified-Since)
+_resolve_sitemap_index() — Resolves sitemap index to find the most recent news sitemap
+Issues:
+Serial fetching: All sources fetched sequentially. Could use async/threading for 53 sources.
+Hardcoded User-Agent: Fixed UA string could be configurable.
+XML parsing: Uses xml.etree.ElementTree without size limits; malformed XML could cause issues.
+Date parsing: Multiple try/except blocks for different date formats; could centralize.
+3. store.py — SQLite Cache
+Lines: ~280
+Role: SQLite-backed article cache with HTTP state tracking
+Key Functions/Classes:
+Store class — Manages state/cache.db with tables: articles, http_state, fetches, runs
+upsert_article() — Inserts or updates articles (dedup by canonical URL)
+get_http_state() / set_http_state() — ETag/Last-Modified storage
+record_fetch() / record_run() — Audit trail
+articles_in_window() — Retrieves articles within a time window
+Issues:
+No connection pooling: Opens/closes connection per operation in some paths.
+No migration system: Schema changes would break existing caches silently.
+canonical_url() function: URL canonicalization is simple (strips utm_ params, fragments). Could miss more complex tracking params.
+4. enrich.py — Content Enrichment
+Lines: ~250
+Role: Fetches article bodies/summaries from public metadata (JSON-LD, meta tags, article tags)
+Key Functions:
+enrich_body() — Main entry: fetches and extracts body/summary for articles
+_extract_body() — Tries JSON-LD articleBody → <article> → <meta> description
+_detect_paywall() — Checks for paywall markers (short body, isAccessibleForFree:false, etc.)
+Issues:
+Serial with delay: 2-second delay between requests, cap of 40/round = up to 80s serial.
+HTML parsing fragility: Relies on specific HTML structures that could change.
+No parallel requests: Could use async.
+5. factcheck.py — Fact-Check Pipeline
+Lines: ~310
+Role: Collects fact-checks from G1, Lupa, Aos Fatos; matches to stories
+Key Functions:
+fetch_g1() — G1 Fato ou Fake RSS
+fetch_lupa() — Agência Lupa API (paginated, up to 5 pages)
+fetch_aosfatos() — Aos Fatos via Google News RSS
+_extract_verdict() — Regex-based verdict extraction from titles
+match_checks() — IDF-weighted term overlap matching
+load_ledger() / save_ledger() — Persistent fact-check evidence storage
+Issues:
+IDF recomputation: IDF values recalculated every run from the current corpus.
+Verdict extraction fragility: Regex patterns could miss new verdict formats.
+No retry on Lupa API: If the API changes pagination format, silent failure.
+6. classify_llm.py — LLM Classification (Optional)
+Lines: ~120
+Role: Optional per-article bias classification using OpenAI API
+Issues:
+No rate limiting: Could hit API limits with many articles.
+No caching: Re-classifies articles on every run with --llm.
+Single model: Hardcoded to OpenAI. Could support other providers.
+7. sources.yaml — Source Configuration
+Lines: ~450
+Role: Defines all 53 sources with bias, factuality, ownership, fetcher type, URLs
+Structure: Each source has name, url, bias (-2 to +2), factuality (alta/media/baixa), ownership, fetcher, section_map, etc.
+Issues:
+Single annotator: All ratings from one person (documented concern).
+No schema validation: Could use jsonschema or pydantic for the YAML structure.
+8. docs/index.html — Main UI
+Lines: ~2,100
+Role: Single-page static application that renders data.json
+Key Sections:
+Masthead with hero story
+Story cards with bias bars
+Comparison panel (3-column: left/center/right)
+Sidebar (blindspots, fact-checks, readings, sources)
+Filters and search
+Timeline ("Quem deu primeiro")
+Framing comparison ("Como cada lado intitulou")
+Collapsible connections (Aprofunde-se, Lá fora, Outros ângulos)
+Issues:
+Monolithic HTML: 2,100 lines of inline CSS + JS + HTML. No components, no framework, no build step.
+No CSS variables for theming: Colors/fonts hardcoded throughout.
+No dark mode: Only light theme.
+JS in <script> tags: ~800 lines of JavaScript inline. Hard to test/maintain.
+No lazy loading of images: All images loaded upfront.
+No skeleton/loading state: Data.json loads synchronously; no visual feedback.
+Accessibility: No ARIA labels on interactive elements, no focus management, no skip links.
+No i18n: All strings hardcoded in Portuguese (which is fine for the target audience but limits extensibility).
+Mobile UX: Responsive via media queries but the comparison panel is cramped on mobile.
+CSS specificity issues: Some styles use !important to override others.
+9. docs/leituras.html — Longform Readings Page
+Lines: ~350
+Role: Weekly longform readings index from specialized sources (piauí, Nexo, Pública, etc.)
+Issues: Similar to index.html — inline everything, no shared components.
+10. CURADORIA_VIES.md — Bias Curation Document
+Lines: ~260
+Role: Documents the bias rating methodology, scale, and justification for each source's rating.
+Key info: Brazilian-adapted 5-point scale (-2 to +2), with detailed justification per source.
+11. ESTRATEGIA_AGREGACAO.md — Aggregation Strategy
+Lines: ~180
+Role: Documents the strategy for collecting from sources without public RSS (Estadão, O Globo, Valor, Gazeta).
+12. PLANO_CONEXOES.md — Connections Plan
+Lines: ~280
+Role: Phases F1–F4 for longform/international/fact-check connections.
+Key metrics: C-3 hybrid scorer P@3 0.56, 17 stories/round.
+13. PLAN_FALSAS_EQUIVALENCIAS.md — False Equivalences Plan
+Lines: ~330
+Role: Phases F0–F5 for the pair classification gate to prevent false merges.
+Key metrics: AUC 0.835, but can't reach P≥0.97/R≥0.80.
+14. PLAN_F2_DIAGNOSTICO.md — F2 Training Diagnostic
+Lines: ~170
+Role: Diagnosis of why F2 training failed. Root cause: dt_hours bug.
+15. PLAN_CLAUDE.md — Original Diagnostic + Status
+Lines: ~1,100
+Role: Comprehensive diagnostic and phase status from the original planning session.
+16. requirements.txt
+feedparser
+requests
+beautifulsoup4
+lxml
+pyyaml
+scikit-learn
+scipy
+17. requirements-embed.txt
+fastembed
+onnxruntime
+18. Test Files
+
+conftest.py (~80 lines): Fixtures for test articles, stories, mock HTTP responses.
+
+test_matching.py (~200 lines): Tests for cosine similarity thresholds, entity anchoring, pair windows, rep_score.
+
+test_store.py (~150 lines): Tests for SQLite cache operations, URL canonicalization, article dedup.
+
+Cross-Cutting Observations
+Architecture Concerns
+God object: app.py — Clustering, rendering, enrichment orchestration, hub building, connection building all in one 1,700-line file. Should be split into: cluster.py, render.py, connections.py, hubs.py.
+No configuration object: Thresholds, limits, and feature flags are scattered as function arguments and module constants. A config dataclass would centralize them.
+Template mixing: HTML generation via f-strings in Python is fragile and hard to maintain. Consider Jinja2 templates.
+Performance Summary
+O(n²) clustering — acceptable at ~440 articles but won't scale to 1000+.
+Serial HTTP — 53 sources fetched sequentially. Could parallelize.
+Serial body enrichment — 2s delay × 40 cap = 80s.
+TF-IDF rebuilt every run — could be cached when article set is unchanged.
+No incremental rendering — full HTML regenerated every time.
+Consistency Issues
+Mixed language: Code comments mostly Portuguese, function/variable names mix English and Portuguese.
+Duplicate phase descriptions: PLANO.md has both checked and unchecked versions of phases 4.1-4.6.
+Date formatting: Inconsistent date format usage across files (ISO 8601 vs. Brazilian format).
+Error handling: Some functions use try/except with broad catches, others let exceptions propagate.
+UI/UX Improvement Areas
+No dark mode
+No loading states for data fetching
+No image lazy loading
+Accessibility gaps (ARIA labels, keyboard navigation, contrast ratios)
+Comparison panel cramped on mobile
+No animation/transitions for expanding/collapsing sections
+No share functionality per story
+No notification/update indicator when new data is available
+
+Ambos os subagentes retornaram. Agora tenho uma visão completa do projeto. Vou sintetizar tudo em um plano detalhado.

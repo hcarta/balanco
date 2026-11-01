@@ -177,17 +177,18 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
       imediato; fazer junto da Fase 4).
 - [x] `python -m pytest tests/ -q` → **142 passed + 56 xfailed**.
 
-### Fase 1 — Viés e factualidade (½ dia + revisão do dono)
+### Fase 1 — Viés e factualidade (½ dia + revisão do dono) — ✅ parcial (01/11/2026)
 
-- [ ] Gerar `state/consenso_fontes.csv` com: atual, claude, gemini, consenso,
-      `acao` (`aplicar`/`revisar`), `motivo`.
-- [ ] Aplicar a tabela "automática" da §2 em `sources.yaml` + `CURADORIA_VIES.md`
-      (com data e motivo; respeitar `state/vies_changelog.md`).
-- [ ] Aplicar os 4 downgrades/upgrades de factualidade da §2.
-- [ ] Deixar a lista `REVISAR` para o dono decidir; registrar decisões em
-      `state/vies_changelog.md`.
-- [ ] Aceite: `python -m pytest tests/test_sources.py -q` verde (toda fonte segue na
-      `CURADORIA_VIES.md`).
+- [x] `ops/reconcile_fontes.py` gera `state/consenso_fontes.csv` (atual, claude,
+      gemini, consenso, ação, factualidade).
+- [x] **22 fontes** de viés aplicadas (consenso de 2 modelos; regra: discordância
+      ≥ 0,5 vai para o dono). Destaques: longform novo (−0,5 a −1,5), LatAm (+0,5 a
+      +0,7), R7 +1,0, DCM −1,9.
+- [x] **4 factualidades** aplicadas (Infobae e Outras Palavras → mixed; Oeste e
+      Terra → upgrade). `sources.yaml` + `CURADORIA_VIES.md` + changelog sincronizados.
+- [ ] **10 fontes em `REVISAR`** (decisão do dono): Estadão, IstoÉ, Veja, InfoMoney,
+      Crusoé, Agência Pública, Nexo, Folha, Ponte, Sumaúma.
+- [x] Aceite: **142 passed + 56 xfailed**; distribuição 5 colunas L11/CL9/C19/CR8/R6.
 
 ### Fase 2 — 5 colunas (1–2 dias) — **a maior mudança**
 

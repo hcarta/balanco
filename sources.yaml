@@ -27,7 +27,7 @@ sources:
   - id: cnnbr
     name: CNN Brasil
     rss: https://www.cnnbrasil.com.br/feed/
-    bias: 0.1
+    bias: 0.4
     factuality: high
     ownership: corporacao
     owner_detail: Licença CNN / Novus Media
@@ -57,7 +57,7 @@ sources:
     name: Terra
     rss: https://www.terra.com.br/rss/
     bias: 0.0
-    factuality: mixed
+    factuality: high
     ownership: corporacao
     owner_detail: Telefônica / Vivo
   - id: nexo
@@ -71,7 +71,7 @@ sources:
   - id: piaui
     name: Revista piauí
     rss: https://piaui.folha.uol.com.br/feed/
-    bias: -0.5
+    bias: -0.8
     factuality: very_high
     ownership: individuo
     owner_detail: Editora piauí / João Moreira Salles (distribuição Folha)
@@ -84,14 +84,14 @@ sources:
     name: SBT News
     rss: https://sbtnews.sbt.com.br/sitemap-news.xml
     fetcher: sitemap
-    bias: 0.0
+    bias: 0.4
     factuality: high
     ownership: individuo
     owner_detail: Grupo Silvio Santos (família Abravanel)
   - id: r7
     name: R7
     rss: https://www.r7.com/arc/outboundfeeds/rss/?outputType=xml
-    bias: 0.5
+    bias: 1.0
     factuality: mixed
     ownership: individuo
     owner_detail: Grupo Record (Edir Macedo)
@@ -155,7 +155,7 @@ sources:
   - id: quatrocincoum
     name: Quatro Cinco Um
     rss: https://quatrocincoum.com.br/feed/
-    bias: 0.0
+    bias: -0.6
     factuality: high
     ownership: independente
     owner_detail: Quatro Cinco Um (revista de livros)
@@ -163,7 +163,7 @@ sources:
   - id: nucleo
     name: Núcleo Jornalismo
     rss: https://nucleo.jor.br/feed/
-    bias: 0.0
+    bias: -0.5
     factuality: high
     ownership: independente
     owner_detail: Núcleo Jornalismo
@@ -187,15 +187,15 @@ sources:
   - id: outraspalavras
     name: Outras Palavras
     rss: https://outraspalavras.net/feed/
-    bias: 0.0
-    factuality: high
+    bias: -1.5
+    factuality: mixed
     ownership: independente
     owner_detail: Outras Palavras
     longform: true
   - id: diplomatique
     name: Le Monde Diplomatique Brasil
     rss: https://diplomatique.org.br/feed/
-    bias: 0.0
+    bias: -1.5
     factuality: high
     ownership: independente
     owner_detail: Le Monde diplomatique Brasil
@@ -203,7 +203,7 @@ sources:
   - id: folhailus
     name: Folha Ilustríssima
     rss: https://feeds.folha.uol.com.br/ilustrissima/rss091.xml
-    bias: 0.0
+    bias: -0.3
     factuality: high
     ownership: corporacao
     owner_detail: Folha de S.Paulo, seção Ilustríssima
@@ -211,7 +211,7 @@ sources:
   - id: reporterbr
     name: Repórter Brasil
     rss: https://reporterbrasil.org.br/feed/
-    bias: -0.6
+    bias: -0.9
     factuality: very_high
     ownership: independente
     owner_detail: ONG jornalística sem fins lucrativos
@@ -233,7 +233,7 @@ sources:
     name: Fox News
     rss: https://feeds.foxnews.com/foxnews/world
     kind: intl
-    bias: 1.2
+    bias: 1.5
     factuality: mixed
     ownership: corporacao
     owner_detail: Fox Corporation
@@ -244,7 +244,7 @@ sources:
     name: New York Times
     rss: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
     kind: intl
-    bias: -0.8
+    bias: -0.5
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
@@ -256,7 +256,7 @@ sources:
     name: New York Times (Tecnologia)
     rss: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
     kind: intl
-    bias: -0.8
+    bias: -0.4
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
@@ -280,7 +280,7 @@ sources:
     name: New York Times (Américas)
     rss: https://rss.nytimes.com/services/xml/rss/nyt/Americas.xml
     kind: intl
-    bias: -0.8
+    bias: -0.5
     factuality: high
     ownership: corporacao
     owner_detail: The New York Times Company
@@ -328,7 +328,7 @@ sources:
     name: La Nación
     rss: https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml
     kind: intl
-    bias: 0.0
+    bias: 0.7
     factuality: high
     ownership: corporacao
     owner_detail: La Nación (Argentina)
@@ -339,8 +339,8 @@ sources:
     name: Infobae
     rss: https://www.infobae.com/arc/outboundfeeds/rss/
     kind: intl
-    bias: 0.0
-    factuality: high
+    bias: 0.7
+    factuality: mixed
     ownership: corporacao
     owner_detail: Infobae (Argentina)
     country: AR
@@ -350,7 +350,7 @@ sources:
     name: Clarín
     rss: https://www.clarin.com/rss/lo-ultimo/
     kind: intl
-    bias: 0.0
+    bias: 0.6
     factuality: high
     ownership: corporacao
     owner_detail: Clarín (Argentina)
@@ -361,7 +361,7 @@ sources:
     name: MercoPress
     rss: https://en.mercopress.com/rss/
     kind: intl
-    bias: 0.0
+    bias: 0.5
     factuality: high
     ownership: independente
     owner_detail: MercoPress (Uruguai, Mercosul)
@@ -412,14 +412,14 @@ sources:
   - id: b247
     name: Brasil 247
     rss: https://www.brasil247.com/feed
-    bias: -1.4
+    bias: -1.9
     factuality: mixed
     ownership: independente
     owner_detail: Editora 247
   - id: dcm
     name: Diário do Centro do Mundo
     rss: https://www.diariodocentrodomundo.com.br/feed/
-    bias: -1.5
+    bias: -1.9
     factuality: low
     ownership: independente
     owner_detail: DCM
@@ -433,15 +433,15 @@ sources:
   - id: jovempan
     name: Jovem Pan
     rss: https://jovempan.com.br/feed
-    bias: 1.4
+    bias: 1.8
     factuality: mixed
     ownership: corporacao
     owner_detail: Grupo Jovem Pan
   - id: oeste
     name: Revista Oeste
     rss: https://revistaoeste.com/feed/
-    bias: 1.6
-    factuality: low
+    bias: 1.9
+    factuality: mixed
     ownership: independente
     owner_detail: Revista Oeste
     # fora do "Aprofunde-se": publica notícia, não texto de fôlego (31/10/2026)

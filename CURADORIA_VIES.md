@@ -20,61 +20,61 @@
 
 | Fonte | Viés | Por quê (1 linha) |
 |---|---|---|
-| G1 | 0.0 | Hard news do maior grupo; factual, sem linha editorial marcada |
+| G1 | +0.0 | Hard news do maior grupo; factual, sem linha editorial marcada |
 | Folha de S.Paulo | -0.3 | Liberal-progressista histórica; crítica a ambos os polos, mais dura com a direita |
 | UOL Notícias | -0.2 | Segue a linha Folha (mesmo grupo), com colunismo diverso |
-| CNN Brasil | +0.1 | Licença CNN; factual, leve ênfase pró-mercado |
+| CNN Brasil | +0.4 | Licença CNN; factual, leve ênfase pró-mercado |
 | BBC Brasil | -0.2 | Serviço público britânico; progressista em costumes, factual |
-| Poder360 | 0.0 | Cobertura de poder seca, sem linha detectável |
-| Metrópoles | 0.0 | Factual e policialesco; sem linha partidária clara |
-| Terra | 0.0 | Agregador/telefônica; factual, sem linha |
+| Poder360 | +0.0 | Cobertura de poder seca, sem linha detectável |
+| Metrópoles | +0.0 | Factual e policialesco; sem linha partidária clara |
+| Terra | +0.0 | Agregador/telefônica; factual, sem linha |
 | Nexo Jornal | -0.4 | Explicativo progressista; seleção de pauta à esquerda |
-| Revista piauí | -0.5 | Longform liberal-progressista; crítica contumaz à direita |
+| Revista piauí | -0.8 | Longform liberal-progressista; crítica contumaz à direita |
 | InfoMoney | +0.2 | Finanças; enquadramento pró-mercado por natureza da editoria |
 | Estadão | -0.1 | Liberal-conservador histórico, mas com crítica real a Bolsonaro; centro |
 | O Globo | +0.1 | Liberal; factual, leve ênfase institucional pró-mercado |
 | Valor Econômico | +0.3 | Finanças; pró-mercado explícito, factual de alto padrão |
-| Brasil 247 | -1.4 | Partidário pró-Lula/governo; linguagem militante frequente |
-| Diário do Centro do Mundo | -1.5 | Partidário pró-esquerda; tom militante |
+| Brasil 247 | -1.9 | Partidário pró-Lula/governo; linguagem militante frequente |
+| Diário do Centro do Mundo | -1.9 | Partidário pró-esquerda; tom militante |
 | CartaCapital | -1.2 | Esquerda assumida; crítica sistemática à direita e ao mercado |
-| Jovem Pan | +1.4 | Partidária pró-Bolsonaro/direita; linguagem militante frequente |
-| Revista Oeste | +1.6 | Direita assumida; linha editorial abertamente conservadora. `low` com evidência (30/10): 2 FALSO do Aos Fatos sobre conteúdo publicado pela revista (NASA/Amazônia jul/2021; São Lourenço/tratamento precoce), com aval do TJ-SP |
+| Jovem Pan | +1.8 | Partidária pró-Bolsonaro/direita; linguagem militante frequente |
+| Revista Oeste | +1.9 | Direita assumida; linha editorial abertamente conservadora. `low` com evidência (30/10): 2 FALSO do Aos Fatos sobre conteúdo publicado pela revista (NASA/Amazônia jul/2021; São Lourenço/tratamento precoce), com aval do TJ-SP |
 | Gazeta do Povo | +1.2 | Direita curitibana; conservadora em costumes e mercado |
 | Agência Brasil | — (pendente) | Feed RSS parado desde 2023; sitemap sem namespace de notícias. Revisitar se publicarem feed vivo |
-| SBT News | 0.0 | Popular, factual; sem linha partidária detectável |
-| R7 | +0.5 | Grupo Record (Edir Macedo); conservadora em costumes, pró-governos de direita |
-| Band | 0.0 | Comercial neutra; jornalismo factual sem linha marcada |
-| DW Brasil | 0.0 | Serviço público alemão; factual, padrão internacional |
+| SBT News | +0.4 | Popular, factual; sem linha partidária detectável |
+| R7 | +1.0 | Grupo Record (Edir Macedo); conservadora em costumes, pró-governos de direita |
+| Band | +0.0 | Comercial neutra; jornalismo factual sem linha marcada |
+| DW Brasil | +0.0 | Serviço público alemão; factual, padrão internacional |
 | Veja | +0.5 | Liberal-conservadora; historicamente anti-PT. Factualidade rebaixada p/ mista em 30/10 (caso Lula–Vorcaro questionado) |
-| IstoÉ | 0.0 | Popular-sensacionalista; sem linha partidária consistente |
+| IstoÉ | +0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
 | Agência Pública | -0.8 | Investigativo progressista sem fins lucrativos |
-| Quatro Cinco Um | 0.0 | Revista de livros; centro até evidência (longform) |
-| Núcleo Jornalismo | 0.0 | Digital independente; centro até evidência (longform) |
-| Ponte Jornalismo | 0.0 | Segurança pública/direitos; centro até evidência (longform) |
-| Sumaúma | 0.0 | Socioambiental/Amazônia; centro até evidência (longform) |
-| Outras Palavras | 0.0 | Esquerda editorial assumida, mas centro até evidência na régua (longform) |
-| Le Monde Diplomatique Brasil | 0.0 | Edição brasileira do Diplo; centro até evidência na régua (longform) |
-| Folha Ilustríssima | 0.0 | Caderno cultural da Folha, tribuna plural; centro até evidência (longform) |
+| Quatro Cinco Um | -0.6 | Revista de livros; centro até evidência (longform) |
+| Núcleo Jornalismo | -0.5 | Digital independente; centro até evidência (longform) |
+| Ponte Jornalismo | +0.0 | Segurança pública/direitos; centro até evidência (longform) |
+| Sumaúma | +0.0 | Socioambiental/Amazônia; centro até evidência (longform) |
+| Outras Palavras | -1.5 | Esquerda editorial assumida, mas centro até evidência na régua (longform) |
+| Le Monde Diplomatique Brasil | -1.5 | Edição brasileira do Diplo; centro até evidência na régua (longform) |
+| Folha Ilustríssima | -0.3 | Caderno cultural da Folha, tribuna plural; centro até evidência (longform) |
 | The Intercept Brasil | -1.2 | Investigativo progressista, First Look Media |
-| Repórter Brasil | -0.6 | ONG de direitos humanos e trabalho |
+| Repórter Brasil | -0.9 | ONG de direitos humanos e trabalho |
 | Al Jazeera English | -0.3 | Catar; progressista em pauta internacional (só em "Lá fora") |
 | CNN International | 0.0 | **Removida em 31/10/2026**: o feed servia anúncios, não notícia |
-| Fox News | +1.2 | Conservadora americana (só em "Lá fora") |
-| New York Times | -0.8 | Liberal americana (só em "Lá fora") |
-| New York Times (Tecnologia) | -0.8 | Mesmo grupo e linha do NYT; feed de Tecnologia (só em "Lá fora") |
+| Fox News | +1.5 | Conservadora americana (só em "Lá fora") |
+| New York Times | -0.5 | Liberal americana (só em "Lá fora") |
+| New York Times (Tecnologia) | -0.4 | Mesmo grupo e linha do NYT; feed de Tecnologia (só em "Lá fora") |
 | The Guardian | -0.9 | Progressista britânica, Scott Trust (só em "Lá fora") |
 | BBC World | -0.1 | Serviço público britânico (só em "Lá fora") |
-| New York Times (Américas) | -0.8 | Mesmo grupo e linha do NYT; seção Américas (só em "Lá fora") |
+| New York Times (Américas) | -0.5 | Mesmo grupo e linha do NYT; seção Américas (só em "Lá fora") |
 | The Guardian (Brasil) | -0.9 | Mesma linha do Guardian; página de Brasil (só em "Lá fora") |
 | BBC (América Latina) | -0.1 | Mesmo padrão BBC; seção América Latina (só em "Lá fora") |
-| La Nación | 0.0 | Tradicional argentina, centro-liberal; viés conservador até evidência (só em "Lá fora") |
-| Infobae | 0.0 | Digital argentina de grande alcance; centro até evidência (só em "Lá fora") |
-| Clarín | 0.0 | Maior jornal argentino; centro até evidência, feed curto "Lo último" (só em "Lá fora") |
-| MercoPress | 0.0 | Agência do Mercosul em inglês; centro até evidência (só em "Lá fora") |
-| Deutsche Welle | 0.0 | Serviço público alemão, edição em inglês; centro até evidência (só em "Lá fora") |
-| France 24 | 0.0 | Serviço público francês, edição em inglês; centro até evidência (só em "Lá fora") |
-| RFI | 0.0 | Rádio França Internacional, edição em inglês; centro até evidência (só em "Lá fora") |
+| La Nación | +0.7 | Tradicional argentina, centro-liberal; viés conservador até evidência (só em "Lá fora") |
+| Infobae | +0.7 | Digital argentina de grande alcance; centro até evidência (só em "Lá fora") |
+| Clarín | +0.6 | Maior jornal argentino; centro até evidência, feed curto "Lo último" (só em "Lá fora") |
+| MercoPress | +0.5 | Agência do Mercosul em inglês; centro até evidência (só em "Lá fora") |
+| Deutsche Welle | +0.0 | Serviço público alemão, edição em inglês; centro até evidência (só em "Lá fora") |
+| France 24 | +0.0 | Serviço público francês, edição em inglês; centro até evidência (só em "Lá fora") |
+| RFI | +0.0 | Rádio França Internacional, edição em inglês; centro até evidência (só em "Lá fora") |
 
 ## 3. Processo de decisão
 
