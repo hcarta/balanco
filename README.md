@@ -45,7 +45,7 @@ Complementa o TF-IDF com similaridade semântica (regra híbrida: TF-IDF **ou** 
 
 ### Testes (rode antes de mudar o núcleo)
 ```bash
-python -m pytest tests/ -q   # 111 testes: coletores, vereditos, cache, matching, conexões, fuso, ids
+python -m pytest tests/ -q   # 113 testes: coletores, vereditos, cache, matching, conexões, fuso, ids
 ```
 
 O viés vem de `sources.yaml` (nível de **publicação**) e é o mesmo para toda matéria daquela fonte. **Não há chamada de IA nem custo por artigo.** Esporte (`esportes`, `futebol`) e conteúdo de serviço (loteria, horóscopo, previsão do tempo) ficam fora da edição por decisão editorial.
