@@ -157,9 +157,20 @@ documentada no cabeçalho do arquivo.
 features (`--pairs … --out … [--embed]`; sem `--embed`, `cos_emb = -1`).
 Determinístico (duas rodadas byte-idênticas) e com teste em
 `tests/test_cluster_pairs.py`. Sinal visível: `shared_spec` médio 3,86 (same)
-vs 2,26 (different); o FN c076 carrega `numbers_match=1, subject_match=1`.
+vs 2,94 (related) vs 2,26 (different); o FN c076 carrega
+`numbers_match=1, subject_match=1`.
 
-**Treino desbloqueado:** C-3 híbrido decidido e integrado em 01/11/2026 (artefato e limiares independentes do cluster). Próximo: `ops/eval_pair_model.py`.
+**Treino executado (01/11/2026) — aceite NÃO atingido, F3 bloqueado:**
+`ops/eval_pair_model.py` (LR L2, `class_weight=balanced`, split por
+componentes de títulos compartilhados — 35 títulos em >1 par; split por data
+inviável, janela única de 72 h). Com embeddings: AUC 0,835 no teste; em
+P=1,00 o recall é 0,25/0,30 (exige P≥0,97 e R≥0,80); 4 `different` com p≥0,5
+(Jornal da Noite 31×30, Finados missas×rodovias, bebês 12d×34d, trios).
+O modelo domina a regra na curva PR (a P≈0,70: R 0,87 vs 0,67 da regra), mas
+não alcança o ponto exigido — a classe `related` é lexicamente quase
+idêntica a `same` só com títulos. Opções: expandir F1 a 600, adicionar
+resumos como sinal, ou gate conservador (P~0,93/R~0,43: mais preciso que a
+regra, fragmenta mais). **Não avançar ao F3 sem decidir.**
 
 - [ ] `ops/pair_features.py` com vetor fixo e determinístico:
       `cos_tfidf, cos_emb, jaccard, cov_short, cov_rep, shared_all, shared_spec,
