@@ -219,7 +219,12 @@ Ex.: episódio de podcast da piauí vira "longread". `NON_JOURNALISM` (`app.py:5
 ### F-14 · Desempenho do cluster (P2)
 Laço `for i in range(n): for j in range(i+1, n)` em Python (n≈1.200 hoje; ≈4.000 após F-01 → ~8 M iterações). Vetorizar: `S = X @ X.T` (já existe) → `np.argwhere(np.triu(S >= τ_cand, 1))` e só avaliar os pares candidatos; janela temporal por máscara de `ts`.
 
-### F-15 · Menores
+### F-15 · Menores (parcial, 01/11/2026)
+- [x] `build()`: sort morto removido (teste de regressão inexistente por ser trivial).
+- [ ] `tfidf_matrix`: simplificar com `min_df=1` — **adiado para a revisão maior** (muda todos os cossenos; limiares recalibrariam).
+- [x] `ENTITY_ALIAS` × `ENTITY_TRANSLATE`: auditado, sem colisões; cadeias idempotentes travadas em `test_entity_alias_translate_chains_stable`.
+- [x] Arquivo diário slim (feito antes); `enrich`/`robots` documentado; `classify_llm` com `LLM_BASE_URL`.
+- [x] `SITE_URL` via `BALANCO_SITE_URL` (fallback preservado); `test_site_url_respects_env`.
 - `build()` ordena `stories` duas vezes (`app.py:424-425`); a primeira é morta.
 - `tfidf_matrix` mantém `df>=2` e depois reinsere raras (`:127-133`), comportamento difícil de raciocinar; simplificar com `min_df=1` e peso sublinear.
 - `ENTITY_TRANSLATE` mapeia `onu→un` mas `entities()` aplica `ENTITY_ALIAS` antes — verificar colisões (`us`/`usa`/`eua`).

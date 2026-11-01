@@ -898,7 +898,6 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                 "ownership": meta.get(x["source_id"], {}).get("ownership"),
             } for x in items],
         })
-    stories.sort(key=lambda s: (-s["counts"]["total"], s["updated"]), reverse=False)
     stories.sort(key=lambda s: s["counts"]["total"], reverse=True)
     return stories
 
@@ -2160,7 +2159,8 @@ def main():
         print(f"  [{s['counts']['total']:2}x L{s['pct']['L']:2}% C{s['pct']['C']:2}% R{s['pct']['R']:2}%] {s['title'][:80]}")
 
 
-SITE_URL = "https://hcarta.github.io/balanco"
+SITE_URL = os.environ.get("BALANCO_SITE_URL",
+                              "https://hcarta.github.io/balanco").rstrip("/")
 ARCHIVE_KEEP = 90  # edições diárias mantidas
 
 

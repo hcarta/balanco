@@ -961,3 +961,29 @@ def test_build_includes_framing():
             {"id": "r2", "name": "R2", "bias": 0.6, "ownership": "y"}]
     out = app.build(srcs, arts, {})
     assert out and "framing" in out[0]
+
+
+def test_entity_alias_translate_chains_stable():
+    """F-15: sem colisão entre ALIAS e TRANSLATE; cadeias idempotentes."""
+    cases = {"eua": "us", "usa": "us", "brasil": "brazil",
+             "ucrânia": "ukraine", "rússia": "russia", "onu": "un",
+             "estados unidos": "united states", "reino unido": "uk"}
+    def chain(w):
+        # mesma ordem de entities(): ALIAS primeiro, depois TRANSLATE
+        return app.ENTITY_TRANSLATE.get(app.ENTITY_ALIAS.get(w, w),
+                                        app.ENTITY_ALIAS.get(w, w))
+    for src, want in cases.items():
+        got = chain(src)
+        assert got == want, (src, got)
+        assert chain(got) == want, f"não idempotente: {src}"
+
+
+def test_site_url_respects_env(monkeypatch):
+    import importlib
+    monkeypatch.setenv("BALANCO_SITE_URL", "https://exemplo.test/balanco/")
+    import app as appmod
+    importlib.reload(appmod)
+    assert appmod.SITE_URL == "https://exemplo.test/balanco"
+    monkeypatch.delenv("BALANCO_SITE_URL")
+    importlib.reload(appmod)
+    assert appmod.SITE_URL == "https://hcarta.github.io/balanco"
