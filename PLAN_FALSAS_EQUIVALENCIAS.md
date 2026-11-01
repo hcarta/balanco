@@ -118,7 +118,16 @@ Cada fase termina com critério de aceite e commit próprio. Não avance sem o a
 **Aceite:** uma rodada real gera o arquivo; é possível reconstruir por que cada
 história grande tem os membros que tem.
 
-### F1 — Conjunto rotulado (1–2 dias)
+### F1 — Conjunto rotulado (1–2 dias) — ✅ seed concluído (01/11/2026)
+
+- [x] `tests/cluster_pairs.jsonl`: **154 pares** (83 same / 36 related / 35
+      different); 138 do audit F0 estratificado + 16 seed manual.
+- [x] Medição da regra atual no corpus fixo: different separam 27/27+8/8
+      (35/35, precisão 100% no harness); same fundem 27/83 — 56 FNs conhecidos,
+      a maioria duplicatas idênticas barradas pela regra `same_source`
+      (série da casa) e títulos só-entidade barrados por `no_content`.
+- [x] `tests/test_cluster_pairs.py`: different estrito + MUST_FUSE (27) estrito
+      + 56 KNOWN_FN como xfail explícito (alvo do F2/F3).
 
 Seed primeiro, expansão depois: começar com **150–200 pares** (regressões já
 existentes em `tests/test_matching.py` + top do `ops/audit_pairs.py` — seed de
