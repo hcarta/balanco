@@ -37,11 +37,10 @@ open docs/index.html
 ```
 
 ### Opcional: embeddings semânticos
-```bash
-pip install sentence-transformers  # baixa modelo multilíngue (~470 MB, 1ª vez)
-python app.py --embed
-```
-Complementa o TF-IDF com similaridade semântica (regra híbrida: TF-IDF **ou** cosseno ≥ 0,70 + 1 token em comum). Medido no conjunto de avaliação: P 0.903 / R 0.700 vs TF-IDF puro P 0.962 / R 0.625. Padrão desligado (precisão primeiro; sem custo extra no agendador).
+
+O `--embed` usa o MiniLM multilíngue para complementar as conexões de longform e internacionais. No CI, o backend é **ONNX/fastembed** (`requirements-embed.txt`, ~220 MB, sem torch) com o modelo em cache; localmente, se `fastembed` não estiver instalado, cai para `sentence_transformers`. Sem modelo, tudo volta ao TF-IDF/regras lexicais.
+
+O agrupamento usa embeddings apenas com `--embed-cluster` (experimental): a coerência A-4 ainda não está calibrada para isso, e a versão anterior criou uma história com 645 coberturas.
 
 ### Testes (rode antes de mudar o núcleo)
 ```bash

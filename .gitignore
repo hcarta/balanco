@@ -7,3 +7,6 @@ __pycache__/
 .env
 # material de referência de terceiros (não redistribuir)
 ref/
+
+# modelo ONNX de embeddings (cache do Actions)
+state/models/

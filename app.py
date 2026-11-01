@@ -113,17 +113,52 @@ _EMB_MODEL = None
 _EMB_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 
 
+_EMB_BACKEND = None
+
+
 def embed_matrix(docs, model_name: str = _EMB_NAME):
-    """Embeddings semânticos (MiniLM multilíngue) normalizados. Falha se lib/modelo ausente."""
-    global _EMB_MODEL
-    from sentence_transformers import SentenceTransformer
-    if _EMB_MODEL is None or getattr(_EMB_MODEL, "_bname", None) != model_name:
-        _EMB_MODEL = SentenceTransformer(model_name)
-        _EMB_MODEL._bname = model_name
-    X = _EMB_MODEL.encode([d["title"] for d in docs], convert_to_numpy=True,
-                          show_progress_bar=False)
-    norms = np.linalg.norm(X, axis=1, keepdims=True) + 1e-9
-    return X / norms
+    """Embeddings MiniLM multilíngue normalizados.
+
+    Prefere ONNX/fastembed (CI, sem torch); cai para sentence_transformers
+    local; se nenhum existir, levanta — os chamadores já fazem fallback
+    para TF-IDF.
+    """
+    global _EMB_MODEL, _EMB_BACKEND
+    texts = [d.get("title", "") for d in docs]
+    if not texts:
+        return np.zeros((0, 384), dtype=np.float32)
+    try:
+        from fastembed import TextEmbedding
+        if (_EMB_BACKEND != "fastembed" or _EMB_MODEL is None
+                or getattr(_EMB_MODEL, "_bname", None) != model_name):
+            cache = os.environ.get("FASTEMBED_CACHE_PATH") or None
+            kwargs = {"cache_dir": cache} if cache else {}
+            fb_name = {
+                "paraphrase-multilingual-MiniLM-L12-v2":
+                    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            }.get(model_name, model_name)
+            _EMB_MODEL = TextEmbedding(model_name=fb_name, **kwargs)
+            _EMB_MODEL._bname = model_name
+            _EMB_BACKEND = "fastembed"
+        X = np.asarray(list(_EMB_MODEL.embed(texts, batch_size=32)),
+                       dtype=np.float32)
+        norms = np.linalg.norm(X, axis=1, keepdims=True) + 1e-9
+        return X / norms
+    except ImportError:
+        pass
+    try:
+        from sentence_transformers import SentenceTransformer
+        if (_EMB_BACKEND != "st" or _EMB_MODEL is None
+                or getattr(_EMB_MODEL, "_bname", None) != model_name):
+            _EMB_MODEL = SentenceTransformer(model_name)
+            _EMB_MODEL._bname = model_name
+            _EMB_BACKEND = "st"
+        X = _EMB_MODEL.encode(texts, convert_to_numpy=True,
+                              show_progress_bar=False)
+        norms = np.linalg.norm(X, axis=1, keepdims=True) + 1e-9
+        return X / norms
+    except ImportError:
+        raise RuntimeError("nem fastembed nem sentence_transformers instalados")
 
 
 def tfidf_matrix(docs):
@@ -1604,7 +1639,9 @@ def main():
     ap.add_argument("--per-feed", type=int, default=25)
     ap.add_argument("--thresh", type=float, default=0.38)
     ap.add_argument("--embed", action="store_true",
-                    help="usa embeddings semânticos como complemento (híbrido; baixa modelo ~470MB na 1ª vez)")
+                    help="usa embeddings nas conexões (longform/internacional); ONNX/fastembed, fallback lexical")
+    ap.add_argument("--embed-cluster", action="store_true",
+                    help="usa embeddings também no agrupamento (experimental; requer cooperação A-4)")
     ap.add_argument("--no-checks", action="store_true",
                     help="não coleta checagens do G1 Fato ou Fake / Lupa")
     ap.add_argument("--body", action="store_true",
@@ -1657,7 +1694,7 @@ def main():
     intl = [a for a in articles if a.get("kind") == "intl"]
     print(f"  {len(news)} nacionais + {len(intl)} internacionais (fora das barras)")
     stories = build(sources, news, llm_scores, thresh=args.thresh,
-                    use_embed=args.embed)
+                    use_embed=args.embed_cluster)
     n_before = len(stories)
     stories = consolidate(stories, use_embed=args.embed)
     stories = attach_hubs(stories)
