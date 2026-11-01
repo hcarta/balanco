@@ -1008,3 +1008,35 @@ def test_aosf_link_matcher_is_conservative():
     ok = _best_aosf_link("Vídeo antigo circula nas redes para sugerir que Flávio foi para os EUA", urls)
     assert ok and "video-antigo" in ok
     assert _best_aosf_link("É falso que Lula recuou sobre fim da escala 6x1", urls) is None
+
+
+def test_summary_conflict_rejects_macro_topic_bridge():
+    """Caso safra Trump × Papa: deks de assuntos distintos barram o elo."""
+    import time
+    now = time.time()
+    a = {"title": "Crítico de Trump, Leão 14 vota pelo correio nas eleições de meio de mandato dos EUA",
+         "summary": "Em iniciativa histórica, o papa Leão 14 votou pelo correio nas eleições dos Estados Unidos",
+         "ts": now, "source_id": "folha", "section": "mundo"}
+    b = {"title": "Trump promete US$ 15 bilhões para agricultores dos EUA de olho em eleições de meio de mandato",
+         "summary": "Governo prepara pacote bilionário para o setor, grupo eleitoral dos republicanos",
+         "ts": now, "source_id": "estadao", "section": "mundo"}
+    shared = set(app.tok(a["title"])) & set(app.tok(b["title"]))
+    assert app._summary_conflict(a, b, shared) is True
+    toks = [set(app.tok(a["title"])), set(app.tok(b["title"]))]
+    X = app.tfidf_matrix([{"title": a["title"]}, {"title": b["title"]}])
+    ok, rule = app._pair_decision([a, b], toks, X @ X.T, None, 0, 1, 0.30, 48)
+    assert ok is False and rule == "summary_conflict"
+
+
+def test_summary_conflict_spares_same_event_with_shared_number():
+    """Mesmo fato com número em comum não é vetado pelo dek divergente."""
+    import time
+    now = time.time()
+    a = {"title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+         "summary": "Corretora perdeu 6,3 bilhões em criptomoedas após invasão",
+         "ts": now, "source_id": "bbc", "section": "economia"}
+    b = {"title": "US$ 6,3 bilhões: o maior roubo de criptomoedas da história",
+         "summary": "Hackers desviaram 6,3 bilhões de uma corretora",
+         "ts": now, "source_id": "band", "section": "economia"}
+    shared = set(app.tok(a["title"])) & set(app.tok(b["title"]))
+    assert app._summary_conflict(a, b, shared) is False

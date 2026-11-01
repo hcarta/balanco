@@ -58,9 +58,11 @@ def _judge():
     arts = []
     for r in recs:
         arts.append({"title": r["a"], "ts": now,
+                     "summary": r.get("summary_a", ""),
                      "source_id": r.get("source_a") or "sa",
                      "section": r.get("section_a")})
         arts.append({"title": r["b"], "ts": now,
+                     "summary": r.get("summary_b", ""),
                      "source_id": r.get("source_b") or "sb",
                      "section": r.get("section_b")})
     out = {}

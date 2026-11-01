@@ -204,10 +204,28 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
       **aumenta** histórias "não-blindspot" (mais nuance, menos falso desequilíbrio).
 - [ ] Aceite: nenhuma história quebra; `data.json` tem `pct`/`counts` 5 vias; testes verdes.
 
-### Fase 3 — Gate de falsas equivalências (1–2 dias, após Fase 0)
+### Fase 3 — Gate de falsas equivalências (1–2 dias, após Fase 0) — ⚠️ parcial
 
-- [ ] Re-treinar `ops/eval_pair_model.py` com `dt_hours` corrigido + features de
-      verbo/predicado e overlap de resumo (ver `PLAN_F2_DIAGNOSTICO.md` §6).
+**Resultado medido (01/11/2026):**
+- Modelo re-treinado sem embeddings (uso no cluster): **AUC 0,904**; `state/pair_model.json`
+  (18 features, veto 0,25).
+- Veto de elo fraco (flag `--pair-model`, off por padrão): veta 6% dos `same`,
+  56% dos `related` e 63% dos `different`; +53 grupos numa rodada (1,4%).
+- **Regra de conflito de dek** (`_summary_conflict`): quando os dois títulos
+  compartilham só macro-tema e os deks não se tocam (<0,05), veta. Testes:
+  caso safra Trump × Papa barrado **se o dek existe**; pares legítimos com
+  número/multi-palavra preservados; 0 `same` perdidos no conjunto rotulado.
+- **Limite descoberto:** o caso reportado continua agrupado porque o grupo é um
+  **cluster de tópico (midterms)**, unido por explicadores, e 4 das 5 fontes
+  (Valor, O Globo, Band, Gazeta) têm **0% de dek** no cache (sitemap sem
+  descrição, embora o meta esteja disponível na página). Título+dek não separam
+  tópico de evento.
+
+**Próxima alavanca (Fase 3.5):** priorizar o enriquecimento de dek das fontes de
+sitemap (o meta existe na página) e re-medir; depois, se ainda faltar, features
+de evento (A-1/A-2). Enquanto isso, manter o veto **desligado** no CI.
+
+- [x] Re-treinar `ops/eval_pair_model.py` com `dt_hours` corrigido (sem embed p/ cluster).
 - [ ] Decidir **gate duro × veto** com os números novos; implementar `--pair-model`
       (flag/env `PAIR_MODEL`) com fallback byte-idêntico, e aplicar na coerência.
 - [ ] A/B de 3 rodadas (regra × modelo × modelo-sem-embeddings); relatório

@@ -266,9 +266,116 @@ def _entity_anchor(a: dict, b: dict) -> bool:
 
 
 def _near_duplicate(shared, toksets, i, j, s_ij) -> bool:
-    """Título praticamente igual — dispensa âncora de entidade."""
+    """Título praticamente igual — dispensa âncora de entidade.
+
+    Mantém o atalho de cobertura (títulos curtos), mas quem decide o veto de
+    macro-tema é `_summary_conflict`, aplicado também aqui (exceto em cosseno
+    altíssimo, que é duplicata real).
+    """
     small = min(len(toksets[i]), len(toksets[j])) or 1
     return (len(shared) >= 4 and len(shared) / small >= 0.5) or s_ij >= 0.62
+
+
+PAIR_FEATURE_NAMES = [
+    "cos_tfidf", "cos_emb", "jaccard", "cov_short", "cov_long",
+    "shared_all", "shared_spec", "shared_multi", "shared_numbers",
+    "numbers_match", "same_section", "same_group", "dt_hours",
+    "len_a", "len_b", "ent_first3_a", "ent_first3_b", "subject_match",
+    "rule_fused",
+]
+_PAIR_NUM_RE = re.compile(r"\d+(?:[.,]\d+)?")
+_PAIR_MODEL = None
+
+
+def _first3_ents(title: str) -> int:
+    toks = tok(title)[:3]
+    parts = {p for e in _title_entities(title) for p in e.split()}
+    return 1 if any(t in parts for t in toks) else 0
+
+
+def pair_features(a, b, cos, cos_emb=None, dt_hours=0.0,
+                  section_a=None, section_b=None,
+                  group_a=None, group_b=None, rule=None):
+    """Vetor de features do gate de par (mesmo de ops/pair_features.py)."""
+    ta, tb = a.get("title", ""), b.get("title", "")
+    sa, sb = set(tok(ta)), set(tok(tb))
+    shared = sa & sb
+    union = sa | sb
+    inter_ent = _title_entities(ta) & _title_entities(tb)
+    na = set(_PAIR_NUM_RE.findall(ta))
+    nb = set(_PAIR_NUM_RE.findall(tb))
+    first3_a, first3_b = tok(ta)[:2], tok(tb)[:2]
+    return {
+        "cos_tfidf": round(float(cos), 4),
+        "cos_emb": round(float(cos_emb), 4) if cos_emb is not None else -1.0,
+        "jaccard": round(len(shared) / len(union), 4) if union else 0.0,
+        "cov_short": round(len(shared) / min(len(sa), len(sb)), 4)
+        if sa and sb else 0.0,
+        "cov_long": round(len(shared) / max(len(sa), len(sb)), 4)
+        if sa or sb else 0.0,
+        "shared_all": len(shared),
+        "shared_spec": len({w for w in shared if w not in ENTITY_GENERIC}),
+        "shared_multi": len([e for e in inter_ent if " " in e]),
+        "shared_numbers": len(na & nb),
+        "numbers_match": 1 if (na and nb and na & nb) else 0,
+        "same_section": 1 if (section_a and section_a == section_b) else 0,
+        "same_group": 1 if (group_a and group_a == group_b) else 0,
+        "dt_hours": round(float(dt_hours), 2),
+        "len_a": len(sa),
+        "len_b": len(sb),
+        "ent_first3_a": _first3_ents(ta),
+        "ent_first3_b": _first3_ents(tb),
+        "subject_match": 1 if (first3_a and first3_b
+                               and set(first3_a) & set(first3_b)) else 0,
+        "rule_fused": 1 if rule in ("fused", "near_dup_ok") else 0,
+    }
+
+
+def load_pair_model(path: str):
+    """Carrega o modelo JSON (F3). Sem chamada, o veto fica desligado."""
+    global _PAIR_MODEL
+    with open(path, encoding="utf-8") as f:
+        _PAIR_MODEL = json.load(f)
+    return _PAIR_MODEL
+
+
+def pair_probability(model: dict, feats: dict) -> float:
+    """Probabilidade de 'mesmo fato' (inferência só-numpy)."""
+    names = model["features"]
+    x = np.array([float(feats.get(k, 0.0)) for k in names], dtype=float)
+    mu = np.array(model["mean"], dtype=float)
+    sd = np.array(model["scale"], dtype=float)
+    coef = np.array(model["coef"], dtype=float)
+    z = float(((x - mu) / sd) @ coef + float(model["intercept"]))
+    if z >= 0:
+        return 1.0 / (1.0 + math.exp(-z))
+    ez = math.exp(z)
+    return ez / (1.0 + ez)
+
+
+def _summary_conflict(a: dict, b: dict, shared: set) -> bool:
+    """Dois títulos parecidos, mas resumos que não falam da mesma coisa.
+
+    Só vale quando os dois deks têm substância (>=4 tokens). Casos legítimos do
+    mesmo fato costumam compartilhar número ou entidade multi-palavra; sem
+    isso, e com dek sem sobreposição, o elo é de macro-tema, não de fato.
+    """
+    sa = a.get("summary") or ""
+    sb = b.get("summary") or ""
+    ta, tb = tok(sa), tok(sb)
+    if len(ta) < 4 or len(tb) < 4:
+        return False
+    cov = _title_cov(set(ta), set(tb))
+    if cov >= 0.05:
+        return False
+    inter = _title_entities(a.get("title", "")) & \
+        _title_entities(b.get("title", ""))
+    if any(" " in e and e not in ENTITY_GENERIC for e in inter):
+        return False
+    if set(_PAIR_NUM_RE.findall(a.get("title", ""))) & \
+            set(_PAIR_NUM_RE.findall(b.get("title", ""))):
+        return False
+    return True
 
 
 def _pair_decision(articles, toksets, S, Se, i, j, th, window_h):
@@ -286,8 +393,13 @@ def _pair_decision(articles, toksets, S, Se, i, j, th, window_h):
         pred = True  # híbrido: paráfrase semântica (Fase 2.2)
     if not pred:
         return False, "low_sim"
+    near = _near_duplicate(shared, toksets, i, j, S[i, j])
+    # veto de macro-tema: dois títulos parecidos com deks que não se tocam.
+    # Cosseno >= 0,75 é duplicata real (mesmo título) — não veta.
+    if float(S[i, j]) < 0.75 and _summary_conflict(articles[i], articles[j], shared):
+        return False, "summary_conflict"
     # título praticamente igual dispensa as âncoras abaixo
-    if not _near_duplicate(shared, toksets, i, j, S[i, j]):
+    if not near:
         # dois fatos distintos compartilham vocabulário de tema ("eleição
         # presidencial", "guerra", "Rússia"); sem nome próprio em comum o
         # par não é a mesma notícia.
@@ -319,9 +431,24 @@ def _pair_decision(articles, toksets, S, Se, i, j, th, window_h):
                     window_h)
     if dt > w:
         return False, "time_window"
-    if _near_duplicate(shared, toksets, i, j, S[i, j]):
-        return True, "near_dup_ok"
-    return True, "fused"
+    rule = "near_dup_ok" if _near_duplicate(shared, toksets, i, j, S[i, j]) \
+        else "fused"
+    # F3 (veto): a regra léxica fundiria; o modelo pode derrubar elos fracos
+    # que encadeiam fatos distintos (ex.: safra Trump × Papa).
+    if _PAIR_MODEL is not None:
+        feats = pair_features(
+            articles[i], articles[j], float(S[i, j]),
+            float(Se[i, j]) if Se is not None else None,
+            dt_hours=dt,
+            section_a=articles[i].get("section"),
+            section_b=articles[j].get("section"),
+            group_a=articles[i].get("group") or articles[i].get("source_id"),
+            group_b=articles[j].get("group") or articles[j].get("source_id"),
+            rule=rule)
+        cutoff = float(_PAIR_MODEL.get("veto_threshold", 0.25))
+        if pair_probability(_PAIR_MODEL, feats) < cutoff:
+            return False, "veto_model"
+    return True, rule
 
 
 def _pair_ok(articles, toksets, S, Se, i, j, th, window_h):
@@ -2005,6 +2132,8 @@ def main():
                     help="usa embeddings nas conexões (longform/internacional); ONNX/fastembed, fallback lexical")
     ap.add_argument("--embed-cluster", action="store_true",
                     help="usa embeddings também no agrupamento (experimental; requer cooperação A-4)")
+    ap.add_argument("--pair-model", default=os.environ.get("PAIR_MODEL"),
+                    help="gate de par (JSON): veta fusões com P(same) abaixo do limiar")
     ap.add_argument("--no-checks", action="store_true",
                     help="não coleta checagens do G1 Fato ou Fake / Lupa")
     ap.add_argument("--body", action="store_true",
@@ -2052,6 +2181,13 @@ def main():
     else:
         print("[2/4] viés fixo por fonte (sem análise por matéria)")
 
+    if args.pair_model:
+        try:
+            m = load_pair_model(args.pair_model)
+            print(f"[3/4] gate de par ativo: {args.pair_model} "
+                  f"(veto < {m.get('veto_threshold', 0.25)})")
+        except Exception as ex:
+            print(f"  [aviso] gate de par indisponível ({ex}); seguindo sem ele")
     print("[3/4] agrupando stories...")
     news = [a for a in articles if a.get("kind", "br") != "intl"]
     intl = [a for a in articles if a.get("kind") == "intl"]

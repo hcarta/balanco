@@ -180,6 +180,9 @@ def main():
                  "scale": sd.tolist(), "coef": clf.coef_[0].tolist(),
                  "intercept": float(clf.intercept_[0]),
                  "threshold": thr,
+                 # F3: veto de elo fraco (medido: 6% dos same e 56% dos
+                 # related ficam abaixo em 0,25)
+                 "veto_threshold": 0.25,
                  "metrics": {"train": {"P": ptr, "R": rtr, "cm": cmtr},
                              "test": {"P": pte, "R": rte, "cm": cmte}}}
         with open(args.save, "w", encoding="utf-8") as f:
