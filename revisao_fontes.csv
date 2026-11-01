@@ -1,0 +1,54 @@
+id,nome,tipo,bias_atual,factualidade_atual,propriedade,grupo,longform,pais,idioma,bloco,rss,itens_72h,status
+g1,G1,br,0.0,high,conglomerado; Grupo Globo,globo,,,,,https://g1.globo.com/rss/g1/,882,ok
+folha,Folha de S.Paulo,br,-0.3,high,individuo; Família Frias (Grupo Folha),,,,,,https://feeds.folha.uol.com.br/emcimadahora/rss091.xml,386,ok
+uol,UOL Notícias,br,-0.2,high,corporacao; Grupo Folha / PagSeguro,,,,,,https://rss.uol.com.br/feed/noticias.xml,239,ok
+cnnbr,CNN Brasil,br,0.1,high,corporacao; Licença CNN / Novus Media,,,,,,https://www.cnnbrasil.com.br/feed/,307,ok
+bbcbr,BBC Brasil,br,-0.2,very_high,"governo; BBC (Reino Unido, financiamento público)",bbc,,,,,https://feeds.bbci.co.uk/portuguese/rss.xml,31,ok
+poder360,Poder360,br,0.0,high,independente; Poder360 Jornalismo,,,,,,https://www.poder360.com.br/feed/,112,ok
+metropoles,Metrópoles,br,0.0,mixed,individuo; Luiz Estevão,,,,,,https://www.metropoles.com/feed/,253,ok
+terra,Terra,br,0.0,mixed,corporacao; Telefônica / Vivo,,,,,,https://www.terra.com.br/rss/,176,ok
+nexo,Nexo Jornal,br,-0.4,very_high,independente; Nexo Jornal,,sim,,,,https://www.nexojornal.com.br/rss.xml,21,ok
+piaui,Revista piauí,br,-0.5,very_high,individuo; Editora piauí / João Moreira Salles (distribuição Folha),,sim,,,,https://piaui.folha.uol.com.br/feed/,2,ok
+sbt,SBT News,br,0.0,high,individuo; Grupo Silvio Santos (família Abravanel),,,,,,https://sbtnews.sbt.com.br/sitemap-news.xml,116,ok
+r7,R7,br,0.5,mixed,individuo; Grupo Record (Edir Macedo),,,,,,https://www.r7.com/arc/outboundfeeds/rss/?outputType=xml,10,ok
+band,Band,br,0.0,high,individuo; Grupo Bandeirantes (família Saad),,,,,,https://www.band.com.br/sitemap-news.xml,414,ok
+dw,DW Brasil,br,0.0,very_high,"governo; Deutsche Welle (Alemanha, financiamento público)",,,,,,https://www.dw.com/pt-br/news-sitemap.xml,33,ok
+veja,Veja,br,0.5,mixed,corporacao; Editora Abril,,,,,,https://veja.abril.com.br/ultimas-noticias/rss,132,ok
+istoe,IstoÉ,br,0.0,mixed,corporacao; Editora Três,,,,,,https://istoe.com.br/feed/,36,ok
+crusoe,Crusoé,br,1.0,mixed,independente; Grupo O Antagonista,,sim,,,,https://crusoe.com.br/feed/,9,ok
+apublica,Agência Pública,br,-0.8,very_high,independente; ONG jornalística sem fins lucrativos,,sim,,,,https://apublica.org/feed/,8,ok
+intercept,The Intercept Brasil,br,-1.2,high,independente; First Look Media (sem fins lucrativos),,sim,,,,https://www.intercept.com.br/feed/?lang=pt,2,ok
+quatrocincoum,Quatro Cinco Um,br,0.0,high,independente; Quatro Cinco Um (revista de livros),,sim,,,,https://quatrocincoum.com.br/feed/,10,ok
+nucleo,Núcleo Jornalismo,br,0.0,high,independente; Núcleo Jornalismo,,sim,,,,https://nucleo.jor.br/feed/,6,ok
+ponte,Ponte Jornalismo,br,0.0,high,independente; Ponte Jornalismo (segurança pública),,sim,,,,https://ponte.org/feed/,2,ok
+sumauma,Sumaúma,br,0.0,high,independente; Sumaúma (Amazônia),,sim,,,,https://sumauma.com/feed/,2,ok
+outraspalavras,Outras Palavras,br,0.0,high,independente; Outras Palavras,,sim,,,,https://outraspalavras.net/feed/,9,ok
+diplomatique,Le Monde Diplomatique Brasil,br,0.0,high,independente; Le Monde diplomatique Brasil,,sim,,,,https://diplomatique.org.br/feed/,9,ok
+folhailus,Folha Ilustríssima,br,0.0,high,"corporacao; Folha de S.Paulo, seção Ilustríssima",,sim,,,,https://feeds.folha.uol.com.br/ilustrissima/rss091.xml,0,ok
+reporterbr,Repórter Brasil,br,-0.6,very_high,independente; ONG jornalística sem fins lucrativos,,sim,,,,https://reporterbrasil.org.br/feed/,2,ok
+ajen,Al Jazeera English,intl,-0.3,high,governo; Catar (financiamento público),,,QA,en,MENA,https://www.aljazeera.com/xml/rss/all.xml,119,ok
+foxnews,Fox News,intl,1.2,mixed,corporacao; Fox Corporation,,,US,en,US,https://feeds.foxnews.com/foxnews/world,7,ok
+nytimes,New York Times,intl,-0.8,high,corporacao; The New York Times Company,nytimes,,US,en,US,https://rss.nytimes.com/services/xml/rss/nyt/World.xml,62,ok
+nytimestech,New York Times (Tecnologia),intl,-0.8,high,corporacao; The New York Times Company,nytimes,,US,en,US,https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,14,ok
+guardian,The Guardian,intl,-0.9,high,independente; Scott Trust,,,UK,en,EU,https://www.theguardian.com/world/rss,85,ok
+nytamericas,New York Times (Américas),intl,-0.8,high,corporacao; The New York Times Company,nytimes,,US,en,LatAm,https://rss.nytimes.com/services/xml/rss/nyt/Americas.xml,0,ok
+guardianbrasil,The Guardian (Brasil),intl,-0.9,high,independente; Scott Trust,,,UK,en,LatAm,https://www.theguardian.com/world/brazil/rss,2,ok
+bbclatam,BBC (América Latina),intl,-0.1,very_high,"governo; BBC (Reino Unido, financiamento público)",bbc,,UK,en,LatAm,https://feeds.bbci.co.uk/news/world/latin_america/rss.xml,2,ok
+bbcworld,BBC World,intl,-0.1,very_high,"governo; BBC (Reino Unido, financiamento público)",bbc,,UK,en,EU,https://feeds.bbci.co.uk/news/world/rss.xml,58,ok
+lanacion,La Nación,intl,0.0,high,corporacao; La Nación (Argentina),,,AR,es,LatAm,https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml,100,ok
+infobae,Infobae,intl,0.0,high,corporacao; Infobae (Argentina),,,AR,es,LatAm,https://www.infobae.com/arc/outboundfeeds/rss/,119,ok
+clarin,Clarín,intl,0.0,high,corporacao; Clarín (Argentina),,,AR,es,LatAm,https://www.clarin.com/rss/lo-ultimo/,10,ok
+mercopress,MercoPress,intl,0.0,high,"independente; MercoPress (Uruguai, Mercosul)",,,UY,en,LatAm,https://en.mercopress.com/rss/,10,ok
+dwen,Deutsche Welle,intl,0.0,high,"governo; DW (Alemanha, financiamento público)",,,DE,en,EU,https://rss.dw.com/rdf/rss-en-all,30,ok
+france24en,France 24,intl,0.0,high,"governo; France 24 (França, financiamento público)",,,FR,en,EU,https://www.france24.com/en/rss,24,ok
+rfien,RFI,intl,0.0,high,"governo; RFI (França, financiamento público)",,,FR,en,EU,https://www.rfi.fr/en/rss,20,ok
+infomoney,InfoMoney,br,0.2,high,conglomerado; XP Inc.,,,,,,https://www.infomoney.com.br/feed/,108,ok
+b247,Brasil 247,br,-1.4,mixed,independente; Editora 247,,,,,,https://www.brasil247.com/feed,195,ok
+dcm,Diário do Centro do Mundo,br,-1.5,low,independente; DCM,,,,,,https://www.diariodocentrodomundo.com.br/feed/,128,ok
+carta,CartaCapital,br,-1.2,mixed,independente; Editora Confiança,,,,,,https://www.cartacapital.com.br/feed/,95,ok
+jovempan,Jovem Pan,br,1.4,mixed,corporacao; Grupo Jovem Pan,,,,,,https://jovempan.com.br/feed,82,ok
+oeste,Revista Oeste,br,1.6,low,independente; Revista Oeste,,,,,,https://revistaoeste.com/feed/,108,ok
+estadao,Estadão,br,-0.1,high,individuo; Família Mesquita,,,,,,https://www.estadao.com.br/arc/outboundfeeds/rss/?outputType=xml,260,ok
+oglobo,O Globo,br,0.1,high,conglomerado; Grupo Globo,globo,,,,,https://oglobo.globo.com/sitemap/oglobo/news.xml,664,ok
+valor,Valor Econômico,br,0.3,high,conglomerado; Grupo Globo,globo,,,,,https://valor.globo.com/sitemap/valor/news.xml,397,ok
+gazeta,Gazeta do Povo,br,1.2,mixed,independente; Gazeta do Povo,,,,,,https://www.gazetadopovo.com.br/sitemap.xml,196,ok
