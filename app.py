@@ -1567,12 +1567,24 @@ def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=Fal
                 score = (1 if relation == "same" else 0, len(distinct),
                          round(cov, 3), len(terms))
             cands.append((score, link, a, relation, age_days, why))
-        seen, out, used_src = set(), [], set()
+        # C-4: cota de linha editorial — no máx. 2 peças do mesmo lado
+        # (sinal do base_bias) por história; com 3 vagas, garante ao menos
+        # 2 linhas distintas. Neutra entre fontes (sem bônus para a piauí).
+        def _side(a):
+            try:
+                b = float(a.get("base_bias", 0.0))
+            except (TypeError, ValueError):
+                b = 0.0
+            return "L" if b <= -0.3 else ("R" if b >= 0.3 else "C")
+        seen, out, used_src, used_side = set(), [], set(), Counter()
         for _, link, a, relation, age_days, why in sorted(cands, reverse=True):
             if link in seen or a.get("source_name") in used_src:
                 continue  # F3.3: no máx. 1 peça por fonte por história
+            if used_side[_side(a)] >= 2:
+                continue  # C-4: cota de linha editorial
             seen.add(link)
             used_src.add(a.get("source_name"))
+            used_side[_side(a)] += 1
             out.append({
                 "source": a.get("source_name", ""),
                 "title": a.get("title", ""),

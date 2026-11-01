@@ -18,7 +18,7 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Hero lateral**: as 3 mais repercutidas no centro de alta factualidade, ao lado do destaque.
 - **Barra de viés** em cada história, com percentuais por **grupos editoriais independentes** (G1 + O Globo + Valor = 1 voz; a etiqueta mostra coberturas · grupos). Só **hard news, análise e explicativo** contam; opinião/longform/podcast/vídeo aparecem como enquadramento.
 - **Comparar os lados**: painel em 3 colunas (esquerda/centro/direita) com veículo, factualidade e propriedade.
-- **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé), máx. 2 por fonte, em **2 colunas** com thumb quando o feed oferece imagem.
+- **Leituras da semana**: página própria no menu **📚 Leituras** (e card no rail): índice de 10 dias das fontes longform (piauí, Nexo, Pública, Intercept, Repórter Brasil, Crusoé, Quatro Cinco Um, Núcleo, Ponte, Sumaúma, Outras Palavras, Diplomatique BR, Folha Ilustríssima), máx. 2 por fonte, em **2 colunas** com thumb quando o feed oferece imagem.
 - **Aprofunde-se**: duas relações — “Análise desta pauta” (mesmo fato, até 14 dias) e “Para entender melhor” (pano de fundo, até 120 dias, exige 2+ entidades específicas); máx. 1 por fonte e 3 por história.
 - **Quem deu primeiro**: linha do tempo por veículo no painel de comparação, ordenada pela **publicação** (`published`; `first_seen` como fallback).
 - **Comparar os lados por veículo**: uma manchete principal por veículo; os demais artigos ficam em “Mais artigos deste veículo” (details). O `updated` da história usa só cobertura — opinião/vídeo não rejuvenesce a notícia.

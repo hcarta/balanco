@@ -49,6 +49,13 @@
 | IstoÉ | 0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
 | Agência Pública | -0.8 | Investigativo progressista sem fins lucrativos |
+| Quatro Cinco Um | 0.0 | Revista de livros; centro até evidência (longform) |
+| Núcleo Jornalismo | 0.0 | Digital independente; centro até evidência (longform) |
+| Ponte Jornalismo | 0.0 | Segurança pública/direitos; centro até evidência (longform) |
+| Sumaúma | 0.0 | Socioambiental/Amazônia; centro até evidência (longform) |
+| Outras Palavras | 0.0 | Esquerda editorial assumida, mas centro até evidência na régua (longform) |
+| Le Monde Diplomatique Brasil | 0.0 | Edição brasileira do Diplo; centro até evidência na régua (longform) |
+| Folha Ilustríssima | 0.0 | Caderno cultural da Folha, tribuna plural; centro até evidência (longform) |
 | The Intercept Brasil | -1.2 | Investigativo progressista, First Look Media |
 | Repórter Brasil | -0.6 | ONG de direitos humanos e trabalho |
 | Al Jazeera English | -0.3 | Catar; progressista em pauta internacional (só em "Lá fora") |
@@ -127,6 +134,13 @@ Regras de movimento (evitam rebaixamento arbitrário):
 | Diário do Centro do Mundo | low | Militância com pouco lastro apuratório |
 | Revista Oeste | low | Padrão de imprecisão apontado na curadoria (30/10) |
 | Agência Pública | very_high | Investigativo premiado, método documentado |
+| Quatro Cinco Um | high | Crítica literária, apuração editorial |
+| Núcleo Jornalismo | high | Digital independente, método jornalístico |
+| Ponte Jornalismo | high | Cobertura premiada de segurança pública |
+| Sumaúma | high | Reportagem socioambiental premiada |
+| Outras Palavras | high | Análise de esquerda, factual |
+| Le Monde Diplomatique Brasil | high | Padrão do Diplo, análise documentada |
+| Folha Ilustríssima | high | Padrão Folha, ensaios e crítica |
 | The Intercept Brasil | high | Rigor investigativo, linha opinativa explícita |
 | Repórter Brasil | very_high | Investigativo premiado (trabalho escravo, socioambiental) |
 | Al Jazeera English | high | Apuração internacional sólida |

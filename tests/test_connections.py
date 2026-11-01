@@ -423,3 +423,24 @@ def test_only_world_and_brasil_abroad():
     only = extra["only_world"]
     assert len(only) == 1 and only[0]["n_sources"] == 3
     assert sorted(only[0]["countries"]) == ["AR", "FR", "US"]
+
+
+def test_longform_side_quota_limits_same_side(monkeypatch):
+    """C-4: no máx. 2 peças do mesmo lado por história (neutra entre fontes)."""
+    import app
+    story = _lr_story("Lula e Haddad negociam coalizão para reforma ministerial")
+    arts = [
+        _lr_piece("Lula e Haddad e a arte da coalizão", link="https://x/p1",
+                  source_id="nexo"),
+        _lr_piece("Lula e Haddad e a coalizão possível", link="https://x/p2",
+                  source_id="piaui"),
+        _lr_piece("A coalizão de Lula e Haddad em xeque", link="https://x/p3",
+                  source_id="apublica"),
+    ]
+    for a, name in zip(arts, ["Nexo", "Piauí", "Pública"]):
+        a["base_bias"] = -0.8
+        a["source_name"] = name
+    got = app.attach_longreads([dict(story)], [dict(a) for a in arts],
+                               {"nexo", "piaui", "apublica"},
+                               use_embed=False)
+    assert len(got[0]["longreads"]) == 2, "cota C-4: 2 do mesmo lado, não 3"

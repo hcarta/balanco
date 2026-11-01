@@ -151,6 +151,63 @@ sources:
     ownership: independente
     owner_detail: First Look Media (sem fins lucrativos)
     longform: true
+  # ── C-6: longform novas (testadas em 01/11/2026; viés 0,0 conservador) ──
+  - id: quatrocincoum
+    name: Quatro Cinco Um
+    rss: https://quatrocincoum.com.br/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Quatro Cinco Um (revista de livros)
+    longform: true
+  - id: nucleo
+    name: Núcleo Jornalismo
+    rss: https://nucleo.jor.br/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Núcleo Jornalismo
+    longform: true
+  - id: ponte
+    name: Ponte Jornalismo
+    rss: https://ponte.org/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Ponte Jornalismo (segurança pública)
+    longform: true
+  - id: sumauma
+    name: Sumaúma
+    rss: https://sumauma.com/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Sumaúma (Amazônia)
+    longform: true
+  - id: outraspalavras
+    name: Outras Palavras
+    rss: https://outraspalavras.net/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Outras Palavras
+    longform: true
+  - id: diplomatique
+    name: Le Monde Diplomatique Brasil
+    rss: https://diplomatique.org.br/feed/
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: Le Monde diplomatique Brasil
+    longform: true
+  - id: folhailus
+    name: Folha Ilustríssima
+    rss: https://feeds.folha.uol.com.br/ilustrissima/rss091.xml
+    bias: 0.0
+    factuality: high
+    ownership: corporacao
+    owner_detail: Folha de S.Paulo, seção Ilustríssima
+    longform: true
   - id: reporterbr
     name: Repórter Brasil
     rss: https://reporterbrasil.org.br/feed/
