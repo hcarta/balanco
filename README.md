@@ -81,7 +81,8 @@ Medido em 30/10: 39 resumos preenchidos, 36 com muro (Valor/Globo/Folha/Estadão
 O app coleta automaticamente **G1 Fato ou Fake** (RSS, 100), **Agência Lupa** (API, até 500 mais recentes de 5.700+ na categoria *Verificação*) e **Aos Fatos** (Google News RSS, 100), extrai o veredito do título e cruza com as manchetes.
 
 - **Selo ⚑ Checagem** aparece quando a alegação da checagem coincide com a história/matéria. É uma checagem *relacionada*, não um veredito sobre a matéria. Passe o mouse para ver os termos em comum.
-- **🔍 Verificar este tema** aparece quando não há checagem ligada — abre a busca do tema na Lupa.
+ - **🔍 Verificar este tema** aparece quando não há checagem ligada — abre a busca do tema na Lupa.
+- **Uso local (F4.3):** cliques em Verificar/Checagem/Comparar/folds/irmãs são contados só no seu navegador (`localStorage`, sem rede nem cookie). Ver em `?uso=1`, com exportar/limpar.
 - **Card “Checagens recentes”** lista as últimas verificações dos três veículos.
 - **Histórico por fonte**: quando uma matéria do veículo casa com uma checagem, o trilho mostra `N✓` ao lado do nome. As evidências são **acumuladas entre execuções** em `state/factcheck_ledger.json` (dedup por matéria+checagem) e servem para revisão humana — não alteram automaticamente a factualidade curada da fonte.
 - Casamento conservador: sobreposição ponderada por raridade (IDF), exigindo termo específico da alegação. Evita confundir “mesmo assunto” com “mesma alegação”.

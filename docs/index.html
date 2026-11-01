@@ -286,6 +286,10 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .framing{padding:10px 16px;border-top:1px solid var(--hair);font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.02em}
 .framing .frows{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
 .framing .frow b{color:var(--ink)}
+#usoPanel{position:fixed;right:12px;bottom:12px;z-index:99;max-width:340px;max-height:60vh;overflow:auto;
+  background:var(--surface);border:1px solid var(--hair-strong);border-radius:10px;padding:12px 14px;
+  font-family:var(--sans);font-size:11.5px;color:var(--ink)}
+#usoPanel button{margin:6px 6px 0 0;cursor:pointer}
 .more-art{margin:0 0 10px}
 .more-art summary{cursor:pointer;list-style:none;font-family:var(--sans);font-size:10px;
   font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
@@ -464,12 +468,12 @@ function checksBadges(s, max=2){
   const cs = (s.checks||[]).slice(0,max);
   if(!cs.length){
     const q = encodeURIComponent(s.title.split('—')[0].split(':')[0].slice(0,120));
-    return `<a class="badge check v-checagem" href="https://www.agencialupa.org/?s=${q}" target="_blank" rel="noopener"
+    return `<a class="badge check v-checagem" data-uso="verificar" data-sid="${esc(s.id)}" href="https://www.agencialupa.org/?s=${q}" target="_blank" rel="noopener"
       title="Buscar este tema nas checagens da Lupa">🔍 Verificar este tema</a>`;
   }
   return cs.map(c=>{
     const tt = (c.terms&&c.terms.length) ? ` · termos: ${c.terms.join(', ')}` : '';
-    return `<a class="badge check ${vClass(c.verdict)}" href="${esc(c.link)}" target="_blank" rel="noopener"
+    return `<a class="badge check ${vClass(c.verdict)}" data-uso="checagem" data-sid="${esc(s.id)}" href="${esc(c.link)}" target="_blank" rel="noopener"
       title="${esc(c.checker)} · ${esc(c.title)}${esc(tt)}">⚑ Checagem: ${esc(c.label)}</a>`;}).join('');
 }
 
@@ -537,6 +541,7 @@ function renderAll(){
   renderFeed();
   renderRail();
   openFromUrl();
+  usoPanel();
 }
 
 /* abre uma história via link direto (?story=ID ou #ID) */
@@ -806,6 +811,54 @@ function beyond(s){
   </div>`;
 }
 
+/* ---------- uso local (F4.3) ---------- */
+function track(ev, sid){
+  // Sem rede, sem cookie, sem PII: só contadores locais (uso pessoal/familiar).
+  try{
+    const K='balanco-uso-v1';
+    const u=JSON.parse(localStorage.getItem(K)||'{}');
+    u.days=u.days||{}; u.stories=u.stories||{};
+    const day=new Date().toISOString().slice(0,10);
+    const d=u.days[day]=u.days[day]||{};
+    d[ev]=(d[ev]||0)+1;
+    if(sid){
+      const st=u.stories[sid]=u.stories[sid]||{};
+      st[ev]=(st[ev]||0)+1;
+    }
+    const days=Object.keys(u.days).sort();
+    days.slice(0,-30).forEach(k=>delete u.days[k]);
+    const sk=Object.keys(u.stories);
+    if(sk.length>300) sk.slice(0,sk.length-300).forEach(k=>delete u.stories[k]);
+    localStorage.setItem(K,JSON.stringify(u));
+  }catch(_){}
+}
+document.addEventListener('click', e=>{
+  const a=e.target.closest('[data-uso]');
+  if(a) track(a.dataset.uso, a.dataset.sid);
+});
+function usoPanel(){
+  if(new URLSearchParams(location.search).get('uso')!=='1') return;
+  let u={days:{},stories:{}};
+  try{ u=JSON.parse(localStorage.getItem('balanco-uso-v1')||'{}'); }catch(_){}
+  const tot={};
+  Object.values(u.days||{}).forEach(d=>Object.entries(d).forEach(([k,v])=>tot[k]=(tot[k]||0)+v));
+  const top=Object.entries(u.stories||{}).map(([id,v])=>({id,n:Object.values(v).reduce((a,b)=>a+b,0),v}))
+    .sort((a,b)=>b.n-a.n).slice(0,10);
+  const d=document.createElement('div');
+  d.id='usoPanel';
+  d.innerHTML=`<b>Uso local (30 dias)</b>
+    <div>${Object.entries(tot).map(([k,v])=>`${esc(k)}: <b>${v}</b>`).join(' · ')||'sem eventos'}</div>
+    <div>${top.map(s=>`<div>${esc(s.id)} — ${esc(JSON.stringify(s.v))}</div>`).join('')}</div>
+    <div><button id="usoExp">Exportar JSON</button> <button id="usoClear">Limpar</button></div>`;
+  document.body.appendChild(d);
+  document.getElementById('usoExp').onclick=()=>{
+    const blob=new Blob([localStorage.getItem('balanco-uso-v1')||'{}'],{type:'application/json'});
+    const l=document.createElement('a');
+    l.href=URL.createObjectURL(blob); l.download='balanco-uso.json'; l.click();
+  };
+  document.getElementById('usoClear').onclick=()=>{localStorage.removeItem('balanco-uso-v1');d.remove();};
+}
+
 /* ---------- feed ---------- */
 function renderFeed(){
   const d = S.data;
@@ -887,6 +940,12 @@ function renderFeed(){
       const open = panel.hidden;
       panel.hidden = !open;
       btn.classList.toggle('open', open);
+      if(open) track('comparar', art.dataset.id);
+    });
+  });
+  wrap.querySelectorAll('details.fold').forEach(f=>{
+    f.addEventListener('toggle', ()=>{
+      if(f.open) track('fold:'+(f.querySelector('summary span')||{textContent:''}).textContent.trim().slice(0,24));
     });
   });
 
@@ -895,6 +954,7 @@ function renderFeed(){
     a.addEventListener('click', e=>{
       e.preventDefault();
       const id = a.dataset.id;
+      track('irma', id);
       if(expandStory(id)) return;
       S.q=''; S.ed=''; S.src=''; S.filter='all';
       const q = $('#q'); if(q) q.value='';
