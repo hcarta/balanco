@@ -407,6 +407,7 @@ footer a.fl:hover{color:var(--accent)}
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="blindCard"></div>
     <div class="rail-card" id="readCard"></div>
+    <div class="rail-card" id="worldCard"></div>
   </aside>
 </div></main>
 
@@ -1008,6 +1009,22 @@ function renderRail(){
       <div class="read-title">${esc(x.title)}</div>
       ${x.summary?`<div class="read-dek">${esc(x.summary.slice(0,150))}${x.summary.length>150?'…':''}</div>`:''}
     </a>`).join('') : '';
+
+  // B-4: só lá fora + Brasil visto de fora (grupos sem história BR)
+  (function(){
+    const card = $('#worldCard');
+    const only = (d.only_world||[]).slice(0,4);
+    const abroad = (d.brasil_abroad||[]).slice(0,4);
+    if(!only.length && !abroad.length){ card.style.display='none'; return; }
+    card.style.display='';
+    const item = x=>`<a class="read-item" href="${esc(x.link)}" target="_blank" rel="noopener">
+      <div class="read-src">${esc(x.source)}${x.countries&&x.countries.length?` · ${x.countries.join(' · ')}`:''}${x.n_sources>1?` · ${x.n_sources} veículos`:''}</div>
+      <div class="read-title">${esc(x.title)}</div>
+    </a>`;
+    card.innerHTML =
+      (only.length?`<div class="rt">🌍 Só lá fora</div><p class="rnote">O exterior cobre, o Brasil não</p>`+only.map(item).join(''):'') +
+      (abroad.length?`<div class="rt" style="margin-top:${only.length?'18px':'0'}">🇧🇷 Brasil visto de fora</div>`+abroad.map(item).join(''):'');
+  })();
 
   // jump links in rail
   document.querySelectorAll('[data-jump]').forEach(el=>{

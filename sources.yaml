@@ -169,6 +169,9 @@ sources:
     factuality: high
     ownership: governo
     owner_detail: Catar (financiamento público)
+    country: QA
+    lang: en
+    bloc: MENA
   - id: foxnews
     name: Fox News
     rss: https://feeds.foxnews.com/foxnews/world
@@ -177,6 +180,9 @@ sources:
     factuality: mixed
     ownership: corporacao
     owner_detail: Fox Corporation
+    country: US
+    lang: en
+    bloc: US
   - id: nytimes
     name: New York Times
     rss: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
@@ -186,6 +192,9 @@ sources:
     ownership: corporacao
     owner_detail: The New York Times Company
     group: nytimes
+    country: US
+    lang: en
+    bloc: US
   - id: nytimestech
     name: New York Times (Tecnologia)
     rss: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
@@ -195,6 +204,9 @@ sources:
     ownership: corporacao
     owner_detail: The New York Times Company
     group: nytimes
+    country: US
+    lang: en
+    bloc: US
 
   - id: guardian
     name: The Guardian
@@ -204,6 +216,44 @@ sources:
     factuality: high
     ownership: independente
     owner_detail: Scott Trust
+    country: UK
+    lang: en
+    bloc: EU
+  - id: nytamericas
+    name: New York Times (Américas)
+    rss: https://rss.nytimes.com/services/xml/rss/nyt/Americas.xml
+    kind: intl
+    bias: -0.8
+    factuality: high
+    ownership: corporacao
+    owner_detail: The New York Times Company
+    group: nytimes
+    country: US
+    lang: en
+    bloc: LatAm
+  - id: guardianbrasil
+    name: The Guardian (Brasil)
+    rss: https://www.theguardian.com/world/brazil/rss
+    kind: intl
+    bias: -0.9
+    factuality: high
+    ownership: independente
+    owner_detail: Scott Trust
+    country: UK
+    lang: en
+    bloc: LatAm
+  - id: bbclatam
+    name: BBC (América Latina)
+    rss: https://feeds.bbci.co.uk/news/world/latin_america/rss.xml
+    kind: intl
+    bias: -0.1
+    factuality: very_high
+    ownership: governo
+    owner_detail: BBC (Reino Unido, financiamento público)
+    group: bbc
+    country: UK
+    lang: en
+    bloc: LatAm
   - id: bbcworld
     name: BBC World
     rss: https://feeds.bbci.co.uk/news/world/rss.xml
@@ -213,6 +263,88 @@ sources:
     ownership: governo
     owner_detail: BBC (Reino Unido, financiamento público)
     group: bbc
+    country: UK
+    lang: en
+    bloc: EU
+  # ── B-1: LatAm/hispânicas (testadas em 01/11/2026; viés 0,0 conservador) ──
+  - id: lanacion
+    name: La Nación
+    rss: https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: corporacao
+    owner_detail: La Nación (Argentina)
+    country: AR
+    lang: es
+    bloc: LatAm
+  - id: infobae
+    name: Infobae
+    rss: https://www.infobae.com/arc/outboundfeeds/rss/
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: corporacao
+    owner_detail: Infobae (Argentina)
+    country: AR
+    lang: es
+    bloc: LatAm
+  - id: clarin
+    name: Clarín
+    rss: https://www.clarin.com/rss/lo-ultimo/
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: corporacao
+    owner_detail: Clarín (Argentina)
+    country: AR
+    lang: es
+    bloc: LatAm
+  - id: mercopress
+    name: MercoPress
+    rss: https://en.mercopress.com/rss/
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: independente
+    owner_detail: MercoPress (Uruguai, Mercosul)
+    country: UY
+    lang: en
+    bloc: LatAm
+  # ── B-1: Europa (testadas em 01/11/2026) ──
+  - id: dwen
+    name: Deutsche Welle
+    rss: https://rss.dw.com/rdf/rss-en-all
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: governo
+    owner_detail: DW (Alemanha, financiamento público)
+    country: DE
+    lang: en
+    bloc: EU
+  - id: france24en
+    name: France 24
+    rss: https://www.france24.com/en/rss
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: governo
+    owner_detail: France 24 (França, financiamento público)
+    country: FR
+    lang: en
+    bloc: EU
+  - id: rfien
+    name: RFI
+    rss: https://www.rfi.fr/en/rss
+    kind: intl
+    bias: 0.0
+    factuality: high
+    ownership: governo
+    owner_detail: RFI (França, financiamento público)
+    country: FR
+    lang: en
+    bloc: EU
   - id: infomoney
     name: InfoMoney
     rss: https://www.infomoney.com.br/feed/

@@ -22,10 +22,11 @@ Estética editorial inspirada no **The Atlantic** (serifada, filetes finos, resp
 - **Aprofunde-se**: duas relações — “Análise desta pauta” (mesmo fato, até 14 dias) e “Para entender melhor” (pano de fundo, até 120 dias, exige 2+ entidades específicas); máx. 1 por fonte e 3 por história.
 - **Quem deu primeiro**: linha do tempo por veículo no painel de comparação, ordenada pela **publicação** (`published`; `first_seen` como fallback).
 - **Comparar os lados por veículo**: uma manchete principal por veículo; os demais artigos ficam em “Mais artigos deste veículo” (details). O `updated` da história usa só cobertura — opinião/vídeo não rejuvenesce a notícia.
-- **Lá fora**: peças internacionais agrupadas por evento (cluster + entidade/número), com número de veículos e fontes no cartão; casamento por entidade traduzida, número e conceito.
+- **Lá fora**: peças internacionais agrupadas por evento (cluster + entidade/número), com número de veículos e fontes no cartão; casamento por entidade traduzida, número e conceito. 16 fontes intl (LatAm/hispânicas + europeias), todas com país/bloco/idioma.
+- **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana, “🌍 Só lá fora” (o exterior cobre, o Brasil não) e “🇧🇷 Brasil visto de fora”, e fontes monitoradas (com viés).
 - **Enquadramento comparado**: “🪞 Como cada lado intitulou” mostra os termos que cada lado usa mais nos títulos (log-odds por bucket).
 - **Agrupamento com âncora de entidade**: dois títulos só viram a mesma história se compartilharem um nome próprio específico **e** conteúdo além do nome, ou forem quase-duplicatas. Vocabulário de tema ("eleição presidencial", "menor nível") não funde fatos distintos — foi o que ligava a eleição na Bulgária ao Flávio Bolsonaro.
-- **Trilho lateral**: checagens recentes, blindspots do dia, leituras da semana e fontes monitoradas (com viés).
+
 - **Pautas (Outros ângulos)**: lugar não é pauta — estado/cidade fica em `HUB_STOP_GEO` (“Mato Grosso” juntava violência em MS, soja e TCE).
 - **Pautas (Outros ângulos)**: a história só entra na pauta de um nome próprio se ele está na manchete e em pelo menos 2 títulos; menção lateral ("Democratas cobram Trump…" citando Flávio) não conta. Prenome sozinho vale como alias ("Flávio"); sobrenome não ("Bolsonaro" é o Jair).
 - **Seções recolhíveis**: “Aprofunde-se”, “Lá fora”, “Outros ângulos desta pauta” e “Também apurado nesta história” são `<details>` fechados por padrão, com contador no cabeçalho.

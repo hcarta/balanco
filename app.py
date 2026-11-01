@@ -1733,6 +1733,10 @@ def group_intl_articles(articles):
     return out
 
 
+# Entidades que marcam "sobre o Brasil" (B-4: Brasil visto de fora)
+BR_ENTS = {"brasil", "brazil", "brasília", "brasilia", "lula", "bolsonaro"}
+
+
 def attach_world(stories, intl_articles, per_story=3, use_embed=False,
                  source_meta=None):
     """B-2/B-3: liga histórias a grupos internacionais (evento, não peça).
@@ -1792,6 +1796,7 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False,
             if not link or link in seen:
                 continue
             seen.add(link)
+            meta = source_meta.get(rep.get("source_id") or "", {}) or {}
             out.append({
                 "source": rep.get("source_name", ""),
                 "title": _clean_title(rep.get("title", "")),
@@ -1799,6 +1804,9 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False,
                 "terms": terms,
                 "n_sources": n_src,
                 "sources": sources[:6],
+                "country": meta.get("country", ""),
+                "bloc": meta.get("bloc", ""),
+                "lang": meta.get("lang", ""),
             })
             if len(out) >= per_story:
                 break
@@ -1815,7 +1823,42 @@ def attach_world(stories, intl_articles, per_story=3, use_embed=False,
     for s in stories:
         s["world"] = [w for w in s.get("world", [])
                       if best.get(w["link"], (0, 0, None))[2] == id(s)]
-    return stories
+    # B-4: grupos sem história BR → "só lá fora" (≥3 países) e
+    # "Brasil visto de fora" (mencionam o Brasil)
+    attached = {w["link"] for s in stories for w in s.get("world", [])}
+    only_world, brasil_abroad, seen_g = [], [], set()
+    for rep_title, group_summary, rep, g, sources in pool:
+        link = rep.get("link", "")
+        key = link or rep_title
+        if not key or key in seen_g or link in attached:
+            continue
+        seen_g.add(key)
+        n_src = len({a.get("source_name") for a in g if a.get("source_name")})
+        countries = sorted({
+            (source_meta.get(a.get("source_id") or "", {}) or {}).get("country", "")
+            for a in g if a.get("source_id")} - {""})
+        gents = entities(rep_title + " " + group_summary[:800])
+        meta = source_meta.get(rep.get("source_id") or "", {}) or {}
+        entry = {
+            "source": rep.get("source_name", ""),
+            "title": _clean_title(rep.get("title", "")),
+            "link": link,
+            "n_sources": n_src,
+            "countries": countries,
+            "sources": sources[:6],
+            "country": meta.get("country", ""),
+            "bloc": meta.get("bloc", ""),
+            "lang": meta.get("lang", ""),
+        }
+        if gents & BR_ENTS:
+            brasil_abroad.append((n_src, entry))
+        elif len(countries) >= 3:
+            only_world.append((n_src, entry))
+    only_world = [e for _, e in sorted(only_world, key=lambda t: t[0],
+                                              reverse=True)[:8]]
+    brasil_abroad = [e for _, e in sorted(brasil_abroad, key=lambda t: t[0],
+                                          reverse=True)[:8]]
+    return stories, {"only_world": only_world, "brasil_abroad": brasil_abroad}
 
 def attach_checks(stories, checks, story_min=0.34, article_min=0.45):
     """Casa histórias/matérias com checagens por sobreposição ponderada (IDF).
@@ -2024,8 +2067,8 @@ def main():
                                use_embed=args.embed)
     stories = diversify_longreads(stories)
     source_meta = {s["id"]: s for s in sources}
-    stories = attach_world(stories, intl, use_embed=args.embed,
-                           source_meta=source_meta)
+    stories, world_extra = attach_world(stories, intl, use_embed=args.embed,
+                                        source_meta=source_meta)
     n_lr = sum(1 for s in stories if s.get("longreads"))
     n_w = sum(1 for s in stories if s.get("world"))
     print(f"[3b/4] {n_lr} histórias com aprofundamento, {n_w} com repercussão internacional")
@@ -2080,6 +2123,8 @@ def main():
                "sources": sources_out,
                "factchecks": checks[:80],
                "leituras": leituras,
+               "only_world": world_extra.get("only_world", []),
+               "brasil_abroad": world_extra.get("brasil_abroad", []),
                "stories": stories}
     with open(os.path.join(SITE, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)

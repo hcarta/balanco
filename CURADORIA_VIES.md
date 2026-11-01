@@ -58,6 +58,16 @@
 | New York Times (Tecnologia) | -0.8 | Mesmo grupo e linha do NYT; feed de Tecnologia (só em "Lá fora") |
 | The Guardian | -0.9 | Progressista britânica, Scott Trust (só em "Lá fora") |
 | BBC World | -0.1 | Serviço público britânico (só em "Lá fora") |
+| New York Times (Américas) | -0.8 | Mesmo grupo e linha do NYT; seção Américas (só em "Lá fora") |
+| The Guardian (Brasil) | -0.9 | Mesma linha do Guardian; página de Brasil (só em "Lá fora") |
+| BBC (América Latina) | -0.1 | Mesmo padrão BBC; seção América Latina (só em "Lá fora") |
+| La Nación | 0.0 | Tradicional argentina, centro-liberal; viés conservador até evidência (só em "Lá fora") |
+| Infobae | 0.0 | Digital argentina de grande alcance; centro até evidência (só em "Lá fora") |
+| Clarín | 0.0 | Maior jornal argentino; centro até evidência, feed curto "Lo último" (só em "Lá fora") |
+| MercoPress | 0.0 | Agência do Mercosul em inglês; centro até evidência (só em "Lá fora") |
+| Deutsche Welle | 0.0 | Serviço público alemão, edição em inglês; centro até evidência (só em "Lá fora") |
+| France 24 | 0.0 | Serviço público francês, edição em inglês; centro até evidência (só em "Lá fora") |
+| RFI | 0.0 | Rádio França Internacional, edição em inglês; centro até evidência (só em "Lá fora") |
 
 ## 3. Processo de decisão
 
@@ -126,3 +136,13 @@ Regras de movimento (evitam rebaixamento arbitrário):
 | New York Times (Tecnologia) | high | Mesmo padrão do NYT; feed de Tecnologia |
 | The Guardian | high | Padrão rigoroso, correções públicas |
 | BBC World | very_high | Padrão BBC global de verificação |
+| New York Times (Américas) | high | Mesmo padrão do NYT; seção Américas |
+| The Guardian (Brasil) | high | Mesmo padrão do Guardian; página de Brasil |
+| BBC (América Latina) | very_high | Mesmo padrão BBC; seção América Latina |
+| La Nación | high | Tradicional argentina, apuração sólida |
+| Infobae | high | Digital argentina, apuração profissional |
+| Clarín | high | Maior jornal argentino, apuração tradicional |
+| MercoPress | high | Agência regional, factual |
+| Deutsche Welle | high | Serviço público alemão, padrão internacional |
+| France 24 | high | Serviço público francês, padrão internacional |
+| RFI | high | Serviço público francês, padrão internacional |

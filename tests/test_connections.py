@@ -207,7 +207,7 @@ def test_embed_boost_requires_lexical_anchor(monkeypatch):
     world = {"title": "How crypto hacking funds North Korea's nuclear programme",
              "link": "https://exemplo/2", "source_id": "guardian",
              "source_name": "The Guardian"}
-    app.attach_world([story2], [world], use_embed=True)
+    app.attach_world([story2], [world], use_embed=True)[0]
     assert story2["world"] == []
 
 
@@ -231,7 +231,7 @@ def test_world_piece_not_repeated_across_stories():
                {"title": "Flávio Bolsonaro fala pela primeira vez dos EUA", "articles": []}]
     art = {"title": "Flávio Bolsonaro flees to the US", "link": "https://exemplo/4",
            "source_id": "guardian", "source_name": "The Guardian"}
-    app.attach_world(stories, [art])
+    app.attach_world(stories, [art])[0]
     assert sum(len(s["world"]) for s in stories) == 1
 
 
@@ -278,7 +278,7 @@ def test_intl_groups_by_entity_and_number():
     assert any({a["link"] for a in g} == {"b", "n"} for g in groups)
     story = {"id": "s1", "title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
              "counts": {"total": 2}, "articles": []}
-    out = app.attach_world([story], arts)
+    out, _ = app.attach_world([story], arts)
     w = out[0]["world"]
     assert len(w) == 1
     assert w[0]["n_sources"] == 2
@@ -375,3 +375,51 @@ def test_longform_pool_excludes_foro_de_teresina():
                    link="https://piaui.uol.com.br/web/ft136/")
     got = app.attach_longreads([story], [ft], {"piaui"}, use_embed=False)
     assert got[0]["longreads"] == []
+
+
+def _w_art(title, sid, sname, link):
+    import time
+    return {"title": title, "summary": "", "link": link, "source_id": sid,
+            "source_name": sname, "ts": time.time(), "section": "mundo"}
+
+
+META_GEO = {
+    "us": {"country": "US", "bloc": "US", "lang": "en"},
+    "uk": {"country": "UK", "bloc": "EU", "lang": "en"},
+    "fr": {"country": "FR", "bloc": "EU", "lang": "en"},
+    "ar": {"country": "AR", "bloc": "LatAm", "lang": "es"},
+}
+
+
+def test_world_items_carry_geo():
+    import app
+    story = _lr_story("Binance sofre ataque hacker de US$ 6,3 bilhões")
+    arts = [_w_art("Binance hack of $6.3 billion shakes crypto markets",
+                   "us", "NYT", "w1")]
+    out, _ = app.attach_world([story], arts, source_meta={**META_GEO})
+    assert out[0]["world"], "grupo deveria casar com a história"
+    w = out[0]["world"][0]
+    assert (w["country"], w["bloc"], w["lang"]) == ("US", "US", "en")
+
+
+def test_only_world_and_brasil_abroad():
+    import app
+    story = _lr_story("Trivial local story about nothing much")
+    arts = [
+        _w_art("Lula wins Brazil election runoff vote", "us", "NYT", "b1"),
+        _w_art("Lula wins Brazil election runoff vote count", "uk", "BBC", "b2"),
+        _w_art("EU approves new sanctions package on oil", "us", "NYT", "o1"),
+        _w_art("EU approves new sanctions package on oil exports", "fr", "RFI", "o2"),
+        _w_art("EU approves new sanctions package on oil trade", "ar", "Clarín", "o3"),
+    ]
+    meta = {**META_GEO,
+            "bbc": {"country": "UK", "bloc": "EU", "lang": "en"}}
+    stories = [{**story, "counts": {"total": 1},
+                "articles": story["articles"]}]
+    out, extra = app.attach_world(stories, arts, source_meta=meta)
+    assert out[0]["world"] == [], "nada deveria casar com a história"
+    abroad = extra["brasil_abroad"]
+    assert len(abroad) == 1 and abroad[0]["link"] in ("b1", "b2")
+    only = extra["only_world"]
+    assert len(only) == 1 and only[0]["n_sources"] == 3
+    assert sorted(only[0]["countries"]) == ["AR", "FR", "US"]
