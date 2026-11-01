@@ -1,6 +1,8 @@
 name: Coleta Balanço
 
-# Roda a coleta a cada 30 min e publica o data.json atualizado.
+# Roda a coleta a cada 30 min. Publica o docs/ via GitHub Pages (artefato),
+# sem versionar data.json a cada rodada. Se o repositório ainda estiver em
+# "Deploy from branch", faz fallback para o commit antigo e mantém o site.
 # Manual: aba Actions → "Coleta Balanço" → Run workflow.
 
 on:
@@ -10,6 +12,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: balanco-collect
@@ -19,6 +23,9 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +36,9 @@ jobs:
       - name: Restaurar cache SQLite
         uses: actions/cache/restore@v4
         with:
-          path: state/cache.db
+          path: |
+            state/cache.db
+            state/factcheck_ledger.json
           # chave única por rodada: actions/cache é imutável por chave;
           # restore-keys recupera o cache mais recente e o save cria um novo.
           key: balanco-cache-${{ github.run_id }}
@@ -45,15 +54,58 @@ jobs:
         uses: actions/cache/save@v4
         if: always()
         with:
-          path: state/cache.db
+          path: |
+            state/cache.db
+            state/factcheck_ledger.json
           key: balanco-cache-${{ github.run_id }}
 
-      - name: Commit dos dados
+      - name: Configurar Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+        with:
+          enablement: true
+
+      - name: Empacotar docs para Pages
+        id: upload
+        uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
+        with:
+          path: docs
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        if: steps.upload.outcome == 'success'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Fallback — commit se o Pages não aceitar o artefato
+        if: steps.deployment.outcome != 'success'
         run: |
           git config user.name "balanco-bot"
           git config user.email "balanco-bot@local"
           git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json
-          git diff --cached --quiet || git commit -m "atualização automática $(date -u +%FT%TZ)"
-          # se um commit manual entrou durante a rodada, rebase antes do push
+          git diff --cached --quiet || git commit -m "atualização automática (fallback) $(date -u +%FT%TZ)"
+          git pull --rebase -X ours origin main
+          git push
+
+      - name: Commit diário do arquivo e do estado
+        run: |
+          git config user.name "balanco-bot"
+          git config user.email "balanco-bot@local"
+          DAY=$(date -u +%F)
+          MARK=state/.last_commit_day
+          if [ "$(cat "$MARK" 2>/dev/null)" = "$DAY" ] && git diff --quiet -- docs/arquivo; then
+            echo "arquivo/estado já registrados hoje"
+            exit 0
+          fi
+          git add docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
+          echo "$DAY" > "$MARK"
+          git add "$MARK" docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "sem mudança para registrar"
+            exit 0
+          fi
+          git commit -m "arquivo diário $DAY"
           git pull --rebase -X ours origin main
           git push

@@ -100,21 +100,24 @@ Coletamos **apenas manchete, link, data e editoria** (sem corpo, sem paywall). A
 
 ## Publicação automática (GitHub Actions — Via B)
 
-O workflow `.github/workflows/collect.yml` roda `python app.py` a cada 30 min e commita `docs/data.json` + `state/health.json` + ledger. O `cache.db` (binário, 2 MB+) **não** vai para o git — circula via `actions/cache`.
+O workflow `.github/workflows/collect.yml` roda `python app.py` a cada 30 min e publica `docs/` via **GitHub Pages (artefato)**. `data.json` e `feed.xml` deixam de ser versionados a cada rodada; o cache (`state/cache.db` + `state/factcheck_ledger.json`) circula por `actions/cache`; o arquivo diário e o health/ledger são commitados **uma vez por dia** (marcador `state/.last_commit_day`).
 
 ```bash
 # 1. criar o repo no GitHub (público: Actions ilimitado)
 gh repo create balanco --public --source=. --push
 # ou manual: github.com/new → git remote add origin … && git push -u origin main
 
-# 2. ativar o site: Settings → Pages → Deploy from branch → main → /docs
+# 2. ativar o site: Settings → Pages → Build and deployment → Source: GitHub Actions
+#    (enquanto estiver em "Deploy from branch", o workflow faz fallback e
+#     mantém o commit antigo para o site não parar)
 # 3. pronto: a cada 30 min a edição se atualiza sozinha
 # manual: aba Actions → "Coleta Balanço" → Run workflow
 ```
 
 Notas:
 - Cron do Actions pode atrasar alguns minutos; `concurrency` evita rodadas sobrepostas.
-- `state/health.json` no repo = batimento cardíaco (dá para ver se o agendador está vivo).
+- Se o Pages Actions falhar (por exemplo, a origem ainda está em “Deploy from branch”), o fallback commita `data.json`, `feed.xml`, `arquivo`, `health` e ledger, e o site continua no ar.
+- `state/health.json` e o ledger são commitados no máximo uma vez por dia; o cache guarda o ledger entre rodadas.
 - Logs de cada rodada ficam na aba Actions (retention padrão 90 dias).
 
 ## Limitações honestas vs Ground.news
