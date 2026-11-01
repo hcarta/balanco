@@ -96,7 +96,28 @@ Uso no cluster: fundir **só** pares `same` (mesmo acontecimento); `related`
 5. Expandir F1 a 600 pares (estratos originais) antes de qualquer conclusão sobre
    limite do problema: n=154 com 18 features é pouco para LR.
 
-## 7. Reprodução
+## 7. Caso-âncora: safra Trump × Papa (01/11/2026)
+
+História “Trump promete US$ 15 bilhões para agricultores dos EUA…” (16 artigos)
+fundiu com o bloco “Papa Leão XIV vota pelo correio…”. Diagnóstico par a par
+(`_pair_decision`, harness de 16 docs):
+
+- Nenhum par direto Trump-agro × Papa funde (cos 0,03–0,13, `low_sim`).
+- A ponte é a Folha “Crítico de Trump, Leão 14 vota pelo correio nas eleições
+  de meio de mandato…”: funde com 2 peças do Papa por `near_dup_ok`
+  (cos 0,46 e 0,61; shared correio/eleições/eua/leão/vota [+mandato/meio]) —
+  correto, o fato dela é o voto do papa.
+- O elo indevido é ponte-Folha × Trump-agro: 5 tokens em comum
+  (eleições/eua/mandato/meio/trump), cos 0,28 no harness (rejeitado) mas ≥0,38
+  no corpus cheio (IDF dependente do corpus, §5.2) → cadeia single-link fecha.
+- `_cohere` não salvou: a similaridade com o medoide se manteve.
+
+Rótulo para o conjunto: ponte-Folha × Trump-agro = `related` (macro-tema
+midterms, atos distintos: voto × subsídios). O gate F3 como **veto**
+(rejeitar se P(same) < ~0,2) quebraria a cadeia sem custo de recall; como gate
+duro (P≥0,97) fragmentaria. Decisão de desenho pendente na revisão.
+
+## 8. Reprodução
 
 ```bash
 python ops/pair_features.py --pairs tests/cluster_pairs.jsonl --out state/pair_features.jsonl --embed  # 19 features
