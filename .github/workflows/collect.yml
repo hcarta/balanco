@@ -44,6 +44,13 @@ jobs:
           key: balanco-cache-${{ github.run_id }}
           restore-keys: balanco-cache-
 
+      - name: Semear cache se o cache do Actions falhar
+        run: |
+          if [ ! -s state/cache.db ] && [ -f state/seed.db.gz ]; then
+            gunzip -c state/seed.db.gz > state/cache.db
+            echo "cache semeado de state/seed.db.gz"
+          fi
+
       - name: Instalar dependências
         run: pip install -r requirements.txt
 
@@ -86,6 +93,7 @@ jobs:
           git config user.email "balanco-bot@local"
           git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json
           git diff --cached --quiet || git commit -m "atualização automática (fallback) $(date -u +%FT%TZ)"
+          git checkout -- docs/data.json docs/feed.xml 2>/dev/null || true
           git pull --rebase -X ours origin main
           git push
 
@@ -107,5 +115,7 @@ jobs:
             exit 0
           fi
           git commit -m "arquivo diário $DAY"
+          # data/feed já estão no artefato do Pages; não vão para o git
+          git checkout -- docs/data.json docs/feed.xml 2>/dev/null || true
           git pull --rebase -X ours origin main
           git push

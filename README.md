@@ -117,6 +117,7 @@ gh repo create balanco --public --source=. --push
 Notas:
 - Cron do Actions pode atrasar alguns minutos; `concurrency` evita rodadas sobrepostas.
 - Se o Pages Actions falhar (por exemplo, a origem ainda está em “Deploy from branch”), o fallback commita `data.json`, `feed.xml`, `arquivo`, `health` e ledger, e o site continua no ar.
+- Se o cache do Actions vier vazio, o workflow semeia `state/cache.db` a partir de `state/seed.db.gz` (versionado, só para cold start).
 - `state/health.json` e o ledger são commitados no máximo uma vez por dia; o cache guarda o ledger entre rodadas.
 - Logs de cada rodada ficam na aba Actions (retention padrão 90 dias).
 
