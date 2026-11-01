@@ -430,7 +430,9 @@ EXCLUDED_TITLE = re.compile(
     r"|^\s*v[ií]deos?\s*:|^\s*assist[ai]\s+ao\s+programa|\bao\s+vivo\b"
     # serviço local: cemitérios/visitação de Finados e bandeira tarifária
     r"|\bcemit[eé]rios?\b.{0,80}\b(finados|visitantes|missas)\b"
-    r"|\bbandeira (verde|amarela|vermelha)\b.{0,60}\b(energia|conta|tarifa)\b",
+    r"|\bbandeira (verde|amarela|vermelha)\b.{0,60}\b(energia|conta|tarifa)\b"
+    r"|\b(chuva|calor|frio|clima|temperatura)\b.{0,60}\bprevis[aã]o\b"
+    r"|previs[aã]o\b.{0,60}\b(tempo|chuva|calor|frio|clima|temperatura)\b",
     re.I)
 
 

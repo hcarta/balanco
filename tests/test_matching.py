@@ -770,3 +770,8 @@ def test_build_updated_ignores_frames():
     assert len(out) == 1
     assert out[0]["counts"]["frames"] == 1
     assert out[0]["updated"].startswith("2026-10-31T13:00")
+
+
+def test_excluded_title_filters_weather_not_market():
+    assert app.excluded_title("Novembro em SP começa com chuva e calor; veja previsão completa")
+    assert not app.excluded_title("Previsão do mercado para o próximo trimestre")
