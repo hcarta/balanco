@@ -436,6 +436,22 @@ footer a.fl{display:block;font-size:13px;color:var(--muted);padding:4px 0}
 footer a.fl:hover{color:var(--accent)}
 @media(max-width:720px){footer .wrap{grid-template-columns:1fr;gap:26px}}
 
+/* Opinião E/C/D (item 3 do backlog) */
+.opiniao{padding:6px 0 44px}
+.opgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.opcard{border:1px solid var(--hair-strong);border-radius:6px;padding:14px 16px;background:var(--paper)}
+.opcard .opsrc{font-family:var(--sans);font-size:11px;color:var(--faint);margin:8px 0 4px}
+.opcard h3{font-family:var(--serif);font-size:16.5px;line-height:1.35;margin:0}
+.opcard h3 a{text-decoration:none}
+.opcard h3 a:hover{color:var(--accent)}
+.opcard p{font-family:var(--sans);font-size:10.5px;color:var(--faint);margin:8px 0 0}
+@media(max-width:720px){.opgrid{grid-template-columns:1fr}}
+
+.mrow{display:grid;grid-template-columns:40px 1fr 1fr 1fr 1fr;gap:6px;
+  font-family:var(--sans);font-size:10.5px;color:var(--muted);padding:4px 0;
+  border-bottom:1px solid var(--hair);text-align:right}
+.mrow span:first-child{text-align:left;color:var(--faint)}
+.mrow b{color:var(--ink-soft);font-weight:700}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
 a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px solid var(--accent);outline-offset:2px}
@@ -512,9 +528,18 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
     <div class="rail-card" id="checkCard"></div>
     <div class="rail-card" id="blindCard"></div>
     <div class="rail-card" id="readCard"></div>
+    <div class="rail-card" id="metricsCard"></div>
     <div class="rail-card" id="worldCard"></div>
   </aside>
 </div></main>
+
+<section class="wrap opiniao" id="opiniaoSec" aria-labelledby="opiniaoTitle" hidden>
+  <div class="section-head">
+    <h2 id="opiniaoTitle">Opinião de hoje</h2>
+    <span class="count">opinião, não cobertura · 3 janelas ao dia</span>
+  </div>
+  <div id="opiniaoGrid" class="opgrid"></div>
+</section>
 
 <footer><div class="wrap">
   <div>
@@ -683,6 +708,8 @@ function renderAll(){
   renderFeatured();
   renderFeed();
   renderRail();
+  renderOpiniao();
+  renderMetrics();
   openFromUrl();
   usoPanel();
   updLine();
@@ -1164,6 +1191,48 @@ function usoPanel(){
 }
 
 /* ---------- feed ---------- */
+function renderMetrics(){
+  const el = $('#metricsCard');
+  if(!el) return;
+  const m = (S.data && S.data.metrics) || {};
+  const p = (S.data && S.data.pautas_metrics) || {};
+  const ms = Object.fromEntries((m.series||[]).map(x=>[x.date,x]));
+  const ps = Object.fromEntries((p.series||[]).map(x=>[x.date,x]));
+  const dates = [...new Set([...Object.keys(ms), ...Object.keys(ps)])].sort().slice(-7);
+  if(!dates.length){ el.innerHTML=''; return; }
+  const rows = dates.map(d=>{
+    const a = ms[d] || {}, b = ps[d] || {};
+    return `<div class="mrow" title="histórias · grupos (mediana) · capas sem pauta · emergentes">
+      <span>${d.slice(5)}</span><b>${a.n_stories ?? '—'}</b>
+      <span>${a.median_independent ?? '—'}g</span>
+      <span>${b.unmatched_rate != null ? b.unmatched_rate + '%' : '—'}</span>
+      <span>${b.n_emergent != null ? b.n_emergent + 'e' : '—'}</span>
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="rt">📊 A semana em números</div>
+    <p class="rnote">histórias · grupos (mediana) · capas sem pauta · emergentes</p>
+    ${rows}`;
+}
+
+function renderOpiniao(){
+  const o = (S.data && S.data.opiniao) || {};
+  const grid = $('#opiniaoGrid'), sec = $('#opiniaoSec');
+  if(!grid || !sec) return;
+  const sides = [['L','Esquerda'],['C','Centro'],['R','Direita']];
+  const cards = sides.map(([k,label])=>{
+    const it = (o[k] || [])[0];
+    if(!it) return '';
+    return `<article class="opcard">
+      <span class="bias b${k}">${label}</span>
+      <div class="opsrc">${esc(it.source)}${it.factuality?` · factualidade ${esc(factLabel(it.factuality))}`:''}</div>
+      <h3><a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.title)}</a></h3>
+      <p>${relTime(it.published)} · opinião, não cobertura</p>
+    </article>`;
+  }).filter(Boolean);
+  sec.hidden = !cards.length;
+  grid.innerHTML = cards.join('');
+}
+
 function renderFeed(){
   const d = S.data;
   const hero = $('#heroSec');

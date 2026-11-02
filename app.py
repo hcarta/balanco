@@ -2786,6 +2786,102 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
     return picked
 
 
+# Item 3 do backlog: opinião E/C/D, uma por lado, 3 janelas ao dia.
+OPINION_WINDOWS = (0, 12, 18)
+FACT_RANK = {"very_high": 4, "high": 3, "mixed": 2, "low": 1, "very_low": 0}
+OPINION_SIDE = {"L": ("L", "CL"), "C": ("C",), "R": ("CR", "R")}
+OPINION_FILE = os.path.join(BASE, "state", "opiniao.json")
+
+
+def _article_ts(a: dict) -> float:
+    for k in ("published", "first_seen", "updated"):
+        v = a.get(k)
+        if not v:
+            continue
+        try:
+            return datetime.fromisoformat(
+                str(v).replace("Z", "+00:00")).timestamp()
+        except ValueError:
+            continue
+    try:
+        return float(a.get("ts") or 0)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def _opinion_side(b: str) -> str:
+    for side, buckets in OPINION_SIDE.items():
+        if b in buckets:
+            return side
+    return "C"
+
+
+def build_opiniao(articles, source_meta, now=None, path=None):
+    """3 cartões (Esq./Centro/Dir.), 1 por lado, estáveis dentro da janela.
+
+    A janela troca 3x/dia (00h/12h/18h). Dentro dela, a seleção é persistida
+    em `state/opiniao.json` para não "piscar" a cada rodada de 30 min.
+    """
+    now = now or datetime.now(timezone.utc)
+    idx = max(i for i, h in enumerate(OPINION_WINDOWS) if now.hour >= h)
+    window = f"{now.date().isoformat()}T{OPINION_WINDOWS[idx]:02d}"
+    path = path or OPINION_FILE
+    try:
+        with open(path, encoding="utf-8") as f:
+            saved = json.load(f)
+        if saved.get("window") == window and saved.get("groups"):
+            return saved["groups"]
+    except (FileNotFoundError, ValueError):
+        pass
+    start, end = now.timestamp() - 24 * 3600, now.timestamp()
+    best = {}
+    for a in articles:
+        meta = source_meta.get(a.get("source_id") or "", {}) or {}
+        if piece_kind(a, meta) != "opinion":
+            continue
+        ts = _article_ts(a)
+        if not ts or ts < start or ts > end:
+            continue
+        title = (a.get("title") or "").strip()
+        link = a.get("link") or ""
+        if len(title) < 20 or not link or excluded_title(title):
+            continue
+        bias = float(meta.get("bias", 0) or 0)
+        b = bucket(bias)
+        item = {"source": meta.get("name") or a.get("source_name")
+                or a.get("source_id") or a.get("source", ""),
+                "title": title, "link": link,
+                "published": a.get("published") or a.get("first_seen") or "",
+                "bias": round(bias, 2), "bucket": b,
+                "side": _opinion_side(b),
+                "factuality": meta.get("factuality", ""),
+                "rank": FACT_RANK.get(meta.get("factuality", ""), 0),
+                "ts": ts}
+        sid = item["source"]
+        cur = best.get(sid)
+        if cur is None or (item["rank"], item["ts"]) > (cur["rank"], cur["ts"]):
+            best[sid] = item
+    groups = {"L": [], "C": [], "R": []}
+    used = set()
+    for side in ("L", "C", "R"):
+        pool = [x for x in best.values()
+                if x["side"] == side and x["source"] not in used]
+        pool.sort(key=lambda x: (-x["rank"], -x["ts"]))
+        if pool:
+            item = {k: v for k, v in pool[0].items() if k not in ("rank", "ts")}
+            groups[side].append(item)
+            used.add(pool[0]["source"])
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"window": window, "groups": groups,
+                       "generated_at": now.isoformat()}, f,
+                      ensure_ascii=False, indent=1)
+    except OSError:
+        pass
+    return groups
+
+
 def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=False):
     """Liga cada história a longform (piauí & cia) em duas relações (C-2).
 
@@ -3391,6 +3487,9 @@ def main():
         f"{len(front_unmatched)} sem pauta, "
         f"{len(front_only)} pauta(s) fora do feed, "
         f"{len(pautas_aliases)} alias(es)")
+    opiniao = build_opiniao(articles, source_meta)
+    print(f"[3c/4] opinião: {sum(len(v) for v in opiniao.values())} cartão(ões) "
+          f"(L={len(opiniao['L'])}, C={len(opiniao['C'])}, R={len(opiniao['R'])})")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
@@ -3465,6 +3564,27 @@ def main():
             aliases = set(s.get("aliases") or []) | set(db_aliases.get(s["id"], []))
             if aliases:
                 s["aliases"] = sorted(aliases)
+    # Backlog item 5: métricas por dia, digest semanal e acompanhamento das
+    # pautas de capa (taxa de reconhecimento, emergentes, aliases).
+    from digest import (update_metrics, build_week_digest,
+                        update_pautas_metrics)
+    metrics = update_metrics(stories)
+    n_digest = build_week_digest(stories)
+    heads_total = sum(front_stats.values())
+    pautas_metrics = update_pautas_metrics({
+        "n_heads": heads_total,
+        "n_unmatched": len(front_unmatched),
+        "unmatched_rate": round(100 * len(front_unmatched)
+                                / max(1, heads_total), 1),
+        "n_pautas": len(pautas),
+        "n_emergent": sum(1 for p in pautas if p.get("emergent")),
+        "n_front_only": len(front_only),
+        "n_pauta_stories": sum(p["n_stories"] for p in pautas),
+        "n_aliases": len(pautas_aliases),
+    })
+    print(f"[4a/4] métricas: {metrics['today']['n_stories']} histórias, "
+          f"digest {n_digest} histórias; pautas {pautas_metrics['today']['n_pautas']} "
+          f"({pautas_metrics['today']['unmatched_rate']}% sem pauta)")
     health = store.health() if store is not None else {}
     sources_out = [{**s, "factcheck": leverage.get(s["id"]) or ledger.get(s["id"]),
                     "health": health.get(s["id"])}
@@ -3476,6 +3596,9 @@ def main():
                "sources": sources_out,
                "factchecks": checks[:80],
                "leituras": leituras,
+               "opiniao": opiniao,
+               "metrics": metrics,
+               "pautas_metrics": pautas_metrics,
                "front_only": front_only,
                "front_pautas": pautas,
                "front_pages": front_stats,

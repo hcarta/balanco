@@ -97,3 +97,22 @@ def test_pauta_on_the_fly_fallback():
 def test_pauta_aliases_resolve_old_links():
     assert "pautas_aliases" in HTML
     assert "(S.data.pautas_aliases||{})[key]" in HTML
+
+
+def test_opiniao_section_one_card_per_side():
+    """Item 3: opinião E/C/D, rotulada como opinião e não cobertura."""
+    assert 'id="opiniaoSec"' in HTML
+    assert "function renderOpiniao(" in HTML
+    assert "opinião, não cobertura" in HTML
+    assert ".opgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))" in HTML
+    assert "@media(max-width:720px){.opgrid{grid-template-columns:1fr}}" in HTML
+
+
+def test_metrics_card_and_series():
+    """Item 5: série simples de métricas e pautas no site."""
+    assert 'id="metricsCard"' in HTML
+    assert "function renderMetrics(" in HTML
+    assert "A semana em números" in HTML
+    assert "unmatched_rate" in HTML
+    assert "n_emergent" in HTML
+    assert ".mrow{display:grid" in HTML

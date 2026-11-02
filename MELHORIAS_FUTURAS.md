@@ -113,7 +113,7 @@ por `counts.total` (`docs/index.html:539-547`). Não há controle de ordenação
 
 ---
 
-## 3. Seção de colunas e opinião (esquerda/centro/direita), 3× ao dia
+## 3. Seção de colunas e opinião (esquerda/centro/direita), 3× ao dia — ✅ feito (02/11/2026)
 
 **Objetivo:** complementar as notícias do dia com **uma coluna/opinião de cada
 lado**, atualizada pelo menos 3 vezes ao dia.
@@ -134,6 +134,11 @@ seção dedicada.
 
 **Aceite:** 3 cartões (quando houver peça de cada lado), sem repetir veículo,
 atualizados em 3 janelas; nada disso entra na barra de viés nem no blindspot.
+
+> **Implementado:** `build_opiniao` seleciona 1 peça por lado (L/CL, C, CR/R),
+> dedup por veículo, priorizando factualidade; janelas 00h/12h/18h com seleção
+> persistida em `state/opiniao.json`; seção “Opinião de hoje” no site, rotulada
+> “opinião, não cobertura”. Fora da barra e do blindspot.
 
 **Riscos:** opinião enviesada por definição — deixar claro na UI; não usar para
 “consenso”; evitar clickbait com o mesmo filtro de título.
@@ -174,7 +179,7 @@ cortado; navegação por toque funciona.
 
 ---
 
-## 5. Backlog editorial: notícias da semana como base de métricas
+## 5. Backlog editorial: notícias da semana como base de métricas — ✅ feito (02/11/2026)
 
 **Objetivo:** manter um recorte estruturado das notícias da semana para (a) criar
 métricas de comparação entre edições, (b) gerar resumos automáticos e (c) ligar
@@ -195,6 +200,12 @@ essas notícias às leituras longas com mais precisão.
 
 **Riscos:** custo de armazenamento (usar slim + gzip); resumo automático pode
 errar — rotular como automático e manter link.
+
+> **Implementado:** `digest.py` grava `state/metrics/AAAA-Www.json` (por dia),
+> `state/week_digest.json.gz` (slim, 7 dias, resumo automático) e
+> `state/pautas_metrics.json`; o site mostra “A semana em números” (histórias,
+> grupos medianos, blindspots) e o acompanhamento de capas (sem pauta,
+> emergentes). `python report.py` imprime a série.
 
 ## Ordem sugerida
 
