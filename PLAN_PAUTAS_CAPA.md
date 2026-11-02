@@ -39,6 +39,18 @@ maior, menos dependência de uma única matéria).
 | **P3** | Viés agregado da pauta (cobertura dedup por grupo, barra e blindspot no nível da pauta). | **Concluída** |
 | **P4** | Conceito como rótulo do hub (“Outros ângulos” usa a pauta quando existir). | **Concluída** |
 
+## Chamada e ranking (02/11/2026)
+
+- **Saturação em 3 jornais** (regra 2): `destaque = 0,75·min(jornais/3,1)
+  + 0,15·cobertura + 0,10·recência`. O sinal de capa conta **jornais distintos**
+  (a posição não rebaixa o 3º jornal). Com esses pesos, 3 jornais sempre ficam
+  acima de 2; a cobertura ordena dentro do mesmo nível.
+- **Chamada da pauta**: a manchete de capa mais recente (pelo `updated` da
+  história; empate pela posição) + subtítulo quando a capa expõe (Folha, UOL).
+  Os 4 slots e o banner exibem a chamada, não o título antigo do cluster.
+- Regra 2 também corrigiu "eleições" no plural, que deixava manchetes de
+  midterms fora da pauta.
+
 ## Contexto para o leitor (P2)
 
 - No destaque, `<details>` “Veja também nesta pauta (N)” lista até 4 histórias

@@ -116,6 +116,9 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero-side .hitem:last-child{border-bottom:none}
 .hero-side .hitem h4{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.3;margin:0 0 6px}
 .hero-side .hitem:hover h4{color:var(--accent)}
+.hero-side .hitem h3{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.3;
+  margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hero-side .hitem:hover h3{color:var(--accent)}
 .hero-side .hthumb{width:128px;height:128px;object-fit:cover;border-radius:8px;flex:0 0 auto}
 .hero-side .hsum{font-family:var(--serif);font-size:14px;line-height:1.45;color:var(--muted);margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hero-side .hmeta{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.02em}
@@ -212,6 +215,7 @@ details.pauta .pauta-list a span{display:block;color:var(--faint);font-size:10.5
 .pauta-banner .pb-k{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;color:var(--accent)}
 .pauta-banner h3{font-family:var(--serif);font-size:20px;line-height:1.25;margin:4px 0 2px}
+.pauta-banner .pb-sum{font-family:var(--serif);font-size:14px;line-height:1.45;color:var(--muted);margin:4px 0 0}
 .pauta-banner p{font-family:var(--serif);font-size:13px;color:var(--muted);margin:0}
 .pauta-banner .pb-srcs{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;
   font-family:var(--sans);font-size:10.5px;color:var(--faint)}
@@ -746,6 +750,12 @@ function pautaInfo(s){
   if(!p || n < 2) return null;
   return {key, label: s.pauta || p.label, n, p};
 }
+function pautaOf(s){
+  const key = s && s.pauta_key;
+  if(!key) return null;
+  return ((S.data && S.data.front_pautas) || []).find(x=>x.key===key) || null;
+}
+function callOf(s){ const p = pautaOf(s); return (p && p.call) || null; }
 function pautaLink(s, text){
   const info = pautaInfo(s);
   if(!info) return '';
@@ -772,9 +782,13 @@ function pautaPreview(s){
 function pautaBanner(p, n){
   const srcs = (p.sources || []).slice(0,6).map(x=>
     `<span><b>${esc(x.source)}</b> #${x.position}</span>`).join('');
+  const c = p.call || {};
+  const kick = `Pauta de capa · ${p.n_sources} ${p.n_sources===1?'jornal':'jornais'} de referência`
+    + (c.title ? ` · ${esc(p.label)}` : '');
   return `<div class="pauta-banner">
-    <div class="pb-k">Pauta de capa · ${p.n_sources} ${p.n_sources===1?'jornal':'jornais'} de referência</div>
-    <h3>${esc(p.label)}</h3>
+    <div class="pb-k">${kick}</div>
+    <h3>${esc(c.title || p.label)}</h3>
+    ${c.summary?`<p class="pb-sum">${esc(c.summary)}</p>`:''}
     <p>${n} história${n===1?'':'s'} no feed · ${p.coverage_total} cobertura${p.coverage_total===1?'':'s'}</p>
     ${srcs?`<div class="pb-srcs">${srcs}</div>`:''}
     ${p.pct ? `<div class="pb-bias">
@@ -817,7 +831,7 @@ function renderFeatured(){
   // pauta de capa para preencher os 4 slots (ex.: rodada sem capas).
   const frontStories = [...S.data.stories.filter(s=>(s.front_score||0)>0),
                         ...(S.data.front_only||[])];
-  const distinctTopics = new Set(frontStories.map(s=>s.topic||s.id)).size;
+  const distinctTopics = new Set(frontStories.map(s=>s.pauta_key||s.topic||s.id)).size;
   const stories = distinctTopics >= 4
     ? frontStories
     : [...S.data.stories.filter(s=>s.counts.total>=4), ...frontStories];
@@ -827,7 +841,7 @@ function renderFeatured(){
   // 4 slots com temas distintos: uma pauta não ocupa duas posições
   const picked = [], seen = new Set();
   for(const s of [...stories].sort(byDestaque)){
-    const k = s.topic || s.id;
+    const k = s.pauta_key || s.topic || s.id;
     if(seen.has(k)) continue;
     seen.add(k); picked.push(s);
     if(picked.length >= 4) break;
@@ -845,6 +859,10 @@ function renderFeatured(){
     ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${cov}${frontTag}${pautaTag}</div>`
     : `<div class="kicker">Em foco · ${cov}${frontTag}${pautaTag}</div>`;
   const lead = top.articles[0];
+  const call = callOf(top);
+  const hTitle = call ? call.title : top.title;
+  const hLink = call ? call.link : (top.rep_link || lead.link);
+  const hDek = (call && call.summary) ? call.summary : top.summary;
   const img = storyImg(top);
   const featCons = centerTrusted(top) >= 3
     ? `<span class="badge cons" title="${centerTrusted(top)} veículos de centro com alta factualidade cobrem esta história">✓ Consenso</span>` : '';
@@ -852,8 +870,8 @@ function renderFeatured(){
       ${kick}
       ${img?`<img class="feat-img" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}
       <div class="badges">${checksBadges(top)}${featCons}</div>
-      <h1><a href="${esc(top.rep_link || lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
-      ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
+      <h1><a href="${esc(hLink)}" target="_blank" rel="noopener">${esc(hTitle)}</a></h1>
+      ${hDek?`<p class="dek">${esc(hDek)}</p>`:''}
       ${frontDetails(top)}
       ${pautaPreview(top)}
       ${biasBar(top)}
@@ -864,6 +882,9 @@ function renderFeatured(){
   $('#heroSide').style.display = side.length ? '' : 'none';
   hl.innerHTML = side.map(({s,n})=>{
     const im = storyImg(s);
+    const call = callOf(s);
+    const h3 = call ? call.title : s.title;
+    const hsum = (call && call.summary) ? call.summary : s.summary;
     const bar = `<div class="rail-mini" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>`;
     return `
     <div class="hitem-wrap">
@@ -871,8 +892,8 @@ function renderFeatured(){
         <div class="hrow">
           ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
           <div>
-            <h3>${esc(s.title)}</h3>
-            ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
+            <h3>${esc(h3)}</h3>
+            ${hsum?`<p class="hsum">${esc(hsum)}</p>`:''}
             <div class="hmeta">${s.front_only ? 'pauta de capa' : `${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}`}${frontCount(s)?` · abre em ${frontCount(s)} de 6`:''}</div>
           </div>
         </div>

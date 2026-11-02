@@ -10,7 +10,9 @@
 > `fetch_front_page` lê as capas dos 3 jornais (12 manchetes, UTF-8) e
 > `attach_front_pages` casa por tokens + entidade (≥3 tokens, cobertura ≥0,55,
 > âncora de entidade) e calcula `front`, `front_score` e `destaque`
-> (0,55 capa + 0,30 cobertura + 0,15 recência; 2 jornais saturam o sinal).
+> (0,75 capa + 0,15 cobertura + 0,10 recência; a capa satura em 3 jornais
+distintos — regra 2 de 02/11). A chamada de cada pauta é a manchete de capa mais recente,
+com subtítulo quando a capa expõe.
 > “Em foco” e as 3 laterais passam a usar o destaque; o destaque mostra
 > “Abre em N de 3 jornais” com as manchetes (details).
 > **Limite:** só casa o que está no feed. Capas com pautas fora do feed (ex.:

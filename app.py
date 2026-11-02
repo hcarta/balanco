@@ -682,7 +682,8 @@ FRONT_SKIP = re.compile(
     r"|como rastrear|passo a passo|receitas?\b|chef\b|moqueca|cheesecake"
     r"|\bSUV\b|convers[ií]vel|aston martin|t-cross|creta|aceleramos"
     r"|f[oó]rmula 1|futebol|brasileir[aã]o|libertadores"
-    r"|fantasiar de sem-teto|v[oô]lei|novela|\bbb\b|famosos|celebridades",
+    r"|fantasiar de sem-teto|v[oô]lei|novela|\bbb\b|famosos|celebridades"
+    r"|\bquiz\b|fa[çc]a o teste|teste seus conhecimentos",
     re.I)
 # coluna/blog/opinião/podcast/vídeo pela URL (não só pelo título)
 FRONT_SKIP_URL = re.compile(
@@ -696,14 +697,15 @@ FRONT_SKIP_URL = re.compile(
 # genérico). É um lexicon pequeno, mantível e sem LLM.
 FRONT_CONCEPTS = [
     ("Eleição EUA / Trump", re.compile(
-        r"midterms?|elei[cç][aã]o.{0,40}(eua|estados unidos)|democratas?"
+        r"midterms?|elei[cç][õo]es?.{0,40}(eua|estados unidos)|democratas?"
         r"|congresso dos eua|senado dos eua|\btrump\b|\bmusk\b"
-        r"|votos antecipados|corrida eleitoral|elei[cç][aã]o legislativa", re.I)),
+        r"|votos antecipados|corrida eleitoral|elei[cç][õo]es? legislativ[ao]s?",
+        re.I)),
     ("Lula / juros e economia", re.compile(
         r"\bselic\b|\bdurigan\b|\bcopom\b|\bjuros\b|\bfiscal\b"
         r"|mercado financeiro|lula empodera", re.I)),
     ("Flávio Bolsonaro", re.compile(
-        r"fl[aá]vio bolsonaro|fuga de fl[aá]vio|senadores derrotados", re.I)),
+        r"\bfl[aá]vio\b(?!\s+dino)|senadores derrotados", re.I)),
     ("Reforma eleitoral", re.compile(
         r"reforma eleitoral|puxadores de voto", re.I)),
     ("Tarcísio / Linha 6", re.compile(r"tarc[ií]sio|linha 6", re.I)),
@@ -744,6 +746,32 @@ FRONT_PAGES = {
 }
 
 
+def _front_summary(node, title: str) -> str:
+    """Subtítulo/standfirst da manchete, quando a capa expõe (Folha, UOL…)."""
+    if node is None:
+        return ""
+    low = (title or "").lower()
+    sels = ('p[class*="standfirst"]', 'p[class*="summary"]',
+            'p[class*="resumo"]', 'p[class*="dek"]',
+            'p[class*="description"]')
+    for sel in sels:
+        for p in node.select(sel):
+            txt = re.sub(r"\s+", " ", p.get_text(" ", strip=True))
+            if 30 <= len(txt) <= 300 and txt.lower() != low:
+                return txt
+    par = node.parent
+    for _ in range(3):
+        if par is None:
+            break
+        for el in par.select('[class*="resumo"], [class*="standfirst"], '
+                             '[class*="summary"]'):
+            txt = re.sub(r"\s+", " ", el.get_text(" ", strip=True))
+            if 30 <= len(txt) <= 300 and txt.lower() != low:
+                return txt
+        par = par.parent
+    return ""
+
+
 def _front_items(html_text: str, cfg: dict, limit: int = 10) -> list[dict]:
     from urllib.parse import urljoin
     from bs4 import BeautifulSoup
@@ -764,10 +792,18 @@ def _front_items(html_text: str, cfg: dict, limit: int = 10) -> list[dict]:
         if not link or link.rstrip("/") == cfg["url"].rstrip("/"):
             continue
         seen.add(title)
-        out.append({"title": title, "link": link})
+        out.append({"title": title, "link": link,
+                    "summary": _front_summary(a, title)})
         if len(out) >= limit:
             break
     return out
+
+
+def _norm_link(url: str) -> str:
+    """Link sem esquema/query/fragmento, para casar capa com matérias do feed."""
+    from urllib.parse import urlsplit
+    u = urlsplit(url or "")
+    return f"{u.netloc.lower()}{u.path.rstrip('/')}"
 
 
 def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
@@ -814,8 +850,8 @@ PAUTA_REQUIRE = {
         r"midterm|elei[cç][aã]o|votos? antecipad|democratas?|republicanos?"
         r"|corrida eleitoral|congresso|senado", re.I),
     "Argentina / Milei": re.compile(
-        r"milei|oposi[cç][aã]o|governo|elei[cç][aã]o|diplomat|itamaraty"
-        r"|fl[aá]vio|casa rosada", re.I),
+        r"milei|oposi[cç][aã]o|governo|elei[cç][õo]es?|diplomat|itamaraty"
+        r"|casa rosada", re.I),
 }
 
 # Pertença à pauta: proporção mínima de matérias da história que citam o
@@ -868,7 +904,8 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                 continue
             pos += 1
             heads.append({"source": source, "position": pos,
-                          "title": title, "link": it.get("link", "")})
+                          "title": title, "link": it.get("link", ""),
+                          "summary": it.get("summary", "")})
     for h in heads:
         h["concept"] = next((label for label, rx in FRONT_CONCEPTS
                              if rx.search(h["title"])), None)
@@ -879,6 +916,30 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     toks = {id(s): [(set(tok(a.get("title", ""))),
                      _title_entities(a.get("title", "")))
                     for a in s.get("articles", [])] for s in stories}
+    # Recência por HISTÓRIA (última atualização do cluster), não por
+    # first_seen: senão a manchete "mais recente" vira a matéria que o coletor
+    # viu por último, e não o desenvolvimento mais novo da pauta.
+    ts_by_link = {}
+    for s in stories:
+        iso_upd = s.get("updated") or ""
+        try:
+            sts = datetime.fromisoformat(
+                str(iso_upd).replace("Z", "+00:00")).timestamp() if iso_upd else 0.0
+        except ValueError:
+            sts = 0.0
+        for a in s.get("articles", []):
+            nl = _norm_link(a.get("link", ""))
+            if not nl:
+                continue
+            iso = a.get("published") or a.get("first_seen") or iso_upd
+            try:
+                ats = datetime.fromisoformat(
+                    str(iso).replace("Z", "+00:00")).timestamp() if iso else 0.0
+            except ValueError:
+                ats = 0.0
+            ts = sts or ats
+            if ts and (nl not in ts_by_link or ts > ts_by_link[nl][0]):
+                ts_by_link[nl] = (ts, iso_upd or str(iso))
     for s in stories:
         s["front"] = []
     label_rx = dict(FRONT_CONCEPTS)
@@ -902,17 +963,6 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                 members.append((s, n, round(ratio, 2)))
         members.sort(key=lambda x: (-x[2], -x[1]))
         members_by_label[label] = members
-    # Lead: melhor casamento lexical da capa; sem ele, a história com mais
-    # matérias no tema (assim a pauta ainda entrega contexto ao leitor).
-    leads = {}
-    for label, items in groups.items():
-        members = members_by_label.get(label, [])
-        # o lead sai das histórias confirmadas no tema (nunca de outra pauta)
-        pool = [s for s, _, _ in members] or stories
-        story, score = _theme_story([h["title"] for h in items], pool, toks)
-        if story is None and members:
-            story, score = members[0][0], 0.0
-        leads[label] = (story, score)
     # Cada história pertence a uma só pauta: a de maior suporte no tema.
     assigned = {}
     for label, members in members_by_label.items():
@@ -920,13 +970,22 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             cur = assigned.get(s["id"])
             if cur is None or (ratio, n) > cur[0]:
                 assigned[s["id"]] = ((ratio, n), label)
-    # o lead nunca fica fora da própria pauta
-    for label, (story, _) in leads.items():
-        if story is not None:
-            assigned[story["id"]] = ((1.0, 10 ** 6), label)
     ids_by_label = {}
     for sid, (_, label) in assigned.items():
         ids_by_label.setdefault(label, []).append(sid)
+    by_id = {s["id"]: s for s in stories}
+    support = {s["id"]: (n, ratio) for members in members_by_label.values()
+               for s, n, ratio in members}
+    # Lead: melhor casamento lexical entre as histórias JÁ atribuídas à pauta
+    # (nunca uma história de outra pauta); sem casamento, a de maior suporte.
+    leads = {}
+    for label, items in groups.items():
+        cand = [by_id[i] for i in ids_by_label.get(label, []) if i in by_id]
+        story, score = _theme_story([h["title"] for h in items], cand, toks)
+        if story is None and cand:
+            story = max(cand, key=lambda s: support.get(s["id"], (0, 0)))
+            score = 0.0
+        leads[label] = (story, score)
     pautas, front_only = [], []
     for label, items in groups.items():
         by = {}
@@ -943,7 +1002,8 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                  "best_position": min(e["position"] for e in entries),
                  "sources": [{"source": e["source"],
                               "position": e["position"],
-                              "title": e["title"], "link": e["link"]}
+                              "title": e["title"], "link": e["link"],
+                              "summary": e.get("summary", "")}
                              for e in entries],
                  "front_score": round(w, 2),
                  "story_id": story["id"] if story else None,
@@ -952,12 +1012,27 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                           "position": entries[0]["position"],
                           "title": entries[0]["title"],
                           "link": entries[0]["link"]}}
+        # chamada da pauta: manchete de capa mais recente (pelo timestamp da
+        # matéria no feed); sem timestamp, vale a posição na capa.
+        ranked = sorted(
+            entries,
+            key=lambda e: (-ts_by_link.get(_norm_link(e["link"]), (0.0, ""))[0],
+                           e["position"]))
+        ce = ranked[0]
+        cts, ciso = ts_by_link.get(_norm_link(ce["link"]), (0.0, ""))
+        pauta["call"] = {"source": ce["source"],
+                         "position": ce["position"],
+                         "title": ce["title"],
+                         "summary": ce.get("summary", ""),
+                         "link": ce["link"],
+                         "published": ciso or None}
         if story:
             story["front"] = [{"source": e["source"],
                                "position": e["position"],
                                "headline": e["title"][:140],
                                "match": round(score, 2)} for e in entries]
             story["front_score"] = round(w, 2)
+            story["front_n_sources"] = len(by)
             pauta["coverage"] = story["counts"]["total"]
         else:
             lead = entries[0]
@@ -978,13 +1053,13 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                   "pct": pct, "avg_bias": round(bias, 2),
                   "blindspot": None, "updated": "",
                   "front": pauta["sources"], "front_score": round(w, 2),
+                  "front_n_sources": len(by),
                   "front_only": True, "topic": label,
                   "recent": {"n_6h": 1, "n_24h": 1}}
             pauta["pseudo_id"] = fs["id"]
             pauta["coverage"] = 1
             front_only.append(fs)
         pautas.append(pauta)
-    by_id = {s["id"]: s for s in stories}
     fo_by_id = {fs["id"]: fs for fs in front_only}
     for p in pautas:
         p["n_stories"] = len(p["story_ids"])
@@ -1031,15 +1106,17 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     max_rec = max((s.get("recent", {}).get("n_6h", 0) for s in stories),
                   default=0) or 1
     for s in stories:
-        nf = min(s.get("front_score", 0) / 2.0, 1.0)
+        nsrc = s.get("front_n_sources") or len(s.get("front") or [])
+        nf = min(nsrc / 3.0, 1.0)
         nt = s["counts"]["total"] / max_total
         nr = s.get("recent", {}).get("n_6h", 0) / max_rec
-        s["destaque"] = round(0.55 * nf + 0.30 * nt + 0.15 * nr, 3)
+        s["destaque"] = round(0.75 * nf + 0.15 * nt + 0.10 * nr, 3)
     # destaque das pautas de capa sem história (cobertura = 1)
     for fs in front_only:
-        nf = min(fs["front_score"] / 2.0, 1.0)
-        fs["destaque"] = round(0.55 * nf + 0.30 * (1 / max_total)
-                               + 0.15 * (1 / max_rec), 3)
+        nsrc = fs.get("front_n_sources") or len(fs.get("front") or [])
+        nf = min(nsrc / 3.0, 1.0)
+        fs["destaque"] = round(0.75 * nf + 0.15 * (1 / max_total)
+                               + 0.10 * (1 / max_rec), 3)
     return stories, front_only, pautas
 
 

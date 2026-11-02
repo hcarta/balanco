@@ -1145,11 +1145,15 @@ def test_attach_front_pages_matches_and_scores():
     stories = [
         {"id": "a", "title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
          "articles": [{"title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
-                       "source": "G1"}],
+                       "source": "G1"},
+                      {"title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
+                       "source": "Folha de S.Paulo"}],
          "counts": {"total": 4}, "recent": {"n_6h": 1}},
         {"id": "b", "title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
          "articles": [{"title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
-                       "source": "G1"}],
+                       "source": "G1"},
+                      {"title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+                       "source": "UOL"}],
          "counts": {"total": 10}, "recent": {"n_6h": 0}},
     ]
     desks = {"O Globo": [
@@ -1190,7 +1194,9 @@ def test_front_items_parses_fixture_without_network():
 def test_attach_front_pages_reports_stats_per_source():
     stories = [{"id": "a", "title": "Eleição nos EUA: Musk testa o que pode fazer",
                 "articles": [{"title": "Eleição nos EUA: Musk testa o que pode fazer",
-                              "source": "G1"}],
+                              "source": "G1"},
+                             {"title": "Eleição nos EUA: Musk testa o que pode fazer",
+                              "source": "Folha de S.Paulo"}],
                 "counts": {"total": 2}, "recent": {"n_6h": 1}}]
     desks = {"G1": [{"title": "Eleição nos EUA: Musk testa o que pode fazer",
                      "link": "https://x/1"}],
@@ -1328,3 +1334,116 @@ def test_single_story_pauta_keeps_entity_hub():
                      "link": "https://x/1"}]}
     out, _, _ = app.attach_front_pages([story], desks=desks)
     assert out[0]["hub"] == {"key": "freezers", "label": "Freezers", "size": 2}
+
+
+def test_front_items_extracts_standfirst():
+    html = ('<a href="/pol/x"><h1>Fuga de Flávio Bolsonaro aos EUA leva '
+            'militares a abraçarem Tarcísio</h1>'
+            '<p class="c-main-headline__standfirst">Integrantes das Forças '
+            'Armadas criticam abandono de tropa por senador</p></a>')
+    cfg = {"url": "https://exemplo.com/", "sel": "h1", "kind": "heading"}
+    items = app._front_items(html, cfg)
+    assert items[0]["summary"].startswith("Integrantes das Forças Armadas")
+
+
+def test_front_pauta_call_uses_latest_story_headline():
+    """A chamada é a manchete mais recente, mesmo fora do topo da capa."""
+    def st(sid, title, link, upd):
+        return {"id": sid, "title": title,
+                "articles": [_art(title, "g1", 0.0),
+                             {**_art(title, "folha", 0.0), "link": link}],
+                "counts": {"total": 2}, "recent": {"n_6h": 1},
+                "updated": upd}
+    stories = [
+        st("a", "Irã propõe reabrir Estreito de Ormuz em dois dias",
+           "https://x/old", "2026-11-02T10:00:00+00:00"),
+        st("b", "Líder do Irã ordena resposta sem restrições a ataque",
+           "https://x/new", "2026-11-02T12:00:00+00:00"),
+    ]
+    desks = {"UOL": [{"title": "Irã propõe reabrir Hormuz em dois dias",
+                      "link": "https://x/old", "summary": "antiga"}],
+             "G1": [{"title": "Líder do Irã ordena resposta sem restrições",
+                     "link": "https://x/new", "summary": "nova"}]}
+    _, _, pautas = app.attach_front_pages(stories, desks=desks)
+    p = next(x for x in pautas if x["label"] == "Irã / Hormuz")
+    assert p["call"]["source"] == "G1"      # mais recente, apesar de #2 na capa
+    assert p["call"]["summary"] == "nova"
+
+
+def test_destaque_saturates_front_signal_at_three_journals():
+    """Regra 2: 3 jornais vencem 2 jornais com cluster maior."""
+    a = {"id": "a", "title": "Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+         "articles": [_art("Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+                           "g1", 0.0)] * 3,
+         "counts": {"total": 15}, "recent": {"n_6h": 1},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    b = {"id": "b", "title": "Flávio Bolsonaro utilizou comboio de carros e jatos",
+         "articles": [_art("Flávio Bolsonaro utilizou comboio de carros e jatos",
+                           "folha", 0.0)] * 2,
+         "counts": {"total": 35}, "recent": {"n_6h": 0},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    title_a = "Eleição nos EUA: Musk testa o que meio bilhão pode fazer"
+    title_b = "Flávio Bolsonaro utilizou comboio de carros e jatos"
+    desks = {src: [{"title": title_a, "link": f"https://a/{i}"}]
+             for i, src in enumerate(["O Globo", "G1", "CNN Brasil"])}
+    desks.update({src: [{"title": title_b, "link": f"https://b/{i}"}]
+                  for i, src in enumerate(["Folha de S.Paulo", "UOL"])})
+    out, _, _ = app.attach_front_pages([a, b], desks=desks)
+    by = {s["id"]: s for s in out}
+    assert by["a"]["front_score"] == 3.0 and by["b"]["front_score"] == 2.0
+    assert by["a"]["destaque"] > by["b"]["destaque"]
+
+
+def test_front_saturation_counts_journals_even_at_position_4():
+    """3º jornal em #4 ainda conta como 3º jornal (regra 2)."""
+    a = {"id": "a", "title": "Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+         "articles": [_art("Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+                           "g1", 0.0)] * 3,
+         "counts": {"total": 16}, "recent": {"n_6h": 4},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    b = {"id": "b", "title": "Flávio Bolsonaro utilizou comboio de carros e jatos",
+         "articles": [_art("Flávio Bolsonaro utilizou comboio de carros e jatos",
+                           "folha", 0.0)] * 2,
+         "counts": {"total": 41}, "recent": {"n_6h": 4},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    ta = "Eleição nos EUA: Musk testa o que meio bilhão pode fazer"
+    tb = "Flávio Bolsonaro utilizou comboio de carros e jatos"
+    fill = "Cidade inaugura nova praça no bairro central"
+    desks = {
+        "O Globo": [{"title": ta, "link": "https://a/1"}],
+        "CNN Brasil": [{"title": ta, "link": "https://a/2"}],
+        "G1": [{"title": fill, "link": "https://f/1"},
+               {"title": fill + " dois", "link": "https://f/2"},
+               {"title": fill + " três", "link": "https://f/3"},
+               {"title": ta, "link": "https://a/3"}],
+        "Folha de S.Paulo": [{"title": tb, "link": "https://b/1"}],
+        "UOL": [{"title": tb, "link": "https://b/2"}],
+    }
+    out, _, _ = app.attach_front_pages([a, b], desks=desks)
+    by = {s["id"]: s for s in out}
+    assert by["a"]["front_n_sources"] == 3
+    assert by["a"]["front_score"] == 2.7      # #1 + #1 + #4
+    assert by["a"]["destaque"] > by["b"]["destaque"]
+
+
+def test_three_journals_always_outrank_two_regardless_of_coverage():
+    """Regra 2 calibrada: 3 jornais > 2 jornais, mesmo com 1 cobertura."""
+    a = {"id": "a", "title": "Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+         "articles": [_art("Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+                           "g1", 0.0)] * 3,
+         "counts": {"total": 2}, "recent": {"n_6h": 0},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    b = {"id": "b", "title": "Flávio Bolsonaro utilizou comboio de carros e jatos",
+         "articles": [_art("Flávio Bolsonaro utilizou comboio de carros e jatos",
+                           "folha", 0.0)] * 2,
+         "counts": {"total": 40}, "recent": {"n_6h": 0},
+         "updated": "2026-11-02T12:00:00+00:00"}
+    ta = "Eleição nos EUA: Musk testa o que meio bilhão pode fazer"
+    tb = "Flávio Bolsonaro utilizou comboio de carros e jatos"
+    desks = {src: [{"title": ta, "link": f"https://a/{i}"}]
+             for i, src in enumerate(["O Globo", "G1", "CNN Brasil"])}
+    desks.update({src: [{"title": tb, "link": f"https://b/{i}"}]
+                  for i, src in enumerate(["Folha de S.Paulo", "UOL"])})
+    out, _, _ = app.attach_front_pages([a, b], desks=desks)
+    by = {s["id"]: s for s in out}
+    assert by["a"]["destaque"] > by["b"]["destaque"]

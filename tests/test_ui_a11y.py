@@ -77,3 +77,12 @@ def test_pauta_banner_shows_aggregate_bias():
     assert '${biasBar(p)}' in HTML
     assert "Blindspot da pauta" in HTML
     assert ".pauta-banner .pb-bias{" in HTML
+
+
+def test_pauta_call_shows_latest_front_headline():
+    """Chamada da pauta = manchete de capa mais recente, com subtítulo."""
+    assert "function callOf(" in HTML
+    assert "p.call || {}" in HTML
+    assert "pb-sum" in HTML
+    assert "call.summary" in HTML
+    assert "s.pauta_key||s.topic||s.id" in HTML
