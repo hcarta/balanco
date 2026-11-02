@@ -1156,7 +1156,7 @@ def test_attach_front_pages_matches_and_scores():
         {"title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
          "link": "https://x/1"},
         {"title": "Pauta que não está no feed de notícias", "link": "https://x/2"}]}
-    out, _ = app.attach_front_pages(stories, desks=desks)
+    out, _, _ = app.attach_front_pages(stories, desks=desks)
     assert out[0]["front"] and out[0]["front"][0]["source"] == "O Globo"
     assert out[1]["front"] == []
     assert out[0]["destaque"] > out[1]["destaque"]
@@ -1196,6 +1196,64 @@ def test_attach_front_pages_reports_stats_per_source():
                      "link": "https://x/1"}],
              "UOL": []}
     stats = {}
-    out, _, = app.attach_front_pages(stories, desks=desks, stats=stats)
+    out, _, _ = app.attach_front_pages(stories, desks=desks, stats=stats)
     assert stats == {"G1": 1, "UOL": 0}
     assert out[0]["front_score"] == 1.0
+
+
+def _mk_front_story(sid, title, n_articles, source="G1", total=None):
+    return {"id": sid, "title": title,
+            "articles": [{"title": title, "source": source}
+                         for _ in range(n_articles)],
+            "counts": {"total": total or n_articles},
+            "recent": {"n_6h": 1}}
+
+
+def test_front_pauta_lists_all_feed_stories_of_the_theme():
+    stories = [
+        _mk_front_story("a", "Irã propõe reabrir Estreito de Ormuz em dois dias", 3),
+        _mk_front_story("b", "Líder do Irã ordena resposta sem restrições a ataque", 2),
+        _mk_front_story("c", "Binance sofre ataque hacker de US$ 6,3 bilhões", 4),
+    ]
+    desks = {"UOL": [{"title": "Irã propõe reabrir Hormuz em dois dias",
+                      "link": "https://x/1"}]}
+    out, front_only, pautas = app.attach_front_pages(stories, desks=desks)
+    p = next(x for x in pautas if x["label"] == "Irã / Hormuz")
+    assert set(p["story_ids"]) == {"a", "b"}
+    assert p["n_stories"] == 2
+    assert p["coverage_total"] == 5
+    assert p["lead"]["source"] == "UOL"
+    irã = {s["id"]: s for s in out}
+    assert irã["a"]["pauta"] == "Irã / Hormuz"
+    assert irã["b"]["pauta_n_stories"] == 2
+    assert "pauta" not in irã["c"]  # Binance não entra na pauta do Irã
+    assert front_only == []
+
+
+def test_front_pauta_without_feed_story_becomes_front_only():
+    stories = [_mk_front_story("a", "Binance sofre ataque hacker de US$ 6,3 bilhões", 3)]
+    desks = {"Folha de S.Paulo": [
+        {"title": "Freezers de supermercados são atacados na Europa",
+         "link": "https://x/1"}]}
+    _, front_only, pautas = app.attach_front_pages(stories, desks=desks)
+    p = next(x for x in pautas if x["label"] == "Ataque hacker / freezers")
+    assert p["story_ids"] == []
+    assert p["pseudo_id"].startswith("fp-")
+    assert front_only and front_only[0]["front_only"] is True
+
+
+def test_front_pauta_requires_the_defining_dimension():
+    """Conceito largo ("Trump") não pode arrastar história de outro assunto."""
+    stories = [
+        _mk_front_story(
+            "a", "Eleição nos EUA: Musk testa o que meio bilhão pode fazer", 3),
+        _mk_front_story(
+            "b", "Trump ameaça ataque ao Irã e eleva tensão no Oriente Médio", 3),
+    ]
+    desks = {"G1": [{"title": "Eleição legislativa nos EUA pode tirar força de Trump",
+                     "link": "https://x/1"}]}
+    out, _, pautas = app.attach_front_pages(stories, desks=desks)
+    p = next(x for x in pautas if x["label"] == "Eleição EUA / Trump")
+    assert "a" in p["story_ids"]
+    assert "b" not in p["story_ids"]
+    assert "pauta" not in {s["id"]: s for s in out}["b"]

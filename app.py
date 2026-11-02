@@ -709,13 +709,15 @@ FRONT_CONCEPTS = [
     ("Tarcísio / Linha 6", re.compile(r"tarc[ií]sio|linha 6", re.I)),
     ("Binance", re.compile(r"binance", re.I)),
     ("Ataque hacker / freezers", re.compile(
-        r"hackers?|freezers?|ataque hacker|supermercados.*(ataque|invas)", re.I)),
-    ("Queda de avião", re.compile(r"\bavi[aã]o\b|\bcopiloto\b|\bjato\b",
-                                  re.I)),
+        r"supermercados?[^.]{0,60}freezers?|freezers?[^.]{0,60}supermercados?"
+        r"|freezer[^.]{0,40}(hacker|temperatura|invas)", re.I)),
+    ("Queda de avião", re.compile(
+        r"queda de avi[aã]o|\bavi[aã]o cai|copilota|asa-delta|queda de jato",
+        re.I)),
     ("Inadimplência", re.compile(r"inadimpl[eê]ncia|serasa", re.I)),
     ("Obesidade / SUS", re.compile(r"obes|\bsus\b", re.I)),
     ("Vale-refeição", re.compile(r"vale-refei|vale-alimenta", re.I)),
-    ("Argentina / Milei", re.compile(r"milei|argentin", re.I)),
+    ("Argentina / Milei", re.compile(r"\bmilei\b|argentin", re.I)),
     ("Irã / Hormuz", re.compile(r"\bir[aã]\b|\bhormuz\b|\bormuz\b", re.I)),
 ]
 
@@ -798,6 +800,30 @@ def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
     return out
 
 
+# Pertença à pauta: o lead usa 0,50/0,40 (acima); as demais histórias do
+# feed usam limiar um pouco mais largo para dar contexto sem puxar outro fato.
+PAUTA_COV = 0.45
+PAUTA_COV_ENTITY = 0.35
+
+
+# Refinamento de pertença: o conceito sozinho é largo ("Trump" também
+# aparece em Irã, Groenlândia, jornal). A história precisa citar a dimensão
+# que define a pauta, senão vira "veja também" enganoso.
+PAUTA_REQUIRE = {
+    "Eleição EUA / Trump": re.compile(
+        r"midterm|elei[cç][aã]o|votos? antecipad|democratas?|republicanos?"
+        r"|corrida eleitoral|congresso|senado", re.I),
+    "Argentina / Milei": re.compile(
+        r"milei|oposi[cç][aã]o|governo|elei[cç][aã]o|diplomat|itamaraty"
+        r"|fl[aá]vio|casa rosada", re.I),
+}
+
+# Pertença à pauta: proporção mínima de matérias da história que citam o
+# conceito. Evita que uma matéria lateral arraste um cluster inteiro.
+PAUTA_MIN_RATIO = 0.25
+PAUTA_MIN_ARTS = 2
+
+
 def _theme_story(theme_titles, stories, toks):
     """Melhor história para um tema de capa (títulos + entidades)."""
     best, score = None, 0.0
@@ -822,10 +848,11 @@ def _theme_story(theme_titles, stories, toks):
 
 
 def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
-    """Agenda predominante das capas: conceito -> jornais -> história.
+    """Agenda predominante das capas: conceito -> jornais -> histórias.
 
-    Retorna (stories, front_only). `front_only` são pautas de capa que não
-    existem no feed (1 jornal), para os 4 slots da capa.
+    Retorna (stories, front_only, pautas). `front_only` são pautas de capa
+    que não existem no feed (1 jornal), para os 4 slots da capa; `pautas`
+    liga cada pauta de capa às histórias do feed (P1).
     """
     source_meta = source_meta or {}
     desks = desks if desks is not None else {
@@ -854,6 +881,52 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                     for a in s.get("articles", [])] for s in stories}
     for s in stories:
         s["front"] = []
+    label_rx = dict(FRONT_CONCEPTS)
+    # P1: pertença pelo suporte do conceito nas matérias da história. Um
+    # cluster grande precisa de uma fatia mínima de matérias no tema; uma
+    # matéria lateral sozinha não arrasta o cluster inteiro.
+    members_by_label = {}
+    for label in groups:
+        rx = label_rx[label]
+        req = PAUTA_REQUIRE.get(label)
+        members = []
+        for s in stories:
+            arts = s.get("articles", [])
+            n = sum(1 for a in arts
+                    if rx.search(a.get("title", "") or "")
+                    and (req is None or req.search(a.get("title", "") or "")))
+            if n < PAUTA_MIN_ARTS:
+                continue
+            ratio = n / max(1, len(arts))
+            if ratio >= PAUTA_MIN_RATIO:
+                members.append((s, n, round(ratio, 2)))
+        members.sort(key=lambda x: (-x[2], -x[1]))
+        members_by_label[label] = members
+    # Lead: melhor casamento lexical da capa; sem ele, a história com mais
+    # matérias no tema (assim a pauta ainda entrega contexto ao leitor).
+    leads = {}
+    for label, items in groups.items():
+        members = members_by_label.get(label, [])
+        # o lead sai das histórias confirmadas no tema (nunca de outra pauta)
+        pool = [s for s, _, _ in members] or stories
+        story, score = _theme_story([h["title"] for h in items], pool, toks)
+        if story is None and members:
+            story, score = members[0][0], 0.0
+        leads[label] = (story, score)
+    # Cada história pertence a uma só pauta: a de maior suporte no tema.
+    assigned = {}
+    for label, members in members_by_label.items():
+        for s, n, ratio in members:
+            cur = assigned.get(s["id"])
+            if cur is None or (ratio, n) > cur[0]:
+                assigned[s["id"]] = ((ratio, n), label)
+    # o lead nunca fica fora da própria pauta
+    for label, (story, _) in leads.items():
+        if story is not None:
+            assigned[story["id"]] = ((1.0, 10 ** 6), label)
+    ids_by_label = {}
+    for sid, (_, label) in assigned.items():
+        ids_by_label.setdefault(label, []).append(sid)
     pautas, front_only = [], []
     for label, items in groups.items():
         by = {}
@@ -864,7 +937,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
         entries = sorted(by.values(), key=lambda x: x["position"])
         w = sum(1.0 if e["position"] <= 3 else
                 0.7 if e["position"] <= 8 else 0.4 for e in entries)
-        story, score = _theme_story([h["title"] for h in items], stories, toks)
+        story, score = leads[label]
         key = re.sub(r"\W+", "-", label.lower()).strip("-")
         pauta = {"key": key, "label": label, "n_sources": len(by),
                  "best_position": min(e["position"] for e in entries),
@@ -873,7 +946,12 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                               "title": e["title"], "link": e["link"]}
                              for e in entries],
                  "front_score": round(w, 2),
-                 "story_id": story["id"] if story else None}
+                 "story_id": story["id"] if story else None,
+                 "story_ids": sorted(ids_by_label.get(label, [])),
+                 "lead": {"source": entries[0]["source"],
+                          "position": entries[0]["position"],
+                          "title": entries[0]["title"],
+                          "link": entries[0]["link"]}}
         if story:
             story["front"] = [{"source": e["source"],
                                "position": e["position"],
@@ -906,8 +984,23 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             pauta["coverage"] = 1
             front_only.append(fs)
         pautas.append(pauta)
+    by_id = {s["id"]: s for s in stories}
+    for p in pautas:
+        p["n_stories"] = len(p["story_ids"])
+        p["coverage_total"] = (
+            sum(by_id[i]["counts"]["total"] for i in p["story_ids"]
+                if i in by_id) if p["story_ids"] else p.get("coverage", 1))
     pautas.sort(key=lambda p: (-p["n_sources"], p["best_position"],
-                               -p["coverage"]))
+                               -p["n_stories"], -p["coverage_total"]))
+    # marca cada história com a sua pauta (uma só, a de melhor suporte)
+    for p in pautas:
+        for sid in p["story_ids"]:
+            s = by_id.get(sid)
+            if s is None:
+                continue
+            s["pauta"] = p["label"]
+            s["pauta_key"] = p["key"]
+            s["pauta_n_stories"] = p["n_stories"]
     # destaque das histórias (capa + cobertura + recência)
     for s in stories:
         w = s.get("front_score", 0)
@@ -925,7 +1018,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
         nf = min(fs["front_score"] / 2.0, 1.0)
         fs["destaque"] = round(0.55 * nf + 0.30 * (1 / max_total)
                                + 0.15 * (1 / max_rec), 3)
-    return stories, front_only
+    return stories, front_only, pautas
 
 
 def blindspot_of(l: int, c: int, r: int):
@@ -2739,8 +2832,8 @@ def main():
     stories = attach_hubs(stories)
     source_meta = {s["id"]: s for s in sources}
     front_stats = {}
-    stories, front_only = attach_front_pages(stories, source_meta=source_meta,
-                                             stats=front_stats)
+    stories, front_only, pautas = attach_front_pages(
+        stories, source_meta=source_meta, stats=front_stats)
     print(f"[3b/4] capas: " + ", ".join(
         f"{k} {v}" for k, v in front_stats.items()) +
         f"; {sum(front_stats.values())} manchetes, {len(front_only)} pauta(s) fora do feed")
@@ -2830,6 +2923,7 @@ def main():
                "factchecks": checks[:80],
                "leituras": leituras,
                "front_only": front_only,
+               "front_pautas": pautas,
                "front_pages": front_stats,
                "only_world": world_extra.get("only_world", []),
                "brasil_abroad": world_extra.get("brasil_abroad", []),
