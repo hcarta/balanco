@@ -87,6 +87,18 @@ maior, menos dependência de uma única matéria).
   tema; o hub por entidade continua como fallback fora das pautas e nas
   pautas de uma história só.
 
+## Lexicon: normalização e variantes (02/11/2026)
+
+- `sing_pt`/`norm_tokens`: acento + singularização leve, usadas **só** no
+  casamento de conceitos/pautas (o cluster mantém o token original). Resolve
+  “eleições/eleição”, “aviões/avião”, “militares/militar”, “juros/juro”.
+- `FRONT_CONCEPT_TERMS`: âncoras de paráfrase por pauta (“meio de mandato”,
+  “voto antecipado”, “casa rosada”, “acidente aéreo”…), avaliadas sobre os
+  tokens normalizados.
+- `tests/test_conceitos_variantes.py`: matriz de positivos (plural/paráfrase)
+  e negativos por conceito. Uma mudança no lexicon que quebre uma variante
+  falha no CI — não depende de correção reativa.
+
 ## Riscos
 
 - **Sobre-agregação**: conceitos largos podem juntar assuntos diferentes.

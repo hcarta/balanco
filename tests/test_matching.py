@@ -1447,3 +1447,29 @@ def test_three_journals_always_outrank_two_regardless_of_coverage():
     out, _, _ = app.attach_front_pages([a, b], desks=desks)
     by = {s["id"]: s for s in out}
     assert by["a"]["destaque"] > by["b"]["destaque"]
+
+
+def test_front_pauta_lead_follows_call_story():
+    """A barra/cobertura do slot devem ser da história exibida na chamada."""
+    def st(sid, title, link, upd, total):
+        return {"id": sid, "title": title,
+                "articles": [_art(title, "g1", 0.0),
+                             {**_art(title, "folha", 0.0), "link": link}],
+                "counts": {"total": total}, "recent": {"n_6h": 1},
+                "updated": upd}
+    a = st("a", "Irã propõe reabrir Estreito de Ormuz em dois dias",
+           "https://x/old", "2026-11-02T10:00:00+00:00", 40)
+    b = st("b", "Líder do Irã ordena resposta sem restrições a ataque",
+           "https://x/new", "2026-11-02T12:00:00+00:00", 3)
+    desks = {"UOL": [{"title": "Irã propõe reabrir Hormuz em dois dias",
+                      "link": "https://x/old"}],
+             "G1": [{"title": "Líder do Irã ordena resposta sem restrições",
+                     "link": "https://x/new"}]}
+    out, _, pautas = app.attach_front_pages([a, b], desks=desks)
+    by = {s["id"]: s for s in out}
+    p = next(x for x in pautas if x["label"] == "Irã / Hormuz")
+    assert p["call"]["source"] == "G1"        # mais recente
+    assert p["story_id"] == "b"               # lead = história da chamada
+    assert by["b"]["front_n_sources"] == 2
+    assert by["b"]["front"]
+    assert not by["a"].get("front")

@@ -12,6 +12,7 @@ import math
 import os
 import re
 from collections import Counter
+from functools import lru_cache
 from datetime import datetime, timezone
 
 import numpy as np
@@ -32,6 +33,59 @@ tri trimestre bi bilhão bilhões milhão milhões lucro prejuízo alta queda re
 fake checagem checado""".split())
 
 TOKEN_RE = re.compile(r"[a-zà-ú0-9]+", re.I)
+
+# Normalização para CONCEITOS/PAUTAS (não para o cluster): dobra acentos e
+# singulariza palavras flexionadas. "Eleições"→"eleição", "aviões"→"avião",
+# "militares"→"militar", "juros"→"juro". Nomes próprios plurais são
+# protegidos para não virarem "Estado Unido".
+_FOLD = str.maketrans("áàâãäéèêëíìîïóòôõöúùûüç",
+                      "aaaaaeeeeiiiiooooouuuuc")
+_SING_KEEP = {"estadosunidos", "reinounido"}
+
+
+def _fold(s: str) -> str:
+    return (s or "").lower().translate(_FOLD)
+
+
+def _sing_word(w: str) -> str:
+    if len(w) <= 3 or w in _SING_KEEP:
+        return w
+    if w.endswith("ões"):
+        return w[:-3] + "ão"
+    if w.endswith("ães"):
+        return w[:-3] + "ão"
+    if w.endswith("ais"):
+        return w[:-3] + "al"
+    if w.endswith("éis") or w.endswith("eis"):
+        return w[:-3] + "el"
+    if w.endswith("ses"):
+        return w[:-2]           # países → país
+    if w.endswith("es") and w[-3] in "lrzn":
+        return w[:-2]           # militares → militar
+    if w.endswith("s"):
+        return w[:-1]           # juros → juro
+    return w
+
+
+@lru_cache(maxsize=8192)
+def sing_pt(text: str) -> str:
+    """Sombra singularizada do título (preserva acentos e nomes próprios)."""
+    t = (text or "").lower()
+    t = t.replace("estados unidos", "estadosunidos")
+    t = t.replace("reino unido", "reinounido")
+    out = " ".join(_sing_word(w) for w in TOKEN_RE.findall(t))
+    return out.replace("estadosunidos", "estados unidos") \
+              .replace("reinounido", "reino unido")
+
+
+STOP_FOLD = {_fold(w) for w in STOP}
+
+
+@lru_cache(maxsize=8192)
+def norm_tokens(text: str) -> tuple:
+    """Tokens normalizados para casar âncoras: sem acento, singular, sem stop."""
+    return tuple(w for w in _fold(sing_pt(text)).split()
+                 if len(w) >= 3 and w not in STOP_FOLD)
 
 
 def tok(text: str) -> list[str]:
@@ -697,9 +751,9 @@ FRONT_SKIP_URL = re.compile(
 # genérico). É um lexicon pequeno, mantível e sem LLM.
 FRONT_CONCEPTS = [
     ("Eleição EUA / Trump", re.compile(
-        r"midterms?|elei[cç][õo]es?.{0,40}(eua|estados unidos)|democratas?"
+        r"midterms?|elei[cç][aã]o.{0,40}(eua|estados unidos)|democratas?"
         r"|congresso dos eua|senado dos eua|\btrump\b|\bmusk\b"
-        r"|votos antecipados|corrida eleitoral|elei[cç][õo]es? legislativ[ao]s?",
+        r"|votos antecipados|corrida eleitoral|elei[cç][aã]o legislativa",
         re.I)),
     ("Lula / juros e economia", re.compile(
         r"\bselic\b|\bdurigan\b|\bcopom\b|\bjuros\b|\bfiscal\b"
@@ -722,6 +776,70 @@ FRONT_CONCEPTS = [
     ("Argentina / Milei", re.compile(r"\bmilei\b|argentin", re.I)),
     ("Irã / Hormuz", re.compile(r"\bir[aã]\b|\bhormuz\b|\bormuz\b", re.I)),
 ]
+
+# Âncoras de paráfrase: sinônimos/termos que o regex de frase não cobre.
+# Passam pela mesma normalização (acento + singular) dos títulos.
+FRONT_CONCEPT_TERMS = {
+    "Eleição EUA / Trump": (
+        "midterm", "meio de mandato", "voto antecipado", "corrida eleitoral",
+        "eleicao legislativa", "casa branca", "democrata", "republicano"),
+    "Lula / juros e economia": (
+        "selic", "copom", "durigan", "juro", "taxa de juro",
+        "ajuste fiscal", "mercado financeiro", "banco central"),
+    "Flávio Bolsonaro": (
+        "flavio bolsonaro", "fuga de flavio", "senador derrotado"),
+    "Reforma eleitoral": (
+        "reforma eleitoral", "puxador de voto", "distritao"),
+    "Tarcísio / Linha 6": ("tarcisio", "linha laranja"),
+    "Binance": ("binance",),
+    "Ataque hacker / freezers": ("freezer",),
+    "Queda de avião": (
+        "acidente aereo", "copilota", "asa delta", "aviao caem"),
+    "Inadimplência": ("inadimplencia", "serasa", "negativado"),
+    "Obesidade / SUS": ("obesidade", "bariatrica"),
+    "Vale-refeição": ("vale refeicao", "vale alimentacao"),
+    "Argentina / Milei": ("milei", "casa rosada", "peronismo"),
+    "Irã / Hormuz": ("hormuz", "ormuz", "khamenei", "teera"),
+}
+
+FRONT_CONCEPT_RX = dict(FRONT_CONCEPTS)
+
+
+def _has_term(tokens: tuple, term: str) -> bool:
+    """Âncora (palavra ou expressão) presente nos tokens normalizados."""
+    t = norm_tokens(term)
+    if not t:
+        return False
+    if len(t) == 1:
+        return t[0] in tokens
+    n = len(t)
+    return any(tokens[i:i + n] == t
+               for i in range(max(0, len(tokens) - n + 1)))
+
+
+def _concept_hit(label: str, title: str) -> bool:
+    """O título fala do conceito? regex (original/singular) ou âncora."""
+    rx = FRONT_CONCEPT_RX.get(label)
+    t = title or ""
+    if rx is not None and (rx.search(t) or rx.search(sing_pt(t))):
+        return True
+    nt = norm_tokens(t)
+    return any(_has_term(nt, term)
+               for term in FRONT_CONCEPT_TERMS.get(label, ()))
+
+
+def concept_of(title: str):
+    """Primeiro conceito que casa, na ordem específico→genérico."""
+    sing = sing_pt(title)
+    for label, rx in FRONT_CONCEPTS:
+        if rx.search(title or "") or rx.search(sing):
+            return label
+    nt = norm_tokens(title)
+    for label, _ in FRONT_CONCEPTS:
+        for term in FRONT_CONCEPT_TERMS.get(label, ()):
+            if _has_term(nt, term):
+                return label
+    return None
 
 # Capas dos jornais de referência: peso editorial para o "Em foco".
 # `sel` é o contêiner das manchetes principais; `kind` diz como extrair.
@@ -850,7 +968,7 @@ PAUTA_REQUIRE = {
         r"midterm|elei[cç][aã]o|votos? antecipad|democratas?|republicanos?"
         r"|corrida eleitoral|congresso|senado", re.I),
     "Argentina / Milei": re.compile(
-        r"milei|oposi[cç][aã]o|governo|elei[cç][õo]es?|diplomat|itamaraty"
+        r"milei|oposi[cç][aã]o|governo|elei[cç][aã]o|diplomat|itamaraty"
         r"|casa rosada", re.I),
 }
 
@@ -907,8 +1025,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                           "title": title, "link": it.get("link", ""),
                           "summary": it.get("summary", "")})
     for h in heads:
-        h["concept"] = next((label for label, rx in FRONT_CONCEPTS
-                             if rx.search(h["title"])), None)
+        h["concept"] = concept_of(h["title"])
     groups = {}
     for h in heads:
         if h["concept"]:
@@ -920,6 +1037,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     # first_seen: senão a manchete "mais recente" vira a matéria que o coletor
     # viu por último, e não o desenvolvimento mais novo da pauta.
     ts_by_link = {}
+    link_to_story = {}
     for s in stories:
         iso_upd = s.get("updated") or ""
         try:
@@ -931,6 +1049,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             nl = _norm_link(a.get("link", ""))
             if not nl:
                 continue
+            link_to_story.setdefault(nl, s["id"])
             iso = a.get("published") or a.get("first_seen") or iso_upd
             try:
                 ats = datetime.fromisoformat(
@@ -953,9 +1072,15 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
         members = []
         for s in stories:
             arts = s.get("articles", [])
-            n = sum(1 for a in arts
-                    if rx.search(a.get("title", "") or "")
-                    and (req is None or req.search(a.get("title", "") or "")))
+            n = 0
+            for a in arts:
+                t = a.get("title", "") or ""
+                if not _concept_hit(label, t):
+                    continue
+                if req is not None and not (req.search(t)
+                                            or req.search(sing_pt(t))):
+                    continue
+                n += 1
             if n < PAUTA_MIN_ARTS:
                 continue
             ratio = n / max(1, len(arts))
@@ -981,9 +1106,17 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     leads = {}
     for label, items in groups.items():
         cand = [by_id[i] for i in ids_by_label.get(label, []) if i in by_id]
-        story, score = _theme_story([h["title"] for h in items], cand, toks)
-        if story is None and cand:
-            story = max(cand, key=lambda s: support.get(s["id"], (0, 0)))
+        # o TÍTULO do lead precisa falar da pauta: um cluster que absorveu
+        # matérias do tema por engano não pode representar a chamada.
+        terms_ok = [s for s in cand
+                    if any(_has_term(norm_tokens(s.get("title", "")), term)
+                           for term in FRONT_CONCEPT_TERMS.get(label, ()))]
+        on_topic = terms_ok or [s for s in cand
+                                if _concept_hit(label, s.get("title", ""))]
+        pool = on_topic or cand
+        story, score = _theme_story([h["title"] for h in items], pool, toks)
+        if story is None and pool:
+            story = max(pool, key=lambda s: support.get(s["id"], (0, 0)))
             score = 0.0
         leads[label] = (story, score)
     pautas, front_only = [], []
@@ -996,7 +1129,26 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
         entries = sorted(by.values(), key=lambda x: x["position"])
         w = sum(1.0 if e["position"] <= 3 else
                 0.7 if e["position"] <= 8 else 0.4 for e in entries)
+        # chamada da pauta: manchete de capa mais recente (pelo timestamp da
+        # matéria no feed); sem timestamp, vale a posição na capa.
+        ranked = sorted(
+            entries,
+            key=lambda e: (-ts_by_link.get(_norm_link(e["link"]), (0.0, ""))[0],
+                           e["position"]))
+        ce = ranked[0]
+        cts, ciso = ts_by_link.get(_norm_link(ce["link"]), (0.0, ""))
+        call = {"source": ce["source"],
+                "position": ce["position"],
+                "title": ce["title"],
+                "summary": ce.get("summary", ""),
+                "link": ce["link"],
+                "published": ciso or None}
         story, score = leads[label]
+        # o lead acompanha a chamada: barra de viés e cobertura falam do
+        # mesmo fato que o título exibido.
+        call_sid = link_to_story.get(_norm_link(ce["link"]))
+        if call_sid and call_sid in ids_by_label.get(label, []):
+            story = by_id.get(call_sid, story)
         key = re.sub(r"\W+", "-", label.lower()).strip("-")
         pauta = {"key": key, "label": label, "n_sources": len(by),
                  "best_position": min(e["position"] for e in entries),
@@ -1011,21 +1163,8 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                  "lead": {"source": entries[0]["source"],
                           "position": entries[0]["position"],
                           "title": entries[0]["title"],
-                          "link": entries[0]["link"]}}
-        # chamada da pauta: manchete de capa mais recente (pelo timestamp da
-        # matéria no feed); sem timestamp, vale a posição na capa.
-        ranked = sorted(
-            entries,
-            key=lambda e: (-ts_by_link.get(_norm_link(e["link"]), (0.0, ""))[0],
-                           e["position"]))
-        ce = ranked[0]
-        cts, ciso = ts_by_link.get(_norm_link(ce["link"]), (0.0, ""))
-        pauta["call"] = {"source": ce["source"],
-                         "position": ce["position"],
-                         "title": ce["title"],
-                         "summary": ce.get("summary", ""),
-                         "link": ce["link"],
-                         "published": ciso or None}
+                          "link": entries[0]["link"]},
+                 "call": call}
         if story:
             story["front"] = [{"source": e["source"],
                                "position": e["position"],
