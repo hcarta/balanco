@@ -189,6 +189,10 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .story{display:grid;grid-template-columns:1fr;gap:0;padding:26px 0;border-bottom:1px solid var(--hair)}
 .story:first-of-type{padding-top:0}
 .story .top{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.fronts{margin:0 0 12px;font-family:var(--sans);font-size:11.5px}
+.fronts summary{cursor:pointer;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.fronts .frontrow{margin-top:6px;color:var(--muted);line-height:1.4}
+.fronts .frontrow b{color:var(--ink-soft);font-weight:700}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .badges:empty{display:none}
 .badge{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:4px;display:inline-flex;align-items:center;gap:5px}
@@ -702,16 +706,28 @@ function openFromUrl(){
 }
 
 /* ---------- featured ---------- */
+function frontCount(s){ return (s.front || []).length; }
+function frontDetails(s){
+  const f = s.front || [];
+  if(!f.length) return '';
+  return `<details class="fronts"><summary>Abre em ${f.length} de 3 jornais de referência</summary>
+    ${f.map(x=>`<div class="frontrow"><b>${esc(x.source)}</b> <span>${esc(x.headline)}</span></div>`).join('')}
+  </details>`;
+}
 function renderFeatured(){
   const stories = S.data.stories.filter(s=>s.counts.total>=4);
-  // destaque = a mais repercutida entre os veículos
-  const top = [...stories].sort((a,b)=>b.counts.total-a.counts.total)[0];
+  // destaque = capas dos jornais de referência + repercussão + recência
+  const byDestaque = (a,b)=>(b.destaque||0)-(a.destaque||0)
+    || b.counts.total-a.counts.total;
+  const top = [...stories].sort(byDestaque)[0];
   const el = $('#featured');
   if(!top){ el.innerHTML=''; S.featuredId=null; return; }
   S.featuredId = top.id;
+  const fc = frontCount(top);
+  const frontTag = fc ? ` · abre em ${fc} de 3 jornais` : '';
   const kick = top.blindspot
-    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${covLabel(top)}</div>`
-    : `<div class="kicker">Em foco · ${covLabel(top)}</div>`;
+    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${covLabel(top)}${frontTag}</div>`
+    : `<div class="kicker">Em foco · ${covLabel(top)}${frontTag}</div>`;
   const lead = top.articles[0];
   const img = storyImg(top);
   const featCons = centerTrusted(top) >= 3
@@ -722,14 +738,12 @@ function renderFeatured(){
       <div class="badges">${checksBadges(top)}${featCons}</div>
       <h1><a href="${esc(top.rep_link || lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
+      ${frontDetails(top)}
       ${biasBar(top)}
     </div>`;
   // 3 mais repercutidas no centro (exceto o destaque)
-  const side = stories.filter(s=>s.id!==top.id)
-    .map(s=>({s, n:centerTrusted(s)}))
-    .filter(x=>x.n>=2)
-    .sort((a,b)=>b.n-a.n || b.s.counts.total-a.s.counts.total)
-    .slice(0,3);
+  const side = stories.filter(s=>s.id!==top.id && s.counts.total>=3)
+    .sort(byDestaque).slice(0,3).map(s=>({s, n:centerTrusted(s)}));
   const hl = $('#heroList');
   $('#heroSide').style.display = side.length ? '' : 'none';
   hl.innerHTML = side.map(({s,n})=>{
@@ -742,7 +756,7 @@ function renderFeatured(){
         <div>
           <h3>${esc(s.title)}</h3>
           ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
-          <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}</div>
+          <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}${frontCount(s)?` · abre em ${frontCount(s)} de 3`:''}</div>
         </div>
       </div>
       ${bar}

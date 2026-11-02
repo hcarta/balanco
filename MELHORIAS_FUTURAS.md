@@ -5,7 +5,17 @@
 
 ---
 
-## 1. Hierarquia a partir das primeiras páginas (Estadão, Folha, O Globo)
+## 1. Hierarquia a partir das primeiras páginas (Estadão, Folha, O Globo) — ✅ feito (02/11/2026)
+
+> `fetch_front_page` lê as capas dos 3 jornais (12 manchetes, UTF-8) e
+> `attach_front_pages` casa por tokens + entidade (≥3 tokens, cobertura ≥0,55,
+> âncora de entidade) e calcula `front`, `front_score` e `destaque`
+> (0,55 capa + 0,30 cobertura + 0,15 recência; 2 jornais saturam o sinal).
+> “Em foco” e as 3 laterais passam a usar o destaque; o destaque mostra
+> “Abre em N de 3 jornais” com as manchetes (details).
+> **Limite:** só casa o que está no feed. Capas com pautas fora do feed (ex.:
+> “reforma eleitoral”, “Linha 6”) não casam — para refletir 100% seria preciso
+> coletar os artigos da própria capa.
 
 **Objetivo:** o bloco “Em foco” e as 3 histórias de destaque deixam de ser só
 “maior nº de coberturas” e passam a refletir o que os três jornais de referência

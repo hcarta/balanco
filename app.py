@@ -674,6 +674,112 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False,
     return out
 
 
+# Capas dos jornais de referência: peso editorial para o "Em foco".
+FRONT_PAGES = {
+    "Estadão": {
+        "url": "https://www.estadao.com.br/",
+        "pattern": r'<a[^>]*>\s*<h[123][^>]*>(.*?)</h[123]>',
+    },
+    "Folha de S.Paulo": {
+        "url": "https://www.folha.uol.com.br/",
+        "pattern": r'<a[^>]*>\s*<h[123][^>]*>(.*?)</h[123]>',
+    },
+    "O Globo": {
+        "url": "https://oglobo.globo.com/",
+        "pattern": r'<a[^>]*class="[^"]*highlight__picture-anchor[^"]*"[^>]*>'
+                   r'.*?<h2[^>]*>(.*?)</h2>',
+    },
+}
+
+
+def fetch_front_page(key: str, timeout: int = 20) -> list[str]:
+    """Manchetes da capa do jornal, na ordem (12 primeiras)."""
+    import requests
+    cfg = FRONT_PAGES.get(key)
+    if not cfg:
+        return []
+    try:
+        r = requests.get(cfg["url"], timeout=timeout,
+                         headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
+        html_text = r.content.decode("utf-8", errors="replace")
+        out, seen = [], set()
+        for raw in re.findall(cfg["pattern"], html_text, re.S | re.I):
+            title = re.sub(r"\s+", " ",
+                           html.unescape(re.sub(r"<[^>]+>", " ", raw))).strip()
+            if len(title) < 25 or title in seen:
+                continue
+            seen.add(title)
+            out.append(title)
+            if len(out) >= 12:
+                break
+        return out
+    except Exception:
+        return []
+
+
+def attach_front_pages(stories, desks=None):
+    """Marca cada história com as capas que a abrem e calcula o destaque.
+
+    `desks` permite injetar capas em teste ({jornal: [manchetes]}).
+    """
+    desks = desks if desks is not None else {
+        k: fetch_front_page(k) for k in FRONT_PAGES}
+    toks = {id(s): [(set(tok(a.get("title", ""))),
+                     _title_entities(a.get("title", "")))
+                    for a in s.get("articles", [])] for s in stories}
+    for s in stories:
+        s["front"] = []
+    for source, heads in desks.items():
+        for pos, h in enumerate(heads, 1):
+            ht = set(tok(h))
+            if not ht:
+                continue
+            he = _title_entities(h)
+            best, score = None, 0.0
+            if len(ht) < 4:
+                continue
+            for s in stories:
+                for st, se in toks[id(s)]:
+                    if len(st) < 4:
+                        continue
+                    shared = ht & st
+                    if len(shared) < 3:
+                        continue
+                    cov = len(shared) / max(1, min(len(ht), len(st)))
+                    spec = {e for e in (he & se) if e not in ENTITY_GENERIC}
+                    if cov < 0.55:
+                        continue
+                    # título curto não pode inflar: exige âncora de entidade
+                    if not spec and cov < 0.8:
+                        continue
+                    if cov > score:
+                        best, score = s, cov
+            if best is not None and score >= 0.55:
+                best["front"].append({"source": source, "position": pos,
+                                      "headline": h[:140],
+                                      "match": round(score, 2)})
+    # um registro por veículo (o de melhor posição) e score por posição
+    for s in stories:
+        best = {}
+        for f in s.get("front", []):
+            if f["source"] not in best or f["position"] < best[f["source"]]["position"]:
+                best[f["source"]] = f
+        s["front"] = sorted(best.values(), key=lambda f: f["position"])
+        w = sum(1.0 if f["position"] <= 3 else
+                0.7 if f["position"] <= 8 else 0.4 for f in s["front"])
+        s["front_score"] = round(w, 2)
+    max_total = max((s["counts"]["total"] for s in stories), default=1) or 1
+    max_rec = max((s.get("recent", {}).get("n_6h", 0) for s in stories),
+                  default=0) or 1
+    for s in stories:
+        # 2 jornais abrindo já satura o sinal editorial
+        nf = min(s.get("front_score", 0) / 2.0, 1.0)
+        nt = s["counts"]["total"] / max_total
+        nr = s.get("recent", {}).get("n_6h", 0) / max_rec
+        s["destaque"] = round(0.55 * nf + 0.30 * nt + 0.15 * nr, 3)
+    return stories
+
+
 def blindspot_of(l: int, c: int, r: int):
     """Blindspot na assinatura de 3 blocos (compatibilidade/testes)."""
     return blindspot_of5(l, 0, c, 0, r)
@@ -2483,6 +2589,7 @@ def main():
     n_before = len(stories)
     stories = consolidate(stories, use_embed=args.embed)
     stories = attach_hubs(stories)
+    stories = attach_front_pages(stories)
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")

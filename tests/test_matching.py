@@ -1139,3 +1139,22 @@ def test_service_headline_finados():
         "Como fica o tempo no feriado de Finados?",
         "Finados: aeroportos devem receber 2 milhões no feriado",
     ]) is None
+
+
+def test_attach_front_pages_matches_and_scores():
+    stories = [
+        {"id": "a", "title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
+         "articles": [{"title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
+                       "source": "G1"}],
+         "counts": {"total": 4}, "recent": {"n_6h": 1}},
+        {"id": "b", "title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+         "articles": [{"title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+                       "source": "G1"}],
+         "counts": {"total": 10}, "recent": {"n_6h": 0}},
+    ]
+    desks = {"O Globo": ["Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
+                         "Pauta que não está no feed de notícias"]}
+    out = app.attach_front_pages(stories, desks=desks)
+    assert out[0]["front"] and out[0]["front"][0]["source"] == "O Globo"
+    assert out[1]["front"] == []
+    assert out[0]["destaque"] > out[1]["destaque"]
