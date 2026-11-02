@@ -17,6 +17,11 @@
 > “reforma eleitoral”, “Linha 6”) não casam — para refletir 100% seria preciso
 > coletar os artigos da própria capa.
 
+**Atualização (02/11/2026):** 6 jornais (O Globo, Estadão, Folha, G1, UOL, CNN),
+lexicon de 13 conceitos e `front_only`; a P1 ligou cada pauta às histórias do
+feed (`front_pautas`/`story_ids`/`pauta`) e a P2 expôs “Veja também nesta
+pauta (N)” + filtro do feed. Ver `PLAN_PAUTAS_CAPA.md`.
+
 **Objetivo:** o bloco “Em foco” e as 3 histórias de destaque deixam de ser só
 “maior nº de coberturas” e passam a refletir o que os três jornais de referência
 **abrem na primeira página**, cruzando semelhanças entre eles.
