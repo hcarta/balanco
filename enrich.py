@@ -40,6 +40,7 @@ class _ArticleParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.meta = ""
+        self.author = ""
         self.ld_blocks: list[str] = []
         self.paras: list[str] = []
         self._in_ld = False
@@ -51,8 +52,16 @@ class _ArticleParser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag == "meta" and a.get("name", "").lower() == "description" and not self.meta:
-            self.meta = (a.get("content") or "").strip()[:600]
+        if tag == "meta":
+            key = (a.get("name") or a.get("property") or "").lower()
+            if key == "description" and not self.meta:
+                self.meta = (a.get("content") or "").strip()[:600]
+            if key in {"author", "article:author", "parsely-author",
+                       "sailthru.author", "dc.creator", "cxenseparse:author"} \
+                    and not self.author:
+                val = (a.get("content") or "").strip()
+                if val and not val.lower().startswith("http"):
+                    self.author = val[:120]
         if tag == "script":
             self._in_script = True
             if "ld+json" in (a.get("type") or ""):
@@ -88,6 +97,32 @@ class _ArticleParser(HTMLParser):
 def _clean(text: str) -> str:
     text = re.sub(r"<[^>]+>", " ", text or "")
     return html.unescape(re.sub(r"\s+", " ", text)).strip()
+
+
+def _ld_author(blocks: list[str]) -> str:
+    for b in blocks:
+        try:
+            d = json.loads(b.strip())
+        except Exception:
+            continue
+        items = d if isinstance(d, list) else [d]
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            nodes = [it] + [x for x in it.get("@graph", []) if isinstance(x, dict)]
+            for n in nodes:
+                au = n.get("author")
+                if isinstance(au, dict):
+                    name = au.get("name")
+                    if name:
+                        return _clean(str(name))[:120]
+                elif isinstance(au, list):
+                    for x in au:
+                        if isinstance(x, dict) and x.get("name"):
+                            return _clean(str(x["name"]))[:120]
+                elif isinstance(au, str) and au.strip():
+                    return _clean(au)[:120]
+    return ""
 
 
 def _ld_article_body(blocks: list[str]) -> tuple[str, bool]:
@@ -135,8 +170,10 @@ def parse_article(html_text: str) -> dict:
     soft = any(m in body_low for m in BODY_PAYWALL_MARKS)
     paywalled = ((marked or not free) and len(body) < 500) or \
         (soft and len(body) < 1500)
+    author = _clean(p.author or _ld_author(p.ld_blocks))[:120]
     return {"meta": meta, "body": _clean(body)[:BODY_CAP],
-            "paywalled": paywalled, "method": method or "none"}
+            "paywalled": paywalled, "method": method or "none",
+            "author": author}
 
 
 def _http_get(url: str):
@@ -161,6 +198,17 @@ def fetch_body(url: str, store=None) -> dict:
     return result
 
 
+def fetch_author(url: str, timeout: int = 8) -> str:
+    """Só o autor público da página (meta/JSON-LD), para os cartões de opinião."""
+    try:
+        r = requests.get(url, timeout=timeout, headers={"User-Agent": UA})
+        p = _ArticleParser()
+        p.feed(r.text or "")
+        return _clean(p.author or _ld_author(p.ld_blocks))[:120]
+    except Exception:
+        return ""
+
+
 def _use_result(a: dict, r: dict) -> tuple[int, int, int]:
     """Aplica meta/corpo ao artigo. Retorna (filled, bodies, paywalled)."""
     paywalled = 1 if r.get("paywalled") else 0
@@ -172,6 +220,8 @@ def _use_result(a: dict, r: dict) -> tuple[int, int, int]:
         if text:
             a["summary"] = re.sub(r"\s+", " ", text).strip()[:600]
             filled = 1
+    if not a.get("author") and r.get("author"):
+        a["author"] = r["author"]
     return filled, bodies, paywalled
 
 

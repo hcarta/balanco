@@ -2820,11 +2820,53 @@ def _opinion_side(b: str) -> str:
     return "C"
 
 
-def build_opiniao(articles, source_meta, now=None, path=None):
-    """3 cartões (Esq./Centro/Dir.), 1 por lado, estáveis dentro da janela.
+def _opinion_author(a, meta):
+    """Autor da coluna: meta/campo, slug do blog ou prefixo do título."""
+    v = (a.get("author") or "").strip()
+    if v:
+        return v[:80]
+    url = a.get("link") or ""
+    m = re.search(r"/(?:blogs?|colunas|colunistas)/([^/?#]+)", url)
+    if m and "-" in m.group(1):
+        return " ".join(w.capitalize() for w in m.group(1).split("-")
+                        if w)[:80]
+    title = a.get("title") or ""
+    m = re.match(r"^([A-ZÀ-Ú][\wÀ-ú]+(?:\s+[A-ZÀ-Ú][\wÀ-ú]+){1,3})\s*:",
+                 title)
+    if m:
+        return m.group(1)[:80]
+    return ""
 
-    A janela troca 3x/dia (00h/12h/18h). Dentro dela, a seleção é persistida
-    em `state/opiniao.json` para não "piscar" a cada rodada de 30 min.
+
+def _pick_opinions(best, limit=5):
+    """Até 5 colunas: sem repetir veículo e no máximo 2 por lado."""
+    pool = sorted(best.values(), key=lambda x: (-x["rank"], -x["ts"]))
+    picked, used, per = [], set(), {"L": 0, "C": 0, "R": 0}
+    for x in pool:
+        if x["source"] in used or per[x["side"]] >= 2:
+            continue
+        picked.append(x)
+        used.add(x["source"])
+        per[x["side"]] += 1
+        if len(picked) >= limit:
+            break
+    for x in pool:
+        if len(picked) >= limit:
+            break
+        if x["source"] in used:
+            continue
+        picked.append(x)
+        used.add(x["source"])
+    picked.sort(key=lambda x: (-x["rank"], -x["ts"]))
+    return picked
+
+
+def build_opiniao(articles, source_meta, now=None, path=None,
+                  fetch_missing=True):
+    """5 colunas de opinião, estáveis dentro da janela (00h/12h/18h).
+
+    Sem rótulo Esq./Centro/Dir.: o cartão mostra o autor, colorido pelo viés
+    da publicação. A seleção fica em `state/opiniao.json` para não "piscar".
     """
     now = now or datetime.now(timezone.utc)
     idx = max(i for i, h in enumerate(OPINION_WINDOWS) if now.hour >= h)
@@ -2833,8 +2875,8 @@ def build_opiniao(articles, source_meta, now=None, path=None):
     try:
         with open(path, encoding="utf-8") as f:
             saved = json.load(f)
-        if saved.get("window") == window and saved.get("groups"):
-            return saved["groups"]
+        if saved.get("window") == window and saved.get("items"):
+            return {"window": window, "items": saved["items"]}
     except (FileNotFoundError, ValueError):
         pass
     start, end = now.timestamp() - 24 * 3600, now.timestamp()
@@ -2854,6 +2896,7 @@ def build_opiniao(articles, source_meta, now=None, path=None):
         b = bucket(bias)
         item = {"source": meta.get("name") or a.get("source_name")
                 or a.get("source_id") or a.get("source", ""),
+                "author": _opinion_author(a, meta),
                 "title": title, "link": link,
                 "published": a.get("published") or a.get("first_seen") or "",
                 "bias": round(bias, 2), "bucket": b,
@@ -2865,25 +2908,26 @@ def build_opiniao(articles, source_meta, now=None, path=None):
         cur = best.get(sid)
         if cur is None or (item["rank"], item["ts"]) > (cur["rank"], cur["ts"]):
             best[sid] = item
-    groups = {"L": [], "C": [], "R": []}
-    used = set()
-    for side in ("L", "C", "R"):
-        pool = [x for x in best.values()
-                if x["side"] == side and x["source"] not in used]
-        pool.sort(key=lambda x: (-x["rank"], -x["ts"]))
-        if pool:
-            item = {k: v for k, v in pool[0].items() if k not in ("rank", "ts")}
-            groups[side].append(item)
-            used.add(pool[0]["source"])
+    picked = _pick_opinions(best, limit=5)
+    if fetch_missing:
+        from enrich import fetch_author
+        for it in picked:
+            if not it["author"]:
+                it["author"] = fetch_author(it["link"])
+    for it in picked:
+        if not it["author"]:
+            it["author"] = it["source"]
+    items = [{k: v for k, v in x.items() if k not in ("rank", "ts")}
+             for x in picked]
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
-            json.dump({"window": window, "groups": groups,
+            json.dump({"window": window, "items": items,
                        "generated_at": now.isoformat()}, f,
                       ensure_ascii=False, indent=1)
     except OSError:
         pass
-    return groups
+    return {"window": window, "items": items}
 
 
 def attach_longreads(stories, articles, longform_ids, per_story=3, use_embed=False):
@@ -3493,8 +3537,7 @@ def main():
         f"{len(front_only)} pauta(s) fora do feed, "
         f"{len(pautas_aliases)} alias(es)")
     opiniao = build_opiniao(articles, source_meta)
-    print(f"[3c/4] opinião: {sum(len(v) for v in opiniao.values())} cartão(ões) "
-          f"(L={len(opiniao['L'])}, C={len(opiniao['C'])}, R={len(opiniao['R'])})")
+    print(f"[3c/4] opinião: {len(opiniao['items'])} coluna(s)")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")

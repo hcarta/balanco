@@ -105,8 +105,11 @@ def test_opiniao_section_one_card_per_side():
     assert "function renderOpiniao(" in HTML
     assert "opinião, não cobertura" in HTML
     assert 'href="#opiniaoSec"' in HTML
-    assert ".opgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))" in HTML
+    assert ".opgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))" in HTML
     assert "@media(max-width:720px){.opgrid{grid-template-columns:1fr}}" in HTML
+    assert "opauthor" in HTML
+    assert "border-top-color" in HTML
+    assert "['L','Esquerda']" not in HTML
 
 
 def test_metrics_card_and_series():
