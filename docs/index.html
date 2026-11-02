@@ -621,7 +621,7 @@ function baseOrder(list){
 
 async function load(){
   try{
-    const r = await fetch('data.json',{cache:'no-store'});
+    const r = await fetch('data.json?_=' + Date.now(),{cache:'no-store'});
     S.data = await r.json();
   }catch(e){
     $('#feed').innerHTML = '<div class="empty">Não encontrei <b>data.json</b>. Rode <b>python app.py --no-llm</b> no terminal e recarregue.</div>';
