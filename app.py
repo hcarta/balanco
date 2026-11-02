@@ -1401,6 +1401,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
         ids_by_em.setdefault(gi, []).append(sid)
     used_keys = {p["key"] for p in pautas}
     aliases = {}
+    reused = 0
     for gi, g in enumerate(em_groups):
         by = {}
         for h in g:
@@ -1418,6 +1419,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
             label, key = ov["label"], ov["key"]
         elif prev and prev_sc >= 0.5 and prev.get("key") not in used_keys:
             key, label = prev["key"], prev["label"]
+            reused += 1
         else:
             label, key = _emergent_label(g)
         base, n = key, 2
@@ -1503,8 +1505,10 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
             pauta["coverage"] = 1
             front_only.append(fs)
         pautas.append(pauta)
-    if stats is not None and aliases:
-        stats["aliases"] = aliases
+    if stats is not None:
+        stats["reused"] = reused
+        if aliases:
+            stats["aliases"] = aliases
     fo_by_id = {fs["id"]: fs for fs in front_only}
     for p in pautas:
         p["n_stories"] = len(p["story_ids"])
@@ -3480,6 +3484,7 @@ def main():
         previous_pautas=previous_pautas, use_embed=args.pautas_emb)
     front_unmatched = front_stats.pop("unmatched", [])
     pautas_aliases = front_stats.pop("aliases", {})
+    pautas_reused = front_stats.pop("reused", 0)
     save_pautas_snapshot(pautas)
     print(f"[3b/4] capas: " + ", ".join(
         f"{k} {v}" for k, v in front_stats.items()) +
@@ -3578,6 +3583,9 @@ def main():
                                 / max(1, heads_total), 1),
         "n_pautas": len(pautas),
         "n_emergent": sum(1 for p in pautas if p.get("emergent")),
+        "n_reused": pautas_reused,
+        "n_new_keys": sum(1 for p in pautas if p.get("emergent"))
+                      - pautas_reused,
         "n_front_only": len(front_only),
         "n_pauta_stories": sum(p["n_stories"] for p in pautas),
         "n_aliases": len(pautas_aliases),

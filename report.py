@@ -42,8 +42,8 @@ def main(argv):
                           "pautas": [p[d] for d in dates if d in p]},
                          ensure_ascii=False, indent=1))
         return 0
-    print("Data       Histórias  Grupos  Blind  Longas  Sem pauta  Emerg  Pautas")
-    print("---------  ---------  ------  -----  ------  ---------  -----  ------")
+    print("Data       Histórias  Grupos  Blind  Longas  Sem pauta  Emerg  Reus  Pautas")
+    print("---------  ---------  ------  -----  ------  ---------  -----  ----  ------")
     for d in dates:
         a, b = m.get(d, {}), p.get(d, {})
         print(f"{d}  {a.get('n_stories', '—'):>9}  "
@@ -52,6 +52,7 @@ def main(argv):
               f"{a.get('pct_longread', '—'):>5}%  "
               f"{b.get('unmatched_rate', '—'):>8}%  "
               f"{b.get('n_emergent', '—'):>5}  "
+              f"{b.get('n_reused', '—'):>4}  "
               f"{b.get('n_pautas', '—'):>6}")
     return 0
 

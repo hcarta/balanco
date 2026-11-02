@@ -1551,11 +1551,13 @@ def test_emergent_key_reuses_previous_snapshot():
         "a", "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas", 2)]
     prev = [{"key": "enchente-2026", "label": "Enchente SC",
              "links": ["https://x/1", "https://x/2"]}]
+    stats = {}
     _, _, pautas = app.attach_front_pages(
-        stories, desks=_em_desks(), previous_pautas=prev)
+        stories, desks=_em_desks(), previous_pautas=prev, stats=stats)
     em = [p for p in pautas if p.get("emergent")][0]
     assert em["key"] == "enchente-2026"
     assert em["label"] == "Enchente SC"
+    assert stats["reused"] == 1
 
 
 def test_emergent_pauta_uses_embeddings_when_lexical_fails(monkeypatch):
