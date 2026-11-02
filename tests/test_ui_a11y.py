@@ -86,3 +86,9 @@ def test_pauta_call_shows_latest_front_headline():
     assert "pb-sum" in HTML
     assert "call.summary" in HTML
     assert "s.pauta_key||s.topic||s.id" in HTML
+
+
+def test_pauta_on_the_fly_fallback():
+    """Pauta nova sem conceito não pode sumir do topo (fase 0)."""
+    assert "bestOther" in HTML
+    assert "!s.pauta_key" in HTML

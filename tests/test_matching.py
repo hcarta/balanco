@@ -1203,7 +1203,8 @@ def test_attach_front_pages_reports_stats_per_source():
              "UOL": []}
     stats = {}
     out, _, _ = app.attach_front_pages(stories, desks=desks, stats=stats)
-    assert stats == {"G1": 1, "UOL": 0}
+    assert stats["G1"] == 1 and stats["UOL"] == 0
+    assert stats["unmatched"] == []
     assert out[0]["front_score"] == 1.0
 
 
@@ -1473,3 +1474,14 @@ def test_front_pauta_lead_follows_call_story():
     assert by["b"]["front_n_sources"] == 2
     assert by["b"]["front"]
     assert not by["a"].get("front")
+
+
+def test_front_unmatched_reports_headlines_without_concept():
+    stories = [_mk_front_story("a", "Binance sofre ataque hacker de US$ 6,3 bilhões", 2)]
+    desks = {"Folha de S.Paulo": [
+        {"title": "Prefeitura inaugura um centro de reciclagem na zona sul",
+         "link": "https://x/9"}]}
+    stats = {}
+    app.attach_front_pages(stories, desks=desks, stats=stats)
+    assert stats["unmatched"] and stats["unmatched"][0]["source"] == "Folha de S.Paulo"
+    assert "reciclagem" in stats["unmatched"][0]["title"]

@@ -846,6 +846,19 @@ function renderFeatured(){
     seen.add(k); picked.push(s);
     if(picked.length >= 4) break;
   }
+  // Pautas on-the-fly (fase 0): a maior história SEM pauta de capa — uma pauta
+  // nova que o lexicon ainda não reconhece — entra nos slots se for mais forte
+  // que o 4º, para não sumir do topo quando as capas mudarem.
+  const capaIds = new Set(frontStories.map(s=>s.id));
+  const bestOther = [...S.data.stories]
+    .filter(s=>!capaIds.has(s.id) && !s.pauta_key && (s.counts.total||0)>=4)
+    .sort(byDestaque)[0];
+  if(bestOther && picked.length >= 4
+     && (bestOther.destaque||0) > (picked[3].destaque||0)){
+    picked.push(bestOther);
+    picked.sort(byDestaque);
+    picked.length = 4;
+  }
   const top = picked[0];
   const el = $('#featured');
   if(!top){ el.innerHTML=''; S.featuredId=null; return; }

@@ -1026,6 +1026,11 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                           "summary": it.get("summary", "")})
     for h in heads:
         h["concept"] = concept_of(h["title"])
+    if stats is not None:
+        stats["unmatched"] = [
+            {"source": h["source"], "position": h["position"],
+             "title": h["title"], "link": h["link"]}
+            for h in heads if not h["concept"]]
     groups = {}
     for h in heads:
         if h["concept"]:
@@ -3072,9 +3077,12 @@ def main():
     front_stats = {}
     stories, front_only, pautas = attach_front_pages(
         stories, source_meta=source_meta, stats=front_stats)
+    front_unmatched = front_stats.pop("unmatched", [])
     print(f"[3b/4] capas: " + ", ".join(
         f"{k} {v}" for k, v in front_stats.items()) +
-        f"; {sum(front_stats.values())} manchetes, {len(front_only)} pauta(s) fora do feed")
+        f"; {sum(front_stats.values())} manchetes, "
+        f"{len(front_unmatched)} sem pauta, "
+        f"{len(front_only)} pauta(s) fora do feed")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
@@ -3163,6 +3171,7 @@ def main():
                "front_only": front_only,
                "front_pautas": pautas,
                "front_pages": front_stats,
+               "front_unmatched": front_unmatched,
                "only_world": world_extra.get("only_world", []),
                "brasil_abroad": world_extra.get("brasil_abroad", []),
                "stories": stories}
