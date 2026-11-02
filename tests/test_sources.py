@@ -63,3 +63,24 @@ def test_all_sources_have_factuality_rationale():
     got = Counter(s["factuality"] for s in srcs)
     assert set(got) <= {"very_high", "high", "mixed", "low", "very_low"}
     assert "very_low" not in got, "very_low exigiria evidência de desinformação sistemática"
+
+
+def test_validate_sources_catches_missing_and_bad_values():
+    import app
+    ok = [{"id": "a", "name": "A", "rss": "https://a/rss", "bias": 0.5,
+           "factuality": "high"}]
+    assert app.validate_sources(ok) == []
+    bad = [
+        {"id": "a", "name": "A", "rss": "https://a", "bias": 5,
+         "factuality": "alta"},
+        {"id": "a", "name": "", "bias": 0.0, "factuality": "high"},
+        {"id": "b", "name": "B", "rss": "https://b", "bias": 0,
+         "factuality": "high", "fetcher": "ftp"},
+    ]
+    errs = app.validate_sources(bad)
+    joined = " | ".join(errs)
+    assert "bias 5.0 fora" in joined
+    assert "factuality inválida" in joined
+    assert "id duplicado" in joined
+    assert "nome ausente" in joined
+    assert "fetcher inválido" in joined

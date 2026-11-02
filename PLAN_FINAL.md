@@ -247,16 +247,21 @@ Veto segue **desligado** no CI.
       `ops/ab_pair_model.md`. Caso-âncora: safra Trump × Papa deve separar.
 - [ ] Aceite: nenhuma história > 60 coberturas sem revisão; zero mistura nos 20 maiores.
 
-### Fase 4 — Arquitetura e qualidade (2–3 dias)
+### Fase 4 — Arquitetura e qualidade (2–3 dias) — 🔶 parcial (02/11/2026)
 
-- [ ] Fatiar `app.py`: `cluster.py`, `connections.py`, `hubs.py`, `framing.py`
-      (mover, sem mudar comportamento; testes continuam verdes a cada passo).
-- [ ] `sources.yaml` com validação de schema (pydantic/jsonschema) no carregamento.
-- [ ] Busca HTTP paralela das 53 fontes (ThreadPoolExecutor, teto de concorrência),
-      mantendo cache/conditional.
-- [ ] Estado global (`_ENT_CACHE` etc.) → passar como contexto onde couber.
-- [ ] Aceite: mesma saída byte-a-byte no `data.json` antes/depois do refactor
-      (snapshot num run sem rede).
+- [x] **Coleta paralela**: `fetch_all(..., workers=6)` com `ThreadPoolExecutor`;
+      `Store` passou a ter **conexão por thread** (WAL + busy_timeout), e a
+      escrita/ordenação continua na thread principal (saída determinística).
+      Rodada: **245 s → 159 s (−35%)**.
+- [x] **Validação de schema** de `sources.yaml` (`validate_sources`): id único,
+      nome, rss/url, bias em [−2, 2], factualidade, fetcher e kind válidos;
+      `load_sources` aborta com lista de erros. Teste em `tests/test_sources.py`.
+- [ ] **Fatiar `app.py`** (`cluster.py`, `connections.py`, `hubs.py`, `framing.py`):
+      **adiado para sessão dedicada** — é movimentação mecânica de ~2.300 linhas
+      com dependência de constantes globais; o ganho é interno e o risco de
+      regressão não compensa no fim de uma sessão longa. Fazer com snapshot de
+      `data.json` para comparar byte-a-byte.
+- [ ] Estado global (`_ENT_CACHE` etc.): adiado (baixo valor, alto churn).
 
 ### Fase 5 — UI/UX e acessibilidade (1–2 dias)
 

@@ -42,21 +42,88 @@ def tok(text: str) -> list[str]:
     return out
 
 
+FACTUALITY_LEVELS = {"very_high", "high", "mixed", "low", "very_low"}
+FETCHERS = {"rss", "sitemap"}
+KINDS = {"br", "intl"}
+
+
+def validate_sources(sources) -> list[str]:
+    """Validação de schema de `sources.yaml` (Fase 4). Retorna erros."""
+    errs, ids = [], set()
+    if not isinstance(sources, list) or not sources:
+        return ["sources.yaml: lista vazia ou inválida"]
+    for i, s in enumerate(sources):
+        where = f"fonte #{i} ({s.get('id', '?')})"
+        if not isinstance(s, dict):
+            errs.append(f"{where}: não é um mapa")
+            continue
+        sid = s.get("id")
+        if not sid or not isinstance(sid, str):
+            errs.append(f"{where}: id ausente")
+        elif sid in ids:
+            errs.append(f"{where}: id duplicado")
+        else:
+            ids.add(sid)
+        if not s.get("name"):
+            errs.append(f"{where}: nome ausente")
+        if not (s.get("rss") or s.get("url")):
+            errs.append(f"{where}: rss/url ausente")
+        try:
+            b = float(s.get("bias", 0))
+        except (TypeError, ValueError):
+            errs.append(f"{where}: bias não numérico")
+        else:
+            if not (-2.0 <= b <= 2.0):
+                errs.append(f"{where}: bias {b} fora de [-2, 2]")
+        if s.get("factuality") not in FACTUALITY_LEVELS:
+            errs.append(f"{where}: factuality inválida "
+                        f"({s.get('factuality')!r})")
+        if s.get("fetcher", "rss") not in FETCHERS:
+            errs.append(f"{where}: fetcher inválido ({s.get('fetcher')!r})")
+        if s.get("kind", "br") not in KINDS:
+            errs.append(f"{where}: kind inválido ({s.get('kind')!r})")
+    return errs
+
+
 def load_sources(path):
     with open(path, encoding="utf-8") as f:
-        return yaml.safe_load(f)["sources"]
+        sources = yaml.safe_load(f)["sources"]
+    errs = validate_sources(sources)
+    if errs:
+        raise ValueError("sources.yaml inválido:\n  " + "\n  ".join(errs))
+    return sources
 
 
-def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts=""):
+def fetch_all(sources, per_feed=30, store=None, window_h=72, run_ts="",
+              workers=6):
+    from concurrent.futures import ThreadPoolExecutor
     from collectors import collect_one
     from store import PER_SOURCE_CAP
 
     articles = []
     n_ok, n_err, n_new, n_dropped = 0, 0, 0, 0
-    for s in sources:
+
+    # Fase 4: coleta em paralelo por fonte; o processamento e a escrita do
+    # cache ficam na thread principal, na ordem original das fontes, para a
+    # saída continuar determinística.
+    def _collect(s):
         try:
-            fresh, hs = collect_one(s, limit=per_feed if store is None else 2000,
-                                    store=store)
+            return (s, collect_one(s, limit=per_feed if store is None else 2000,
+                                   store=store), None)
+        except Exception as ex:  # noqa: BLE001 - devolve o erro para o laço
+            return (s, (None, None), ex)
+
+    if workers and len(sources) > 1:
+        with ThreadPoolExecutor(max_workers=min(workers, len(sources))) as ex:
+            results = list(ex.map(_collect, sources))
+    else:
+        results = [_collect(s) for s in sources]
+
+    for s, payload, col_err in results:
+        try:
+            if col_err is not None:
+                raise col_err
+            fresh, hs = payload
             kept = [a for a in fresh
                     if not excluded_section(a.get("section"))
                     and not excluded_title(a.get("title"))]

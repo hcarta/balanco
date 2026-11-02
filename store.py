@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import os
 import sqlite3
+import threading
 from datetime import datetime, timezone
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -108,13 +109,31 @@ def _now_iso() -> str:
 class Store:
     def __init__(self, path: str = DEFAULT_DB):
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        self.db = sqlite3.connect(path, timeout=10)
-        self.db.execute("PRAGMA journal_mode=WAL")
-        self.db.execute("PRAGMA busy_timeout=5000")
-        self.db.executescript(SCHEMA)
-        cols = {r[1] for r in self.db.execute("PRAGMA table_info(fetches)")}
-        if "n_window" not in cols:  # migração aditiva (F-01)
-            self.db.execute("ALTER TABLE fetches ADD COLUMN n_window INTEGER DEFAULT 0")
+        self._path = path
+        self._local = threading.local()
+        # toca a conexão da thread principal (cria schema/migração)
+        self.db
+
+    def _conn(self):
+        """Conexão por thread (coleta paralela sem cruzar cursores)."""
+        conn = getattr(self._local, "conn", None)
+        if conn is None:
+            conn = sqlite3.connect(self._path, timeout=10,
+                                   check_same_thread=False)
+            conn.execute("PRAGMA journal_mode=WAL")
+            conn.execute("PRAGMA busy_timeout=5000")
+            conn.executescript(SCHEMA)
+            cols = {r[1] for r in conn.execute("PRAGMA table_info(fetches)")}
+            if "n_window" not in cols:  # migração aditiva (F-01)
+                conn.execute("ALTER TABLE fetches ADD COLUMN n_window"
+                             " INTEGER DEFAULT 0")
+            conn.commit()
+            self._local.conn = conn
+        return conn
+
+    @property
+    def db(self):
+        return self._conn()
 
     # ── HTTP condicional ──
     def cond_headers(self, url: str) -> dict:
