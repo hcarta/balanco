@@ -189,7 +189,8 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 
 /* bias bar */
 .biasrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:var(--C-bg);flex:1;min-width:180px;max-width:440px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
+.bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:var(--C-bg);width:240px;flex:0 0 240px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
+@media(max-width:520px){.bar{width:100%;flex:1 1 auto;min-width:160px}}
 .bar span{height:100%;transition:width .5s ease}
 .bar .bL{background:var(--L)}.bar .bCL{background:var(--CL)}.bar .bC{background:var(--C)}.bar .bCR{background:var(--CR)}.bar .bR{background:var(--R)}
 .biaslegend{display:flex;gap:14px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
@@ -397,8 +398,8 @@ footer a.fl:hover{color:var(--accent)}
   <div class="links">
     <button class="pill on" data-f="all">Todas as histórias</button>
     <button class="pill" data-f="blind">⚡ Blindspots</button>
-    <button class="pill" data-f="L">+ Esquerda</button>
-    <button class="pill" data-f="R">+ Direita</button>
+    <button class="pill" data-f="L">+ Esq.</button>
+    <button class="pill" data-f="R">+ Dir.</button>
     <button class="pill" data-f="div">Mais divididas</button>
     <a class="pill" href="leituras.html">📚 Leituras</a>
     <a class="pill" href="como-lemos.html">ⓘ Metodologia</a>
@@ -467,7 +468,7 @@ const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pct = v => Math.round(v);
 
-const BUCKET = {L:'Esquerda',CL:'Centro-esq.',C:'Centro',CR:'Centro-dir.',R:'Direita'};
+const BUCKET = {L:'Esq.',CL:'CE',C:'Centro',CR:'CD',R:'Dir.'};
 const BUCKET_LONG = {L:'Esquerda',CL:'Centro-esquerda',C:'Centro',CR:'Centro-direita',R:'Direita'};
 const ORDER = ['L','CL','C','CR','R'];
 const cls = b => 'b'+b;
