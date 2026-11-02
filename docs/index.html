@@ -157,6 +157,9 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .section-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
 .section-head h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em}
 .section-head .count{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.sortctl{display:flex;border:1px solid var(--hair-strong);border-radius:99px;overflow:hidden;background:var(--surface)}
+.sortbtn{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--muted);padding:6px 11px;border:none;background:none;cursor:pointer;white-space:nowrap}
+.sortbtn.on{background:var(--ink);color:var(--paper)}
 .edwrap{display:flex;align-items:center;gap:10px}
 #ed,#src{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink-soft);padding:7px 10px;border:1px solid var(--hair-strong);border-radius:99px;background:var(--surface);cursor:pointer;max-width:170px}
 mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
@@ -206,6 +209,8 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .bar .bL{background:var(--L)}.bar .bCL{background:var(--CL)}.bar .bC{background:var(--C)}.bar .bCR{background:var(--CR)}.bar .bR{background:var(--R)}
 .biaslegend{display:flex;gap:14px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
 .biaslegend b{color:var(--ink-soft);font-weight:600}
+.biaslegend.mini{font-size:10.5px;gap:8px;margin-top:4px}
+.biaslegend.mini .sw{width:6px;height:6px;margin-right:3px}
 .biaslegend .sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
 
 /* meta + actions */
@@ -447,6 +452,10 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
   <section id="feedCol">
     <div class="section-head">
       <h2 id="feedTitle">Todas as histórias</h2>
+      <div class="sortctl" role="group" aria-label="Ordenar histórias">
+        <button class="sortbtn on" data-sort="chrono" aria-pressed="true">Cronologia</button>
+        <button class="sortbtn" data-sort="highlight" aria-pressed="false">Destaque</button>
+      </div>
       <span class="edwrap"><select id="ed" aria-label="Filtrar por editoria"></select><select id="src" aria-label="Filtrar por veículo"></select><span class="count" id="feedCount"></span></span>
     </div>
     <div id="feed"><div class="empty">Carregando o balanço do dia…</div></div>
@@ -491,7 +500,8 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
 <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
 
 <script>
-const S = { data:null, filter:'all', q:'', ed:'', src:'', featuredId:null };
+const S = { data:null, filter:'all', q:'', ed:'', src:'', featuredId:null,
+            sort: (localStorage.getItem('balanco-sort') || 'chrono') };
 
 const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -565,6 +575,23 @@ const covLabel = s => {
 
 /* ordem base do feed: cronologia primeiro; dentro da mesma hora
    (tolerância de ±1h), vale o nº de veículos que cobriram */
+function orderList(list){
+  if(S.sort !== 'highlight') return baseOrder(list);
+  return [...list].sort((a,b)=>{
+    const ra = (a.recent && a.recent.n_6h) || 0;
+    const rb = (b.recent && b.recent.n_6h) || 0;
+    if(rb !== ra) return rb - ra;
+    if(b.counts.total !== a.counts.total) return b.counts.total - a.counts.total;
+    return (new Date(b.updated).getTime()||0) - (new Date(a.updated).getTime()||0);
+  });
+}
+function syncSort(){
+  document.querySelectorAll('.sortbtn').forEach(b=>{
+    const on = b.dataset.sort === S.sort;
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-pressed', String(on));
+  });
+}
 function baseOrder(list){
   return [...list].sort((a,b)=>{
     const ta = new Date(a.updated).getTime()||0, tb = new Date(b.updated).getTime()||0;
@@ -706,6 +733,7 @@ function renderFeatured(){
         </div>
       </div>
       ${bar}
+      ${biasLegend(s, 'mini')}
     </div>`;}).join('');
   requestAnimationFrame(alignHero);
   alignHero();
@@ -750,12 +778,15 @@ document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) alignHe
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>alignHero());
 
 /* ---------- bias bar ---------- */
-function biasBar(s){
-  const legend = ORDER.filter(k=>pv(s,k)>0).map(k=>
+function biasLegend(s, cls=''){
+  const items = ORDER.filter(k=>pv(s,k)>0).map(k=>
     `<span><i class="sw" style="background:var(--${k})"></i>${BUCKET[k]} <b>${pv(s,k)}%</b></span>`).join('');
+  return `<div class="biaslegend ${cls}">${items}</div>`;
+}
+function biasBar(s){
   return `<div class="biasrow">
     <div class="bar" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>
-    <div class="biaslegend">${legend}</div>
+    ${biasLegend(s)}
   </div>`;
 }
 
@@ -973,12 +1004,12 @@ function renderFeed(){
   if(S.src) list = list.filter(s => (s.articles||[]).some(a=>a.source===S.src));
 
   let title = 'Todas as histórias';
-  if(S.filter==='blind'){ list=baseOrder(list.filter(s=>s.blindspot)); title='Blindspots'; }
-  else if(S.filter==='L'){ list=baseOrder(list.filter(s=>leftPct(s)>=50)); title='Maioria esquerda'; }
-  else if(S.filter==='R'){ list=baseOrder(list.filter(s=>rightPct(s)>=50)); title='Maioria direita'; }
+  if(S.filter==='blind'){ list=orderList(list.filter(s=>s.blindspot)); title='Blindspots'; }
+  else if(S.filter==='L'){ list=orderList(list.filter(s=>leftPct(s)>=50)); title='Maioria esquerda'; }
+  else if(S.filter==='R'){ list=orderList(list.filter(s=>rightPct(s)>=50)); title='Maioria direita'; }
   else if(S.filter==='div'){ list.sort((a,b)=>divScore(b)-divScore(a)); title='Mais divididas'; }
   else {
-    list = baseOrder(list);
+    list = orderList(list);
     // evita duplicar o destaque no topo do feed
     if(featuredVisible() && S.featuredId) list = list.filter(s=>s.id!==S.featuredId);
   }
@@ -1139,6 +1170,15 @@ document.querySelectorAll('.pill[data-f]').forEach(p=>{
     renderFeed();
   });
 });
+document.querySelectorAll('.sortbtn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    S.sort = b.dataset.sort;
+    try{ localStorage.setItem('balanco-sort', S.sort); }catch(_){}
+    syncSort();
+    renderFeed();
+  });
+});
+syncSort();
 $('#q').addEventListener('input', e=>{ S.q = e.target.value; renderFeed(); });
 $('#ed').addEventListener('change', e=>{ S.ed = e.target.value; renderFeed(); });
 $('#src').addEventListener('change', e=>{ S.src = e.target.value; renderFeed(); });

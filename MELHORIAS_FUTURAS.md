@@ -52,7 +52,10 @@ layout de cada home muda (usar seletores tolerantes + fallback para RSS).
 
 ---
 
-## 1a. Legenda de viés e porcentagem nas 3 histórias de destaque
+## 1a. Legenda de viés e porcentagem nas 3 histórias de destaque — ✅ feito (02/11/2026)
+
+> `biasLegend(s, 'mini')` reutilizada do destaque principal; os 3 cartões agora
+> mostram as faixas e % (ex.: “CE 33% · Centro 67%”), com estilo compacto.
 
 **Objetivo:** cada um dos 3 cartões laterais mostra a barra de 5 faixas + as
 porcentagens, como no destaque principal.
@@ -67,7 +70,11 @@ têm a legenda com percentuais**; mostram “N veículos de centro · cobertura�
 
 ---
 
-## 2. Ordenação em “Todas as histórias”: cronologia × destaque (6 h)
+## 2. Ordenação em “Todas as histórias”: cronologia × destaque (6 h) — ✅ feito (02/11/2026)
+
+> Backend expõe `recent = {n_6h, n_24h}` (grupos independentes na janela);
+> UI tem o controle “Cronologia | Destaque”, persistido em `localStorage` e com
+> `aria-pressed`. O modo Destaque ordena por `n_6h`, depois cobertura e recência.
 
 **Objetivo:** o leitor escolhe entre ordem cronológica (padrão atual) e
 “destaque”, definido por **repercussão nas últimas 6 h**.

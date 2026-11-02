@@ -46,3 +46,13 @@ def test_mobile_has_no_min_width_overflow():
     assert "grid-template-columns:minmax(0,1fr)" in HTML
     assert "#feedCol,#feed,.story" in HTML
     assert "#ed,#src{max-width:100%" in HTML
+
+
+def test_sort_control_and_hero_bias_legend():
+    """Itens 1a e 2 do backlog: legenda nos destaques e ordenação."""
+    assert 'class="sortctl"' in HTML
+    assert 'data-sort="chrono"' in HTML and 'data-sort="highlight"' in HTML
+    assert "function orderList(" in HTML
+    assert "recent.n_6h" in HTML
+    assert "biasLegend(s, 'mini')" in HTML
+    assert ".biaslegend.mini" in HTML

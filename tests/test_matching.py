@@ -1087,3 +1087,27 @@ def test_weak_link_still_merges_small_story():
          "ts": now, "source_id": "b", "section": "politica"},
     ]
     assert len(app.cluster(arts)) == 1
+
+
+def test_build_includes_recent_windows():
+    import time
+    from datetime import datetime, timezone
+    now = time.time()
+    iso = datetime.fromtimestamp(now - 3600, tz=timezone.utc).isoformat()
+    title = "Senado aprova marco fiscal em votação apertada"
+    srcs = [
+        {"id": "a", "name": "A", "bias": -0.5, "factuality": "high",
+         "ownership": "x"},
+        {"id": "b", "name": "B", "bias": 0.0, "factuality": "high",
+         "ownership": "y"},
+    ]
+    arts = [{
+        "title": title, "link": f"https://x/{s['id']}", "source_id": s["id"],
+        "source_name": s["name"], "base_bias": s["bias"], "ts": now,
+        "published": iso, "section": "politica",
+        "summary": "", "first_seen": iso,
+    } for s in srcs]
+    out = app.build(srcs, arts, {})
+    r = out[0]["recent"]
+    assert "n_6h" in r and "n_24h" in r
+    assert r["n_6h"] >= 1

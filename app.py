@@ -1115,6 +1115,8 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             "section": rep.get("section", ""),
             "section_label": section_label(rep.get("section")),
             "avg_bias": round(avg, 2),
+            "recent": {"n_6h": _recent_groups(coverage, 6),
+                       "n_24h": _recent_groups(coverage, 24)},
             "counts": {**by_b, "total": tot,
                        "independent": ind, "groups": gc,
                        "frames": len(items) - len(coverage),
@@ -1407,6 +1409,21 @@ def _story_entities(s) -> set:
     return out
 
 
+def _recent_groups(coverage, hours, now=None) -> int:
+    """Grupos independentes com cobertura dentro da janela (p/ ranking 6 h)."""
+    now = now or datetime.now(timezone.utc).timestamp()
+    groups = set()
+    for x in coverage:
+        ts = x.get("published") or x.get("first_seen")
+        try:
+            t = datetime.fromisoformat(str(ts).replace("Z", "+00:00")).timestamp()
+        except (TypeError, ValueError):
+            t = float(x.get("ts") or 0)
+        if now - t <= hours * 3600:
+            groups.add(x.get("group") or x.get("source_id"))
+    return len(groups)
+
+
 def _recompute(s) -> dict:
     """Recalcula contagens, média e blindspot a partir das matérias da história."""
     arts = s.get("articles", [])
@@ -1421,6 +1438,8 @@ def _recompute(s) -> dict:
                    "articles": len(arts)}
     s["pct"] = {b: (round(100 * gc[b] / ind) if ind else 0) for b in BUCKETS}
     s["avg_bias"] = round(avg, 2)
+    s["recent"] = {"n_6h": _recent_groups(coverage, 6),
+                   "n_24h": _recent_groups(coverage, 24)}
     s["blindspot"] = blindspot_of5(*[gc[b] for b in BUCKETS])
     return s
 
