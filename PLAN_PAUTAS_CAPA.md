@@ -36,7 +36,7 @@ maior, menos dependência de uma única matéria).
 |---|---|---|
 | **P1** | `front_pautas` com `story_ids`; `pauta`/`pauta_n_stories` nas histórias; casamento por suporte do conceito + dimensão da pauta. | **Concluída** |
 | **P2** | UI: “veja também nesta pauta (N)” nos 4 slots + filtro por pauta. | **Concluída** |
-| **P3** | Viés agregado da pauta (cobertura dedup por grupo, barra e blindspot no nível da pauta). | Pendente |
+| **P3** | Viés agregado da pauta (cobertura dedup por grupo, barra e blindspot no nível da pauta). | **Concluída** |
 | **P4** | Conceito como rótulo do hub (“Outros ângulos” usa a pauta quando existir). | Pendente |
 
 ## Contexto para o leitor (P2)
@@ -53,6 +53,12 @@ maior, menos dependência de uma única matéria).
 - Clicar na pauta filtra o feed por aquele conceito.
 
 ## Precisão do viés (P3)
+
+- `front_pautas[]` traz `counts`, `pct`, `avg_bias`, `blindspot`, `n_groups` e
+  `n_articles`: cobertura somada de todas as histórias da pauta, com **uma
+  entrada por grupo editorial** (a média das matérias do grupo na pauta).
+- O banner da pauta exibe a barra “Viés da pauta” e o blindspot agregado.
+
 
 - **Viés agregado da pauta**: somar a cobertura de todas as histórias da pauta,
   deduplicando por grupo editorial, e exibir a barra “da pauta”.

@@ -69,3 +69,11 @@ def test_pauta_links_and_feed_filter():
     assert 'class="pauta-banner"' in HTML
     assert "× Sair da pauta" in HTML
     assert ".pauta-banner .pb-srcs{display:flex;flex-wrap:wrap" in HTML
+
+
+def test_pauta_banner_shows_aggregate_bias():
+    """P3: a pauta mostra a barra somada, não só a da história isolada."""
+    assert "Viés da pauta" in HTML
+    assert '${biasBar(p)}' in HTML
+    assert "Blindspot da pauta" in HTML
+    assert ".pauta-banner .pb-bias{" in HTML

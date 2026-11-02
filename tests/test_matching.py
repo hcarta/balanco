@@ -1257,3 +1257,33 @@ def test_front_pauta_requires_the_defining_dimension():
     assert "a" in p["story_ids"]
     assert "b" not in p["story_ids"]
     assert "pauta" not in {s["id"]: s for s in out}["b"]
+
+
+def _art(title, group, bias):
+    return {"title": title, "group": group, "bias": bias,
+            "bucket": app.bucket(bias), "piece_kind": "hard_news"}
+
+
+def test_front_pauta_aggregates_bias_by_editorial_group():
+    """P3: barra da pauta deduplica grupo e soma as histórias do tema."""
+    stories = [
+        {"id": "a", "title": "Irã propõe reabrir Estreito de Ormuz em dois dias",
+         "articles": [_art("Irã propõe reabrir Estreito de Ormuz em dois dias", "g1", -0.5),
+                      _art("Irã propõe reabrir Hormuz em dois dias", "folha", 0.1)],
+         "counts": {"total": 2}, "recent": {"n_6h": 1}},
+        {"id": "b", "title": "Líder do Irã ordena resposta sem restrições",
+         "articles": [_art("Líder do Irã ordena resposta sem restrições", "folha", 0.1),
+                      _art("Líder do Irã ordena resposta sem restrições", "cnn", 0.9)],
+         "counts": {"total": 2}, "recent": {"n_6h": 1}},
+    ]
+    desks = {"UOL": [{"title": "Irã propõe reabrir Hormuz em dois dias",
+                      "link": "https://x/1"}]}
+    _, _, pautas = app.attach_front_pages(stories, desks=desks)
+    p = next(x for x in pautas if x["label"] == "Irã / Hormuz")
+    assert p["n_groups"] == 3          # g1, folha, cnn (folha não duplica)
+    assert p["n_articles"] == 4
+    assert p["counts"]["CL"] == 1 and p["counts"]["C"] == 1
+    assert p["counts"]["R"] == 1
+    assert p["pct"] == {"L": 0, "CL": 33, "C": 33, "CR": 0, "R": 33}
+    assert p["blindspot"] is None
+    assert p["avg_bias"] == round((-0.5 + 0.1 + 0.9) / 3, 2)

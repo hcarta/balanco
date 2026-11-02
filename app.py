@@ -985,11 +985,28 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             front_only.append(fs)
         pautas.append(pauta)
     by_id = {s["id"]: s for s in stories}
+    fo_by_id = {fs["id"]: fs for fs in front_only}
     for p in pautas:
         p["n_stories"] = len(p["story_ids"])
         p["coverage_total"] = (
             sum(by_id[i]["counts"]["total"] for i in p["story_ids"]
                 if i in by_id) if p["story_ids"] else p.get("coverage", 1))
+        # P3: viés agregado da pauta. Uma matéria por grupo editorial (o viés
+        # do grupo é a média das suas matérias na pauta), para que um veículo
+        # com várias histórias não pese mais que os demais.
+        srcs = [by_id[i] for i in p["story_ids"] if i in by_id]
+        if not srcs and p.get("pseudo_id"):
+            srcs = [fo_by_id[p["pseudo_id"]]]
+        cov = [a for st in srcs for a in st.get("articles", [])
+               if not a.get("piece_kind") or a["piece_kind"] in COVERAGE_KINDS]
+        gc, ind, avg = independent_counts(cov, "bias")
+        p["counts"] = {**gc, "total": len(cov), "independent": ind}
+        p["pct"] = {b: (round(100 * gc[b] / ind) if ind else 0)
+                    for b in BUCKETS}
+        p["avg_bias"] = round(avg, 2)
+        p["blindspot"] = blindspot_of5(*[gc[b] for b in BUCKETS])
+        p["n_articles"] = len(cov)
+        p["n_groups"] = ind
     pautas.sort(key=lambda p: (-p["n_sources"], p["best_position"],
                                -p["n_stories"], -p["coverage_total"]))
     # marca cada história com a sua pauta (uma só, a de melhor suporte)
