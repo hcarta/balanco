@@ -157,6 +157,28 @@ cortado; navegação por toque funciona.
 
 ---
 
+## 5. Backlog editorial: notícias da semana como base de métricas
+
+**Objetivo:** manter um recorte estruturado das notícias da semana para (a) criar
+métricas de comparação entre edições, (b) gerar resumos automáticos e (c) ligar
+essas notícias às leituras longas com mais precisão.
+
+**Abordagem:**
+1. Persistir um `week_digest` (últimos 7 dias) com: id da história, título,
+   contagens por faixa e grupos, entidades, números do evento e links.
+2. Métricas de comparação: nº de histórias, mediana de grupos independentes,
+   % de blindspots, % com leitura longa, cobertura por faixa — por dia/semana.
+   Guardar em `state/metrics/AAAA-WW.json` e mostrar uma série simples no site.
+3. Resumos: gerar 1–2 frases por história da semana (regras/lead; LLM só opt-in)
+   para reuso em “Leituras”, newsletter e arquivo.
+4. Ligação com longas: usar entidades + números do digest para pontuar leituras
+   (substitui/expande o scorer atual do Aprofunde-se e a cota da piauí).
+5. Aceite: `week_digest` reprodutível de um snapshot; métricas comparáveis entre
+   duas semanas; toda leitura longa aponta para uma história do digest.
+
+**Riscos:** custo de armazenamento (usar slim + gzip); resumo automático pode
+errar — rotular como automático e manter link.
+
 ## Ordem sugerida
 
 1. **4 (mobile)** — barreira de leitura, mais urgente.

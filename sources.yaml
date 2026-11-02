@@ -63,7 +63,7 @@ sources:
   - id: nexo
     name: Nexo Jornal
     rss: https://www.nexojornal.com.br/rss.xml
-    bias: -0.5
+    bias: 0.0
     factuality: very_high
     ownership: independente
     owner_detail: Nexo Jornal

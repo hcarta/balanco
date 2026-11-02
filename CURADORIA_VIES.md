@@ -28,7 +28,7 @@
 | Poder360 | +0.0 | Cobertura de poder seca, sem linha detectável |
 | Metrópoles | +0.0 | Factual e policialesco; sem linha partidária clara |
 | Terra | +0.0 | Agregador/telefônica; factual, sem linha |
-| Nexo Jornal | -0.5 | Explicativo progressista; seleção de pauta à esquerda |
+| Nexo Jornal | +0.0 | Explicativo progressista; seleção de pauta à esquerda |
 | Revista piauí | -0.8 | Longform liberal-progressista; crítica contumaz à direita |
 | InfoMoney | +0.4 | Finanças; enquadramento pró-mercado por natureza da editoria |
 | Estadão | +0.5 | Liberal-conservador histórico, mas com crítica real a Bolsonaro; centro |

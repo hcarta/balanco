@@ -1721,6 +1721,57 @@ def _clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
+LEITURAS_AD = re.compile(
+    r"\bpubli\b|patrocinad|publicidade|conte[uú]do de marca|"
+    r"informe publicit[aá]rio|conte[uú]do patrocinado", re.I)
+
+
+def _piaui_featured(timeout: int = 20):
+    """Primeira matéria em destaque na home da piauí (classe 'destaque')."""
+    import requests
+    try:
+        r = requests.get("https://piaui.folha.uol.com.br/", timeout=timeout,
+                         headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
+        sec = re.search(r'<section[^>]*class="[^"]*destaque1a[^"]*"[^>]*>'
+                        r'(.*?)</section>', r.text, re.S | re.I)
+        block = sec.group(1) if sec else r.text
+        m = re.search(r'<a href="(/revista/[^"]+)"', block)
+        if not m:
+            return None
+        link = "https://piaui.uol.com.br" + m.group(1)
+        h1 = re.search(r"<h1[^>]*>(.*?)</h1>", block, re.S)
+        dek = re.search(r'linha-fina-grande[^>]*>(.*?)</p>', block, re.S)
+        clean = lambda s: _clean_text(html.unescape(re.sub(r"<[^>]+>", " ", s)))
+        title = clean(h1.group(1)) if h1 else ""
+        summary = clean(dek.group(1)) if dek else ""
+        if not title:
+            return None
+        return {"title": title, "link": link, "summary": summary}
+    except Exception:
+        return None
+
+
+def _closed(store, x: dict) -> bool:
+    """Fechado para leitura? A piauí é isenta (a assinatura é o modelo)."""
+    if x.get("source_id") == "piaui":
+        return False
+    return _is_paywalled(store, x.get("link", ""))
+
+
+def _is_paywalled(store, link: str) -> bool:
+    get_body = getattr(store, "get_body", None)
+    if get_body is None:
+        return False
+    hit = get_body(link)
+    if hit is None:
+        try:
+            from enrich import fetch_body
+            hit = fetch_body(link, store)
+        except Exception:
+            return False
+    return bool((hit or {}).get("paywalled"))
+
+
 def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
                    stories=None):
     """C-1: índice de longform dos últimos N dias, independente das histórias.
@@ -1741,6 +1792,8 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
             title = a.get("title", "")
             if not title or NON_JOURNALISM.search(title):
                 continue
+            if LEITURAS_AD.search(title):
+                continue  # publi/informe do próprio site não é leitura
             if piece_kind(a, s) in ("podcast", "video", "live"):
                 continue  # F-08: Foro de Teresina & cia não são leitura
             if excluded_section(a.get("section")) or excluded_title(title):
@@ -1758,6 +1811,19 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
                 "image": a.get("image", ""), "bias": float(s.get("bias", 0)),
             })
     out.sort(key=lambda x: x["published"], reverse=True)
+    # destaque real da home da piauí (pode não estar no RSS)
+    feat = _piaui_featured()
+    if feat and feat["link"] not in {x["link"] for x in out}:
+        out.insert(0, {"source_id": "piaui", "source": "Revista piauí",
+                       "title": feat["title"], "link": feat["link"],
+                       "published": datetime.now(timezone.utc).isoformat(),
+                       "summary": (feat.get("summary") or "")[:240],
+                       "image": "", "bias": -0.8, "featured": True})
+    elif feat:
+        for x in out:
+            if x["link"] == feat["link"]:
+                x["featured"] = True
+
     picked, per = [], Counter()
     for x in out:
         if per[x["source_id"]] >= 2:
@@ -1766,6 +1832,23 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
         per[x["source_id"]] += 1
         if len(picked) >= limit:
             break
+
+    # remove fechados (muro), exceto o destaque da piauí, e repõe do pool
+    verified, seen = [], {x["link"] for x in picked}
+    for x in picked:
+        if x.get("featured") or not _closed(store, x):
+            verified.append(x)
+    if len(verified) < limit:
+        for x in out:
+            if x["link"] in seen:
+                continue
+            if _closed(store, x):
+                continue
+            verified.append(x)
+            seen.add(x["link"])
+            if len(verified) >= limit:
+                break
+    picked = verified
 
     # 8) piauí: sempre 2 leituras — a mais recente (destaque da home) e a mais
     # relacionada aos temas da semana. Se faltar, entra no lugar da última
@@ -1781,13 +1864,17 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
             x["_rel"] = len(entities(x.get("title", "") + " " +
                                      (x.get("summary") or "")) & ents)
         add = []
-        if cand:
-            feat = max(cand, key=lambda x: (x["published"], x["_rel"]))
+        # 1ª vaga: o destaque real da home (se ainda não estiver na lista)
+        feat = next((x for x in out if x["source_id"] == "piaui"
+                     and x.get("featured")), None)
+        if feat is not None and feat["link"] not in {
+                p["link"] for p in picked}:
             add.append(feat)
-            rest = [x for x in cand if x["link"] != feat["link"]]
-            if rest:
-                rel = max(rest, key=lambda x: (x["_rel"], x["published"]))
-                add.append(rel)
+        # 2ª vaga: a mais relacionada aos temas da semana (não fechada)
+        rest = [x for x in cand if x["link"] not in {a["link"] for a in add}
+                and not _closed(store, x)]
+        if rest:
+            add.append(max(rest, key=lambda x: (x["_rel"], x["published"])))
         for x in add[:2 - len(have)]:
             picked.append(x)
         while len(picked) > limit:

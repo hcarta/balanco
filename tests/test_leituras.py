@@ -1,5 +1,13 @@
 """C-1: índice de leituras da semana (janela própria, sem matching)."""
+import pytest
+
 import app
+
+
+@pytest.fixture(autouse=True)
+def _no_piaui_home(monkeypatch):
+    """Testes não batem na home da piauí."""
+    monkeypatch.setattr(app, "_piaui_featured", lambda *a, **k: None)
 
 SOURCES = [
     {"id": "piaui", "name": "piauí", "longform": True, "bias": -1.0},
@@ -83,3 +91,9 @@ def test_build_leituras_keeps_two_piaui():
     stories = [{"title": "Peça piauí 1 e o caso Master no STF", "articles": []}]
     out = app.build_leituras(store, SOURCES, days=10, limit=6, stories=stories)
     assert sum(1 for x in out if x["source_id"] == "piaui") >= 2
+
+
+def test_leituras_ad_filter():
+    assert app.LEITURAS_AD.search("Publi de graça no Núcleo – veja como")
+    assert app.LEITURAS_AD.search("Conteúdo patrocinado: novo banco digital")
+    assert not app.LEITURAS_AD.search("A grande muralha de posts")

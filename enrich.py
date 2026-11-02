@@ -28,6 +28,10 @@ RATE_DELAY_S = 2.0
 
 PAYWALL_MARKS = ["assine", "para continuar lendo", "exclusivo para assinantes",
                  "já é assinante", "faça login", "continue lendo", "paywall"]
+# muro "suave": o corpo extraído é só o apelo de assinatura (Núcleo e afins)
+BODY_PAYWALL_MARKS = ["sua ajuda é fundamental", "para continuarmos fazendo",
+                      "benefícios exclusivos", "seja assinante",
+                      "apoie o jornalismo", "assine para continuar"]
 
 
 class _ArticleParser(HTMLParser):
@@ -127,7 +131,10 @@ def parse_article(html_text: str) -> dict:
         body, method = meta, "meta"
     low = (html_text or "").lower()
     marked = any(m in low for m in PAYWALL_MARKS)
-    paywalled = (marked or not free) and len(body) < 500
+    body_low = (body or "").lower()
+    soft = any(m in body_low for m in BODY_PAYWALL_MARKS)
+    paywalled = ((marked or not free) and len(body) < 500) or \
+        (soft and len(body) < 1500)
     return {"meta": meta, "body": _clean(body)[:BODY_CAP],
             "paywalled": paywalled, "method": method or "none"}
 

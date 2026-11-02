@@ -118,3 +118,13 @@ def test_build_keeps_image_and_section_label():
     imgs = [a["image"] for a in stories[0]["articles"]]
     assert "https://img/x.jpg" in imgs
     assert stories[0]["articles"][0]["section_label"] in ("Economia", "Mercado")
+
+
+def test_parse_soft_paywall_subscription_pitch():
+    """Corpo curto que é só o apelo de assinatura (Núcleo) = fechado."""
+    html = ("<html><body><article>"
+            "<p>Sua ajuda é fundamental para continuarmos fazendo o melhor "
+            "jornalismo de tecnologia do Brasil. E você ainda acessa vários "
+            "benefícios exclusivos.</p></article></body></html>")
+    r = parse_article(html)
+    assert r["paywalled"] is True
