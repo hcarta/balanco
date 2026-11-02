@@ -221,9 +221,15 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
   descrição, embora o meta esteja disponível na página). Título+dek não separam
   tópico de evento.
 
-**Próxima alavanca (Fase 3.5):** priorizar o enriquecimento de dek das fontes de
-sitemap (o meta existe na página) e re-medir; depois, se ainda faltar, features
-de evento (A-1/A-2). Enquanto isso, manter o veto **desligado** no CI.
+**Fase 3.5 executada (02/11/2026):** enriquecimento em paralelo por host
+(6 workers), prioridade para fontes de sitemap sem dek e cap 120/rodada; quando
+o meta falta, usa o **lead do corpo público**. Rodada: 1.927 resumos preenchidos,
+1.751 corpos, 278 com muro; 307 s no total (limite 10 min). A ponte
+Folha×Estadão passou a ser vetada, mas o grupo **continua unido pelos
+explicadores** (deks genéricos de midterms, 8–23% de sobreposição) e por pares
+com dek curto. Ou seja: **título+dek separam fato de fato; não separam fato de
+tópico.** Para isso, a próxima alavanca é A-1/A-2 (features de evento).
+Veto segue **desligado** no CI.
 
 - [x] Re-treinar `ops/eval_pair_model.py` com `dt_hours` corrigido (sem embed p/ cluster).
 - [ ] Decidir **gate duro × veto** com os números novos; implementar `--pair-model`

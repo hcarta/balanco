@@ -2138,8 +2138,9 @@ def main():
                     help="não coleta checagens do G1 Fato ou Fake / Lupa")
     ap.add_argument("--body", action="store_true",
                     help="enriquece matérias (meta + corpo público, com cache; ignora robots de editoria)")
-    ap.add_argument("--body-cap", type=int, default=40,
-                    help="máximo de páginas buscadas por rodada com --body")
+    ap.add_argument("--body-cap", type=int, default=120,
+                    help="máximo de páginas buscadas por rodada com --body "
+                         "(paralelo por host)")
     ap.add_argument("--fresh", action="store_true",
                     help="ignora o cache (baixa tudo de novo, sem HTTP condicional)")
     ap.add_argument("--window", type=float, default=72,
@@ -2166,7 +2167,10 @@ def main():
 
     if args.body:
         from enrich import enrich_articles
-        estats = enrich_articles(articles, store, cap=args.body_cap)
+        sitemap_ids = {s["id"] for s in sources
+                       if s.get("fetcher") == "sitemap"}
+        estats = enrich_articles(articles, store, cap=args.body_cap,
+                                 priority_sources=sitemap_ids)
         print(f"[1b/4] enriquecimento: {estats['filled']} resumos preenchidos, "
               f"{estats['bodies']} corpos no cache, {estats['paywalled']} com muro")
 

@@ -5,8 +5,10 @@ Enriquecimento de matérias (Fase 3.1): meta description + corpo, só de conteú
 - Detecta muro (marcadores + corpo curto) e marca `paywalled`, sem insistir.
 - robots.txt de editorias é ignorado por decisão do dono (uso pessoal, baixo volume);
   o que evita bloqueio de verdade é delay + cache + conditional — mantidos.
-- Regra de exibição: corpo alimenta só máquina (cluster/matching futuros);
-  na tela, meta description ou trecho curto com atribuição + link.
+- Sem burlar muro: só conteúdo servido publicamente (sem cookie/UA falso, espelho
+  de arquivo ou remoção de overlay). O que é pago continua pago.
+- Texto público pode alimentar o matching e aparecer em trechos maiores, sempre
+  com atribuição + link (a restrição "corpo só para máquina" foi removida).
 """
 from __future__ import annotations
 
@@ -152,30 +154,75 @@ def fetch_body(url: str, store=None) -> dict:
     return result
 
 
-def enrich_articles(articles: list[dict], store, cap: int = 40,
-                    delay: float = RATE_DELAY_S) -> dict:
-    """Preenche summary vazio via meta e banca corpos no cache (para uso interno).
+def _use_result(a: dict, r: dict) -> tuple[int, int, int]:
+    """Aplica meta/corpo ao artigo. Retorna (filled, bodies, paywalled)."""
+    paywalled = 1 if r.get("paywalled") else 0
+    bodies = 1 if (r.get("body") and not r.get("paywalled")) else 0
+    filled = 0
+    if not a.get("summary"):
+        # meta é o resumo editorial; se faltar, usa o lead do corpo público
+        text = r.get("meta") or (r.get("body") or "")
+        if text:
+            a["summary"] = re.sub(r"\s+", " ", text).strip()[:600]
+            filled = 1
+    return filled, bodies, paywalled
 
-    Prioriza artigos sem resumo. Retorna {"filled": n, "bodies": n, "paywalled": n}.
+
+def enrich_articles(articles: list[dict], store, cap: int = 40,
+                    delay: float = RATE_DELAY_S,
+                    priority_sources=None) -> dict:
+    """Preenche summary via meta/lead e banca corpos (Fase 3.5).
+
+    Prioriza: sem resumo → fontes de sitemap (que vêm sem dek) → mais recentes.
+    Baixa em paralelo por host (polidez por domínio), respeitando `cap`.
+    Retorna {"filled", "bodies", "paywalled"}.
     """
+    from concurrent.futures import ThreadPoolExecutor
+    from urllib.parse import urlparse
+
+    prio = set(priority_sources or [])
+    ordered = sorted(
+        articles,
+        key=lambda a: (0 if not a.get("summary") else 1,
+                       0 if a.get("source_id") in prio else 1,
+                       -float(a.get("ts") or 0)))
     stats = {"filled": 0, "bodies": 0, "paywalled": 0}
-    ordered = sorted(articles, key=lambda a: 0 if not a.get("summary") else 1)
-    done = 0
+
+    # 1) cache hit: sem rede
+    queue, done = [], 0
     for a in ordered:
         if done >= cap:
             break
-        if store is not None and store.get_body(a["link"]):
-            r = store.get_body(a["link"])
-        else:
-            if done:
-                time.sleep(delay)
-            r = fetch_body(a["link"], store)
-            done += 1
-        if r.get("paywalled"):
-            stats["paywalled"] += 1
-        if r.get("body") and not r.get("paywalled"):
-            stats["bodies"] += 1
-        if not a.get("summary") and r.get("meta"):
-            a["summary"] = r["meta"][:600]
-            stats["filled"] += 1
+        hit = store.get_body(a["link"]) if store is not None else None
+        if hit:
+            f, b, p = _use_result(a, hit)
+            stats["filled"] += f; stats["bodies"] += b; stats["paywalled"] += p
+            continue
+        queue.append(a)
+        done += 1
+
+    # 2) rede: agrupa por host e paraleliza entre hosts
+    by_host: dict[str, list] = {}
+    for a in queue:
+        by_host.setdefault(urlparse(a["link"]).netloc, []).append(a)
+
+    def work(items):
+        # rede/parse sem tocar no SQLite (conexão é presa à thread)
+        out = []
+        for a in items:
+            time.sleep(delay)
+            out.append((a, fetch_body(a["link"], None)))
+        return out
+
+    results = []
+    if by_host:
+        with ThreadPoolExecutor(max_workers=min(6, len(by_host))) as ex:
+            for chunk in ex.map(work, by_host.values()):
+                results.extend(chunk)
+    # grava cache e aplica na thread principal (SQLite seguro)
+    for a, r in results:
+        if store is not None and r.get("method") not in (None, "error"):
+            store.save_body(a["link"], r)
+        f, b, pw = _use_result(a, r)
+        stats["filled"] += f; stats["bodies"] += b; stats["paywalled"] += pw
     return stats

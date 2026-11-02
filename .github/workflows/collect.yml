@@ -65,7 +65,7 @@ jobs:
       - name: Rodar coleta
         env:
           FASTEMBED_CACHE_PATH: state/models
-        run: python app.py --body --body-cap 40 --embed
+        run: python app.py --body --body-cap 120 --embed
 
       - name: Salvar cache SQLite
         uses: actions/cache/save@v4

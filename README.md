@@ -73,7 +73,7 @@ python app.py --llm
 Cada artigo é então classificado (-2=extrema-esq … +2=extrema-dir). Sem a flag, o LLM nunca é chamado.
 
 ### Enriquecimento (`--body`, opt-in)
-Coleta meta description + corpo público (JSON-LD `articleBody` → `<article>`), com cache de 7 dias, delay e teto por rodada. Detecta muro e não insiste. Regra: **corpo para máquina, curto para humano** — na tela só description ou trecho curto com link. Robots de editoria ignorados por decisão do dono (uso pessoal); o que evita bloqueio é delay + cache + conditional.
+Coleta meta description + corpo público (JSON-LD `articleBody` → `<article>`), com cache de 7 dias, delay e teto por rodada. Detecta muro e não insiste. O texto público alimenta o matching e pode aparecer em trechos maiores, sempre com atribuição + link. Robots de editoria ignorados por decisão do dono (uso pessoal); o que evita bloqueio é delay + cache + conditional.
 ```bash
 python app.py --body --body-cap 40
 ```
