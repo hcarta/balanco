@@ -778,9 +778,14 @@ def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
         r = requests.get(cfg["url"], timeout=timeout,
                          headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
         html_text = r.content.decode("utf-8", errors="replace")
-        items = _front_items(html_text, cfg)
-    except Exception:
+    except requests.RequestException as ex:
+        print(f"  [aviso] capa {key}: rede indisponível ({type(ex).__name__})")
         return []
+    except Exception as ex:
+        print(f"  [aviso] capa {key}: {type(ex).__name__}: {ex}")
+        return []
+    # erro de parser/dependência deve aparecer no log, não virar capa vazia
+    items = _front_items(html_text, cfg)
     out = []
     for it in items:
         if FRONT_SKIP.search(it["title"]):
@@ -816,7 +821,7 @@ def _theme_story(theme_titles, stories, toks):
     return best, score
 
 
-def attach_front_pages(stories, desks=None, source_meta=None):
+def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     """Agenda predominante das capas: conceito -> jornais -> história.
 
     Retorna (stories, front_only). `front_only` são pautas de capa que não
@@ -825,6 +830,8 @@ def attach_front_pages(stories, desks=None, source_meta=None):
     source_meta = source_meta or {}
     desks = desks if desks is not None else {
         k: fetch_front_page(k) for k in FRONT_PAGES}
+    if stats is not None:
+        stats.update({k: len(v) for k, v in desks.items()})
     heads = []
     for source, items in desks.items():
         pos = 0
@@ -2731,7 +2738,12 @@ def main():
     stories = consolidate(stories, use_embed=args.embed)
     stories = attach_hubs(stories)
     source_meta = {s["id"]: s for s in sources}
-    stories, front_only = attach_front_pages(stories, source_meta=source_meta)
+    front_stats = {}
+    stories, front_only = attach_front_pages(stories, source_meta=source_meta,
+                                             stats=front_stats)
+    print(f"[3b/4] capas: " + ", ".join(
+        f"{k} {v}" for k, v in front_stats.items()) +
+        f"; {sum(front_stats.values())} manchetes, {len(front_only)} pauta(s) fora do feed")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
@@ -2818,6 +2830,7 @@ def main():
                "factchecks": checks[:80],
                "leituras": leituras,
                "front_only": front_only,
+               "front_pages": front_stats,
                "only_world": world_extra.get("only_world", []),
                "brasil_abroad": world_extra.get("brasil_abroad", []),
                "stories": stories}

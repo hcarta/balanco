@@ -1160,3 +1160,42 @@ def test_attach_front_pages_matches_and_scores():
     assert out[0]["front"] and out[0]["front"][0]["source"] == "O Globo"
     assert out[1]["front"] == []
     assert out[0]["destaque"] > out[1]["destaque"]
+
+
+def test_front_dependencies_declared():
+    """Regressão: sem bs4/lxml o CI extraía 0 capas e o ranking caía em cobertura."""
+    from pathlib import Path
+    reqs = (Path(__file__).resolve().parents[1] / "requirements.txt").read_text(
+        encoding="utf-8").lower()
+    assert "beautifulsoup4" in reqs
+    assert "lxml" in reqs
+
+
+def test_front_items_parses_fixture_without_network():
+    html = """
+    <html><body>
+      <a class="manchete" href="/politica/eleicao-eua-musk">
+        Eleição nos EUA: Musk testa o que meio bilhão de dólares pode fazer
+      </a>
+      <a class="manchete" href="/politica/curta">Curta</a>
+      <a class="manchete" href="https://exemplo.com/">Home</a>
+    </body></html>
+    """
+    cfg = {"url": "https://exemplo.com/", "sel": "a.manchete", "kind": "anchor"}
+    items = app._front_items(html, cfg)
+    assert len(items) == 1
+    assert items[0]["link"] == "https://exemplo.com/politica/eleicao-eua-musk"
+
+
+def test_attach_front_pages_reports_stats_per_source():
+    stories = [{"id": "a", "title": "Eleição nos EUA: Musk testa o que pode fazer",
+                "articles": [{"title": "Eleição nos EUA: Musk testa o que pode fazer",
+                              "source": "G1"}],
+                "counts": {"total": 2}, "recent": {"n_6h": 1}}]
+    desks = {"G1": [{"title": "Eleição nos EUA: Musk testa o que pode fazer",
+                     "link": "https://x/1"}],
+             "UOL": []}
+    stats = {}
+    out, _, = app.attach_front_pages(stories, desks=desks, stats=stats)
+    assert stats == {"G1": 1, "UOL": 0}
+    assert out[0]["front_score"] == 1.0
