@@ -1485,3 +1485,39 @@ def test_front_unmatched_reports_headlines_without_concept():
     app.attach_front_pages(stories, desks=desks, stats=stats)
     assert stats["unmatched"] and stats["unmatched"][0]["source"] == "Folha de S.Paulo"
     assert "reciclagem" in stats["unmatched"][0]["title"]
+
+
+def test_emergent_pauta_from_two_front_pages():
+    """Fase 2: tema fora do lexicon, aberto em 2 capas no topo, vira pauta."""
+    stories = [_mk_front_story(
+        "a", "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas", 2)]
+    desks = {
+        "G1": [{"title": "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas",
+                "link": "https://x/1"}],
+        "UOL": [{"title": "Chuva forte alaga o Vale do Itajaí e deixa desabrigados",
+                 "link": "https://x/2"}],
+    }
+    out, _, pautas = app.attach_front_pages(stories, desks=desks)
+    em = [p for p in pautas if p.get("emergent")]
+    assert len(em) == 1
+    assert em[0]["n_sources"] == 2
+    assert "a" in em[0]["story_ids"]
+    assert out[0]["pauta"] == em[0]["label"]
+    assert out[0]["front_n_sources"] == 2
+
+
+def test_emergent_pauta_low_page_without_feed_is_ignored():
+    """Página baixa e sem cobertura no feed não vira pauta (é ruído)."""
+    stories = [_mk_front_story("b", "Binance sofre ataque hacker de US$ 6 bi", 2)]
+    airbnb = "Reservas de Airbnb em Paris despencam após onda de tumultos"
+    fillers = ["Prefeitura anuncia obras na zona norte", "Time local vence campeonato regional",
+               "Feira de artesanato ocupa a praça central"]
+    desks = {
+        "G1": [{"title": t, "link": f"https://f/{i}"} for i, t in enumerate(fillers)]
+              + [{"title": airbnb, "link": "https://x/5"}],
+        "UOL": [{"title": t + " dois", "link": f"https://g/{i}"}
+                for i, t in enumerate(fillers)]
+               + [{"title": airbnb, "link": "https://x/6"}],
+    }
+    _, _, pautas = app.attach_front_pages(stories, desks=desks)
+    assert not any("Airbnb" in p["label"] for p in pautas if p.get("emergent"))

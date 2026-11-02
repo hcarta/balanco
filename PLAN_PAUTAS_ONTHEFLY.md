@@ -43,9 +43,25 @@ sem LLM por matéria, viés fixo por fonte, ranking explicável.
 |---|---|---|
 | **0 — mitigação** | `front_unmatched` no payload/log + fallback de destaque para história grande sem pauta. | Pauta nova não some do topo; buraco visível. |
 | **1 — sombra** | Computar pautas emergentes em paralelo e logar a concordância com o lexicon. | Métrica diária de taxa de reconhecimento. |
-| **2 — primário** | Pautas emergentes viram a fonte dos slots; lexicon vira override. | Pauta nova aparece no topo no dia em que abre. |
+| **2 — primário** | Pautas emergentes viram a fonte dos slots; lexicon vira override. | Pauta nova aparece no topo no dia em que abre. **Concluída (híbrido).** |
 | **3 — rótulos** | Rótulo automático por entidade + `pautas.yaml` de override + aliases. | Chave estável entre rodadas. |
 | **4 — semântica (opcional)** | Embedding MiniLM como ponte de paráfrase, com eval rotulado e flag. | Recall de paráfrase sem novos falso-positivos. |
+
+## Implementação (02/11/2026) — híbrido seguro
+
+- **Conhecidas**: o caminho do `FRONT_CONCEPTS` continua idêntico (sem
+  regressão de rótulo, chave ou precisão).
+- **Novas**: as manchetes que o lexicon não reconhece passam por
+  `_cluster_heads` (agrupamento por representante, sem encadeamento) e só
+  viram pauta se abrirem em **≥2 jornais**.
+- **Saliência**: além das 2 capas, a pauta emergente precisa abrir no topo
+  (`best_position <= 3`) **ou** já ter ≥3 histórias no feed. Página baixa e
+  sem cobertura continua só em `front_unmatched`.
+- **Rótulo/chave**: entidade dominante (ex.: "Vale do Itajaí") ou manchete
+  representante; chaves colididas recebem sufixo.
+- **Pertença**: `_group_story_score` (tokens + entidade) liga a pauta às
+  histórias do feed; exclusividade por melhor score; histórias já em pauta
+  conhecida não são reivindicadas.
 
 ## Métricas e aceites
 

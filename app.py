@@ -1001,6 +1001,76 @@ def _theme_story(theme_titles, stories, toks):
     return best, score
 
 
+# Pautas emergentes (fase 2): manchetes sem conceito são agrupadas por
+# semelhança e só viram pauta se abrirem em >=2 jornais. O lexicon segue como
+# override/rótulo; o agrupamento não depende dele.
+FRONT_CLUSTER_MIN_SOURCES = 2
+EMERGENT_MIN_SCORE = 0.38
+
+
+def _cluster_heads(heads, min_sources=FRONT_CLUSTER_MIN_SOURCES):
+    """Agrupa manchetes por representante (sem encadeamento), determinístico."""
+    order = sorted(heads, key=lambda h: (h["position"], h["source"],
+                                         h["title"]))
+    clusters = []
+    for h in order:
+        ht = set(tok(h["title"]))
+        he = _title_entities(h["title"])
+        best, best_sc = None, 0.0
+        for c in clusters:
+            rep = c[0]
+            rt = set(tok(rep["title"]))
+            re_ = _title_entities(rep["title"])
+            shared = ht & rt
+            if len(shared) < 2:
+                continue
+            cov = _title_cov(ht, rt)
+            ok_ent, _ = entity_match(he, re_)
+            if (cov >= 0.40 and len(shared) >= 2) or (ok_ent and cov >= 0.28):
+                sc = cov + 0.05 * len(shared)
+                if sc > best_sc:
+                    best, best_sc = c, sc
+        if best is None:
+            clusters.append([h])
+        else:
+            best.append(h)
+    return [c for c in clusters
+            if len({h["source"] for h in c}) >= min_sources]
+
+
+def _emergent_label(group):
+    """Rótulo/chave: entidade dominante ou a manchete representante."""
+    counts = Counter()
+    for h in group:
+        for e in _distinct_entities(_title_entities(h["title"])):
+            if e not in ENTITY_GENERIC and e not in HUB_STOP and len(e) >= 3:
+                counts[e] += 1
+    if counts:
+        e = max(counts, key=lambda x: (counts[x], " " in x, len(x)))
+        label = _hub_label(e)
+    else:
+        label = group[0]["title"][:70]
+    key = re.sub(r"\W+", "-", label.lower()).strip("-")
+    return label, key
+
+
+def _group_story_score(titles, story, toks):
+    """A história trata do grupo de manchetes? (tokens + entidade)"""
+    best = 0.0
+    for ht in titles:
+        hset = set(tok(ht))
+        he = _title_entities(ht)
+        for st, se in toks[id(story)]:
+            shared = hset & st
+            if len(shared) < 2:
+                continue
+            cov = len(shared) / max(1, min(len(hset), len(st)))
+            spec = {e for e in (he & se) if e not in ENTITY_GENERIC}
+            if cov >= 0.35 or (spec and cov >= 0.25):
+                best = max(best, cov + (0.10 if spec else 0.0))
+    return round(best, 2)
+
+
 def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     """Agenda predominante das capas: conceito -> jornais -> histórias.
 
@@ -1175,6 +1245,120 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
                                "position": e["position"],
                                "headline": e["title"][:140],
                                "match": round(score, 2)} for e in entries]
+            story["front_score"] = round(w, 2)
+            story["front_n_sources"] = len(by)
+            pauta["coverage"] = story["counts"]["total"]
+        else:
+            lead = entries[0]
+            meta = source_meta.get(lead["source"], {}) or {}
+            bias = float(meta.get("bias", 0) or 0)
+            b = bucket(bias)
+            counts = {k: 0 for k in BUCKETS}
+            counts[b] = 1
+            pct = {k: 0 for k in BUCKETS}
+            pct[b] = 100
+            fs = {"id": "fp-" + key, "title": lead["title"], "summary": "",
+                  "articles": [{"source": lead["source"],
+                                "title": lead["title"], "link": lead["link"],
+                                "bucket": b, "bias": bias,
+                                "piece_kind": "hard_news"}],
+                  "counts": {**counts, "total": 1, "independent": 1,
+                             "groups": counts, "frames": 0, "articles": 1},
+                  "pct": pct, "avg_bias": round(bias, 2),
+                  "blindspot": None, "updated": "",
+                  "front": pauta["sources"], "front_score": round(w, 2),
+                  "front_n_sources": len(by),
+                  "front_only": True, "topic": label,
+                  "recent": {"n_6h": 1, "n_24h": 1}}
+            pauta["pseudo_id"] = fs["id"]
+            pauta["coverage"] = 1
+            front_only.append(fs)
+        pautas.append(pauta)
+
+    # ---- pautas emergentes (fase 2): manchetes que o lexicon não reconhece.
+    # Elas só nascem quando o tema abre em >=2 jornais; o resto segue apenas
+    # como front_unmatched (visibilidade).
+    known_ids = {sid for p in pautas for sid in p["story_ids"]}
+    leftover = [h for h in heads if not h["concept"]]
+    em_groups = _cluster_heads(leftover)
+    em_cands = []
+    for gi, g in enumerate(em_groups):
+        titles = [h["title"] for h in g]
+        for s in stories:
+            if s["id"] in known_ids:
+                continue
+            sc = _group_story_score(titles, s, toks)
+            if sc >= EMERGENT_MIN_SCORE:
+                em_cands.append((sc, gi, s["id"]))
+    em_cands.sort(key=lambda x: -x[0])
+    em_assign = {}
+    for sc, gi, sid in em_cands:
+        em_assign.setdefault(sid, (gi, sc))
+    ids_by_em = {}
+    for sid, (gi, _) in em_assign.items():
+        ids_by_em.setdefault(gi, []).append(sid)
+    used_keys = {p["key"] for p in pautas}
+    for gi, g in enumerate(em_groups):
+        by = {}
+        for h in g:
+            cur = by.get(h["source"])
+            if cur is None or h["position"] < cur["position"]:
+                by[h["source"]] = h
+        entries = sorted(by.values(), key=lambda x: x["position"])
+        if not entries:
+            continue
+        w = sum(1.0 if e["position"] <= 3 else
+                0.7 if e["position"] <= 8 else 0.4 for e in entries)
+        label, key = _emergent_label(g)
+        base, n = key, 2
+        while key in used_keys:
+            key = f"{base}-{n}"
+            n += 1
+        used_keys.add(key)
+        ranked = sorted(
+            entries,
+            key=lambda e: (-ts_by_link.get(_norm_link(e["link"]), (0.0, ""))[0],
+                           e["position"]))
+        ce = ranked[0]
+        cts, ciso = ts_by_link.get(_norm_link(ce["link"]), (0.0, ""))
+        call = {"source": ce["source"], "position": ce["position"],
+                "title": ce["title"], "summary": ce.get("summary", ""),
+                "link": ce["link"], "published": ciso or None}
+        sids = sorted(ids_by_em.get(gi, []))
+        best_pos = min(e["position"] for e in entries)
+        # saliência: pauta nova só entra se abrir no topo (<=3) ou já tiver
+        # tração no feed; página baixa sem cobertura é ruído, não agenda.
+        if best_pos > 3 and len(sids) < 3:
+            continue
+        call_sid = link_to_story.get(_norm_link(ce["link"]))
+        if call_sid in sids:
+            story = by_id.get(call_sid)
+        elif sids:
+            story = max((by_id[i] for i in sids if i in by_id),
+                        key=lambda x: (em_assign[x["id"]][1],
+                                       x["counts"]["total"]))
+        else:
+            story = None
+        pauta = {"key": key, "label": label, "n_sources": len(by),
+                 "best_position": min(e["position"] for e in entries),
+                 "sources": [{"source": e["source"],
+                              "position": e["position"],
+                              "title": e["title"], "link": e["link"],
+                              "summary": e.get("summary", "")}
+                             for e in entries],
+                 "front_score": round(w, 2),
+                 "story_id": story["id"] if story else None,
+                 "story_ids": sids,
+                 "lead": {"source": entries[0]["source"],
+                          "position": entries[0]["position"],
+                          "title": entries[0]["title"],
+                          "link": entries[0]["link"]},
+                 "call": call, "emergent": True}
+        if story:
+            story["front"] = [{"source": e["source"],
+                               "position": e["position"],
+                               "headline": e["title"][:140],
+                               "match": 0.0} for e in entries]
             story["front_score"] = round(w, 2)
             story["front_n_sources"] = len(by)
             pauta["coverage"] = story["counts"]["total"]
