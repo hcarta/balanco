@@ -1111,3 +1111,31 @@ def test_build_includes_recent_windows():
     r = out[0]["recent"]
     assert "n_6h" in r and "n_24h" in r
     assert r["n_6h"] >= 1
+
+
+def test_excluded_title_football():
+    for t in ["Flamengo vence o Palmeiras no Brasileirão",
+              "Seleção brasileira convoca para a Copa do Mundo",
+              "Real Madrid anuncia contratação de Mbappé",
+              "Neymar marca em goleada do Santos FC"]:
+        assert app.excluded_title(t), t
+    # não pode pegar estado/cidade/nome
+    for t in ["Governador da Bahia anuncia obra",
+              "Fortaleza terá novo hospital",
+              "Cruzeiro do Sul amplia aeroporto"]:
+        assert not app.excluded_title(t), t
+
+
+def test_service_headline_finados():
+    titles = [
+        "Finados em Manaus: veja horários de ônibus e o que abre e fecha",
+        "Dia de Finados: veja o que abre e fecha em BH nesta segunda-feira",
+        "Museu Oscar Niemeyer abre no feriado de Finados em Curitiba",
+    ]
+    got = app._service_headline(titles)
+    assert got and got.startswith("Funcionamento e horários no feriado de Finados")
+    # clima/transporte não deve receber a manchete de funcionamento
+    assert app._service_headline([
+        "Como fica o tempo no feriado de Finados?",
+        "Finados: aeroportos devem receber 2 milhões no feriado",
+    ]) is None

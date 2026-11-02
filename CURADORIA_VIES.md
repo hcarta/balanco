@@ -49,7 +49,6 @@
 | IstoÉ | +0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
 | Agência Pública | -1.0 | Investigativo progressista sem fins lucrativos |
-| Quatro Cinco Um | -0.6 | Revista de livros; centro até evidência (longform) |
 | Núcleo Jornalismo | -0.5 | Digital independente; centro até evidência (longform) |
 | Ponte Jornalismo | -1.0 | Segurança pública/direitos; centro até evidência (longform) |
 | Sumaúma | -1.0 | Socioambiental/Amazônia; centro até evidência (longform) |
@@ -134,7 +133,6 @@ Regras de movimento (evitam rebaixamento arbitrário):
 | Diário do Centro do Mundo | low | Militância com pouco lastro apuratório |
 | Revista Oeste | low | Padrão de imprecisão apontado na curadoria (30/10) |
 | Agência Pública | very_high | Investigativo premiado, método documentado |
-| Quatro Cinco Um | high | Crítica literária, apuração editorial |
 | Núcleo Jornalismo | high | Digital independente, método jornalístico |
 | Ponte Jornalismo | high | Cobertura premiada de segurança pública |
 | Sumaúma | high | Reportagem socioambiental premiada |

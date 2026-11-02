@@ -152,14 +152,6 @@ sources:
     owner_detail: First Look Media (sem fins lucrativos)
     longform: true
   # ── C-6: longform novas (testadas em 01/11/2026; viés 0,0 conservador) ──
-  - id: quatrocincoum
-    name: Quatro Cinco Um
-    rss: https://quatrocincoum.com.br/feed/
-    bias: -0.6
-    factuality: high
-    ownership: independente
-    owner_detail: Quatro Cinco Um (revista de livros)
-    longform: true
   - id: nucleo
     name: Núcleo Jornalismo
     rss: https://nucleo.jor.br/feed/

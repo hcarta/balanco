@@ -70,3 +70,16 @@ def test_build_leituras_excludes_foro_de_teresina():
     out = app.build_leituras(store, SOURCES, days=10, limit=8)
     assert [x["link"] for x in out] == [
         "https://piaui.uol.com.br/web/andre-mendonca-instituto-iter/"]
+
+
+def test_build_leituras_keeps_two_piaui():
+    """Item 8: piauí sempre com 2 leituras (destaque + tema da semana)."""
+    store = FakeStore({
+        "piaui": [art(f"Peça piauí {i}", f"p{i}",
+                      f"2026-10-3{i}T10:00:00+00:00") for i in range(3)],
+        "nexo": [art(f"Nexo {i}", f"n{i}",
+                     f"2026-10-3{i}T09:00:00+00:00") for i in range(3)],
+    })
+    stories = [{"title": "Peça piauí 1 e o caso Master no STF", "articles": []}]
+    out = app.build_leituras(store, SOURCES, days=10, limit=6, stories=stories)
+    assert sum(1 for x in out if x["source_id"] == "piaui") >= 2

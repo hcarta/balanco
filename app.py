@@ -751,7 +751,7 @@ def independent_counts(arts, bias_key="bias"):
 
 
 # Editorias fora da edição (o foco é poder, economia e sociedade)
-EXCLUDED_SECTIONS = {"esportes", "futebol", "astrologia", "loterias"}
+EXCLUDED_SECTIONS = {"esportes", "esporte", "futebol", "astrologia", "loterias"}
 
 # Conteúdo de serviço mora em editorias genéricas: filtra pelo título
 EXCLUDED_TITLE = re.compile(
@@ -764,6 +764,17 @@ EXCLUDED_TITLE = re.compile(
     # serviço local: cemitérios/visitação de Finados e bandeira tarifária
     r"|\bcemit[eé]rios?\b.{0,80}\b(finados|visitantes|missas)\b"
     r"|\bbandeira (verde|amarela|vermelha)\b.{0,60}\b(energia|conta|tarifa)\b"
+    # futebol (clubes, competições, transferências) — fora da edição
+    r"|\bfutebol\b|\bfutebol\w*\b|\bflamengo\b|\bcorinthians\b|\bpalmeiras\b"
+    r"|\bsantos fc\b|\bs[aã]o paulo fc\b|\bsele[cç][aã]o brasileira\b"
+    r"|\blibertadores\b|\bbrasileir[aã]o\b|\bbrasileir[aã]o s[eé]rie\b"
+    r"|\bcopa do mundo\b|\bcopa am[eé]rica\b|\bchampions league\b"
+    r"|\bpremier league\b|\bla liga\b|\breal madrid\b|\bbarcelona\b"
+    r"|\bfluminense\b|\bvasco\b|\bbotafogo\b|\bgr[eê]mio\b"
+    r"|\batl[eé]tico[- ]mg\b|\bathletico\b"
+    r"|\bneymar\b|\bmessi\b|\bmbapp[eé]\b|\bhaaland\b|\bvin[ií]cius j[uú]nior\b"
+    r"|\bhat[- ]trick\b|\bgol de\b|\bp[eê]nalti\b|\bcartão vermelho\b"
+    r"|\bcampeonato brasileiro\b|\btabela do brasileir[aã]o\b"
     r"|\b(chuva|calor|frio|clima|temperatura)\b.{0,60}\bprevis[aã]o\b"
     r"|previs[aã]o\b.{0,60}\b(tempo|chuva|calor|frio|clima|temperatura)\b"
     # calendário de pagamento/benefício é serviço, não notícia de política
@@ -1104,6 +1115,9 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
             updated = max((_pub(x) for x in items), default="")
         rep = _representative(coverage, meta)
         rep_title = _clean_title(rep["title"])
+        override = _service_headline([x.get("title", "") for x in coverage])
+        if override:
+            rep_title = override
         # resumo: prefere o do representante; senão o primeiro disponível
         summary = rep.get("summary") or next(
             (x["summary"] for x in coverage if x.get("summary")), "")
@@ -1409,6 +1423,30 @@ def _story_entities(s) -> set:
     return out
 
 
+HOLIDAY_SERVICE = re.compile(
+    r"\b(abre e fecha|o que abre|o que fecha|hor[aá]rios de [oô]nibus"
+    r"|mudan[cç]as no tr[aâ]nsito|funcionamento)\b", re.I)
+
+
+def _service_headline(titles) -> str | None:
+    """Manchete genérica quando o grupo é serviço de feriado em várias cidades.
+
+    Sem isso, o representante vira a versão de uma cidade ("Finados em Manaus")
+    e parece que a história é local, quando é um serviço nacional.
+    """
+    ts = [x for x in titles if x]
+    if len(ts) < 2:
+        return None
+    hits = sum(1 for x in ts if HOLIDAY_SERVICE.search(x))
+    if hits < max(2, len(ts) // 2):
+        return None
+    low = " ".join(ts).lower()
+    if "finados" in low:
+        return ("Funcionamento e horários no feriado de Finados "
+                "nas capitais do Brasil")
+    return None
+
+
 def _recent_groups(coverage, hours, now=None) -> int:
     """Grupos independentes com cobertura dentro da janela (p/ ranking 6 h)."""
     now = now or datetime.now(timezone.utc).timestamp()
@@ -1683,7 +1721,8 @@ def _clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
+def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
+                   stories=None):
     """C-1: índice de longform dos últimos N dias, independente das histórias.
 
     A janela de 120 dias do cache é a fonte; a seleção limita 2 peças por
@@ -1727,6 +1766,39 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None):
         per[x["source_id"]] += 1
         if len(picked) >= limit:
             break
+
+    # 8) piauí: sempre 2 leituras — a mais recente (destaque da home) e a mais
+    # relacionada aos temas da semana. Se faltar, entra no lugar da última
+    # peça não-piauí (respeitando o limite).
+    have = [x for x in picked if x["source_id"] == "piaui"]
+    if len(have) < 2:
+        cand = [x for x in out if x["source_id"] == "piaui"
+                and x["link"] not in {p["link"] for p in picked}]
+        ents = set()
+        for s in (stories or []):
+            ents |= entities(s.get("title", ""))
+        for x in cand:
+            x["_rel"] = len(entities(x.get("title", "") + " " +
+                                     (x.get("summary") or "")) & ents)
+        add = []
+        if cand:
+            feat = max(cand, key=lambda x: (x["published"], x["_rel"]))
+            add.append(feat)
+            rest = [x for x in cand if x["link"] != feat["link"]]
+            if rest:
+                rel = max(rest, key=lambda x: (x["_rel"], x["published"]))
+                add.append(rel)
+        for x in add[:2 - len(have)]:
+            picked.append(x)
+        while len(picked) > limit:
+            drop = next((i for i in range(len(picked) - 1, -1, -1)
+                         if picked[i]["source_id"] != "piaui"), None)
+            if drop is None:
+                break
+            picked.pop(drop)
+        for x in picked:
+            x.pop("_rel", None)
+        picked.sort(key=lambda x: x["published"], reverse=True)
     return picked
 
 
@@ -2367,7 +2439,7 @@ def main():
     # C-1: leituras da semana (janela própria, independente do matching)
     lr_links = {x["link"] for s in stories for x in s.get("longreads", [])}
     leituras = build_leituras(store, sources, days=10, limit=8,
-                              exclude_links=lr_links)
+                              exclude_links=lr_links, stories=stories)
     if leituras:
         print(f"[3e/4] {len(leituras)} leituras da semana")
     if checks:
