@@ -282,6 +282,13 @@ Veto segue **desligado** no CI.
 
 ---
 
+## 4a. Backlog pós-plano
+
+`MELHORIAS_FUTURAS.md` (02/11/2026): hierarquia por primeiras páginas
+(Estadão/Folha/O Globo), legenda de viés nos 3 destaques, ordenação
+cronologia×destaque 6 h, seção de opinião esquerda/centro/direita e correção do
+estouro horizontal no mobile. Ordem sugerida no próprio arquivo.
+
 ## 5. Comandos úteis
 
 ```bash
