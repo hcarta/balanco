@@ -28,10 +28,10 @@
 | Poder360 | +0.0 | Cobertura de poder seca, sem linha detectável |
 | Metrópoles | +0.0 | Factual e policialesco; sem linha partidária clara |
 | Terra | +0.0 | Agregador/telefônica; factual, sem linha |
-| Nexo Jornal | -0.4 | Explicativo progressista; seleção de pauta à esquerda |
+| Nexo Jornal | -0.5 | Explicativo progressista; seleção de pauta à esquerda |
 | Revista piauí | -0.8 | Longform liberal-progressista; crítica contumaz à direita |
-| InfoMoney | +0.2 | Finanças; enquadramento pró-mercado por natureza da editoria |
-| Estadão | -0.1 | Liberal-conservador histórico, mas com crítica real a Bolsonaro; centro |
+| InfoMoney | +0.4 | Finanças; enquadramento pró-mercado por natureza da editoria |
+| Estadão | +0.5 | Liberal-conservador histórico, mas com crítica real a Bolsonaro; centro |
 | O Globo | +0.1 | Liberal; factual, leve ênfase institucional pró-mercado |
 | Valor Econômico | +0.3 | Finanças; pró-mercado explícito, factual de alto padrão |
 | Brasil 247 | -1.9 | Partidário pró-Lula/governo; linguagem militante frequente |
@@ -48,11 +48,11 @@
 | Veja | +0.5 | Liberal-conservadora; historicamente anti-PT. Factualidade rebaixada p/ mista em 30/10 (caso Lula–Vorcaro questionado) |
 | IstoÉ | +0.0 | Popular-sensacionalista; sem linha partidária consistente |
 | Crusoé | +1.0 | Grupo O Antagonista; liberal-conservadora, anti-PT |
-| Agência Pública | -0.8 | Investigativo progressista sem fins lucrativos |
+| Agência Pública | -1.0 | Investigativo progressista sem fins lucrativos |
 | Quatro Cinco Um | -0.6 | Revista de livros; centro até evidência (longform) |
 | Núcleo Jornalismo | -0.5 | Digital independente; centro até evidência (longform) |
-| Ponte Jornalismo | +0.0 | Segurança pública/direitos; centro até evidência (longform) |
-| Sumaúma | +0.0 | Socioambiental/Amazônia; centro até evidência (longform) |
+| Ponte Jornalismo | -1.0 | Segurança pública/direitos; centro até evidência (longform) |
+| Sumaúma | -1.0 | Socioambiental/Amazônia; centro até evidência (longform) |
 | Outras Palavras | -1.5 | Esquerda editorial assumida, mas centro até evidência na régua (longform) |
 | Le Monde Diplomatique Brasil | -1.5 | Edição brasileira do Diplo; centro até evidência na régua (longform) |
 | Folha Ilustríssima | -0.3 | Caderno cultural da Folha, tribuna plural; centro até evidência (longform) |

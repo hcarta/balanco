@@ -186,8 +186,11 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
       +0,7), R7 +1,0, DCM −1,9.
 - [x] **4 factualidades** aplicadas (Infobae e Outras Palavras → mixed; Oeste e
       Terra → upgrade). `sources.yaml` + `CURADORIA_VIES.md` + changelog sincronizados.
-- [ ] **10 fontes em `REVISAR`** (decisão do dono): Estadão, IstoÉ, Veja, InfoMoney,
-      Crusoé, Agência Pública, Nexo, Folha, Ponte, Sumaúma.
+- [x] **10 fontes em `REVISAR` fechadas (02/11/2026)** pela **mediana de
+      {atual, Claude, Gemini}** (robusta a um modelo destoante): Agência Pública
+      −0,8→−1,0; Estadão −0,1→+0,5; InfoMoney +0,2→+0,4; Nexo −0,4→−0,5;
+      Ponte 0,0→−1,0; Sumaúma 0,0→−1,0. Mantidos: Crusoé, Folha, IstoÉ, Veja.
+      `ops/reconcile_fontes.py --close-review` reproduz.
 - [x] Aceite: **142 passed + 56 xfailed**; distribuição 5 colunas L11/CL9/C19/CR8/R6.
 
 ### Fase 2 — 5 colunas (1–2 dias) — ✅ feito (01/11/2026)

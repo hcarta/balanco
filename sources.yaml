@@ -63,7 +63,7 @@ sources:
   - id: nexo
     name: Nexo Jornal
     rss: https://www.nexojornal.com.br/rss.xml
-    bias: -0.4
+    bias: -0.5
     factuality: very_high
     ownership: independente
     owner_detail: Nexo Jornal
@@ -138,7 +138,7 @@ sources:
   - id: apublica
     name: Agência Pública
     rss: https://apublica.org/feed/
-    bias: -0.8
+    bias: -1.0
     factuality: very_high
     ownership: independente
     owner_detail: ONG jornalística sem fins lucrativos
@@ -171,7 +171,7 @@ sources:
   - id: ponte
     name: Ponte Jornalismo
     rss: https://ponte.org/feed/
-    bias: 0.0
+    bias: -1.0
     factuality: high
     ownership: independente
     owner_detail: Ponte Jornalismo (segurança pública)
@@ -179,7 +179,7 @@ sources:
   - id: sumauma
     name: Sumaúma
     rss: https://sumauma.com/feed/
-    bias: 0.0
+    bias: -1.0
     factuality: high
     ownership: independente
     owner_detail: Sumaúma (Amazônia)
@@ -405,7 +405,7 @@ sources:
   - id: infomoney
     name: InfoMoney
     rss: https://www.infomoney.com.br/feed/
-    bias: 0.2
+    bias: 0.4
     factuality: high
     ownership: conglomerado
     owner_detail: XP Inc.
@@ -451,7 +451,7 @@ sources:
     name: Estadão
     rss: https://www.estadao.com.br/arc/outboundfeeds/rss/?outputType=xml
     fetcher: rss
-    bias: -0.1
+    bias: 0.5
     factuality: high
     ownership: individuo
     owner_detail: Família Mesquita

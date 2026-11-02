@@ -1,54 +1,54 @@
-id,nome,bias_atual,claude,gemini,consenso,acao,fact_atual,fact_consenso,fact_acao
-ajen,Al Jazeera English,-0.3,-0.5,-0.5,-0.5,manter,high,,manter
-apublica,Agência Pública,-0.8,-1.0,-1.5,-1.2,revisar,very_high,,manter
-b247,Brasil 247,-1.4,-1.8,-2.0,-1.9,aplicar,mixed,,revisar
-band,Band,0.0,0.2,0.0,0.1,manter,high,,manter
-bbcbr,BBC Brasil,-0.2,-0.1,0.0,-0.1,manter,very_high,,manter
-bbclatam,BBC (América Latina),-0.1,-0.1,0.0,-0.1,manter,very_high,,manter
-bbcworld,BBC World,-0.1,-0.1,0.0,-0.1,manter,very_high,,manter
-carta,CartaCapital,-1.2,-1.4,-1.5,-1.4,manter,mixed,,revisar
-clarin,Clarín,0.0,0.7,0.5,0.6,aplicar,high,,revisar
-cnnbr,CNN Brasil,0.1,0.3,0.5,0.4,aplicar,high,,manter
-crusoe,Crusoé,1.0,1.5,1.0,1.2,revisar,mixed,,revisar
-dcm,Diário do Centro do Mundo,-1.5,-1.8,-2.0,-1.9,aplicar,low,,revisar
-diplomatique,Le Monde Diplomatique Brasil,0.0,-1.5,-1.5,-1.5,aplicar,high,,manter
-dw,DW Brasil,0.0,0.0,0.0,0.0,manter,very_high,,manter
-dwen,Deutsche Welle,0.0,0.0,0.0,0.0,manter,high,,manter
-estadao,Estadão,-0.1,0.5,1.0,0.8,revisar,high,,manter
-folha,Folha de S.Paulo,-0.3,0.0,-0.5,-0.2,revisar,high,,manter
-folhailus,Folha Ilustríssima,0.0,-0.2,-0.5,-0.3,aplicar,high,,manter
-foxnews,Fox News,1.2,1.5,1.5,1.5,aplicar,mixed,,manter
-france24en,France 24,0.0,-0.2,0.0,-0.1,manter,high,,manter
-g1,G1,0.0,-0.1,0.0,-0.1,manter,high,,manter
-gazeta,Gazeta do Povo,1.2,1.4,1.5,1.4,manter,mixed,,manter
-guardian,The Guardian,-0.9,-1.0,-1.0,-1.0,manter,high,,manter
-guardianbrasil,The Guardian (Brasil),-0.9,-1.0,-1.0,-1.0,manter,high,,manter
-infobae,Infobae,0.0,0.8,0.5,0.7,aplicar,high,mixed,aplicar
-infomoney,InfoMoney,0.2,0.4,1.0,0.7,revisar,high,,manter
-intercept,The Intercept Brasil,-1.2,-1.3,-1.5,-1.4,manter,high,,manter
-istoe,IstoÉ,0.0,1.0,0.0,0.5,revisar,mixed,,manter
-jovempan,Jovem Pan,1.4,1.6,2.0,1.8,aplicar,mixed,,revisar
-lanacion,La Nación,0.0,0.8,0.5,0.7,aplicar,high,,manter
-mercopress,MercoPress,0.0,0.5,0.5,0.5,aplicar,high,,manter
-metropoles,Metrópoles,0.0,0.0,0.0,0.0,manter,mixed,,revisar
-nexo,Nexo Jornal,-0.4,-0.5,-1.0,-0.8,revisar,very_high,,manter
-nucleo,Núcleo Jornalismo,0.0,-0.5,-0.5,-0.5,aplicar,high,,manter
-nytamericas,New York Times (Américas),-0.8,-0.5,-0.5,-0.5,aplicar,high,,manter
-nytimes,New York Times,-0.8,-0.5,-0.5,-0.5,aplicar,high,,manter
-nytimestech,New York Times (Tecnologia),-0.8,-0.3,-0.5,-0.4,aplicar,high,,manter
-oeste,Revista Oeste,1.6,1.8,2.0,1.9,aplicar,low,mixed,aplicar
-oglobo,O Globo,0.1,0.3,0.0,0.1,manter,high,,manter
-outraspalavras,Outras Palavras,0.0,-1.5,-1.5,-1.5,aplicar,high,mixed,aplicar
-piaui,Revista piauí,-0.5,-0.7,-1.0,-0.8,aplicar,very_high,,manter
-poder360,Poder360,0.0,0.0,0.0,0.0,manter,high,,manter
-ponte,Ponte Jornalismo,0.0,-1.0,-1.5,-1.2,revisar,high,,manter
-quatrocincoum,Quatro Cinco Um,0.0,-0.7,-0.5,-0.6,aplicar,high,,manter
-r7,R7,0.5,1.0,1.0,1.0,aplicar,mixed,,manter
-reporterbr,Repórter Brasil,-0.6,-0.8,-1.0,-0.9,aplicar,very_high,,manter
-rfien,RFI,0.0,-0.2,0.0,-0.1,manter,high,,manter
-sbt,SBT News,0.0,0.3,0.5,0.4,aplicar,high,,revisar
-sumauma,Sumaúma,0.0,-1.0,-1.5,-1.2,revisar,high,,manter
-terra,Terra,0.0,0.0,0.0,0.0,manter,mixed,high,aplicar
-uol,UOL Notícias,-0.2,-0.2,-0.5,-0.3,manter,high,,manter
-valor,Valor Econômico,0.3,0.3,0.5,0.4,manter,high,,manter
-veja,Veja,0.5,1.1,0.5,0.8,revisar,mixed,,manter
+id,nome,bias_atual,claude,gemini,consenso,mediana,acao,fact_atual,fact_consenso,fact_acao
+ajen,Al Jazeera English,-0.3,-0.5,-0.5,-0.5,-0.5,manter,high,,manter
+apublica,Agência Pública,-0.8,-1.0,-1.5,-1.2,-1.0,revisar,very_high,,manter
+b247,Brasil 247,-1.4,-1.8,-2.0,-1.9,-1.8,aplicar,mixed,,revisar
+band,Band,0.0,0.2,0.0,0.1,0.0,manter,high,,manter
+bbcbr,BBC Brasil,-0.2,-0.1,0.0,-0.1,-0.1,manter,very_high,,manter
+bbclatam,BBC (América Latina),-0.1,-0.1,0.0,-0.1,-0.1,manter,very_high,,manter
+bbcworld,BBC World,-0.1,-0.1,0.0,-0.1,-0.1,manter,very_high,,manter
+carta,CartaCapital,-1.2,-1.4,-1.5,-1.4,-1.4,manter,mixed,,revisar
+clarin,Clarín,0.0,0.7,0.5,0.6,0.5,aplicar,high,,revisar
+cnnbr,CNN Brasil,0.1,0.3,0.5,0.4,0.3,aplicar,high,,manter
+crusoe,Crusoé,1.0,1.5,1.0,1.2,1.0,revisar,mixed,,revisar
+dcm,Diário do Centro do Mundo,-1.5,-1.8,-2.0,-1.9,-1.8,aplicar,low,,revisar
+diplomatique,Le Monde Diplomatique Brasil,0.0,-1.5,-1.5,-1.5,-1.5,aplicar,high,,manter
+dw,DW Brasil,0.0,0.0,0.0,0.0,0.0,manter,very_high,,manter
+dwen,Deutsche Welle,0.0,0.0,0.0,0.0,0.0,manter,high,,manter
+estadao,Estadão,-0.1,0.5,1.0,0.8,0.5,revisar,high,,manter
+folha,Folha de S.Paulo,-0.3,0.0,-0.5,-0.2,-0.3,revisar,high,,manter
+folhailus,Folha Ilustríssima,0.0,-0.2,-0.5,-0.3,-0.2,aplicar,high,,manter
+foxnews,Fox News,1.2,1.5,1.5,1.5,1.5,aplicar,mixed,,manter
+france24en,France 24,0.0,-0.2,0.0,-0.1,0.0,manter,high,,manter
+g1,G1,0.0,-0.1,0.0,-0.1,0.0,manter,high,,manter
+gazeta,Gazeta do Povo,1.2,1.4,1.5,1.4,1.4,manter,mixed,,manter
+guardian,The Guardian,-0.9,-1.0,-1.0,-1.0,-1.0,manter,high,,manter
+guardianbrasil,The Guardian (Brasil),-0.9,-1.0,-1.0,-1.0,-1.0,manter,high,,manter
+infobae,Infobae,0.0,0.8,0.5,0.7,0.5,aplicar,high,mixed,aplicar
+infomoney,InfoMoney,0.2,0.4,1.0,0.7,0.4,revisar,high,,manter
+intercept,The Intercept Brasil,-1.2,-1.3,-1.5,-1.4,-1.3,manter,high,,manter
+istoe,IstoÉ,0.0,1.0,0.0,0.5,0.0,revisar,mixed,,manter
+jovempan,Jovem Pan,1.4,1.6,2.0,1.8,1.6,aplicar,mixed,,revisar
+lanacion,La Nación,0.0,0.8,0.5,0.7,0.5,aplicar,high,,manter
+mercopress,MercoPress,0.0,0.5,0.5,0.5,0.5,aplicar,high,,manter
+metropoles,Metrópoles,0.0,0.0,0.0,0.0,0.0,manter,mixed,,revisar
+nexo,Nexo Jornal,-0.4,-0.5,-1.0,-0.8,-0.5,revisar,very_high,,manter
+nucleo,Núcleo Jornalismo,0.0,-0.5,-0.5,-0.5,-0.5,aplicar,high,,manter
+nytamericas,New York Times (Américas),-0.8,-0.5,-0.5,-0.5,-0.5,aplicar,high,,manter
+nytimes,New York Times,-0.8,-0.5,-0.5,-0.5,-0.5,aplicar,high,,manter
+nytimestech,New York Times (Tecnologia),-0.8,-0.3,-0.5,-0.4,-0.5,aplicar,high,,manter
+oeste,Revista Oeste,1.6,1.8,2.0,1.9,1.8,aplicar,low,mixed,aplicar
+oglobo,O Globo,0.1,0.3,0.0,0.1,0.1,manter,high,,manter
+outraspalavras,Outras Palavras,0.0,-1.5,-1.5,-1.5,-1.5,aplicar,high,mixed,aplicar
+piaui,Revista piauí,-0.5,-0.7,-1.0,-0.8,-0.7,aplicar,very_high,,manter
+poder360,Poder360,0.0,0.0,0.0,0.0,0.0,manter,high,,manter
+ponte,Ponte Jornalismo,0.0,-1.0,-1.5,-1.2,-1.0,revisar,high,,manter
+quatrocincoum,Quatro Cinco Um,0.0,-0.7,-0.5,-0.6,-0.5,aplicar,high,,manter
+r7,R7,0.5,1.0,1.0,1.0,1.0,aplicar,mixed,,manter
+reporterbr,Repórter Brasil,-0.6,-0.8,-1.0,-0.9,-0.8,aplicar,very_high,,manter
+rfien,RFI,0.0,-0.2,0.0,-0.1,0.0,manter,high,,manter
+sbt,SBT News,0.0,0.3,0.5,0.4,0.3,aplicar,high,,revisar
+sumauma,Sumaúma,0.0,-1.0,-1.5,-1.2,-1.0,revisar,high,,manter
+terra,Terra,0.0,0.0,0.0,0.0,0.0,manter,mixed,high,aplicar
+uol,UOL Notícias,-0.2,-0.2,-0.5,-0.3,-0.2,manter,high,,manter
+valor,Valor Econômico,0.3,0.3,0.5,0.4,0.3,manter,high,,manter
+veja,Veja,0.5,1.1,0.5,0.8,0.5,revisar,mixed,,manter
