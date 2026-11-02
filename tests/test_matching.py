@@ -1040,3 +1040,50 @@ def test_summary_conflict_spares_same_event_with_shared_number():
          "ts": now, "source_id": "band", "section": "economia"}
     shared = set(app.tok(a["title"])) & set(app.tok(b["title"]))
     assert app._summary_conflict(a, b, shared) is False
+
+
+def test_weak_link_does_not_bridge_two_anchored_clusters():
+    """Cluster de tópico: elo fraco não liga dois grupos já ancorados."""
+    import time
+    now = time.time()
+    # cluster A (papa): 3 títulos fortes entre si
+    arts = [
+        {"title": "Papa Leão XIV vota pelo correio nas eleições dos EUA",
+         "ts": now, "source_id": "a", "section": "mundo"},
+        {"title": "Papa Leão XIV vota pelo correio nas eleições de meio de mandato",
+         "ts": now, "source_id": "b", "section": "mundo"},
+        {"title": "Leão XIV vota pelo correio em eleições dos EUA",
+         "ts": now, "source_id": "c", "section": "mundo"},
+        # cluster B (subsídios): 3 títulos fortes entre si
+        {"title": "Trump promete US$ 15 bilhões para agricultores dos EUA",
+         "ts": now, "source_id": "d", "section": "economia"},
+        {"title": "Trump promete US$ 15 bi a agricultores às vésperas da eleição",
+         "ts": now, "source_id": "e", "section": "economia"},
+        {"title": "Trump anuncia US$ 15 bilhões para agricultores dos EUA",
+         "ts": now, "source_id": "f", "section": "economia"},
+        # ponte fraca entre os dois temas
+        {"title": "Crítico de Trump, Leão 14 vota pelo correio nas eleições de meio de mandato",
+         "ts": now, "source_id": "g", "section": "mundo"},
+    ]
+    groups = app.cluster(arts)
+    gi = next(i for i, a in enumerate(arts) if a["title"].startswith("Papa Leão XIV vota"))
+    gj = next(i for i, a in enumerate(arts) if a["title"].startswith("Trump promete"))
+    gk = next(i for i, a in enumerate(arts) if a["title"].startswith("Crítico de Trump"))
+    def gid(idx):
+        for g in groups:
+            if idx in g: return frozenset(g)
+    assert gid(gi) != gid(gj), "papa e subsídios não podem ficar no mesmo grupo"
+    assert gk in gid(gi), "a ponte pertence ao cluster do papa"
+
+
+def test_weak_link_still_merges_small_story():
+    """História de 2 fontes (sem vizinhos fortes) continua fundindo."""
+    import time
+    now = time.time()
+    arts = [
+        {"title": "Flávio Bolsonaro admite disputar nova eleição presidencial",
+         "ts": now, "source_id": "a", "section": "politica"},
+        {"title": "Flávio Bolsonaro cita disputar eleição presidencial antes de 2030",
+         "ts": now, "source_id": "b", "section": "politica"},
+    ]
+    assert len(app.cluster(arts)) == 1

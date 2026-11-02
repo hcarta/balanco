@@ -541,30 +541,55 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False,
         cand = cand | (Se >= 0.70)
     ii, jj = np.where(np.triu(cand, k=1))
     _audit = [] if audit_path else None
+    weak = []
+    strong_nb: dict[int, set] = {}
+
+    def _audit_rec(i, j, ok, rule):
+        if _audit is None:
+            return
+        ai, aj = articles[i], articles[j]
+        try:
+            dt_h = abs(ai.get("ts", 0) - aj.get("ts", 0)) / 3600
+        except TypeError:
+            dt_h = None
+        _audit.append({
+            "a": ai.get("title", ""), "b": aj.get("title", ""),
+            "source_a": ai.get("source_id"), "source_b": aj.get("source_id"),
+            "section_a": ai.get("section"), "section_b": aj.get("section"),
+            "dt_h": round(dt_h, 2) if dt_h is not None else None,
+            "cos": round(float(S[i, j]), 4),
+            "cos_emb": round(float(Se[i, j]), 4) if Se is not None else None,
+            "shared": sorted(toksets[i] & toksets[j]),
+            "ents": sorted(_title_entities(ai.get("title", ""))
+                           & _title_entities(aj.get("title", ""))),
+            "decision": "fused" if ok else "rejected",
+            "rule": rule,
+        })
+
+    # 1) pares fortes: fundem direto
     for i, j in zip(ii.tolist(), jj.tolist()):
         ok, rule = _pair_decision(articles, toksets, S, Se, i, j, thresh,
                                   window_h)
-        if _audit is not None:
-            ai, aj = articles[i], articles[j]
-            try:
-                dt_h = abs(ai.get("ts", 0) - aj.get("ts", 0)) / 3600
-            except TypeError:
-                dt_h = None
-            _audit.append({
-                "a": ai.get("title", ""), "b": aj.get("title", ""),
-                "source_a": ai.get("source_id"), "source_b": aj.get("source_id"),
-                "section_a": ai.get("section"), "section_b": aj.get("section"),
-                "dt_h": round(dt_h, 2) if dt_h is not None else None,
-                "cos": round(float(S[i, j]), 4),
-                "cos_emb": round(float(Se[i, j]), 4) if Se is not None else None,
-                "shared": sorted(toksets[i] & toksets[j]),
-                "ents": sorted(_title_entities(ai.get("title", ""))
-                               & _title_entities(aj.get("title", ""))),
-                "decision": "fused" if ok else "rejected",
-                "rule": rule,
-            })
-        if ok:
+        if ok and float(S[i, j]) >= STRONG_LINK:
             union(i, j)
+            strong_nb.setdefault(i, set()).add(j)
+            strong_nb.setdefault(j, set()).add(i)
+            _audit_rec(i, j, True, rule)
+        elif ok:
+            weak.append((i, j, rule))
+        else:
+            _audit_rec(i, j, False, rule)
+
+    # 2) elos fracos: só barram quando os DOIS lados já estão ancorados em
+    # clusters fortes distintos e não têm vizinho forte em comum. Se um lado
+    # está isolado, o elo é a única forma de anexá-lo (história de 2 fontes).
+    for i, j, rule in weak:
+        ni, nj = strong_nb.get(i, set()), strong_nb.get(j, set())
+        if not ni or not nj or (ni & nj):
+            union(i, j)
+            _audit_rec(i, j, True, "weak_bridge")
+        else:
+            _audit_rec(i, j, False, "weak_no_bridge")
     if _audit is not None:
         import json as _json
         _os.makedirs(_os.path.dirname(_os.path.abspath(audit_path)),
@@ -611,6 +636,12 @@ def blindspot_of5(l: int, cl: int, c: int, cr: int, r: int):
 # PLAN_FINAL Fase 2: 5 colunas (aproximando Ground.news). Uma constante só.
 BIAS_EDGES = (-0.8, -0.3, 0.3, 0.8)   # L | CL | C | CR | R
 BUCKETS = ("L", "CL", "C", "CR", "R")
+
+# A-4 (cluster de tópico): single-link encadeia fatos via elo fraco.
+# Pares fortes fundem direto; elos fracos (0,38–0,45) só entram se os dois
+# lados já estiverem ancorados num mesmo vizinho forte.
+STRONG_LINK = 0.45
+WEAK_BRIDGE_MIN = 1
 
 
 def bucket(score):

@@ -221,6 +221,15 @@ Cada fase termina com testes verdes e commit próprio. Não avance sem o aceite.
   descrição, embora o meta esteja disponível na página). Título+dek não separam
   tópico de evento.
 
+**Cluster de tópico resolvido (02/11/2026) — A-4 estrutural:**
+`STRONG_LINK=0,45` no cluster. Pares fortes fundem direto; elos fracos
+(0,38–0,45) só são barrados quando **os dois lados já estão ancorados** em
+clusters fortes distintos e sem vizinho forte em comum. Resultado: o caso
+safra Trump × Papa separou (15→8 artigos, sem o papa), grupos 3.706→3.807
+offline (+2,7%) e 444→462 em produção (+4%), maior grupo 34. Testes travam os
+dois lados: ponte fraca não une clusters ancorados; história de 2 fontes
+continua fundindo. **144 testes.**
+
 **Fase 3.5 executada (02/11/2026):** enriquecimento em paralelo por host
 (6 workers), prioridade para fontes de sitemap sem dek e cap 120/rodada; quando
 o meta falta, usa o **lead do corpo público**. Rodada: 1.927 resumos preenchidos,
