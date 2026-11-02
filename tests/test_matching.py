@@ -1152,9 +1152,11 @@ def test_attach_front_pages_matches_and_scores():
                        "source": "G1"}],
          "counts": {"total": 10}, "recent": {"n_6h": 0}},
     ]
-    desks = {"O Globo": ["Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
-                         "Pauta que não está no feed de notícias"]}
-    out = app.attach_front_pages(stories, desks=desks)
+    desks = {"O Globo": [
+        {"title": "Flávio Bolsonaro vai a culto evangélico com mulher e Eduardo",
+         "link": "https://x/1"},
+        {"title": "Pauta que não está no feed de notícias", "link": "https://x/2"}]}
+    out, _ = app.attach_front_pages(stories, desks=desks)
     assert out[0]["front"] and out[0]["front"][0]["source"] == "O Globo"
     assert out[1]["front"] == []
     assert out[0]["destaque"] > out[1]["destaque"]

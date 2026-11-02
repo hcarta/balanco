@@ -715,19 +715,30 @@ function frontDetails(s){
   </details>`;
 }
 function renderFeatured(){
-  const stories = S.data.stories.filter(s=>s.counts.total>=4);
+  // capa: histórias com cobertura ou qualquer pauta aberta por jornal
+  const stories = [...S.data.stories.filter(s=>s.counts.total>=4 || (s.front_score||0)>0),
+                   ...(S.data.front_only||[])];
   // destaque = capas dos jornais de referência + repercussão + recência
   const byDestaque = (a,b)=>(b.destaque||0)-(a.destaque||0)
     || b.counts.total-a.counts.total;
-  const top = [...stories].sort(byDestaque)[0];
+  // 4 slots com temas distintos: uma pauta não ocupa duas posições
+  const picked = [], seen = new Set();
+  for(const s of [...stories].sort(byDestaque)){
+    const k = s.topic || s.id;
+    if(seen.has(k)) continue;
+    seen.add(k); picked.push(s);
+    if(picked.length >= 4) break;
+  }
+  const top = picked[0];
   const el = $('#featured');
   if(!top){ el.innerHTML=''; S.featuredId=null; return; }
   S.featuredId = top.id;
   const fc = frontCount(top);
-  const frontTag = fc ? ` · abre em ${fc} de 3 jornais` : '';
+  const frontTag = fc ? ` · abre em ${fc} de 6 jornais` : '';
+  const cov = top.front_only ? 'pauta de capa' : covLabel(top);
   const kick = top.blindspot
-    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${covLabel(top)}${frontTag}</div>`
-    : `<div class="kicker">Em foco · ${covLabel(top)}${frontTag}</div>`;
+    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${cov}${frontTag}</div>`
+    : `<div class="kicker">Em foco · ${cov}${frontTag}</div>`;
   const lead = top.articles[0];
   const img = storyImg(top);
   const featCons = centerTrusted(top) >= 3
@@ -742,8 +753,7 @@ function renderFeatured(){
       ${biasBar(top)}
     </div>`;
   // 3 mais repercutidas no centro (exceto o destaque)
-  const side = stories.filter(s=>s.id!==top.id && s.counts.total>=3)
-    .sort(byDestaque).slice(0,3).map(s=>({s, n:centerTrusted(s)}));
+  const side = picked.slice(1,4).map(s=>({s, n:centerTrusted(s)}));
   const hl = $('#heroList');
   $('#heroSide').style.display = side.length ? '' : 'none';
   hl.innerHTML = side.map(({s,n})=>{
@@ -756,7 +766,7 @@ function renderFeatured(){
         <div>
           <h3>${esc(s.title)}</h3>
           ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
-          <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}${frontCount(s)?` · abre em ${frontCount(s)} de 3`:''}</div>
+          <div class="hmeta">${s.front_only ? 'pauta de capa' : `${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}`}${frontCount(s)?` · abre em ${frontCount(s)} de 6`:''}</div>
         </div>
       </div>
       ${bar}

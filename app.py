@@ -674,26 +674,102 @@ def cluster(articles, thresh=0.38, window_h=48, use_embed=False,
     return out
 
 
+# Categorias que não são "pauta de capa": editorial, opinião, serviço,
+# carros, receitas e esporte. Determinístico e ajustável.
+FRONT_SKIP = re.compile(
+    r"^\s*editorial\b|\beditorial:"
+    r"|^\s*coluna\b|\ban[aá]lise\b"
+    r"|como rastrear|passo a passo|receitas?\b|chef\b|moqueca|cheesecake"
+    r"|\bSUV\b|convers[ií]vel|aston martin|t-cross|creta|aceleramos"
+    r"|f[oó]rmula 1|futebol|brasileir[aã]o|libertadores"
+    r"|fantasiar de sem-teto|v[oô]lei|novela|\bbb\b|famosos|celebridades",
+    re.I)
+# coluna/blog/opinião/podcast/vídeo pela URL (não só pelo título)
+FRONT_SKIP_URL = re.compile(
+    r"/(esportes?|futebol|olimpiadas?|nba|f1|automobilismo|volei|v[oô]lei)/"
+    r"|/(novelas?|celebridades|entretenimento|cinema|musica|moda|gastronomia"
+    r"|guloseimas|teatro|horoscopo|diversao)/"
+    r"|/(ilustrada|f5|pop)/"
+    r"|/(colunas?|colunistas?|blogs?|opiniao|pulsa|podcasts?|videos?)/", re.I)
+
+# Pautas editoriais: conceito -> regex. A ordem importa (específico antes do
+# genérico). É um lexicon pequeno, mantível e sem LLM.
+FRONT_CONCEPTS = [
+    ("Eleição EUA / Trump", re.compile(
+        r"midterms?|elei[cç][aã]o.{0,40}(eua|estados unidos)|democratas?"
+        r"|congresso dos eua|senado dos eua|\btrump\b|\bmusk\b"
+        r"|votos antecipados|corrida eleitoral|elei[cç][aã]o legislativa", re.I)),
+    ("Lula / juros e economia", re.compile(
+        r"\bselic\b|\bdurigan\b|\bcopom\b|\bjuros\b|\bfiscal\b"
+        r"|mercado financeiro|lula empodera", re.I)),
+    ("Flávio Bolsonaro", re.compile(
+        r"fl[aá]vio bolsonaro|fuga de fl[aá]vio|senadores derrotados", re.I)),
+    ("Reforma eleitoral", re.compile(
+        r"reforma eleitoral|puxadores de voto", re.I)),
+    ("Tarcísio / Linha 6", re.compile(r"tarc[ií]sio|linha 6", re.I)),
+    ("Binance", re.compile(r"binance", re.I)),
+    ("Ataque hacker / freezers", re.compile(
+        r"hackers?|freezers?|ataque hacker|supermercados.*(ataque|invas)", re.I)),
+    ("Queda de avião", re.compile(r"\bavi[aã]o\b|\bcopiloto\b|\bjato\b",
+                                  re.I)),
+    ("Inadimplência", re.compile(r"inadimpl[eê]ncia|serasa", re.I)),
+    ("Obesidade / SUS", re.compile(r"obes|\bsus\b", re.I)),
+    ("Vale-refeição", re.compile(r"vale-refei|vale-alimenta", re.I)),
+    ("Argentina / Milei", re.compile(r"milei|argentin", re.I)),
+    ("Irã / Hormuz", re.compile(r"\bir[aã]\b|\bhormuz\b|\bormuz\b", re.I)),
+]
+
 # Capas dos jornais de referência: peso editorial para o "Em foco".
+# `sel` é o contêiner das manchetes principais; `kind` diz como extrair.
 FRONT_PAGES = {
-    "Estadão": {
-        "url": "https://www.estadao.com.br/",
-        "pattern": r'<a[^>]*>\s*<h[123][^>]*>(.*?)</h[123]>',
-    },
-    "Folha de S.Paulo": {
-        "url": "https://www.folha.uol.com.br/",
-        "pattern": r'<a[^>]*>\s*<h[123][^>]*>(.*?)</h[123]>',
-    },
-    "O Globo": {
-        "url": "https://oglobo.globo.com/",
-        "pattern": r'<a[^>]*class="[^"]*highlight__picture-anchor[^"]*"[^>]*>'
-                   r'.*?<h2[^>]*>(.*?)</h2>',
-    },
+    "O Globo": {"url": "https://oglobo.globo.com/",
+                "sel": ".manchetes__left a", "kind": "anchor"},
+    "Estadão": {"url": "https://www.estadao.com.br/",
+                "sel": "[class*='styles__TagStyled'][class*='col-lg-8'] h1,"
+                       "[class*='styles__TagStyled'][class*='col-lg-8'] h2,"
+                       "[class*='styles__TagStyled'][class*='col-lg-8'] h3",
+                "kind": "heading"},
+    "Folha de S.Paulo": {"url": "https://www.folha.uol.com.br/",
+                         "sel": ".col--md-3-4 h1, .col--md-3-4 h2,"
+                                " .col--md-3-4 h3", "kind": "heading"},
+    "G1": {"url": "https://g1.globo.com/",
+           "sel": ".feed-post-body-title", "kind": "heading"},
+    "UOL": {"url": "https://www.uol.com.br/",
+            "sel": ".headlineMain__link, .headlineHorizontal__link",
+            "kind": "heading"},
+    "CNN Brasil": {"url": "https://www.cnnbrasil.com.br/", "sel": "a",
+                   "kind": "heading"},
 }
 
 
-def fetch_front_page(key: str, timeout: int = 20) -> list[str]:
-    """Manchetes da capa do jornal, na ordem (12 primeiras)."""
+def _front_items(html_text: str, cfg: dict, limit: int = 10) -> list[dict]:
+    from urllib.parse import urljoin
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html_text, "lxml")
+    out, seen = [], set()
+    for el in soup.select(cfg["sel"]):
+        if cfg["kind"] == "anchor":
+            a = el
+            title = el.get_text(" ", strip=True)
+        else:
+            a = el if el.name == "a" else (el.find_parent("a") or el.find("a"))
+            hh = el if el.name in ("h1", "h2", "h3") else el.find(["h1", "h2", "h3"])
+            title = (hh or el).get_text(" ", strip=True)
+        title = re.sub(r"\s+", " ", title or "").strip()
+        link = urljoin(cfg["url"], a.get("href", "")) if a else ""
+        if len(title) < 25 or title in seen:
+            continue
+        if not link or link.rstrip("/") == cfg["url"].rstrip("/"):
+            continue
+        seen.add(title)
+        out.append({"title": title, "link": link})
+        if len(out) >= limit:
+            break
+    return out
+
+
+def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
+    """Manchetes da capa (título + link), na ordem, filtradas por categoria."""
     import requests
     cfg = FRONT_PAGES.get(key)
     if not cfg:
@@ -702,82 +778,147 @@ def fetch_front_page(key: str, timeout: int = 20) -> list[str]:
         r = requests.get(cfg["url"], timeout=timeout,
                          headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
         html_text = r.content.decode("utf-8", errors="replace")
-        out, seen = [], set()
-        for raw in re.findall(cfg["pattern"], html_text, re.S | re.I):
-            title = re.sub(r"\s+", " ",
-                           html.unescape(re.sub(r"<[^>]+>", " ", raw))).strip()
-            if len(title) < 25 or title in seen:
-                continue
-            seen.add(title)
-            out.append(title)
-            if len(out) >= 12:
-                break
-        return out
+        items = _front_items(html_text, cfg)
     except Exception:
         return []
+    out = []
+    for it in items:
+        if FRONT_SKIP.search(it["title"]):
+            continue
+        if len(tok(it["title"])) < 4:
+            continue
+        if FRONT_SKIP_URL.search(it.get("link", "")):
+            continue
+        out.append(it)
+    return out
 
 
-def attach_front_pages(stories, desks=None):
-    """Marca cada história com as capas que a abrem e calcula o destaque.
+def _theme_story(theme_titles, stories, toks):
+    """Melhor história para um tema de capa (títulos + entidades)."""
+    best, score = None, 0.0
+    for s in stories:
+        for ht in theme_titles:
+            hset = set(tok(ht))
+            if len(hset) < 3:
+                continue
+            he = _title_entities(ht)
+            for st, se in toks[id(s)]:
+                if len(st) < 3:
+                    continue
+                shared = hset & st
+                if len(shared) < 2:
+                    continue
+                cov = len(shared) / max(1, min(len(hset), len(st)))
+                spec = {e for e in (he & se) if e not in ENTITY_GENERIC}
+                if cov >= 0.5 or (spec and cov >= 0.4):
+                    if cov > score:
+                        best, score = s, cov
+    return best, score
 
-    `desks` permite injetar capas em teste ({jornal: [manchetes]}).
+
+def attach_front_pages(stories, desks=None, source_meta=None):
+    """Agenda predominante das capas: conceito -> jornais -> história.
+
+    Retorna (stories, front_only). `front_only` são pautas de capa que não
+    existem no feed (1 jornal), para os 4 slots da capa.
     """
+    source_meta = source_meta or {}
     desks = desks if desks is not None else {
         k: fetch_front_page(k) for k in FRONT_PAGES}
+    heads = []
+    for source, items in desks.items():
+        pos = 0
+        for it in items:
+            title = it.get("title", "")
+            if FRONT_SKIP.search(title) or len(tok(title)) < 4:
+                continue
+            pos += 1
+            heads.append({"source": source, "position": pos,
+                          "title": title, "link": it.get("link", "")})
+    for h in heads:
+        h["concept"] = next((label for label, rx in FRONT_CONCEPTS
+                             if rx.search(h["title"])), None)
+    groups = {}
+    for h in heads:
+        if h["concept"]:
+            groups.setdefault(h["concept"], []).append(h)
     toks = {id(s): [(set(tok(a.get("title", ""))),
                      _title_entities(a.get("title", "")))
                     for a in s.get("articles", [])] for s in stories}
     for s in stories:
         s["front"] = []
-    for source, heads in desks.items():
-        for pos, h in enumerate(heads, 1):
-            ht = set(tok(h))
-            if not ht:
-                continue
-            he = _title_entities(h)
-            best, score = None, 0.0
-            if len(ht) < 4:
-                continue
-            for s in stories:
-                for st, se in toks[id(s)]:
-                    if len(st) < 4:
-                        continue
-                    shared = ht & st
-                    if len(shared) < 3:
-                        continue
-                    cov = len(shared) / max(1, min(len(ht), len(st)))
-                    spec = {e for e in (he & se) if e not in ENTITY_GENERIC}
-                    if cov < 0.55:
-                        continue
-                    # título curto não pode inflar: exige âncora de entidade
-                    if not spec and cov < 0.8:
-                        continue
-                    if cov > score:
-                        best, score = s, cov
-            if best is not None and score >= 0.55:
-                best["front"].append({"source": source, "position": pos,
-                                      "headline": h[:140],
-                                      "match": round(score, 2)})
-    # um registro por veículo (o de melhor posição) e score por posição
+    pautas, front_only = [], []
+    for label, items in groups.items():
+        by = {}
+        for h in items:
+            cur = by.get(h["source"])
+            if cur is None or h["position"] < cur["position"]:
+                by[h["source"]] = h
+        entries = sorted(by.values(), key=lambda x: x["position"])
+        w = sum(1.0 if e["position"] <= 3 else
+                0.7 if e["position"] <= 8 else 0.4 for e in entries)
+        story, score = _theme_story([h["title"] for h in items], stories, toks)
+        key = re.sub(r"\W+", "-", label.lower()).strip("-")
+        pauta = {"key": key, "label": label, "n_sources": len(by),
+                 "best_position": min(e["position"] for e in entries),
+                 "sources": [{"source": e["source"],
+                              "position": e["position"],
+                              "title": e["title"], "link": e["link"]}
+                             for e in entries],
+                 "front_score": round(w, 2),
+                 "story_id": story["id"] if story else None}
+        if story:
+            story["front"] = [{"source": e["source"],
+                               "position": e["position"],
+                               "headline": e["title"][:140],
+                               "match": round(score, 2)} for e in entries]
+            story["front_score"] = round(w, 2)
+            pauta["coverage"] = story["counts"]["total"]
+        else:
+            lead = entries[0]
+            meta = source_meta.get(lead["source"], {}) or {}
+            bias = float(meta.get("bias", 0) or 0)
+            b = bucket(bias)
+            counts = {k: 0 for k in BUCKETS}
+            counts[b] = 1
+            pct = {k: 0 for k in BUCKETS}
+            pct[b] = 100
+            fs = {"id": "fp-" + key, "title": lead["title"], "summary": "",
+                  "articles": [{"source": lead["source"],
+                                "title": lead["title"], "link": lead["link"],
+                                "bucket": b, "bias": bias,
+                                "piece_kind": "hard_news"}],
+                  "counts": {**counts, "total": 1, "independent": 1,
+                             "groups": counts, "frames": 0, "articles": 1},
+                  "pct": pct, "avg_bias": round(bias, 2),
+                  "blindspot": None, "updated": "",
+                  "front": pauta["sources"], "front_score": round(w, 2),
+                  "front_only": True, "topic": label,
+                  "recent": {"n_6h": 1, "n_24h": 1}}
+            pauta["pseudo_id"] = fs["id"]
+            pauta["coverage"] = 1
+            front_only.append(fs)
+        pautas.append(pauta)
+    pautas.sort(key=lambda p: (-p["n_sources"], p["best_position"],
+                               -p["coverage"]))
+    # destaque das histórias (capa + cobertura + recência)
     for s in stories:
-        best = {}
-        for f in s.get("front", []):
-            if f["source"] not in best or f["position"] < best[f["source"]]["position"]:
-                best[f["source"]] = f
-        s["front"] = sorted(best.values(), key=lambda f: f["position"])
-        w = sum(1.0 if f["position"] <= 3 else
-                0.7 if f["position"] <= 8 else 0.4 for f in s["front"])
+        w = s.get("front_score", 0)
         s["front_score"] = round(w, 2)
     max_total = max((s["counts"]["total"] for s in stories), default=1) or 1
     max_rec = max((s.get("recent", {}).get("n_6h", 0) for s in stories),
                   default=0) or 1
     for s in stories:
-        # 2 jornais abrindo já satura o sinal editorial
         nf = min(s.get("front_score", 0) / 2.0, 1.0)
         nt = s["counts"]["total"] / max_total
         nr = s.get("recent", {}).get("n_6h", 0) / max_rec
         s["destaque"] = round(0.55 * nf + 0.30 * nt + 0.15 * nr, 3)
-    return stories
+    # destaque das pautas de capa sem história (cobertura = 1)
+    for fs in front_only:
+        nf = min(fs["front_score"] / 2.0, 1.0)
+        fs["destaque"] = round(0.55 * nf + 0.30 * (1 / max_total)
+                               + 0.15 * (1 / max_rec), 3)
+    return stories, front_only
 
 
 def blindspot_of(l: int, c: int, r: int):
@@ -2589,7 +2730,8 @@ def main():
     n_before = len(stories)
     stories = consolidate(stories, use_embed=args.embed)
     stories = attach_hubs(stories)
-    stories = attach_front_pages(stories)
+    source_meta = {s["id"]: s for s in sources}
+    stories, front_only = attach_front_pages(stories, source_meta=source_meta)
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
@@ -2675,6 +2817,7 @@ def main():
                "sources": sources_out,
                "factchecks": checks[:80],
                "leituras": leituras,
+               "front_only": front_only,
                "only_world": world_extra.get("only_world", []),
                "brasil_abroad": world_extra.get("brasil_abroad", []),
                "stories": stories}
