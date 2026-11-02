@@ -35,11 +35,17 @@ maior, menos dependência de uma única matéria).
 | Fase | Tarefa | Estado |
 |---|---|---|
 | **P1** | `front_pautas` com `story_ids`; `pauta`/`pauta_n_stories` nas histórias; casamento por suporte do conceito + dimensão da pauta. | **Concluída** |
-| **P2** | UI: “veja também nesta pauta (N)” nos 4 slots + filtro por pauta. | Pendente |
+| **P2** | UI: “veja também nesta pauta (N)” nos 4 slots + filtro por pauta. | **Concluída** |
 | **P3** | Viés agregado da pauta (cobertura dedup por grupo, barra e blindspot no nível da pauta). | Pendente |
 | **P4** | Conceito como rótulo do hub (“Outros ângulos” usa a pauta quando existir). | Pendente |
 
 ## Contexto para o leitor (P2)
+
+- No destaque, `<details>` “Veja também nesta pauta (N)” lista até 4 histórias
+  irmãs; nos 3 slots menores, um link “Veja também nesta pauta (N)”.
+- O link filtra o feed (`?pauta=<key>`), mostra o banner da pauta (jornais,
+  posições, histórias, cobertura) e “× Sair da pauta” restaura a capa.
+
 
 - Nos 4 slots, quando `pauta_n_stories > 1`: **“Veja também nesta pauta (N)”**
   com as demais histórias do feed daquele tema.

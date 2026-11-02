@@ -56,3 +56,16 @@ def test_sort_control_and_hero_bias_legend():
     assert "recent.n_6h" in HTML
     assert "biasLegend(s, 'mini')" in HTML
     assert ".biaslegend.mini" in HTML
+
+
+def test_pauta_links_and_feed_filter():
+    """P2: pauta de capa abre 'veja também' e filtra o feed."""
+    assert 'class="pauta-link"' in HTML
+    assert 'data-pauta="' in HTML
+    assert "function setPauta(" in HTML
+    assert "Veja também nesta pauta" in HTML
+    assert '<details class="pauta">' in HTML
+    assert "pauta_key===S.pauta" in HTML
+    assert 'class="pauta-banner"' in HTML
+    assert "× Sair da pauta" in HTML
+    assert ".pauta-banner .pb-srcs{display:flex;flex-wrap:wrap" in HTML

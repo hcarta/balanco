@@ -193,6 +193,32 @@ mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
 .fronts summary{cursor:pointer;color:var(--accent);font-weight:600;letter-spacing:.02em}
 .fronts .frontrow{margin-top:6px;color:var(--muted);line-height:1.4}
 .fronts .frontrow b{color:var(--ink-soft);font-weight:700}
+/* pauta de capa ↔ feed (P2) */
+.pauta-link{display:inline-block;margin-top:6px;font-family:var(--sans);font-size:11px;
+  font-weight:600;letter-spacing:.02em;color:var(--accent);text-decoration:none}
+.pauta-link:hover{text-decoration:underline}
+.hero-side .hitem-wrap{padding:14px 0;border-bottom:1px solid var(--hair)}
+.hero-side .hitem-wrap:first-child{padding-top:2px}
+.hero-side .hitem-wrap:last-child{border-bottom:none}
+.hero-side .hitem-wrap .hitem{padding:0;border-bottom:none}
+details.pauta{margin:0 0 12px;font-family:var(--sans);font-size:11.5px}
+details.pauta summary{cursor:pointer;color:var(--accent);font-weight:600;letter-spacing:.02em}
+details.pauta .pauta-list{margin-top:6px;display:flex;flex-direction:column;gap:6px}
+details.pauta .pauta-list a{color:var(--ink-soft);font-size:12px;line-height:1.4;text-decoration:none}
+details.pauta .pauta-list a:hover{color:var(--accent)}
+details.pauta .pauta-list a span{display:block;color:var(--faint);font-size:10.5px}
+.pauta-banner{border:1px solid var(--hair-strong);border-left:3px solid var(--accent);
+  background:var(--paper);border-radius:4px;padding:14px 16px;margin:0 0 18px}
+.pauta-banner .pb-k{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent)}
+.pauta-banner h3{font-family:var(--serif);font-size:20px;line-height:1.25;margin:4px 0 2px}
+.pauta-banner p{font-family:var(--serif);font-size:13px;color:var(--muted);margin:0}
+.pauta-banner .pb-srcs{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;
+  font-family:var(--sans);font-size:10.5px;color:var(--faint)}
+.pauta-banner .pb-srcs b{color:var(--ink-soft)}
+.pauta-clear{margin-top:10px;background:none;border:none;padding:0;cursor:pointer;
+  font-family:var(--sans);font-size:11px;font-weight:600;color:var(--faint)}
+.pauta-clear:hover{color:var(--accent)}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .badges:empty{display:none}
 .badge{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:4px;display:inline-flex;align-items:center;gap:5px}
@@ -513,7 +539,7 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
 <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
 
 <script>
-const S = { data:null, filter:'all', q:'', ed:'', src:'', featuredId:null,
+const S = { data:null, filter:'all', q:'', ed:'', src:'', pauta:'', featuredId:null,
             sort: (localStorage.getItem('balanco-sort') || 'chrono') };
 
 const $ = (s,el=document)=>el.querySelector(s);
@@ -575,7 +601,7 @@ function divScore(s){ return Math.abs(leftPct(s) - rightPct(s)); }
 
 /* o destaque só faz sentido na visão "todas"; em filtro/busca ele empurra o conteúdo */
 function featuredVisible(){
-  return S.filter==='all' && !S.q.trim() && !S.ed && !S.src;
+  return S.filter==='all' && !S.q.trim() && !S.ed && !S.src && !S.pauta;
 }
 
 const covLabel = s => {
@@ -638,6 +664,8 @@ function renderAll(){
   if(qp !== null){ S.q = qp; const qi = $('#q'); if(qi) qi.value = qp; }
   const fp = params.get('f');
   if(fp && ['all','blind','L','R','div'].includes(fp)) S.filter = fp;
+  const pp = params.get('pauta');
+  if(pp && (d.front_pautas||[]).some(p=>p.key===pp)) S.pauta = pp;
   document.querySelectorAll('.pill[data-f]').forEach(el=>
     el.classList.toggle('on', el.dataset.f===S.filter));
   const gen = new Date(d.generated_at);
@@ -705,6 +733,67 @@ function openFromUrl(){
   if(s) expandStory(s.id);
 }
 
+/* ---------- pauta de capa ↔ feed (P2) ---------- */
+function pautaInfo(s){
+  const key = s && s.pauta_key;
+  if(!key) return null;
+  const p = ((S.data && S.data.front_pautas) || []).find(x=>x.key===key);
+  const n = (s.pauta_n_stories || (p && p.n_stories) || 0);
+  if(!p || n < 2) return null;
+  return {key, label: s.pauta || p.label, n, p};
+}
+function pautaLink(s, text){
+  const info = pautaInfo(s);
+  if(!info) return '';
+  return `<a class="pauta-link" href="?pauta=${encodeURIComponent(info.key)}" data-pauta="${esc(info.key)}">${esc(text || 'Veja também nesta pauta')} (${info.n}) →</a>`;
+}
+function pautaPreview(s){
+  const info = pautaInfo(s);
+  if(!info) return '';
+  const others = (info.p.story_ids || [])
+    .filter(id=>id!==s.id)
+    .map(id=>(S.data.stories||[]).find(x=>x.id===id))
+    .filter(Boolean)
+    .sort((a,b)=>(b.destaque||0)-(a.destaque||0))
+    .slice(0,4);
+  if(!others.length) return '';
+  return `<details class="pauta">
+    <summary>Veja também nesta pauta (${info.n})</summary>
+    <div class="pauta-list">
+      ${others.map(o=>`<a href="?story=${encodeURIComponent(o.id)}" data-jump="${esc(o.id)}">${esc(o.title)}<span>${covLabel(o)}</span></a>`).join('')}
+      ${pautaLink(s, 'Ver todas no feed')}
+    </div>
+  </details>`;
+}
+function pautaBanner(p, n){
+  const srcs = (p.sources || []).slice(0,6).map(x=>
+    `<span><b>${esc(x.source)}</b> #${x.position}</span>`).join('');
+  return `<div class="pauta-banner">
+    <div class="pb-k">Pauta de capa · ${p.n_sources} ${p.n_sources===1?'jornal':'jornais'} de referência</div>
+    <h3>${esc(p.label)}</h3>
+    <p>${n} história${n===1?'':'s'} no feed · ${p.coverage_total} cobertura${p.coverage_total===1?'':'s'}</p>
+    ${srcs?`<div class="pb-srcs">${srcs}</div>`:''}
+    <button class="pauta-clear" data-pauta="">× Sair da pauta</button>
+  </div>`;
+}
+function setPauta(key){
+  S.pauta = key || '';
+  if(S.pauta){
+    S.filter='all'; S.q=''; S.ed=''; S.src='';
+    const q = $('#q'); if(q) q.value='';
+    document.querySelectorAll('.pill[data-f]').forEach(x=>x.classList.toggle('on', x.dataset.f==='all'));
+  }
+  const u = new URL(location.href);
+  if(S.pauta) u.searchParams.set('pauta', S.pauta);
+  else u.searchParams.delete('pauta');
+  history.replaceState(null,'',u);
+  renderFeed();
+  if(S.pauta){
+    const col = document.getElementById('feedCol');
+    if(col) col.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
 /* ---------- featured ---------- */
 function frontCount(s){ return (s.front || []).length; }
 function frontDetails(s){
@@ -740,10 +829,12 @@ function renderFeatured(){
   S.featuredId = top.id;
   const fc = frontCount(top);
   const frontTag = fc ? ` · abre em ${fc} de 6 jornais` : '';
+  const pi = pautaInfo(top);
+  const pautaTag = pi ? ` · pauta com ${pi.n} histórias` : '';
   const cov = top.front_only ? 'pauta de capa' : covLabel(top);
   const kick = top.blindspot
-    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${cov}${frontTag}</div>`
-    : `<div class="kicker">Em foco · ${cov}${frontTag}</div>`;
+    ? `<div class="kicker blind">⚡ Blindspot ${blindLong(top.blindspot)} · ${cov}${frontTag}${pautaTag}</div>`
+    : `<div class="kicker">Em foco · ${cov}${frontTag}${pautaTag}</div>`;
   const lead = top.articles[0];
   const img = storyImg(top);
   const featCons = centerTrusted(top) >= 3
@@ -755,6 +846,7 @@ function renderFeatured(){
       <h1><a href="${esc(top.rep_link || lead.link)}" target="_blank" rel="noopener">${esc(top.title)}</a></h1>
       ${top.summary?`<p class="dek">${esc(top.summary)}</p>`:''}
       ${frontDetails(top)}
+      ${pautaPreview(top)}
       ${biasBar(top)}
     </div>`;
   // 3 mais repercutidas no centro (exceto o destaque)
@@ -765,17 +857,20 @@ function renderFeatured(){
     const im = storyImg(s);
     const bar = `<div class="rail-mini" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>`;
     return `
-    <div class="hitem" data-jump="${s.id}" role="button" tabindex="0">
-      <div class="hrow">
-        ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
-        <div>
-          <h3>${esc(s.title)}</h3>
-          ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
-          <div class="hmeta">${s.front_only ? 'pauta de capa' : `${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}`}${frontCount(s)?` · abre em ${frontCount(s)} de 6`:''}</div>
+    <div class="hitem-wrap">
+      <div class="hitem" data-jump="${s.id}" role="button" tabindex="0">
+        <div class="hrow">
+          ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
+          <div>
+            <h3>${esc(s.title)}</h3>
+            ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
+            <div class="hmeta">${s.front_only ? 'pauta de capa' : `${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}`}${frontCount(s)?` · abre em ${frontCount(s)} de 6`:''}</div>
+          </div>
         </div>
+        ${bar}
+        ${biasLegend(s, 'mini')}
       </div>
-      ${bar}
-      ${biasLegend(s, 'mini')}
+      ${pautaLink(s)}
     </div>`;}).join('');
   requestAnimationFrame(alignHero);
   alignHero();
@@ -1050,8 +1145,13 @@ function renderFeed(){
       `<option value="${esc(n)}"${n===S.src?' selected':''}>${esc(n)}</option>`).join('');
   if(S.src) list = list.filter(s => (s.articles||[]).some(a=>a.source===S.src));
 
-  let title = 'Todas as histórias';
-  if(S.filter==='blind'){ list=orderList(list.filter(s=>s.blindspot)); title='Blindspots'; }
+  const pauta = S.pauta
+    ? ((d.front_pautas||[]).find(p=>p.key===S.pauta) || null) : null;
+  if(pauta) list = list.filter(s=>s.pauta_key===S.pauta);
+
+  let title = pauta ? `Pauta: ${pauta.label}` : 'Todas as histórias';
+  if(pauta){ list = orderList(list); }
+  else if(S.filter==='blind'){ list=orderList(list.filter(s=>s.blindspot)); title='Blindspots'; }
   else if(S.filter==='L'){ list=orderList(list.filter(s=>leftPct(s)>=50)); title='Maioria esquerda'; }
   else if(S.filter==='R'){ list=orderList(list.filter(s=>rightPct(s)>=50)); title='Maioria direita'; }
   else if(S.filter==='div'){ list.sort((a,b)=>divScore(b)-divScore(a)); title='Mais divididas'; }
@@ -1062,12 +1162,16 @@ function renderFeed(){
   }
 
   $('#feedTitle').textContent = title;
-  $('#feedCount').textContent = list.length ? `${list.length} ${list.length===1?'história':'histórias'}${featuredVisible()?' + destaque':''}` : '';
+  $('#feedCount').textContent = list.length
+    ? `${list.length} ${list.length===1?'história':'histórias'}${
+        pauta ? ` · ${pauta.n_sources} ${pauta.n_sources===1?'jornal':'jornais'}`
+              : (featuredVisible()?' + destaque':'')}`
+    : '';
 
   const wrap = $('#feed');
   if(!list.length){ wrap.innerHTML = '<div class="empty">Nenhuma história com esse filtro. Tente outro termo ou rode <b>python app.py</b>.</div>'; return; }
 
-  wrap.innerHTML = list.map(s=>{
+  wrap.innerHTML = (pauta ? pautaBanner(pauta, list.length) : '') + list.map(s=>{
     const blind = s.blindspot
       ? `<span class="badge blind"><span class="spark">⚡</span>Blindspot ${blindShort(s.blindspot)}</span>`
       : '';
@@ -1192,13 +1296,17 @@ function renderRail(){
 /* ---------- interactions ---------- */
 function jumpTo(id){
   if(!id) return;
-  S.filter='all'; S.q=''; S.ed=''; S.src='';
+  S.filter='all'; S.q=''; S.ed=''; S.src=''; S.pauta='';
+  const u = new URL(location.href);
+  if(u.searchParams.has('pauta')){ u.searchParams.delete('pauta'); history.replaceState(null,'',u); }
   const q = $('#q'); if(q) q.value='';
   document.querySelectorAll('.pill[data-f]').forEach(p=>p.classList.toggle('on', p.dataset.f==='all'));
   renderFeed();
   expandStory(id);
 }
 document.addEventListener('click', e=>{
+  const pa = e.target.closest && e.target.closest('[data-pauta]');
+  if(pa){ e.preventDefault(); setPauta(pa.dataset.pauta); return; }
   const el = e.target.closest && e.target.closest('[data-jump]');
   if(el) jumpTo(el.dataset.jump);
 });
