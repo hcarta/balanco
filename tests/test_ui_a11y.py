@@ -39,3 +39,10 @@ def test_update_indicator_and_poll():
 
 def test_meta_description_present():
     assert '<meta name="description"' in HTML
+
+
+def test_mobile_has_no_min_width_overflow():
+    """Item 4 do backlog: grid e cabeçalho não podem forçar largura mínima."""
+    assert "grid-template-columns:minmax(0,1fr)" in HTML
+    assert "#feedCol,#feed,.story" in HTML
+    assert "#ed,#src{max-width:100%" in HTML

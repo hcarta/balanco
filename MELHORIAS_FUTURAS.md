@@ -116,7 +116,14 @@ atualizados em 3 janelas; nada disso entra na barra de viés nem no blindspot.
 
 ---
 
-## 4. Mobile: eliminar o estouro horizontal
+## 4. Mobile: eliminar o estouro horizontal — ✅ feito (02/11/2026)
+
+> Corrigido junto da Fase 5. Causa: o `section-head` (título + 2 selects de
+> 170px + contador) tinha largura mínima de ~590px e arrastava a coluna do grid.
+> Correção: `.main` com `minmax(0,1fr)` também no mobile e um bloco ≤760px com
+> `min-width:0` em `#feedCol/#feed/.story/.compare/.pauta/.beyond`, `edwrap`
+> quebrando linha e selects flexíveis. Medido em iframe: **overflow 0 em
+> 320/375/430 px** (antes 613 px de largura).
 
 **Objetivo:** o site não ultrapassa a largura da tela em 320–430 px.
 

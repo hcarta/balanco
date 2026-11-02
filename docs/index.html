@@ -125,7 +125,17 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .rail{position:sticky;top:76px;display:flex;flex-direction:column;gap:30px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:2px;scrollbar-width:thin}
 .rail::-webkit-scrollbar{width:6px}
 .rail::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:99px}
-@media(max-width:940px){.main{grid-template-columns:1fr;gap:34px}.rail{position:static;order:2;max-height:none;overflow-y:visible}}
+@media(max-width:940px){.main{grid-template-columns:minmax(0,1fr);gap:34px}.rail{position:static;order:2;max-height:none;overflow-y:visible}}
+/* mobile: nada pode forçar largura mínima da coluna */
+@media(max-width:760px){
+  #feedCol,#feed,.story,.compare,.pauta,.beyond,.section-head{min-width:0;max-width:100%}
+  .section-head{flex-wrap:wrap;gap:6px}
+  .section-head .edwrap{width:100%;flex-wrap:wrap;gap:8px}
+  .section-head .count{white-space:normal}
+  #ed,#src{max-width:100%;min-width:0;flex:1 1 140px}
+  .biasrow{flex-wrap:wrap}
+  .tnone{display:none}
+}
 
 /* mobile nav: pílulas roláveis, busca sempre visível */
 @media(max-width:760px){
