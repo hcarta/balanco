@@ -97,3 +97,18 @@ def test_leituras_ad_filter():
     assert app.LEITURAS_AD.search("Publi de graça no Núcleo – veja como")
     assert app.LEITURAS_AD.search("Conteúdo patrocinado: novo banco digital")
     assert not app.LEITURAS_AD.search("A grande muralha de posts")
+
+
+def test_piaui_featured_parses_image(monkeypatch):
+    html = ('<section class="tema-escuro destaque1a"><a href="/revista/241/x/" '
+            'class="destaque1a-img"><img src="/media/x.jpg"></a>'
+            '<a href="/revista/241/x/"><h1>A proteína polêmica</h1></a>'
+            '<p class="linha-fina-grande">dek</p></section>')
+
+    class R:
+        text = html
+
+    monkeypatch.setattr("requests.get", lambda *a, **k: R())
+    feat = app._piaui_featured()
+    assert feat["title"] == "A proteína polêmica"
+    assert feat["image"] == "https://piaui.uol.com.br/media/x.jpg"

@@ -1744,9 +1744,14 @@ def _piaui_featured(timeout: int = 20):
         clean = lambda s: _clean_text(html.unescape(re.sub(r"<[^>]+>", " ", s)))
         title = clean(h1.group(1)) if h1 else ""
         summary = clean(dek.group(1)) if dek else ""
+        img = re.search(r'<img[^>]+src="([^"]+)"', block)
+        image = img.group(1) if img else ""
+        if image.startswith("/"):
+            image = "https://piaui.uol.com.br" + image
         if not title:
             return None
-        return {"title": title, "link": link, "summary": summary}
+        return {"title": title, "link": link, "summary": summary,
+                "image": image}
     except Exception:
         return None
 
@@ -1818,7 +1823,8 @@ def build_leituras(store, sources, days=10, limit=8, exclude_links=None,
                        "title": feat["title"], "link": feat["link"],
                        "published": datetime.now(timezone.utc).isoformat(),
                        "summary": (feat.get("summary") or "")[:240],
-                       "image": "", "bias": -0.8, "featured": True})
+                       "image": feat.get("image", ""), "bias": -0.8,
+                       "featured": True})
     elif feat:
         for x in out:
             if x["link"] == feat["link"]:
