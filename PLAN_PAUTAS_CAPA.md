@@ -37,7 +37,7 @@ maior, menos dependência de uma única matéria).
 | **P1** | `front_pautas` com `story_ids`; `pauta`/`pauta_n_stories` nas histórias; casamento por suporte do conceito + dimensão da pauta. | **Concluída** |
 | **P2** | UI: “veja também nesta pauta (N)” nos 4 slots + filtro por pauta. | **Concluída** |
 | **P3** | Viés agregado da pauta (cobertura dedup por grupo, barra e blindspot no nível da pauta). | **Concluída** |
-| **P4** | Conceito como rótulo do hub (“Outros ângulos” usa a pauta quando existir). | Pendente |
+| **P4** | Conceito como rótulo do hub (“Outros ângulos” usa a pauta quando existir). | **Concluída** |
 
 ## Contexto para o leitor (P2)
 
@@ -66,6 +66,14 @@ maior, menos dependência de uma única matéria).
   ausente, marcar o blindspot da pauta.
 - **Posição na capa** pesa no `destaque`, mas **não** na barra de viés (que
   continua factual, por fonte).
+
+## Conceito como rótulo do hub (P4)
+
+- Histórias de uma pauta com 2+ histórias recebem `hub` com
+  `key="pauta:<key>"`, `label` do conceito e `size=n_stories`.
+- “Outros ângulos desta pauta · <conceito>” passa a listar as histórias do
+  tema; o hub por entidade continua como fallback fora das pautas e nas
+  pautas de uma história só.
 
 ## Riscos
 

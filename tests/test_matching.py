@@ -1287,3 +1287,44 @@ def test_front_pauta_aggregates_bias_by_editorial_group():
     assert p["pct"] == {"L": 0, "CL": 33, "C": 33, "CR": 0, "R": 33}
     assert p["blindspot"] is None
     assert p["avg_bias"] == round((-0.5 + 0.1 + 0.9) / 3, 2)
+
+
+def test_front_pauta_becomes_hub_label_with_entity_fallback():
+    """P4: conceito rotula "Outros ângulos"; hub de entidade é fallback."""
+    stories = [
+        {"id": "a", "title": "Irã propõe reabrir Estreito de Ormuz em dois dias",
+         "articles": [_art("Irã propõe reabrir Ormuz em dois dias", "g1", 0.0),
+                      _art("Irã propõe reabrir Ormuz", "folha", 0.0)],
+         "counts": {"total": 2}, "recent": {"n_6h": 1},
+         "hub": {"key": "irã", "label": "Irã", "size": 4}},
+        {"id": "b", "title": "Líder do Irã ordena resposta sem restrições",
+         "articles": [_art("Líder do Irã ordena resposta", "cnn", 0.0),
+                      _art("Líder do Irã adverte", "uol", 0.0)],
+         "counts": {"total": 2}, "recent": {"n_6h": 1}, "hub": None},
+        {"id": "c", "title": "Binance sofre ataque hacker de US$ 6,3 bilhões",
+         "articles": [_art("Binance sofre ataque hacker", "g1", 0.0)],
+         "counts": {"total": 1}, "recent": {"n_6h": 0},
+         "hub": {"key": "binance", "label": "Binance", "size": 3}},
+    ]
+    desks = {"UOL": [{"title": "Irã propõe reabrir Hormuz em dois dias",
+                      "link": "https://x/1"}]}
+    out, _, _ = app.attach_front_pages(stories, desks=desks)
+    by = {s["id"]: s for s in out}
+    assert by["a"]["hub"] == {"key": "pauta:irã-hormuz",
+                              "label": "Irã / Hormuz", "size": 2,
+                              "concept": True}
+    assert by["b"]["hub"]["label"] == "Irã / Hormuz"
+    assert by["c"]["hub"]["label"] == "Binance"   # fora da pauta: fallback
+
+
+def test_single_story_pauta_keeps_entity_hub():
+    story = {"id": "d",
+             "title": "Freezers de supermercados são alvo de hackers na Europa",
+             "articles": [_art("Freezers de supermercados são alvo de hackers", "g1", 0.0),
+                          _art("Freezers de supermercados são atacados", "folha", 0.0)],
+             "counts": {"total": 2}, "recent": {"n_6h": 1},
+             "hub": {"key": "freezers", "label": "Freezers", "size": 2}}
+    desks = {"G1": [{"title": "Freezers de supermercados são alvo de hackers",
+                     "link": "https://x/1"}]}
+    out, _, _ = app.attach_front_pages([story], desks=desks)
+    assert out[0]["hub"] == {"key": "freezers", "label": "Freezers", "size": 2}

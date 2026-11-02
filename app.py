@@ -1018,6 +1018,11 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             s["pauta"] = p["label"]
             s["pauta_key"] = p["key"]
             s["pauta_n_stories"] = p["n_stories"]
+            # P4: o conceito de capa vira o rótulo do hub ("Outros ângulos");
+            # o hub por entidade segue como fallback quando não há pauta.
+            if p["n_stories"] >= 2:
+                s["hub"] = {"key": "pauta:" + p["key"], "label": p["label"],
+                            "size": p["n_stories"], "concept": True}
     # destaque das histórias (capa + cobertura + recência)
     for s in stories:
         w = s.get("front_score", 0)
