@@ -266,13 +266,22 @@ Veto segue **desligado** no CI.
       `data.json` para comparar byte-a-byte.
 - [ ] Estado global (`_ENT_CACHE` etc.): adiado (baixo valor, alto churn).
 
-### Fase 5 — UI/UX e acessibilidade (1–2 dias)
+### Fase 5 — UI/UX e acessibilidade (1–2 dias) — ✅ feito (02/11/2026)
 
-- [ ] Painel "Comparar os lados" responsivo com 5 colunas (já na Fase 2); ajustar.
-- [ ] ARIA em controles interativos, focus visível, `aria-label` nas barras.
-- [ ] Lazy-load de imagens (`loading="lazy"`).
-- [ ] Indicador de atualização quando `data.json` muda.
-- [ ] Aceite: Lighthouse acessibilidade ≥ 90.
+- [x] **ARIA**: `aria-expanded`/`aria-controls` no “Comparar os lados” (link e
+      botão), `role="button"` + `tabindex="0"` + teclado (Enter/Espaço) nos itens
+      de destaque/rail, `aria-label` nos selects, `role="status"` no aviso de nova
+      edição, `aria-hidden` nos ícones decorativos, h2 oculto “Destaques do dia”
+      para a ordem de títulos (h1→h2→h3).
+- [x] **Foco visível**: `:focus-visible` + fallback `:focus` para teclado.
+- [x] **Lazy-load**: todas as imagens (`loading="lazy"` + `alt`).
+- [x] **Indicador de atualização**: “edição de X min atrás” + poll a cada 5 min
+      e aviso “Nova edição disponível · Atualizar” (recarrega o `data.json`).
+- [x] Contraste de texto pequeno corrigido (`--faint` mais escuro nos 2 temas).
+- [x] `meta description` e `aria-hidden` nos SVGs.
+- [ ] Lighthouse ≥ 90: **rodar manualmente** (não há Lighthouse no ambiente);
+      os itens que ele cobra (lang, meta, alt, foco, títulos, labels) estão cobertos.
+- [x] Regressão travada em `tests/test_ui_a11y.py` (**153 testes**).
 
 ### Fase 6 — Produto final (conforme decisão do dono)
 

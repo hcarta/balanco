@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Balanço — todos os lados da notícia</title>
+<meta name="description" content="A mesma notícia, de todos os lados: compare como veículos de esquerda, centro e direita cobrem o mesmo fato, com blindspots e checagens.">
 <script>try{var _t=localStorage.getItem('balanco-theme');if(!_t)_t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=_t;}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
   --ink:#16130f;
   --ink-soft:#3d3833;
   --muted:#6f675e;
-  --faint:#9a9187;
+  --faint:#726a5f;
   --hair:#e6e0d6;
   --hair-strong:#d8d0c3;
   --accent:#b3261e;
@@ -40,7 +41,7 @@ html[data-theme="dark"]{
   --ink:#ece4d3;
   --ink-soft:#d3c8b4;
   --muted:#a89d89;
-  --faint:#7e7462;
+  --faint:#9a8f7a;
   --hair:#383126;
   --hair-strong:#4d4435;
   --accent:#d0604f;
@@ -377,6 +378,17 @@ footer a.fl{display:block;font-size:13px;color:var(--muted);padding:4px 0}
 footer a.fl:hover{color:var(--accent)}
 @media(max-width:720px){footer .wrap{grid-template-columns:1fr;gap:26px}}
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px solid var(--accent);outline-offset:2px}
+.nav .search input:focus,.nav .search input:focus-visible{outline:none;border-color:var(--ink)}
+#newEd{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:60;
+  background:var(--ink);color:var(--paper);border-radius:99px;padding:10px 16px;
+  font-family:var(--sans);font-size:12.5px;font-weight:600;display:none;gap:10px;align-items:center;
+  box-shadow:0 6px 24px rgba(0,0,0,.28)}
+#newEd.show{display:flex}
+#newEd button{background:var(--accent);color:#fff;border:none;border-radius:99px;
+  padding:5px 12px;font:inherit;cursor:pointer}
 .to-top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:20;box-shadow:0 4px 16px rgba(0,0,0,.2)}
 .to-top.show{display:flex}
 </style>
@@ -386,6 +398,7 @@ footer a.fl:hover{color:var(--accent)}
 <div class="strip"><div class="wrap">
   <span class="tag"><b>Novo</b> · protótipo brasileiro do Ground.news</span>
   <span class="date" id="dateLine">carregando edição…</span>
+  <span class="date" id="updLine" aria-live="polite"></span>
 </div></div>
 
 <header class="masthead"><div class="wrap">
@@ -405,7 +418,7 @@ footer a.fl:hover{color:var(--accent)}
     <a class="pill" href="como-lemos.html">ⓘ Metodologia</a>
   </div>
   <label class="search">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
     <input type="search" id="q" placeholder="Buscar…" aria-label="Buscar histórias">
   </label>
   <button class="pill" id="themeBtn" title="Alternar modo claro/escuro" aria-label="Alternar modo claro/escuro">🌙</button>
@@ -414,7 +427,8 @@ footer a.fl:hover{color:var(--accent)}
 <main class="wrap">
   <section class="hero" id="heroSec">
     <div id="featured"></div>
-    <aside class="hero-side" id="heroSide">
+    <aside class="hero-side" id="heroSide" aria-labelledby="heroTitle">
+      <h2 id="heroTitle" class="sr-only">Destaques do dia</h2>
       <div class="kicker kspacer" aria-hidden="true" style="visibility:hidden">Em foco</div>
       <div id="heroList"></div>
     </aside>
@@ -458,6 +472,11 @@ footer a.fl:hover{color:var(--accent)}
     <a class="fl" href="https://ground.news/" target="_blank" rel="noopener">Inspiração: Ground.news</a>
   </div>
 </div></footer>
+
+<div id="newEd" role="status" aria-live="polite">
+  <span>Nova edição disponível</span>
+  <button id="newEdBtn" type="button">Atualizar</button>
+</div>
 
 <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
 
@@ -575,7 +594,40 @@ function renderAll(){
   renderRail();
   openFromUrl();
   usoPanel();
+  updLine();
 }
+
+/* ---------- atualização da edição (Fase 5) ---------- */
+function updLine(){
+  const el = document.getElementById('updLine');
+  const gen = S.data && S.data.generated_at;
+  if(!el || !gen) return;
+  const min = Math.round((Date.now() - new Date(gen).getTime()) / 60000);
+  el.textContent = min < 1 ? '· edição de agora' : `· edição de ${min} min atrás`;
+}
+function showNewEdition(){
+  const box = document.getElementById('newEd');
+  if(box) box.classList.add('show');
+}
+async function checkNewEdition(){
+  try{
+    const r = await fetch('data.json?_=' + Date.now(), {cache:'no-store'});
+    const d = await r.json();
+    if(d && d.generated_at && S.data && S.data.generated_at
+       && d.generated_at !== S.data.generated_at){
+      showNewEdition();
+    }
+  }catch(_){}
+}
+setInterval(updLine, 60000);
+setInterval(checkNewEdition, 5*60*1000);
+document.addEventListener('DOMContentLoaded', ()=>{
+  const b = document.getElementById('newEdBtn');
+  if(b) b.addEventListener('click', async ()=>{
+    document.getElementById('newEd')?.classList.remove('show');
+    await load();
+  });
+});
 
 /* abre uma história via link direto (?story=ID ou #ID) */
 function expandStory(id, scroll=true){
@@ -634,11 +686,11 @@ function renderFeatured(){
     const im = storyImg(s);
     const bar = `<div class="rail-mini" role="img" aria-label="${barAria(s)}">${barSegs(s)}</div>`;
     return `
-    <div class="hitem" data-jump="${s.id}">
+    <div class="hitem" data-jump="${s.id}" role="button" tabindex="0">
       <div class="hrow">
         ${im?`<img class="hthumb" src="${esc(im)}" alt="" loading="lazy" onerror="this.remove()">`:''}
         <div>
-          <h4>${esc(s.title)}</h4>
+          <h3>${esc(s.title)}</h3>
           ${s.summary?`<p class="hsum">${esc(s.summary)}</p>`:''}
           <div class="hmeta">${n} veículo${n===1?'':'s'} de centro · ${covLabel(s)}</div>
         </div>
@@ -782,7 +834,7 @@ function comparePanel(s){
       <div class="ch"><span>${BUCKET[k]}</span><span class="n">${groups.length}</span></div>
       <div class="body">${list}</div></div>`;
   };
-  return `<div class="compare" hidden>${ORDER.map(col).join('')}${framingHTML(s)}${timelineHTML(s)}</div>
+  return `<div class="compare" id="cmp-${s.id}" hidden>${ORDER.map(col).join('')}${framingHTML(s)}${timelineHTML(s)}</div>
   ${beyond(s)}
   ${pauta(s)}`;
 }
@@ -938,7 +990,7 @@ function renderFeed(){
       <div class="top">${blind}${checksBadges(s)}${cons}<span class="badge plain">${covLabel(s)}</span>${s.hub?`<span class="badge hub" title="Esta história faz parte de uma pauta com ${s.hub.size} ângulos">🔗 pauta · ${esc(s.hub.label)}</span>`:''}</div>
       <div class="sgrid"><div>
       ${s.section_label&&s.section_label!=='Geral'?`<div class="kicker-sec">${esc(s.section_label)}</div>`:''}
-      <h3><a class="toggle-story" href="#" role="button">${hi(s.title)}</a></h3>
+      <h3><a class="toggle-story" href="#" role="button" aria-expanded="false" aria-controls="cmp-${s.id}">${hi(s.title)}</a></h3>
       ${s.summary?`<p class="sum">${hi(s.summary)}</p>`:''}
       </div>${img?`<img class="thumb" src="${esc(img)}" alt="" loading="lazy" onerror="this.remove()">`:''}</div>
       ${biasBar(s)}
@@ -948,7 +1000,7 @@ function renderFeed(){
           <span class="sep"></span>
           <span>viés médio ${s.avg_bias>0?'+':''}${s.avg_bias}</span>
         </div>
-        <button class="btn toggle-story">Comparar os lados <span class="arw">▸</span></button>
+        <button class="btn toggle-story" aria-expanded="false" aria-controls="cmp-${s.id}">Comparar os lados <span class="arw" aria-hidden="true">▸</span></button>
       </div>
       ${comparePanel(s)}
     </article>`;
@@ -963,6 +1015,7 @@ function renderFeed(){
       const open = panel.hidden;
       panel.hidden = !open;
       btn.classList.toggle('open', open);
+      art.querySelectorAll('.toggle-story').forEach(x=>x.setAttribute('aria-expanded', String(open)));
       if(open) track('comparar', art.dataset.id);
     });
   });
@@ -996,7 +1049,7 @@ function renderRail(){
   $('#blindCard').innerHTML = `<div class="rt">⚡ Blindspots de hoje</div>` + (
     blinds.length ? blinds.map(s=>{
       const desc = s.blindspot==='left' ? 'pouca cobertura da esquerda' : 'pouca cobertura da direita';
-      return `<div class="rail-item" data-jump="${s.id}">
+      return `<div class="rail-item" data-jump="${s.id}" role="button" tabindex="0">
         <h4>${esc(s.title)}</h4>
         <div class="rail-mini">
           ${barSegs(s)}
@@ -1046,18 +1099,28 @@ function renderRail(){
       (abroad.length?`<div class="rt" style="margin-top:${only.length?'18px':'0'}">🇧🇷 Brasil visto de fora</div>`+abroad.map(item).join(''):'');
   })();
 
-  // jump links in rail
-  document.querySelectorAll('[data-jump]').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      S.filter='all'; S.q=''; S.ed=''; S.src=''; $('#q').value='';
-      document.querySelectorAll('.pill[data-f]').forEach(p=>p.classList.toggle('on', p.dataset.f==='all'));
-      renderFeed();
-      expandStory(el.dataset.jump);
-    });
-  });
 }
 
 /* ---------- interactions ---------- */
+function jumpTo(id){
+  if(!id) return;
+  S.filter='all'; S.q=''; S.ed=''; S.src='';
+  const q = $('#q'); if(q) q.value='';
+  document.querySelectorAll('.pill[data-f]').forEach(p=>p.classList.toggle('on', p.dataset.f==='all'));
+  renderFeed();
+  expandStory(id);
+}
+document.addEventListener('click', e=>{
+  const el = e.target.closest && e.target.closest('[data-jump]');
+  if(el) jumpTo(el.dataset.jump);
+});
+document.addEventListener('keydown', e=>{
+  if(e.key !== 'Enter' && e.key !== ' ') return;
+  const el = e.target.closest && e.target.closest('[data-jump]');
+  if(!el) return;
+  e.preventDefault();
+  jumpTo(el.dataset.jump);
+});
 document.querySelectorAll('.pill[data-f]').forEach(p=>{
   p.addEventListener('click', ()=>{
     document.querySelectorAll('.pill[data-f]').forEach(x=>x.classList.remove('on'));
