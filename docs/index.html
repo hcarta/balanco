@@ -437,7 +437,7 @@ footer a.fl:hover{color:var(--accent)}
 @media(max-width:720px){footer .wrap{grid-template-columns:1fr;gap:26px}}
 
 /* Opinião E/C/D (item 3 do backlog) */
-.opiniao{padding:6px 0 44px}
+.opiniao{scroll-margin-top:70px;padding:22px 0 4px}
 .opgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .opcard{border:1px solid var(--hair-strong);border-radius:6px;padding:14px 16px;background:var(--paper)}
 .opcard .opsrc{font-family:var(--sans);font-size:11px;color:var(--faint);margin:8px 0 4px}
@@ -488,6 +488,7 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
     <button class="pill" data-f="L">+ Esq.</button>
     <button class="pill" data-f="R">+ Dir.</button>
     <button class="pill" data-f="div">Mais divididas</button>
+    <a class="pill" href="#opiniaoSec">🗞 Opinião</a>
     <a class="pill" href="leituras.html">📚 Leituras</a>
     <a class="pill" href="como-lemos.html">ⓘ Metodologia</a>
   </div>
@@ -507,6 +508,13 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
       <div id="heroList"></div>
     </aside>
   </section>
+<section class="wrap opiniao" id="opiniaoSec" aria-labelledby="opiniaoTitle" hidden>
+  <div class="section-head">
+    <h2 id="opiniaoTitle">Opinião de hoje</h2>
+    <span class="count">opinião, não cobertura · 3 janelas ao dia</span>
+  </div>
+  <div id="opiniaoGrid" class="opgrid"></div>
+</section>
   <div class="main" id="main">
   <section id="feedCol">
     <div class="section-head">
@@ -532,14 +540,6 @@ a:focus,button:focus,select:focus,summary:focus,[tabindex]:focus{outline:2px sol
     <div class="rail-card" id="worldCard"></div>
   </aside>
 </div></main>
-
-<section class="wrap opiniao" id="opiniaoSec" aria-labelledby="opiniaoTitle" hidden>
-  <div class="section-head">
-    <h2 id="opiniaoTitle">Opinião de hoje</h2>
-    <span class="count">opinião, não cobertura · 3 janelas ao dia</span>
-  </div>
-  <div id="opiniaoGrid" class="opgrid"></div>
-</section>
 
 <footer><div class="wrap">
   <div>

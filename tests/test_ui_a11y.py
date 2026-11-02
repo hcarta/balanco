@@ -104,6 +104,7 @@ def test_opiniao_section_one_card_per_side():
     assert 'id="opiniaoSec"' in HTML
     assert "function renderOpiniao(" in HTML
     assert "opinião, não cobertura" in HTML
+    assert 'href="#opiniaoSec"' in HTML
     assert ".opgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))" in HTML
     assert "@media(max-width:720px){.opgrid{grid-template-columns:1fr}}" in HTML
 
