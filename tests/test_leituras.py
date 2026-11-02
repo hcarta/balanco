@@ -6,8 +6,10 @@ import app
 
 @pytest.fixture(autouse=True)
 def _no_piaui_home(monkeypatch):
-    """Testes não batem na home da piauí."""
-    monkeypatch.setattr(app, "_piaui_featured", lambda *a, **k: None)
+    """Testes não batem na home da piauí (a rede falha e a função devolve None)."""
+    def boom(*a, **k):
+        raise RuntimeError("sem rede no teste")
+    monkeypatch.setattr("requests.get", boom)
 
 SOURCES = [
     {"id": "piaui", "name": "piauí", "longform": True, "bias": -1.0},
