@@ -298,6 +298,11 @@ Veto segue **desligado** no CI.
 cronologia×destaque 6 h, seção de opinião esquerda/centro/direita e correção do
 estouro horizontal no mobile. Ordem sugerida no próprio arquivo.
 
+**Feitos:** item 4 (mobile), item 1a (legenda nos destaques) e item 2
+(ordenação). Restam itens 1 (capas) e 3 (opinião). Inclui o item 5:
+`week_digest` das notícias da semana para métricas de comparação, resumos e
+ligação com as leituras longas.
+
 ## 5. Comandos úteis
 
 ```bash
