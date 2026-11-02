@@ -47,6 +47,7 @@ jobs:
           path: |
             state/cache.db
             state/factcheck_ledger.json
+            state/pautas_snapshot.json
           # chave única por rodada: actions/cache é imutável por chave;
           # restore-keys recupera o cache mais recente e o save cria um novo.
           key: balanco-cache-${{ github.run_id }}
@@ -74,6 +75,7 @@ jobs:
           path: |
             state/cache.db
             state/factcheck_ledger.json
+            state/pautas_snapshot.json
           key: balanco-cache-${{ github.run_id }}
 
       - name: Configurar Pages
@@ -101,7 +103,7 @@ jobs:
         run: |
           git config user.name "balanco-bot"
           git config user.email "balanco-bot@local"
-          git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json
+          git add docs/data.json docs/feed.xml docs/arquivo state/health.json state/factcheck_ledger.json state/pautas_snapshot.json
           git diff --cached --quiet || git commit -m "atualização automática (fallback) $(date -u +%FT%TZ)"
           git checkout -- docs/data.json docs/feed.xml 2>/dev/null || true
           git pull --rebase -X ours origin main
@@ -124,9 +126,9 @@ jobs:
           # data/feed saem pelo artefato do Pages; voltam ao estado do git
           git restore docs/data.json 2>/dev/null || true
           git restore docs/feed.xml 2>/dev/null || true
-          git add docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
+          git add docs/arquivo state/health.json state/factcheck_ledger.json state/pautas_snapshot.json 2>/dev/null || true
           echo "$DAY" > "$MARK"
-          git add "$MARK" docs/arquivo state/health.json state/factcheck_ledger.json 2>/dev/null || true
+          git add "$MARK" docs/arquivo state/health.json state/factcheck_ledger.json state/pautas_snapshot.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "sem mudança para registrar"
             exit 0

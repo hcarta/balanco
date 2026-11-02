@@ -92,3 +92,8 @@ def test_pauta_on_the_fly_fallback():
     """Pauta nova sem conceito não pode sumir do topo (fase 0)."""
     assert "bestOther" in HTML
     assert "!s.pauta_key" in HTML
+
+
+def test_pauta_aliases_resolve_old_links():
+    assert "pautas_aliases" in HTML
+    assert "(S.data.pautas_aliases||{})[key]" in HTML

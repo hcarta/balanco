@@ -44,8 +44,8 @@ sem LLM por matéria, viés fixo por fonte, ranking explicável.
 | **0 — mitigação** | `front_unmatched` no payload/log + fallback de destaque para história grande sem pauta. | Pauta nova não some do topo; buraco visível. |
 | **1 — sombra** | Computar pautas emergentes em paralelo e logar a concordância com o lexicon. | Métrica diária de taxa de reconhecimento. |
 | **2 — primário** | Pautas emergentes viram a fonte dos slots; lexicon vira override. | Pauta nova aparece no topo no dia em que abre. **Concluída (híbrido).** |
-| **3 — rótulos** | Rótulo automático por entidade + `pautas.yaml` de override + aliases. | Chave estável entre rodadas. |
-| **4 — semântica (opcional)** | Embedding MiniLM como ponte de paráfrase, com eval rotulado e flag. | Recall de paráfrase sem novos falso-positivos. |
+| **3 — rótulos** | Rótulo automático por entidade + `pautas.yaml` de override + aliases. | Chave estável entre rodadas. **Concluída.** |
+| **4 — semântica (opcional)** | Embedding MiniLM como ponte de paráfrase, com eval rotulado e flag. | Recall de paráfrase sem novos falso-positivos. **Concluída (flag `--pautas-emb`, desligada).** |
 
 ## Implementação (02/11/2026) — híbrido seguro
 
@@ -62,6 +62,23 @@ sem LLM por matéria, viés fixo por fonte, ranking explicável.
 - **Pertença**: `_group_story_score` (tokens + entidade) liga a pauta às
   histórias do feed; exclusividade por melhor score; histórias já em pauta
   conhecida não são reivindicadas.
+
+## Fase 3 — chaves estáveis (implementado)
+
+- `pautas.yaml`: override humano de `key`, `label`, `match` e `aliases`.
+- `state/pautas_snapshot.json`: links das pautas da rodada; se o novo grupo
+  tiver Jaccard ≥ 0,5 com uma pauta anterior, reaproveita `key`/`label`.
+- `pautas_aliases` no payload: chaves antigas (e aliases do YAML) resolvem
+  para a chave atual no filtro e em `?pauta=`.
+- O snapshot é persistido no cache do Actions e no commit diário.
+
+## Fase 4 — ponte semântica (implementado, desligado)
+
+- `--pautas-emb` liga o embedding MiniLM **só na ligação das pautas
+  emergentes**: se o score lexical falhar e a similaridade for ≥ 0,75, a
+  história entra na pauta (score conservador 0,45–0,70).
+- Sem a flag, o comportamento é idêntico ao lexical; o CI segue sem ela até
+  haver eval rotulado.
 
 ## Métricas e aceites
 

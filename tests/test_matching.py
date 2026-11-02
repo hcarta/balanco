@@ -1521,3 +1521,63 @@ def test_emergent_pauta_low_page_without_feed_is_ignored():
     }
     _, _, pautas = app.attach_front_pages(stories, desks=desks)
     assert not any("Airbnb" in p["label"] for p in pautas if p.get("emergent"))
+
+
+def _em_desks():
+    return {
+        "G1": [{"title": "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas",
+                "link": "https://x/1"}],
+        "UOL": [{"title": "Chuva forte alaga o Vale do Itajaí e deixa desabrigados",
+                 "link": "https://x/2"}],
+    }
+
+
+def test_pauta_override_applies_key_label_and_alias(monkeypatch):
+    monkeypatch.setattr(app, "PAUTAS_OVERRIDES", [{
+        "key": "vale-itajai", "label": "Enchente no Vale do Itajaí",
+        "match": ["vale do itajai"], "aliases": ["enchente-sc"]}])
+    stories = [_mk_front_story(
+        "a", "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas", 2)]
+    stats = {}
+    _, _, pautas = app.attach_front_pages(stories, desks=_em_desks(), stats=stats)
+    em = [p for p in pautas if p.get("emergent")][0]
+    assert em["key"] == "vale-itajai"
+    assert em["label"] == "Enchente no Vale do Itajaí"
+    assert stats["aliases"]["enchente-sc"] == "vale-itajai"
+
+
+def test_emergent_key_reuses_previous_snapshot():
+    stories = [_mk_front_story(
+        "a", "Enchente atinge o Vale do Itajaí e deixa famílias desabrigadas", 2)]
+    prev = [{"key": "enchente-2026", "label": "Enchente SC",
+             "links": ["https://x/1", "https://x/2"]}]
+    _, _, pautas = app.attach_front_pages(
+        stories, desks=_em_desks(), previous_pautas=prev)
+    em = [p for p in pautas if p.get("emergent")][0]
+    assert em["key"] == "enchente-2026"
+    assert em["label"] == "Enchente SC"
+
+
+def test_emergent_pauta_uses_embeddings_when_lexical_fails(monkeypatch):
+    stories = [_mk_front_story(
+        "a", "Temporal deixa moradores sem casa no interior de Santa Catarina", 2)]
+
+    def fake_embed(docs, model_name=""):
+        import numpy as np
+        out = []
+        for d in docs:
+            t = d["title"].lower()
+            v = [1.0, 0.0] if ("temporal" in t or "santa catarina" in t
+                               or "enchente" in t or "alaga" in t) else [0.0, 1.0]
+            out.append(v)
+        X = np.array(out, dtype=float)
+        X /= (np.linalg.norm(X, axis=1, keepdims=True) + 1e-9)
+        return X
+
+    monkeypatch.setattr(app, "embed_matrix", fake_embed)
+    _, _, sem = app.attach_front_pages(stories, desks=_em_desks())
+    # léxico sozinho não liga a história (a pauta pode existir como front_only)
+    assert not any("a" in p["story_ids"] for p in sem if p.get("emergent"))
+    out, _, com = app.attach_front_pages(stories, desks=_em_desks(), use_embed=True)
+    em = [p for p in com if p.get("emergent")]
+    assert em and "a" in em[0]["story_ids"]

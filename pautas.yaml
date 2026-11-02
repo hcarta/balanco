@@ -1,0 +1,15 @@
+# Overrides humanos para pautas de capa (opcional).
+#
+# key: chave estável usada em ?pauta=<key>
+# label: rótulo exibido
+# match: termos que identificam a pauta nas manchetes (normalizados:
+#        sem acento, singular; expressões multi-palavra valem como sequência)
+# aliases: chaves antigas que devem continuar funcionando
+#
+# Exemplo:
+# pautas:
+#   - key: vale-do-itajai
+#     label: Enchente no Vale do Itajaí
+#     match: ["vale do itajai", "enchente"]
+#     aliases: ["enchente-sc"]
+pautas: []

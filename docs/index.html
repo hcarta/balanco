@@ -673,7 +673,8 @@ function renderAll(){
   const fp = params.get('f');
   if(fp && ['all','blind','L','R','div'].includes(fp)) S.filter = fp;
   const pp = params.get('pauta');
-  if(pp && (d.front_pautas||[]).some(p=>p.key===pp)) S.pauta = pp;
+  const pk = pp && ((d.pautas_aliases||{})[pp] || pp);
+  if(pk && (d.front_pautas||[]).some(p=>p.key===pk)) S.pauta = pk;
   document.querySelectorAll('.pill[data-f]').forEach(el=>
     el.classList.toggle('on', el.dataset.f===S.filter));
   const gen = new Date(d.generated_at);
@@ -800,7 +801,9 @@ function pautaBanner(p, n){
   </div>`;
 }
 function setPauta(key){
-  S.pauta = key || '';
+  // aliases: links antigos continuam abrindo a pauta atual
+  key = (key && ((S.data.pautas_aliases||{})[key])) || key || '';
+  S.pauta = key;
   if(S.pauta){
     S.filter='all'; S.q=''; S.ed=''; S.src='';
     const q = $('#q'); if(q) q.value='';

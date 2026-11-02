@@ -1,0 +1,58 @@
+{
+ "generated_at": "2026-11-02T21:13:13.026152+00:00",
+ "pautas": [
+  {
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
+   "links": [
+    "https://oglobo.globo.com/mundo/ao-vivo/com-mais-de-50-milhoes-de-votos-antecipados-partidos-encerram-campanha-e-democratas-temem-que-trump-conteste-o-resultado-das-eleicoes.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/midterms-veja-o-que-esperar-das-eleicoes-de-meio-de-mandato/",
+    "https://g1.globo.com/economia/noticia/2026/11/02/midterms-nos-eua-eleicoes-podem-mudar-planos-de-trump-e-mexer-com-dolar-e-juros-no-brasil.ghtml"
+   ]
+  },
+  {
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
+   "links": [
+    "https://www1.folha.uol.com.br/poder/2026/11/fuga-de-flavio-bolsonaro-aos-eua-apos-derrota-leva-militares-a-abracarem-tarcisio.shtml",
+    "https://oglobo.globo.com/politica/noticia/2026/11/02/defesa-de-flavio-pede-mendonca-como-relator-de-investigacao-no-lugar-de-moraes-e-fim-de-proibicao-de-contato-com-willer-tomaz.ghtml"
+   ]
+  },
+  {
+   "key": "queda-de-avião",
+   "label": "Queda de avião",
+   "links": [
+    "https://g1.globo.com/mundo/noticia/2026/11/02/mayday-vamos-bater-no-chao-audio-mostra-conversa-de-piloto-com-torre-durante-queda-de-aviao-nos-eua.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/brasileira-de-20-anos-era-copilota-de-jato-que-caiu-na-florida/"
+   ]
+  },
+  {
+   "key": "inadimplência",
+   "label": "Inadimplência",
+   "links": [
+    "https://economia.uol.com.br/noticias/redacao/2026/11/02/inadimplencia-bate-recorde-e-chega-a-42-milhoes-de-pessoas-diz-serasa.ghtm"
+   ]
+  },
+  {
+   "key": "argentina-milei",
+   "label": "Argentina / Milei",
+   "links": [
+    "https://www1.folha.uol.com.br/mercado/2026/11/politica-de-abertura-de-milei-faz-explodir-falencias-de-empresas-na-argentina-e-aumenta-desaprovacao-ao-governo.shtml"
+   ]
+  },
+  {
+   "key": "irã-hormuz",
+   "label": "Irã / Hormuz",
+   "links": [
+    "https://www1.folha.uol.com.br/mercado/2026/11/guerra-reduziu-estoques-de-petroleo-em-quase-1-bilhao-de-barris-diz-ceo-de-estatal-dos-emirados-arabes.shtml"
+   ]
+  },
+  {
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
+   "links": [
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/gabrielli-celebra-fim-do-pensamento-unico-e-endossa-ideia-de-lara-resende/"
+   ]
+  }
+ ]
+}

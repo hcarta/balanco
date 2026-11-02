@@ -841,6 +841,89 @@ def concept_of(title: str):
                 return label
     return None
 
+# Overrides humanos e estabilidade de chave das pautas emergentes.
+PAUTAS_YAML = os.path.join(BASE, "pautas.yaml")
+PAUTAS_SNAPSHOT = os.path.join(BASE, "state", "pautas_snapshot.json")
+
+
+def load_pautas_overrides(path=None) -> list:
+    """Overrides humanos (pautas.yaml): key/label/match/aliases."""
+    path = path or PAUTAS_YAML
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+    except FileNotFoundError:
+        return []
+    except Exception as ex:
+        print(f"  [aviso] pautas.yaml inválido: {ex}")
+        return []
+    out = []
+    for p in (data.get("pautas") or []):
+        if not isinstance(p, dict) or not p.get("key") or not p.get("match"):
+            continue
+        out.append({"key": str(p["key"]),
+                    "label": str(p.get("label") or p["key"]),
+                    "match": [str(x) for x in p["match"]],
+                    "aliases": [str(x) for x in (p.get("aliases") or [])]})
+    return out
+
+
+PAUTAS_OVERRIDES = load_pautas_overrides()
+
+
+def _pauta_override(group, overrides=None):
+    """Primeiro override cujos termos aparecem nas manchetes do grupo."""
+    if overrides is None:
+        overrides = PAUTAS_OVERRIDES
+    best, hits = None, 0
+    for ov in overrides:
+        n = sum(1 for h in group
+                for term in ov["match"]
+                if _has_term(norm_tokens(h["title"]), term))
+        if n > hits:
+            best, hits = ov, n
+    return best if hits else None
+
+
+def load_pautas_snapshot(path=None) -> list:
+    """Pautas da rodada anterior (chave/rótulo/links) para manter a chave."""
+    path = path or PAUTAS_SNAPSHOT
+    try:
+        with open(path, encoding="utf-8") as f:
+            return (json.load(f) or {}).get("pautas", [])
+    except FileNotFoundError:
+        return []
+    except Exception:
+        return []
+
+
+def save_pautas_snapshot(pautas, path=None) -> None:
+    path = path or PAUTAS_SNAPSHOT
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    data = {"generated_at": datetime.now(timezone.utc).isoformat(),
+            "pautas": [{"key": p["key"], "label": p["label"],
+                        "links": [x.get("link", "") for x in p.get("sources", [])]}
+                       for p in pautas]}
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, path)
+
+
+def _reuse_pauta_key(group, previous):
+    """Chave anterior com maior Jaccard de links (estabilidade entre rodadas)."""
+    links = {_norm_link(h.get("link", "")) for h in group if h.get("link")}
+    best, score = None, 0.0
+    for p in previous or []:
+        pl = {_norm_link(x) for x in p.get("links", []) if x}
+        if not links or not pl:
+            continue
+        j = len(links & pl) / len(links | pl)
+        if j > score:
+            best, score = p, j
+    return best, round(score, 2)
+
+
 # Capas dos jornais de referência: peso editorial para o "Em foco".
 # `sel` é o contêiner das manchetes principais; `kind` diz como extrair.
 FRONT_PAGES = {
@@ -1006,6 +1089,7 @@ def _theme_story(theme_titles, stories, toks):
 # override/rótulo; o agrupamento não depende dele.
 FRONT_CLUSTER_MIN_SOURCES = 2
 EMERGENT_MIN_SCORE = 0.38
+EMB_PAUTA_MIN = 0.75
 
 
 def _cluster_heads(heads, min_sources=FRONT_CLUSTER_MIN_SOURCES):
@@ -1071,7 +1155,8 @@ def _group_story_score(titles, story, toks):
     return round(best, 2)
 
 
-def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
+def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
+                       previous_pautas=None, use_embed=False):
     """Agenda predominante das capas: conceito -> jornais -> histórias.
 
     Retorna (stories, front_only, pautas). `front_only` são pautas de capa
@@ -1281,13 +1366,30 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     known_ids = {sid for p in pautas for sid in p["story_ids"]}
     leftover = [h for h in heads if not h["concept"]]
     em_groups = _cluster_heads(leftover)
+    # Fase 4 (opcional): ponte semântica para paráfrases distantes. Só roda
+    # quando há pauta emergente e a flag está ligada.
+    emb_story = emb_group = None
+    if use_embed and em_groups:
+        try:
+            emb_story = embed_matrix(
+                [{"title": s.get("title", "")} for s in stories])
+            emb_group = embed_matrix(
+                [{"title": " ".join(h["title"] for h in g)} for g in em_groups])
+        except Exception as ex:
+            print(f"  [aviso] embeddings de pauta indisponíveis ({ex})")
+            emb_story = emb_group = None
     em_cands = []
     for gi, g in enumerate(em_groups):
         titles = [h["title"] for h in g]
-        for s in stories:
+        for idx, s in enumerate(stories):
             if s["id"] in known_ids:
                 continue
             sc = _group_story_score(titles, s, toks)
+            if sc < EMERGENT_MIN_SCORE and emb_story is not None:
+                emb = float(emb_group[gi] @ emb_story[idx])
+                if emb >= EMB_PAUTA_MIN:
+                    sc = max(sc, round(0.45 + 0.25 * (emb - EMB_PAUTA_MIN)
+                                       / (1 - EMB_PAUTA_MIN), 2))
             if sc >= EMERGENT_MIN_SCORE:
                 em_cands.append((sc, gi, s["id"]))
     em_cands.sort(key=lambda x: -x[0])
@@ -1298,6 +1400,7 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
     for sid, (gi, _) in em_assign.items():
         ids_by_em.setdefault(gi, []).append(sid)
     used_keys = {p["key"] for p in pautas}
+    aliases = {}
     for gi, g in enumerate(em_groups):
         by = {}
         for h in g:
@@ -1309,12 +1412,24 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             continue
         w = sum(1.0 if e["position"] <= 3 else
                 0.7 if e["position"] <= 8 else 0.4 for e in entries)
-        label, key = _emergent_label(g)
+        ov = _pauta_override(g)
+        prev, prev_sc = _reuse_pauta_key(g, previous_pautas)
+        if ov:
+            label, key = ov["label"], ov["key"]
+        elif prev and prev_sc >= 0.5 and prev.get("key") not in used_keys:
+            key, label = prev["key"], prev["label"]
+        else:
+            label, key = _emergent_label(g)
         base, n = key, 2
         while key in used_keys:
             key = f"{base}-{n}"
             n += 1
         used_keys.add(key)
+        if prev and prev.get("key") and prev["key"] != key:
+            aliases[prev["key"]] = key
+        if ov:
+            for a in ov.get("aliases", []):
+                aliases[a] = key
         ranked = sorted(
             entries,
             key=lambda e: (-ts_by_link.get(_norm_link(e["link"]), (0.0, ""))[0],
@@ -1388,6 +1503,8 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None):
             pauta["coverage"] = 1
             front_only.append(fs)
         pautas.append(pauta)
+    if stats is not None and aliases:
+        stats["aliases"] = aliases
     fo_by_id = {fs["id"]: fs for fs in front_only}
     for p in pautas:
         p["n_stories"] = len(p["story_ids"])
@@ -3186,6 +3303,8 @@ def main():
     ap.add_argument("--thresh", type=float, default=0.38)
     ap.add_argument("--embed", action="store_true",
                     help="usa embeddings nas conexões (longform/internacional); ONNX/fastembed, fallback lexical")
+    ap.add_argument("--pautas-emb", action="store_true",
+                    help="usa embeddings na ligação de pautas emergentes (fase 4; opcional)")
     ap.add_argument("--embed-cluster", action="store_true",
                     help="usa embeddings também no agrupamento (experimental; requer cooperação A-4)")
     ap.add_argument("--pair-model", default=os.environ.get("PAIR_MODEL"),
@@ -3259,14 +3378,19 @@ def main():
     stories = attach_hubs(stories)
     source_meta = {s["id"]: s for s in sources}
     front_stats = {}
+    previous_pautas = load_pautas_snapshot()
     stories, front_only, pautas = attach_front_pages(
-        stories, source_meta=source_meta, stats=front_stats)
+        stories, source_meta=source_meta, stats=front_stats,
+        previous_pautas=previous_pautas, use_embed=args.pautas_emb)
     front_unmatched = front_stats.pop("unmatched", [])
+    pautas_aliases = front_stats.pop("aliases", {})
+    save_pautas_snapshot(pautas)
     print(f"[3b/4] capas: " + ", ".join(
         f"{k} {v}" for k, v in front_stats.items()) +
         f"; {sum(front_stats.values())} manchetes, "
         f"{len(front_unmatched)} sem pauta, "
-        f"{len(front_only)} pauta(s) fora do feed")
+        f"{len(front_only)} pauta(s) fora do feed, "
+        f"{len(pautas_aliases)} alias(es)")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "
           f"({n_before - len(stories)} fusões de mesmo fato), {n_hub} pautas")
@@ -3356,6 +3480,7 @@ def main():
                "front_pautas": pautas,
                "front_pages": front_stats,
                "front_unmatched": front_unmatched,
+               "pautas_aliases": pautas_aliases,
                "only_world": world_extra.get("only_world", []),
                "brasil_abroad": world_extra.get("brasil_abroad", []),
                "stories": stories}
