@@ -933,9 +933,8 @@ FRONT_PAGES = {
                 "sel": "a.container-sete-destaques__url",
                 "kind": "heading"},
     "Estadão": {"url": "https://www.estadao.com.br/",
-                "sel": "[class*='styles__TagStyled'][class*='col-lg-8'] h1,"
-                       "[class*='styles__TagStyled'][class*='col-lg-8'] h2,"
-                       "[class*='styles__TagStyled'][class*='col-lg-8'] h3",
+                "sel": "[class*='manchete'] h1, [class*='manchete'] h2,"
+                       " .news-block h1, .news-block h2, h2.headline",
                 "kind": "heading"},
     "Folha de S.Paulo": {"url": "https://www.folha.uol.com.br/",
                          "sel": ".col--md-3-4 h1, .col--md-3-4 h2,"
@@ -943,8 +942,10 @@ FRONT_PAGES = {
     "G1": {"url": "https://g1.globo.com/",
            "sel": ".feed-post-body-title", "kind": "heading"},
     "UOL": {"url": "https://www.uol.com.br/",
-            "sel": ".headlineMain__link, .headlineHorizontal__link",
-            "kind": "heading"},
+            "sel": "article.headlineMain, article.headlineSub,"
+                   " article.headlineHorizontalBrand, article.headlinePhoto,"
+                   " article.headlineHorizontal",
+            "kind": "heading", "allow_main": True},
     "CNN Brasil": {"url": "https://www.cnnbrasil.com.br/", "sel": "a",
                    "kind": "heading"},
 }
@@ -1006,8 +1007,12 @@ def _front_items(html_text: str, cfg: dict, limit: int = 10) -> list[dict]:
         if not link or link.rstrip("/") == cfg["url"].rstrip("/"):
             continue
         seen.add(title)
+        cls = " ".join(el.get("class") or [])
+        main = ("headlineMain" in cls or "manchete" in cls.lower()
+                or el.find_parent(class_=re.compile("manchete|highlight"))
+                is not None)
         out.append({"title": title, "link": link,
-                    "summary": _front_summary(a, title)})
+                    "summary": _front_summary(a, title), "main": bool(main)})
         if len(out) >= limit:
             break
     return out
@@ -1056,7 +1061,8 @@ def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
             continue
         if len(tok(it["title"])) < 4:
             continue
-        if FRONT_SKIP_URL.search(it.get("link", "")):
+        if (FRONT_SKIP_URL.search(it.get("link", ""))
+                and not (cfg.get("allow_main") and it.get("main"))):
             continue
         out.append(it)
     return out

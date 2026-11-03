@@ -1633,3 +1633,36 @@ def test_emergent_front_only_requires_three_journals():
     }
     _, _, pautas = app.attach_front_pages(stories, desks=desks)
     assert not [p for p in pautas if p.get("emergent")]
+
+
+def test_front_config_uses_semantic_containers():
+    assert "container-sete-destaques__url" in app.FRONT_PAGES["O Globo"]["sel"]
+    assert "article.headlineMain" in app.FRONT_PAGES["UOL"]["sel"]
+    assert "manchete" in app.FRONT_PAGES["Estadão"]["sel"]
+
+
+def test_uol_main_column_survives_url_filter(monkeypatch):
+    html = ('<article class="headlineMain"><a href="/colunas/x">'
+            '<h3>Nova falha no Smart Sampa permite acesso a 17 mil câmeras'
+            '</h3></a></article>')
+
+    class R:
+        content = html.encode()
+
+    import requests
+    monkeypatch.setattr(requests, "get", lambda *a, **k: R())
+    items = app.fetch_front_page("UOL")
+    assert items and items[0]["title"].startswith("Nova falha")
+
+
+def test_uol_secondary_column_is_dropped(monkeypatch):
+    html = ('<article class="headlineSub"><a href="/colunas/y">'
+            '<h3>Coluna secundária sobre a economia e os juros do país'
+            '</h3></a></article>')
+
+    class R:
+        content = html.encode()
+
+    import requests
+    monkeypatch.setattr(requests, "get", lambda *a, **k: R())
+    assert app.fetch_front_page("UOL") == []
