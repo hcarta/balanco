@@ -2803,7 +2803,7 @@ OPINION_WINDOWS = (0, 12, 18)
 FACT_RANK = {"very_high": 4, "high": 3, "mixed": 2, "low": 1, "very_low": 0}
 OPINION_SIDE = {"L": ("L", "CL"), "C": ("C",), "R": ("CR", "R")}
 OPINION_FILE = os.path.join(BASE, "state", "opiniao.json")
-OPINION_STATE_VERSION = 3
+OPINION_STATE_VERSION = 4
 # Colunas semanais que devem aparecer quando houver edição recente (7 dias).
 OPINION_WATCH = {
     "conrado hubner mendes": "Conrado Hübner Mendes",
@@ -2928,7 +2928,7 @@ def build_opiniao(articles, source_meta, now=None, path=None,
         for sid, meta in source_meta.items():
             if "folha" not in (meta.get("name", "").lower()):
                 continue
-            for a in store.recent(sid, window_h=7 * 24, limit=200):
+            for a in store.recent(sid, window_h=7 * 24, limit=1000):
                 pool.append({**a, "source_id": sid})
     best = {}
     for a in pool:
@@ -2965,7 +2965,8 @@ def build_opiniao(articles, source_meta, now=None, path=None,
                 "editorial": editorial, "weekly": bool(weekly),
                 "rank": FACT_RANK.get(meta.get("factuality", ""), 0),
                 "ts": ts}
-        key = (item["source"], editorial)
+        # semanais precisam sobreviver ao dedup por veículo
+        key = (item["source"], editorial, weekly or "")
         cur = best.get(key)
         if cur is None or (item["rank"], item["ts"]) > (cur["rank"], cur["ts"]):
             best[key] = item
