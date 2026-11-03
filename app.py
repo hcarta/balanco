@@ -11,6 +11,7 @@ import json
 import math
 import os
 import re
+import time
 from collections import Counter
 from functools import lru_cache
 from datetime import datetime, timezone
@@ -744,7 +745,7 @@ FRONT_SKIP_URL = re.compile(
     r"/(esportes?|futebol|olimpiadas?|nba|f1|automobilismo|volei|v[oô]lei)/"
     r"|/(novelas?|celebridades|entretenimento|cinema|musica|moda|gastronomia"
     r"|guloseimas|teatro|horoscopo|diversao)/"
-    r"|/(ilustrada|f5|pop)/"
+    r"|/(ilustrada|f5|pop|splash|tangerina|filmes-series|flash)/"
     r"|/(colunas?|colunistas?|blogs?|opiniao|pulsa|podcasts?|videos?)/", re.I)
 
 # Pautas editoriais: conceito -> regex. A ordem importa (específico antes do
@@ -928,7 +929,8 @@ def _reuse_pauta_key(group, previous):
 # `sel` é o contêiner das manchetes principais; `kind` diz como extrair.
 FRONT_PAGES = {
     "O Globo": {"url": "https://oglobo.globo.com/",
-                "sel": ".manchetes__left a", "kind": "anchor"},
+                "sel": "a.container-sete-destaques__url",
+                "kind": "heading"},
     "Estadão": {"url": "https://www.estadao.com.br/",
                 "sel": "[class*='styles__TagStyled'][class*='col-lg-8'] h1,"
                        "[class*='styles__TagStyled'][class*='col-lg-8'] h2,"
@@ -978,8 +980,18 @@ def _front_items(html_text: str, cfg: dict, limit: int = 10) -> list[dict]:
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_text, "lxml")
     out, seen = [], set()
-    for el in soup.select(cfg["sel"]):
-        if cfg["kind"] == "anchor":
+    els = soup.select(cfg["sel"])
+    kind = cfg["kind"]
+    # fallback: o layout mudou e o seletor principal não achou nada
+    if not els:
+        if kind == "anchor":
+            els = soup.find_all("a", href=True)
+        else:
+            els = [a for a in soup.find_all("a", href=True)
+                   if a.find(["h1", "h2", "h3"])]
+            kind = "heading"
+    for el in els:
+        if kind == "anchor":
             a = el
             title = el.get_text(" ", strip=True)
         else:
@@ -1013,18 +1025,30 @@ def fetch_front_page(key: str, timeout: int = 20) -> list[dict]:
     cfg = FRONT_PAGES.get(key)
     if not cfg:
         return []
-    try:
-        r = requests.get(cfg["url"], timeout=timeout,
-                         headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
-        html_text = r.content.decode("utf-8", errors="replace")
-    except requests.RequestException as ex:
-        print(f"  [aviso] capa {key}: rede indisponível ({type(ex).__name__})")
+    items = []
+    for attempt in range(2):
+        try:
+            r = requests.get(
+                cfg["url"], timeout=timeout,
+                headers={"User-Agent": "Balanco/0.2 (+news aggregator; local)"})
+            html_text = r.content.decode("utf-8", errors="replace")
+        except requests.RequestException as ex:
+            print(f"  [aviso] capa {key}: rede indisponível "
+                  f"({type(ex).__name__})")
+            items = []
+        except Exception as ex:
+            print(f"  [aviso] capa {key}: {type(ex).__name__}: {ex}")
+            items = []
+        else:
+            # erro de parser/dependência deve aparecer no log, não sumir
+            items = _front_items(html_text, cfg)
+        if items:
+            break
+        if attempt == 0:
+            time.sleep(1.0)
+    if not items:
+        print(f"  [aviso] capa {key}: 0 manchetes extraídas")
         return []
-    except Exception as ex:
-        print(f"  [aviso] capa {key}: {type(ex).__name__}: {ex}")
-        return []
-    # erro de parser/dependência deve aparecer no log, não virar capa vazia
-    items = _front_items(html_text, cfg)
     out = []
     for it in items:
         if FRONT_SKIP.search(it["title"]):

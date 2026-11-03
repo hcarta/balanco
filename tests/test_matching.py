@@ -1613,3 +1613,11 @@ def test_recompute_sets_first_published():
     ], "counts": {}, "updated": "2026-11-02T10:00:00+00:00"}
     out = app._recompute(s)
     assert out["first_published"] == "2026-10-31T17:00:00+00:00"
+
+
+def test_front_items_fallback_when_selector_breaks():
+    html = ('<a href="/x"><h2>Manchete nova com mais de vinte e cinco '
+            'caracteres para o teste</h2></a>')
+    cfg = {"url": "https://exemplo.com/", "sel": ".sumiu", "kind": "heading"}
+    items = app._front_items(html, cfg)
+    assert items and items[0]["title"].startswith("Manchete nova")
