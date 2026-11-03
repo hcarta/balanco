@@ -142,3 +142,8 @@ def test_metodologia_atribui_vies_e_factualidade_a_tres_ias():
     assert "curadoria manual" not in METH.lower()
     assert "revisão humana" not in METH.lower()
     assert "Factualidade" in METH and "revisão por IA" in METH
+
+
+def test_framing_category_removed():
+    assert "Como cada lado intitulou" not in HTML
+    assert "function framingHTML(" not in HTML
