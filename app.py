@@ -2008,6 +2008,9 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
         updated = max((_pub(x) for x in coverage), default="")
         if not updated:
             updated = max((_pub(x) for x in items), default="")
+        pubs = [x["published"] for x in coverage if x.get("published")]
+        first_published = min(pubs) if pubs else min(
+            (_pub(x) for x in coverage), default="")
         rep = _representative(coverage, meta)
         rep_title = _clean_title(rep["title"])
         override = _service_headline([x.get("title", "") for x in coverage])
@@ -2034,11 +2037,13 @@ def build(sources, articles, llm_scores, thresh=0.38, use_embed=False):
                     for b in BUCKETS},
             "blindspot": blind,
             "updated": updated,
+            "first_published": first_published,
             "timeline": timeline,
             "articles": [{
                 "source": x["source_name"], "source_id": x["source_id"],
                 "group": x.get("group") or x["source_id"],
                 "piece_kind": x.get("piece_kind", "hard_news"),
+                "published": x.get("published") or "",
                 "first_seen": x.get("first_seen") or x.get("published", ""),
                 "title": x["title"], "link": x["link"],
                 "bias": x["bias_score"], "bucket": x["bucket"], "via": x["via"],
@@ -2371,6 +2376,9 @@ def _recompute(s) -> dict:
                    "articles": len(arts)}
     s["pct"] = {b: (round(100 * gc[b] / ind) if ind else 0) for b in BUCKETS}
     s["avg_bias"] = round(avg, 2)
+    pubs = [x.get("published") for x in coverage if x.get("published")]
+    s["first_published"] = (min(pubs) if pubs
+                            else s.get("first_published") or "")
     s["recent"] = {"n_6h": _recent_groups(coverage, 6),
                    "n_24h": _recent_groups(coverage, 24)}
     s["blindspot"] = blindspot_of5(*[gc[b] for b in BUCKETS])
@@ -2795,7 +2803,14 @@ OPINION_WINDOWS = (0, 12, 18)
 FACT_RANK = {"very_high": 4, "high": 3, "mixed": 2, "low": 1, "very_low": 0}
 OPINION_SIDE = {"L": ("L", "CL"), "C": ("C",), "R": ("CR", "R")}
 OPINION_FILE = os.path.join(BASE, "state", "opiniao.json")
-OPINION_STATE_VERSION = 2
+OPINION_STATE_VERSION = 3
+# Colunas semanais que devem aparecer quando houver edição recente (7 dias).
+OPINION_WATCH = {
+    "conrado hubner mendes": "Conrado Hübner Mendes",
+    "celso rocha de barros": "Celso Rocha de Barros",
+}
+OPINION_EDITORIAL = re.compile(
+    r"/editorial/|^\s*editorial\b|\bnotas\s*(?:&|e)\s*informa", re.I)
 
 
 def _article_ts(a: dict) -> float:
@@ -2838,32 +2853,57 @@ def _opinion_author(a, meta):
     return ""
 
 
-def _pick_opinions(best, limit=5):
-    """Até 5 colunas: sem repetir veículo e no máximo 2 por lado."""
-    pool = sorted(best.values(), key=lambda x: (-x["rank"], -x["ts"]))
-    picked, used, per = [], set(), {"L": 0, "C": 0, "R": 0}
-    for x in pool:
-        if x["source"] in used or per[x["side"]] >= 2:
-            continue
+def _pick_opinions(cands, limit=6):
+    """6 cartões: semanais, editoriais e colunas, sem repetir link/veículo."""
+    weekly = sorted([x for x in cands if x.get("weekly")],
+                    key=lambda x: (-x["rank"], -x["ts"]))
+    eds = sorted([x for x in cands if x.get("editorial")],
+                 key=lambda x: (-x["rank"], -x["ts"]))
+    regular = sorted([x for x in cands if not x.get("weekly")
+                      and not x.get("editorial")],
+                     key=lambda x: (-x["rank"], -x["ts"]))
+    picked, used_links, used_src = [], set(), set()
+    per = {"L": 0, "C": 0, "R": 0}
+
+    def add(x, force=False):
+        if x["link"] in used_links:
+            return False
+        if not force and x["source"] in used_src:
+            return False
+        if per[x["side"]] >= 2:
+            return False
         picked.append(x)
-        used.add(x["source"])
+        used_links.add(x["link"])
+        used_src.add(x["source"])
         per[x["side"]] += 1
+        return True
+
+    # 1) colunas semanais (até 2)
+    for x in weekly:
+        if len([p for p in picked if p.get("weekly")]) >= 2:
+            break
+        add(x)
+    # 2) editoriais (até 2, veículos distintos)
+    for x in eds:
+        if len([p for p in picked if p.get("editorial")]) >= 2:
+            break
+        add(x)
+    # 3) demais colunas
+    for x in regular:
         if len(picked) >= limit:
             break
-    for x in pool:
+        add(x)
+    # 4) completa permitindo repetir veículo (nunca o mesmo link)
+    for x in (regular + eds + weekly):
         if len(picked) >= limit:
             break
-        if x["source"] in used:
-            continue
-        picked.append(x)
-        used.add(x["source"])
-    picked.sort(key=lambda x: (-x["rank"], -x["ts"]))
-    return picked
+        add(x, force=True)
+    return picked[:limit]
 
 
 def build_opiniao(articles, source_meta, now=None, path=None,
-                  fetch_missing=True):
-    """5 colunas de opinião, estáveis dentro da janela (00h/12h/18h).
+                  fetch_missing=True, store=None):
+    """6 cartões (3x2): colunas, editoriais e semanais prioritários.
 
     Sem rótulo Esq./Centro/Dir.: o cartão mostra o autor, colorido pelo viés
     da publicação. A seleção fica em `state/opiniao.json` para não "piscar".
@@ -2881,39 +2921,60 @@ def build_opiniao(articles, source_meta, now=None, path=None,
     except (FileNotFoundError, ValueError):
         pass
     start, end = now.timestamp() - 24 * 3600, now.timestamp()
+    week_start = now.timestamp() - 7 * 24 * 3600
+    pool = list(articles)
+    if store is not None:
+        # semanais podem ter saído da janela de 72 h das notícias
+        for sid, meta in source_meta.items():
+            if "folha" not in (meta.get("name", "").lower()):
+                continue
+            for a in store.recent(sid, window_h=7 * 24, limit=200):
+                pool.append({**a, "source_id": sid})
     best = {}
-    for a in articles:
+    for a in pool:
         meta = source_meta.get(a.get("source_id") or "", {}) or {}
-        if piece_kind(a, meta) != "opinion":
+        link = a.get("link") or ""
+        title = (a.get("title") or "").strip()
+        if not link or len(title) < 20 or excluded_title(title):
+            continue
+        text = f"{link} {a.get('section') or ''} {title}"
+        editorial = bool(OPINION_EDITORIAL.search(text))
+        kind = piece_kind(a, meta)
+        if kind != "opinion" and not editorial:
             continue
         ts = _article_ts(a)
-        if not ts or ts < start or ts > end:
-            continue
-        title = (a.get("title") or "").strip()
-        link = a.get("link") or ""
-        if len(title) < 20 or not link or excluded_title(title):
+        hay = _fold(f"{a.get('author') or ''} {link} {title}")
+        weekly = next((name for key, name in OPINION_WATCH.items()
+                       if key in hay or key.replace(" ", "-") in hay), "")
+        if weekly:
+            if not ts or ts < week_start or ts > end:
+                continue
+        elif not ts or ts < start or ts > end:
             continue
         bias = float(meta.get("bias", 0) or 0)
         b = bucket(bias)
+        author = weekly or ("Editorial" if editorial
+                            else _opinion_author(a, meta))
         item = {"source": meta.get("name") or a.get("source_name")
                 or a.get("source_id") or a.get("source", ""),
-                "author": _opinion_author(a, meta),
-                "title": title, "link": link,
+                "author": author, "title": title, "link": link,
                 "published": a.get("published") or a.get("first_seen") or "",
                 "bias": round(bias, 2), "bucket": b,
                 "side": _opinion_side(b),
                 "factuality": meta.get("factuality", ""),
+                "editorial": editorial, "weekly": bool(weekly),
                 "rank": FACT_RANK.get(meta.get("factuality", ""), 0),
                 "ts": ts}
-        sid = item["source"]
-        cur = best.get(sid)
+        key = (item["source"], editorial)
+        cur = best.get(key)
         if cur is None or (item["rank"], item["ts"]) > (cur["rank"], cur["ts"]):
-            best[sid] = item
-    picked = _pick_opinions(best, limit=5)
+            best[key] = item
+    picked = _pick_opinions(list(best.values()), limit=6)
     if fetch_missing:
         from enrich import fetch_author
         for it in picked:
-            # meta/JSON-LD vence o slug (traz nome completo e acento)
+            if it.get("editorial") or it.get("weekly"):
+                continue
             au = fetch_author(it["link"])
             if au:
                 it["author"] = au
@@ -3540,7 +3601,7 @@ def main():
         f"{len(front_unmatched)} sem pauta, "
         f"{len(front_only)} pauta(s) fora do feed, "
         f"{len(pautas_aliases)} alias(es)")
-    opiniao = build_opiniao(articles, source_meta)
+    opiniao = build_opiniao(articles, source_meta, store=store)
     print(f"[3c/4] opinião: {len(opiniao['items'])} coluna(s)")
     n_hub = len({s["hub"]["key"] for s in stories if s.get("hub")})
     print(f"[3a/4] {n_before} grupos → {len(stories)} histórias consolidadas "

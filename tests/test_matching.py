@@ -1583,3 +1583,33 @@ def test_emergent_pauta_uses_embeddings_when_lexical_fails(monkeypatch):
     out, _, com = app.attach_front_pages(stories, desks=_em_desks(), use_embed=True)
     em = [p for p in com if p.get("emergent")]
     assert em and "a" in em[0]["story_ids"]
+
+
+def test_recent_groups_prefers_published_over_first_seen():
+    """Matéria antiga recolhida agora não pode contar como 'recente'."""
+    from datetime import datetime, timezone
+    now = datetime(2026, 11, 3, 12, 0, tzinfo=timezone.utc).timestamp()
+    arts = [
+        {"published": "2026-10-31T12:00:00+00:00",
+         "first_seen": "2026-11-03T11:00:00+00:00", "group": "g1"},
+        {"published": "2026-10-31T13:00:00+00:00",
+         "first_seen": "2026-11-03T11:00:00+00:00", "group": "g2"},
+    ]
+    assert app._recent_groups(arts, 6, now=now) == 0
+    arts[1]["published"] = "2026-11-03T11:30:00+00:00"
+    assert app._recent_groups(arts, 6, now=now) == 1
+
+
+def test_recompute_sets_first_published():
+    s = {"articles": [
+        {"published": "2026-10-31T17:00:00+00:00",
+         "first_seen": "2026-11-03T11:00:00+00:00", "group": "g1",
+         "piece_kind": "hard_news", "bias": 0.0, "bucket": "C",
+         "title": "a", "source": "X"},
+        {"published": "2026-11-02T10:00:00+00:00",
+         "first_seen": "2026-11-03T11:00:00+00:00", "group": "g2",
+         "piece_kind": "hard_news", "bias": 0.0, "bucket": "C",
+         "title": "b", "source": "Y"},
+    ], "counts": {}, "updated": "2026-11-02T10:00:00+00:00"}
+    out = app._recompute(s)
+    assert out["first_published"] == "2026-10-31T17:00:00+00:00"
