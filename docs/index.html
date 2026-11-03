@@ -975,28 +975,31 @@ function renderFeatured(){
 let _alignT = null;
 function alignHero(){
   if(window.innerWidth <= 940) return;
-  const sec = document.getElementById('heroSec');
   const feat = document.querySelector('#featured .featured');
   const side = document.getElementById('heroSide');
   const list = document.getElementById('heroList');
   if(!feat || !side || !list || side.style.display==='none') return;
-  // topo resolvido por construção (espaçador com a classe do kicker);
-  // aqui só a base: última imagem = base do texto
-  const txt = feat.querySelector('.dek') || feat.querySelector('h1');
-  if(!txt) return;
-  const h = txt.getBoundingClientRect().bottom - list.getBoundingClientRect().top;
-  // Só fixa a altura se houver espaço para TODO o conteúdo. Fixar abaixo do
-  // conteúdo fazia os 3 cartões transbordarem o hero e cobrirem o rail.
+  const img = feat.querySelector('.feat-img');
+  const bias = feat.querySelector('.biasrow');
+  const topAnchor = img || feat.querySelector('h1');
+  if(!topAnchor || !bias) return;
+  // mede do zero para não realimentar o observer
+  list.style.marginTop = '';
+  list.style.height = '';
+  list.style.display = '';
+  list.style.flexDirection = '';
+  list.style.justifyContent = '';
+  const delta = topAnchor.getBoundingClientRect().top
+              - list.getBoundingClientRect().top;
+  if(Math.abs(delta) > 0.5) list.style.marginTop = `${delta}px`;
+  const top = list.getBoundingClientRect().top;
+  const h = bias.getBoundingClientRect().bottom - top;
   const need = list.scrollHeight;
   if(h > 240 && h >= need){
     list.style.display = 'flex';
     list.style.flexDirection = 'column';
     list.style.justifyContent = 'space-between';
-    list.style.height = h + 'px';
-  } else {
-    list.style.height = '';
-    list.style.display = '';
-    list.style.justifyContent = '';
+    list.style.height = `${h}px`;
   }
 }
 window.addEventListener('resize', ()=>{ clearTimeout(_alignT); _alignT = setTimeout(alignHero, 150); });

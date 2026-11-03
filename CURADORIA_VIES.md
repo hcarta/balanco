@@ -1,6 +1,6 @@
 # Curadoria de viés — como cada veículo é posicionado
 
-> O Balanço usa **viés fixo por publicação** (como o Ground.news avalia o veículo, não a matéria). Sem AllSides/MBFC no Brasil, a tabela é curadoria manual. Este documento registra os critérios, a posição atual de cada fonte e o histórico de mudanças. Revisão trimestral (ver §4).
+> O Balanço usa **viés fixo por publicação** (como o Ground.news avalia o veículo, não a matéria). Sem AllSides/MBFC no Brasil, a tabela é construída e revisada por **três leituras independentes de IA, com mediana** — não por classificação manual veículo a veículo. Este documento registra os critérios, a posição atual de cada fonte e o histórico de mudanças. Revisão trimestral (ver §4).
 
 ## 1. Escala (contexto brasileiro)
 
@@ -77,7 +77,7 @@
 
 ## 3. Processo de decisão
 
-1. **Origem**: o posicionamento inicial de cada veículo foi proposto por análise prévia de IA do perfil editorial (linha histórica, propriedade, enquadramento típico) e validado pela curadoria — não houve classificação manual veículo a veículo do zero.
+1. **Origem**: cada veículo é lido de forma independente por **três modelos de IA diferentes**, com a mesma rubrica (linha histórica, propriedade, enquadramento típico e seleção de pauta). A nota final é a **mediana das três leituras**; divergências grandes voltam para nova rodada. Não há classificação manual veículo a veículo.
 2. **Proposta**: qualquer mudança de viés vem com 3–5 manchetes-exemplo que a sustentem.
 2. **Evidência**: `state/factcheck_ledger.json` (padrão de checagens), amostragem de 20 manchetes recentes, comparação com a cobertura dos pares no Balanço.
 3. **Registro**: toda mudança entra em `state/vies_changelog.md` com data, antes/depois e motivo.
@@ -85,11 +85,11 @@
 
 ## 4. Revisão trimestral
 
-A cada 3 meses, reavaliar 3–5 fontes, priorizando: (a) `revisar=true` no ledger, (b) fontes novas da última leva, (c) reclamações documentadas. Próxima revisão: **jan/2027**.
+A cada 3 meses, reavaliar 3–5 fontes com o mesmo processo de três leituras de IA, priorizando: (a) `revisar=true` no ledger, (b) fontes novas da última leva, (c) reclamações documentadas. Próxima revisão: **jan/2027**.
 
 ## 5. Factualidade — rubrica e posições (30/10/2026)
 
-Mesma escala do Ground.news. Critérios observáveis por nível:
+Mesma escala do Ground.news, com o mesmo processo de três leituras independentes de IA e mediana. Critérios observáveis por nível:
 
 - **very_high** — apuração própria predominante; política de correção pública e rápida (errata visível, ouvidoria ou equivalente); separa fato de opinião; sem desmentidos relevantes no histórico.
 - **high** — majoritariamente factual, com produção própria frequente; corrige erros (nem sempre com destaque); opinião existe mas é rotulada.

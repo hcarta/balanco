@@ -2,6 +2,7 @@
 from pathlib import Path
 
 HTML = Path("docs/index.html").read_text(encoding="utf-8")
+METH = Path("docs/como-lemos.html").read_text(encoding="utf-8")
 
 
 def test_focus_visible_and_skip_styles():
@@ -126,3 +127,18 @@ def test_chronology_shows_publication_and_update():
     assert "function timeLabel(" in HTML
     assert "publicada ${relTime" in HTML
     assert "first_published" in HTML
+
+
+def test_hero_side_aligns_image_top_and_biasrow_bottom():
+    assert "topAnchor.getBoundingClientRect().top" in HTML
+    assert "bias.getBoundingClientRect().bottom" in HTML
+    assert "list.style.marginTop" in HTML
+    assert "bias.getBoundingClientRect().bottom - top" in HTML
+
+
+def test_metodologia_atribui_vies_e_factualidade_a_tres_ias():
+    assert "três modelos de IA diferentes" in METH
+    assert "mediana das três leituras" in METH
+    assert "curadoria manual" not in METH.lower()
+    assert "revisão humana" not in METH.lower()
+    assert "Factualidade" in METH and "revisão por IA" in METH

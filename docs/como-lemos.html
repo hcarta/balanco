@@ -39,7 +39,8 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 <p>Coletamos manchetes de dezenas de veículos brasileiros e 16 internacionais, agrupamos as que contam <b>a mesma história</b> e mostramos <b>quem cobre o quê</b>: quantos veículos de esquerda, centro e direita estão contando aquele fato — lado a lado, sem algoritmo de engajamento no meio.</p>
 
 <h2>Viés fixo por publicação</h2>
-<p>Cada veículo tem <b>um posicionamento</b> (de −2 a +2). O ponto de partida <b>não foi classificação manual caso a caso</b>: foi uma <b>análise prévia por IA do perfil editorial</b> de cada veículo — linha histórica, propriedade, enquadramento típico e seleção de pauta. A curadoria humana validou e ajustou essa tabela inicial. Todas as matérias de um veículo herdam esse valor. É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Não há análise por IA em cada matéria e nenhum token é gasto por artigo.</p>
+<p>Cada veículo tem <b>um posicionamento</b> (de −2 a +2). A tabela <b>não foi montada manualmente, matéria a matéria</b>: cada veículo foi lido de forma independente por <b>três modelos de IA diferentes</b>, com a mesma rubrica — linha histórica, propriedade, enquadramento típico e seleção de pauta. A nota final é a <b>mediana das três leituras</b>, o que reduz o peso de uma avaliação isolada. Divergências grandes entre os modelos são marcadas para uma nova rodada, e toda mudança fica registrada no histórico público. O mesmo procedimento vale para a <b>factualidade</b>.</p>
+<p>Todas as matérias de um veículo herdam esse valor. É o mesmo critério do Ground.news: avalia-se o <b>veículo</b>, não o texto isolado. Não há análise de viés em cada matéria e nenhum token é gasto por artigo.</p>
 <table>
 <tr><th>Posição</th><th>Faixa</th><th>Significado</th></tr>
 <tr><td><i class="sw" style="background:var(--L)"></i>Esquerda</td><td>≤ −0,8</td><td>Enquadramento sistematicamente favorável à esquerda/progressismo</td></tr>
@@ -48,10 +49,10 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 <tr><td><i class="sw" style="background:var(--CR)"></i>Centro-direita</td><td>+0,3 a +0,8</td><td>Predominância conservadora/liberal, com contraponto factual</td></tr>
 <tr><td><i class="sw" style="background:var(--R)"></i>Direita</td><td>≥ +0,8</td><td>Enquadramento sistematicamente favorável à direita/conservadorismo</td></tr>
 </table>
-<p>A escala tem <b>5 faixas</b> (esquerda, centro-esquerda, centro, centro-direita, direita), como no Ground.news: o centro é estreito e as faixas intermediárias dão nuance a veículos que não são nem radicais nem neutros. Em novembro de 2026 a tabela foi reconciliada com <b>duas avaliações independentes por modelos diferentes</b>; mudanças grandes com discordância entre elas ficam para revisão humana. Os critérios completos, a posição de cada veículo e o histórico de mudanças estão em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
+<p>A escala tem <b>5 faixas</b> (esquerda, centro-esquerda, centro, centro-direita, direita), como no Ground.news: o centro é estreito e as faixas intermediárias dão nuance a veículos que não são nem radicais nem neutros. Em novembro de 2026 a tabela foi reconciliada por <b>três leituras independentes de IA</b>, com mediana; as mudanças e a justificativa de cada uma estão no <a href="https://github.com/hcarta/balanco/blob/main/state/vies_changelog.md">histórico público</a>. Critérios completos e posição de cada veículo em <a href="https://github.com/hcarta/balanco/blob/main/CURADORIA_VIES.md"><code>CURADORIA_VIES.md</code></a>, com revisão trimestral.</p>
 
 <h2>Factualidade: rubrica pública</h2>
-<p>Cada veículo também tem um nível de factualidade, com critérios observáveis — e regras que impedem rebaixamento arbitrário:</p>
+<p>Cada veículo também tem um nível de factualidade, com critérios observáveis — e regras que impedem rebaixamento arbitrário. A nota segue o <b>mesmo processo de três leituras independentes de IA</b> com a rubrica abaixo, mediana e registro público; o ledger de checagens é evidência para a revisão seguinte, não um veredito automático.</p>
 <table>
 <tr><th>Nível</th><th>Significado</th></tr>
 <tr><td>Muito alta</td><td>Apuração própria predominante; correção pública e rápida; separa fato de opinião; sem desmentidos relevantes</td></tr>
@@ -60,7 +61,7 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 <tr><td>Baixa</td><td>Padrão recorrente de imprecisão: alegações sem lastro, fontes anônimas sem corroboração, resistência a corrigir; múltiplos desmentidos documentados</td></tr>
 <tr><td>Muito baixa</td><td>Desinformação sistemática (nenhuma fonte atual)</td></tr>
 </table>
-<p><b>Travas:</b> <code>mixed→low</code> exige 2+ "falso" documentados; <code>low→mixed</code> exige 12 meses limpos; <code>high→very_high</code> exige correção pública + 24 meses limpos. O histórico de checagens por veículo (<code>factcheck_ledger.json</code>, público no repositório) é evidência para revisão humana — <b>nunca</b> altera a factualidade sozinho.</p>
+<p><b>Travas:</b> <code>mixed→low</code> exige 2+ "falso" documentados; <code>low→mixed</code> exige 12 meses limpos; <code>high→very_high</code> exige correção pública + 24 meses limpos. O histórico de checagens por veículo (<code>factcheck_ledger.json</code>, público no repositório) é evidência para a revisão periódica — <b>nunca</b> altera a factualidade sozinho.</p>
 
 <h2>O que é um blindspot</h2>
 <p>Uma história com <b>3+ grupos editoriais independentes</b> em que um dos lados está quase ausente (≤ 15%) enquanto o outro cobre. Com 3 grupos, o lado ausente é necessariamente 0%; com 4+, a tolerância de 15% evita marcar uma única voz minoritária. Não marcamos histórias cobertas <b>só pelo centro</b>: sem viés em jogo, não há ponto cego político.</p>
@@ -71,10 +72,20 @@ code{background:#efece7;padding:1px 6px;border-radius:4px;font-size:13px}
 <p>Nem toda história divide opiniões — e o leitor precisa saber quais fatos estão <b>estabelecidos</b>. O selo <b>✓ Consenso</b> marca histórias com 3+ coberturas de veículos de <b>centro com factualidade alta ou muito alta</b>: é o que a apuração mais confiável confirma hoje, independentemente do barulho partidário ao redor. No topo da página, ao lado da matéria em destaque, as 3 mais repercutidas entre esses veículos dão a hierarquia do dia.</p>
 
 <h2>Checagens: evidência, não sentença</h2>
-<p>Cruzamos manchetes com <b>G1 Fato ou Fake</b>, <b>Agência Lupa</b> e <b>Aos Fatos</b> (~700 verificações). Quando a alegação coincide, exibimos o selo <b>⚑ Checagem</b> com os termos em comum — é uma checagem <i>relacionada</i>, nunca um veredito sobre a matéria. Os vereditos são lidos do título da checagem (não há <code>ClaimReview</code> estruturado nessas páginas). O histórico por veículo serve à revisão humana e <b>nunca</b> altera a factualidade automaticamente.</p>
+<p>Cruzamos manchetes com <b>G1 Fato ou Fake</b>, <b>Agência Lupa</b> e <b>Aos Fatos</b> (~700 verificações). Quando a alegação coincide, exibimos o selo <b>⚑ Checagem</b> com os termos em comum — é uma checagem <i>relacionada</i>, nunca um veredito sobre a matéria. Os vereditos são lidos do título da checagem (não há <code>ClaimReview</code> estruturado nessas páginas). O histórico por veículo serve de evidência para a revisão periódica e <b>nunca</b> altera a factualidade automaticamente.</p>
 
 <h2>Como as histórias são montadas</h2>
 <p><b>Coleta:</b> feeds RSS e sitemaps de notícias publicados pelos próprios veículos (só manchete, link, data e editoria — sem corpo, sem paywall). <b>Agrupamento:</b> títulos viram vetores TF-IDF; pares com cosseno ≥ 0,38 e 2+ palavras em comum, na mesma janela de 48 h (24 h para hard news, 7 dias para opinião), formam uma história. Pares do mesmo veículo exigem evidência maior. Há um conjunto de 100 pares rotulados que trava precisão e revocação a cada mudança.</p>
+
+<h2>Capas e pautas do dia</h2>
+<p>As capas de <b>6 jornais</b> (O Globo, Estadão, Folha, G1, UOL e CNN) são lidas a cada rodada. Cada pauta nasce da agenda das capas: manchetes que abrem em <b>2+ jornais</b> viram pauta; temas fora do dicionário editorial entram como <b>pauta emergente</b> quando abrem em 2+ capas no topo e têm lastro no feed (ou em 3+ capas, se não houver história). A chamada é sempre a <b>manchete mais recente</b>, com subtítulo quando o jornal expõe.</p>
+<p>O bloco “Em foco” combina <b>75% capa</b> (satura em 3 jornais), <b>15% cobertura</b> e <b>10% recência</b>; os 4 espaços usam pautas distintas. Manchetes que não casam com nenhuma pauta ficam visíveis no relatório interno (<code>front_unmatched</code>) em vez de sumir.</p>
+
+<h2>Opinião não é cobertura</h2>
+<p>A seção “Opinião de hoje” mostra até <b>6 colunas e editoriais</b>, com o nome do autor colorido pela faixa de viés do veículo. Editoriais aparecem como <b>Editorial</b>; colunas semanais têm prioridade. Nada disso entra na barra de viés, no blindspot ou no consenso — é contexto, não contagem de cobertura.</p>
+
+<h2>Cronologia: publicada × atualizada</h2>
+<p>“Quem deu primeiro” usa a data de <b>publicação</b> (<code>published</code>) e só recorre a <code>first_seen</code> quando ela não existe. No feed, quando uma história recebe desdobramentos, mostramos <b>“publicada há X · atualizada há Y”</b>: o fato original não vira novidade só porque ganhou uma matéria nova.</p>
 
 <h2>De onde vêm os textos e fotos</h2>
 <p>Resumos vêm do próprio feed ou da <i>meta description</i> pública da página (opcional <code>--body</code>); corpos completos alimentam só a análise interna e nunca são exibidos. Imagens vêm dos sitemaps e feeds, com link para o original em cada matéria. <b>Paywalls não são contornados:</b> de Valor, Globo, Folha e Estadão usamos título, meta description e dados estruturados.</p>
@@ -111,9 +122,9 @@ fetch('data.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
 
 <h2>Limitações honestas</h2>
 <ul>
-<li>No Brasil não há AllSides/MBFC: a tabela de viés é curadoria manual, discutível por construção — por isso ela é pública e versionada.</li>
+<li>No Brasil não há AllSides/MBFC: a tabela de viés é construída por três leituras independentes de IA, com mediana. É discutível por construção — por isso é pública, versionada e com histórico de mudanças.</li>
 <li>O agrupamento é TF-IDF simples (+ regras e embeddings opcionais); paráfrases distantes podem escapar.</li>
-<li>Factualidade e propriedade são tabeladas manualmente e revisadas periodicamente.</li>
+<li>Factualidade e propriedade seguem o mesmo processo de revisão por IA, com rubrica pública e histórico; divergências podem existir e ficam registradas.</li>
 <li>Paywalls bloqueiam corpo de Valor, Globo, Folha e Estadão: deles usamos título, meta description e dados estruturados.</li>
 </ul>
 
