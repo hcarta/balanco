@@ -1,0 +1,62 @@
+{
+ "v": 2,
+ "window": "2026-11-03T00",
+ "items": [
+  {
+   "source": "Folha de S.Paulo",
+   "author": "Jullia Gouveia",
+   "title": "Livro reúne cartas inéditas de amor do ex-marido de Clarice Lispector",
+   "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/11/livro-reune-cartas-ineditas-de-amor-do-ex-marido-de-clarice-lispector.shtml",
+   "published": "2026-11-02T23:30:00+00:00",
+   "bias": -0.3,
+   "bucket": "CL",
+   "side": "L",
+   "factuality": "high"
+  },
+  {
+   "source": "Band",
+   "author": "Vinícius Di Nardo",
+   "title": "Bar da Linguiça: tradição que marcou a história de Campinas",
+   "link": "https://www.band.com.br/colunistas/dica-do-vinicius/bar-da-linguica-tradicao-que-marcou-a-historia-de-campinas",
+   "published": "2026-11-02T23:00:00+00:00",
+   "bias": 0.0,
+   "bucket": "C",
+   "side": "C",
+   "factuality": "high"
+  },
+  {
+   "source": "O Globo",
+   "author": "Miriam Leitao",
+   "title": "Focus deve mostrar piora das expectativas antes do Copom",
+   "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/11/focus-deve-mostrar-piora-das-expectativas-antes-do-copom.ghtml",
+   "published": "2026-11-02T22:05:28.105000+00:00",
+   "bias": 0.1,
+   "bucket": "C",
+   "side": "C",
+   "factuality": "high"
+  },
+  {
+   "source": "Valor Econômico",
+   "author": "Valor Econômico",
+   "title": "Por que até os mais abastados nos EUA estão sentindo o aperto",
+   "link": "https://valor.globo.com/opiniao/coluna/por-que-ate-os-mais-abastados-nos-eua-estao-sentindo-o-aperto.ghtml",
+   "published": "2026-11-02T13:15:00.451000+00:00",
+   "bias": 0.3,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high"
+  },
+  {
+   "source": "Brasil 247",
+   "author": "Henrique Pinheiro",
+   "title": "Bastou falar em reduzir os juros para o mercado reagir",
+   "link": "https://www.brasil247.com/blog/bastou-falar-em-reduzir-os-juros-para-o-mercado-reagir/",
+   "published": "2026-11-02T21:30:09+00:00",
+   "bias": -1.9,
+   "bucket": "L",
+   "side": "L",
+   "factuality": "mixed"
+  }
+ ],
+ "generated_at": "2026-11-03T00:06:29.973701+00:00"
+}

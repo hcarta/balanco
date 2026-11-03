@@ -1,0 +1,32 @@
+{
+ "days": {
+  "2026-11-02": {
+   "n_heads": 33,
+   "n_unmatched": 17,
+   "unmatched_rate": 51.5,
+   "n_pautas": 4,
+   "n_emergent": 0,
+   "n_reused": 0,
+   "n_new_keys": 0,
+   "n_front_only": 0,
+   "n_pauta_stories": 30,
+   "n_aliases": 0,
+   "date": "2026-11-02",
+   "generated_at": "2026-11-02T23:57:28.314033+00:00"
+  },
+  "2026-11-03": {
+   "n_heads": 34,
+   "n_unmatched": 17,
+   "unmatched_rate": 50.0,
+   "n_pautas": 4,
+   "n_emergent": 0,
+   "n_reused": 0,
+   "n_new_keys": 0,
+   "n_front_only": 0,
+   "n_pauta_stories": 29,
+   "n_aliases": 0,
+   "date": "2026-11-03",
+   "generated_at": "2026-11-03T00:07:20.347764+00:00"
+  }
+ }
+}

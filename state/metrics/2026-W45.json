@@ -1,0 +1,37 @@
+{
+ "week": "2026-W45",
+ "days": {
+  "2026-11-02": {
+   "n_stories": 285,
+   "n_articles": 1109,
+   "median_independent": 2,
+   "pct_blindspot": 24.2,
+   "pct_longread": 3.2,
+   "avg_pct": {
+    "L": 8.9,
+    "CL": 8.4,
+    "C": 46.8,
+    "CR": 27.5,
+    "R": 8.3
+   },
+   "date": "2026-11-02",
+   "generated_at": "2026-11-02T23:57:28.256267+00:00"
+  },
+  "2026-11-03": {
+   "n_stories": 286,
+   "n_articles": 1107,
+   "median_independent": 2.0,
+   "pct_blindspot": 23.1,
+   "pct_longread": 3.1,
+   "avg_pct": {
+    "L": 8.8,
+    "CL": 8.4,
+    "C": 46.5,
+    "CR": 27.7,
+    "R": 8.5
+   },
+   "date": "2026-11-03",
+   "generated_at": "2026-11-03T00:07:20.293885+00:00"
+  }
+ }
+}
