@@ -2795,6 +2795,7 @@ OPINION_WINDOWS = (0, 12, 18)
 FACT_RANK = {"very_high": 4, "high": 3, "mixed": 2, "low": 1, "very_low": 0}
 OPINION_SIDE = {"L": ("L", "CL"), "C": ("C",), "R": ("CR", "R")}
 OPINION_FILE = os.path.join(BASE, "state", "opiniao.json")
+OPINION_STATE_VERSION = 2
 
 
 def _article_ts(a: dict) -> float:
@@ -2828,13 +2829,12 @@ def _opinion_author(a, meta):
     url = a.get("link") or ""
     m = re.search(r"/(?:blogs?|colunas|colunistas)/([^/?#]+)", url)
     if m and "-" in m.group(1):
-        return " ".join(w.capitalize() for w in m.group(1).split("-")
-                        if w)[:80]
-    title = a.get("title") or ""
-    m = re.match(r"^([A-ZÀ-Ú][\wÀ-ú]+(?:\s+[A-ZÀ-Ú][\wÀ-ú]+){1,3})\s*:",
-                 title)
-    if m:
-        return m.group(1)[:80]
+        parts = [w.capitalize() for w in m.group(1).split("-") if w]
+        parts = [w.lower() if i > 0 and w in {"De", "Do", "Da", "Dos", "Das", "E"}
+                 else w for i, w in enumerate(parts)]
+        return " ".join(parts)[:80]
+    # NÃO usar prefixo do título como autor: manchetesem Title Case com ":"
+    # ("Bastou Falar Em Reduzir Os Juros: ...") virariam "autores" falsos.
     return ""
 
 
@@ -2875,7 +2875,8 @@ def build_opiniao(articles, source_meta, now=None, path=None,
     try:
         with open(path, encoding="utf-8") as f:
             saved = json.load(f)
-        if saved.get("window") == window and saved.get("items"):
+        if (saved.get("v") == OPINION_STATE_VERSION
+                and saved.get("window") == window and saved.get("items")):
             return {"window": window, "items": saved["items"]}
     except (FileNotFoundError, ValueError):
         pass
@@ -2912,8 +2913,10 @@ def build_opiniao(articles, source_meta, now=None, path=None,
     if fetch_missing:
         from enrich import fetch_author
         for it in picked:
-            if not it["author"]:
-                it["author"] = fetch_author(it["link"])
+            # meta/JSON-LD vence o slug (traz nome completo e acento)
+            au = fetch_author(it["link"])
+            if au:
+                it["author"] = au
     for it in picked:
         if not it["author"]:
             it["author"] = it["source"]
@@ -2922,7 +2925,8 @@ def build_opiniao(articles, source_meta, now=None, path=None,
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
-            json.dump({"window": window, "items": items,
+            json.dump({"v": OPINION_STATE_VERSION, "window": window,
+                       "items": items,
                        "generated_at": now.isoformat()}, f,
                       ensure_ascii=False, indent=1)
     except OSError:

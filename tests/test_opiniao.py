@@ -83,3 +83,14 @@ def test_opinion_author_from_blog_slug(tmp_path):
     out = app.build_opiniao([art], _meta(), now=now,
                             path=str(tmp_path / "o.json"), fetch_missing=False)
     assert out["items"][0]["author"] == "Ancelmo Gois"
+
+
+def test_title_prefix_is_not_mistaken_for_author(tmp_path):
+    now = datetime(2026, 11, 2, 13, 0, tzinfo=timezone.utc)
+    art = {"source_id": "a",
+           "title": "Bastou Falar Em Reduzir Os Juros: mercado reage",
+           "link": "https://exemplo.com/opiniao/bastou-falar",
+           "published": "2026-11-02T11:00:00+00:00", "section": "opiniao"}
+    out = app.build_opiniao([art], _meta(), now=now,
+                            path=str(tmp_path / "o.json"), fetch_missing=False)
+    assert out["items"][0]["author"] == "Fonte A"
