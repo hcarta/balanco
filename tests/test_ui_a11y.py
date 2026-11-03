@@ -132,7 +132,7 @@ def test_chronology_shows_publication_and_update():
 def test_hero_side_aligns_image_top_and_biasrow_bottom():
     assert "topAnchor.getBoundingClientRect().top" in HTML
     assert "bias.getBoundingClientRect().bottom" in HTML
-    assert "list.style.marginTop" in HTML
+    assert "side.style.marginTop" in HTML
     assert "bias.getBoundingClientRect().bottom - top" in HTML
 
 

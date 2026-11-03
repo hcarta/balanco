@@ -107,7 +107,7 @@ kicker,.kicker{font-family:var(--sans);font-size:11px;font-weight:700;letter-spa
 .hero-side{padding-top:0;min-width:0}
 .hero > *{min-width:0}
 #feedCol{scroll-margin-top:80px}
-.hero-side .kspacer{display:flex;margin-bottom:14px}
+.hero-side .kspacer{display:none}
 .hero-side .hitem{padding:14px 0;border-bottom:1px solid var(--hair);cursor:pointer}
 .hero-side .hitem:last-child{border-bottom:none}
 .hero-side .hrow{display:flex;gap:14px;align-items:flex-start}
@@ -974,9 +974,12 @@ function renderFeatured(){
    base da última imagem = base do texto (só desktop) */
 let _alignT = null;
 function alignHero(){
-  if(window.innerWidth <= 940) return;
-  const feat = document.querySelector('#featured .featured');
   const side = document.getElementById('heroSide');
+  if(window.innerWidth <= 940){
+    if(side) side.style.marginTop = '';
+    return;
+  }
+  const feat = document.querySelector('#featured .featured');
   const list = document.getElementById('heroList');
   if(!feat || !side || !list || side.style.display==='none') return;
   const img = feat.querySelector('.feat-img');
@@ -984,14 +987,15 @@ function alignHero(){
   const topAnchor = img || feat.querySelector('h1');
   if(!topAnchor || !bias) return;
   // mede do zero para não realimentar o observer
-  list.style.marginTop = '';
+  side.style.marginTop = '';
   list.style.height = '';
   list.style.display = '';
   list.style.flexDirection = '';
   list.style.justifyContent = '';
+  // topo da coluna = topo da imagem do destaque
   const delta = topAnchor.getBoundingClientRect().top
-              - list.getBoundingClientRect().top;
-  if(Math.abs(delta) > 0.5) list.style.marginTop = `${delta}px`;
+              - side.getBoundingClientRect().top;
+  if(Math.abs(delta) > 0.5) side.style.marginTop = `${delta}px`;
   const top = list.getBoundingClientRect().top;
   const h = bias.getBoundingClientRect().bottom - top;
   const need = list.scrollHeight;
