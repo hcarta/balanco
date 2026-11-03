@@ -1621,3 +1621,15 @@ def test_front_items_fallback_when_selector_breaks():
     cfg = {"url": "https://exemplo.com/", "sel": ".sumiu", "kind": "heading"}
     items = app._front_items(html, cfg)
     assert items and items[0]["title"].startswith("Manchete nova")
+
+
+def test_emergent_front_only_requires_three_journals():
+    """2 capas sem história no feed não bastam para virar pauta."""
+    stories = [_mk_front_story("b", "Binance sofre ataque hacker de US$ 6 bi", 2)]
+    nova = "Universidade federal anuncia novo campus no interior"
+    desks = {
+        "G1": [{"title": nova, "link": "https://x/1"}],
+        "UOL": [{"title": nova + " do estado", "link": "https://x/2"}],
+    }
+    _, _, pautas = app.attach_front_pages(stories, desks=desks)
+    assert not [p for p in pautas if p.get("emergent")]

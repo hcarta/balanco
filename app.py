@@ -783,7 +783,8 @@ FRONT_CONCEPTS = [
 FRONT_CONCEPT_TERMS = {
     "Eleição EUA / Trump": (
         "midterm", "meio de mandato", "voto antecipado", "corrida eleitoral",
-        "eleicao legislativa", "casa branca", "democrata", "republicano"),
+        "eleicao legislativa", "casa branca", "democrata", "republicano",
+        "presidente dos eua"),
     "Lula / juros e economia": (
         "selic", "copom", "durigan", "juro", "taxa de juro",
         "ajuste fiscal", "mercado financeiro", "banco central"),
@@ -1113,6 +1114,11 @@ def _theme_story(theme_titles, stories, toks):
 # override/rótulo; o agrupamento não depende dele.
 FRONT_CLUSTER_MIN_SOURCES = 2
 EMERGENT_MIN_SCORE = 0.38
+# Entidades genéricas não servem de rótulo para pauta emergente.
+EMERGENT_STOP = {
+    "senado", "camara", "congresso", "governo", "justica", "policia",
+    "stf", "eleicao", "crise", "brasil", "eua", "estados unidos", "mundo",
+}
 EMB_PAUTA_MIN = 0.75
 
 
@@ -1151,7 +1157,8 @@ def _emergent_label(group):
     counts = Counter()
     for h in group:
         for e in _distinct_entities(_title_entities(h["title"])):
-            if e not in ENTITY_GENERIC and e not in HUB_STOP and len(e) >= 3:
+            if (e not in ENTITY_GENERIC and e not in HUB_STOP
+                    and e not in EMERGENT_STOP and len(e) >= 3):
                 counts[e] += 1
     if counts:
         e = max(counts, key=lambda x: (counts[x], " " in x, len(x)))
@@ -1467,6 +1474,9 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
                 "link": ce["link"], "published": ciso or None}
         sids = sorted(ids_by_em.get(gi, []))
         best_pos = min(e["position"] for e in entries)
+        # sem história no feed, exige 3 jornais: evita "pauta" de 2 manchetes
+        if not sids and len(by) < 3:
+            continue
         # saliência: pauta nova só entra se abrir no topo (<=3) ou já tiver
         # tração no feed; página baixa sem cobertura é ruído, não agenda.
         if best_pos > 3 and len(sids) < 3:

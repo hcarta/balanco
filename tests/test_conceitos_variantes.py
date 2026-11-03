@@ -14,6 +14,7 @@ POSITIVOS = {
         "Midterms decidem a força de Trump",
         "Voto antecipado bate recorde",
         "Casa Branca prepara plano pós-eleição",
+        "Presidente dos EUA pode perder o Senado? Veja projeções",
     ],
     "Lula / juros e economia": [
         "Taxa de juros deve ficar em dois dígitos",
