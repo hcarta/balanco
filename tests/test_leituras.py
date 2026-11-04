@@ -114,3 +114,10 @@ def test_piaui_featured_parses_image(monkeypatch):
     feat = app._piaui_featured()
     assert feat["title"] == "A proteína polêmica"
     assert feat["image"] == "https://piaui.uol.com.br/media/x.jpg"
+
+
+def test_leituras_sem_chip_de_vies():
+    from pathlib import Path
+    html = Path("docs/leituras.html").read_text(encoding="utf-8")
+    assert 'class="bias' not in html
+    assert "biasLabel" not in html

@@ -1666,3 +1666,31 @@ def test_uol_secondary_column_is_dropped(monkeypatch):
     import requests
     monkeypatch.setattr(requests, "get", lambda *a, **k: R())
     assert app.fetch_front_page("UOL") == []
+
+
+def test_five_journals_outrank_three_with_max_coverage():
+    """5/6 jornais devem liderar mesmo contra 3 jornais com cobertura máxima."""
+    a = {"id": "a", "title": "Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+         "articles": [_art("Eleição nos EUA: Musk testa o que meio bilhão pode fazer",
+                           "g1", 0.0)] * 3,
+         "counts": {"total": 2}, "recent": {"n_6h": 0},
+         "updated": "2026-11-04T12:00:00+00:00"}
+    b = {"id": "b", "title": "PEC da Segurança avança no Senado e divide governistas",
+         "articles": [_art("PEC da Segurança avança no Senado e divide governistas",
+                           "folha", 0.0)] * 3,
+         "counts": {"total": 40}, "recent": {"n_6h": 0},
+         "updated": "2026-11-04T12:00:00+00:00"}
+    ta = "Eleição nos EUA: Musk testa o que meio bilhão pode fazer"
+    tb = "PEC da Segurança avança no Senado e divide governistas"
+    desks = {src: [{"title": ta, "link": f"https://a/{i}"}]
+             for i, src in enumerate(["O Globo", "Folha de S.Paulo", "G1",
+                                      "CNN Brasil", "UOL"])}
+    desks.update({src: [{"title": tb, "link": f"https://b/{i}"}]
+                  for i, src in enumerate(["Estadão", "Valor Econômico"])})
+    # PEC com 3ª capa + cobertura máxima
+    desks["CNN Brasil"] = [{"title": tb, "link": "https://b/3"},
+                           {"title": ta, "link": "https://a/9"}]
+    out, _, _ = app.attach_front_pages([a, b], desks=desks)
+    by = {s["id"]: s for s in out}
+    assert by["a"]["front_n_sources"] == 5
+    assert by["a"]["destaque"] > by["b"]["destaque"]

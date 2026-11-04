@@ -41,10 +41,11 @@ maior, menos dependência de uma única matéria).
 
 ## Chamada e ranking (02/11/2026)
 
-- **Saturação em 3 jornais** (regra 2): `destaque = 0,75·min(jornais/3,1)
+- **Saturação em 5 jornais** (regra 2): `destaque = 0,75·min(jornais/5,1)
   + 0,15·cobertura + 0,10·recência`. O sinal de capa conta **jornais distintos**
-  (a posição não rebaixa o 3º jornal). Com esses pesos, 3 jornais sempre ficam
-  acima de 2; a cobertura ordena dentro do mesmo nível.
+  (a posição não rebaixa nenhum jornal). Com esses pesos, 5 jornais sempre ficam
+  acima de 3 mesmo com cobertura menor; 4 × 3 ainda pode ser decidido pela
+  cobertura.
 - **Chamada da pauta**: a manchete de capa mais recente (pelo `updated` da
   história; empate pela posição) + subtítulo quando a capa expõe (Folha, UOL).
   Os 4 slots e o banner exibem a chamada, não o título antigo do cluster.

@@ -1119,6 +1119,7 @@ def _theme_story(theme_titles, stories, toks):
 # semelhança e só viram pauta se abrirem em >=2 jornais. O lexicon segue como
 # override/rótulo; o agrupamento não depende dele.
 FRONT_CLUSTER_MIN_SOURCES = 2
+FRONT_SATURATION = 5
 EMERGENT_MIN_SCORE = 0.38
 # Entidades genéricas não servem de rótulo para pauta emergente.
 EMERGENT_STOP = {
@@ -1596,14 +1597,14 @@ def attach_front_pages(stories, desks=None, source_meta=None, stats=None,
                   default=0) or 1
     for s in stories:
         nsrc = s.get("front_n_sources") or len(s.get("front") or [])
-        nf = min(nsrc / 3.0, 1.0)
+        nf = min(nsrc / FRONT_SATURATION, 1.0)
         nt = s["counts"]["total"] / max_total
         nr = s.get("recent", {}).get("n_6h", 0) / max_rec
         s["destaque"] = round(0.75 * nf + 0.15 * nt + 0.10 * nr, 3)
     # destaque das pautas de capa sem história (cobertura = 1)
     for fs in front_only:
         nsrc = fs.get("front_n_sources") or len(fs.get("front") or [])
-        nf = min(nsrc / 3.0, 1.0)
+        nf = min(nsrc / FRONT_SATURATION, 1.0)
         fs["destaque"] = round(0.75 * nf + 0.15 * (1 / max_total)
                                + 0.10 * (1 / max_rec), 3)
     return stories, front_only, pautas
@@ -2843,9 +2844,11 @@ OPINION_WINDOWS = (0, 12, 18)
 FACT_RANK = {"very_high": 4, "high": 3, "mixed": 2, "low": 1, "very_low": 0}
 OPINION_SIDE = {"L": ("L", "CL"), "C": ("C",), "R": ("CR", "R")}
 OPINION_FILE = os.path.join(BASE, "state", "opiniao.json")
-OPINION_STATE_VERSION = 4
-# Colunas semanais que devem aparecer quando houver edição recente (7 dias).
+OPINION_STATE_VERSION = 5
+# Colunas semanais: entram se a edição tiver até 72 h (3 dias).
+OPINION_MAX_AGE_H = 72
 OPINION_WATCH = {
+    "rui tavares": "Rui Tavares",
     "conrado hubner mendes": "Conrado Hübner Mendes",
     "celso rocha de barros": "Celso Rocha de Barros",
 }
@@ -2896,7 +2899,8 @@ def _opinion_author(a, meta):
 def _pick_opinions(cands, limit=6):
     """6 cartões: semanais, editoriais e colunas, sem repetir link/veículo."""
     weekly = sorted([x for x in cands if x.get("weekly")],
-                    key=lambda x: (-x["rank"], -x["ts"]))
+                    key=lambda x: (0 if x.get("preferred") else 1,
+                                   -x["rank"], -x["ts"]))
     eds = sorted([x for x in cands if x.get("editorial")],
                  key=lambda x: (-x["rank"], -x["ts"]))
     regular = sorted([x for x in cands if not x.get("weekly")
@@ -2961,7 +2965,7 @@ def build_opiniao(articles, source_meta, now=None, path=None,
     except (FileNotFoundError, ValueError):
         pass
     start, end = now.timestamp() - 24 * 3600, now.timestamp()
-    week_start = now.timestamp() - 7 * 24 * 3600
+    week_start = now.timestamp() - OPINION_MAX_AGE_H * 3600
     pool = list(articles)
     if store is not None:
         # semanais podem ter saído da janela de 72 h das notícias
@@ -3003,6 +3007,7 @@ def build_opiniao(articles, source_meta, now=None, path=None,
                 "side": _opinion_side(b),
                 "factuality": meta.get("factuality", ""),
                 "editorial": editorial, "weekly": bool(weekly),
+                "preferred": weekly.lower() == "rui tavares",
                 "rank": FACT_RANK.get(meta.get("factuality", ""), 0),
                 "ts": ts}
         # semanais precisam sobreviver ao dedup por veículo

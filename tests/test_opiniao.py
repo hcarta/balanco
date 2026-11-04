@@ -139,3 +139,39 @@ def test_weekly_columnist_uses_seven_day_window(tmp_path):
     weekly_items = [x for x in out["items"] if x.get("weekly")]
     assert weekly_items
     assert weekly_items[0]["author"] == "Celso Rocha de Barros"
+
+
+def test_weekly_column_older_than_72h_is_excluded(tmp_path):
+    now = datetime(2026, 11, 4, 13, 0, tzinfo=timezone.utc)
+    meta = _meta()
+    meta["folha"] = {"id": "folha", "name": "Folha de S.Paulo",
+                     "bias": -0.4, "factuality": "high"}
+    old = {"source_id": "folha", "title": "A última dança de Lula",
+           "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/10/x.shtml",
+           "published": "2026-10-31T21:00:00+00:00", "section": "colunas"}
+    cols = [_art(s, f"Opinião: coluna {s} sobre política", f"https://{s}/1")
+            for s in ("b", "c", "d", "f", "g", "h")]
+    out = app.build_opiniao(cols, meta, now=now, path=str(tmp_path / "o.json"),
+                            fetch_missing=False,
+                            store=_FakeStore([old]))
+    assert not [x for x in out["items"] if x.get("weekly")]
+
+
+def test_rui_tavares_has_priority_among_weeklies(tmp_path):
+    now = datetime(2026, 11, 4, 13, 0, tzinfo=timezone.utc)
+    meta = _meta()
+    meta["folha"] = {"id": "folha", "name": "Folha de S.Paulo",
+                     "bias": -0.4, "factuality": "high"}
+    rui = {"source_id": "folha", "title": "O Brasil e a nova ordem mundial",
+           "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/x.shtml",
+           "published": "2026-11-03T20:00:00+00:00", "section": "colunas"}
+    celso = {"source_id": "folha", "title": "A última dança de Lula",
+             "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/11/y.shtml",
+             "published": "2026-11-03T22:00:00+00:00", "section": "colunas"}
+    cols = [_art(s, f"Opinião: coluna {s} sobre política", f"https://{s}/1")
+            for s in ("b", "c", "d", "f", "g", "h")]
+    out = app.build_opiniao(cols, meta, now=now, path=str(tmp_path / "o.json"),
+                            fetch_missing=False,
+                            store=_FakeStore([rui, celso]))
+    weeklies = [x for x in out["items"] if x.get("weekly")]
+    assert weeklies and weeklies[0]["author"] == "Rui Tavares"
