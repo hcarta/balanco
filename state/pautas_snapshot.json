@@ -1,39 +1,46 @@
 {
- "generated_at": "2026-11-03T00:06:29.969981+00:00",
+ "generated_at": "2026-11-04T05:55:10.681165+00:00",
  "pautas": [
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
     "https://oglobo.globo.com/mundo/ao-vivo/com-mais-de-50-milhoes-de-votos-antecipados-partidos-encerram-campanha-e-democratas-temem-que-trump-conteste-o-resultado-das-eleicoes.ghtml",
-    "https://www.estadao.com.br/internacional/eua-vao-as-urnas-para-renovar-o-congresso-entenda-no-video-como-eleicao-virou-referendo-sobre-trump/",
-    "https://g1.globo.com/mundo/noticia/2026/11/02/reutersipsos-aprovacao-de-trump-segue-baixa-na-vespera-de-eleicao-de-meio-de-mandato.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/aprovacao-trump-midterms-pesquisa/"
+    "https://g1.globo.com/mundo/eleicoes-eua-2026-resultado/",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/03/eleicoes-nos-eua-mapa-mostra-resultados-para-senado-camara-e-governadores.ghtm",
+    "https://www.cnnbrasil.com.br/internacional/midterms-senado-eua/"
    ]
   },
   {
-   "key": "queda-de-avião",
-   "label": "Queda de avião",
+   "key": "segurança",
+   "label": "Segurança",
    "links": [
-    "https://g1.globo.com/mundo/noticia/2026/11/02/familia-do-texas-estava-no-aviao-que-caiu-na-florida-diz-site.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/brasileira-de-20-anos-era-copilota-de-jato-que-caiu-na-florida/",
-    "https://www1.folha.uol.com.br/cotidiano/2026/11/dois-homens-morrem-apos-queda-de-asa-delta-em-sao-conrado-no-rio.shtml"
+    "https://www.estadao.com.br/brasil/senado-aprova-pec-da-seguranca-publica-em-primeiro-turno-sem-reducao-de-maioridade-penal/",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/03/senado-votacao-pec-da-seguranca.ghtm",
+    "https://oglobo.globo.com/politica/noticia/2026/11/03/senado-aprova-pec-da-seguranca-com-penas-mais-duras-para-faccoes-fortalecimento-da-pf-e-sem-reducao-da-maioridade.ghtml",
+    "https://g1.globo.com/politica/noticia/2026/11/03/senado-aprova-pec-da-seguranca-publica.ghtml"
    ]
   },
   {
-   "key": "flávio-bolsonaro",
-   "label": "Flávio Bolsonaro",
+   "key": "justiça",
+   "label": "Justiça",
    "links": [
-    "https://www1.folha.uol.com.br/poder/2026/11/fuga-de-flavio-bolsonaro-aos-eua-apos-derrota-leva-militares-a-abracarem-tarcisio.shtml",
-    "https://oglobo.globo.com/politica/noticia/2026/11/02/defesa-de-flavio-pede-mendonca-como-relator-de-investigacao-no-lugar-de-moraes-e-fim-de-proibicao-de-contato-com-willer-tomaz.ghtml"
+    "https://www.estadao.com.br/economia/negocios/justica-proibe-meta-de-usar-conteudo-jornalistico-sem-autorizacao-apos-acao-de-anj-abert-e-aner/",
+    "https://oglobo.globo.com/economia/tecnologia/noticia/2026/11/03/justica-de-sp-impede-meta-de-usar-conteudo-jornalistico-sem-autorizacao-para-treinar-ia.ghtml"
    ]
   },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/gabrielli-celebra-fim-do-pensamento-unico-e-endossa-ideia-de-lara-resende/",
-    "https://g1.globo.com/politica/noticia/2026/11/02/propostas-como-tabelar-os-juros-ou-queimar-reservas-cambiais-nao-estao-em-avaliacao-diz-durigan.ghtml"
+    "https://www.estadao.com.br/economia/alvaro-gribel/nao-existem-atalhos-nem-formulas-magicas-para-reduzir-juros-no-brasil-como-sugere-lara-resende/"
+   ]
+  },
+  {
+   "key": "queda-de-avião",
+   "label": "Queda de avião",
+   "links": [
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/03/copilota-enviou-mensagem-ao-namorado-10-min-antes-de-jato-cair-nos-eua.ghtm"
    ]
   }
  ]

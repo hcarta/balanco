@@ -1,62 +1,85 @@
 {
- "v": 2,
- "window": "2026-11-03T00",
+ "v": 4,
+ "window": "2026-11-04T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Jullia Gouveia",
-   "title": "Livro reúne cartas inéditas de amor do ex-marido de Clarice Lispector",
-   "link": "https://www1.folha.uol.com.br/colunas/monicabergamo/2026/11/livro-reune-cartas-ineditas-de-amor-do-ex-marido-de-clarice-lispector.shtml",
-   "published": "2026-11-02T23:30:00+00:00",
+   "author": "Celso Rocha de Barros",
+   "title": "A última dança de Lula",
+   "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/10/a-ultima-danca-de-lula.shtml",
+   "published": "2026-10-31T21:44:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
-   "factuality": "high"
-  },
-  {
-   "source": "Band",
-   "author": "Vinícius Di Nardo",
-   "title": "Bar da Linguiça: tradição que marcou a história de Campinas",
-   "link": "https://www.band.com.br/colunistas/dica-do-vinicius/bar-da-linguica-tradicao-que-marcou-a-historia-de-campinas",
-   "published": "2026-11-02T23:00:00+00:00",
-   "bias": 0.0,
-   "bucket": "C",
-   "side": "C",
-   "factuality": "high"
+   "factuality": "high",
+   "editorial": false,
+   "weekly": true
   },
   {
    "source": "O Globo",
-   "author": "Miriam Leitao",
-   "title": "Focus deve mostrar piora das expectativas antes do Copom",
-   "link": "https://oglobo.globo.com/blogs/miriam-leitao/post/2026/11/focus-deve-mostrar-piora-das-expectativas-antes-do-copom.ghtml",
-   "published": "2026-11-02T22:05:28.105000+00:00",
+   "author": "Editorial",
+   "title": "Não existe mágica capaz de resolver desajuste fiscal",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/nao-existe-magica-capaz-de-resolver-desajuste-fiscal.ghtml",
+   "published": "2026-11-04T03:10:00.608000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
-   "factuality": "high"
+   "factuality": "high",
+   "editorial": true,
+   "weekly": false
+  },
+  {
+   "source": "Nexo Jornal",
+   "author": "Marta Arretche",
+   "title": "A eleição de Lula e a erosão democrática no Brasil",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/03/ameaca-democracia-eleicoes-governo-lula-politica-brasil",
+   "published": "2026-11-03T21:33:32+00:00",
+   "bias": 0.0,
+   "bucket": "C",
+   "side": "C",
+   "factuality": "very_high",
+   "editorial": false,
+   "weekly": false
   },
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Por que até os mais abastados nos EUA estão sentindo o aperto",
-   "link": "https://valor.globo.com/opiniao/coluna/por-que-ate-os-mais-abastados-nos-eua-estao-sentindo-o-aperto.ghtml",
-   "published": "2026-11-02T13:15:00.451000+00:00",
+   "title": "Por que países estão pedindo para estocar alimentos e água? Entenda os alertas",
+   "link": "https://valor.globo.com/mundo/artigo/por-que-paises-estao-pedindo-para-estocar-alimentos-e-agua-entenda-os-alertas.ghtml",
+   "published": "2026-11-03T22:13:44.815000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
-   "factuality": "high"
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Henrique Pinheiro",
-   "title": "Bastou falar em reduzir os juros para o mercado reagir",
-   "link": "https://www.brasil247.com/blog/bastou-falar-em-reduzir-os-juros-para-o-mercado-reagir/",
-   "published": "2026-11-02T21:30:09+00:00",
-   "bias": -1.9,
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "A democracia acerta as contas com Trump",
+   "link": "https://www.estadao.com.br/opiniao/a-democracia-acerta-as-contas-com-trump/",
+   "published": "2026-11-03T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false
+  },
+  {
+   "source": "CartaCapital",
+   "author": "Rogério Sottili",
+   "title": "Nas eleições, a turma do Herzog derrotou a turma do Ustra",
+   "link": "https://www.cartacapital.com.br/artigo/nas-eleicoes-a-turma-do-herzog-derrotou-a-turma-do-ustra/",
+   "published": "2026-11-03T22:06:37+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
-   "factuality": "mixed"
+   "factuality": "mixed",
+   "editorial": false,
+   "weekly": false
   }
  ],
- "generated_at": "2026-11-03T00:06:29.973701+00:00"
+ "generated_at": "2026-11-04T05:55:10.681970+00:00"
 }
