@@ -1,46 +1,24 @@
 {
- "generated_at": "2026-11-04T05:55:10.681165+00:00",
+ "generated_at": "2026-11-05T08:27:02.773702+00:00",
  "pautas": [
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://oglobo.globo.com/mundo/ao-vivo/com-mais-de-50-milhoes-de-votos-antecipados-partidos-encerram-campanha-e-democratas-temem-que-trump-conteste-o-resultado-das-eleicoes.ghtml",
-    "https://g1.globo.com/mundo/eleicoes-eua-2026-resultado/",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/03/eleicoes-nos-eua-mapa-mostra-resultados-para-senado-camara-e-governadores.ghtm",
-    "https://www.cnnbrasil.com.br/internacional/midterms-senado-eua/"
-   ]
-  },
-  {
-   "key": "segurança",
-   "label": "Segurança",
-   "links": [
-    "https://www.estadao.com.br/brasil/senado-aprova-pec-da-seguranca-publica-em-primeiro-turno-sem-reducao-de-maioridade-penal/",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/03/senado-votacao-pec-da-seguranca.ghtm",
-    "https://oglobo.globo.com/politica/noticia/2026/11/03/senado-aprova-pec-da-seguranca-com-penas-mais-duras-para-faccoes-fortalecimento-da-pf-e-sem-reducao-da-maioridade.ghtml",
-    "https://g1.globo.com/politica/noticia/2026/11/03/senado-aprova-pec-da-seguranca-publica.ghtml"
-   ]
-  },
-  {
-   "key": "justiça",
-   "label": "Justiça",
-   "links": [
-    "https://www.estadao.com.br/economia/negocios/justica-proibe-meta-de-usar-conteudo-jornalistico-sem-autorizacao-apos-acao-de-anj-abert-e-aner/",
-    "https://oglobo.globo.com/economia/tecnologia/noticia/2026/11/03/justica-de-sp-impede-meta-de-usar-conteudo-jornalistico-sem-autorizacao-para-treinar-ia.ghtml"
+    "https://www1.folha.uol.com.br/mundo/2026/11/com-maioria-no-congresso-dos-eua-democratas-podem-fazer-vida-de-trump-ate-2028-um-inferno.shtml",
+    "https://g1.globo.com/mundo/eleicoes-eua-2026-resultado//",
+    "https://oglobo.globo.com/mundo/noticia/2026/11/05/onda-azul-atravessa-redutos-republicanos-e-muda-a-composicao-do-congresso-dos-eua-veja-mapas-e-graficos-da-virada-democrata.ghtml",
+    "https://www.estadao.com.br/economia/como-a-derrota-de-trump-nas-eleicoes-legislativas-pode-afetar-as-relacoes-comerciais-com-o-brasil/",
+    "https://www.cnnbrasil.com.br/internacional/democratas-focarao-em-questoes-de-corrupcao-e-epstein-diz-especialista/"
    ]
   },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/economia/alvaro-gribel/nao-existem-atalhos-nem-formulas-magicas-para-reduzir-juros-no-brasil-como-sugere-lara-resende/"
-   ]
-  },
-  {
-   "key": "queda-de-avião",
-   "label": "Queda de avião",
-   "links": [
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/03/copilota-enviou-mensagem-ao-namorado-10-min-antes-de-jato-cair-nos-eua.ghtm"
+    "https://www.estadao.com.br/economia/alvaro-gribel/banco-central-nao-se-dobra-a-pressoes-politicas-e-mantem-juros-com-piora-do-cenario-para-a-inflacao/",
+    "https://economia.uol.com.br/noticias/redacao/2026/11/04/banco-central-taxa-de-juros-selic-copom.ghtm",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/mercado-avalia-possibilidade-de-selic-seguir-em-1375-ate-o-final-de-2027/"
    ]
   }
  ]

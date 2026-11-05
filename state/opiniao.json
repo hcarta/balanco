@@ -1,13 +1,13 @@
 {
  "v": 4,
- "window": "2026-11-04T00",
+ "window": "2026-11-05T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Celso Rocha de Barros",
-   "title": "A última dança de Lula",
-   "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/10/a-ultima-danca-de-lula.shtml",
-   "published": "2026-10-31T21:44:00+00:00",
+   "author": "Conrado Hübner Mendes",
+   "title": "Este país tem uma Constituição",
+   "link": "https://www1.folha.uol.com.br/colunas/conrado-hubner-mendes/2026/11/este-pais-tem-uma-constituicao.shtml",
+   "published": "2026-11-04T22:01:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
@@ -30,10 +30,10 @@
   },
   {
    "source": "Nexo Jornal",
-   "author": "Marta Arretche",
-   "title": "A eleição de Lula e a erosão democrática no Brasil",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/03/ameaca-democracia-eleicoes-governo-lula-politica-brasil",
-   "published": "2026-11-03T21:33:32+00:00",
+   "author": "Kauê Lopes dos Santos",
+   "title": "Da bomba de Jair em 1987 à carta de Flávio em 2026",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/04/jair-flavio-bolsonaro-carta-jornalismo-independente-brasil",
+   "published": "2026-11-04T21:38:11+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -42,24 +42,11 @@
    "weekly": false
   },
   {
-   "source": "Valor Econômico",
-   "author": "Valor Econômico",
-   "title": "Por que países estão pedindo para estocar alimentos e água? Entenda os alertas",
-   "link": "https://valor.globo.com/mundo/artigo/por-que-paises-estao-pedindo-para-estocar-alimentos-e-agua-entenda-os-alertas.ghtml",
-   "published": "2026-11-03T22:13:44.815000+00:00",
-   "bias": 0.3,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": false
-  },
-  {
    "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "A democracia acerta as contas com Trump",
-   "link": "https://www.estadao.com.br/opiniao/a-democracia-acerta-as-contas-com-trump/",
-   "published": "2026-11-03T06:02:00+00:00",
+   "author": "Val Mendes",
+   "title": "Carro de repasse vale a pena? O desconto que pode virar uma armadilha no usado",
+   "link": "https://www.estadao.com.br/jornal-do-carro/colunas/carro-de-repasse-vale-a-pena-o-desconto-que-pode-virar-uma-armadilha-no-usado/",
+   "published": "2026-11-04T12:00:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -68,12 +55,25 @@
    "weekly": false
   },
   {
-   "source": "CartaCapital",
-   "author": "Rogério Sottili",
-   "title": "Nas eleições, a turma do Herzog derrotou a turma do Ustra",
-   "link": "https://www.cartacapital.com.br/artigo/nas-eleicoes-a-turma-do-herzog-derrotou-a-turma-do-ustra/",
-   "published": "2026-11-03T22:06:37+00:00",
-   "bias": -1.2,
+   "source": "Valor Econômico",
+   "author": "Valor Econômico",
+   "title": "Onde buscar refúgio em um mundo sem coração?",
+   "link": "https://valor.globo.com/carreira/artigo/onde-buscar-refugio-em-um-mundo-sem-coracao.ghtml",
+   "published": "2026-11-04T09:00:00.630000+00:00",
+   "bias": 0.3,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false
+  },
+  {
+   "source": "Brasil 247",
+   "author": "Virgilio Costa",
+   "title": "A tarefa dos brasileiros",
+   "link": "https://www.brasil247.com/blog/a-tarefa-dos-brasileiros/",
+   "published": "2026-11-05T00:36:14+00:00",
+   "bias": -1.9,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -81,5 +81,5 @@
    "weekly": false
   }
  ],
- "generated_at": "2026-11-04T05:55:10.681970+00:00"
+ "generated_at": "2026-11-05T01:28:34.521680+00:00"
 }

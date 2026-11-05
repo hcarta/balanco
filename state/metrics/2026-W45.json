@@ -34,20 +34,36 @@
    "generated_at": "2026-11-03T23:40:08.556917+00:00"
   },
   "2026-11-04": {
-   "n_stories": 413,
-   "n_articles": 1762,
-   "median_independent": 2,
-   "pct_blindspot": 22.5,
-   "pct_longread": 2.7,
+   "n_stories": 536,
+   "n_articles": 2272,
+   "median_independent": 2.0,
+   "pct_blindspot": 21.5,
+   "pct_longread": 3.7,
    "avg_pct": {
-    "L": 7.9,
-    "CL": 9.3,
-    "C": 43.1,
-    "CR": 32.7,
-    "R": 7.0
+    "L": 7.3,
+    "CL": 9.8,
+    "C": 43.9,
+    "CR": 33.0,
+    "R": 6.0
    },
    "date": "2026-11-04",
-   "generated_at": "2026-11-04T05:56:56.924787+00:00"
+   "generated_at": "2026-11-04T20:59:26.563899+00:00"
+  },
+  "2026-11-05": {
+   "n_stories": 619,
+   "n_articles": 2637,
+   "median_independent": 2,
+   "pct_blindspot": 20.2,
+   "pct_longread": 4.4,
+   "avg_pct": {
+    "L": 7.2,
+    "CL": 10.0,
+    "C": 41.9,
+    "CR": 33.5,
+    "R": 7.3
+   },
+   "date": "2026-11-05",
+   "generated_at": "2026-11-05T08:29:58.006208+00:00"
   }
  }
 }
