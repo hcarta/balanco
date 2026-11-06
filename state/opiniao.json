@@ -1,6 +1,6 @@
 {
  "v": 4,
- "window": "2026-11-05T00",
+ "window": "2026-11-06T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -18,9 +18,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Não existe mágica capaz de resolver desajuste fiscal",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/nao-existe-magica-capaz-de-resolver-desajuste-fiscal.ghtml",
-   "published": "2026-11-04T03:10:00.608000+00:00",
+   "title": "Crise no Paraguai expôs regulação bancária frágil",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/crise-no-paraguai-expos-regulacao-bancaria-fragil.ghtml",
+   "published": "2026-11-06T03:10:00.548000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -29,27 +29,14 @@
    "weekly": false
   },
   {
-   "source": "Nexo Jornal",
-   "author": "Kauê Lopes dos Santos",
-   "title": "Da bomba de Jair em 1987 à carta de Flávio em 2026",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/04/jair-flavio-bolsonaro-carta-jornalismo-independente-brasil",
-   "published": "2026-11-04T21:38:11+00:00",
+   "source": "Band",
+   "author": "Da redação",
+   "title": "Brasil x EUA: população menor, mais deputados. Pra quê?",
+   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/brasil-x-eua-populacao-menor-mais-deputados-pra-que",
+   "published": "2026-11-06T00:15:21+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "very_high",
-   "editorial": false,
-   "weekly": false
-  },
-  {
-   "source": "Estadão",
-   "author": "Val Mendes",
-   "title": "Carro de repasse vale a pena? O desconto que pode virar uma armadilha no usado",
-   "link": "https://www.estadao.com.br/jornal-do-carro/colunas/carro-de-repasse-vale-a-pena-o-desconto-que-pode-virar-uma-armadilha-no-usado/",
-   "published": "2026-11-04T12:00:00+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
-   "side": "R",
    "factuality": "high",
    "editorial": false,
    "weekly": false
@@ -57,9 +44,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Onde buscar refúgio em um mundo sem coração?",
-   "link": "https://valor.globo.com/carreira/artigo/onde-buscar-refugio-em-um-mundo-sem-coracao.ghtml",
-   "published": "2026-11-04T09:00:00.630000+00:00",
+   "title": "O desconhecimento não é justificativa: o dever das empresas de respeitar os Direitos Humanos em toda sua cadeia de valor",
+   "link": "https://valor.globo.com/empresas/esg/artigo/o-desconhecimento-nao-e-justificativa-o-dever-das-empresas-de-respeitar-os-direitos-humanos-em-toda-sua-cadeia-de-valor.ghtml",
+   "published": "2026-11-05T10:00:03.048000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -68,12 +55,25 @@
    "weekly": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Virgilio Costa",
-   "title": "A tarefa dos brasileiros",
-   "link": "https://www.brasil247.com/blog/a-tarefa-dos-brasileiros/",
-   "published": "2026-11-05T00:36:14+00:00",
-   "bias": -1.9,
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "Trump mereceu o castigo",
+   "link": "https://www.estadao.com.br/opiniao/trump-mereceu-o-castigo/",
+   "published": "2026-11-05T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false
+  },
+  {
+   "source": "CartaCapital",
+   "author": "Roberto Amaral",
+   "title": "Terceiro turno, a batalha da vez",
+   "link": "https://www.cartacapital.com.br/opiniao/terceiro-turno-a-batalha-da-vez/",
+   "published": "2026-11-05T22:11:23+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -81,5 +81,5 @@
    "weekly": false
   }
  ],
- "generated_at": "2026-11-05T01:28:34.521680+00:00"
+ "generated_at": "2026-11-06T03:22:41.990463+00:00"
 }

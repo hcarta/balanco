@@ -55,6 +55,14 @@
    "verdadeiro": 0,
    "checagem": 0,
    "revisar": false
+  },
+  "cnnbr": {
+   "total": 1,
+   "falso": 1,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 0,
+   "revisar": false
   }
  },
  "matches": [
@@ -161,6 +169,19 @@
    "score": 0.47,
    "date": "2026-10-26T11:02:12+00:00",
    "terms": "bolsonaro;brasil;flávio;saída"
+  },
+  {
+   "source_id": "cnnbr",
+   "source": "CNN Brasil",
+   "article": "Flávio Bolsonaro deve ser visitado por parlamentares aliados nos EUA",
+   "article_link": "https://www.cnnbrasil.com.br/politica/flavio-bolsonaro-deve-ser-visitado-por-parlamentares-aliados-nos-eua/",
+   "check": "É falso que Flávio Bolsonaro teve prisão decretada por pedido de parlamentares",
+   "check_link": "https://www.agencialupa.org/verificacao/2026/06/26/falso-prisao-flavio-bolsonaro/",
+   "checker": "Agência Lupa",
+   "verdict": "falso",
+   "score": 0.5,
+   "date": "2026-06-26T14:39:22+00:00",
+   "terms": "bolsonaro;flávio;parlamentares"
   }
  ]
 }

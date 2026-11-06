@@ -1,24 +1,72 @@
 {
- "generated_at": "2026-11-05T08:27:02.773702+00:00",
+ "generated_at": "2026-11-06T03:22:41.990012+00:00",
  "pautas": [
-  {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
-   "links": [
-    "https://www1.folha.uol.com.br/mundo/2026/11/com-maioria-no-congresso-dos-eua-democratas-podem-fazer-vida-de-trump-ate-2028-um-inferno.shtml",
-    "https://g1.globo.com/mundo/eleicoes-eua-2026-resultado//",
-    "https://oglobo.globo.com/mundo/noticia/2026/11/05/onda-azul-atravessa-redutos-republicanos-e-muda-a-composicao-do-congresso-dos-eua-veja-mapas-e-graficos-da-virada-democrata.ghtml",
-    "https://www.estadao.com.br/economia/como-a-derrota-de-trump-nas-eleicoes-legislativas-pode-afetar-as-relacoes-comerciais-com-o-brasil/",
-    "https://www.cnnbrasil.com.br/internacional/democratas-focarao-em-questoes-de-corrupcao-e-epstein-diz-especialista/"
-   ]
-  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/economia/alvaro-gribel/banco-central-nao-se-dobra-a-pressoes-politicas-e-mantem-juros-com-piora-do-cenario-para-a-inflacao/",
-    "https://economia.uol.com.br/noticias/redacao/2026/11/04/banco-central-taxa-de-juros-selic-copom.ghtm",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/mercado-avalia-possibilidade-de-selic-seguir-em-1375-ate-o-final-de-2027/"
+    "https://oglobo.globo.com/economia/noticia/2026/11/05/lula-defende-responsabilidade-fiscal-e-diz-que-economia-precisa-estar-arrumada-para-atrair-investimentos.ghtml",
+    "https://www.estadao.com.br/economia/lula-diz-que-e-preciso-ter-responsabilidade-fiscal-e-economia-arrumada-para-atrair-investimentos/",
+    "https://g1.globo.com/economia/noticia/2026/11/05/apos-reuniao-com-lula-e-economistas-ministro-da-fazenda-diz-que-nao-ha-formula-magica-e-fala-em-manter-compromissos-fiscais.ghtml"
+   ]
+  },
+  {
+   "key": "paraguai",
+   "label": "Paraguai",
+   "links": [
+    "https://www1.folha.uol.com.br/mundo/2026/11/congresso-do-paraguai-suspende-sessao-que-julgava-renuncia-de-presidente.shtml",
+    "https://www.cnnbrasil.com.br/internacional/senado-paraguai-sessao-impeachment-santiago-pena/",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/05/senado-impeachment-paraguai-novembro-2026.ghtm"
+   ]
+  },
+  {
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
+   "links": [
+    "https://www.estadao.com.br/politica/raquel-landim/derrota-de-trump-e-ma-noticia-para-a-familia-bolsonaro/",
+    "https://oglobo.globo.com/mundo/noticia/2026/11/05/lula-diz-que-se-sente-triste-pela-turbulencia-politica-no-paraguai-e-forma-de-governo-de-trump.ghtml",
+    "https://www1.folha.uol.com.br/mercado/2026/11/risco-pais-da-argentina-dispara-apos-eleicao-nos-eua-e-temor-de-menor-apoio-de-trump.shtml"
+   ]
+  },
+  {
+   "key": "alckmin",
+   "label": "Alckmin",
+   "links": [
+    "https://oglobo.globo.com/politica/noticia/2026/11/05/tse-admite-acao-proposta-pelo-novo-que-pede-cassacao-de-chapa-de-lula-por-abuso-de-poder-politico.ghtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/05/tse-abre-acao-contra-chapa-lula-alckmin-por-abuso-de-poder-politico.ghtm",
+    "https://www.cnnbrasil.com.br/politica/tse-aceita-acao-do-novo-contra-lula-e-alckmin-por-abuso-de-poder-politico/"
+   ]
+  },
+  {
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
+   "links": [
+    "https://www1.folha.uol.com.br/mundo/2026/11/criticos-de-santiago-pena-questionam-paradeiro-de-presidente-e-o-comparam-a-flavio-bolsonaro.shtml",
+    "https://g1.globo.com/politica/noticia/2026/11/05/vitoria-para-o-mundo-diz-lula-sobre-resultados-nas-eleicoes-no-brasil-em-israel-e-nos-eua.ghtml"
+   ]
+  },
+  {
+   "key": "ueno-bank",
+   "label": "Ueno Bank",
+   "links": [
+    "https://www1.folha.uol.com.br/mundo/2026/11/escandalo-do-ueno-bank-foi-estopim-mas-nao-causa-da-queda-de-pena.shtml",
+    "https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/11/05/eu-tinha-1-milhao-de-guaranis-diz-mulher-afetada-por-crise-que-provocou-renuncia-de-presidente-no-paraguai.ghtml"
+   ]
+  },
+  {
+   "key": "dino",
+   "label": "Dino",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/05/dino-marca-audiencia-sobre-fim-da-6x1-com-sindicatos-e-empresarios.htm",
+    "https://www1.folha.uol.com.br/mercado/2026/11/dino-marca-conciliacao-entre-empresas-trabalhadores-e-governo-sobre-transicao-para-o-fim-da-6x1.shtml"
+   ]
+  },
+  {
+   "key": "lula",
+   "label": "Lula",
+   "links": [
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/economia-precisa-estar-arrumada-para-atrair-investimento-diz-lula/",
+    "https://g1.globo.com/politica/noticia/2026/11/05/lula-diz-que-economia-precisa-estar-arrumada-para-atrair-investimentos-ninguem-vai-querer-investir-em-economia-desordenada.ghtml"
    ]
   }
  ]
