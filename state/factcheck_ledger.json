@@ -63,6 +63,14 @@
    "verdadeiro": 0,
    "checagem": 0,
    "revisar": false
+  },
+  "apublica": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
   }
  },
  "matches": [
@@ -182,6 +190,19 @@
    "score": 0.5,
    "date": "2026-06-26T14:39:22+00:00",
    "terms": "bolsonaro;flávio;parlamentares"
+  },
+  {
+   "source_id": "apublica",
+   "source": "Agência Pública",
+   "article": "Como a quebra do banco Ueno, no Paraguai, acabou com o governo do presidente Santiago Peña",
+   "article_link": "https://apublica.org/2026/11/como-a-quebra-do-banco-ueno-no-paraguai-acabou-com-o-governo-do-presidente-santiago-pena/",
+   "check": "Como a queda do banco Ueno no Paraguai acabou com o governo de Santiago Peña",
+   "check_link": "https://www.aosfatos.org/noticias/como-a-queda-do-banco-ueno-no-paraguai-acabou-com-o-governo-de-santiago-pena/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 1.0,
+   "date": "2026-11-06T18:28:33+00:00",
+   "terms": "acabou;banco;governo;paraguai;peña;santiago"
   }
  ]
 }

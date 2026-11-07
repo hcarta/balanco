@@ -1,6 +1,6 @@
 {
  "v": 4,
- "window": "2026-11-06T00",
+ "window": "2026-11-07T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -31,9 +31,9 @@
   {
    "source": "Band",
    "author": "Da redação",
-   "title": "Brasil x EUA: população menor, mais deputados. Pra quê?",
-   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/brasil-x-eua-populacao-menor-mais-deputados-pra-que",
-   "published": "2026-11-06T00:15:21+00:00",
+   "title": "A América do Sul realmente gosta de aprontar",
+   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/a-america-do-sul-realmente-gosta-de-aprontar",
+   "published": "2026-11-07T01:32:31+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -44,9 +44,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "O desconhecimento não é justificativa: o dever das empresas de respeitar os Direitos Humanos em toda sua cadeia de valor",
-   "link": "https://valor.globo.com/empresas/esg/artigo/o-desconhecimento-nao-e-justificativa-o-dever-das-empresas-de-respeitar-os-direitos-humanos-em-toda-sua-cadeia-de-valor.ghtml",
-   "published": "2026-11-05T10:00:03.048000+00:00",
+   "title": "A medição inteligente na abertura do mercado de eletricidade no Brasil",
+   "link": "https://valor.globo.com/opiniao/coluna/a-medicao-inteligente-na-abertura-do-mercado-de-eletricidade-no-brasil.ghtml",
+   "published": "2026-11-06T10:00:00.471000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -57,9 +57,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "Trump mereceu o castigo",
-   "link": "https://www.estadao.com.br/opiniao/trump-mereceu-o-castigo/",
-   "published": "2026-11-05T06:02:00+00:00",
+   "title": "A bola está com Lula",
+   "link": "https://www.estadao.com.br/opiniao/a-bola-esta-com-lula/",
+   "published": "2026-11-06T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -68,12 +68,12 @@
    "weekly": false
   },
   {
-   "source": "CartaCapital",
-   "author": "Roberto Amaral",
-   "title": "Terceiro turno, a batalha da vez",
-   "link": "https://www.cartacapital.com.br/opiniao/terceiro-turno-a-batalha-da-vez/",
-   "published": "2026-11-05T22:11:23+00:00",
-   "bias": -1.2,
+   "source": "Brasil 247",
+   "author": "Verônica Lima",
+   "title": "Quando uma mulher negra se move, a sociedade se transforma",
+   "link": "https://www.brasil247.com/blog/quando-uma-mulher-negra-se-move-a-sociedade-se-transforma/",
+   "published": "2026-11-07T01:10:58+00:00",
+   "bias": -1.9,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -81,5 +81,5 @@
    "weekly": false
   }
  ],
- "generated_at": "2026-11-06T03:22:41.990463+00:00"
+ "generated_at": "2026-11-07T03:08:51.830402+00:00"
 }

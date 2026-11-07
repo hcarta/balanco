@@ -1,72 +1,55 @@
 {
- "generated_at": "2026-11-06T03:22:41.990012+00:00",
+ "generated_at": "2026-11-07T03:08:51.829901+00:00",
  "pautas": [
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "prédio",
+   "label": "Prédio",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/05/lula-defende-responsabilidade-fiscal-e-diz-que-economia-precisa-estar-arrumada-para-atrair-investimentos.ghtml",
-    "https://www.estadao.com.br/economia/lula-diz-que-e-preciso-ter-responsabilidade-fiscal-e-economia-arrumada-para-atrair-investimentos/",
-    "https://g1.globo.com/economia/noticia/2026/11/05/apos-reuniao-com-lula-e-economistas-ministro-da-fazenda-diz-que-nao-ha-formula-magica-e-fala-em-manter-compromissos-fiscais.ghtml"
+    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/06/imovel-desaba-no-bras-diz-corpo-de-bombeiros.ghtm",
+    "https://www.estadao.com.br/sao-paulo/predio-de-quatro-andares-desaba-no-bras-regiao-central-de-sao-paulo/",
+    "https://oglobo.globo.com/brasil/sao-paulo/noticia/2026/11/06/predio-de-quatro-andares-desaba-no-bras-em-sao-paulo-estimativa-inicial-e-de-20-vitimas.ghtml",
+    "https://g1.globo.com/sp/sao-paulo/noticia/2026/11/06/predio-desaba-e-deixa-feridos-no-bras.ghtml"
+   ]
+  },
+  {
+   "key": "santiago-peña",
+   "label": "Santiago Peña",
+   "links": [
+    "https://www.estadao.com.br/internacional/ministerio-publico-pede-prisao-de-santiago-pena-e-de-ex-chefe-banco-central-do-paraguai-npr/",
+    "https://www1.folha.uol.com.br/mundo/2026/11/apos-impeachment-ministerio-publico-do-paraguai-ordena-detencao-imediata-de-ex-presidente.shtml",
+    "https://g1.globo.com/mundo/noticia/2026/11/06/congresso-do-paraguai-aprova-impeachment-de-santiago-pena.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/santiago-pena-e-detido-pela-policia-do-paraguai-apos-impeachment/"
    ]
   },
   {
    "key": "paraguai",
    "label": "Paraguai",
    "links": [
-    "https://www1.folha.uol.com.br/mundo/2026/11/congresso-do-paraguai-suspende-sessao-que-julgava-renuncia-de-presidente.shtml",
-    "https://www.cnnbrasil.com.br/internacional/senado-paraguai-sessao-impeachment-santiago-pena/",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/05/senado-impeachment-paraguai-novembro-2026.ghtm"
+    "https://www.cnnbrasil.com.br/internacional/paraguai-novo-presidente-ordena-acoes-imediatas-para-afetados-por-crise/",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/06/apos-impeachment-ministerio-publico-do-paraguai-pede-prisao-de-pena.ghtm"
    ]
   },
   {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/politica/raquel-landim/derrota-de-trump-e-ma-noticia-para-a-familia-bolsonaro/",
-    "https://oglobo.globo.com/mundo/noticia/2026/11/05/lula-diz-que-se-sente-triste-pela-turbulencia-politica-no-paraguai-e-forma-de-governo-de-trump.ghtml",
-    "https://www1.folha.uol.com.br/mercado/2026/11/risco-pais-da-argentina-dispara-apos-eleicao-nos-eua-e-temor-de-menor-apoio-de-trump.shtml"
+    "https://oglobo.globo.com/economia/noticia/2026/11/06/lula-ajuste.ghtml",
+    "https://www1.folha.uol.com.br/mercado/2026/11/lula-volta-a-defender-responsabilidade-nas-contas-e-diz-que-sera-fiscal-de-entregas-do-governo.shtml"
    ]
   },
   {
-   "key": "alckmin",
-   "label": "Alckmin",
+   "key": "peña",
+   "label": "Peña",
    "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/05/tse-admite-acao-proposta-pelo-novo-que-pede-cassacao-de-chapa-de-lula-por-abuso-de-poder-politico.ghtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/05/tse-abre-acao-contra-chapa-lula-alckmin-por-abuso-de-poder-politico.ghtm",
-    "https://www.cnnbrasil.com.br/politica/tse-aceita-acao-do-novo-contra-lula-e-alckmin-por-abuso-de-poder-politico/"
+    "https://www1.folha.uol.com.br/mundo/2026/11/senado-do-paraguai-aprova-impeachment-de-santiago-pena-apos-escandalo-financeiro.shtml",
+    "https://www.cnnbrasil.com.br/internacional/senado-do-paraguai-aprova-impeachment-do-presidente-santiago-pena/"
    ]
   },
   {
    "key": "flávio-bolsonaro",
    "label": "Flávio Bolsonaro",
    "links": [
-    "https://www1.folha.uol.com.br/mundo/2026/11/criticos-de-santiago-pena-questionam-paradeiro-de-presidente-e-o-comparam-a-flavio-bolsonaro.shtml",
-    "https://g1.globo.com/politica/noticia/2026/11/05/vitoria-para-o-mundo-diz-lula-sobre-resultados-nas-eleicoes-no-brasil-em-israel-e-nos-eua.ghtml"
-   ]
-  },
-  {
-   "key": "ueno-bank",
-   "label": "Ueno Bank",
-   "links": [
-    "https://www1.folha.uol.com.br/mundo/2026/11/escandalo-do-ueno-bank-foi-estopim-mas-nao-causa-da-queda-de-pena.shtml",
-    "https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/11/05/eu-tinha-1-milhao-de-guaranis-diz-mulher-afetada-por-crise-que-provocou-renuncia-de-presidente-no-paraguai.ghtml"
-   ]
-  },
-  {
-   "key": "dino",
-   "label": "Dino",
-   "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/05/dino-marca-audiencia-sobre-fim-da-6x1-com-sindicatos-e-empresarios.htm",
-    "https://www1.folha.uol.com.br/mercado/2026/11/dino-marca-conciliacao-entre-empresas-trabalhadores-e-governo-sobre-transicao-para-o-fim-da-6x1.shtml"
-   ]
-  },
-  {
-   "key": "lula",
-   "label": "Lula",
-   "links": [
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/economia-precisa-estar-arrumada-para-atrair-investimento-diz-lula/",
-    "https://g1.globo.com/politica/noticia/2026/11/05/lula-diz-que-economia-precisa-estar-arrumada-para-atrair-investimentos-ninguem-vai-querer-investir-em-economia-desordenada.ghtml"
+    "https://www1.folha.uol.com.br/poder/2026/11/flavio-admite-nao-ter-prova-de-fraude-critica-volta-de-jair-ao-brasil-e-diz-querer-2030-assim-como-tarcisio.shtml"
    ]
   }
  ]
