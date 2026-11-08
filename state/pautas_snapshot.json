@@ -1,55 +1,41 @@
 {
- "generated_at": "2026-11-07T03:08:51.829901+00:00",
+ "generated_at": "2026-11-08T00:22:22.375905+00:00",
  "pautas": [
   {
-   "key": "prédio",
-   "label": "Prédio",
+   "key": "netanyahu",
+   "label": "Netanyahu",
    "links": [
-    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/06/imovel-desaba-no-bras-diz-corpo-de-bombeiros.ghtm",
-    "https://www.estadao.com.br/sao-paulo/predio-de-quatro-andares-desaba-no-bras-regiao-central-de-sao-paulo/",
-    "https://oglobo.globo.com/brasil/sao-paulo/noticia/2026/11/06/predio-de-quatro-andares-desaba-no-bras-em-sao-paulo-estimativa-inicial-e-de-20-vitimas.ghtml",
-    "https://g1.globo.com/sp/sao-paulo/noticia/2026/11/06/predio-desaba-e-deixa-feridos-no-bras.ghtml"
+    "https://www.cnnbrasil.com.br/internacional/eisenkot-rival-de-netanyahu-enfrenta-desafio-para-formar-governo-entenda/",
+    "https://www1.folha.uol.com.br/mundo/2026/11/presidente-de-israel-escolhe-gadi-eisenkot-rival-de-netanyahu-para-tentar-formar-governo.shtml",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/07/presidente-de-israel-encarrega-lider-da-oposicao-de-formar-governo.ghtm",
+    "https://www.estadao.com.br/internacional/presidente-de-israel-escolhe-eisenkot-opositor-de-netanyahu-para-tentar-formar-novo-governo/",
+    "https://g1.globo.com/mundo/noticia/2026/11/07/presidente-de-israel-escolhe-rival-de-netanyahu-para-tentar-formar-novo-governo.ghtml"
    ]
   },
   {
-   "key": "santiago-peña",
-   "label": "Santiago Peña",
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/internacional/ministerio-publico-pede-prisao-de-santiago-pena-e-de-ex-chefe-banco-central-do-paraguai-npr/",
-    "https://www1.folha.uol.com.br/mundo/2026/11/apos-impeachment-ministerio-publico-do-paraguai-ordena-detencao-imediata-de-ex-presidente.shtml",
-    "https://g1.globo.com/mundo/noticia/2026/11/06/congresso-do-paraguai-aprova-impeachment-de-santiago-pena.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/santiago-pena-e-detido-pela-policia-do-paraguai-apos-impeachment/"
+    "https://oglobo.globo.com/mundo/noticia/2026/11/07/rival-de-netanyahu-e-encarregado-de-formar-governo-em-israel.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/chefe-do-ufc-recusa-oferta-de-trump-para-cargo-na-casa-branca-diz-fonte/",
+    "https://g1.globo.com/mundo/noticia/2026/11/07/trump-oferece-cargo-de-secretario-de-imprensa-da-casa-branca-a-presidente-do-ufc.ghtml",
+    "https://www.estadao.com.br/internacional/lourival-santanna/eleicoes-nos-eua-e-na-servia-fortalecem-mensagem-anticorrupcao/"
    ]
   },
   {
-   "key": "paraguai",
-   "label": "Paraguai",
+   "key": "itaipu",
+   "label": "Itaipu",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/paraguai-novo-presidente-ordena-acoes-imediatas-para-afetados-por-crise/",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/06/apos-impeachment-ministerio-publico-do-paraguai-pede-prisao-de-pena.ghtm"
+    "https://oglobo.globo.com/economia/noticia/2026/11/07/ueno-bank-itaipu-tinha-quase-us-180-milhoes-no-banco-paraguaio-e-denuncia-dirigentes.ghtml",
+    "https://www.cnnbrasil.com.br/infra/itaipu-detinha-us-18221-milhoes-alocados-no-ueno-do-paraguai/"
    ]
   },
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "polícia-civil",
+   "label": "Polícia Civil",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/06/lula-ajuste.ghtml",
-    "https://www1.folha.uol.com.br/mercado/2026/11/lula-volta-a-defender-responsabilidade-nas-contas-e-diz-que-sera-fiscal-de-entregas-do-governo.shtml"
-   ]
-  },
-  {
-   "key": "peña",
-   "label": "Peña",
-   "links": [
-    "https://www1.folha.uol.com.br/mundo/2026/11/senado-do-paraguai-aprova-impeachment-de-santiago-pena-apos-escandalo-financeiro.shtml",
-    "https://www.cnnbrasil.com.br/internacional/senado-do-paraguai-aprova-impeachment-do-presidente-santiago-pena/"
-   ]
-  },
-  {
-   "key": "flávio-bolsonaro",
-   "label": "Flávio Bolsonaro",
-   "links": [
-    "https://www1.folha.uol.com.br/poder/2026/11/flavio-admite-nao-ter-prova-de-fraude-critica-volta-de-jair-ao-brasil-e-diz-querer-2030-assim-como-tarcisio.shtml"
+    "https://oglobo.globo.com/mundo/noticia/2026/11/07/ministerio-publico-do-paraguai-indicia-e-pede-prisao-preventiva-do-ex-presidente-acusado-de-envolvimento-na-crise-bancaria.ghtml",
+    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/policia-civil-indicia-e-pede-prisao-preventiva-de-milton-leite-por-organizacao-criminosa/"
    ]
   }
  ]

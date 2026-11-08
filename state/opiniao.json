@@ -1,6 +1,6 @@
 {
  "v": 4,
- "window": "2026-11-07T00",
+ "window": "2026-11-08T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -18,9 +18,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Crise no Paraguai expôs regulação bancária frágil",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/crise-no-paraguai-expos-regulacao-bancaria-fragil.ghtml",
-   "published": "2026-11-06T03:10:00.548000+00:00",
+   "title": "Aumento de teto dos MEIs amplia rombo da Previdência",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/aumento-de-teto-dos-meis-amplia-rombo-da-previdencia.ghtml",
+   "published": "2026-11-07T03:10:00.820000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -29,11 +29,11 @@
    "weekly": false
   },
   {
-   "source": "Band",
-   "author": "Da redação",
-   "title": "A América do Sul realmente gosta de aprontar",
-   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/a-america-do-sul-realmente-gosta-de-aprontar",
-   "published": "2026-11-07T01:32:31+00:00",
+   "source": "G1",
+   "author": "Mauro Ferreira",
+   "title": "Roberta Miranda promove álbum 'Filha do chão', gravado em Mato Grosso",
+   "link": "https://g1.globo.com/pop-arte/musica/blog/mauro-ferreira/post/2026/11/07/roberta-miranda-promove-album-filha-do-chao-gravado-em-mato-grosso.ghtml",
+   "published": "2026-11-07T20:14:09+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -44,9 +44,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "A medição inteligente na abertura do mercado de eletricidade no Brasil",
-   "link": "https://valor.globo.com/opiniao/coluna/a-medicao-inteligente-na-abertura-do-mercado-de-eletricidade-no-brasil.ghtml",
-   "published": "2026-11-06T10:00:00.471000+00:00",
+   "title": "O dever histórico dos Democratas",
+   "link": "https://valor.globo.com/opiniao/coluna/o-dever-historico-dos-democratas.ghtml",
+   "published": "2026-11-07T14:00:00.599000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -57,9 +57,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "A bola está com Lula",
-   "link": "https://www.estadao.com.br/opiniao/a-bola-esta-com-lula/",
-   "published": "2026-11-06T06:02:00+00:00",
+   "title": "Um marco contra as máfias",
+   "link": "https://www.estadao.com.br/opiniao/um-marco-contra-as-mafias/",
+   "published": "2026-11-07T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -69,10 +69,10 @@
   },
   {
    "source": "Brasil 247",
-   "author": "Verônica Lima",
-   "title": "Quando uma mulher negra se move, a sociedade se transforma",
-   "link": "https://www.brasil247.com/blog/quando-uma-mulher-negra-se-move-a-sociedade-se-transforma/",
-   "published": "2026-11-07T01:10:58+00:00",
+   "author": "Esmael Morais",
+   "title": "Juiz decreta prisão preventiva de Peña por risco de fuga",
+   "link": "https://www.brasil247.com/blog/juiz-decreta-prisao-preventiva-de-pena-por-risco-de-fuga/",
+   "published": "2026-11-08T00:17:40+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -81,5 +81,5 @@
    "weekly": false
   }
  ],
- "generated_at": "2026-11-07T03:08:51.830402+00:00"
+ "generated_at": "2026-11-08T00:22:22.376418+00:00"
 }
