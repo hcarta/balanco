@@ -1,85 +1,91 @@
 {
- "v": 4,
- "window": "2026-11-08T00",
+ "v": 5,
+ "window": "2026-11-09T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Conrado Hübner Mendes",
-   "title": "Este país tem uma Constituição",
-   "link": "https://www1.folha.uol.com.br/colunas/conrado-hubner-mendes/2026/11/este-pais-tem-uma-constituicao.shtml",
-   "published": "2026-11-04T22:01:00+00:00",
+   "author": "Celso Rocha de Barros",
+   "title": "A economia de Lula 4",
+   "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/11/a-economia-de-lula-4.shtml",
+   "published": "2026-11-08T02:00:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
    "factuality": "high",
    "editorial": false,
-   "weekly": true
+   "weekly": true,
+   "preferred": false
   },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Aumento de teto dos MEIs amplia rombo da Previdência",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/aumento-de-teto-dos-meis-amplia-rombo-da-previdencia.ghtml",
-   "published": "2026-11-07T03:10:00.820000+00:00",
+   "title": "Caso Master não pode acabar em pizza",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/caso-master-nao-pode-acabar-em-pizza.ghtml",
+   "published": "2026-11-08T03:10:01.057000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
    "factuality": "high",
    "editorial": true,
-   "weekly": false
+   "weekly": false,
+   "preferred": false
   },
   {
-   "source": "G1",
-   "author": "Mauro Ferreira",
-   "title": "Roberta Miranda promove álbum 'Filha do chão', gravado em Mato Grosso",
-   "link": "https://g1.globo.com/pop-arte/musica/blog/mauro-ferreira/post/2026/11/07/roberta-miranda-promove-album-filha-do-chao-gravado-em-mato-grosso.ghtml",
-   "published": "2026-11-07T20:14:09+00:00",
-   "bias": 0.0,
+   "source": "UOL Notícias",
+   "author": "Leonardo Sakamoto",
+   "title": "Violência pós-eleição contra indígenas lembra Lula que há uma guerra no MS",
+   "link": "https://noticias.uol.com.br/colunas/leonardo-sakamoto/2026/11/08/violencia-pos-eleitoral-contra-indigenas-expoe-guerra-por-terras-em-ms.htm",
+   "published": "2026-11-08T22:49:19.453711+00:00",
+   "bias": -0.2,
    "bucket": "C",
    "side": "C",
    "factuality": "high",
    "editorial": false,
-   "weekly": false
+   "weekly": false,
+   "preferred": false
+  },
+  {
+   "source": "SBT News",
+   "author": "SBT",
+   "title": "Veja a opinião dos alunos sobre tema da redação do Enem 2026",
+   "link": "https://sbtnews.sbt.com.br/noticia/brasil/veja-a-opiniao-dos-alunos-sobre-tema-da-redacao-do-enem-2026",
+   "published": "2026-11-08T22:40:58+00:00",
+   "bias": 0.4,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
   },
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "O dever histórico dos Democratas",
-   "link": "https://valor.globo.com/opiniao/coluna/o-dever-historico-dos-democratas.ghtml",
-   "published": "2026-11-07T14:00:00.599000+00:00",
+   "title": "O BCE deve socorrer a França",
+   "link": "https://valor.globo.com/opiniao/coluna/o-bce-deve-socorrer-a-franca.ghtml",
+   "published": "2026-11-08T12:00:00.907000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
    "factuality": "high",
    "editorial": false,
-   "weekly": false
-  },
-  {
-   "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "Um marco contra as máfias",
-   "link": "https://www.estadao.com.br/opiniao/um-marco-contra-as-mafias/",
-   "published": "2026-11-07T06:02:00+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": false
+   "weekly": false,
+   "preferred": false
   },
   {
    "source": "Brasil 247",
-   "author": "Esmael Morais",
-   "title": "Juiz decreta prisão preventiva de Peña por risco de fuga",
-   "link": "https://www.brasil247.com/blog/juiz-decreta-prisao-preventiva-de-pena-por-risco-de-fuga/",
-   "published": "2026-11-08T00:17:40+00:00",
+   "author": "Ricardo Nêggo Tom",
+   "title": "Ana Elisa e a carne mais barata do mercado",
+   "link": "https://www.brasil247.com/blog/ana-elisa-e-a-carne-mais-barata-do-mercado/",
+   "published": "2026-11-09T01:27:43+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
    "editorial": false,
-   "weekly": false
+   "weekly": false,
+   "preferred": false
   }
  ],
- "generated_at": "2026-11-08T00:22:22.376418+00:00"
+ "generated_at": "2026-11-09T02:11:41.144518+00:00"
 }

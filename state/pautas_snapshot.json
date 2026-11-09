@@ -1,41 +1,67 @@
 {
- "generated_at": "2026-11-08T00:22:22.375905+00:00",
+ "generated_at": "2026-11-09T02:11:41.144070+00:00",
  "pautas": [
   {
-   "key": "netanyahu",
-   "label": "Netanyahu",
+   "key": "enem",
+   "label": "Enem",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/eisenkot-rival-de-netanyahu-enfrenta-desafio-para-formar-governo-entenda/",
-    "https://www1.folha.uol.com.br/mundo/2026/11/presidente-de-israel-escolhe-gadi-eisenkot-rival-de-netanyahu-para-tentar-formar-governo.shtml",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/07/presidente-de-israel-encarrega-lider-da-oposicao-de-formar-governo.ghtm",
-    "https://www.estadao.com.br/internacional/presidente-de-israel-escolhe-eisenkot-opositor-de-netanyahu-para-tentar-formar-novo-governo/",
-    "https://g1.globo.com/mundo/noticia/2026/11/07/presidente-de-israel-escolhe-rival-de-netanyahu-para-tentar-formar-novo-governo.ghtml"
+    "https://www1.folha.uol.com.br/educacao/2026/11/confira-o-gabarito-extraoficial-do-1o-dia-do-enem-2026.shtml",
+    "https://oglobo.globo.com/brasil/educacao/enem-e-vestibular/noticia/2026/11/08/gabarito-enem-2026-veja-correcao-extraoficial-do-1o-dia-de-provas.ghtml",
+    "https://educacao.uol.com.br/noticias/2026/11/08/professores-redacao-enem-2026-exemplo.ghtm",
+    "https://www.cnnbrasil.com.br/educacao/gabarito-enem-2026-confira-as-respostas-extraoficiais-do-1o-dia-de-prova/"
+   ]
+  },
+  {
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
+   "links": [
+    "https://www.estadao.com.br/economia/lula-diz-que-trajetoria-da-divida-e-juros-preocupam-e-afirma-compromisso-com-responsabilidade-fiscal-npr/",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/na-tv-lula-diz-que-se-preocupa-com-divida-publica-e-taxa-de-juros/",
+    "https://oglobo.globo.com/economia/noticia/2026/11/08/lula-pronunciamento-reeleicao.ghtml",
+    "https://g1.globo.com/politica/noticia/2026/11/08/lula-fala-em-pronunciamento-em-rede-nacional-de-radio-e-tv.ghtml"
+   ]
+  },
+  {
+   "key": "lula",
+   "label": "Lula",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/08/pronunciamento-lula-8-de-novembro-2026.ghtm",
+    "https://g1.globo.com/politica/noticia/2026/11/08/leia-a-integra-do-pronunciamento-de-lula-em-rede-nacional-de-radio-e-tv.ghtml"
+   ]
+  },
+  {
+   "key": "irã-hormuz",
+   "label": "Irã / Hormuz",
+   "links": [
+    "https://www.estadao.com.br/educacao/enem-o-que-caiu-no-1-dia-de-provas/"
+   ]
+  },
+  {
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
+   "links": [
+    "https://www.estadao.com.br/politica/diogo-schelp/derrota-de-flavio-bolsonaro-nao-e-endosso-aos-erros-e-abusos-do-stf/"
+   ]
+  },
+  {
+   "key": "obesidade-sus",
+   "label": "Obesidade / SUS",
+   "links": [
+    "https://www1.folha.uol.com.br/educacao/2026/11/tema-da-redacao-do-enem-2026-e-a-valorizacao-do-sus-como-direito-universal.shtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://oglobo.globo.com/mundo/noticia/2026/11/07/rival-de-netanyahu-e-encarregado-de-formar-governo-em-israel.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/chefe-do-ufc-recusa-oferta-de-trump-para-cargo-na-casa-branca-diz-fonte/",
-    "https://g1.globo.com/mundo/noticia/2026/11/07/trump-oferece-cargo-de-secretario-de-imprensa-da-casa-branca-a-presidente-do-ufc.ghtml",
-    "https://www.estadao.com.br/internacional/lourival-santanna/eleicoes-nos-eua-e-na-servia-fortalecem-mensagem-anticorrupcao/"
+    "https://noticias.uol.com.br/ultimas-noticias/afp/2026/11/08/trump-admite-que-sua-politica-de-deportacoes-foi-dura-demais-entrevista-a-cbs.htm"
    ]
   },
   {
-   "key": "itaipu",
-   "label": "Itaipu",
+   "key": "argentina-milei",
+   "label": "Argentina / Milei",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/07/ueno-bank-itaipu-tinha-quase-us-180-milhoes-no-banco-paraguaio-e-denuncia-dirigentes.ghtml",
-    "https://www.cnnbrasil.com.br/infra/itaipu-detinha-us-18221-milhoes-alocados-no-ueno-do-paraguai/"
-   ]
-  },
-  {
-   "key": "polícia-civil",
-   "label": "Polícia Civil",
-   "links": [
-    "https://oglobo.globo.com/mundo/noticia/2026/11/07/ministerio-publico-do-paraguai-indicia-e-pede-prisao-preventiva-do-ex-presidente-acusado-de-envolvimento-na-crise-bancaria.ghtml",
-    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/policia-civil-indicia-e-pede-prisao-preventiva-de-milton-leite-por-organizacao-criminosa/"
+    "https://www.cnnbrasil.com.br/internacional/papa-leao-xiv-recebe-chave-da-cidade-de-buenos-aires-em-visita-a-argentina/"
    ]
   }
  ]
