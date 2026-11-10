@@ -1,67 +1,61 @@
 {
- "generated_at": "2026-11-09T02:11:41.144070+00:00",
+ "generated_at": "2026-11-10T04:03:50.114046+00:00",
  "pautas": [
   {
-   "key": "enem",
-   "label": "Enem",
+   "key": "moraes",
+   "label": "Moraes",
    "links": [
-    "https://www1.folha.uol.com.br/educacao/2026/11/confira-o-gabarito-extraoficial-do-1o-dia-do-enem-2026.shtml",
-    "https://oglobo.globo.com/brasil/educacao/enem-e-vestibular/noticia/2026/11/08/gabarito-enem-2026-veja-correcao-extraoficial-do-1o-dia-de-provas.ghtml",
-    "https://educacao.uol.com.br/noticias/2026/11/08/professores-redacao-enem-2026-exemplo.ghtm",
-    "https://www.cnnbrasil.com.br/educacao/gabarito-enem-2026-confira-as-respostas-extraoficiais-do-1o-dia-de-prova/"
+    "https://www.cnnbrasil.com.br/politica/esvaziamento-e-troca-de-relator-antecederam-fim-do-inquerito-das-fake-news/",
+    "https://www.estadao.com.br/politica/fachin-determina-o-arquivamento-do-inquerito-das-fake-news-nprp/",
+    "https://www1.folha.uol.com.br/poder/2026/11/fachin-arquiva-inquerito-das-fake-news-no-stf-apos-mais-de-7-anos-de-tramitacao.shtml"
    ]
   },
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "nunes-marques",
+   "label": "Nunes Marques",
    "links": [
-    "https://www.estadao.com.br/economia/lula-diz-que-trajetoria-da-divida-e-juros-preocupam-e-afirma-compromisso-com-responsabilidade-fiscal-npr/",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/na-tv-lula-diz-que-se-preocupa-com-divida-publica-e-taxa-de-juros/",
-    "https://oglobo.globo.com/economia/noticia/2026/11/08/lula-pronunciamento-reeleicao.ghtml",
-    "https://g1.globo.com/politica/noticia/2026/11/08/lula-fala-em-pronunciamento-em-rede-nacional-de-radio-e-tv.ghtml"
+    "https://www.estadao.com.br/politica/eliane-cantanhede/recado-de-lula-sem-disfarce-para-xandao-toffoli-e-nunes-marques/",
+    "https://g1.globo.com/politica/noticia/2026/11/09/pf-detalha-em-relatorios-relacao-de-toffoli-moraes-e-nunes-marques-com-vorcaro.ghtml",
+    "https://oglobo.globo.com/politica/noticia/2026/11/09/lula-nomeia-juiz-apoiado-por-dino-e-gilmar-para-o-trf-1-apos-ignorar-nome-ligado-a-nunes-marques.ghtml"
    ]
   },
   {
-   "key": "lula",
-   "label": "Lula",
+   "key": "nvidia",
+   "label": "Nvidia",
    "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/08/pronunciamento-lula-8-de-novembro-2026.ghtm",
-    "https://g1.globo.com/politica/noticia/2026/11/08/leia-a-integra-do-pronunciamento-de-lula-em-rede-nacional-de-radio-e-tv.ghtml"
+    "https://c-level.folha.uol.com.br/negocios/2026/11/china-nega-que-mulher-que-teve-caso-com-huang-fosse-espia-do-pais-acoes-da-nvidia-desabam.shtml",
+    "https://www.estadao.com.br/economia/negocios/caso-do-ceo-da-nvidia-com-suposta-espia-chinesa-foi-relatado-em-2025-por-usuario-no-x/"
    ]
   },
   {
-   "key": "irã-hormuz",
-   "label": "Irã / Hormuz",
+   "key": "pgr",
+   "label": "PGR",
    "links": [
-    "https://www.estadao.com.br/educacao/enem-o-que-caiu-no-1-dia-de-provas/"
+    "https://g1.globo.com/politica/noticia/2026/11/09/pgr-e-judiciario-querem-r-533-milhoes-extras-para-pagar-penduricalhos-agu-pediu-analise-stf.ghtml",
+    "https://www.cnnbrasil.com.br/politica/pgr-e-justica-federal-pedem-r-533-milhoes-extras-para-pagar-penduricalhos/"
    ]
   },
   {
-   "key": "flávio-bolsonaro",
-   "label": "Flávio Bolsonaro",
+   "key": "justiça-federal",
+   "label": "Justiça Federal",
    "links": [
-    "https://www.estadao.com.br/politica/diogo-schelp/derrota-de-flavio-bolsonaro-nao-e-endosso-aos-erros-e-abusos-do-stf/"
+    "https://www.cnnbrasil.com.br/politica/justica-suspende-regras-do-governo-lula-sobre-vales-refeicao-e-alimentacao/",
+    "https://g1.globo.com/df/distrito-federal/noticia/2026/11/09/justica-federal-suspende-parte-das-novas-regras-do-vale-refeicao-e-do-vale-alimentacao-para-grupo-de-empresas.ghtml"
    ]
   },
   {
-   "key": "obesidade-sus",
-   "label": "Obesidade / SUS",
+   "key": "fhc",
+   "label": "Fhc",
    "links": [
-    "https://www1.folha.uol.com.br/educacao/2026/11/tema-da-redacao-do-enem-2026-e-a-valorizacao-do-sus-como-direito-universal.shtml"
+    "https://www.estadao.com.br/politica/mulher-de-fhc-registra-bo-apos-homem-publicar-video-do-apartamento-e-do-ex-presidente/",
+    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/09/ele-nao-deve-ser-escondido-diz-homem-que-filmou-fhc.ghtm"
    ]
   },
   {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
+   "key": "vale-refeição",
+   "label": "Vale-refeição",
    "links": [
-    "https://noticias.uol.com.br/ultimas-noticias/afp/2026/11/08/trump-admite-que-sua-politica-de-deportacoes-foi-dura-demais-entrevista-a-cbs.htm"
-   ]
-  },
-  {
-   "key": "argentina-milei",
-   "label": "Argentina / Milei",
-   "links": [
-    "https://www.cnnbrasil.com.br/internacional/papa-leao-xiv-recebe-chave-da-cidade-de-buenos-aires-em-visita-a-argentina/"
+    "https://economia.uol.com.br/noticias/redacao/2026/11/09/justica-suspende-regras-vales-refeicao-alimentacao.ghtm"
    ]
   }
  ]

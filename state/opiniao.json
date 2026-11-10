@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-09T00",
+ "window": "2026-11-10T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Caso Master não pode acabar em pizza",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/caso-master-nao-pode-acabar-em-pizza.ghtml",
-   "published": "2026-11-08T03:10:01.057000+00:00",
+   "title": "Supremo deve garantir segundo turno no Rio",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/supremo-deve-garantir-segundo-turno-no-rio.ghtml",
+   "published": "2026-11-10T03:10:00.617000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,29 +31,15 @@
    "preferred": false
   },
   {
-   "source": "UOL Notícias",
-   "author": "Leonardo Sakamoto",
-   "title": "Violência pós-eleição contra indígenas lembra Lula que há uma guerra no MS",
-   "link": "https://noticias.uol.com.br/colunas/leonardo-sakamoto/2026/11/08/violencia-pos-eleitoral-contra-indigenas-expoe-guerra-por-terras-em-ms.htm",
-   "published": "2026-11-08T22:49:19.453711+00:00",
-   "bias": -0.2,
+   "source": "Nexo Jornal",
+   "author": "Alicia Kowaltowski",
+   "title": "Garrafas PET recicladas em bolachas (ou biscoitos)?",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/09/reciclagem-plastico-garrafa-pet-bolacha-biscoito-pesquisa-nasa",
+   "published": "2026-11-09T22:58:36+00:00",
+   "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": false,
-   "preferred": false
-  },
-  {
-   "source": "SBT News",
-   "author": "SBT",
-   "title": "Veja a opinião dos alunos sobre tema da redação do Enem 2026",
-   "link": "https://sbtnews.sbt.com.br/noticia/brasil/veja-a-opiniao-dos-alunos-sobre-tema-da-redacao-do-enem-2026",
-   "published": "2026-11-08T22:40:58+00:00",
-   "bias": 0.4,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "high",
+   "factuality": "very_high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -61,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "O BCE deve socorrer a França",
-   "link": "https://valor.globo.com/opiniao/coluna/o-bce-deve-socorrer-a-franca.ghtml",
-   "published": "2026-11-08T12:00:00.907000+00:00",
+   "title": "Os desafios dos Sistemas de Armazenamento Hidráulico no Brasil",
+   "link": "https://valor.globo.com/opiniao/coluna/os-desafios-dos-sistemas-de-armazenamento-hidraulico-no-brasil.ghtml",
+   "published": "2026-11-09T10:00:00.850000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -73,12 +59,26 @@
    "preferred": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Ricardo Nêggo Tom",
-   "title": "Ana Elisa e a carne mais barata do mercado",
-   "link": "https://www.brasil247.com/blog/ana-elisa-e-a-carne-mais-barata-do-mercado/",
-   "published": "2026-11-09T01:27:43+00:00",
-   "bias": -1.9,
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "O mercadão de princípios no Senado",
+   "link": "https://www.estadao.com.br/opiniao/o-mercadao-de-principios-no-senado/",
+   "published": "2026-11-09T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
+  },
+  {
+   "source": "CartaCapital",
+   "author": "Rodrigo Martins",
+   "title": "O projeto de país escolhido nas urnas não cabe no ajuste fiscal do mercado",
+   "link": "https://www.cartacapital.com.br/artigo/o-projeto-de-pais-escolhido-nas-urnas-nao-cabe-no-ajuste-fiscal-do-mercado/",
+   "published": "2026-11-09T23:02:30+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-09T02:11:41.144518+00:00"
+ "generated_at": "2026-11-10T04:03:50.114604+00:00"
 }

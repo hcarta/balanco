@@ -57,11 +57,11 @@
    "revisar": false
   },
   "cnnbr": {
-   "total": 1,
+   "total": 2,
    "falso": 1,
    "enganoso": 0,
    "verdadeiro": 0,
-   "checagem": 0,
+   "checagem": 1,
    "revisar": false
   },
   "apublica": {
@@ -203,6 +203,19 @@
    "score": 1.0,
    "date": "2026-11-06T18:28:33+00:00",
    "terms": "acabou;banco;governo;paraguai;peña;santiago"
+  },
+  {
+   "source_id": "cnnbr",
+   "source": "CNN Brasil",
+   "article": "Simpsons previram apagão global este mês? Web revive episódio e aponta data",
+   "article_link": "https://www.cnnbrasil.com.br/pop/tv/simpsons-previram-apagao-global-este-mes-web-revive-episodio-e-aponta-data/",
+   "check": "Simpsons não previram apagão global em 2026",
+   "check_link": "https://www.agencialupa.org/verificacao/2026/11/09/simpsons-nao-previram-apagao-global-em-2026/",
+   "checker": "Agência Lupa",
+   "verdict": "checagem",
+   "score": 0.89,
+   "date": "2026-11-09T18:19:49+00:00",
+   "terms": "apagão;global;previram;simpsons"
   }
  ]
 }
