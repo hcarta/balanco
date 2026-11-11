@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-10T00",
+ "window": "2026-11-11T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -31,15 +31,15 @@
    "preferred": false
   },
   {
-   "source": "Nexo Jornal",
-   "author": "Alicia Kowaltowski",
-   "title": "Garrafas PET recicladas em bolachas (ou biscoitos)?",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/09/reciclagem-plastico-garrafa-pet-bolacha-biscoito-pesquisa-nasa",
-   "published": "2026-11-09T22:58:36+00:00",
+   "source": "G1",
+   "author": "Viver Noronha",
+   "title": "Mostra Ambiental de Cinema tem filmes, teatro e oficinas em Fernando de Noronha",
+   "link": "https://g1.globo.com/pe/pernambuco/blog/viver-noronha/post/2026/11/10/mostra-ambiental-de-cinema-tem-filmes-teatro-e-oficinas-em-fernando-de-noronha.ghtml",
+   "published": "2026-11-11T00:27:24+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "very_high",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Os desafios dos Sistemas de Armazenamento Hidráulico no Brasil",
-   "link": "https://valor.globo.com/opiniao/coluna/os-desafios-dos-sistemas-de-armazenamento-hidraulico-no-brasil.ghtml",
-   "published": "2026-11-09T10:00:00.850000+00:00",
+   "title": "Trump ainda mantém poder bastante para provocar crises",
+   "link": "https://valor.globo.com/opiniao/coluna/trump-ainda-mantem-poder-bastante-para-provocar-crises.ghtml",
+   "published": "2026-11-10T08:00:01.288000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -61,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "O mercadão de princípios no Senado",
-   "link": "https://www.estadao.com.br/opiniao/o-mercadao-de-principios-no-senado/",
-   "published": "2026-11-09T06:02:00+00:00",
+   "title": "Lula 4 com ares de Dilma 2",
+   "link": "https://www.estadao.com.br/opiniao/lula-4-com-ares-de-dilma-2/",
+   "published": "2026-11-10T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -73,12 +73,12 @@
    "preferred": false
   },
   {
-   "source": "CartaCapital",
-   "author": "Rodrigo Martins",
-   "title": "O projeto de país escolhido nas urnas não cabe no ajuste fiscal do mercado",
-   "link": "https://www.cartacapital.com.br/artigo/o-projeto-de-pais-escolhido-nas-urnas-nao-cabe-no-ajuste-fiscal-do-mercado/",
-   "published": "2026-11-09T23:02:30+00:00",
-   "bias": -1.2,
+   "source": "Brasil 247",
+   "author": "Sara York",
+   "title": "Apartheid Trans no Brasil: manifesto nacional denuncia mais de 280 leis de segregação e convoca a sociedade",
+   "link": "https://www.brasil247.com/blog/apartheid-trans-no-brasil-manifesto-nacional-denuncia-mais-de-280-leis-de-segregacao-e-convoca-a-sociedade/",
+   "published": "2026-11-10T20:20:12+00:00",
+   "bias": -1.9,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-10T04:03:50.114604+00:00"
+ "generated_at": "2026-11-11T00:51:57.467194+00:00"
 }

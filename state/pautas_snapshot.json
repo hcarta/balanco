@@ -1,61 +1,38 @@
 {
- "generated_at": "2026-11-10T04:03:50.114046+00:00",
+ "generated_at": "2026-11-11T00:51:57.466731+00:00",
  "pautas": [
   {
-   "key": "moraes",
-   "label": "Moraes",
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
    "links": [
-    "https://www.cnnbrasil.com.br/politica/esvaziamento-e-troca-de-relator-antecederam-fim-do-inquerito-das-fake-news/",
-    "https://www.estadao.com.br/politica/fachin-determina-o-arquivamento-do-inquerito-das-fake-news-nprp/",
-    "https://www1.folha.uol.com.br/poder/2026/11/fachin-arquiva-inquerito-das-fake-news-no-stf-apos-mais-de-7-anos-de-tramitacao.shtml"
+    "https://g1.globo.com/economia/noticia/2026/11/10/galipolo-juros-confianca-mercado-economia-cambio.ghtml",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/governo-acorda-com-congresso-projeto-de-ajuste-fiscal-de-05-do-pib-em-27/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/divida-publica-em-reais-nao-garante-juros-menores-para-o-brasil-diz-galipolo.shtml",
+    "https://www.estadao.com.br/economia/galipolo-sempre-desconfie-se-alguem-oferecer-solucao-simples-a-problemas-complexos/"
    ]
   },
   {
-   "key": "nunes-marques",
-   "label": "Nunes Marques",
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
    "links": [
-    "https://www.estadao.com.br/politica/eliane-cantanhede/recado-de-lula-sem-disfarce-para-xandao-toffoli-e-nunes-marques/",
-    "https://g1.globo.com/politica/noticia/2026/11/09/pf-detalha-em-relatorios-relacao-de-toffoli-moraes-e-nunes-marques-com-vorcaro.ghtml",
-    "https://oglobo.globo.com/politica/noticia/2026/11/09/lula-nomeia-juiz-apoiado-por-dino-e-gilmar-para-o-trf-1-apos-ignorar-nome-ligado-a-nunes-marques.ghtml"
+    "https://oglobo.globo.com/politica/noticia/2026/11/10/pf-abre-investigacao-ordenada-por-dino-sobre-suspeita-de-financiamento-estrangeiro-a-campanha-de-flavio-bolsonaro.ghtml",
+    "https://www.cnnbrasil.com.br/politica/pf-instaura-inquerito-sobre-uso-de-verba-estrangeira-na-campanha-de-flavio/"
    ]
   },
   {
-   "key": "nvidia",
-   "label": "Nvidia",
+   "key": "meta",
+   "label": "Meta",
    "links": [
-    "https://c-level.folha.uol.com.br/negocios/2026/11/china-nega-que-mulher-que-teve-caso-com-huang-fosse-espia-do-pais-acoes-da-nvidia-desabam.shtml",
-    "https://www.estadao.com.br/economia/negocios/caso-do-ceo-da-nvidia-com-suposta-espia-chinesa-foi-relatado-em-2025-por-usuario-no-x/"
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/10/tse-julga-meta-conteudos-lula-flavio-bolsonaro-eleicao.ghtm",
+    "https://www.cnnbrasil.com.br/politica/tse-meta-julgamento-eleicoes/"
    ]
   },
   {
-   "key": "pgr",
-   "label": "PGR",
+   "key": "câmara",
+   "label": "Câmara",
    "links": [
-    "https://g1.globo.com/politica/noticia/2026/11/09/pgr-e-judiciario-querem-r-533-milhoes-extras-para-pagar-penduricalhos-agu-pediu-analise-stf.ghtml",
-    "https://www.cnnbrasil.com.br/politica/pgr-e-justica-federal-pedem-r-533-milhoes-extras-para-pagar-penduricalhos/"
-   ]
-  },
-  {
-   "key": "justiça-federal",
-   "label": "Justiça Federal",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/justica-suspende-regras-do-governo-lula-sobre-vales-refeicao-e-alimentacao/",
-    "https://g1.globo.com/df/distrito-federal/noticia/2026/11/09/justica-federal-suspende-parte-das-novas-regras-do-vale-refeicao-e-do-vale-alimentacao-para-grupo-de-empresas.ghtml"
-   ]
-  },
-  {
-   "key": "fhc",
-   "label": "Fhc",
-   "links": [
-    "https://www.estadao.com.br/politica/mulher-de-fhc-registra-bo-apos-homem-publicar-video-do-apartamento-e-do-ex-presidente/",
-    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/09/ele-nao-deve-ser-escondido-diz-homem-que-filmou-fhc.ghtm"
-   ]
-  },
-  {
-   "key": "vale-refeição",
-   "label": "Vale-refeição",
-   "links": [
-    "https://economia.uol.com.br/noticias/redacao/2026/11/09/justica-suspende-regras-vales-refeicao-alimentacao.ghtm"
+    "https://economia.uol.com.br/noticias/estadao-conteudo/2026/11/10/camara-aprova-mp-da-renegociacao-das-dividas-rurais-texto-segue-para-senado.htm",
+    "https://www.estadao.com.br/economia/camara-aprova-mp-de-dividas-rurais-com-jabuti-para-liberar-venda-de-cigarros-eletronicos-os-vapes/"
    ]
   }
  ]
