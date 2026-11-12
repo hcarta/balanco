@@ -57,10 +57,10 @@
    "revisar": false
   },
   "cnnbr": {
-   "total": 2,
+   "total": 3,
    "falso": 1,
    "enganoso": 0,
-   "verdadeiro": 0,
+   "verdadeiro": 1,
    "checagem": 1,
    "revisar": false
   },
@@ -216,6 +216,19 @@
    "score": 0.89,
    "date": "2026-11-09T18:19:49+00:00",
    "terms": "apagão;global;previram;simpsons"
+  },
+  {
+   "source_id": "cnnbr",
+   "source": "CNN Brasil",
+   "article": "Cachorra de fiel recebe bênção do papa Leão XIV no Uruguai",
+   "article_link": "https://www.cnnbrasil.com.br/internacional/cachorra-de-fiel-recebe-bencao-do-papa-leao-xiv-no-uruguai/",
+   "check": "É #FATO: Foto mostra papa Leão XIV segurando carne em churrasco no Uruguai; veja imagem",
+   "check_link": "https://g1.globo.com/fato-ou-fake/noticia/2026/11/10/e-fato-foto-mostra-papa-leao-xiv-segurando-carne-em-churrasco-no-uruguai-veja-imagem.ghtml",
+   "checker": "G1 Fato ou Fake",
+   "verdict": "verdadeiro",
+   "score": 0.5,
+   "date": "2026-11-10T17:16:46+00:00",
+   "terms": "leão;papa;uruguai;xiv"
   }
  ]
 }

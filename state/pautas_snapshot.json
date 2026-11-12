@@ -1,38 +1,52 @@
 {
- "generated_at": "2026-11-11T00:51:57.466731+00:00",
+ "generated_at": "2026-11-12T03:45:05.230160+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://g1.globo.com/economia/noticia/2026/11/10/galipolo-juros-confianca-mercado-economia-cambio.ghtml",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/governo-acorda-com-congresso-projeto-de-ajuste-fiscal-de-05-do-pib-em-27/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/divida-publica-em-reais-nao-garante-juros-menores-para-o-brasil-diz-galipolo.shtml",
-    "https://www.estadao.com.br/economia/galipolo-sempre-desconfie-se-alguem-oferecer-solucao-simples-a-problemas-complexos/"
-   ]
-  },
-  {
-   "key": "flávio-bolsonaro",
-   "label": "Flávio Bolsonaro",
-   "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/10/pf-abre-investigacao-ordenada-por-dino-sobre-suspeita-de-financiamento-estrangeiro-a-campanha-de-flavio-bolsonaro.ghtml",
-    "https://www.cnnbrasil.com.br/politica/pf-instaura-inquerito-sobre-uso-de-verba-estrangeira-na-campanha-de-flavio/"
-   ]
-  },
-  {
-   "key": "meta",
-   "label": "Meta",
-   "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/10/tse-julga-meta-conteudos-lula-flavio-bolsonaro-eleicao.ghtm",
-    "https://www.cnnbrasil.com.br/politica/tse-meta-julgamento-eleicoes/"
+    "https://www.estadao.com.br/economia/governo-projeto-medidas-ajuste-fiscal-lula-4/",
+    "https://economia.uol.com.br/colunas/jessica-sant-ana/2026/11/11/projeto-com-medidas-de-ajuste-tera-impacto-de-ate-r-60-bi-diz-moretti.htm",
+    "https://g1.globo.com/economia/noticia/2026/11/11/dolar-ibovespa.ghtml",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/ajuste-fiscal-preve-gatilho-para-limitar-alta-das-despesas-e-compensacoes/"
    ]
   },
   {
    "key": "câmara",
    "label": "Câmara",
    "links": [
-    "https://economia.uol.com.br/noticias/estadao-conteudo/2026/11/10/camara-aprova-mp-da-renegociacao-das-dividas-rurais-texto-segue-para-senado.htm",
-    "https://www.estadao.com.br/economia/camara-aprova-mp-de-dividas-rurais-com-jabuti-para-liberar-venda-de-cigarros-eletronicos-os-vapes/"
+    "https://www.cnnbrasil.com.br/politica/camara-torna-crime-hediondo-maus-tratos-que-causarem-morte-de-animal/",
+    "https://g1.globo.com/politica/noticia/2026/11/11/camara-aprova-projeto-que-torna-hediondos-maus-tratos-que-resultarem-em-morte-de-animal.ghtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/11/camara-aprova-crime-hediondo-por-maus-tratos-que-matem-caes-e-gatos.ghtm"
+   ]
+  },
+  {
+   "key": "inadimplência",
+   "label": "Inadimplência",
+   "links": [
+    "https://c-level.folha.uol.com.br/financas/2026/11/banco-do-brasil-tem-queda-de-65-no-lucro-com-inadimplencia-do-agronegocio.shtml",
+    "https://g1.globo.com/economia/noticia/2026/11/11/banco-do-brasil-bb-resultados-3t26.ghtml"
+   ]
+  },
+  {
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
+   "links": [
+    "https://www.estadao.com.br/internacional/democrata-conquista-vaga-historica-no-senado-do-mississippi-um-reduto-republicano/"
+   ]
+  },
+  {
+   "key": "obesidade-sus",
+   "label": "Obesidade / SUS",
+   "links": [
+    "https://www.cnnbrasil.com.br/politica/gilmar-suspende-acoes-sobre-reajuste-da-tabela-do-sus-e-trava-precatorios/"
+   ]
+  },
+  {
+   "key": "tarcísio-linha-6",
+   "label": "Tarcísio / Linha 6",
+   "links": [
+    "https://www.estadao.com.br/politica/tarcisio-confirma-ricardo-salles-como-novo-secretario-de-justica-e-cidadania/"
    ]
   }
  ]
