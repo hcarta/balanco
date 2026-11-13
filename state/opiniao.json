@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-12T00",
+ "window": "2026-11-13T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -33,9 +33,9 @@
   {
    "source": "Band",
    "author": "Da redação",
-   "title": "Banco Central mostra a fotografia do Brasil",
-   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/banco-central-mostra-a-fotografia-do-brasil",
-   "published": "2026-11-12T01:20:43+00:00",
+   "title": "Dólar sobe a R$ 5,65 com frustração fiscal e atinge maior valor em 17 meses",
+   "link": "https://www.band.com.br/colunistas/juliana-rosa/dolar-sobe-a-r-565-com-frustracao-fiscal-e-atinge-maior-valor-em-17-meses",
+   "published": "2026-11-12T23:31:46+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -45,25 +45,11 @@
    "preferred": false
   },
   {
-   "source": "Estadão",
-   "author": "Gustavo Côrtes",
-   "title": "Gilmar bloqueia ações em todo País para impedir pagamentos de precatórios do SUS",
-   "link": "https://www.estadao.com.br/politica/blogs/gilmar-bloqueia-acoes-em-todo-pais-para-impedir-pagamentos-de-precatorios-do-sus/",
-   "published": "2026-11-11T22:20:07+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": false,
-   "preferred": false
-  },
-  {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Freio democrata à IA nos EUA pode abrir espaço para big techs equilibrarem suas dívidas",
-   "link": "https://valor.globo.com/publicacoes/especiais/inteligencia-artificial/coluna/freio-democrata-a-ia-nos-eua-pode-abrir-espaco-para-big-techs-equilibrarem-suas-dividas.ghtml",
-   "published": "2026-11-11T12:13:31.395000+00:00",
+   "title": "Minerais estratégicos: quem transforma fica com o valor",
+   "link": "https://valor.globo.com/opiniao/coluna/minerais-estrategicos-quem-transforma-fica-com-o-valor.ghtml",
+   "published": "2026-11-12T10:00:01.029000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -73,11 +59,25 @@
    "preferred": false
   },
   {
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "O Brasil exige saber o que Moraes fez",
+   "link": "https://www.estadao.com.br/opiniao/o-brasil-exige-saber-o-que-moraes-fez/",
+   "published": "2026-11-12T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
+  },
+  {
    "source": "Brasil 247",
-   "author": "Henrique Pinheiro",
-   "title": "O triplex tinha dono. E não era Lula",
-   "link": "https://www.brasil247.com/blog/o-triplex-tinha-dono-e-nao-era-lula/",
-   "published": "2026-11-12T01:10:44+00:00",
+   "author": "Reynaldo José Aragon Gonçalves",
+   "title": "Negociar sem entregar: Lula e a geopolítica das terras raras",
+   "link": "https://www.brasil247.com/blog/negociar-sem-entregar-lula-e-a-geopolitica-das-terras-raras/",
+   "published": "2026-11-13T00:14:27+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-12T03:45:05.230695+00:00"
+ "generated_at": "2026-11-13T01:26:53.901284+00:00"
 }

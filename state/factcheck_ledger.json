@@ -25,19 +25,19 @@
    "revisar": false
   },
   "terra": {
-   "total": 1,
+   "total": 2,
    "falso": 1,
    "enganoso": 0,
    "verdadeiro": 0,
-   "checagem": 0,
+   "checagem": 1,
    "revisar": false
   },
   "sbt": {
-   "total": 1,
+   "total": 2,
    "falso": 0,
    "enganoso": 0,
    "verdadeiro": 0,
-   "checagem": 1,
+   "checagem": 2,
    "revisar": false
   },
   "poder360": {
@@ -70,6 +70,14 @@
    "enganoso": 0,
    "verdadeiro": 0,
    "checagem": 1,
+   "revisar": false
+  },
+  "estadao": {
+   "total": 2,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 2,
    "revisar": false
   }
  },
@@ -229,6 +237,58 @@
    "score": 0.5,
    "date": "2026-11-10T17:16:46+00:00",
    "terms": "leão;papa;uruguai;xiv"
+  },
+  {
+   "source_id": "estadao",
+   "source": "Estadão",
+   "article": "Governo Lula não proibiu crianças de assistir desenhos bíblicos na Record",
+   "article_link": "https://www.estadao.com.br/estadao-verifica/desenhos-biblicos-censura-enganoso/",
+   "check": "Governo não proibiu exibição de desenhos bíblicos para crianças",
+   "check_link": "https://www.agencialupa.org/verificacao/2026/11/04/governo-nao-proibiu-exibicao-de-desenhos-biblicos-para-criancas/",
+   "checker": "Agência Lupa",
+   "verdict": "checagem",
+   "score": 0.79,
+   "date": "2026-11-04T17:59:09+00:00",
+   "terms": "bíblicos;crianças;desenhos;governo;proibiu"
+  },
+  {
+   "source_id": "sbt",
+   "source": "SBT News",
+   "article": "MP do Paraguai faz novas buscas contra Santiago Peña",
+   "article_link": "https://sbtnews.sbt.com.br/noticia/mundo/mp-do-paraguai-faz-novas-buscas-contra-santiago-pena",
+   "check": "Como a queda do banco Ueno no Paraguai acabou com o governo de Santiago Peña",
+   "check_link": "https://www.aosfatos.org/noticias/como-a-queda-do-banco-ueno-no-paraguai-acabou-com-o-governo-de-santiago-pena/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.51,
+   "date": "2026-11-06T18:28:33+00:00",
+   "terms": "paraguai;peña;santiago"
+  },
+  {
+   "source_id": "terra",
+   "source": "Terra",
+   "article": "Checadores de fatos de 20 países reivindicam ambiente de informações confiáveis na América Latina",
+   "article_link": "https://www.terra.com.br/noticias/brasil/politica/checadores-de-fatos-de-20-paises-reivindicam-ambiente-de-informacoes-confiaveis-na-america-latina,f43d0a831086c367a08c121a099e9d9c5psxs9p0.html",
+   "check": "Verificadores de 20 países pedem às plataformas, governos e financiadores que protejam as informações confiáveis na América Latina",
+   "check_link": "https://www.aosfatos.org/noticias/verificadores-de-20-paises-plataformas-governos-financiadores-informacoes-confiaveis-america-latina/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.53,
+   "date": "2026-11-12T21:02:14+00:00",
+   "terms": "américa;confiáveis;informações;latina;países"
+  },
+  {
+   "source_id": "estadao",
+   "source": "Estadão",
+   "article": "Checadores de fatos de 20 países reivindicam ambiente de informações confiáveis na América Latina",
+   "article_link": "https://www.estadao.com.br/estadao-verifica/checadores-de-fatos-de-20-paises-reivindicam-ambiente-de-informacoes-confiaveis-na-america-latina/",
+   "check": "Verificadores de 20 países pedem às plataformas, governos e financiadores que protejam as informações confiáveis na América Latina",
+   "check_link": "https://www.aosfatos.org/noticias/verificadores-de-20-paises-plataformas-governos-financiadores-informacoes-confiaveis-america-latina/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.53,
+   "date": "2026-11-12T21:02:14+00:00",
+   "terms": "américa;confiáveis;informações;latina;países"
   }
  ]
 }

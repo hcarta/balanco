@@ -1,52 +1,39 @@
 {
- "generated_at": "2026-11-12T03:45:05.230160+00:00",
+ "generated_at": "2026-11-13T01:26:53.900763+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/economia/governo-projeto-medidas-ajuste-fiscal-lula-4/",
-    "https://economia.uol.com.br/colunas/jessica-sant-ana/2026/11/11/projeto-com-medidas-de-ajuste-tera-impacto-de-ate-r-60-bi-diz-moretti.htm",
-    "https://g1.globo.com/economia/noticia/2026/11/11/dolar-ibovespa.ghtml",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/ajuste-fiscal-preve-gatilho-para-limitar-alta-das-despesas-e-compensacoes/"
+    "https://oglobo.globo.com/economia/noticia/2026/11/12/senado-votacao-fiscal-governo.ghtml",
+    "https://www.estadao.com.br/economia/senado-projeto-lei-ajuste-fiscal/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/entenda-ponto-a-ponto-o-plano-moretti-proposta-de-ajuste-fiscal-do-governo-lula.shtml",
+    "https://www.cnnbrasil.com.br/politica/senado-aprova-plp-do-ajuste-fiscal/",
+    "https://g1.globo.com/economia/noticia/2026/11/12/dolar-ibovespa.ghtml"
    ]
   },
   {
-   "key": "câmara",
-   "label": "Câmara",
+   "key": "rio",
+   "label": "Rio",
    "links": [
-    "https://www.cnnbrasil.com.br/politica/camara-torna-crime-hediondo-maus-tratos-que-causarem-morte-de-animal/",
-    "https://g1.globo.com/politica/noticia/2026/11/11/camara-aprova-projeto-que-torna-hediondos-maus-tratos-que-resultarem-em-morte-de-animal.ghtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/11/camara-aprova-crime-hediondo-por-maus-tratos-que-matem-caes-e-gatos.ghtm"
+    "https://oglobo.globo.com/politica/noticia/2026/11/12/zanin-nega-pedido-para-realizacao-do-segundo-turno-no-rio.ghtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/12/zanin-stf-2-turno-eleicoes-rio-de-janeiro-douglas-ruas-eduardo-paes.ghtm",
+    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/zanin-nega-pedido-de-segundo-turno-no-rio/"
    ]
   },
   {
-   "key": "inadimplência",
-   "label": "Inadimplência",
+   "key": "ataque",
+   "label": "Ataque",
    "links": [
-    "https://c-level.folha.uol.com.br/financas/2026/11/banco-do-brasil-tem-queda-de-65-no-lucro-com-inadimplencia-do-agronegocio.shtml",
-    "https://g1.globo.com/economia/noticia/2026/11/11/banco-do-brasil-bb-resultados-3t26.ghtml"
+    "https://g1.globo.com/economia/noticia/2026/11/12/tesouro-nacional-incidente-seguranca.ghtml",
+    "https://economia.uol.com.br/noticias/redacao/2026/11/12/ataque-hacker-ao-tesouro-expoe-chaves-pix-e-dados-de-34-mil-cadastros.htm"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/internacional/democrata-conquista-vaga-historica-no-senado-do-mississippi-um-reduto-republicano/"
-   ]
-  },
-  {
-   "key": "obesidade-sus",
-   "label": "Obesidade / SUS",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/gilmar-suspende-acoes-sobre-reajuste-da-tabela-do-sus-e-trava-precatorios/"
-   ]
-  },
-  {
-   "key": "tarcísio-linha-6",
-   "label": "Tarcísio / Linha 6",
-   "links": [
-    "https://www.estadao.com.br/politica/tarcisio-confirma-ricardo-salles-como-novo-secretario-de-justica-e-cidadania/"
+    "https://www.cnnbrasil.com.br/internacional/trump-diz-que-derrotaria-obama-facilmente-se-concorressem-a-presidencia/"
    ]
   }
  ]

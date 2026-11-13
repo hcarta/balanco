@@ -141,18 +141,32 @@
    "generated_at": "2026-11-11T22:43:42.909180+00:00"
   },
   "2026-11-12": {
-   "n_heads": 41,
-   "n_unmatched": 31,
-   "unmatched_rate": 75.6,
+   "n_heads": 44,
+   "n_unmatched": 36,
+   "unmatched_rate": 81.8,
    "n_pautas": 6,
-   "n_emergent": 1,
+   "n_emergent": 4,
    "n_reused": 0,
-   "n_new_keys": 1,
+   "n_new_keys": 4,
    "n_front_only": 0,
-   "n_pauta_stories": 43,
+   "n_pauta_stories": 58,
    "n_aliases": 0,
    "date": "2026-11-12",
-   "generated_at": "2026-11-12T03:47:47.227506+00:00"
+   "generated_at": "2026-11-12T20:27:18.735661+00:00"
+  },
+  "2026-11-13": {
+   "n_heads": 43,
+   "n_unmatched": 32,
+   "unmatched_rate": 74.4,
+   "n_pautas": 4,
+   "n_emergent": 2,
+   "n_reused": 0,
+   "n_new_keys": 2,
+   "n_front_only": 0,
+   "n_pauta_stories": 46,
+   "n_aliases": 1,
+   "date": "2026-11-13",
+   "generated_at": "2026-11-13T01:29:47.446057+00:00"
   }
  }
 }
