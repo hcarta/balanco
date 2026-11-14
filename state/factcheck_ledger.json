@@ -79,6 +79,14 @@
    "verdadeiro": 0,
    "checagem": 2,
    "revisar": false
+  },
+  "dcm": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
   }
  },
  "matches": [
@@ -289,6 +297,19 @@
    "score": 0.53,
    "date": "2026-11-12T21:02:14+00:00",
    "terms": "américa;confiáveis;informações;latina;países"
+  },
+  {
+   "source_id": "dcm",
+   "source": "Diário do Centro do Mundo",
+   "article": "Em fuga nos EUA, Flávio Bolsonaro vota contra ajuste fiscal aprovado no Senado",
+   "article_link": "https://www.diariodocentrodomundo.com.br/em-fuga-nos-eua-flavio-bolsonaro-vota-contra-ajuste-fiscal-aprovado-no-senado/",
+   "check": "O que se sabe sobre a fuga de Flávio Bolsonaro",
+   "check_link": "https://www.aosfatos.org/noticias/o-que-se-sabe-suposta-fuga-flavio-bolsonaro/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.73,
+   "date": "2026-10-27T07:00:00+00:00",
+   "terms": "bolsonaro;flávio;fuga"
   }
  ]
 }

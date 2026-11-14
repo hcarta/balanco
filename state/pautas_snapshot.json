@@ -1,39 +1,45 @@
 {
- "generated_at": "2026-11-13T01:26:53.900763+00:00",
+ "generated_at": "2026-11-14T03:01:15.087811+00:00",
  "pautas": [
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "paralisação",
+   "label": "Paralisação",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/12/senado-votacao-fiscal-governo.ghtml",
-    "https://www.estadao.com.br/economia/senado-projeto-lei-ajuste-fiscal/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/entenda-ponto-a-ponto-o-plano-moretti-proposta-de-ajuste-fiscal-do-governo-lula.shtml",
-    "https://www.cnnbrasil.com.br/politica/senado-aprova-plp-do-ajuste-fiscal/",
-    "https://g1.globo.com/economia/noticia/2026/11/12/dolar-ibovespa.ghtml"
-   ]
-  },
-  {
-   "key": "rio",
-   "label": "Rio",
-   "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/12/zanin-nega-pedido-para-realizacao-do-segundo-turno-no-rio.ghtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/12/zanin-stf-2-turno-eleicoes-rio-de-janeiro-douglas-ruas-eduardo-paes.ghtm",
-    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/zanin-nega-pedido-de-segundo-turno-no-rio/"
-   ]
-  },
-  {
-   "key": "ataque",
-   "label": "Ataque",
-   "links": [
-    "https://g1.globo.com/economia/noticia/2026/11/12/tesouro-nacional-incidente-seguranca.ghtml",
-    "https://economia.uol.com.br/noticias/redacao/2026/11/12/ataque-hacker-ao-tesouro-expoe-chaves-pix-e-dados-de-34-mil-cadastros.htm"
+    "https://www.cnnbrasil.com.br/internacional/eua-poem-fim-a-suspensao-de-voos-que-provocou-caos-aereo-no-pais/",
+    "https://www1.folha.uol.com.br/mundo/2026/11/eua-encerram-suspensao-de-voos-apos-4-horas-de-paralisacao.shtml",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/13/suspensao-decolagens-espaco-aereo-eua.ghtm"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/trump-diz-que-derrotaria-obama-facilmente-se-concorressem-a-presidencia/"
+    "https://g1.globo.com/mundo/ao-vivo/paralisacao-de-voos-nos-eua.ghtml",
+    "https://www.cnnbrasil.com.br/economia/money/tecnologia/parceira-do-inter-com-xai-de-elon-musk-e-emblematica-avalia-ceo/"
+   ]
+  },
+  {
+   "key": "ao-vivo-após-quatro-horas-suspensão-de-decolagens-nos-estados-unido",
+   "label": "Ao vivo | Após quatro horas, suspensão de decolagens nos Estados Unido",
+   "links": [
+    "https://www.estadao.com.br/internacional/ao-vivo-suspensao-de-voos-nos-estados-unidos/",
+    "https://oglobo.globo.com/mundo/noticia/2026/11/13/eua-fecham-espaco-aereo-e-suspendem-todos-os-voos-por-motivos-de-seguranca.ghtml"
+   ]
+  },
+  {
+   "key": "câmara",
+   "label": "Câmara",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/13/camara-pede-stf-derrube-pontos-decisao-dino.ghtm",
+    "https://www.estadao.com.br/economia/6x1-camara-contesta-parte-da-decisao-de-dino-e-pede-que-stf-nao-referende-flexibilizacao-de-folgas/"
+   ]
+  },
+  {
+   "key": "toffoli",
+   "label": "Toffoli",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/13/toffoli-da-tres-dias-para-campanha-de-lula-explicar-falhas-nas-contas-ao-tse.ghtm",
+    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/toffoli-da-tres-dias-para-chapa-de-lula-explicar-indicios-de-irregularidades-em-contas-de-campanha/"
    ]
   }
  ]

@@ -1,27 +1,27 @@
 {
  "v": 5,
- "window": "2026-11-13T00",
+ "window": "2026-11-14T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Rui Tavares",
-   "title": "Progressistas de todo o mundo, janonizem-se?",
-   "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/progressistas-de-todo-o-mundo-janonizem-se.shtml",
-   "published": "2026-11-11T02:00:00+00:00",
+   "author": "Conrado Hübner Mendes",
+   "title": "A luta do vorcariado contra o STF",
+   "link": "https://www1.folha.uol.com.br/colunas/conrado-hubner-mendes/2026/11/a-luta-do-vorcariado-contra-o-stf.shtml",
+   "published": "2026-11-11T22:52:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
    "factuality": "high",
    "editorial": false,
    "weekly": true,
-   "preferred": true
+   "preferred": false
   },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Transição da escala 6x1 para a 5x2 exige prazo maior",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/transicao-da-escala-6x1-para-a-5x2-exige-prazo-maior.ghtml",
-   "published": "2026-11-12T03:10:00.647000+00:00",
+   "title": "Pacote fiscal ainda é insuficiente para necessidade do país",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/pacote-fiscal-ainda-e-insuficiente-para-necessidade-do-pais.ghtml",
+   "published": "2026-11-13T03:10:00.927000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -33,9 +33,9 @@
   {
    "source": "Band",
    "author": "Da redação",
-   "title": "Dólar sobe a R$ 5,65 com frustração fiscal e atinge maior valor em 17 meses",
-   "link": "https://www.band.com.br/colunistas/juliana-rosa/dolar-sobe-a-r-565-com-frustracao-fiscal-e-atinge-maior-valor-em-17-meses",
-   "published": "2026-11-12T23:31:46+00:00",
+   "title": "Juliana Rosa: É preciso ter senso de urgência para evitar piora da economia",
+   "link": "https://www.band.com.br/colunistas/juliana-rosa/juliana-rosa-e-preciso-ter-senso-de-urgencia-para-evitar-piora-da-economia",
+   "published": "2026-11-14T00:15:36+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Minerais estratégicos: quem transforma fica com o valor",
-   "link": "https://valor.globo.com/opiniao/coluna/minerais-estrategicos-quem-transforma-fica-com-o-valor.ghtml",
-   "published": "2026-11-12T10:00:01.029000+00:00",
+   "title": "Quando o poder das ideias ameaça as ideias do poder",
+   "link": "https://valor.globo.com/opiniao/coluna/quando-o-poder-das-ideias-ameaca-as-ideias-do-poder.ghtml",
+   "published": "2026-11-13T10:00:00.588000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -60,10 +60,10 @@
   },
   {
    "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "O Brasil exige saber o que Moraes fez",
-   "link": "https://www.estadao.com.br/opiniao/o-brasil-exige-saber-o-que-moraes-fez/",
-   "published": "2026-11-12T06:02:00+00:00",
+   "author": "Val Mendes",
+   "title": "Acima dos R$ 100 mil: por que vender um carro usado ficou tão difícil?",
+   "link": "https://www.estadao.com.br/jornal-do-carro/colunas/acima-dos-r-100-mil-por-que-vender-um-carro-usado-ficou-tao-dificil/",
+   "published": "2026-11-13T08:30:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -74,10 +74,10 @@
   },
   {
    "source": "Brasil 247",
-   "author": "Reynaldo José Aragon Gonçalves",
-   "title": "Negociar sem entregar: Lula e a geopolítica das terras raras",
-   "link": "https://www.brasil247.com/blog/negociar-sem-entregar-lula-e-a-geopolitica-das-terras-raras/",
-   "published": "2026-11-13T00:14:27+00:00",
+   "author": "Leonardo Sobreira",
+   "title": "Discurso de Lula na COP ganha destaque na mídia chinesa e viraliza nas redes do país",
+   "link": "https://www.brasil247.com/blog/discurso-de-lula-na-cop-ganha-destaque-na-midia-chinesa-e-viraliza-nas-redes-do-pais/",
+   "published": "2026-11-14T01:58:57+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-13T01:26:53.901284+00:00"
+ "generated_at": "2026-11-14T03:01:15.088308+00:00"
 }
