@@ -87,6 +87,22 @@
    "verdadeiro": 0,
    "checagem": 1,
    "revisar": false
+  },
+  "carta": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
+  },
+  "folha": {
+   "total": 1,
+   "falso": 1,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 0,
+   "revisar": false
   }
  },
  "matches": [
@@ -310,6 +326,32 @@
    "score": 0.73,
    "date": "2026-10-27T07:00:00+00:00",
    "terms": "bolsonaro;flávio;fuga"
+  },
+  {
+   "source_id": "carta",
+   "source": "CartaCapital",
+   "article": "Atlas: Maioria vê Flávio Bolsonaro ligado a lavagem de dinheiro e diz que fuga o enfraquece",
+   "article_link": "https://www.cartacapital.com.br/politica/atlas-maioria-ve-flavio-bolsonaro-ligado-a-lavagem-de-dinheiro-e-diz-que-fuga-o-enfraquece/",
+   "check": "O que se sabe sobre a fuga de Flávio Bolsonaro",
+   "check_link": "https://www.aosfatos.org/noticias/o-que-se-sabe-suposta-fuga-flavio-bolsonaro/",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.74,
+   "date": "2026-10-27T07:00:00+00:00",
+   "terms": "bolsonaro;flávio;fuga"
+  },
+  {
+   "source_id": "folha",
+   "source": "Folha de S.Paulo",
+   "article": "Moraes atende a pedido da defesa de Augusto Heleno e impede visita de senadores ao general",
+   "article_link": "https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/11/moraes-atende-a-pedido-da-defesa-de-augusto-heleno-e-impede-visita-de-senadores-ao-general.shtml",
+   "check": "É falso que o general Augusto Heleno morreu",
+   "check_link": "https://www.agencialupa.org/verificacao/2026/09/02/e-falso-que-o-general-augusto-heleno-morreu/",
+   "checker": "Agência Lupa",
+   "verdict": "falso",
+   "score": 0.68,
+   "date": "2026-09-02T20:03:07+00:00",
+   "terms": "augusto;general;heleno"
   }
  ]
 }

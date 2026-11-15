@@ -1,45 +1,37 @@
 {
- "generated_at": "2026-11-14T03:01:15.087811+00:00",
+ "generated_at": "2026-11-15T01:16:43.658625+00:00",
  "pautas": [
   {
-   "key": "paralisação",
-   "label": "Paralisação",
+   "key": "fux",
+   "label": "Fux",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/eua-poem-fim-a-suspensao-de-voos-que-provocou-caos-aereo-no-pais/",
-    "https://www1.folha.uol.com.br/mundo/2026/11/eua-encerram-suspensao-de-voos-apos-4-horas-de-paralisacao.shtml",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/13/suspensao-decolagens-espaco-aereo-eua.ghtm"
+    "https://www.cnnbrasil.com.br/politica/fux-interrompe-julgamento-sobre-fim-da-escala-6x1-e-leva-caso-ao-plenario/",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/14/fux-interrompe-julgamento-do-fim-da-6x1-para-levar-caso-ao-plenario.ghtm",
+    "https://g1.globo.com/politica/politico/noticia/2026/11/14/fux-suspende-julgamento-sobre-escala-5x2-e-leva-caso-para-plenario-fisico-do-stf.ghtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://g1.globo.com/mundo/ao-vivo/paralisacao-de-voos-nos-eua.ghtml",
-    "https://www.cnnbrasil.com.br/economia/money/tecnologia/parceira-do-inter-com-xai-de-elon-musk-e-emblematica-avalia-ceo/"
+    "https://g1.globo.com/mundo/noticia/2026/11/14/caos-aereo-eua-atrasos-cancelamentos-voos.ghtml",
+    "https://oglobo.globo.com/mundo/noticia/2026/11/14/pela-primeira-vez-em-mais-de-30-anos-democratas-ganham-o-governo-do-alasca.ghtml"
    ]
   },
   {
-   "key": "ao-vivo-após-quatro-horas-suspensão-de-decolagens-nos-estados-unido",
-   "label": "Ao vivo | Após quatro horas, suspensão de decolagens nos Estados Unido",
+   "key": "autoridade",
+   "label": "Autoridade",
    "links": [
-    "https://www.estadao.com.br/internacional/ao-vivo-suspensao-de-voos-nos-estados-unidos/",
-    "https://oglobo.globo.com/mundo/noticia/2026/11/13/eua-fecham-espaco-aereo-e-suspendem-todos-os-voos-por-motivos-de-seguranca.ghtml"
+    "https://g1.globo.com/sp/sao-paulo/noticia/2026/11/14/operacao-no-aeroporto-internacional-de-sp-em-guarulhos-e-normalizada-apos-retomada-de-voos-nos-eua.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/autoridade-dos-eua-diz-que-suspendeu-voos-por-manutencao-habitual/"
    ]
   },
   {
-   "key": "câmara",
-   "label": "Câmara",
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
    "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/13/camara-pede-stf-derrube-pontos-decisao-dino.ghtm",
-    "https://www.estadao.com.br/economia/6x1-camara-contesta-parte-da-decisao-de-dino-e-pede-que-stf-nao-referende-flexibilizacao-de-folgas/"
-   ]
-  },
-  {
-   "key": "toffoli",
-   "label": "Toffoli",
-   "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/13/toffoli-da-tres-dias-para-campanha-de-lula-explicar-falhas-nas-contas-ao-tse.ghtm",
-    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/toffoli-da-tres-dias-para-chapa-de-lula-explicar-indicios-de-irregularidades-em-contas-de-campanha/"
+    "https://www1.folha.uol.com.br/mercado/2026/11/plano-fiscal-precisa-ir-alem-e-mudar-regras-do-minimo-da-saude-e-da-educacao-dizem-economistas.shtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/14/ajuste-fiscal-divide-esquerda-exercito-lula-critica-janones.ghtm"
    ]
   }
  ]
