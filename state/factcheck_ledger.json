@@ -57,12 +57,12 @@
    "revisar": false
   },
   "cnnbr": {
-   "total": 3,
-   "falso": 1,
+   "total": 4,
+   "falso": 2,
    "enganoso": 0,
    "verdadeiro": 1,
    "checagem": 1,
-   "revisar": false
+   "revisar": true
   },
   "apublica": {
    "total": 1,
@@ -352,6 +352,19 @@
    "score": 0.68,
    "date": "2026-09-02T20:03:07+00:00",
    "terms": "augusto;general;heleno"
+  },
+  {
+   "source_id": "cnnbr",
+   "source": "CNN Brasil",
+   "article": "Enem 2026: 2º dia de provas ocorre neste domingo com questões de matemática",
+   "article_link": "https://www.cnnbrasil.com.br/educacao/enem-2026-2o-dia-de-provas-ocorre-neste-domingo-com-questoes-de-matematica/",
+   "check": "É falso que Enem não terá questões de matemática neste ano",
+   "check_link": "https://www.aosfatos.org/?s=%C3%89%20falso%20que%20Enem%20n%C3%A3o%20ter%C3%A1%20quest%C3%B5es%20de%20matem%C3%A1tica%20neste%20ano",
+   "checker": "Aos Fatos",
+   "verdict": "falso",
+   "score": 0.87,
+   "date": "2026-11-11T18:07:51+00:00",
+   "terms": "enem;matemática;neste;questões"
   }
  ]
 }

@@ -98,20 +98,20 @@
    "generated_at": "2026-11-14T21:20:32.596314+00:00"
   },
   "2026-11-15": {
-   "n_stories": 517,
-   "n_articles": 2329,
+   "n_stories": 441,
+   "n_articles": 1931,
    "median_independent": 2,
-   "pct_blindspot": 19.7,
-   "pct_longread": 5.2,
+   "pct_blindspot": 18.6,
+   "pct_longread": 4.1,
    "avg_pct": {
-    "L": 6.6,
-    "CL": 10.1,
+    "L": 8.1,
+    "CL": 10.8,
     "C": 41.7,
-    "CR": 33.1,
-    "R": 8.4
+    "CR": 32.1,
+    "R": 7.2
    },
    "date": "2026-11-15",
-   "generated_at": "2026-11-15T01:18:08.252549+00:00"
+   "generated_at": "2026-11-15T21:01:16.518619+00:00"
   }
  }
 }

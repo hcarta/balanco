@@ -1,37 +1,45 @@
 {
- "generated_at": "2026-11-15T01:16:43.658625+00:00",
+ "generated_at": "2026-11-16T00:58:51.581550+00:00",
  "pautas": [
   {
-   "key": "fux",
-   "label": "Fux",
+   "key": "enem",
+   "label": "Enem",
    "links": [
-    "https://www.cnnbrasil.com.br/politica/fux-interrompe-julgamento-sobre-fim-da-escala-6x1-e-leva-caso-ao-plenario/",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/14/fux-interrompe-julgamento-do-fim-da-6x1-para-levar-caso-ao-plenario.ghtm",
-    "https://g1.globo.com/politica/politico/noticia/2026/11/14/fux-suspende-julgamento-sobre-escala-5x2-e-leva-caso-para-plenario-fisico-do-stf.ghtml"
+    "https://www.cnnbrasil.com.br/educacao/gabarito-enem-2026-confira-as-respostas-extraoficiais-do-2o-dia-de-prova/",
+    "https://g1.globo.com/educacao/enem/2026/noticia/2026/11/15/gabarito-enem-2026-2o-dia-veja-correcao-extraoficial-e-respostas.ghtml",
+    "https://oglobo.globo.com/brasil/educacao/enem-e-vestibular/noticia/2026/11/15/gabarito-enem-2026-extraoficial-veja-respostas-das-provas-do-1o-e-2o-dia.ghtml"
    ]
   },
   {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
+   "key": "educação",
+   "label": "Educação",
    "links": [
-    "https://g1.globo.com/mundo/noticia/2026/11/14/caos-aereo-eua-atrasos-cancelamentos-voos.ghtml",
-    "https://oglobo.globo.com/mundo/noticia/2026/11/14/pela-primeira-vez-em-mais-de-30-anos-democratas-ganham-o-governo-do-alasca.ghtml"
-   ]
-  },
-  {
-   "key": "autoridade",
-   "label": "Autoridade",
-   "links": [
-    "https://g1.globo.com/sp/sao-paulo/noticia/2026/11/14/operacao-no-aeroporto-internacional-de-sp-em-guarulhos-e-normalizada-apos-retomada-de-voos-nos-eua.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/autoridade-dos-eua-diz-que-suspendeu-voos-por-manutencao-habitual/"
+    "https://educacao.uol.com.br/noticias/2026/11/15/abstencao-segundo-dia-enem-2026.ghtm",
+    "https://www1.folha.uol.com.br/educacao/2026/11/ministro-da-educacao-diz-que-site-do-inep-sofreu-tentativas-de-ataques-que-foram-controlados.shtml",
+    "https://www.estadao.com.br/educacao/mec-e-inep-divulgam-balanco-do-segundo-dia-do-enem-2026/"
    ]
   },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www1.folha.uol.com.br/mercado/2026/11/plano-fiscal-precisa-ir-alem-e-mudar-regras-do-minimo-da-saude-e-da-educacao-dizem-economistas.shtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/14/ajuste-fiscal-divide-esquerda-exercito-lula-critica-janones.ghtm"
+    "https://www.estadao.com.br/politica/diogo-schelp/aversao-do-pt-ao-ajuste-fiscal-mostra-a-falta-que-faz-uma-direita-democratica/",
+    "https://oglobo.globo.com/economia/noticia/2026/11/15/pacote-fiscal-nao-mexe-com-ganho-social-e-e-fundamental-para-baixar-juros-diz-alckmin.ghtml"
+   ]
+  },
+  {
+   "key": "baixe",
+   "label": "Baixe",
+   "links": [
+    "https://g1.globo.com/educacao/enem/2026/noticia/2026/11/15/questoes-do-enem-2026-2o-dia-baixe-os-cadernos-com-a-prova-de-matematica-e-ciencias-da-natureza.ghtml",
+    "https://www1.folha.uol.com.br/educacao/2026/11/enem-2026-tem-matematica-mais-dificil-e-mantem-nivel-em-ciencias-da-natureza-dizem-professores.shtml"
+   ]
+  },
+  {
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
+   "links": [
+    "https://www.estadao.com.br/internacional/o-centro-de-gravidade-da-politica-americana-nao-e-trump-e-obama/"
    ]
   }
  ]

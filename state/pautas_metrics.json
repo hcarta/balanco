@@ -183,18 +183,32 @@
    "generated_at": "2026-11-14T21:20:32.683938+00:00"
   },
   "2026-11-15": {
-   "n_heads": 47,
-   "n_unmatched": 43,
-   "unmatched_rate": 91.5,
-   "n_pautas": 4,
+   "n_heads": 38,
+   "n_unmatched": 37,
+   "unmatched_rate": 97.4,
+   "n_pautas": 3,
    "n_emergent": 2,
-   "n_reused": 1,
-   "n_new_keys": 1,
+   "n_reused": 0,
+   "n_new_keys": 2,
    "n_front_only": 0,
-   "n_pauta_stories": 66,
+   "n_pauta_stories": 31,
    "n_aliases": 0,
    "date": "2026-11-15",
-   "generated_at": "2026-11-15T01:18:08.310437+00:00"
+   "generated_at": "2026-11-15T21:01:16.594222+00:00"
+  },
+  "2026-11-16": {
+   "n_heads": 40,
+   "n_unmatched": 37,
+   "unmatched_rate": 92.5,
+   "n_pautas": 5,
+   "n_emergent": 3,
+   "n_reused": 0,
+   "n_new_keys": 3,
+   "n_front_only": 0,
+   "n_pauta_stories": 36,
+   "n_aliases": 0,
+   "date": "2026-11-16",
+   "generated_at": "2026-11-16T01:01:06.440656+00:00"
   }
  }
 }

@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-15T00",
+ "window": "2026-11-16T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -17,25 +17,11 @@
    "preferred": false
   },
   {
-   "source": "Al Jazeera English",
-   "author": "Editorial",
-   "title": "Young musicians connect a community across the Line of Control",
-   "link": "https://www.aljazeera.com/editorial/longform/2026/11/14/young-musicians-connect-a-community-across-the-line-of-control?traffic_source=rss",
-   "published": "2026-11-14T13:56:07+00:00",
-   "bias": -0.3,
-   "bucket": "CL",
-   "side": "L",
-   "factuality": "high",
-   "editorial": true,
-   "weekly": false,
-   "preferred": false
-  },
-  {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Meta enfim sofre sanção por rapina de conteúdo alheio",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/meta-enfim-sofre-sancao-por-rapina-de-conteudo-alheio.ghtml",
-   "published": "2026-11-14T03:10:00.432000+00:00",
+   "title": "Ajuste fiscal seria o melhor legado de Lula para os pobres",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/ajuste-fiscal-seria-o-melhor-legado-de-lula-para-os-pobres.ghtml",
+   "published": "2026-11-15T03:10:00.654000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -47,9 +33,9 @@
   {
    "source": "G1",
    "author": "Viver Noronha",
-   "title": "Com bênção de Bruno Gagliasso, Léo Fuchs e Gustavo Oliveira se casam em Fernando de Noronha; VÍDEO",
-   "link": "https://g1.globo.com/pe/pernambuco/blog/viver-noronha/post/2026/11/14/com-bencao-de-bruno-gagliasso-leo-fuchs-e-gustavo-oliveira-se-casam-em-fernando-de-noronha-video.ghtml",
-   "published": "2026-11-14T22:47:27+00:00",
+   "title": "Bruna Marquezine pega buquê do casamento de Léo Fuchs e Gustavo Oliveira em Fernando de Noronha; VÍDEO",
+   "link": "https://g1.globo.com/pe/pernambuco/blog/viver-noronha/post/2026/11/15/bruna-marquezine-pega-buque-do-casamento-de-leo-fuchs-e-gustavo-oliveira-em-fernando-de-noronha-video.ghtml",
+   "published": "2026-11-15T15:06:07+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -61,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "A ordem mundial oligárquica",
-   "link": "https://valor.globo.com/opiniao/coluna/a-ordem-mundial-oligarquica.ghtml",
-   "published": "2026-11-14T12:00:00.515000+00:00",
+   "title": "O setor de IA deveria criar algo que as pessoas queiram",
+   "link": "https://valor.globo.com/opiniao/coluna/o-setor-de-ia-deveria-criar-algo-que-as-pessoas-queiram.ghtml",
+   "published": "2026-11-15T13:00:00.777000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -75,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "O buraco do Banco do Brasil é mais embaixo",
-   "link": "https://www.estadao.com.br/opiniao/o-buraco-do-banco-do-brasil-e-mais-embaixo/",
-   "published": "2026-11-14T06:02:00+00:00",
+   "title": "Lula tem um longo passado pela frente",
+   "link": "https://www.estadao.com.br/opiniao/lula-tem-um-longo-passado-pela-frente/",
+   "published": "2026-11-15T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -85,7 +71,21 @@
    "editorial": false,
    "weekly": false,
    "preferred": false
+  },
+  {
+   "source": "Brasil 247",
+   "author": "Ion de Andrade",
+   "title": "A democracia não se defende sozinha",
+   "link": "https://www.brasil247.com/blog/a-democracia-nao-se-defende-sozinha/",
+   "published": "2026-11-16T00:17:08+00:00",
+   "bias": -1.9,
+   "bucket": "L",
+   "side": "L",
+   "factuality": "mixed",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
   }
  ],
- "generated_at": "2026-11-15T01:16:43.659065+00:00"
+ "generated_at": "2026-11-16T00:58:51.582042+00:00"
 }
