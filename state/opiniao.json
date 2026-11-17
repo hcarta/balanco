@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-16T00",
+ "window": "2026-11-17T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Ajuste fiscal seria o melhor legado de Lula para os pobres",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/ajuste-fiscal-seria-o-melhor-legado-de-lula-para-os-pobres.ghtml",
-   "published": "2026-11-15T03:10:00.654000+00:00",
+   "title": "Nova lei deflagra corrida por minerais críticos no Brasil",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/nova-lei-deflagra-corrida-por-minerais-criticos-no-brasil.ghtml",
+   "published": "2026-11-16T03:10:00.476000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,11 +31,11 @@
    "preferred": false
   },
   {
-   "source": "G1",
-   "author": "Viver Noronha",
-   "title": "Bruna Marquezine pega buquê do casamento de Léo Fuchs e Gustavo Oliveira em Fernando de Noronha; VÍDEO",
-   "link": "https://g1.globo.com/pe/pernambuco/blog/viver-noronha/post/2026/11/15/bruna-marquezine-pega-buque-do-casamento-de-leo-fuchs-e-gustavo-oliveira-em-fernando-de-noronha-video.ghtml",
-   "published": "2026-11-15T15:06:07+00:00",
+   "source": "Band",
+   "author": "Da redação",
+   "title": "Ajuste fiscal e a arte anunciar sem entregar",
+   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/ajuste-fiscal-e-a-arte-anunciar-sem-entregar",
+   "published": "2026-11-17T00:23:58+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "O setor de IA deveria criar algo que as pessoas queiram",
-   "link": "https://valor.globo.com/opiniao/coluna/o-setor-de-ia-deveria-criar-algo-que-as-pessoas-queiram.ghtml",
-   "published": "2026-11-15T13:00:00.777000+00:00",
+   "title": "Da prateleira infantil para a vida",
+   "link": "https://valor.globo.com/empresas/marketing/coluna/da-prateleira-infantil-para-a-vida.ghtml",
+   "published": "2026-11-16T12:56:53.076000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -61,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "Lula tem um longo passado pela frente",
-   "link": "https://www.estadao.com.br/opiniao/lula-tem-um-longo-passado-pela-frente/",
-   "published": "2026-11-15T06:02:00+00:00",
+   "title": "Depois do ‘fim do mundo’, a justiça",
+   "link": "https://www.estadao.com.br/opiniao/depois-do-fim-do-mundo-a-justica/",
+   "published": "2026-11-16T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -74,10 +74,10 @@
   },
   {
    "source": "Brasil 247",
-   "author": "Ion de Andrade",
-   "title": "A democracia não se defende sozinha",
-   "link": "https://www.brasil247.com/blog/a-democracia-nao-se-defende-sozinha/",
-   "published": "2026-11-16T00:17:08+00:00",
+   "author": "Marcia Carmo",
+   "title": "Espanhol Pedro Sánchez faz o ‘L’ e entende que Lula é sua inspiração para vitória",
+   "link": "https://www.brasil247.com/blog/espanhol-pedro-sanchez-faz-o-l-e-entende-que-lula-e-sua-inspiracao-para-vitoria/",
+   "published": "2026-11-17T00:38:06+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-16T00:58:51.582042+00:00"
+ "generated_at": "2026-11-17T02:01:34.351483+00:00"
 }

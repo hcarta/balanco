@@ -1,45 +1,46 @@
 {
- "generated_at": "2026-11-16T00:58:51.581550+00:00",
+ "generated_at": "2026-11-17T02:01:34.350952+00:00",
  "pautas": [
-  {
-   "key": "enem",
-   "label": "Enem",
-   "links": [
-    "https://www.cnnbrasil.com.br/educacao/gabarito-enem-2026-confira-as-respostas-extraoficiais-do-2o-dia-de-prova/",
-    "https://g1.globo.com/educacao/enem/2026/noticia/2026/11/15/gabarito-enem-2026-2o-dia-veja-correcao-extraoficial-e-respostas.ghtml",
-    "https://oglobo.globo.com/brasil/educacao/enem-e-vestibular/noticia/2026/11/15/gabarito-enem-2026-extraoficial-veja-respostas-das-provas-do-1o-e-2o-dia.ghtml"
-   ]
-  },
-  {
-   "key": "educação",
-   "label": "Educação",
-   "links": [
-    "https://educacao.uol.com.br/noticias/2026/11/15/abstencao-segundo-dia-enem-2026.ghtm",
-    "https://www1.folha.uol.com.br/educacao/2026/11/ministro-da-educacao-diz-que-site-do-inep-sofreu-tentativas-de-ataques-que-foram-controlados.shtml",
-    "https://www.estadao.com.br/educacao/mec-e-inep-divulgam-balanco-do-segundo-dia-do-enem-2026/"
-   ]
-  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/politica/diogo-schelp/aversao-do-pt-ao-ajuste-fiscal-mostra-a-falta-que-faz-uma-direita-democratica/",
-    "https://oglobo.globo.com/economia/noticia/2026/11/15/pacote-fiscal-nao-mexe-com-ganho-social-e-e-fundamental-para-baixar-juros-diz-alckmin.ghtml"
+    "https://oglobo.globo.com/economia/financas/noticia/2026/11/16/incerteza-fiscal-no-brasil-e-cenario-internacional-entenda-o-que-levou-o-dolar-ao-maior-patamar-em-19-meses.ghtml",
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/16/senado-vota-pacote-do-governo-de-ajuste-das-contas-falta-analisar-4-propostas-para-alterar-o-texto-principal.ghtml",
+    "https://www.cnnbrasil.com.br/politica/alckmin-reacao-do-mercado-nao-deve-dificultar-aprovacao-do-ajuste-fiscal/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/esteves-do-btg-diz-que-mercado-mostra-urgencia-do-ajuste-fiscal-e-lula-entregara-o-que-se-espera.shtml"
    ]
   },
   {
-   "key": "baixe",
-   "label": "Baixe",
+   "key": "alckmin",
+   "label": "Alckmin",
    "links": [
-    "https://g1.globo.com/educacao/enem/2026/noticia/2026/11/15/questoes-do-enem-2026-2o-dia-baixe-os-cadernos-com-a-prova-de-matematica-e-ciencias-da-natureza.ghtml",
-    "https://www1.folha.uol.com.br/educacao/2026/11/enem-2026-tem-matematica-mais-dificil-e-mantem-nivel-em-ciencias-da-natureza-dizem-professores.shtml"
+    "https://economia.uol.com.br/noticias/redacao/2026/11/16/alckmin-sobre-projeto-ajuste-fiscal.htm",
+    "https://oglobo.globo.com/economia/financas/noticia/2026/11/16/alckmin-diz-que-nao-ha-razao-para-alta-do-dolar-moeda-americana-foi-a-r-577-com-incerteza-sobre-ajuste-fiscal.ghtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/internacional/o-centro-de-gravidade-da-politica-americana-nao-e-trump-e-obama/"
+    "https://www.estadao.com.br/internacional/apos-pressao-de-trump-estudantes-internacionais-estao-abandonando-universidades-nos-eua-npr/",
+    "https://g1.globo.com/mundo/noticia/2026/11/16/governo-trump-restricoes-trabalhadores-estrangeiros-eua.ghtml"
+   ]
+  },
+  {
+   "key": "irã-hormuz",
+   "label": "Irã / Hormuz",
+   "links": [
+    "https://www.cnnbrasil.com.br/internacional/ira-estaria-fazendo-planos-para-detonar-bomba-em-washington-dizem-fontes/",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/16/ira-teria-planos-de-ataque-com-bomba-suja-nos-eua-diz-cnn.ghtm"
+   ]
+  },
+  {
+   "key": "tarcísio-linha-6",
+   "label": "Tarcísio / Linha 6",
+   "links": [
+    "https://www1.folha.uol.com.br/mercado/2026/11/tarcisio-critica-plano-moretti-e-defende-possibilidade-de-adiar-reforma-tributaria.shtml",
+    "https://www.estadao.com.br/politica/marcelo-godoy/a-chantagem-feita-pelo-pcc-contra-tarcisio-e-os-candidatos-de-sua-coligacao-durante-as-eleicoes/"
    ]
   }
  ]
