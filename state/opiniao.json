@@ -1,27 +1,27 @@
 {
  "v": 5,
- "window": "2026-11-17T00",
+ "window": "2026-11-18T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Celso Rocha de Barros",
-   "title": "Moretti está certo, Lindbergh está errado",
-   "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/11/moretti-esta-certo-lindbergh-esta-errado.shtml",
-   "published": "2026-11-14T15:30:00+00:00",
+   "author": "Rui Tavares",
+   "title": "A arte ainda tem o dom da profecia, nós é que perdemos o dom da escuta",
+   "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/a-arte-ainda-tem-o-dom-da-profecia-nos-e-que-perdemos-o-dom-da-escuta.shtml",
+   "published": "2026-11-18T02:00:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
    "factuality": "high",
    "editorial": false,
    "weekly": true,
-   "preferred": false
+   "preferred": true
   },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Nova lei deflagra corrida por minerais críticos no Brasil",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/nova-lei-deflagra-corrida-por-minerais-criticos-no-brasil.ghtml",
-   "published": "2026-11-16T03:10:00.476000+00:00",
+   "title": "Eleitor moderado deve nortear novo governo e Congresso",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/eleitor-moderado-deve-nortear-novo-governo-e-congresso.ghtml",
+   "published": "2026-11-17T03:10:00.290000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,15 +31,15 @@
    "preferred": false
   },
   {
-   "source": "Band",
-   "author": "Da redação",
-   "title": "Ajuste fiscal e a arte anunciar sem entregar",
-   "link": "https://www.band.com.br/colunistas/eduardo-oinegue/ajuste-fiscal-e-a-arte-anunciar-sem-entregar",
-   "published": "2026-11-17T00:23:58+00:00",
+   "source": "Nexo Jornal",
+   "author": "Layza Soares",
+   "title": "A emergência do desenvolvimento sustentável",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/17/economia-desenvolvimento-meio-ambiente-mudanca-climatica",
+   "published": "2026-11-18T00:09:06+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "high",
+   "factuality": "very_high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Da prateleira infantil para a vida",
-   "link": "https://valor.globo.com/empresas/marketing/coluna/da-prateleira-infantil-para-a-vida.ghtml",
-   "published": "2026-11-16T12:56:53.076000+00:00",
+   "title": "Amir Labaki: Os concorrentes ao ‘Oscar’ europeu",
+   "link": "https://valor.globo.com/eu-e/coluna/amir-labaki-os-concorrentes-ao-oscar-europeu.ghtml",
+   "published": "2026-11-17T09:00:00.495000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,26 +59,26 @@
    "preferred": false
   },
   {
-   "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "Depois do ‘fim do mundo’, a justiça",
-   "link": "https://www.estadao.com.br/opiniao/depois-do-fim-do-mundo-a-justica/",
-   "published": "2026-11-16T06:02:00+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
+   "source": "Gazeta do Povo",
+   "author": "Dr. José Manuel Moreno Villares",
+   "title": "Aborto e dor fetal: uma discussão que vai além da ciência",
+   "link": "https://www.gazetadopovo.com.br/opiniao/artigos/aborto-e-dor-fetal-uma-discussao-que-vai-alem-da-ciencia/",
+   "published": "2026-11-18T01:09:59+00:00",
+   "bias": 1.2,
+   "bucket": "R",
    "side": "R",
-   "factuality": "high",
+   "factuality": "mixed",
    "editorial": false,
    "weekly": false,
    "preferred": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Marcia Carmo",
-   "title": "Espanhol Pedro Sánchez faz o ‘L’ e entende que Lula é sua inspiração para vitória",
-   "link": "https://www.brasil247.com/blog/espanhol-pedro-sanchez-faz-o-l-e-entende-que-lula-e-sua-inspiracao-para-vitoria/",
-   "published": "2026-11-17T00:38:06+00:00",
-   "bias": -1.9,
+   "source": "CartaCapital",
+   "author": "Fernando Cássio",
+   "title": "Provão Paulista: a fraude é da Seduc-SP",
+   "link": "https://www.cartacapital.com.br/artigo/provao-paulista-a-fraude-e-da-seduc-sp/",
+   "published": "2026-11-17T22:00:08+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-17T02:01:34.351483+00:00"
+ "generated_at": "2026-11-18T02:19:50.392836+00:00"
 }

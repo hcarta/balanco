@@ -1,46 +1,61 @@
 {
- "generated_at": "2026-11-17T02:01:34.350952+00:00",
+ "generated_at": "2026-11-18T02:19:50.392334+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://oglobo.globo.com/economia/financas/noticia/2026/11/16/incerteza-fiscal-no-brasil-e-cenario-internacional-entenda-o-que-levou-o-dolar-ao-maior-patamar-em-19-meses.ghtml",
-    "https://g1.globo.com/jornal-nacional/noticia/2026/11/16/senado-vota-pacote-do-governo-de-ajuste-das-contas-falta-analisar-4-propostas-para-alterar-o-texto-principal.ghtml",
-    "https://www.cnnbrasil.com.br/politica/alckmin-reacao-do-mercado-nao-deve-dificultar-aprovacao-do-ajuste-fiscal/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/esteves-do-btg-diz-que-mercado-mostra-urgencia-do-ajuste-fiscal-e-lula-entregara-o-que-se-espera.shtml"
+    "https://oglobo.globo.com/economia/noticia/2026/11/17/lideres-governistas-reconhecem-falta-de-votos-para-barrar-desidratacao-do-pacote-fiscal.ghtml",
+    "https://www.estadao.com.br/economia/fabio-alves/o-mercado-e-o-bc-tateiam-no-escuro-diante-da-incerteza-sobre-a-politica-fiscal-do-4-mandato-de-lula/",
+    "https://economia.uol.com.br/noticias/redacao/2026/11/17/ajuste-fiscal-impasse-no-senado-e-gilmarpalooza-frustram-plano-de-lula.htm",
+    "https://www.cnnbrasil.com.br/politica/relator-pede-e-senado-adia-votacao-do-ajuste-fiscal-para-esta-quarta-feira/",
+    "https://g1.globo.com/economia/noticia/2026/11/17/dolar-ibovespa.ghtml"
    ]
   },
   {
-   "key": "alckmin",
-   "label": "Alckmin",
+   "key": "lula",
+   "label": "Lula",
    "links": [
-    "https://economia.uol.com.br/noticias/redacao/2026/11/16/alckmin-sobre-projeto-ajuste-fiscal.htm",
-    "https://oglobo.globo.com/economia/financas/noticia/2026/11/16/alckmin-diz-que-nao-ha-razao-para-alta-do-dolar-moeda-americana-foi-a-r-577-com-incerteza-sobre-ajuste-fiscal.ghtml"
+    "https://www1.folha.uol.com.br/mercado/2026/11/senado-adia-votacao-de-destaques-do-plano-moretti-de-ajuste-nas-contas.shtml",
+    "https://www.estadao.com.br/politica/vera-rosa/lula-quer-indicar-ministro-do-stf-antes-da-virada-do-ano-para-evitar-novo-reves-no-senado/"
+   ]
+  },
+  {
+   "key": "dosimetria",
+   "label": "Dosimetria",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/17/fachin-diz-que-stf-pode-julgar-lei-da-dosimetria-ainda-em-2026.ghtm",
+    "https://g1.globo.com/politica/noticia/2026/11/17/fachin-diz-que-stf-pode-julgar-ainda-neste-ano-acoes-contra-lei-da-dosimetria-se-moraes-liberar-caso.ghtml"
+   ]
+  },
+  {
+   "key": "lula-2",
+   "label": "Lula",
+   "links": [
+    "https://g1.globo.com/economia/noticia/2026/11/17/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula.ghtml",
+    "https://www1.folha.uol.com.br/mercado/2026/11/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula.shtml"
+   ]
+  },
+  {
+   "key": "lula-3",
+   "label": "Lula",
+   "links": [
+    "https://g1.globo.com/politica/noticia/2026/11/17/lula-se-reune-com-ministro-do-trabalho-para-ajustes-no-decreto-que-regulamentara-fim-da-escala-6x1.ghtml",
+    "https://www1.folha.uol.com.br/mercado/2026/11/lula-fez-ajustes-e-vai-assinar-decreto-que-regulamenta-6x1-na-quinta-feira-19-diz-ministro-do-trabalho.shtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/internacional/apos-pressao-de-trump-estudantes-internacionais-estao-abandonando-universidades-nos-eua-npr/",
-    "https://g1.globo.com/mundo/noticia/2026/11/16/governo-trump-restricoes-trabalhadores-estrangeiros-eua.ghtml"
+    "https://www.cnnbrasil.com.br/internacional/reuniao-xi-putin-trump-tem-importancia-historica-e-promovera-paz-diz-china/"
    ]
   },
   {
    "key": "irã-hormuz",
    "label": "Irã / Hormuz",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/ira-estaria-fazendo-planos-para-detonar-bomba-em-washington-dizem-fontes/",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/16/ira-teria-planos-de-ataque-com-bomba-suja-nos-eua-diz-cnn.ghtm"
-   ]
-  },
-  {
-   "key": "tarcísio-linha-6",
-   "label": "Tarcísio / Linha 6",
-   "links": [
-    "https://www1.folha.uol.com.br/mercado/2026/11/tarcisio-critica-plano-moretti-e-defende-possibilidade-de-adiar-reforma-tributaria.shtml",
-    "https://www.estadao.com.br/politica/marcelo-godoy/a-chantagem-feita-pelo-pcc-contra-tarcisio-e-os-candidatos-de-sua-coligacao-durante-as-eleicoes/"
+    "https://www.cnnbrasil.com.br/internacional/eua-fazem-ataques-contra-local-de-lancamento-de-misseis-do-ira-diz-fonte/"
    ]
   }
  ]
