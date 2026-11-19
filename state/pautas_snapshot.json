@@ -1,61 +1,33 @@
 {
- "generated_at": "2026-11-18T02:19:50.392334+00:00",
+ "generated_at": "2026-11-19T01:28:52.176176+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/17/lideres-governistas-reconhecem-falta-de-votos-para-barrar-desidratacao-do-pacote-fiscal.ghtml",
-    "https://www.estadao.com.br/economia/fabio-alves/o-mercado-e-o-bc-tateiam-no-escuro-diante-da-incerteza-sobre-a-politica-fiscal-do-4-mandato-de-lula/",
-    "https://economia.uol.com.br/noticias/redacao/2026/11/17/ajuste-fiscal-impasse-no-senado-e-gilmarpalooza-frustram-plano-de-lula.htm",
-    "https://www.cnnbrasil.com.br/politica/relator-pede-e-senado-adia-votacao-do-ajuste-fiscal-para-esta-quarta-feira/",
-    "https://g1.globo.com/economia/noticia/2026/11/17/dolar-ibovespa.ghtml"
+    "https://oglobo.globo.com/economia/noticia/2026/11/18/senado-mudancas-no-pacote-fiscal.ghtml",
+    "https://www.estadao.com.br/economia/senado-conclui-votacao-de-ajuste-apos-aceno-a-governadores-para-preservar-impacto-fiscal/",
+    "https://g1.globo.com/politica/noticia/2026/11/18/motta-convoca-sessao-para-votar-ajuste-fiscal-na-segunda-feira.ghtml",
+    "https://economia.uol.com.br/noticias/redacao/2026/11/18/ajuste-fiscal-votacao-destaques-senado.ghtm",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/impacto-do-pacote-fiscal-cai-em-r-6-bi-apos-mudanca-no-senado-diz-relator/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-nesta-quarta-com-mercado-a-espera-de-leilao-do-bc-e-votacao-sobre-ajuste-fiscal.shtml"
    ]
   },
   {
-   "key": "lula",
-   "label": "Lula",
+   "key": "fachin",
+   "label": "Fachin",
    "links": [
-    "https://www1.folha.uol.com.br/mercado/2026/11/senado-adia-votacao-de-destaques-do-plano-moretti-de-ajuste-nas-contas.shtml",
-    "https://www.estadao.com.br/politica/vera-rosa/lula-quer-indicar-ministro-do-stf-antes-da-virada-do-ano-para-evitar-novo-reves-no-senado/"
-   ]
-  },
-  {
-   "key": "dosimetria",
-   "label": "Dosimetria",
-   "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/17/fachin-diz-que-stf-pode-julgar-lei-da-dosimetria-ainda-em-2026.ghtm",
-    "https://g1.globo.com/politica/noticia/2026/11/17/fachin-diz-que-stf-pode-julgar-ainda-neste-ano-acoes-contra-lei-da-dosimetria-se-moraes-liberar-caso.ghtml"
-   ]
-  },
-  {
-   "key": "lula-2",
-   "label": "Lula",
-   "links": [
-    "https://g1.globo.com/economia/noticia/2026/11/17/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula.ghtml",
-    "https://www1.folha.uol.com.br/mercado/2026/11/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula.shtml"
-   ]
-  },
-  {
-   "key": "lula-3",
-   "label": "Lula",
-   "links": [
-    "https://g1.globo.com/politica/noticia/2026/11/17/lula-se-reune-com-ministro-do-trabalho-para-ajustes-no-decreto-que-regulamentara-fim-da-escala-6x1.ghtml",
-    "https://www1.folha.uol.com.br/mercado/2026/11/lula-fez-ajustes-e-vai-assinar-decreto-que-regulamenta-6x1-na-quinta-feira-19-diz-ministro-do-trabalho.shtml"
+    "https://oglobo.globo.com/politica/noticia/2026/11/18/andrei-stf-fachin-relatorios-da-pf-sobre-mencoes-a-ministros-do-stf-no-caso-master.ghtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/18/fachin-encaminha-relatorio-com-citacao-de-ministros-para-a-pgr.htm",
+    "https://g1.globo.com/politica/noticia/2026/11/18/andrei-fachin-relatorios-ministros-mensagens-vorcaro.ghtml",
+    "https://www.cnnbrasil.com.br/politica/fachin-diz-que-relatorios-da-pf-sobre-ministros-do-stf-serao-enviados-a-pgr/"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/reuniao-xi-putin-trump-tem-importancia-historica-e-promovera-paz-diz-china/"
-   ]
-  },
-  {
-   "key": "irã-hormuz",
-   "label": "Irã / Hormuz",
-   "links": [
-    "https://www.cnnbrasil.com.br/internacional/eua-fazem-ataques-contra-local-de-lancamento-de-misseis-do-ira-diz-fonte/"
+    "https://www.estadao.com.br/economia/negocios/empresa-de-genro-de-trump-investe-us-335-milhoes-no-nubank/"
    ]
   }
  ]

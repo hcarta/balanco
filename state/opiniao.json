@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-18T00",
+ "window": "2026-11-19T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Eleitor moderado deve nortear novo governo e Congresso",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/eleitor-moderado-deve-nortear-novo-governo-e-congresso.ghtml",
-   "published": "2026-11-17T03:10:00.290000+00:00",
+   "title": "Lula não pode mais tardar a apresentar plano fiscal robusto",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/lula-nao-pode-mais-tardar-a-apresentar-plano-fiscal-robusto.ghtml",
+   "published": "2026-11-18T03:10:01.095000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -32,10 +32,10 @@
   },
   {
    "source": "Nexo Jornal",
-   "author": "Layza Soares",
-   "title": "A emergência do desenvolvimento sustentável",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/17/economia-desenvolvimento-meio-ambiente-mudanca-climatica",
-   "published": "2026-11-18T00:09:06+00:00",
+   "author": "Carolina Alves",
+   "title": "O debate sobre a dívida pública brasileira: fatos, escolhas e mitos",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/18/ajuste-fiscal-divida-publica-juros-economia-brasil",
+   "published": "2026-11-18T22:56:36+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Amir Labaki: Os concorrentes ao ‘Oscar’ europeu",
-   "link": "https://valor.globo.com/eu-e/coluna/amir-labaki-os-concorrentes-ao-oscar-europeu.ghtml",
-   "published": "2026-11-17T09:00:00.495000+00:00",
+   "title": "Dólar caro dificulta queda do juro e aumenta risco de recessão",
+   "link": "https://valor.globo.com/opiniao/coluna/dolar-caro-dificulta-queda-do-juro-e-aumenta-risco-de-recessao.ghtml",
+   "published": "2026-11-18T10:08:00.946000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,25 +59,25 @@
    "preferred": false
   },
   {
-   "source": "Gazeta do Povo",
-   "author": "Dr. José Manuel Moreno Villares",
-   "title": "Aborto e dor fetal: uma discussão que vai além da ciência",
-   "link": "https://www.gazetadopovo.com.br/opiniao/artigos/aborto-e-dor-fetal-uma-discussao-que-vai-alem-da-ciencia/",
-   "published": "2026-11-18T01:09:59+00:00",
-   "bias": 1.2,
-   "bucket": "R",
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "Lula e a tempestade perfeita",
+   "link": "https://www.estadao.com.br/opiniao/lula-e-a-tempestade-perfeita/",
+   "published": "2026-11-18T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
    "side": "R",
-   "factuality": "mixed",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
   },
   {
    "source": "CartaCapital",
-   "author": "Fernando Cássio",
-   "title": "Provão Paulista: a fraude é da Seduc-SP",
-   "link": "https://www.cartacapital.com.br/artigo/provao-paulista-a-fraude-e-da-seduc-sp/",
-   "published": "2026-11-17T22:00:08+00:00",
+   "author": "Leonardo Miazzo",
+   "title": "O governo Lula 4 e a disputa pelo futuro",
+   "link": "https://www.cartacapital.com.br/opiniao/o-governo-lula-4-e-a-disputa-pelo-futuro/",
+   "published": "2026-11-18T21:47:33+00:00",
    "bias": -1.2,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-18T02:19:50.392836+00:00"
+ "generated_at": "2026-11-19T01:28:52.176607+00:00"
 }
