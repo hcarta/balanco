@@ -1,33 +1,48 @@
 {
- "generated_at": "2026-11-19T01:28:52.176176+00:00",
+ "generated_at": "2026-11-20T01:10:36.170454+00:00",
  "pautas": [
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "moraes",
+   "label": "Moraes",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/18/senado-mudancas-no-pacote-fiscal.ghtml",
-    "https://www.estadao.com.br/economia/senado-conclui-votacao-de-ajuste-apos-aceno-a-governadores-para-preservar-impacto-fiscal/",
-    "https://g1.globo.com/politica/noticia/2026/11/18/motta-convoca-sessao-para-votar-ajuste-fiscal-na-segunda-feira.ghtml",
-    "https://economia.uol.com.br/noticias/redacao/2026/11/18/ajuste-fiscal-votacao-destaques-senado.ghtm",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/impacto-do-pacote-fiscal-cai-em-r-6-bi-apos-mudanca-no-senado-diz-relator/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-nesta-quarta-com-mercado-a-espera-de-leilao-do-bc-e-votacao-sobre-ajuste-fiscal.shtml"
+    "https://www1.folha.uol.com.br/poder/2026/11/moraes-marca-julgamento-sobre-dosimetria-que-pode-beneficiar-bolsonaro-para-4-de-dezembro.shtml",
+    "https://www.estadao.com.br/politica/moraes-libera-acao-que-trata-da-lei-da-dosimetria-para-julgamento-no-plenario-virtual-do-stf/",
+    "https://g1.globo.com/politica/noticia/2026/11/19/moraes-libera-acoes-sobre-lei-da-dosimetria-para-julgamento-no-stf.ghtml",
+    "https://oglobo.globo.com/politica/noticia/2026/11/19/moraes-pauta-julgamento-da-lei-da-dosimetria-que-pode-reduzir-pena-de-bolsonaro.ghtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/19/alexandre-de-moraes-libera-acoes-lei-dosimetria-votacao-plenario-virtual.ghtm"
    ]
   },
   {
    "key": "fachin",
    "label": "Fachin",
    "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/18/andrei-stf-fachin-relatorios-da-pf-sobre-mencoes-a-ministros-do-stf-no-caso-master.ghtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/18/fachin-encaminha-relatorio-com-citacao-de-ministros-para-a-pgr.htm",
-    "https://g1.globo.com/politica/noticia/2026/11/18/andrei-fachin-relatorios-ministros-mensagens-vorcaro.ghtml",
-    "https://www.cnnbrasil.com.br/politica/fachin-diz-que-relatorios-da-pf-sobre-ministros-do-stf-serao-enviados-a-pgr/"
+    "https://www.cnnbrasil.com.br/politica/fachin-envia-a-pgr-relatorios-sobre-moraes-kassio-toffoli-e-mendonca/",
+    "https://g1.globo.com/politica/noticia/2026/11/19/ministros-do-stf-recebem-copia-do-relatorio-da-pf-em-que-sao-citados-sobre-relacoes-com-vorcaro.ghtml",
+    "https://oglobo.globo.com/politica/noticia/2026/11/19/caso-master-fachin-manda-arquivar-relatorios-da-pf-sobre-mencao-a-6-ministros-por-entender-nao-ter-relevancia-juridica-quatro-serao-enviados-a-pgr.ghtml"
+   ]
+  },
+  {
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
+   "links": [
+    "https://oglobo.globo.com/economia/financas/noticia/2026/11/19/dolar-hoje-maxima-ano-5-93.ghtml",
+    "https://www.cnnbrasil.com.br/politica/relator-do-ajuste-fiscal-na-camara-mantem-texto-aprovado-pelo-senado/"
+   ]
+  },
+  {
+   "key": "apesar",
+   "label": "Apesar",
+   "links": [
+    "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/por-que-o-dolar-passou-de-r-590-hoje/",
+    "https://economia.uol.com.br/cotacoes/noticias/redacao/2026/11/19/dolar-sobe-mais-de-1-apesar-de-intervencao-do-bc-ibovespa-recua.ghtm"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/economia/negocios/empresa-de-genro-de-trump-investe-us-335-milhoes-no-nubank/"
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/19/anthropic-e-responsavel-pela-maior-oferta-publica-de-acoes-da-historia-acoes-dispararam-na-estreia-na-bolsa-de-nova-york.ghtml",
+    "https://www.cnnbrasil.com.br/internacional/funcionarios-da-casa-branca-usaram-celulares-descartaveis-em-viagem-a-china/"
    ]
   }
  ]
