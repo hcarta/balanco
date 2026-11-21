@@ -1,48 +1,71 @@
 {
- "generated_at": "2026-11-20T01:10:36.170454+00:00",
+ "generated_at": "2026-11-20T23:57:58.847625+00:00",
  "pautas": [
-  {
-   "key": "moraes",
-   "label": "Moraes",
-   "links": [
-    "https://www1.folha.uol.com.br/poder/2026/11/moraes-marca-julgamento-sobre-dosimetria-que-pode-beneficiar-bolsonaro-para-4-de-dezembro.shtml",
-    "https://www.estadao.com.br/politica/moraes-libera-acao-que-trata-da-lei-da-dosimetria-para-julgamento-no-plenario-virtual-do-stf/",
-    "https://g1.globo.com/politica/noticia/2026/11/19/moraes-libera-acoes-sobre-lei-da-dosimetria-para-julgamento-no-stf.ghtml",
-    "https://oglobo.globo.com/politica/noticia/2026/11/19/moraes-pauta-julgamento-da-lei-da-dosimetria-que-pode-reduzir-pena-de-bolsonaro.ghtml",
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/19/alexandre-de-moraes-libera-acoes-lei-dosimetria-votacao-plenario-virtual.ghtm"
-   ]
-  },
-  {
-   "key": "fachin",
-   "label": "Fachin",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/fachin-envia-a-pgr-relatorios-sobre-moraes-kassio-toffoli-e-mendonca/",
-    "https://g1.globo.com/politica/noticia/2026/11/19/ministros-do-stf-recebem-copia-do-relatorio-da-pf-em-que-sao-citados-sobre-relacoes-com-vorcaro.ghtml",
-    "https://oglobo.globo.com/politica/noticia/2026/11/19/caso-master-fachin-manda-arquivar-relatorios-da-pf-sobre-mencao-a-6-ministros-por-entender-nao-ter-relevancia-juridica-quatro-serao-enviados-a-pgr.ghtml"
-   ]
-  },
-  {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
-   "links": [
-    "https://oglobo.globo.com/economia/financas/noticia/2026/11/19/dolar-hoje-maxima-ano-5-93.ghtml",
-    "https://www.cnnbrasil.com.br/politica/relator-do-ajuste-fiscal-na-camara-mantem-texto-aprovado-pelo-senado/"
-   ]
-  },
-  {
-   "key": "apesar",
-   "label": "Apesar",
-   "links": [
-    "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/por-que-o-dolar-passou-de-r-590-hoje/",
-    "https://economia.uol.com.br/cotacoes/noticias/redacao/2026/11/19/dolar-sobe-mais-de-1-apesar-de-intervencao-do-bc-ibovespa-recua.ghtm"
-   ]
-  },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://g1.globo.com/jornal-nacional/noticia/2026/11/19/anthropic-e-responsavel-pela-maior-oferta-publica-de-acoes-da-historia-acoes-dispararam-na-estreia-na-bolsa-de-nova-york.ghtml",
-    "https://www.cnnbrasil.com.br/internacional/funcionarios-da-casa-branca-usaram-celulares-descartaveis-em-viagem-a-china/"
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/20/trump-diz-que-exigiu-que-as-filipinas-deixem-de-importar-do-agro-brasileiro.ghtm",
+    "https://www.estadao.com.br/economia/agronegocios/trump-filipinas-produtos-agro-brasileiro-compras-eua/",
+    "https://g1.globo.com/mundo/noticia/2026/11/20/trump-brasil-filipinas.ghtml",
+    "https://www.cnnbrasil.com.br/agro/trump-diz-que-filipinas-trocarao-produtos-agricolas-do-brasil-pelos-dos-eua/"
+   ]
+  },
+  {
+   "key": "tempestade",
+   "label": "Tempestade",
+   "links": [
+    "https://www1.folha.uol.com.br/cotidiano/2026/11/tempestade-com-granizo-causa-destruicao-em-tupancireta-rs.shtml",
+    "https://www.cnnbrasil.com.br/nacional/sul/rs/mortos-e-60-feridos-veja-imagens-de-cidade-destruida-por-chuva-no-rs/",
+    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/20/ex-vereador-morte-tempestade-tupancireta.ghtml"
+   ]
+  },
+  {
+   "key": "supercélula",
+   "label": "Supercélula",
+   "links": [
+    "https://www1.folha.uol.com.br/cotidiano/2026/11/supercelula-e-microexplosao-explicam-devastacao-com-ventos-de-114-kmh-no-rio-grande-do-sul.shtml",
+    "https://www.estadao.com.br/brasil/supercelula-o-que-e-o-fenomeno-que-causou-destruicao-em-tupancireta-no-rio-grande-do-sul/",
+    "https://g1.globo.com/meio-ambiente/noticia/2026/11/20/sul-regiao-do-brasil-supercelulas.ghtml"
+   ]
+  },
+  {
+   "key": "mendonça",
+   "label": "Mendonça",
+   "links": [
+    "https://www.estadao.com.br/politica/coluna-do-estadao/mendonca-expoe-falsa-equivalencia-no-caso-master-moraes-nunes-e-toffoli-tambem-abrirao-sigilo/",
+    "https://www.cnnbrasil.com.br/politica/caso-master-veja-o-que-mensagens-apreendidas-pela-pf-dizem-sobre-mendonca/"
+   ]
+  },
+  {
+   "key": "master",
+   "label": "Master",
+   "links": [
+    "https://oglobo.globo.com/politica/noticia/2026/11/20/aliados-de-mendonca-no-stf-veem-tentativa-de-desgaste-com-relatorio-da-pf-e-avaliam-que-pedido-para-fim-de-sigilo-tenta-blindar-relatoria-no-master.ghtml",
+    "https://www.cnnbrasil.com.br/politica/gilmar-nao-ve-problema-em-abrir-sigilo-de-relatorio-sobre-stf-e-master/"
+   ]
+  },
+  {
+   "key": "bolsonaro",
+   "label": "Bolsonaro",
+   "links": [
+    "https://oglobo.globo.com/politica/noticia/2026/11/20/medico-de-bolsonaro-diz-que-exame-mostrou-obstrucao-quase-total-do-intestino-e-cirurgia-sera-avaliada-durante-internacao.ghtml",
+    "https://www.cnnbrasil.com.br/politica/exame-de-bolsonaro-mostrou-comprometimento-no-intestino-delgado-diz-medico/"
+   ]
+  },
+  {
+   "key": "jair-bolsonaro",
+   "label": "Jair Bolsonaro",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/20/bolsonaro-e-levado-ao-hospital-apos-dores-abdominais-diz-carlos.ghtm",
+    "https://www.estadao.com.br/politica/jair-bolsonaro-da-entrada-em-hospital-apos-dores-abdominais-diz-carlos/"
+   ]
+  },
+  {
+   "key": "obesidade-sus",
+   "label": "Obesidade / SUS",
+   "links": [
+    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/20/ministerio-da-saude-envia-forca-nacional-do-sus-para-o-rs.ghtml"
    ]
   }
  ]

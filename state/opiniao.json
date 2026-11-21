@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-20T00",
+ "window": "2026-11-20T18",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Desmonte de fábrica de fuzis é ação exemplar",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/desmonte-de-fabrica-de-fuzis-e-acao-exemplar.ghtml",
-   "published": "2026-11-19T03:10:00.375000+00:00",
+   "title": "PL das Big Techs exige atenção urgente da Câmara",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/pl-das-big-techs-exige-atencao-urgente-da-camara.ghtml",
+   "published": "2026-11-20T03:10:00.540000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "O valor da experiência na economia da criatividade",
-   "link": "https://valor.globo.com/inovacao/coluna/o-valor-da-experiencia-na-economia-da-criatividade.ghtml",
-   "published": "2026-11-19T11:00:01.161000+00:00",
+   "title": "A Terra ultrapassou os limites do aquecimento mundial - e agora?",
+   "link": "https://valor.globo.com/opiniao/coluna/a-terra-ultrapassou-os-limites-do-aquecimento-mundial-e-agora.ghtml",
+   "published": "2026-11-20T11:15:00.828000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -61,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "O rito dos oportunistas",
-   "link": "https://www.estadao.com.br/opiniao/o-rito-dos-oportunistas/",
-   "published": "2026-11-19T06:02:00+00:00",
+   "title": "Escondendo o que todo mundo viu",
+   "link": "https://www.estadao.com.br/opiniao/escondendo-o-que-todo-mundo-viu/",
+   "published": "2026-11-20T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -74,10 +74,10 @@
   },
   {
    "source": "Brasil 247",
-   "author": "Reynaldo José Aragon Gonçalves",
-   "title": "A armadilha americana na América do Sul: o cerco estratégico ao Brasil",
-   "link": "https://www.brasil247.com/blog/a-armadilha-americana-na-america-do-sul-o-cerco-estrategico-ao-brasil/",
-   "published": "2026-11-20T00:16:06+00:00",
+   "author": "Paulo Moreira Leite",
+   "title": "Fim da jornada 6 x 1 deve ser celebrada",
+   "link": "https://www.brasil247.com/blog/fim-da-jornada-6-x-1-deve-ser-celebrada/",
+   "published": "2026-11-20T16:35:03+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-20T01:10:36.170984+00:00"
+ "generated_at": "2026-11-20T18:00:35.139548+00:00"
 }
