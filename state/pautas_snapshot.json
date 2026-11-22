@@ -1,71 +1,48 @@
 {
- "generated_at": "2026-11-20T23:57:58.847625+00:00",
+ "generated_at": "2026-11-22T01:32:58.240885+00:00",
  "pautas": [
   {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
    "links": [
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/20/trump-diz-que-exigiu-que-as-filipinas-deixem-de-importar-do-agro-brasileiro.ghtm",
-    "https://www.estadao.com.br/economia/agronegocios/trump-filipinas-produtos-agro-brasileiro-compras-eua/",
-    "https://g1.globo.com/mundo/noticia/2026/11/20/trump-brasil-filipinas.ghtml",
-    "https://www.cnnbrasil.com.br/agro/trump-diz-que-filipinas-trocarao-produtos-agricolas-do-brasil-pelos-dos-eua/"
+    "https://oglobo.globo.com/economia/noticia/2026/11/21/lula-critica-ala-da-esquerda-que-se-opos-ao-ajuste-fiscal-e-diz-que-faria-lima-nao-vai-ensina-lo-a-governar.ghtml",
+    "https://www.estadao.com.br/economia/alexandre-schwartsman/pacote-fiscal-nao-e-ajuste-nem-bom-nem-primeiro-passo/",
+    "https://g1.globo.com/politica/noticia/2026/11/21/lula-diz-que-projeto-aprovado-no-senado-nao-e-reforma-fiscal-mas-ajuste-para-orcamento-de-2027-e-critica-faria-lima.ghtml"
    ]
   },
   {
-   "key": "tempestade",
-   "label": "Tempestade",
+   "key": "manoel-ribas",
+   "label": "Manoel Ribas",
    "links": [
-    "https://www1.folha.uol.com.br/cotidiano/2026/11/tempestade-com-granizo-causa-destruicao-em-tupancireta-rs.shtml",
-    "https://www.cnnbrasil.com.br/nacional/sul/rs/mortos-e-60-feridos-veja-imagens-de-cidade-destruida-por-chuva-no-rs/",
-    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/20/ex-vereador-morte-tempestade-tupancireta.ghtml"
+    "https://www.cnnbrasil.com.br/nacional/sul/pr/parana-tem-dois-tornados-em-um-unico-dia-confirma-simepar/",
+    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/21/dois-tornados-atingem-cidades-do-parana-e-destelham-casas.ghtm",
+    "https://g1.globo.com/pr/oeste-sudoeste/noticia/2026/11/21/dois-tornados-atingem-cidades-do-parana-no-mesmo-dia-diz-simepar.ghtml"
    ]
   },
   {
-   "key": "supercélula",
-   "label": "Supercélula",
+   "key": "sobe",
+   "label": "Sobe",
    "links": [
-    "https://www1.folha.uol.com.br/cotidiano/2026/11/supercelula-e-microexplosao-explicam-devastacao-com-ventos-de-114-kmh-no-rio-grande-do-sul.shtml",
-    "https://www.estadao.com.br/brasil/supercelula-o-que-e-o-fenomeno-que-causou-destruicao-em-tupancireta-no-rio-grande-do-sul/",
-    "https://g1.globo.com/meio-ambiente/noticia/2026/11/20/sul-regiao-do-brasil-supercelulas.ghtml"
-   ]
-  },
-  {
-   "key": "mendonça",
-   "label": "Mendonça",
-   "links": [
-    "https://www.estadao.com.br/politica/coluna-do-estadao/mendonca-expoe-falsa-equivalencia-no-caso-master-moraes-nunes-e-toffoli-tambem-abrirao-sigilo/",
-    "https://www.cnnbrasil.com.br/politica/caso-master-veja-o-que-mensagens-apreendidas-pela-pf-dizem-sobre-mendonca/"
-   ]
-  },
-  {
-   "key": "master",
-   "label": "Master",
-   "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/20/aliados-de-mendonca-no-stf-veem-tentativa-de-desgaste-com-relatorio-da-pf-e-avaliam-que-pedido-para-fim-de-sigilo-tenta-blindar-relatoria-no-master.ghtml",
-    "https://www.cnnbrasil.com.br/politica/gilmar-nao-ve-problema-em-abrir-sigilo-de-relatorio-sobre-stf-e-master/"
+    "https://www.cnnbrasil.com.br/nacional/sul/rs/sobe-para-5-o-numero-de-mortos-em-tupancireta-rs-265-ficaram-feridos/",
+    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/21/temporais-afetam-20-mil-pessoas-e-destelham-7-mil-casas-em-cidade-do-rs.ghtm",
+    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/21/morte-tempestade-tupancireta-homem-cruz-alta.ghtml"
    ]
   },
   {
    "key": "bolsonaro",
    "label": "Bolsonaro",
    "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/20/medico-de-bolsonaro-diz-que-exame-mostrou-obstrucao-quase-total-do-intestino-e-cirurgia-sera-avaliada-durante-internacao.ghtml",
-    "https://www.cnnbrasil.com.br/politica/exame-de-bolsonaro-mostrou-comprometimento-no-intestino-delgado-diz-medico/"
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/21/bolsonaro-uti.ghtm",
+    "https://www.cnnbrasil.com.br/politica/bolsonaro-esta-internado-em-uti-com-abdomen-agudo-obstrutivo-diz-boletim/",
+    "https://www.estadao.com.br/politica/jair-bolsonaro-faz-limpeza-com-sonda-diz-carlos-npr/"
    ]
   },
   {
-   "key": "jair-bolsonaro",
-   "label": "Jair Bolsonaro",
+   "key": "cop31",
+   "label": "Cop31",
    "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/20/bolsonaro-e-levado-ao-hospital-apos-dores-abdominais-diz-carlos.ghtm",
-    "https://www.estadao.com.br/politica/jair-bolsonaro-da-entrada-em-hospital-apos-dores-abdominais-diz-carlos/"
-   ]
-  },
-  {
-   "key": "obesidade-sus",
-   "label": "Obesidade / SUS",
-   "links": [
-    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/20/ministerio-da-saude-envia-forca-nacional-do-sus-para-o-rs.ghtml"
+    "https://www1.folha.uol.com.br/ambiente/2026/11/sem-citar-combustiveis-fosseis-cop31-corre-risco-de-nao-terminar.shtml",
+    "https://www1.folha.uol.com.br/ambiente/2026/11/sem-citar-combustiveis-fosseis-cop31-corre-risco-de-nao-terminar.shtml"
    ]
   }
  ]

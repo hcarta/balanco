@@ -1,27 +1,13 @@
 {
  "v": 5,
- "window": "2026-11-20T18",
+ "window": "2026-11-22T00",
  "items": [
-  {
-   "source": "Folha de S.Paulo",
-   "author": "Rui Tavares",
-   "title": "A arte ainda tem o dom da profecia, nós é que perdemos o dom da escuta",
-   "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/a-arte-ainda-tem-o-dom-da-profecia-nos-e-que-perdemos-o-dom-da-escuta.shtml",
-   "published": "2026-11-18T02:00:00+00:00",
-   "bias": -0.3,
-   "bucket": "CL",
-   "side": "L",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": true,
-   "preferred": true
-  },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "PL das Big Techs exige atenção urgente da Câmara",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/pl-das-big-techs-exige-atencao-urgente-da-camara.ghtml",
-   "published": "2026-11-20T03:10:00.540000+00:00",
+   "title": "PGR tem de pedir investigação de ministros do STF",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/pgr-tem-de-pedir-investigacao-de-ministros-do-stf.ghtml",
+   "published": "2026-11-21T03:10:00.845000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,15 +17,29 @@
    "preferred": false
   },
   {
-   "source": "Nexo Jornal",
-   "author": "Luiz Augusto Campos",
-   "title": "Um dos maiores feitos de Lula é também sua maior lacuna",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/19/lula-governo-pt-politica-antirracista-inclusao-racial",
-   "published": "2026-11-19T21:26:08+00:00",
+   "source": "Folha de S.Paulo",
+   "author": "Luiz Cesar Pimentel",
+   "title": "Meu plano de carreira é ficar desempregado",
+   "link": "https://www1.folha.uol.com.br/opiniao/2026/11/meu-plano-de-carreira-e-ficar-desempregado.shtml",
+   "published": "2026-11-22T01:00:00+00:00",
+   "bias": -0.3,
+   "bucket": "CL",
+   "side": "L",
+   "factuality": "high",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
+  },
+  {
+   "source": "G1",
+   "author": "Mauro Ferreira",
+   "title": "Roberto Carlos e Maria Bethânia gravam clipe em estúdio para especial do cantor",
+   "link": "https://g1.globo.com/pop-arte/musica/blog/mauro-ferreira/post/2026/11/21/roberto-carlos-e-maria-bethania-gravam-clipe-em-estudio-para-exibicao-no-especial-do-cantor.ghtml",
+   "published": "2026-11-21T17:11:22+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "very_high",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "A Terra ultrapassou os limites do aquecimento mundial - e agora?",
-   "link": "https://valor.globo.com/opiniao/coluna/a-terra-ultrapassou-os-limites-do-aquecimento-mundial-e-agora.ghtml",
-   "published": "2026-11-20T11:15:00.828000+00:00",
+   "title": "O mundo inteiro está comprado em ativos americanos",
+   "link": "https://valor.globo.com/opiniao/coluna/o-mundo-inteiro-esta-comprado-em-ativos-americanos.ghtml",
+   "published": "2026-11-21T12:15:01.284000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -61,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "Escondendo o que todo mundo viu",
-   "link": "https://www.estadao.com.br/opiniao/escondendo-o-que-todo-mundo-viu/",
-   "published": "2026-11-20T06:02:00+00:00",
+   "title": "O futuro não tem bancada no Congresso",
+   "link": "https://www.estadao.com.br/opiniao/o-futuro-nao-tem-bancada-no-congresso/",
+   "published": "2026-11-21T06:02:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -74,10 +74,10 @@
   },
   {
    "source": "Brasil 247",
-   "author": "Paulo Moreira Leite",
-   "title": "Fim da jornada 6 x 1 deve ser celebrada",
-   "link": "https://www.brasil247.com/blog/fim-da-jornada-6-x-1-deve-ser-celebrada/",
-   "published": "2026-11-20T16:35:03+00:00",
+   "author": "Mohammad Sarfi",
+   "title": "Irã e Brasil: de uma tempestade a outra",
+   "link": "https://www.brasil247.com/blog/ira-e-brasil-de-uma-tempestade-a-outra/",
+   "published": "2026-11-21T19:48:37+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-20T18:00:35.139548+00:00"
+ "generated_at": "2026-11-22T01:32:58.241266+00:00"
 }
