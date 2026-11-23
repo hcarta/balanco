@@ -1,41 +1,32 @@
 {
- "generated_at": "2026-11-23T04:00:09.926434+00:00",
+ "generated_at": "2026-11-23T14:27:11.954984+00:00",
  "pautas": [
-  {
-   "key": "abandono",
-   "label": "Abandono",
-   "links": [
-    "https://www1.folha.uol.com.br/ambiente/2026/11/cop31-se-torna-a-mais-longa-conferencia-climatica-da-onu.shtml",
-    "https://g1.globo.com/meio-ambiente/noticia/2026/11/22/cop31-acordo-final-plenaria.ghtml",
-    "https://oglobo.globo.com/brasil/noticia/2026/11/22/cop31-abandono-de-combustiveis-fosseis-umas-das-principais-pautas-da-conferencia-de-belem-inviabiliza-acordo.ghtml"
-   ]
-  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/economia/fim-de-beneficio-fiscal-nos-estados-faz-empresas-repensarem-localizacao-de-fabricas-e-galpoes/"
+    "https://oglobo.globo.com/economia/financas/noticia/2026/11/23/dolar-e-bolsa-hoje-cotacoes-reagem-a-votacao-de-medidas-fiscais-e-cenario-externo.ghtml",
+    "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ibovespa-hoje-enfrenta-novo-teste-com-dados-dos-eua-e-projecoes-de-juros-e-inflacao-no-brasil/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-e-supera-r-598-com-votacao-de-pacote-fiscal-e-aversao-global-ao-risco.shtml",
+    "https://g1.globo.com/economia/noticia/2026/11/23/dolar-ibovespa.ghtml",
+    "https://economia.uol.com.br/cotacoes/noticias/redacao/2026/11/23/dolar-sobe-a-r-597-de-olho-na-votacao-do-plano-moretti-na-camara.ghtm",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/risco-brasil-atinge-maior-patamar-desde-2025-com-ajuste-fiscal-em-foco/"
    ]
   },
   {
-   "key": "irã-hormuz",
-   "label": "Irã / Hormuz",
+   "key": "jensen-huang",
+   "label": "Jensen Huang",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/ataques-iranianos-no-estreito-de-ormuz-atingem-maior-nivel-da-guerra/"
+    "https://www.cnnbrasil.com.br/economia/money/inteligencia-artificial/nvidia-anuncia-retorno-de-jensen-huang-ao-cargo-de-ceo/",
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/23/nvidia-anuncia-retorno-de-jensen-huang-como-ceo.ghtm",
+    "https://oglobo.globo.com/economia/negocios/noticia/2026/11/23/conselho-de-administracao-da-nvida-reconduz-jensen-huang-ao-cargo-de-ceo.ghtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/trump-diz-que-cogita-retomar-ataques-ao-ira-no-proximo-ano/"
-   ]
-  },
-  {
-   "key": "flávio-bolsonaro",
-   "label": "Flávio Bolsonaro",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/flavio-diz-nao-ter-provas-de-fraude-eleitoral-proibido-de-investigar/"
+    "https://www.cnnbrasil.com.br/internacional/trump-parabeniza-retorno-de-ceo-da-nvidia-mas-defende-investigacao/"
    ]
   }
  ]

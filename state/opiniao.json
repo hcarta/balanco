@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-23T00",
+ "window": "2026-11-23T12",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Indústria manufatureira dos EUA está de volta e melhor",
-   "link": "https://valor.globo.com/opiniao/coluna/industria-manufatureira-dos-eua-esta-de-volta-e-melhor.ghtml",
-   "published": "2026-11-22T13:15:00.502000+00:00",
+   "title": "Amir Labaki: Peter Bogdanovich conta sua ascensão",
+   "link": "https://valor.globo.com/eu-e/coluna/amir-labaki-peter-bogdanovich-conta-sua-ascensao.ghtml",
+   "published": "2026-11-23T13:51:43.078000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,25 +59,25 @@
    "preferred": false
   },
   {
-   "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "A República está levando uma rasteira",
-   "link": "https://www.estadao.com.br/opiniao/a-republica-esta-levando-uma-rasteira/",
-   "published": "2026-11-22T06:02:00+00:00",
+   "source": "Veja",
+   "author": "Juliana Américo",
+   "title": "O que fez a Petrobras perder US$ 34,4 bilhões em valor de mercado em 20 dias?",
+   "link": "https://veja.abril.com.br/coluna/macro-intelligence/o-que-fez-a-petrobras-perder-us-344-bilhoes-em-valor-de-mercado-em-20-dias/",
+   "published": "2026-11-23T13:46:39+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
-   "factuality": "high",
+   "factuality": "mixed",
    "editorial": false,
    "weekly": false,
    "preferred": false
   },
   {
    "source": "Brasil 247",
-   "author": "Miguel do Rosário",
-   "title": "A segunda vitória de Araribóia",
-   "link": "https://www.brasil247.com/blog/a-segunda-vitoria-de-arariboia/",
-   "published": "2026-11-22T23:43:47+00:00",
+   "author": "Leonardo Ferreira Kaltner",
+   "title": "O protagonismo global de Lula, o mundo multipolar e o multilateralismo",
+   "link": "https://www.brasil247.com/blog/o-protagonismo-global-de-lula-o-mundo-multipolar-e-o-multilateralismo/",
+   "published": "2026-11-23T13:34:23+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-23T04:00:09.930856+00:00"
+ "generated_at": "2026-11-23T14:27:11.955469+00:00"
 }

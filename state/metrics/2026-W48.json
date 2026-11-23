@@ -2,20 +2,20 @@
  "week": "2026-W48",
  "days": {
   "2026-11-23": {
-   "n_stories": 360,
-   "n_articles": 1508,
-   "median_independent": 2.0,
-   "pct_blindspot": 24.7,
-   "pct_longread": 3.9,
+   "n_stories": 381,
+   "n_articles": 1635,
+   "median_independent": 2,
+   "pct_blindspot": 23.9,
+   "pct_longread": 4.2,
    "avg_pct": {
-    "L": 7.7,
-    "CL": 11.0,
-    "C": 44.9,
-    "CR": 27.3,
-    "R": 8.9
+    "L": 7.9,
+    "CL": 9.3,
+    "C": 44.6,
+    "CR": 29.7,
+    "R": 8.3
    },
    "date": "2026-11-23",
-   "generated_at": "2026-11-23T04:01:45.471465+00:00"
+   "generated_at": "2026-11-23T14:29:12.636662+00:00"
   }
  }
 }
