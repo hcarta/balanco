@@ -1,48 +1,41 @@
 {
- "generated_at": "2026-11-22T01:32:58.240885+00:00",
+ "generated_at": "2026-11-23T04:00:09.926434+00:00",
  "pautas": [
+  {
+   "key": "abandono",
+   "label": "Abandono",
+   "links": [
+    "https://www1.folha.uol.com.br/ambiente/2026/11/cop31-se-torna-a-mais-longa-conferencia-climatica-da-onu.shtml",
+    "https://g1.globo.com/meio-ambiente/noticia/2026/11/22/cop31-acordo-final-plenaria.ghtml",
+    "https://oglobo.globo.com/brasil/noticia/2026/11/22/cop31-abandono-de-combustiveis-fosseis-umas-das-principais-pautas-da-conferencia-de-belem-inviabiliza-acordo.ghtml"
+   ]
+  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/21/lula-critica-ala-da-esquerda-que-se-opos-ao-ajuste-fiscal-e-diz-que-faria-lima-nao-vai-ensina-lo-a-governar.ghtml",
-    "https://www.estadao.com.br/economia/alexandre-schwartsman/pacote-fiscal-nao-e-ajuste-nem-bom-nem-primeiro-passo/",
-    "https://g1.globo.com/politica/noticia/2026/11/21/lula-diz-que-projeto-aprovado-no-senado-nao-e-reforma-fiscal-mas-ajuste-para-orcamento-de-2027-e-critica-faria-lima.ghtml"
+    "https://www.estadao.com.br/economia/fim-de-beneficio-fiscal-nos-estados-faz-empresas-repensarem-localizacao-de-fabricas-e-galpoes/"
    ]
   },
   {
-   "key": "manoel-ribas",
-   "label": "Manoel Ribas",
+   "key": "irã-hormuz",
+   "label": "Irã / Hormuz",
    "links": [
-    "https://www.cnnbrasil.com.br/nacional/sul/pr/parana-tem-dois-tornados-em-um-unico-dia-confirma-simepar/",
-    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/21/dois-tornados-atingem-cidades-do-parana-e-destelham-casas.ghtm",
-    "https://g1.globo.com/pr/oeste-sudoeste/noticia/2026/11/21/dois-tornados-atingem-cidades-do-parana-no-mesmo-dia-diz-simepar.ghtml"
+    "https://www.cnnbrasil.com.br/internacional/ataques-iranianos-no-estreito-de-ormuz-atingem-maior-nivel-da-guerra/"
    ]
   },
   {
-   "key": "sobe",
-   "label": "Sobe",
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.cnnbrasil.com.br/nacional/sul/rs/sobe-para-5-o-numero-de-mortos-em-tupancireta-rs-265-ficaram-feridos/",
-    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/21/temporais-afetam-20-mil-pessoas-e-destelham-7-mil-casas-em-cidade-do-rs.ghtm",
-    "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/21/morte-tempestade-tupancireta-homem-cruz-alta.ghtml"
+    "https://www.cnnbrasil.com.br/internacional/trump-diz-que-cogita-retomar-ataques-ao-ira-no-proximo-ano/"
    ]
   },
   {
-   "key": "bolsonaro",
-   "label": "Bolsonaro",
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
    "links": [
-    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/21/bolsonaro-uti.ghtm",
-    "https://www.cnnbrasil.com.br/politica/bolsonaro-esta-internado-em-uti-com-abdomen-agudo-obstrutivo-diz-boletim/",
-    "https://www.estadao.com.br/politica/jair-bolsonaro-faz-limpeza-com-sonda-diz-carlos-npr/"
-   ]
-  },
-  {
-   "key": "cop31",
-   "label": "Cop31",
-   "links": [
-    "https://www1.folha.uol.com.br/ambiente/2026/11/sem-citar-combustiveis-fosseis-cop31-corre-risco-de-nao-terminar.shtml",
-    "https://www1.folha.uol.com.br/ambiente/2026/11/sem-citar-combustiveis-fosseis-cop31-corre-risco-de-nao-terminar.shtml"
+    "https://www.cnnbrasil.com.br/politica/flavio-diz-nao-ter-provas-de-fraude-eleitoral-proibido-de-investigar/"
    ]
   }
  ]
