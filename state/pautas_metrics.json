@@ -310,17 +310,17 @@
   },
   "2026-11-24": {
    "n_heads": 36,
-   "n_unmatched": 24,
-   "unmatched_rate": 66.7,
+   "n_unmatched": 23,
+   "unmatched_rate": 63.9,
    "n_pautas": 3,
-   "n_emergent": 2,
+   "n_emergent": 0,
    "n_reused": 0,
-   "n_new_keys": 2,
+   "n_new_keys": 0,
    "n_front_only": 0,
-   "n_pauta_stories": 19,
+   "n_pauta_stories": 31,
    "n_aliases": 0,
    "date": "2026-11-24",
-   "generated_at": "2026-11-24T01:54:45.100082+00:00"
+   "generated_at": "2026-11-24T22:47:22.693023+00:00"
   }
  }
 }

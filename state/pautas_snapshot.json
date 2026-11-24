@@ -1,34 +1,30 @@
 {
- "generated_at": "2026-11-24T01:52:38.472036+00:00",
+ "generated_at": "2026-11-24T22:44:48.822554+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/23/camara-aprova-texto-base-de-projeto-de-ajuste-fiscal-do-governo-lula-com-impacto-de-ate-r-56-bilhoes-em-2027.ghtml",
-    "https://www.estadao.com.br/economia/camara-aprova-urgencia-e-acelera-votacao-de-projeto-de-ajuste-fiscal-do-governo-lula/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/entenda-o-plano-moretti-proposta-de-ajuste-fiscal-do-governo-lula-que-foi-aprovada-pelo-senado.shtml",
-    "https://economia.uol.com.br/noticias/redacao/2026/11/23/camara-aprova-texto-base-do-ajuste-fiscal-para-poupar-ao-menos-r-50-bi.ghtm",
-    "https://www.cnnbrasil.com.br/politica/camara-aprova-ajuste-fiscal/",
-    "https://g1.globo.com/jornal-nacional/noticia/2026/11/23/dolar-atinge-r-6-em-meio-as-incertezas-com-os-rumos-da-economia-brasileira-e-cenario-internacional-desfavoravel.ghtml"
+    "https://oglobo.globo.com/politica/noticia/2026/11/24/apos-motta-alcolumbre-indica-disposicao-para-votar-novo-pacote-fiscal-do-governo.ghtml",
+    "https://www.estadao.com.br/economia/lula-sanciona-sem-vetos-projeto-de-ajuste-fiscal-de-r-50-bi-em-2027-apos-aprovacao-na-camara/",
+    "https://g1.globo.com/politica/noticia/2026/11/24/ajuste-fiscal-horas-depois-de-aprovacao-na-camara-lula-sanciona-lei-que-preve-economia-de-ate-ate-r-56-bilhoes.ghtml",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/ajuste-fiscal-aprovado-esta-aquem-do-necessario-dizem-especialistas/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/alcolumbre-diz-que-senado-pode-votar-novo-ajuste-fiscal-neste-ano-se-houver-apoio.shtml"
    ]
   },
   {
-   "key": "petrobras",
-   "label": "Petrobras",
+   "key": "argentina-milei",
+   "label": "Argentina / Milei",
    "links": [
-    "https://g1.globo.com/economia/noticia/2026/11/23/petrobras-investimento-2027-a-2031.ghtml",
-    "https://www.cnnbrasil.com.br/infra/petrobras-anuncia-us-122-bilhoes-em-investimentos-para-2027-2031/",
-    "https://oglobo.globo.com/economia/negocios/noticia/2026/11/23/petrobras-anuncia-plano-de-investimentos-de-us-122-bilhoes.ghtml",
-    "https://www.estadao.com.br/economia/negocios/petrobras-anuncia-plano-de-investimento-de-us-122-bilhoes-entre-2027-e-2031/"
+    "https://oglobo.globo.com/politica/noticia/2026/11/24/governo-lula-decide-manter-representacao-na-argentina-sem-embaixador-e-descarta-convite-a-milei-para-a-posse.ghtml",
+    "https://www.estadao.com.br/politica/coluna-do-estadao/crise-diplomatica-com-milei-brasil-encerra-missao-de-embaixador-na-argentina/"
    ]
   },
   {
-   "key": "messias",
-   "label": "Messias",
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
    "links": [
-    "https://www.estadao.com.br/politica/lula-avalia-possibilidade-de-indicar-mulher-para-o-stf-diante-da-resistencia-ao-nome-de-messias/",
-    "https://oglobo.globo.com/politica/noticia/2026/11/23/lula-deve-indicar-nome-ao-stf-com-garantia-de-aprovacao-e-avalia-alternativas-a-messias-apos-reuniao-com-ministros-da-corte-e-alcolumbre.ghtml"
+    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/24/trump-prepara-novas-tarifas-para-china-europa-e-outros-parceiros.ghtm"
    ]
   }
  ]

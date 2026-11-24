@@ -103,6 +103,14 @@
    "verdadeiro": 0,
    "checagem": 0,
    "revisar": false
+  },
+  "oglobo": {
+   "total": 1,
+   "falso": 0,
+   "enganoso": 0,
+   "verdadeiro": 0,
+   "checagem": 1,
+   "revisar": false
   }
  },
  "matches": [
@@ -365,6 +373,19 @@
    "score": 0.87,
    "date": "2026-11-11T18:07:51+00:00",
    "terms": "enem;matemática;neste;questões"
+  },
+  {
+   "source_id": "oglobo",
+   "source": "O Globo",
+   "article": "Abstenções de Lindbergh e Erika Hilton chamam a atenção na votação do pacote fiscal de Lula, que conquista 7 votos do PL",
+   "article_link": "https://oglobo.globo.com/economia/noticia/2026/11/24/abstencoes-de-lindbergh-e-erika-hilton-chamam-a-atencao-na-votacao-do-pacote-fiscal-de-lula-que-conquista-7-votos-do-pl.ghtml",
+   "check": "Lula não chamou Erika Hilton de ‘ele’ em evento no Rio",
+   "check_link": "https://www.agencialupa.org/noticias/2026/01/20/lula-nao-chamou-erika-hilton-de-ele-em-evento-no-rio/",
+   "checker": "Agência Lupa",
+   "verdict": "checagem",
+   "score": 0.5,
+   "date": "2026-01-20T12:45:51+00:00",
+   "terms": "erika;hilton;lula"
   }
  ]
 }

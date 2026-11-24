@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-24T00",
+ "window": "2026-11-24T18",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Erradicar pobreza extrema exige rever programas sociais",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/erradicar-pobreza-extrema-exige-rever-programas-sociais.ghtml",
-   "published": "2026-11-23T03:10:00.720000+00:00",
+   "title": "Frustração com COP31 não deve desencorajar",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/frustracao-com-cop31-nao-deve-desencorajar.ghtml",
+   "published": "2026-11-24T03:10:00.725000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,12 +31,12 @@
    "preferred": false
   },
   {
-   "source": "UOL Notícias",
-   "author": "Leonardo Sakamoto",
-   "title": "Mendonça não tem condições de voltar a ser relator do caso Master",
-   "link": "https://noticias.uol.com.br/colunas/leonardo-sakamoto/2026/11/23/mendonca-nao-tem-condicoes-de-voltar-a-ser-relator-do-caso-master.htm",
-   "published": "2026-11-24T01:50:45.515562+00:00",
-   "bias": -0.2,
+   "source": "Band",
+   "author": "Pedro Teixeira",
+   "title": "Governo decide não convidar Javier Milei para cerimônia de posse de Lula",
+   "link": "https://www.band.com.br/colunistas/bastidores-de-brasilia/governo-decide-nao-convidar-javier-milei-para-cerimonia-de-posse-de-lula",
+   "published": "2026-11-24T21:08:00+00:00",
+   "bias": 0.0,
    "bucket": "C",
    "side": "C",
    "factuality": "high",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Amir Labaki: Peter Bogdanovich conta sua ascensão",
-   "link": "https://valor.globo.com/eu-e/coluna/amir-labaki-peter-bogdanovich-conta-sua-ascensao.ghtml",
-   "published": "2026-11-23T13:51:43.078000+00:00",
+   "title": "Após Lula e Trump em Miami, Brasil poderá renovar queixa na OMC",
+   "link": "https://valor.globo.com/opiniao/assis-moreira/coluna/apos-lula-e-trump-em-miami-brasil-podera-renovar-queixa-na-omc.ghtml",
+   "published": "2026-11-24T12:52:39.971000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,26 +59,26 @@
    "preferred": false
   },
   {
-   "source": "Gazeta do Povo",
-   "author": "Nathanael Blake",
-   "title": "O futuro do movimento pró-vida",
-   "link": "https://www.gazetadopovo.com.br/opiniao/artigos/o-futuro-do-movimento-pro-vida/",
-   "published": "2026-11-24T01:01:49+00:00",
-   "bias": 1.2,
-   "bucket": "R",
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "Violação inaceitável da prerrogativa parlamentar",
+   "link": "https://www.estadao.com.br/opiniao/violacao-inaceitavel-da-prerrogativa-parlamentar/",
+   "published": "2026-11-24T06:01:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
    "side": "R",
-   "factuality": "mixed",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Leonardo Ferreira Kaltner",
-   "title": "O protagonismo global de Lula, o mundo multipolar e o multilateralismo",
-   "link": "https://www.brasil247.com/blog/o-protagonismo-global-de-lula-o-mundo-multipolar-e-o-multilateralismo/",
-   "published": "2026-11-23T13:34:23+00:00",
-   "bias": -1.9,
+   "source": "CartaCapital",
+   "author": "Leonardo Miazzo",
+   "title": "Ajuste fiscal e a pressão do mercado financeiro: quem paga a conta?",
+   "link": "https://www.cartacapital.com.br/opiniao/ajuste-fiscal-e-a-pressao-do-mercado-financeiro-quem-paga-a-conta/",
+   "published": "2026-11-24T22:24:53+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-24T01:52:38.472536+00:00"
+ "generated_at": "2026-11-24T22:44:48.823046+00:00"
 }
