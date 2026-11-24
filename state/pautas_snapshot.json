@@ -1,32 +1,34 @@
 {
- "generated_at": "2026-11-23T14:27:11.954984+00:00",
+ "generated_at": "2026-11-24T01:52:38.472036+00:00",
  "pautas": [
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://oglobo.globo.com/economia/financas/noticia/2026/11/23/dolar-e-bolsa-hoje-cotacoes-reagem-a-votacao-de-medidas-fiscais-e-cenario-externo.ghtml",
-    "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ibovespa-hoje-enfrenta-novo-teste-com-dados-dos-eua-e-projecoes-de-juros-e-inflacao-no-brasil/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-alta-e-supera-r-598-com-votacao-de-pacote-fiscal-e-aversao-global-ao-risco.shtml",
-    "https://g1.globo.com/economia/noticia/2026/11/23/dolar-ibovespa.ghtml",
-    "https://economia.uol.com.br/cotacoes/noticias/redacao/2026/11/23/dolar-sobe-a-r-597-de-olho-na-votacao-do-plano-moretti-na-camara.ghtm",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/risco-brasil-atinge-maior-patamar-desde-2025-com-ajuste-fiscal-em-foco/"
+    "https://oglobo.globo.com/economia/noticia/2026/11/23/camara-aprova-texto-base-de-projeto-de-ajuste-fiscal-do-governo-lula-com-impacto-de-ate-r-56-bilhoes-em-2027.ghtml",
+    "https://www.estadao.com.br/economia/camara-aprova-urgencia-e-acelera-votacao-de-projeto-de-ajuste-fiscal-do-governo-lula/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/entenda-o-plano-moretti-proposta-de-ajuste-fiscal-do-governo-lula-que-foi-aprovada-pelo-senado.shtml",
+    "https://economia.uol.com.br/noticias/redacao/2026/11/23/camara-aprova-texto-base-do-ajuste-fiscal-para-poupar-ao-menos-r-50-bi.ghtm",
+    "https://www.cnnbrasil.com.br/politica/camara-aprova-ajuste-fiscal/",
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/23/dolar-atinge-r-6-em-meio-as-incertezas-com-os-rumos-da-economia-brasileira-e-cenario-internacional-desfavoravel.ghtml"
    ]
   },
   {
-   "key": "jensen-huang",
-   "label": "Jensen Huang",
+   "key": "petrobras",
+   "label": "Petrobras",
    "links": [
-    "https://www.cnnbrasil.com.br/economia/money/inteligencia-artificial/nvidia-anuncia-retorno-de-jensen-huang-ao-cargo-de-ceo/",
-    "https://noticias.uol.com.br/internacional/ultimas-noticias/2026/11/23/nvidia-anuncia-retorno-de-jensen-huang-como-ceo.ghtm",
-    "https://oglobo.globo.com/economia/negocios/noticia/2026/11/23/conselho-de-administracao-da-nvida-reconduz-jensen-huang-ao-cargo-de-ceo.ghtml"
+    "https://g1.globo.com/economia/noticia/2026/11/23/petrobras-investimento-2027-a-2031.ghtml",
+    "https://www.cnnbrasil.com.br/infra/petrobras-anuncia-us-122-bilhoes-em-investimentos-para-2027-2031/",
+    "https://oglobo.globo.com/economia/negocios/noticia/2026/11/23/petrobras-anuncia-plano-de-investimentos-de-us-122-bilhoes.ghtml",
+    "https://www.estadao.com.br/economia/negocios/petrobras-anuncia-plano-de-investimento-de-us-122-bilhoes-entre-2027-e-2031/"
    ]
   },
   {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
+   "key": "messias",
+   "label": "Messias",
    "links": [
-    "https://www.cnnbrasil.com.br/internacional/trump-parabeniza-retorno-de-ceo-da-nvidia-mas-defende-investigacao/"
+    "https://www.estadao.com.br/politica/lula-avalia-possibilidade-de-indicar-mulher-para-o-stf-diante-da-resistencia-ao-nome-de-messias/",
+    "https://oglobo.globo.com/politica/noticia/2026/11/23/lula-deve-indicar-nome-ao-stf-com-garantia-de-aprovacao-e-avalia-alternativas-a-messias-apos-reuniao-com-ministros-da-corte-e-alcolumbre.ghtml"
    ]
   }
  ]

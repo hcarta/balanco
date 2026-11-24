@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-23T12",
+ "window": "2026-11-24T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -31,15 +31,15 @@
    "preferred": false
   },
   {
-   "source": "Nexo Jornal",
-   "author": "Januária Cristina Alves",
-   "title": "‘Xennials’, ‘wollying’, ‘bed rotting’: você sabe a língua da internet?",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/22/xennials-termos-online-linguagem-da-internet-dicionario",
-   "published": "2026-11-22T20:28:14+00:00",
-   "bias": 0.0,
+   "source": "UOL Notícias",
+   "author": "Leonardo Sakamoto",
+   "title": "Mendonça não tem condições de voltar a ser relator do caso Master",
+   "link": "https://noticias.uol.com.br/colunas/leonardo-sakamoto/2026/11/23/mendonca-nao-tem-condicoes-de-voltar-a-ser-relator-do-caso-master.htm",
+   "published": "2026-11-24T01:50:45.515562+00:00",
+   "bias": -0.2,
    "bucket": "C",
    "side": "C",
-   "factuality": "very_high",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -59,13 +59,13 @@
    "preferred": false
   },
   {
-   "source": "Veja",
-   "author": "Juliana Américo",
-   "title": "O que fez a Petrobras perder US$ 34,4 bilhões em valor de mercado em 20 dias?",
-   "link": "https://veja.abril.com.br/coluna/macro-intelligence/o-que-fez-a-petrobras-perder-us-344-bilhoes-em-valor-de-mercado-em-20-dias/",
-   "published": "2026-11-23T13:46:39+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
+   "source": "Gazeta do Povo",
+   "author": "Nathanael Blake",
+   "title": "O futuro do movimento pró-vida",
+   "link": "https://www.gazetadopovo.com.br/opiniao/artigos/o-futuro-do-movimento-pro-vida/",
+   "published": "2026-11-24T01:01:49+00:00",
+   "bias": 1.2,
+   "bucket": "R",
    "side": "R",
    "factuality": "mixed",
    "editorial": false,
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-23T14:27:11.955469+00:00"
+ "generated_at": "2026-11-24T01:52:38.472536+00:00"
 }
