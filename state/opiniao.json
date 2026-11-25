@@ -1,27 +1,27 @@
 {
  "v": 5,
- "window": "2026-11-24T18",
+ "window": "2026-11-25T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Celso Rocha de Barros",
-   "title": "Os riscos políticos do ajuste fiscal",
-   "link": "https://www1.folha.uol.com.br/colunas/celso-rocha-de-barros/2026/11/os-riscos-politicos-do-ajuste-fiscal.shtml",
-   "published": "2026-11-22T02:00:00+00:00",
+   "author": "Rui Tavares",
+   "title": "Livros ainda são o futuro; sem eles somos massa, e, com eles, civilização",
+   "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/livros-ainda-sao-o-futuro-sem-eles-somos-massa-e-com-eles-civilizacao.shtml",
+   "published": "2026-11-25T02:00:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
    "factuality": "high",
    "editorial": false,
    "weekly": true,
-   "preferred": false
+   "preferred": true
   },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Frustração com COP31 não deve desencorajar",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/frustracao-com-cop31-nao-deve-desencorajar.ghtml",
-   "published": "2026-11-24T03:10:00.725000+00:00",
+   "title": "Omissões em relatórios da PF são um escárnio",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/omissoes-em-relatorios-da-pf-sao-um-escarnio.ghtml",
+   "published": "2026-11-25T03:10:00.898000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,15 +31,15 @@
    "preferred": false
   },
   {
-   "source": "Band",
-   "author": "Pedro Teixeira",
-   "title": "Governo decide não convidar Javier Milei para cerimônia de posse de Lula",
-   "link": "https://www.band.com.br/colunistas/bastidores-de-brasilia/governo-decide-nao-convidar-javier-milei-para-cerimonia-de-posse-de-lula",
-   "published": "2026-11-24T21:08:00+00:00",
+   "source": "Nexo Jornal",
+   "author": "Diego Werneck Arguelhes",
+   "title": "Como o inquérito das fake news mudou o Supremo (para pior)",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/24/inquerito-das-fake-news-supremo-stf-moraes-efeitos-o-que-mudou",
+   "published": "2026-11-25T01:36:04+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
-   "factuality": "high",
+   "factuality": "very_high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -73,12 +73,12 @@
    "preferred": false
   },
   {
-   "source": "CartaCapital",
-   "author": "Leonardo Miazzo",
-   "title": "Ajuste fiscal e a pressão do mercado financeiro: quem paga a conta?",
-   "link": "https://www.cartacapital.com.br/opiniao/ajuste-fiscal-e-a-pressao-do-mercado-financeiro-quem-paga-a-conta/",
-   "published": "2026-11-24T22:24:53+00:00",
-   "bias": -1.2,
+   "source": "Brasil 247",
+   "author": "Leonardo Attuch",
+   "title": "Eventual exclusão de Haddad do governo Lula 4 reflete dois erros: uma candidatura forçada em SP e uma leitura equivocada do que foi o Lula 3",
+   "link": "https://www.brasil247.com/blog/eventual-exclusao-de-haddad-do-governo-lula-4-reflete-dois-erros-uma-candidatura-forcada-em-sp-e-uma-leitura-equivocada-do-que-foi-o-lula-3/",
+   "published": "2026-11-25T01:58:33+00:00",
+   "bias": -1.9,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-24T22:44:48.823046+00:00"
+ "generated_at": "2026-11-25T05:23:12.565415+00:00"
 }

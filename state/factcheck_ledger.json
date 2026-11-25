@@ -81,11 +81,11 @@
    "revisar": false
   },
   "dcm": {
-   "total": 1,
+   "total": 2,
    "falso": 0,
    "enganoso": 0,
    "verdadeiro": 0,
-   "checagem": 1,
+   "checagem": 2,
    "revisar": false
   },
   "carta": {
@@ -386,6 +386,19 @@
    "score": 0.5,
    "date": "2026-01-20T12:45:51+00:00",
    "terms": "erika;hilton;lula"
+  },
+  {
+   "source_id": "dcm",
+   "source": "Diário do Centro do Mundo",
+   "article": "A briga por protagonismo no PL após fuga de Flávio Bolsonaro",
+   "article_link": "https://www.diariodocentrodomundo.com.br/a-briga-por-protagonismo-no-pl-apos-fuga-de-flavio-bolsonaro/",
+   "check": "O Globo não noticiou que Flávio Bolsonaro usou vestido como disfarce para fuga",
+   "check_link": "https://www.aosfatos.org/?s=O%20Globo%20n%C3%A3o%20noticiou%20que%20Fl%C3%A1vio%20Bolsonaro%20usou%20vestido%20como%20disfarce%20para%20fuga",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.6,
+   "date": "2026-11-23T21:20:26+00:00",
+   "terms": "bolsonaro;flávio;fuga"
   }
  ]
 }

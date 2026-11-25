@@ -321,6 +321,20 @@
    "n_aliases": 0,
    "date": "2026-11-24",
    "generated_at": "2026-11-24T22:47:22.693023+00:00"
+  },
+  "2026-11-25": {
+   "n_heads": 41,
+   "n_unmatched": 30,
+   "unmatched_rate": 73.2,
+   "n_pautas": 6,
+   "n_emergent": 3,
+   "n_reused": 0,
+   "n_new_keys": 3,
+   "n_front_only": 0,
+   "n_pauta_stories": 37,
+   "n_aliases": 0,
+   "date": "2026-11-25",
+   "generated_at": "2026-11-25T05:25:28.233820+00:00"
   }
  }
 }
