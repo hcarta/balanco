@@ -324,17 +324,17 @@
   },
   "2026-11-25": {
    "n_heads": 41,
-   "n_unmatched": 30,
-   "unmatched_rate": 73.2,
-   "n_pautas": 6,
-   "n_emergent": 3,
+   "n_unmatched": 38,
+   "unmatched_rate": 92.7,
+   "n_pautas": 3,
+   "n_emergent": 1,
    "n_reused": 0,
-   "n_new_keys": 3,
+   "n_new_keys": 1,
    "n_front_only": 0,
-   "n_pauta_stories": 37,
+   "n_pauta_stories": 32,
    "n_aliases": 0,
    "date": "2026-11-25",
-   "generated_at": "2026-11-25T05:25:28.233820+00:00"
+   "generated_at": "2026-11-25T16:03:25.347503+00:00"
   }
  }
 }

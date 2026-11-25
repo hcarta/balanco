@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-25T00",
+ "window": "2026-11-25T12",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Após Lula e Trump em Miami, Brasil poderá renovar queixa na OMC",
-   "link": "https://valor.globo.com/opiniao/assis-moreira/coluna/apos-lula-e-trump-em-miami-brasil-podera-renovar-queixa-na-omc.ghtml",
-   "published": "2026-11-24T12:52:39.971000+00:00",
+   "title": "A era da IA a qualquer custo está perto do fim",
+   "link": "https://valor.globo.com/empresas/coluna/a-era-da-ia-a-qualquer-custo-esta-perto-do-fim.ghtml",
+   "published": "2026-11-25T08:00:01.087000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,25 +59,11 @@
    "preferred": false
   },
   {
-   "source": "Estadão",
-   "author": "Notas & Informações",
-   "title": "Violação inaceitável da prerrogativa parlamentar",
-   "link": "https://www.estadao.com.br/opiniao/violacao-inaceitavel-da-prerrogativa-parlamentar/",
-   "published": "2026-11-24T06:01:00+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "high",
-   "editorial": false,
-   "weekly": false,
-   "preferred": false
-  },
-  {
    "source": "Brasil 247",
-   "author": "Leonardo Attuch",
-   "title": "Eventual exclusão de Haddad do governo Lula 4 reflete dois erros: uma candidatura forçada em SP e uma leitura equivocada do que foi o Lula 3",
-   "link": "https://www.brasil247.com/blog/eventual-exclusao-de-haddad-do-governo-lula-4-reflete-dois-erros-uma-candidatura-forcada-em-sp-e-uma-leitura-equivocada-do-que-foi-o-lula-3/",
-   "published": "2026-11-25T01:58:33+00:00",
+   "author": "Jair de Souza",
+   "title": "Sem ufanismo nem derrotismo",
+   "link": "https://www.brasil247.com/blog/sem-ufanismo-nem-derrotismo/",
+   "published": "2026-11-25T15:55:55+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -85,7 +71,21 @@
    "editorial": false,
    "weekly": false,
    "preferred": false
+  },
+  {
+   "source": "Veja",
+   "author": "Sergio Ruiz Luz",
+   "title": "A volta do raivoso disco que iniciou a barulhenta implosão do Pink Floyd",
+   "link": "https://veja.abril.com.br/coluna/o-som-e-a-furia/a-volta-do-raivoso-disco-que-iniciou-a-barulhenta-implosao-do-pink-floyd/",
+   "published": "2026-11-25T15:00:31+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
+   "side": "R",
+   "factuality": "mixed",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
   }
  ],
- "generated_at": "2026-11-25T05:23:12.565415+00:00"
+ "generated_at": "2026-11-25T16:01:09.321515+00:00"
 }

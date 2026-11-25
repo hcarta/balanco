@@ -1,54 +1,26 @@
 {
- "generated_at": "2026-11-25T05:23:12.564801+00:00",
+ "generated_at": "2026-11-25T16:01:09.320685+00:00",
  "pautas": [
+  {
+   "key": "chuvas",
+   "label": "Chuvas",
+   "links": [
+    "https://www.estadao.com.br/brasil/chuvas-fortes-no-parana-deixam-mortos-e-causam-desastres-cidades-npr/",
+    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/25/mortes-apos-chuvas-no-parana.ghtm"
+   ]
+  },
+  {
+   "key": "eleição-eua-trump",
+   "label": "Eleição EUA / Trump",
+   "links": [
+    "https://oglobo.globo.com/economia/noticia/2026/11/25/governo-lula-avalia-impacto-de-novas-taxas-propostas-por-trump-a-avioes-e-acucar-e-traca-estrategias.ghtml"
+   ]
+  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/economia/lula-se-reune-com-equipe-economica-nesta-quarta-para-definir-escopo-de-pec-com-novas-medidas-fiscais/",
-    "https://g1.globo.com/politica/noticia/2026/11/24/ajuste-fiscal-horas-depois-de-aprovacao-na-camara-lula-sanciona-lei-que-preve-economia-de-ate-ate-r-56-bilhoes.ghtml",
-    "https://www1.folha.uol.com.br/mercado/2026/11/alcolumbre-diz-que-senado-pode-votar-novo-ajuste-fiscal-neste-ano-se-houver-apoio.shtml",
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/ajuste-fiscal-aprovado-esta-aquem-do-necessario-dizem-especialistas/",
-    "https://oglobo.globo.com/economia/financas/noticia/2026/11/24/banco-central-intervencao-ate-usd-2-bi.ghtml"
-   ]
-  },
-  {
-   "key": "governo-lula",
-   "label": "Governo Lula",
-   "links": [
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/governo-libera-r-3-43-bilhoes-do-orcamento-de-2026/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/governo-lula-libera-r-34-bi-do-orcamento-apos-excluir-mais-despesas-da-meta-de-2026.shtml"
-   ]
-  },
-  {
-   "key": "argentina-milei",
-   "label": "Argentina / Milei",
-   "links": [
-    "https://oglobo.globo.com/politica/noticia/2026/11/24/governo-lula-decide-manter-representacao-na-argentina-sem-embaixador-e-descarta-convite-a-milei-para-a-posse.ghtml",
-    "https://www.estadao.com.br/politica/coluna-do-estadao/crise-diplomatica-com-milei-brasil-encerra-missao-de-embaixador-na-argentina/"
-   ]
-  },
-  {
-   "key": "abin",
-   "label": "Abin",
-   "links": [
-    "https://noticias.uol.com.br/ultimas-noticias/agencia-brasil/2026/11/24/pcc-e-cv-ampliam-dominio-mas-brasil-tem-31-faccoes-relevantes-aponta-abin.htm",
-    "https://g1.globo.com/politica/noticia/2026/11/24/pcc-cv-estudo-abin-forum-brasileiro-seguranca-publica.ghtml"
-   ]
-  },
-  {
-   "key": "cni",
-   "label": "Cni",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/cni-move-nova-acao-no-stf-contra-os-atos-que-regulamentam-o-fim-da-6x1/",
-    "https://www.estadao.com.br/economia/cni-entra-com-acao-no-stf-contra-regulamentacao-do-governo-lula-sobre-fim-da-escala-6x1/"
-   ]
-  },
-  {
-   "key": "vale-refeição",
-   "label": "Vale-refeição",
-   "links": [
-    "https://g1.globo.com/df/distrito-federal/noticia/2026/11/25/justica-derruba-suspensao-e-restabelece-regras-para-vale-refeicao-e-alimentacao-entenda.ghtml"
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/moretti-projeta-espaco-adicional-de-r-9-bi-no-ploa-2027-com-ajuste-fiscal/"
    ]
   }
  ]
