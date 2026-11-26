@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-25T12",
+ "window": "2026-11-26T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -32,10 +32,10 @@
   },
   {
    "source": "Nexo Jornal",
-   "author": "Diego Werneck Arguelhes",
-   "title": "Como o inquérito das fake news mudou o Supremo (para pior)",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/24/inquerito-das-fake-news-supremo-stf-moraes-efeitos-o-que-mudou",
-   "published": "2026-11-25T01:36:04+00:00",
+   "author": "Filipe Campante",
+   "title": "Os perigos da metonímia para a política fiscal",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/25/politica-economica-governo-lula-mercado-ajuste-fiscal",
+   "published": "2026-11-25T23:43:44+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "A era da IA a qualquer custo está perto do fim",
-   "link": "https://valor.globo.com/empresas/coluna/a-era-da-ia-a-qualquer-custo-esta-perto-do-fim.ghtml",
-   "published": "2026-11-25T08:00:01.087000+00:00",
+   "title": "Controles dos EUA sobre semicondutores podem afetar investimentos em data centers no Brasil",
+   "link": "https://valor.globo.com/opiniao/coluna/controles-dos-eua-sobre-semicondutores-podem-afetar-investimentos-em-data-centers-no-brasil.ghtml",
+   "published": "2026-11-25T18:00:25.167000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,11 +59,25 @@
    "preferred": false
   },
   {
+   "source": "Gazeta do Povo",
+   "author": "Antonio Cabrera",
+   "title": "O paradoxo do Nordeste no Congresso",
+   "link": "https://www.gazetadopovo.com.br/vozes/antonio-cabrera/o-paradoxo-do-nordeste-no-congresso/",
+   "published": "2026-11-25T23:52:58+00:00",
+   "bias": 1.2,
+   "bucket": "R",
+   "side": "R",
+   "factuality": "mixed",
+   "editorial": false,
+   "weekly": false,
+   "preferred": false
+  },
+  {
    "source": "Brasil 247",
-   "author": "Jair de Souza",
-   "title": "Sem ufanismo nem derrotismo",
-   "link": "https://www.brasil247.com/blog/sem-ufanismo-nem-derrotismo/",
-   "published": "2026-11-25T15:55:55+00:00",
+   "author": "Joaquim de Carvalho",
+   "title": "“Ibaneis precisa ser preso”: PT aprova resolução sobre a crise do BRB e promete campanha contra ex-governador",
+   "link": "https://www.brasil247.com/blog/ibaneis-precisa-ser-preso-pt-aprova-resolucao-sobre-a-crise-do-brb-e-promete-campanha-contra-ex-governador/",
+   "published": "2026-11-25T23:42:32+00:00",
    "bias": -1.9,
    "bucket": "L",
    "side": "L",
@@ -71,21 +85,7 @@
    "editorial": false,
    "weekly": false,
    "preferred": false
-  },
-  {
-   "source": "Veja",
-   "author": "Sergio Ruiz Luz",
-   "title": "A volta do raivoso disco que iniciou a barulhenta implosão do Pink Floyd",
-   "link": "https://veja.abril.com.br/coluna/o-som-e-a-furia/a-volta-do-raivoso-disco-que-iniciou-a-barulhenta-implosao-do-pink-floyd/",
-   "published": "2026-11-25T15:00:31+00:00",
-   "bias": 0.5,
-   "bucket": "CR",
-   "side": "R",
-   "factuality": "mixed",
-   "editorial": false,
-   "weekly": false,
-   "preferred": false
   }
  ],
- "generated_at": "2026-11-25T16:01:09.321515+00:00"
+ "generated_at": "2026-11-26T00:13:10.503949+00:00"
 }

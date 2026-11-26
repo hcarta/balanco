@@ -1,26 +1,40 @@
 {
- "generated_at": "2026-11-25T16:01:09.320685+00:00",
+ "generated_at": "2026-11-26T00:13:10.503031+00:00",
  "pautas": [
   {
-   "key": "chuvas",
-   "label": "Chuvas",
+   "key": "lula-juros-e-economia",
+   "label": "Lula / juros e economia",
    "links": [
-    "https://www.estadao.com.br/brasil/chuvas-fortes-no-parana-deixam-mortos-e-causam-desastres-cidades-npr/",
-    "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/25/mortes-apos-chuvas-no-parana.ghtm"
+    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-leve-alta-em-linha-com-exterior-e-a-espera-de-novos-sinais-sobre-politica-fiscal.shtml",
+    "https://oglobo.globo.com/economia/financas/ao-vivo/ibovespa-hoje-acompanhe-bolsa-e-dolar.ghtml",
+    "https://c-level.folha.uol.com.br/financas/2026/11/caixa-discute-com-bc-operacao-para-comprar-brb-e-plano-sera-submetido-a-lula.shtml",
+    "https://g1.globo.com/economia/noticia/2026/11/25/ministro-do-planejamento-diz-que-equipe-economica-tem-conjunto-de-medidas-para-melhorar-contas-publicas-mas-nao-antecipa.ghtml"
+   ]
+  },
+  {
+   "key": "luiz-trabuco",
+   "label": "Luiz Trabuco",
+   "links": [
+    "https://www.estadao.com.br/economia/lula-sondou-trabuco-para-o-ministerio-da-fazenda-banqueiro-ainda-avalia-proposta/",
+    "https://oglobo.globo.com/economia/noticia/2026/11/25/luiz-trabuco-do-bradesco-e-sondado-por-lula-para-assumir-o-ministerio-da-fazenda.ghtml",
+    "https://g1.globo.com/politica/noticia/2026/11/25/luiz-trabuco-quem-e-o-executivo-cotado-para-ser-ministro-da-fazenda.ghtml"
    ]
   },
   {
    "key": "eleição-eua-trump",
    "label": "Eleição EUA / Trump",
    "links": [
-    "https://oglobo.globo.com/economia/noticia/2026/11/25/governo-lula-avalia-impacto-de-novas-taxas-propostas-por-trump-a-avioes-e-acucar-e-traca-estrategias.ghtml"
+    "https://economia.uol.com.br/noticias/redacao/2026/11/25/resposta-governo-tarifas-trump-aeronaves-e-acucar.htm",
+    "https://oglobo.globo.com/economia/noticia/2026/11/25/governo-lula-diz-que-proposta-de-trump-de-nova-taxacao-e-inaceitavel-e-tem-pix-como-foco.ghtml",
+    "https://g1.globo.com/economia/noticia/2026/11/25/china-trump-novo-tarifaco.ghtml"
    ]
   },
   {
-   "key": "lula-juros-e-economia",
-   "label": "Lula / juros e economia",
+   "key": "câmara",
+   "label": "Câmara",
    "links": [
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/moretti-projeta-espaco-adicional-de-r-9-bi-no-ploa-2027-com-ajuste-fiscal/"
+    "https://www.cnnbrasil.com.br/politica/camara-aprova-regras-para-escolas-publicas-em-tempo-integral/",
+    "https://www1.folha.uol.com.br/educacao/2026/11/camara-aprova-diretrizes-para-guiar-expansao-da-educacao-em-tempo-integral-texto-vai-ao-senado.shtml"
    ]
   }
  ]
