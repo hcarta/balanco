@@ -1,6 +1,6 @@
 {
  "v": 5,
- "window": "2026-11-26T00",
+ "window": "2026-11-27T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
@@ -19,9 +19,9 @@
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "Omissões em relatórios da PF são um escárnio",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/omissoes-em-relatorios-da-pf-sao-um-escarnio.ghtml",
-   "published": "2026-11-25T03:10:00.898000+00:00",
+   "title": "É indecente mudar quarentena de agências e estatais",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/e-indecente-mudar-quarentena-de-agencias-e-estatais.ghtml",
+   "published": "2026-11-26T17:34:41.963000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -32,10 +32,10 @@
   },
   {
    "source": "Nexo Jornal",
-   "author": "Filipe Campante",
-   "title": "Os perigos da metonímia para a política fiscal",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/25/politica-economica-governo-lula-mercado-ajuste-fiscal",
-   "published": "2026-11-25T23:43:44+00:00",
+   "author": "Miguel Lago",
+   "title": "O tempo e a crise que não aprendemos a nomear",
+   "link": "https://www.nexojornal.com.br/colunistas/2026/11/26/tempo-crise-escala-6-por-1-renda-politica",
+   "published": "2026-11-27T01:36:39+00:00",
    "bias": 0.0,
    "bucket": "C",
    "side": "C",
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "Controles dos EUA sobre semicondutores podem afetar investimentos em data centers no Brasil",
-   "link": "https://valor.globo.com/opiniao/coluna/controles-dos-eua-sobre-semicondutores-podem-afetar-investimentos-em-data-centers-no-brasil.ghtml",
-   "published": "2026-11-25T18:00:25.167000+00:00",
+   "title": "A Nvidia o CEO acima das regras",
+   "link": "https://valor.globo.com/carreira/coluna/a-nvidia-o-ceo-acima-das-regras.ghtml",
+   "published": "2026-11-26T17:47:58.456000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -59,26 +59,26 @@
    "preferred": false
   },
   {
-   "source": "Gazeta do Povo",
-   "author": "Antonio Cabrera",
-   "title": "O paradoxo do Nordeste no Congresso",
-   "link": "https://www.gazetadopovo.com.br/vozes/antonio-cabrera/o-paradoxo-do-nordeste-no-congresso/",
-   "published": "2026-11-25T23:52:58+00:00",
-   "bias": 1.2,
-   "bucket": "R",
+   "source": "Estadão",
+   "author": "Notas & Informações",
+   "title": "Impunidade ao gosto do freguês",
+   "link": "https://www.estadao.com.br/opiniao/impunidade-ao-gosto-do-fregues/",
+   "published": "2026-11-26T06:02:00+00:00",
+   "bias": 0.5,
+   "bucket": "CR",
    "side": "R",
-   "factuality": "mixed",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
   },
   {
-   "source": "Brasil 247",
-   "author": "Joaquim de Carvalho",
-   "title": "“Ibaneis precisa ser preso”: PT aprova resolução sobre a crise do BRB e promete campanha contra ex-governador",
-   "link": "https://www.brasil247.com/blog/ibaneis-precisa-ser-preso-pt-aprova-resolucao-sobre-a-crise-do-brb-e-promete-campanha-contra-ex-governador/",
-   "published": "2026-11-25T23:42:32+00:00",
-   "bias": -1.9,
+   "source": "CartaCapital",
+   "author": "Leonardo Miazzo",
+   "title": "Há séculos a caminho",
+   "link": "https://www.cartacapital.com.br/opiniao/ha-seculos-a-caminho/",
+   "published": "2026-11-26T21:51:09+00:00",
+   "bias": -1.2,
    "bucket": "L",
    "side": "L",
    "factuality": "mixed",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-26T00:13:10.503949+00:00"
+ "generated_at": "2026-11-27T02:08:48.932248+00:00"
 }

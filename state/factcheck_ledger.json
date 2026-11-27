@@ -73,11 +73,11 @@
    "revisar": false
   },
   "estadao": {
-   "total": 2,
+   "total": 3,
    "falso": 0,
    "enganoso": 0,
    "verdadeiro": 0,
-   "checagem": 2,
+   "checagem": 3,
    "revisar": false
   },
   "dcm": {
@@ -399,6 +399,19 @@
    "score": 0.6,
    "date": "2026-11-23T21:20:26+00:00",
    "terms": "bolsonaro;flávio;fuga"
+  },
+  {
+   "source_id": "estadao",
+   "source": "Estadão",
+   "article": "É falso que ‘O Globo’ tenha publicado capa sobre vestido usado por Flávio Bolsonaro em fuga do País",
+   "article_link": "https://www.estadao.com.br/estadao-verifica/interpol-identificou-vestido-usado-por-flavio-bolsonaro-para-fugir-do-brasil-falso/",
+   "check": "O Globo não noticiou que Flávio Bolsonaro usou vestido como disfarce para fuga",
+   "check_link": "https://www.aosfatos.org/?s=O%20Globo%20n%C3%A3o%20noticiou%20que%20Fl%C3%A1vio%20Bolsonaro%20usou%20vestido%20como%20disfarce%20para%20fuga",
+   "checker": "Aos Fatos",
+   "verdict": "checagem",
+   "score": 0.55,
+   "date": "2026-11-23T21:20:26+00:00",
+   "terms": "bolsonaro;flávio;fuga;globo;vestido"
   }
  ]
 }

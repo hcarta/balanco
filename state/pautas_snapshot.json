@@ -1,40 +1,30 @@
 {
- "generated_at": "2026-11-26T00:13:10.503031+00:00",
+ "generated_at": "2026-11-27T02:08:48.931788+00:00",
  "pautas": [
+  {
+   "key": "fazenda",
+   "label": "Fazenda",
+   "links": [
+    "https://www.cnnbrasil.com.br/politica/planalto-confirma-que-trabuco-aceitou-convite-para-comandar-fazenda/",
+    "https://www.estadao.com.br/economia/alvaro-gribel/lula-da-choque-de-credibilidade-na-economia-com-a-indicacao-de-luiz-carlos-trabuco-para-a-fazenda/",
+    "https://www1.folha.uol.com.br/mercado/2026/11/luiz-carlos-trabuco-do-bradesco-aceita-convite-de-lula-para-assumir-ministerio-da-fazenda.shtml",
+    "https://oglobo.globo.com/economia/noticia/2026/11/26/luiz-trabuco-do-bradesco-aceita-convite-de-lula-para-assumir-o-ministerio-da-fazenda.ghtml"
+   ]
+  },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www1.folha.uol.com.br/mercado/2026/11/dolar-abre-em-leve-alta-em-linha-com-exterior-e-a-espera-de-novos-sinais-sobre-politica-fiscal.shtml",
-    "https://oglobo.globo.com/economia/financas/ao-vivo/ibovespa-hoje-acompanhe-bolsa-e-dolar.ghtml",
-    "https://c-level.folha.uol.com.br/financas/2026/11/caixa-discute-com-bc-operacao-para-comprar-brb-e-plano-sera-submetido-a-lula.shtml",
-    "https://g1.globo.com/economia/noticia/2026/11/25/ministro-do-planejamento-diz-que-equipe-economica-tem-conjunto-de-medidas-para-melhorar-contas-publicas-mas-nao-antecipa.ghtml"
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/trabuco-precisa-mirar-na-questao-fiscal-diz-meirelles-sobre-novo-ministro/",
+    "https://oglobo.globo.com/economia/noticia/2026/11/26/ajuste-fiscal-endividamento-e-estatais-sao-desafios-de-novo-ministro-da-fazenda-de-lula.ghtml",
+    "https://g1.globo.com/economia/noticia/2026/11/26/um-pais-caminha-bem-quando-conduzido-com-seriedade-e-etica-diz-durigan-apos-anuncio-de-trabuco-na-fazenda.ghtml"
    ]
   },
   {
-   "key": "luiz-trabuco",
-   "label": "Luiz Trabuco",
+   "key": "tarcísio-linha-6",
+   "label": "Tarcísio / Linha 6",
    "links": [
-    "https://www.estadao.com.br/economia/lula-sondou-trabuco-para-o-ministerio-da-fazenda-banqueiro-ainda-avalia-proposta/",
-    "https://oglobo.globo.com/economia/noticia/2026/11/25/luiz-trabuco-do-bradesco-e-sondado-por-lula-para-assumir-o-ministerio-da-fazenda.ghtml",
-    "https://g1.globo.com/politica/noticia/2026/11/25/luiz-trabuco-quem-e-o-executivo-cotado-para-ser-ministro-da-fazenda.ghtml"
-   ]
-  },
-  {
-   "key": "eleição-eua-trump",
-   "label": "Eleição EUA / Trump",
-   "links": [
-    "https://economia.uol.com.br/noticias/redacao/2026/11/25/resposta-governo-tarifas-trump-aeronaves-e-acucar.htm",
-    "https://oglobo.globo.com/economia/noticia/2026/11/25/governo-lula-diz-que-proposta-de-trump-de-nova-taxacao-e-inaceitavel-e-tem-pix-como-foco.ghtml",
-    "https://g1.globo.com/economia/noticia/2026/11/25/china-trump-novo-tarifaco.ghtml"
-   ]
-  },
-  {
-   "key": "câmara",
-   "label": "Câmara",
-   "links": [
-    "https://www.cnnbrasil.com.br/politica/camara-aprova-regras-para-escolas-publicas-em-tempo-integral/",
-    "https://www1.folha.uol.com.br/educacao/2026/11/camara-aprova-diretrizes-para-guiar-expansao-da-educacao-em-tempo-integral-texto-vai-ao-senado.shtml"
+    "https://www1.folha.uol.com.br/poder/2026/11/tarcisio-anuncia-mais-3-secretarios-define-85-da-equipe-e-mantem-maioria-dos-nomes-do-1o-mandato.shtml"
    ]
   }
  ]
