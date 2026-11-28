@@ -1,30 +1,45 @@
 {
- "generated_at": "2026-11-27T02:08:48.931788+00:00",
+ "generated_at": "2026-11-28T02:56:55.830017+00:00",
  "pautas": [
   {
-   "key": "fazenda",
-   "label": "Fazenda",
+   "key": "planejamento",
+   "label": "Planejamento",
    "links": [
-    "https://www.cnnbrasil.com.br/politica/planalto-confirma-que-trabuco-aceitou-convite-para-comandar-fazenda/",
-    "https://www.estadao.com.br/economia/alvaro-gribel/lula-da-choque-de-credibilidade-na-economia-com-a-indicacao-de-luiz-carlos-trabuco-para-a-fazenda/",
-    "https://www1.folha.uol.com.br/mercado/2026/11/luiz-carlos-trabuco-do-bradesco-aceita-convite-de-lula-para-assumir-ministerio-da-fazenda.shtml",
-    "https://oglobo.globo.com/economia/noticia/2026/11/26/luiz-trabuco-do-bradesco-aceita-convite-de-lula-para-assumir-o-ministerio-da-fazenda.ghtml"
+    "https://www.estadao.com.br/economia/lula-decide-manter-bruno-moretti-no-planejamento-apos-anunciar-trabuco-na-fazenda/",
+    "https://oglobo.globo.com/politica/noticia/2026/11/27/lula-escolhe-camilo-santana-para-comandar-a-casa-civil-dizem-aliados.ghtml",
+    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/autonomia-e-apoio-a-expectativa-de-economistas-para-trabuco-na-fazenda/"
+   ]
+  },
+  {
+   "key": "brb",
+   "label": "Brb",
+   "links": [
+    "https://www.cnnbrasil.com.br/politica/fachin-libera-r-316-milhoes-da-liquidacao-do-master-para-socorrer-brb/",
+    "https://c-level.folha.uol.com.br/financas/2026/11/fachin-ordena-devolucao-de-r-316-mi-ao-brb-por-carteiras-de-credito-compradas-do-master.shtml",
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/27/fachin-autoriza-liberacao-de-r-3164-mi-da-liquidacao-do-master-ao-brb.ghtm"
+   ]
+  },
+  {
+   "key": "trabuco",
+   "label": "Trabuco",
+   "links": [
+    "https://g1.globo.com/jornal-nacional/noticia/2026/11/27/com-indicacao-de-luiz-carlos-trabuco-para-o-ministerio-da-fazenda-dolar-tem-a-maior-queda-semanal-desde-2008.ghtml",
+    "https://oglobo.globo.com/economia/financas/ao-vivo/ibovespa-hoje-acompanhe-bolsa-e-dolar.ghtml"
+   ]
+  },
+  {
+   "key": "flávio-bolsonaro",
+   "label": "Flávio Bolsonaro",
+   "links": [
+    "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/27/dino-manda-senado-suspender-emendas-parlamentares-de-flavio.ghtm",
+    "https://www.estadao.com.br/politica/blog-do-fausto-macedo/dino-bloqueia-emendas-individuais-de-flavio-bolsonaro/"
    ]
   },
   {
    "key": "lula-juros-e-economia",
    "label": "Lula / juros e economia",
    "links": [
-    "https://www.cnnbrasil.com.br/economia/money/macroeconomia/trabuco-precisa-mirar-na-questao-fiscal-diz-meirelles-sobre-novo-ministro/",
-    "https://oglobo.globo.com/economia/noticia/2026/11/26/ajuste-fiscal-endividamento-e-estatais-sao-desafios-de-novo-ministro-da-fazenda-de-lula.ghtml",
-    "https://g1.globo.com/economia/noticia/2026/11/26/um-pais-caminha-bem-quando-conduzido-com-seriedade-e-etica-diz-durigan-apos-anuncio-de-trabuco-na-fazenda.ghtml"
-   ]
-  },
-  {
-   "key": "tarcísio-linha-6",
-   "label": "Tarcísio / Linha 6",
-   "links": [
-    "https://www1.folha.uol.com.br/poder/2026/11/tarcisio-anuncia-mais-3-secretarios-define-85-da-equipe-e-mantem-maioria-dos-nomes-do-1o-mandato.shtml"
+    "https://g1.globo.com/politica/noticia/2026/11/27/lula-defende-ajuste-fiscal-e-diz-que-para-pais-crescer-nao-se-pode-gastar-dinheiro-a-toa.ghtml"
    ]
   }
  ]

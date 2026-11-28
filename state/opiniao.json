@@ -1,27 +1,27 @@
 {
  "v": 5,
- "window": "2026-11-27T00",
+ "window": "2026-11-28T00",
  "items": [
   {
    "source": "Folha de S.Paulo",
-   "author": "Rui Tavares",
-   "title": "Livros ainda são o futuro; sem eles somos massa, e, com eles, civilização",
-   "link": "https://www1.folha.uol.com.br/colunas/rui-tavares/2026/11/livros-ainda-sao-o-futuro-sem-eles-somos-massa-e-com-eles-civilizacao.shtml",
-   "published": "2026-11-25T02:00:00+00:00",
+   "author": "Conrado Hübner Mendes",
+   "title": "Reformar STF não é para hipocondríacos",
+   "link": "https://www1.folha.uol.com.br/colunas/conrado-hubner-mendes/2026/11/reformar-stf-nao-e-para-hipocondriacos.shtml",
+   "published": "2026-11-25T23:21:00+00:00",
    "bias": -0.3,
    "bucket": "CL",
    "side": "L",
    "factuality": "high",
    "editorial": false,
    "weekly": true,
-   "preferred": true
+   "preferred": false
   },
   {
    "source": "O Globo",
    "author": "Editorial",
-   "title": "É indecente mudar quarentena de agências e estatais",
-   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/e-indecente-mudar-quarentena-de-agencias-e-estatais.ghtml",
-   "published": "2026-11-26T17:34:41.963000+00:00",
+   "title": "Brasil deve agir com cautela ante nova investida tarifária americana",
+   "link": "https://oglobo.globo.com/opiniao/editorial/coluna/2026/11/brasil-deve-agir-com-cautela-ante-nova-investida-tarifaria-americana.ghtml",
+   "published": "2026-11-27T03:09:00.453000+00:00",
    "bias": 0.1,
    "bucket": "C",
    "side": "C",
@@ -31,15 +31,15 @@
    "preferred": false
   },
   {
-   "source": "Nexo Jornal",
-   "author": "Miguel Lago",
-   "title": "O tempo e a crise que não aprendemos a nomear",
-   "link": "https://www.nexojornal.com.br/colunistas/2026/11/26/tempo-crise-escala-6-por-1-renda-politica",
-   "published": "2026-11-27T01:36:39+00:00",
-   "bias": 0.0,
+   "source": "UOL Notícias",
+   "author": "Sergio Zimerman",
+   "title": "A proteção do consumidor termina na fronteira?",
+   "link": "https://www1.folha.uol.com.br/colunas/sergio-zimerman/2026/11/a-protecao-do-consumidor-termina-na-fronteira.shtml",
+   "published": "2026-11-27T20:13:14.162278+00:00",
+   "bias": -0.2,
    "bucket": "C",
    "side": "C",
-   "factuality": "very_high",
+   "factuality": "high",
    "editorial": false,
    "weekly": false,
    "preferred": false
@@ -47,9 +47,9 @@
   {
    "source": "Valor Econômico",
    "author": "Valor Econômico",
-   "title": "A Nvidia o CEO acima das regras",
-   "link": "https://valor.globo.com/carreira/coluna/a-nvidia-o-ceo-acima-das-regras.ghtml",
-   "published": "2026-11-26T17:47:58.456000+00:00",
+   "title": "Mercado respira aliviado com Trabuco, mas Trump, Huang e China revelam riscos de priorizar investidores",
+   "link": "https://valor.globo.com/empresas/coluna/mercado-respira-aliviado-com-trabuco-mas-trump-huang-e-china-revelam-riscos-de-priorizar-investidores.ghtml",
+   "published": "2026-11-27T17:59:26.043000+00:00",
    "bias": 0.3,
    "bucket": "CR",
    "side": "R",
@@ -61,9 +61,9 @@
   {
    "source": "Estadão",
    "author": "Notas & Informações",
-   "title": "Impunidade ao gosto do freguês",
-   "link": "https://www.estadao.com.br/opiniao/impunidade-ao-gosto-do-fregues/",
-   "published": "2026-11-26T06:02:00+00:00",
+   "title": "Despreparado para a IA",
+   "link": "https://www.estadao.com.br/opiniao/despreparado-para-a-ia/",
+   "published": "2026-11-27T06:01:00+00:00",
    "bias": 0.5,
    "bucket": "CR",
    "side": "R",
@@ -74,10 +74,10 @@
   },
   {
    "source": "CartaCapital",
-   "author": "Leonardo Miazzo",
-   "title": "Há séculos a caminho",
-   "link": "https://www.cartacapital.com.br/opiniao/ha-seculos-a-caminho/",
-   "published": "2026-11-26T21:51:09+00:00",
+   "author": "Augusto Diniz",
+   "title": "Documentário resgata a incrível história do músico João Tomé",
+   "link": "https://www.cartacapital.com.br/blogs/augusto-diniz/documentario-resgata-a-incrivel-historia-do-musico-joao-tome/",
+   "published": "2026-11-27T23:07:16+00:00",
    "bias": -1.2,
    "bucket": "L",
    "side": "L",
@@ -87,5 +87,5 @@
    "preferred": false
   }
  ],
- "generated_at": "2026-11-27T02:08:48.932248+00:00"
+ "generated_at": "2026-11-28T02:56:55.830509+00:00"
 }
